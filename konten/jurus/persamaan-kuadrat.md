@@ -4,8 +4,8 @@ nama: Persamaan Kuadrat
 pilar: aljabar
 tahap: osn-k
 prasyarat: [faktorisasi]
-contoh: []
-latihan: []
+contoh: [pk-contoh-1]
+latihan: [pk-01, pk-02, pk-03, pk-04, pk-05, pk-06]
 ---
 
 ## Kapan dipakai

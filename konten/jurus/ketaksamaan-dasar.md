@@ -4,8 +4,8 @@ nama: Ketaksamaan Dasar
 pilar: aljabar
 tahap: osn-k
 prasyarat: [manipulasi-aljabar]
-contoh: []
-latihan: []
+contoh: [kt-contoh-1]
+latihan: [kt-01, kt-02, kt-03, kt-04, kt-05, kt-06]
 ---
 
 ## Kapan dipakai

@@ -707,8 +707,17 @@
    "prasyarat": [
     "manipulasi-aljabar"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "fn-contoh-1"
+   ],
+   "latihan": [
+    "fn-01",
+    "fn-02",
+    "fn-03",
+    "fn-04",
+    "fn-05",
+    "fn-06"
+   ],
    "kapan_dipakai": "<p>Soal memberi aturan $f$ dan menanyakan nilai di suatu titik, atau menanyakan komposisi, invers, dan sifat seperti ganjil–genap.</p>",
    "inti": "<p>Fungsi adalah aturan yang memberi <strong>tepat satu</strong> keluaran untuk tiap masukan. Dari sana lahir seluruh sifat yang dipakai.</p><p><strong>Komposisi.</strong> $(f \\circ g)(x) = f(g(x))$ — dikerjakan dari dalam ke luar. Urutannya penting: $f \\circ g$ dan $g \\circ f$ umumnya berbeda.</p><p><strong>Invers.</strong> $f^{-1}$ ada tepat ketika $f$ satu-satu. Cara mencarinya: tulis $y = f(x)$, selesaikan $x$ dalam $y$, lalu tukar nama. Sifat yang berguna:</p><p>$$f\\left(f^{-1}(x)\\right) = x, \\qquad (f \\circ g)^{-1} = g^{-1} \\circ f^{-1}$$</p><p>Perhatikan urutan terbalik pada yang kedua.</p><p><strong>Ganjil dan genap.</strong> $f$ genap kalau $f(-x) = f(x)$, ganjil kalau $f(-x) = -f(x)$. Sifat ini sering memangkas soal: pada fungsi ganjil, $f(0) = 0$ otomatis.</p><p><strong>Refleks olimpiade:</strong> kalau soal memberi hubungan seperti $f(x) + 2f(1-x) = x$, jangan mencari rumus $f$ langsung. Ganti $x$ dengan $1-x$ untuk memperoleh persamaan kedua, lalu selesaikan keduanya sebagai sistem dua peubah $f(x)$ dan $f(1-x)$.</p>",
    "jebakan": "<ul><li><strong>Membalik urutan komposisi.</strong> $(f \\circ g)$ berarti $g$ dulu.</li><li><strong>Mencari invers fungsi yang tidak satu-satu</strong> tanpa membatasi domainnya.</li><li><strong>Mengira $f^{-1}(x) = \\dfrac{1}{f(x)}$.</strong> Lambangnya sama, artinya sama sekali berbeda.</li></ul>",
@@ -724,8 +733,17 @@
    "prasyarat": [
     "manipulasi-aljabar"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "kt-contoh-1"
+   ],
+   "latihan": [
+    "kt-01",
+    "kt-02",
+    "kt-03",
+    "kt-04",
+    "kt-05",
+    "kt-06"
+   ],
    "kapan_dipakai": "<p>Soal meminta <strong>nilai terbesar atau terkecil</strong>, atau meminta membuktikan satu bentuk tidak pernah melebihi bentuk lain.</p>",
    "inti": "<p>Satu fakta yang menjadi dasar hampir semua ketaksamaan aljabar:</p><p>$$x^2 \\ge 0 \\quad \\text{untuk setiap } x \\text{ real}$$</p><p>dengan kesamaan tepat ketika $x = 0$. Semua yang lain dibangun dari situ.</p><p>Contoh terpenting, dan yang paling sering langsung dipakai:</p><p>$$a^2 + b^2 \\ge 2ab$$</p><p>sebab selisihnya $(a-b)^2 \\ge 0$. Untuk $a, b &gt; 0$, membaginya dengan $ab$ memberi</p><p>$$\\frac{a}{b} + \\frac{b}{a} \\ge 2$$</p><p>Aturan kerjanya selalu sama: <strong>pindahkan semuanya ke satu ruas, lalu tunjukkan sisanya jumlah kuadrat.</strong> Kalau berhasil, ketaksamaannya terbukti sekaligus dengan syarat kesamaannya.</p><p>Sifat operasi yang harus dijaga:</p><ul><li>Menambah bilangan apa pun tidak mengubah arah.</li><li>Mengalikan dengan bilangan <strong>positif</strong> tidak mengubah arah; dengan <strong>negatif</strong>, arahnya berbalik.</li><li>Mengkuadratkan hanya aman kalau kedua ruas tak negatif.</li></ul>",
    "jebakan": "<ul><li><strong>Mengalikan dengan sesuatu yang belum diketahui tandanya.</strong> Kalau tandanya belum dipastikan, arah ketaksamaannya tidak bisa dipertahankan.</li><li><strong>Lupa menyebut kapan kesamaan tercapai.</strong> Soal nilai maksimum belum selesai sebelum ditunjukkan nilai itu benar-benar dicapai.</li><li><strong>Membalik ketaksamaan saat mengambil kebalikan</strong> tanpa memastikan keduanya sepositif.</li></ul>",
@@ -802,8 +820,17 @@
    "prasyarat": [
     "faktorisasi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "pk-contoh-1"
+   ],
+   "latihan": [
+    "pk-01",
+    "pk-02",
+    "pk-03",
+    "pk-04",
+    "pk-05",
+    "pk-06"
+   ],
    "kapan_dipakai": "<p>Ada $x^2$ sebagai pangkat tertinggi — langsung, atau setelah substitusi yang mengubah soalnya jadi berbentuk kuadrat.</p>",
    "inti": "<p>Untuk $ax^2 + bx + c = 0$ dengan $a \\ne 0$:</p><p>$$x = \\frac{-b \\pm \\sqrt{D}}{2a}, \\qquad D = b^2 - 4ac$$</p><p><strong>Diskriminan $D$ menjawab pertanyaan tentang akar tanpa menghitung akarnya:</strong></p><ul><li>$D &gt; 0$: dua akar real berbeda</li><li>$D = 0$: satu akar kembar</li><li>$D &lt; 0$: tidak ada akar real</li></ul><p>Di olimpiade, $D$ jauh lebih sering dipakai untuk ini daripada untuk menghitung akar. Soal \"tentukan $m$ agar persamaan punya dua akar berbeda\" adalah soal tentang $D$, bukan tentang $x$.</p><p><strong>Melengkapkan kuadrat</strong> sering lebih berguna daripada rumus akar:</p><p>$$ax^2+bx+c = a\\left(x + \\frac{b}{2a}\\right)^2 + c - \\frac{b^2}{4a}$$</p><p>Dari bentuk itu, nilai ekstremnya terbaca langsung: untuk $a &gt; 0$ nilai minimumnya $c - \\frac{b^2}{4a}$ di $x = -\\frac{b}{2a}$.</p><p><strong>Substitusi</strong> memperluas jangkauannya. Persamaan $x^4 - 5x^2 + 4 = 0$ menjadi kuadrat dengan $u = x^2$; $2^{2x} - 3 \\cdot 2^x + 2 = 0$ menjadi kuadrat dengan $u = 2^x$.</p>",
    "jebakan": "<ul><li><strong>Lupa syarat $a \\ne 0$.</strong> Kalau $a$ memuat parameter, kasus $a = 0$ harus diperiksa terpisah — di situ persamaannya linear, bukan kuadrat.</li><li><strong>Lupa mengembalikan substitusi.</strong> Menemukan $u = 4$ belum menjawab apa pun sampai $x^2 = 4$ diselesaikan.</li><li><strong>Membuang akar negatif pada substitusi yang menuntut positif.</strong> Untuk $u = 2^x$, nilai $u \\le 0$ harus dibuang karena $2^x$ selalu positif.</li></ul>",
@@ -819,8 +846,17 @@
    "prasyarat": [
     "faktorisasi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "sp-contoh-1"
+   ],
+   "latihan": [
+    "sp-01",
+    "sp-02",
+    "sp-03",
+    "sp-04",
+    "sp-05",
+    "sp-06"
+   ],
    "kapan_dipakai": "<p>Ada beberapa persamaan dan beberapa peubah sekaligus. Di olimpiade, sistemnya jarang linear — biasanya simetris atau bisa dibuat simetris.</p>",
    "inti": "<p>Untuk sistem linear, tiga cara baku: substitusi, eliminasi, dan penjumlahan berbobot. Yang terakhir sering paling cepat pada soal simetris.</p><p>Yang lebih berharga adalah <strong>memakai kesimetrian</strong>. Kalau sistemnya tidak berubah saat peubahnya ditukar, jangan cari tiap peubah — cari bentuk simetrisnya lebih dulu:</p><p>$$s = x + y, \\qquad p = xy$$</p><p>Hampir semua bentuk simetris bisa ditulis lewat $s$ dan $p$:</p><p>$$x^2 + y^2 = s^2 - 2p, \\qquad x^3 + y^3 = s^3 - 3ps, \\qquad\n\\frac1x + \\frac1y = \\frac{s}{p}$$</p><p>Setelah $s$ dan $p$ diketahui, $x$ dan $y$ adalah akar dari</p><p>$$t^2 - st + p = 0$$</p><p><strong>Menjumlahkan dan mengurangkan seluruh persamaan</strong> juga sering membuka jalan pada sistem simetris — hasilnya biasanya jauh lebih sederhana daripada persamaan aslinya.</p>",
    "jebakan": "<ul><li><strong>Kehilangan solusi saat membagi.</strong> Membagi dua persamaan menghilangkan kasus penyebutnya nol; periksa kasus itu terpisah.</li><li><strong>Lupa memeriksa $s^2 \\ge 4p$.</strong> Tanpa itu, $x$ dan $y$ yang diperoleh tidak real.</li><li><strong>Menukar peran $s$ dan $p$</strong> pada rumus $x^3+y^3$. Cek dengan angka kecil kalau ragu.</li></ul>",
@@ -871,8 +907,17 @@
    "prasyarat": [
     "persamaan-kuadrat"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "vt-contoh-1"
+   ],
+   "latihan": [
+    "vt-01",
+    "vt-02",
+    "vt-03",
+    "vt-04",
+    "vt-05",
+    "vt-06"
+   ],
    "kapan_dipakai": "<p>Soal menanyakan sesuatu <strong>tentang akar-akar</strong> — jumlahnya, hasil kalinya, jumlah kuadratnya — tetapi tidak menanyakan akarnya sendiri. Itu tanda paling jelas.</p>",
    "inti": "<p>Untuk $ax^2 + bx + c = 0$ dengan akar $x_1$ dan $x_2$:</p><p>$$x_1 + x_2 = -\\frac{b}{a}, \\qquad x_1 x_2 = \\frac{c}{a}$$</p><p>Nilainya diperoleh <strong>tanpa menghitung akarnya</strong>, bahkan ketika akarnya tidak rasional atau tidak real sama sekali.</p><p>Hampir semua soal Vieta menuntut menulis ulang bentuk yang ditanya lewat $x_1+x_2$ dan $x_1x_2$:</p><p>$$x_1^2 + x_2^2 = (x_1+x_2)^2 - 2x_1x_2$$</p><p>$$\\frac{1}{x_1} + \\frac{1}{x_2} = \\frac{x_1+x_2}{x_1x_2}, \\qquad\n(x_1 - x_2)^2 = (x_1+x_2)^2 - 4x_1x_2$$</p><p>Bentuk terakhir menghubungkan Vieta dengan diskriminan: $(x_1-x_2)^2 = D/a^2$.</p><p><strong>Arah sebaliknya</strong> sama bergunanya. Kalau kamu tahu dua bilangan berjumlah $s$ dan berhasil kali $p$, keduanya adalah akar $t^2 - st + p = 0$ — dan itu cara termurah menyusun persamaan dari akar yang diminta.</p>",
    "jebakan": "<ul><li><strong>Lupa membagi $a$.</strong> Jumlah akarnya $-b/a$, bukan $-b$. Untuk $a = 1$ keduanya sama, dan kebiasaan itu menggigit begitu $a \\ne 1$.</li><li><strong>Salah tanda pada jumlah akar.</strong> Ada tanda minus di sana, tidak pada hasil kali.</li><li><strong>Memakai Vieta tanpa memeriksa akarnya real</strong> pada soal yang menuntut akar real. Vieta tetap berlaku untuk akar kompleks; syarat realnya datang dari $D \\ge 0$.</li></ul>",

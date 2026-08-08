@@ -1867,6 +1867,160 @@
    "rubrik": []
   },
   {
+   "id": "fn-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "fungsi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Diketahui $f(x) = 3x - 5$. Tentukan nilai $f(4)$.</p>",
+   "jawaban": "7",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Lambang $f(4)$ berarti mengganti setiap $x$ pada rumusnya dengan $4$.",
+    "Substitusikan, lalu hitung.",
+    "Perhatikan urutan operasinya: kalikan dulu, baru kurangkan."
+   ],
+   "pembahasan": "<p>Menghitung $f(4)$ berarti mengganti setiap $x$ pada rumus dengan $4$:</p><p>$$f(4) = 3(4) - 5 = 12 - 5 = \\boxed{7}$$</p><p>Urutan operasinya penting: perkalian dikerjakan sebelum pengurangan, jadi hasilnya $7$ — bukan $3 \\times (4-5) = -3$.</p><p>Lambang $f(4)$ <strong>bukan</strong> perkalian $f$ dengan $4$. Ia berarti \"nilai fungsi $f$ pada masukan $4$\". Kekeliruan itu jarang muncul pada soal sesederhana ini, tetapi menggigit begitu bentuknya menjadi $f(x+1)$ — yang berarti mengganti $x$ dengan $(x+1)$, bukan menambahkan $1$ pada $f(x)$.</p><p>Periksa bedanya di sini:</p><p>$$f(x+1) = 3(x+1) - 5 = 3x - 2, \\qquad f(x) + 1 = 3x - 4$$</p><p>Keduanya berbeda. Kurung pada substitusi karena itu wajib ditulis, terutama kalau yang disubstitusikan berupa bentuk aljabar atau bilangan negatif.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fn-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "fungsi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $f(x) = 2x + 1$. Tentukan nilai $f^{-1}(9)$.</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Lambang $f^{-1}$ menyatakan fungsi invers — kebalikan arah $f$, bukan kebalikan nilainya.",
+    "$f^{-1}(9)$ menanyakan: masukan apa yang membuat $f$ menghasilkan $9$?",
+    "Selesaikan $2x + 1 = 9$."
+   ],
+   "pembahasan": "<p>Fungsi invers membalik arah kerja $f$:</p><p>$$f^{-1}(b) = a \\iff f(a) = b$$</p><p>Jadi $f^{-1}(9)$ menanyakan masukan apa yang membuat $f$ bernilai $9$.</p><p>Selesaikan:</p><p>$$2x + 1 = 9 \\quad\\Longrightarrow\\quad 2x = 8 \\quad\\Longrightarrow\\quad x = \\boxed{4}$$</p><p>Periksa: $f(4) = 2(4)+1 = 9$. Cocok.</p><p><strong>Cara kedua: cari rumus inversnya lebih dulu.</strong> Tulis $y = 2x+1$, selesaikan $x$ dalam $y$, lalu tukar nama:</p><p>$$y = 2x + 1 \\quad\\Longrightarrow\\quad x = \\frac{y-1}{2} \\quad\\Longrightarrow\\quad\nf^{-1}(x) = \\frac{x-1}{2}$$</p><p>Maka $f^{-1}(9) = \\frac{9-1}{2} = 4$. Cara ini lebih hemat kalau inversnya akan dipakai di beberapa titik.</p><p><strong>Jangan tertukar dengan kebalikan nilai.</strong> Lambangnya mirip, tetapi</p><p>$$f^{-1}(9) = 4 \\qquad \\text{sedangkan} \\qquad \\frac{1}{f(9)} = \\frac{1}{19}$$</p><p>Keduanya sama sekali berbeda.</p><p>Perhatikan pula bahwa invers hanya ada kalau $f$ satu-satu. Fungsi $f(x) = 2x+1$ memenuhi syarat itu; sedangkan $g(x) = x^2$ tidak, sebab $g(2) = g(-2) = 4$ — dan $g^{-1}(4)$ karenanya tidak tertentu tanpa membatasi domainnya lebih dulu.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fn-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "fungsi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $f(x) = x^2 - 3$. Tentukan nilai $f\\big(f(2)\\big)$.</p>",
+   "jawaban": "-2",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kerjakan dari dalam ke luar, seperti komposisi fungsi dengan dirinya sendiri.",
+    "Hitung $f(2)$ lebih dulu, catat hasilnya, baru masukkan kembali ke $f$.",
+    "Hati-hati dengan tanda: hasil langkah pertama bernilai positif, tetapi hasil akhirnya tidak."
+   ],
+   "pembahasan": "<p>Kerjakan bertahap, dari dalam ke luar.</p><p><strong>Langkah pertama.</strong></p><p>$$f(2) = 2^2 - 3 = 4 - 3 = 1$$</p><p><strong>Langkah kedua.</strong> Masukkan hasilnya kembali ke $f$:</p><p>$$f\\big(f(2)\\big) = f(1) = 1^2 - 3 = 1 - 3 = \\boxed{-2}$$</p><p>Kekeliruan yang sering terjadi adalah mengerjakannya dari luar, atau mengira $f(f(x)) = \\left(f(x)\\right)^2$. Yang kedua akan memberi $1^2 = 1$ — salah, sebab $f$ bukan sekadar mengkuadratkan, melainkan mengkuadratkan <strong>lalu</strong> mengurangi $3$.</p><p>Kalau ingin rumus umumnya:</p><p>$$f\\big(f(x)\\big) = f\\left(x^2-3\\right) = \\left(x^2-3\\right)^2 - 3$$</p><p>Memasukkan $x = 2$ memberi $(4-3)^2 - 3 = 1 - 3 = -2$ — cocok. Tetapi untuk satu titik, menghitung bertahap jauh lebih pendek dan lebih kecil peluang salahnya.</p><p>Perhatikan bahwa mencari rumus $f(f(x))$ menuntut kurung yang teliti. Menulis $x^2 - 3^2 - 3$ alih-alih $\\left(x^2-3\\right)^2 - 3$ adalah kesalahan substitusi yang paling sering muncul.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fn-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "fungsi",
+    "sistem-persamaan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Fungsi $f$ memenuhi</p><p>$$f(x) + 3f(-x) = 4x$$</p><p>untuk setiap bilangan real $x$. Tentukan nilai $f(1)$.</p>",
+   "jawaban": "-2",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Rumus $f$ tidak diketahui, dan tidak perlu dicari. Yang diketahui hubungan antara $f(x)$ dan $f(-x)$.",
+    "Substitusikan $x = 1$ untuk memperoleh satu persamaan yang memuat $f(1)$ dan $f(-1)$.",
+    "Substitusikan $x = -1$ untuk memperoleh persamaan kedua. Sekarang kamu punya sistem dua persamaan dua peubah."
+   ],
+   "pembahasan": "<p>Rumus $f$ tidak diberikan, jadi jangan mencarinya. Yang tersedia adalah <strong>hubungan</strong> yang berlaku untuk setiap $x$ — dan hubungan semacam itu dipakai dengan mensubstitusikan nilai yang tepat.</p><p><strong>Substitusikan $x = 1$:</strong></p><p>$$f(1) + 3f(-1) = 4$$</p><p><strong>Substitusikan $x = -1$:</strong></p><p>$$f(-1) + 3f(1) = -4$$</p><p>Sekarang perlakukan $f(1)$ dan $f(-1)$ sebagai dua bilangan tak diketahui. Sebut $A = f(1)$ dan $B = f(-1)$:</p><p>$$A + 3B = 4, \\qquad B + 3A = -4$$</p><p><strong>Selesaikan sistemnya.</strong> Kalikan persamaan kedua dengan $3$:</p><p>$$3B + 9A = -12$$</p><p>Kurangkan persamaan pertama:</p><p>$$(3B + 9A) - (A + 3B) = -12 - 4 \\quad\\Longrightarrow\\quad 8A = -16\n\\quad\\Longrightarrow\\quad A = \\boxed{-2}$$</p><p>Periksa: dari $A = -2$ dan persamaan pertama, $3B = 4 - (-2) = 6$ sehingga $B = 2$. Periksa persamaan kedua: $2 + 3(-2) = -4$. Cocok.</p><p><strong>Inilah refleks utamanya.</strong> Kalau soal memberi hubungan yang memuat $f(x)$ dan $f$ dari sesuatu yang lain — $f(-x)$, $f(1-x)$, $f\\left(\\frac1x\\right)$ — jangan mencari rumus $f$. Substitusikan nilai yang menukar kedua argumen itu, lalu selesaikan sebagai sistem.</p><p>Substitusi yang dipilih harus <strong>menukar peran keduanya</strong>. Di sini $x \\mapsto -x$ menukar $f(1)$ dan $f(-1)$; untuk $f(1-x)$, substitusi yang tepat adalah $x \\mapsto 1-x$.</p><p>Kalau memang diminta rumus umumnya, cara yang sama bekerja dengan $x$ tetap sebagai huruf: dari $f(x) + 3f(-x) = 4x$ dan $f(-x) + 3f(x) = -4x$, diperoleh $8f(x) = -16x$, yaitu $f(x) = -2x$. Periksa $f(1) = -2$ — cocok.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fn-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "fungsi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Diketahui $f(x) = \\dfrac{1}{1-x}$. Fungsi itu diterapkan berulang kali pada bilangan $2$, sebanyak $2026$ kali. Tentukan hasil akhirnya.</p>",
+   "jawaban": "-1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan menghitung dua ribu kali. Hitung beberapa langkah pertama dan cari polanya.",
+    "Mulai dari $f(2)$, lalu terapkan lagi, lalu sekali lagi. Perhatikan kapan angkanya kembali.",
+    "Kalau polanya berulang setiap $k$ langkah, sisa pembagian $2026$ oleh $k$ menentukan jawabannya."
+   ],
+   "pembahasan": "<p>Hitung beberapa langkah pertama.</p><p>$$f(2) = \\frac{1}{1-2} = \\frac{1}{-1} = -1$$</p><p>$$f(-1) = \\frac{1}{1-(-1)} = \\frac{1}{2}$$</p><p>$$f\\left(\\frac12\\right) = \\frac{1}{1 - \\frac12} = \\frac{1}{\\frac12} = 2$$</p><p>Setelah tiga langkah, nilainya <strong>kembali ke $2$</strong> — titik berangkatnya. Jadi penerapan berulangnya berputar dengan periode $3$:</p><p>$$2 \\ \\to\\ -1 \\ \\to\\ \\tfrac12 \\ \\to\\ 2 \\ \\to\\ -1 \\ \\to\\ \\cdots$$</p><p><strong>Tentukan posisi langkah ke-$2026$.</strong> Bagi oleh panjang siklusnya:</p><p>$$2026 = 3 \\times 675 + 1$$</p><p>Sisanya $1$, jadi setelah $2026$ langkah posisinya sama dengan setelah <strong>satu</strong> langkah:</p><p>$$\\boxed{-1}$$</p><p>Perhatikan cara membaca sisanya. Sisa $1$ berarti satu langkah, sisa $2$ berarti dua langkah, dan sisa $0$ berarti tepat kembali ke titik berangkat — yaitu $2$.</p><p>Sifat $f\\big(f(f(x))\\big) = x$ berlaku untuk <strong>setiap</strong> $x$ dalam domainnya, bukan hanya untuk $2$. Bisa diperiksa dengan menyusun rumusnya:</p><p>$$f\\big(f(x)\\big) = \\frac{1}{1 - \\frac{1}{1-x}} = \\frac{1-x}{(1-x)-1} = \\frac{x-1}{x}$$</p><p>lalu sekali lagi memberi $x$.</p><p><strong>Mencari siklus adalah refleks baku</strong> pada soal \"diterapkan $n$ kali\" dengan $n$ besar. Angka besarnya selalu hanya penanda bahwa jawabannya harus datang dari pola, bukan dari perhitungan langsung.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fn-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "fungsi"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $f$ dan $g$ fungsi satu-satu yang mempunyai invers. Buktikan bahwa</p><p>$$(f \\circ g)^{-1} = g^{-1} \\circ f^{-1}$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Untuk membuktikan sebuah fungsi adalah invers dari fungsi lain, cukup tunjukkan komposisi keduanya menghasilkan fungsi identitas.",
+    "Hitung $(f \\circ g) \\circ \\left(g^{-1} \\circ f^{-1}\\right)$ dan sederhanakan dari dalam ke luar.",
+    "Jangan lupa memeriksa <strong>kedua arah</strong> komposisinya."
+   ],
+   "pembahasan": "<p>Untuk membuktikan bahwa $h$ adalah invers dari $F$, cukup ditunjukkan</p><p>$$F \\circ h = \\mathrm{id} \\qquad \\text{dan} \\qquad h \\circ F = \\mathrm{id}$$</p><p>dengan $\\mathrm{id}$ fungsi identitas, $\\mathrm{id}(x) = x$.</p><p>Di sini $F = f \\circ g$ dan $h = g^{-1} \\circ f^{-1}$.</p><h4>Arah pertama</h4><p>Ambil sembarang $x$ dalam domainnya, lalu kerjakan dari dalam ke luar:</p><p>$$(f \\circ g)\\left(\\left(g^{-1} \\circ f^{-1}\\right)(x)\\right)\n= f\\left(g\\left(g^{-1}\\left(f^{-1}(x)\\right)\\right)\\right)$$</p><p>Bagian $g\\left(g^{-1}(\\cdot)\\right)$ menghapus dirinya sendiri, sebab $g \\circ g^{-1} = \\mathrm{id}$:</p><p>$$= f\\left(f^{-1}(x)\\right) = x$$</p><h4>Arah kedua</h4><p>$$\\left(g^{-1} \\circ f^{-1}\\right)\\Big((f \\circ g)(x)\\Big)\n= g^{-1}\\left(f^{-1}\\left(f\\left(g(x)\\right)\\right)\\right)$$</p><p>Bagian $f^{-1}\\left(f(\\cdot)\\right)$ menghapus dirinya sendiri:</p><p>$$= g^{-1}\\left(g(x)\\right) = x$$</p><p>Kedua arah memberi fungsi identitas, jadi</p><p>$$(f \\circ g)^{-1} = g^{-1} \\circ f^{-1} \\qquad \\blacksquare$$</p><p><strong>Perhatikan urutannya yang terbalik.</strong> Inversnya bukan $f^{-1} \\circ g^{-1}$. Alasannya terlihat dari penurunan di atas: supaya penghapusan berantai bisa terjadi, fungsi yang dikerjakan <strong>terakhir</strong> pada $f \\circ g$ — yaitu $f$ — harus dibatalkan <strong>lebih dulu</strong>.</p><p>Ada perumpamaan yang menolong: kalau kamu memakai kaus kaki lalu sepatu, membalikkannya berarti melepas sepatu dulu, baru kaus kaki. Urutan pembatalan selalu kebalikan urutan pengerjaan.</p><p>Sebagai pemeriksaan dengan contoh, ambil $f(x) = 2x$ dan $g(x) = x+3$. Maka $(f\\circ g)(x) = 2x+6$, sehingga $(f \\circ g)^{-1}(x) = \\frac{x-6}{2}$. Di sisi lain $g^{-1}(x) = x-3$ dan $f^{-1}(x) = \\frac{x}{2}$, memberi $\\left(g^{-1}\\circ f^{-1}\\right)(x) = \\frac{x}{2} - 3 = \\frac{x-6}{2}$ — sama. Sedangkan $\\left(f^{-1}\\circ g^{-1}\\right)(x) = \\frac{x-3}{2}$, yang berbeda.</p>",
+   "rubrik": [
+    "Menyatakan bahwa membuktikan invers berarti menunjukkan komposisinya menghasilkan identitas",
+    "Menghitung $(f\\circ g) \\circ \\left(g^{-1}\\circ f^{-1}\\right)$ dari dalam ke luar",
+    "Memakai $g \\circ g^{-1} = \\mathrm{id}$ lalu $f \\circ f^{-1} = \\mathrm{id}$ pada arah pertama",
+    "Memeriksa <strong>arah kedua</strong> juga — satu arah saja belum cukup untuk menegakkan invers",
+    "Menyebut bahwa urutannya terbalik, beserta alasannya"
+   ]
+  },
+  {
+   "id": "fn-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "fungsi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $f(x) = 2x + 3$ dan $g(x) = x^2$. Tentukan nilai $(f \\circ g)(2)$.</p>",
+   "jawaban": "11",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Lambang $\\circ$ menyatakan komposisi. Yang menentukan adalah urutan pengerjaannya.",
+    "$(f \\circ g)(x) = f\\left(g(x)\\right)$ — dikerjakan <strong>dari dalam ke luar</strong>, jadi $g$ dulu.",
+    "Hitung $g(2)$ lebih dulu, lalu masukkan hasilnya ke $f$."
+   ],
+   "pembahasan": "<p>Menurut definisi komposisi,</p><p>$$(f \\circ g)(x) = f\\left(g(x)\\right)$$</p><p>Urutannya dibaca dari <strong>dalam ke luar</strong>: fungsi yang tertulis di kanan dikerjakan lebih dulu.</p><p><strong>Langkah pertama.</strong></p><p>$$g(2) = 2^2 = 4$$</p><p><strong>Langkah kedua.</strong> Masukkan hasilnya ke $f$:</p><p>$$f(4) = 2(4) + 3 = \\boxed{11}$$</p><p><strong>Bandingkan dengan urutan sebaliknya.</strong></p><p>$$(g \\circ f)(2) = g\\left(f(2)\\right) = g(7) = 49$$</p><p>Hasilnya sama sekali berbeda. <strong>Komposisi tidak bersifat komutatif</strong> — $f \\circ g$ dan $g \\circ f$ umumnya bukan fungsi yang sama, dan menukar urutannya adalah kekeliruan yang paling sering terjadi pada jurus ini.</p><p>Kalau ingin rumus umumnya, substitusikan saja:</p><p>$$(f \\circ g)(x) = f\\left(x^2\\right) = 2x^2 + 3$$</p><p>Memasukkan $x = 2$ memberi $2(4) + 3 = 11$ — cocok. Untuk satu titik saja, menghitung bertahap lebih cepat; untuk beberapa titik, mencari rumusnya lebih hemat.</p>",
+   "rubrik": []
+  },
+  {
    "id": "kd-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
    "pilar": "teori-bilangan",
@@ -2357,6 +2511,159 @@
     "Cari $x$ dengan $5x \\equiv 1 \\pmod{11}$ lebih dulu, lalu kalikan hasilnya dengan $3$."
    ],
    "pembahasan": "<p><strong>Ada berapa solusi?</strong> Menurut aturannya, $ax \\equiv b \\pmod m$ punya solusi tepat ketika $d = \\gcd(a,m)$ membagi $b$, dan kalau ada, solusinya tepat $d$ buah modulo $m$.</p><p>Di sini $\\gcd(5, 11) = 1$, yang membagi $3$. Jadi solusinya ada dan tunggal.</p><p><strong>Cari invers $5$ modulo $11$.</strong> Yang dicari $t$ dengan $5t \\equiv 1 \\pmod{11}$. Coba kelipatan $5$:</p><p>$$5, \\quad 10, \\quad 15 \\equiv 4, \\quad 20 \\equiv 9, \\quad 25 \\equiv 3, \\quad\n30 \\equiv 8, \\quad 35 \\equiv 2, \\quad 40 \\equiv 7, \\quad 45 \\equiv 1$$</p><p>Jadi $5 \\times 9 \\equiv 1$, sehingga $5^{-1} \\equiv 9 \\pmod{11}$.</p><p><strong>Selesaikan.</strong> Kalikan kedua ruas dengan $9$:</p><p>$$x \\equiv 9 \\times 3 = 27 \\equiv 5 \\pmod{11}$$</p><p>Jadi $x = \\boxed{5}$.</p><p>Periksa: $5 \\times 5 = 25 = 2 \\times 11 + 3$. Benar.</p><p>Perhatikan apa yang sebenarnya dilakukan: bukan \"membagi kedua ruas dengan $5$\", melainkan mengalikan dengan invers $5$. Pembagian dalam kongruensi tidak selalu sah — yang selalu sah adalah mengalikan, dan invers hanya ada ketika pengalinya relatif prima terhadap modulus.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kt-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan nilai terkecil dari</p><p>$$(x-3)^2 + 5$$</p><p>untuk $x$ bilangan real.</p>",
+   "jawaban": "5",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Bentuknya sudah tersusun rapi — tidak perlu dijabarkan.",
+    "Bagian mana yang bisa berubah nilainya, dan seberapa kecil ia bisa menjadi?",
+    "Kuadrat bilangan real paling kecil bernilai nol."
+   ],
+   "pembahasan": "<p>Bentuknya sudah berada di wujud yang paling berguna, jadi jangan dijabarkan.</p><p>Hanya bagian $(x-3)^2$ yang bergantung pada $x$, dan kuadrat bilangan real tidak pernah negatif:</p><p>$$(x-3)^2 \\ \\ge\\ 0$$</p><p>Menambahkan $5$ ke kedua ruas tidak mengubah arah ketaksamaan:</p><p>$$(x-3)^2 + 5 \\ \\ge\\ 5$$</p><p><strong>Periksa bahwa $5$ tercapai.</strong> Kesamaan berlaku ketika $(x-3)^2 = 0$, yaitu $x = 3$. Substitusikan: $0 + 5 = 5$. Cocok.</p><p>Nilai terkecilnya adalah $\\boxed{5}$.</p><p>Godaan pertama pada soal semacam ini adalah menjabarkannya menjadi $x^2 - 6x + 14$ lalu melengkapkan kuadrat lagi — yang hanya mengembalikannya ke bentuk semula. <strong>Bentuk yang sudah terfaktor atau sudah berbentuk kuadrat sempurna biasanya sudah berada di wujud paling berguna.</strong></p><p>Perhatikan pula bahwa jawabannya sama sekali tidak bergantung pada angka $3$. Bentuk $(x - 100)^2 + 5$ juga bernilai minimum $5$; yang berubah hanya letak titik pencapaiannya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kt-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Untuk $a &gt; 0$, tentukan nilai terkecil dari</p><p>$$a + \\frac{1}{a}$$</p>",
+   "jawaban": "2",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Bentuknya bukan kuadrat, jadi susun ulang dulu supaya kuadrat muncul. Coba kurangkan tebakan jawabanmu dari bentuk itu.",
+    "Tinjau $a + \\frac1a - 2$ dan satukan menjadi satu pecahan.",
+    "Pembilangnya akan menjadi $a^2 - 2a + 1$, yang merupakan kuadrat sempurna."
+   ],
+   "pembahasan": "<p>Tinjau selisihnya terhadap $2$:</p><p>$$a + \\frac1a - 2 = \\frac{a^2 + 1 - 2a}{a} = \\frac{(a-1)^2}{a}$$</p><p>Sekarang periksa tandanya. Pembilangnya kuadrat, jadi tak negatif; penyebutnya positif karena $a &gt; 0$. Maka seluruh pecahannya tak negatif:</p><p>$$a + \\frac1a - 2 \\ \\ge\\ 0 \\quad\\Longrightarrow\\quad a + \\frac1a \\ \\ge\\ 2$$</p><p><strong>Periksa bahwa $2$ tercapai.</strong> Kesamaan berlaku ketika $(a-1)^2 = 0$, yaitu $a = 1$. Substitusikan: $1 + 1 = 2$. Cocok.</p><p>Nilai terkecilnya adalah $\\boxed{2}$.</p><p><strong>Syarat $a &gt; 0$ tidak bisa dibuang.</strong> Untuk $a &lt; 0$ penyebutnya negatif, arah ketaksamaannya berbalik, dan bentuk $a + \\frac1a$ justru bernilai paling besar $-2$. Contohnya $a = -1$ memberi $-2$, dan $a = -2$ memberi $-2{,}5$. Jadi tanpa syarat itu, bentuk ini tidak punya nilai minimum sama sekali.</p><p>Hasil yang sama bisa diperoleh lewat AM-GM: untuk $a &gt; 0$,</p><p>$$a + \\frac1a \\ \\ge\\ 2\\sqrt{a \\cdot \\frac1a} = 2$$</p><p>Kedua jalur menuntut $a &gt; 0$ — pada AM-GM syarat itu bahkan tertulis di dalam teoremanya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kt-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan nilai terbesar dari</p><p>$$x(10 - x)$$</p><p>untuk $x$ bilangan real.</p>",
+   "jawaban": "25",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jabarkan dulu supaya bentuknya menjadi kuadrat dalam $x$, lalu lengkapkan kuadratnya.",
+    "Koefisien $x^2$ bernilai negatif — perhatikan apa artinya bagi arah ketaksamaannya.",
+    "Setelah menjadi $25 - (x-5)^2$, nilai terbesarnya terbaca langsung."
+   ],
+   "pembahasan": "<p>Jabarkan:</p><p>$$x(10-x) = 10x - x^2 = -\\left(x^2 - 10x\\right)$$</p><p>Lengkapkan kuadrat di dalam kurung. Separuh koefisien $x$ adalah $-5$, kuadratnya $25$:</p><p>$$x^2 - 10x = (x-5)^2 - 25$$</p><p>Substitusikan kembali:</p><p>$$x(10-x) = -\\left[(x-5)^2 - 25\\right] = 25 - (x-5)^2$$</p><p>Sekarang bacalah bentuknya. Karena $(x-5)^2 \\ge 0$, <strong>mengurangkannya</strong> membuat nilainya tidak pernah melebihi $25$:</p><p>$$25 - (x-5)^2 \\ \\le\\ 25$$</p><p><strong>Periksa bahwa $25$ tercapai.</strong> Kesamaan berlaku ketika $x = 5$, memberi $5 \\times 5 = 25$. Cocok.</p><p>Nilai terbesarnya adalah $\\boxed{25}$.</p><p>Perhatikan pergeseran arahnya. Pada soal sebelumnya kuadratnya <strong>ditambahkan</strong>, sehingga yang muncul nilai minimum; di sini ia <strong>dikurangkan</strong>, sehingga yang muncul nilai maksimum. Tanda di depan kuadrat itulah yang menentukan, bukan bentuk soalnya.</p><p>Ada bacaan lain yang lebih cepat. Kedua faktor $x$ dan $10-x$ selalu berjumlah $10$, dan hasil kali dua bilangan dengan jumlah tetap paling besar ketika keduanya <strong>sama</strong> — yaitu $5$ dan $5$. Itu bentuk AM-GM, dan ia menjawab seluruh keluarga soal semacam ini tanpa perhitungan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kt-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Diketahui $x$ dan $y$ bilangan real positif dengan $x + y = 8$. Tentukan nilai terbesar dari $xy$.</p>",
+   "jawaban": "16",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ada kendala yang menghubungkan kedua peubah. Pakai untuk menghilangkan salah satunya.",
+    "Dari $y = 8 - x$, bentuk yang ditanya menjadi $x(8-x)$ — satu peubah saja.",
+    "Lengkapkan kuadratnya, lalu periksa nilai yang mencapai batas itu memenuhi $x, y &gt; 0$."
+   ],
+   "pembahasan": "<p><strong>Hilangkan satu peubah.</strong> Dari kendalanya, $y = 8 - x$. Maka</p><p>$$xy = x(8-x) = 8x - x^2$$</p><p><strong>Lengkapkan kuadratnya.</strong></p><p>$$8x - x^2 = -\\left(x^2 - 8x\\right) = -\\left[(x-4)^2 - 16\\right] = 16 - (x-4)^2$$</p><p>Karena $(x-4)^2 \\ge 0$,</p><p>$$xy = 16 - (x-4)^2 \\ \\le\\ 16$$</p><p><strong>Periksa batasnya tercapai.</strong> Kesamaan berlaku ketika $x = 4$, sehingga $y = 8 - 4 = 4$. Keduanya positif, jadi memenuhi syarat soal. Nilainya $4 \\times 4 = 16$.</p><p>Nilai terbesarnya adalah $\\boxed{16}$.</p><p>Pemeriksaan terakhir itu tidak boleh dilewati ketika soal memberi kendala tambahan seperti $x, y &gt; 0$. Titik yang mencapai batas harus <strong>memenuhi seluruh syarat soal</strong>; kalau tidak, batas itu tidak pernah dicapai dan nilai maksimum sesungguhnya lebih kecil.</p><p>Hasil ini adalah AM-GM dalam wujud paling sederhana: untuk dua bilangan positif dengan jumlah tetap, hasil kalinya paling besar ketika keduanya sama. Secara umum,</p><p>$$xy \\ \\le\\ \\left(\\frac{x+y}{2}\\right)^2$$</p><p>dengan kesamaan tepat ketika $x = y$. Di sini $\\left(\\frac82\\right)^2 = 16$, langsung.</p><p>Arah sebaliknya juga sering ditanya: kalau <strong>hasil kalinya</strong> yang tetap, jumlahnya paling kecil ketika keduanya sama.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kt-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Diketahui $x + y = 6$ untuk bilangan real $x$ dan $y$. Tentukan nilai terkecil dari</p><p>$$x^2 + y^2$$</p>",
+   "jawaban": "18",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Bisa lewat substitusi $y = 6-x$, tetapi ada jalur yang lebih rapi lewat bentuk simetris.",
+    "Ingat $x^2+y^2 = (x+y)^2 - 2xy$ — jumlahnya sudah tetap, jadi yang menentukan tinggal $xy$.",
+    "Supaya $x^2+y^2$ terkecil, $xy$ harus terbesar — dan itu soal yang sudah kamu kenal."
+   ],
+   "pembahasan": "<h4>Cara pertama: substitusi</h4><p>Dari kendalanya, $y = 6 - x$. Maka</p><p>$$x^2 + y^2 = x^2 + (6-x)^2 = x^2 + 36 - 12x + x^2 = 2x^2 - 12x + 36$$</p><p>Lengkapkan kuadratnya:</p><p>$$2\\left(x^2 - 6x\\right) + 36 = 2\\left[(x-3)^2 - 9\\right] + 36 = 2(x-3)^2 + 18$$</p><p>Karena $2(x-3)^2 \\ge 0$,</p><p>$$x^2+y^2 \\ \\ge\\ 18$$</p><p>dengan kesamaan ketika $x = 3$, sehingga $y = 3$.</p><h4>Cara kedua: lewat bentuk simetris</h4><p>$$x^2 + y^2 = (x+y)^2 - 2xy = 36 - 2xy$$</p><p>Jumlahnya tetap, jadi $x^2+y^2$ paling kecil ketika $xy$ paling <strong>besar</strong>. Dan hasil kali dua bilangan dengan jumlah tetap paling besar ketika keduanya sama, yaitu $x = y = 3$ dengan $xy = 9$:</p><p>$$x^2+y^2 \\ \\ge\\ 36 - 2(9) = 18$$</p><p>Kedua cara memberi jawaban yang sama:</p><p>$$\\boxed{18}$$</p><p>Periksa: $3^2 + 3^2 = 18$. Bandingkan dengan pilihan lain — $x = 1$, $y = 5$ memberi $1 + 25 = 26$; $x = 0$, $y = 6$ memberi $36$. Keduanya lebih besar.</p><p>Cara kedua menunjukkan pola yang berlaku umum: <strong>dengan jumlah tetap, sebaran yang paling merata memberi jumlah kuadrat terkecil.</strong> Semakin timpang kedua bilangannya, semakin besar jumlah kuadratnya — dan itu gagasan yang muncul lagi di banyak soal ketaksamaan.</p><p>Perhatikan pula bahwa di sini $x$ dan $y$ tidak dituntut positif. Kalau dituntut, hasilnya kebetulan sama; tetapi pada soal lain, kendala semacam itu bisa memindahkan titik minimumnya ke ujung daerah yang diizinkan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kt-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa untuk sembarang bilangan real $a$, $b$, $c$ berlaku</p><p>$$a^2 + b^2 + c^2 \\ \\ge\\ ab + bc + ca$$</p><p>dan tentukan kapan kesamaannya tercapai.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pindahkan semuanya ke satu ruas, lalu usahakan sisanya menjadi jumlah kuadrat.",
+    "Selisihnya $a^2+b^2+c^2-ab-bc-ca$. Kalikan dengan $2$ supaya tiap kuadrat bisa terbentuk utuh.",
+    "$2a^2+2b^2+2c^2-2ab-2bc-2ca$ bisa dikelompokkan menjadi tiga kuadrat selisih."
+   ],
+   "pembahasan": "<p>Pindahkan semuanya ke satu ruas. Yang perlu dibuktikan:</p><p>$$a^2+b^2+c^2-ab-bc-ca \\ \\ge\\ 0$$</p><p><strong>Kalikan dengan $2$.</strong> Ini gerakan kunci — tanpanya, tiap suku kuadrat tidak punya pasangan yang cukup untuk terbentuk utuh. Karena $2 &gt; 0$, arah ketaksamaannya tidak berubah, jadi cukup dibuktikan</p><p>$$2a^2+2b^2+2c^2-2ab-2bc-2ca \\ \\ge\\ 0$$</p><p><strong>Kelompokkan menjadi tiga kuadrat.</strong> Bagi tiap suku kuadrat menjadi dua bagian, lalu pasangkan dengan suku silangnya:</p><p>$$\\left(a^2 - 2ab + b^2\\right) + \\left(b^2 - 2bc + c^2\\right) + \\left(c^2 - 2ca + a^2\\right)$$</p><p>Periksa bahwa pengelompokannya tepat: tiap huruf muncul dua kali sebagai kuadrat — $a^2$ pada kurung pertama dan ketiga, dan seterusnya — sehingga seluruhnya memberi $2a^2+2b^2+2c^2$. Dan tiap suku silang muncul sekali.</p><p>Ketiga kurung itu kuadrat sempurna:</p><p>$$= (a-b)^2 + (b-c)^2 + (c-a)^2$$</p><p><strong>Simpulkan.</strong> Jumlah tiga kuadrat bilangan real tidak pernah negatif, jadi</p><p>$$2\\left(a^2+b^2+c^2-ab-bc-ca\\right) = (a-b)^2+(b-c)^2+(c-a)^2 \\ \\ge\\ 0$$</p><p>Membaginya dengan $2$ memberi ketaksamaan yang diminta. $\\blacksquare$</p><h4>Kapan kesamaannya tercapai</h4><p>Jumlah beberapa bilangan tak negatif bernilai nol tepat ketika <strong>semuanya</strong> nol. Jadi kesamaan berlaku tepat ketika</p><p>$$a - b = 0, \\qquad b - c = 0, \\qquad c - a = 0$$</p><p>yaitu ketika $a = b = c$.</p><p>Periksa: untuk $a=b=c=5$, ruas kiri $75$ dan ruas kanan $75$. Sama.</p><p>Teknik \"kalikan dengan $2$ lalu kelompokkan jadi kuadrat selisih\" bekerja pada banyak ketaksamaan simetris. Kalau setelah dipindahkan ke satu ruas bentuknya memuat suku silang berkoefisien $-1$, mengalikan dengan $2$ hampir selalu langkah berikutnya.</p>",
+   "rubrik": [
+    "Memindahkan semuanya ke satu ruas sehingga yang dibuktikan berbentuk \"sesuatu $\\ge 0$\"",
+    "Mengalikan dengan $2$, dan menyebut bahwa itu tidak mengubah arah karena $2 &gt; 0$",
+    "Mengelompokkan menjadi $(a-b)^2 + (b-c)^2 + (c-a)^2$ dengan pengelompokan yang benar",
+    "Menyimpulkan tak negatif karena jumlah kuadrat bilangan real",
+    "Menentukan syarat kesamaan $a = b = c$, dengan alasan jumlah bilangan tak negatif nol hanya kalau semuanya nol"
+   ]
+  },
+  {
+   "id": "kt-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan nilai terkecil dari</p><p>$$x^2 - 4x + 7$$</p><p>untuk $x$ bilangan real.</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ada satu fakta yang menjadi dasar hampir semua soal nilai ekstrem: kuadrat bilangan real tidak pernah negatif.",
+    "Susun ulang bentuknya sehingga peubahnya hanya muncul di dalam satu kuadrat.",
+    "Setelah menjadi $(x-2)^2 + k$, nilai terkecilnya terbaca langsung — dan jangan lupa memeriksa bahwa nilai itu tercapai."
+   ],
+   "pembahasan": "<p>Lengkapkan kuadratnya. Separuh koefisien $x$ adalah $-2$, dan kuadratnya $4$:</p><p>$$x^2 - 4x + 7 = \\left(x^2 - 4x + 4\\right) + 3 = (x-2)^2 + 3$$</p><p>Sekarang pakai fakta dasarnya: <strong>kuadrat bilangan real tidak pernah negatif.</strong></p><p>$$(x-2)^2 \\ \\ge\\ 0 \\quad\\Longrightarrow\\quad (x-2)^2 + 3 \\ \\ge\\ 3$$</p><p>Jadi nilainya tidak pernah kurang dari $3$.</p><p><strong>Periksa bahwa $3$ tercapai.</strong> Kesamaan berlaku tepat ketika $(x-2)^2 = 0$, yaitu $x = 2$ — bilangan real yang sah. Substitusikan: $4 - 8 + 7 = 3$. Cocok.</p><p>Nilai terkecilnya adalah $\\boxed{3}$.</p><p><strong>Langkah terakhir itu bagian dari jawaban, bukan pelengkap.</strong> Menunjukkan sebuah bentuk selalu $\\ge 3$ baru membuktikan $3$ adalah batas bawah. Ia menjadi <strong>nilai minimum</strong> hanya setelah ditunjukkan ada $x$ yang mencapainya.</p><p>Bedanya nyata. Bentuk $x^2 + \\frac{1}{x^2+1}$ misalnya selalu lebih dari $0$, tetapi $0$ bukan nilai minimumnya — ia tidak pernah tercapai.</p><p>Pola kerja jurus ini selalu sama: <strong>pindahkan semuanya ke satu ruas, tunjukkan sisanya jumlah kuadrat, lalu cari kapan kuadratnya nol.</strong></p>",
    "rubrik": []
   },
   {
@@ -3125,6 +3432,317 @@
     "Uji kandidat dari yang terkecil, dan berhenti pada yang pertama memberi $1$."
    ],
    "pembahasan": "<p><strong>Persempit kandidatnya.</strong> Karena $\\gcd(2,7) = 1$, ordenya ada. Sifat pokoknya:</p><p>$$a^k \\equiv 1 \\pmod n \\iff \\operatorname{ord}_n(a) \\mid k$$</p><p>Teorema Euler memberi $2^{\\varphi(7)} = 2^6 \\equiv 1 \\pmod 7$, jadi ordenya membagi $6$. Pembagi $6$ adalah $1, 2, 3, 6$ — hanya empat kandidat, bukan enam.</p><p><strong>Uji dari yang terkecil.</strong></p><p>$$2^1 = 2 \\not\\equiv 1$$ $$2^2 = 4 \\not\\equiv 1$$ $$2^3 = 8 = 7 + 1 \\equiv 1 \\pmod 7$$</p><p>Yang pertama memberi $1$ adalah $d = \\boxed{3}$.</p><p>Perhatikan bahwa ordenya $3$, bukan $6$. Orde membagi $\\varphi(n)$, tetapi tidak harus sama dengannya — dan menyamakan keduanya adalah kekeliruan yang paling sering terjadi pada jurus ini.</p><p>Sebagai akibatnya, $2^k \\equiv 1 \\pmod 7$ tepat ketika $3 \\mid k$. Contohnya $2^{100}$: karena $100 = 3 \\times 33 + 1$, diperoleh $2^{100} \\equiv 2^1 = 2 \\pmod 7$ — jauh lebih cepat daripada memakai eksponen $6$ dari Euler.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pk-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "persamaan-kuadrat"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan akar terbesar dari persamaan</p><p>$$x^2 - 7x + 12 = 0$$</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Sebelum memakai rumus akar, coba faktorkan — koefisiennya kecil dan rapi.",
+    "Cari dua bilangan yang berjumlah $7$ dan berhasil kali $12$.",
+    "Setelah difaktorkan, kedua akarnya terbaca langsung."
+   ],
+   "pembahasan": "<p>Coba faktorkan lebih dulu. Dicari dua bilangan yang <strong>berjumlah</strong> $7$ dan <strong>berhasil kali</strong> $12$ — yaitu $3$ dan $4$:</p><p>$$x^2 - 7x + 12 = (x-3)(x-4)$$</p><p>Perhatikan tandanya: karena suku tengahnya $-7x$ dan konstantanya positif, kedua bilangan itu bertanda negatif di dalam kurung.</p><p>Persamaannya menjadi</p><p>$$(x-3)(x-4) = 0 \\quad\\Longrightarrow\\quad x = 3 \\text{ atau } x = 4$$</p><p>Akar terbesarnya adalah $\\boxed{4}$.</p><p>Lewat rumus akar hasilnya sama:</p><p>$$x = \\frac{7 \\pm \\sqrt{49 - 48}}{2} = \\frac{7 \\pm 1}{2}$$</p><p>memberi $4$ dan $3$ — tetapi memfaktorkan lebih cepat dan tidak melewati akar kuadrat sama sekali.</p><p>Kebiasaan yang berguna: <strong>coba faktorkan dulu, pakai rumus akar kalau gagal.</strong> Untuk persamaan berkoefisien kecil, faktorisasi hampir selalu berhasil. Kalau diskriminannya bukan kuadrat sempurna, faktorisasi atas bilangan bulat memang tidak ada, dan di situlah rumus akar dipakai.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pk-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "persamaan-kuadrat"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan nilai terkecil dari</p><p>$$x^2 - 6x + 11$$</p><p>untuk $x$ bilangan real.</p>",
+   "jawaban": "2",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Bentuk kuadrat punya nilai ekstrem yang bisa dibaca langsung dari susunannya — asalkan disusun ulang lebih dulu.",
+    "Lengkapkan kuadratnya: ambil separuh koefisien $x$, lalu kuadratkan.",
+    "Setelah menjadi $(x-3)^2 + k$, nilai terkecilnya terbaca seketika karena kuadrat tidak pernah negatif."
+   ],
+   "pembahasan": "<p>Lengkapkan kuadratnya. Separuh koefisien $x$ adalah $-3$, dan kuadratnya $9$:</p><p>$$x^2 - 6x + 11 = \\left(x^2 - 6x + 9\\right) + 11 - 9 = (x-3)^2 + 2$$</p><p>Angka $9$ ditambahkan untuk melengkapi kuadrat, lalu dikurangkan lagi supaya nilainya tidak berubah.</p><p>Sekarang bacalah bentuknya. Karena $(x-3)^2 \\ge 0$ untuk setiap $x$ real,</p><p>$$x^2 - 6x + 11 = (x-3)^2 + 2 \\ \\ge\\ 2$$</p><p>Kesamaan tercapai tepat ketika $(x-3)^2 = 0$, yaitu $x = 3$ — dan itu memang bisa dicapai, jadi nilai terkecilnya benar-benar $\\boxed{2}$.</p><p><strong>Menunjukkan nilainya tercapai adalah bagian dari jawaban.</strong> Tanpa itu, yang dibuktikan baru batas bawah, bukan nilai minimum.</p><p>Melengkapkan kuadrat memberi lebih banyak keterangan daripada rumus titik puncak. Dari bentuk $(x-3)^2 + 2$ terbaca sekaligus: nilai minimumnya $2$, dicapai di $x = 3$, dan grafiknya adalah parabola $y = x^2$ yang digeser tiga satuan ke kanan dan dua ke atas.</p><p>Untuk $a &lt; 0$ arahnya berbalik: bentuknya menjadi $a(x-h)^2 + k$ dengan $k$ sebagai nilai <strong>terbesar</strong>.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pk-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "persamaan-kuadrat"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa bilangan bulat $m$ dengan $-10 \\le m \\le 10$ sehingga persamaan</p><p>$$x^2 + mx + 9 = 0$$</p><p><strong>tidak</strong> mempunyai akar real?</p>",
+   "jawaban": "11",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Syarat \"tidak punya akar real\" adalah pernyataan tentang diskriminan.",
+    "Tidak ada akar real tepat ketika $D &lt; 0$.",
+    "Setelah $D &lt; 0$ dijabarkan, kamu akan sampai pada pertidaksamaan kuadrat dalam $m$ — selesaikan, lalu cacah bilangan bulatnya."
+   ],
+   "pembahasan": "<p>Hitung diskriminannya dengan $a = 1$, $b = m$, $c = 9$:</p><p>$$D = m^2 - 4(1)(9) = m^2 - 36$$</p><p>Syarat tidak ada akar real adalah $D &lt; 0$:</p><p>$$m^2 - 36 &lt; 0 \\quad\\Longrightarrow\\quad m^2 &lt; 36$$</p><p>Ini setara dengan $|m| &lt; 6$, yaitu</p><p>$$-6 &lt; m &lt; 6$$</p><p>Bilangan bulat yang memenuhi:</p><p>$$-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5$$</p><p>Ada $\\boxed{11}$ bilangan, dan semuanya berada dalam rentang $-10 \\le m \\le 10$ yang diminta.</p><p>Dua hal yang menentukan. Pertama, dari $m^2 &lt; 36$ <strong>jangan</strong> langsung ditulis $m &lt; 6$ — itu melupakan sisi negatifnya. Yang benar $-6 &lt; m &lt; 6$.</p><p>Kedua, tandanya <strong>tegas</strong>, jadi $m = \\pm 6$ tidak ikut. Di sana $D = 0$, yang berarti ada akar kembar — dan akar kembar tetap akar real, jadi kasus itu tidak memenuhi syarat soal.</p><p>Perhatikan pula bahwa batas $-10 \\le m \\le 10$ ternyata tidak mengikat: seluruh solusinya sudah berada di dalamnya. Batas semacam itu kadang hanya untuk memastikan jawabannya berhingga.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pk-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "persamaan-kuadrat"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa akar real dari persamaan</p><p>$$x^4 - 13x^2 + 36 = 0\\ ?$$</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Derajatnya empat, tetapi perhatikan pangkat mana saja yang benar-benar muncul. Yang ganjil tidak ada satu pun.",
+    "Substitusikan $u = x^2$ dan persamaannya menjadi kuadrat biasa.",
+    "Setelah $u$ ditemukan, kembalikan menjadi $x$ — dan periksa apakah tiap $u$ tak negatif."
+   ],
+   "pembahasan": "<p>Substitusikan $u = x^2$:</p><p>$$u^2 - 13u + 36 = 0$$</p><p>Faktorkan — dua bilangan berjumlah $13$ dan berhasil kali $36$ adalah $4$ dan $9$:</p><p>$$(u-4)(u-9) = 0 \\quad\\Longrightarrow\\quad u = 4 \\text{ atau } u = 9$$</p><p><strong>Kembalikan substitusinya.</strong> Keduanya positif, jadi keduanya menghasilkan $x$ real:</p><p>$$x^2 = 4 \\ \\Longrightarrow\\ x = \\pm 2, \\qquad x^2 = 9 \\ \\Longrightarrow\\ x = \\pm 3$$</p><p>Ada $\\boxed{4}$ akar real: $-3, -2, 2, 3$.</p><p>Perhatikan bahwa setiap $u$ <strong>positif</strong> menyumbang dua akar, $u = 0$ menyumbang satu, dan $u$ negatif tidak menyumbang apa pun. Karena itu persamaan bikuadrat bisa punya $0$, $1$, $2$, $3$, atau $4$ akar real — bergantung pada tanda kedua akar $u$-nya.</p><p>Contoh masing-masing: $x^4 + x^2 + 1 = 0$ tidak punya akar real; $x^4 = 0$ punya satu; $x^4 - 1 = 0$ punya dua; $x^4 - x^2 = 0$ punya tiga (yaitu $0, \\pm 1$).</p><p>Kesalahan yang paling sering: berhenti di $u = 4$ dan $u = 9$ lalu menjawab \"dua akar\". Yang ditanya $x$, bukan $u$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pk-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "persamaan-kuadrat",
+    "eksponen-logaritma"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan jumlah semua nilai $x$ yang memenuhi</p><p>$$2^{2x} - 5 \\cdot 2^x + 4 = 0$$</p>",
+   "jawaban": "2",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ada dua bentuk berpangkat di sini, dan keduanya tidak berdiri sendiri. Perhatikan hubungan $2^{2x}$ dengan $2^x$.",
+    "$2^{2x} = \\left(2^x\\right)^2$, jadi dengan $u = 2^x$ bentuknya menjadi $u^2 - 5u + 4 = 0$.",
+    "Setelah $u$ ditemukan, kembalikan ke $x$ dengan menyamakan basis."
+   ],
+   "pembahasan": "<p>Kenali bentuk kuadratnya. Karena</p><p>$$2^{2x} = \\left(2^x\\right)^2$$</p><p>substitusi $u = 2^x$ mengubah persamaannya menjadi</p><p>$$u^2 - 5u + 4 = 0$$</p><p>Faktorkan:</p><p>$$(u-1)(u-4) = 0 \\quad\\Longrightarrow\\quad u = 1 \\text{ atau } u = 4$$</p><p><strong>Periksa kesahihan tiap $u$.</strong> Karena $u = 2^x$ dan $2^x$ selalu <strong>positif</strong>, hanya $u &gt; 0$ yang bisa dipakai. Keduanya positif, jadi keduanya sah.</p><p><strong>Kembalikan ke $x$</strong> dengan menyamakan basis:</p><p>$$2^x = 1 = 2^0 \\ \\Longrightarrow\\ x = 0$$ $$2^x = 4 = 2^2 \\ \\Longrightarrow\\ x = 2$$</p><p>Jumlahnya</p><p>$$0 + 2 = \\boxed{2}$$</p><p>Periksa $x = 2$: $2^4 - 5 \\cdot 2^2 + 4 = 16 - 20 + 4 = 0$. Cocok.</p><p>Yang dilatih di sini adalah <strong>mengenali bentuk kuadrat yang menyamar</strong>. Ia muncul di banyak wujud: $x^4 - 5x^2 + 4$, $2^{2x} - 5 \\cdot 2^x + 4$, bahkan $\\left(\\log x\\right)^2 - 5\\log x + 4$. Ketiganya persamaan yang sama, hanya dengan peubah yang berbeda.</p><p>Langkah \"periksa kesahihan $u$\" itu wajib pada substitusi eksponen. Kalau salah satu akar $u$ bernilai negatif atau nol, ia tidak menghasilkan $x$ real sama sekali dan harus dibuang.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pk-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "persamaan-kuadrat",
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $a &gt; 0$. Buktikan bahwa nilai terkecil dari</p><p>$$f(x) = ax^2 + bx + c$$</p><p>untuk $x$ real adalah $c - \\dfrac{b^2}{4a}$, dan tentukan di mana nilai itu dicapai.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Susun ulang $f(x)$ sehingga peubahnya hanya muncul di dalam satu kuadrat.",
+    "Keluarkan $a$ dari dua suku pertama lebih dulu, baru lengkapkan kuadratnya di dalam kurung.",
+    "Setelah berbentuk $a(x-h)^2 + k$, pakai $(x-h)^2 \\ge 0$ dan syarat $a &gt; 0$."
+   ],
+   "pembahasan": "<p><strong>Lengkapkan kuadratnya.</strong> Keluarkan $a$ dari dua suku pertama:</p><p>$$f(x) = a\\left(x^2 + \\frac{b}{a}x\\right) + c$$</p><p>Di dalam kurung, separuh koefisien $x$ adalah $\\dfrac{b}{2a}$. Tambahkan dan kurangkan kuadratnya:</p><p>$$x^2 + \\frac{b}{a}x = \\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a^2}$$</p><p>Substitusikan kembali:</p><p>$$f(x) = a\\left[\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a^2}\\right] + c\n= a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a} + c$$</p><p><strong>Baca batasnya.</strong> Untuk setiap $x$ real, kuadrat suatu bilangan real tak negatif:</p><p>$$\\left(x + \\frac{b}{2a}\\right)^2 \\ \\ge\\ 0$$</p><p>Karena $a &gt; 0$, mengalikan dengan $a$ <strong>tidak membalik arah</strong>:</p><p>$$a\\left(x + \\frac{b}{2a}\\right)^2 \\ \\ge\\ 0$$</p><p>Maka</p><p>$$f(x) \\ \\ge\\ c - \\frac{b^2}{4a}$$</p><p><strong>Tunjukkan nilainya tercapai.</strong> Kesamaan berlaku tepat ketika kuadratnya nol, yaitu</p><p>$$x + \\frac{b}{2a} = 0 \\quad\\Longrightarrow\\quad x = -\\frac{b}{2a}$$</p><p>Nilai $x$ itu real karena $a \\ne 0$, jadi batas bawahnya benar-benar dicapai — dan karenanya ia memang nilai <strong>minimum</strong>, bukan sekadar batas. $\\blacksquare$</p><p>Perhatikan di mana syarat $a &gt; 0$ dipakai: pada langkah mengalikan ketaksamaan dengan $a$. Untuk $a &lt; 0$ arahnya berbalik, dan bentuk yang sama memberi nilai <strong>maksimum</strong> $c - \\frac{b^2}{4a}$ di titik yang sama.</p><p>Perhatikan pula hubungannya dengan diskriminan. Nilai ekstremnya bisa ditulis</p><p>$$c - \\frac{b^2}{4a} = -\\frac{b^2 - 4ac}{4a} = -\\frac{D}{4a}$$</p><p>Untuk $a &gt; 0$, nilai minimumnya tak negatif tepat ketika $D \\le 0$ — yang berarti parabolanya tidak pernah memotong sumbu $x$ di bawah. Kedua besaran itu menceritakan hal yang sama dari sudut berbeda.</p>",
+   "rubrik": [
+    "Mengeluarkan $a$ dari dua suku pertama sebelum melengkapkan kuadrat",
+    "Melengkapkan kuadrat di dalam kurung dengan benar, memperoleh $\\left(x+\\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a^2}$",
+    "Menyusun kembali menjadi $a\\left(x+\\frac{b}{2a}\\right)^2 + c - \\frac{b^2}{4a}$",
+    "Memakai $(\\cdot)^2 \\ge 0$ <strong>dan menyebut $a &gt; 0$</strong> sebagai alasan arah ketaksamaannya tidak berbalik",
+    "Menentukan $x = -\\frac{b}{2a}$ sebagai titik kesamaan, dan menyatakan nilainya benar-benar tercapai"
+   ]
+  },
+  {
+   "id": "pk-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "persamaan-kuadrat"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan nilai $m$ agar persamaan</p><p>$$x^2 - 6x + m = 0$$</p><p>mempunyai akar kembar.</p>",
+   "jawaban": "9",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kamu tidak perlu mencari akarnya. Ada satu besaran yang menentukan sifat akar tanpa menghitungnya.",
+    "Diskriminan $D = b^2 - 4ac$ menjawab pertanyaan tentang jenis akar: dua akar berbeda, kembar, atau tidak real.",
+    "Akar kembar terjadi tepat ketika $D = 0$."
+   ],
+   "pembahasan": "<p>Sifat akar persamaan kuadrat ditentukan oleh diskriminan</p><p>$$D = b^2 - 4ac$$</p><ul><li>$D &gt; 0$: dua akar real berbeda</li><li>$D = 0$: akar kembar</li><li>$D &lt; 0$: tidak ada akar real</li></ul><p>Di sini $a = 1$, $b = -6$, $c = m$, jadi</p><p>$$D = (-6)^2 - 4(1)(m) = 36 - 4m$$</p><p>Akar kembar menuntut $D = 0$:</p><p>$$36 - 4m = 0 \\quad\\Longrightarrow\\quad m = \\boxed{9}$$</p><p>Periksa: dengan $m = 9$ persamaannya menjadi $x^2 - 6x + 9 = (x-3)^2 = 0$, yang memang berakar kembar $x = 3$.</p><p><strong>Inilah pemakaian diskriminan yang paling sering muncul di olimpiade</strong> — bukan untuk menghitung akar, melainkan untuk menjawab pertanyaan <strong>tentang</strong> akar. Soal \"tentukan syarat agar punya dua akar berbeda\" atau \"agar tidak punya akar real\" adalah soal tentang $D$, dan akarnya tidak pernah perlu dicari.</p><p>Perhatikan syarat tersembunyi: rumus $D$ hanya berlaku kalau $a \\ne 0$. Kalau koefisien $x^2$ memuat parameter, kasus $a = 0$ harus diperiksa terpisah — di situ persamaannya linear dan tidak punya akar kembar sama sekali.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sp-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "sistem-persamaan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Diketahui $2x + y = 11$ dan $x - y = 1$. Tentukan nilai $x + 2y$.</p>",
+   "jawaban": "10",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Perhatikan koefisien $y$ pada kedua persamaan: $+1$ dan $-1$.",
+    "Menjumlahkan keduanya langsung menghapus $y$.",
+    "Setelah $x$ diperoleh, substitusikan untuk mendapat $y$, lalu hitung yang ditanya."
+   ],
+   "pembahasan": "<p>Koefisien $y$ pada kedua persamaan adalah $+1$ dan $-1$, jadi menjumlahkannya langsung menghapus $y$:</p><p>$$(2x + y) + (x - y) = 11 + 1 \\quad\\Longrightarrow\\quad 3x = 12 \\quad\\Longrightarrow\\quad x = 4$$</p><p>Substitusikan ke persamaan kedua:</p><p>$$4 - y = 1 \\quad\\Longrightarrow\\quad y = 3$$</p><p>Yang ditanya:</p><p>$$x + 2y = 4 + 2(3) = \\boxed{10}$$</p><p>Periksa pada persamaan pertama: $2(4) + 3 = 11$. Cocok.</p><p>Perhatikan bahwa yang ditanya <strong>bukan</strong> $x$ maupun $y$, melainkan gabungan keduanya. Soal olimpiade sering menyusunnya begitu untuk menguji apakah kamu membaca sampai selesai — menjawab $4$ atau $3$ adalah kekeliruan yang murni soal ketelitian.</p><p>Kadang gabungan yang ditanya bisa diperoleh tanpa mencari $x$ dan $y$ sama sekali. Di sini misalnya, mengurangkan persamaan kedua dari yang pertama memberi $x + 2y = 10$ seketika — persis yang diminta.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sp-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "sistem-persamaan",
+    "manipulasi-aljabar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $x + y = 5$ dan $x^2 + y^2 = 13$. Tentukan nilai $xy$.</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Sistemnya tidak linear, jadi eliminasi biasa tidak langsung bekerja. Cari hubungan antara ketiga bentuk yang muncul.",
+    "Kuadratkan $x+y$: hasilnya memuat $x^2+y^2$ <strong>dan</strong> $xy$.",
+    "Dari $(x+y)^2 = x^2 + 2xy + y^2$, tinggal disubstitusikan."
+   ],
+   "pembahasan": "<p>Kuadratkan persamaan pertama:</p><p>$$(x+y)^2 = x^2 + 2xy + y^2$$</p><p>Ruas kanan memuat $x^2+y^2$, yang sudah diketahui, dan $xy$, yang dicari. Susun ulang:</p><p>$$xy = \\frac{(x+y)^2 - \\left(x^2+y^2\\right)}{2}$$</p><p>Substitusikan:</p><p>$$xy = \\frac{5^2 - 13}{2} = \\frac{25 - 13}{2} = \\frac{12}{2} = \\boxed{6}$$</p><p>Periksa: dengan $x+y = 5$ dan $xy = 6$, kedua bilangan itu akar dari $t^2 - 5t + 6 = 0$, yaitu $2$ dan $3$. Memang $4 + 9 = 13$.</p><p>Sistem tak linear seperti ini hampir selalu diselesaikan lewat <strong>bentuk simetris</strong>, bukan lewat eliminasi. Begitu kamu punya $s = x+y$ dan $p = xy$, hampir semua bentuk simetris menyusul:</p><p>$$x^2+y^2 = s^2 - 2p, \\qquad x^3+y^3 = s^3 - 3ps, \\qquad\n\\frac1x + \\frac1y = \\frac{s}{p}$$</p><p>Perhatikan pula bahwa soal ini tidak menuntut $x$ dan $y$ sama sekali. Mencarinya satu per satu tetap berhasil di sini, tetapi gagal begitu akarnya tidak rasional — sedangkan jalur simetris tetap bekerja.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sp-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "sistem-persamaan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $x + y = 6$ dan $xy = 8$. Tentukan nilai terbesar di antara $x$ dan $y$.</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kali ini yang diminta peubahnya sendiri, jadi keduanya memang harus dicari.",
+    "Dua bilangan yang jumlah dan hasil kalinya diketahui adalah akar sebuah persamaan kuadrat. Susun persamaannya.",
+    "Persamaannya $t^2 - (\\text{jumlah})t + (\\text{hasil kali}) = 0$."
+   ],
+   "pembahasan": "<p>Kalau dua bilangan berjumlah $s$ dan berhasil kali $p$, keduanya adalah akar dari</p><p>$$t^2 - st + p = 0$$</p><p>Alasannya langsung dari Vieta dibalik: persamaan itu memang punya jumlah akar $s$ dan hasil kali akar $p$.</p><p>Di sini $s = 6$ dan $p = 8$:</p><p>$$t^2 - 6t + 8 = 0$$</p><p>Faktorkan — dua bilangan berjumlah $6$ dan berhasil kali $8$ adalah $2$ dan $4$:</p><p>$$(t-2)(t-4) = 0 \\quad\\Longrightarrow\\quad t = 2 \\text{ atau } t = 4$$</p><p>Jadi $\\{x, y\\} = \\{2, 4\\}$, dan yang terbesar adalah $\\boxed{4}$.</p><p>Periksa: $2 + 4 = 6$ dan $2 \\times 4 = 8$. Cocok.</p><p>Perhatikan bahwa soal tidak menentukan mana yang $x$ dan mana yang $y$ — dan memang tidak perlu, sebab sistemnya simetris. Setiap sistem simetris punya sifat itu: solusinya selalu berpasangan, dan menukar peran peubahnya memberi solusi lain yang sah.</p><p><strong>Syarat yang layak diperiksa.</strong> Supaya $x$ dan $y$ real, persamaan $t^2 - st + p = 0$ harus punya diskriminan tak negatif:</p><p>$$s^2 - 4p \\ge 0$$</p><p>Di sini $36 - 32 = 4 \\ge 0$, jadi aman. Kalau soal memberi $x+y = 2$ dan $xy = 5$, syaratnya gagal — dan tidak ada pasangan bilangan real yang memenuhinya sama sekali.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sp-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "sistem-persamaan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Diketahui $x + y = 5$ dan</p><p>$$\\frac{1}{x} + \\frac{1}{y} = \\frac{5}{6}$$</p><p>Tentukan nilai $xy$.</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan menghilangkan pecahannya dengan mengalikan silang. Satukan dulu kedua pecahan di ruas kiri.",
+    "$\\frac1x + \\frac1y = \\frac{x+y}{xy}$ — dan pembilangnya sudah kamu ketahui.",
+    "Setelah disubstitusikan, $xy$ tinggal dibaca."
+   ],
+   "pembahasan": "<p>Satukan kedua pecahan:</p><p>$$\\frac1x + \\frac1y = \\frac{y + x}{xy} = \\frac{x+y}{xy}$$</p><p>Inilah bentuk simetris yang menghubungkan keduanya dengan $s = x+y$ dan $p = xy$.</p><p>Substitusikan $x + y = 5$:</p><p>$$\\frac{5}{xy} = \\frac{5}{6}$$</p><p>Kedua pembilangnya sama, jadi penyebutnya juga:</p><p>$$xy = \\boxed{6}$$</p><p>Periksa: dengan $x+y = 5$ dan $xy = 6$, kedua bilangan itu $2$ dan $3$. Memang $\\frac12 + \\frac13 = \\frac{5}{6}$.</p><p><strong>Perhatikan apa yang tidak dilakukan.</strong> Mengalikan silang $\\frac1x + \\frac1y = \\frac56$ menjadi $6(x+y) = 5xy$ juga bekerja — dan memberi $30 = 5xy$, yaitu $xy = 6$. Hasilnya sama, tetapi menyatukan pecahan lebih dulu membuat bentuk simetrisnya terlihat, dan itu yang berguna pada soal yang lebih rumit.</p><p>Syarat tersembunyi yang layak diperiksa: $x \\ne 0$ dan $y \\ne 0$, sebab keduanya menjadi penyebut. Di sini $xy = 6 \\ne 0$ sudah menjamin keduanya tak nol.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sp-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "sistem-persamaan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Diketahui tiga bilangan real $x$, $y$, $z$ memenuhi</p><p>$$x+y+z = 6, \\qquad xy+yz+zx = 11, \\qquad xyz = 6$$</p><p>Tentukan nilai terbesar di antara ketiganya.</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ketiga besaran yang diketahui persis yang muncul pada rumus Vieta untuk persamaan pangkat tiga.",
+    "Kalau dua bilangan berjumlah $s$ dan berhasil kali $p$ adalah akar $t^2 - st + p = 0$, apa padanannya untuk tiga bilangan?",
+    "Susun $t^3 - e_1 t^2 + e_2 t - e_3 = 0$, lalu cari akarnya."
+   ],
+   "pembahasan": "<p>Ketiga bentuk yang diketahui disebut <strong>polinomial simetris dasar</strong>:</p><p>$$e_1 = x+y+z, \\qquad e_2 = xy+yz+zx, \\qquad e_3 = xyz$$</p><p>Kalau ketiganya diketahui, maka $x$, $y$, $z$ adalah akar dari</p><p>$$t^3 - e_1 t^2 + e_2 t - e_3 = 0$$</p><p>Tandanya berselang-seling mulai dari minus — pola yang sama seperti pada kuadrat $t^2 - st + p = 0$, hanya diperpanjang.</p><p>Substitusikan:</p><p>$$t^3 - 6t^2 + 11t - 6 = 0$$</p><p><strong>Cari akarnya.</strong> Akar bulatnya harus membagi konstanta $-6$. Coba $t = 1$:</p><p>$$1 - 6 + 11 - 6 = 0$$</p><p>Berhasil, jadi $(t-1)$ faktornya. Membaginya memberi</p><p>$$t^3 - 6t^2 + 11t - 6 = (t-1)\\left(t^2 - 5t + 6\\right) = (t-1)(t-2)(t-3)$$</p><p>Akarnya $1$, $2$, dan $3$; yang terbesar adalah $\\boxed{3}$.</p><p>Periksa ketiga syaratnya: $1+2+3 = 6$; $1\\cdot2 + 2\\cdot3 + 3\\cdot1 = 2+6+3 = 11$; dan $1 \\cdot 2 \\cdot 3 = 6$. Semuanya cocok.</p><p><strong>Inilah kekuatan bentuk simetris.</strong> Soal memberi tiga keterangan yang tidak satu pun menyebut $x$, $y$, atau $z$ secara terpisah — dan justru karena itu ketiganya bisa ditemukan sekaligus, sebagai akar satu persamaan.</p><p>Perhatikan bahwa soal tidak menentukan mana yang $x$. Memang tidak bisa: sistemnya simetris, jadi keenam cara memasangkan $\\{1,2,3\\}$ ke $(x,y,z)$ semuanya sah.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sp-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "sistem-persamaan",
+    "vieta"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $x$ dan $y$ bilangan real dengan $x + y = s$ dan $xy = p$. Buktikan bahwa $x$ dan $y$ merupakan akar-akar persamaan</p><p>$$t^2 - st + p = 0$$</p><p>dan tentukan syarat agar $x$ dan $y$ keduanya real.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Untuk membuktikan sebuah bilangan adalah akar, cukup substitusikan dan tunjukkan hasilnya nol.",
+    "Substitusikan $t = x$, lalu ganti $s$ dan $p$ dengan yang diketahui.",
+    "Untuk syarat realnya, tinjau diskriminan persamaan itu."
+   ],
+   "pembahasan": "<h4>Bagian pertama: $x$ dan $y$ memang akarnya</h4><p>Substitusikan $t = x$ ke ruas kiri, lalu ganti $s = x+y$ dan $p = xy$:</p><p>$$x^2 - sx + p = x^2 - (x+y)x + xy = x^2 - x^2 - xy + xy = 0$$</p><p>Jadi $x$ memenuhi persamaannya, sehingga ia akar.</p><p>Dengan cara yang sama untuk $t = y$:</p><p>$$y^2 - sy + p = y^2 - (x+y)y + xy = y^2 - xy - y^2 + xy = 0$$</p><p>Jadi $y$ juga akar.</p><p>Karena persamaan kuadrat punya paling banyak dua akar, dan $x$ serta $y$ keduanya akar, maka $\\{x, y\\}$ adalah <strong>seluruh</strong> himpunan akarnya — tidak ada yang lain.</p><h4>Bagian kedua: syarat agar keduanya real</h4><p>Persamaan $t^2 - st + p = 0$ punya akar real tepat ketika diskriminannya tak negatif:</p><p>$$D = s^2 - 4p \\ \\ge\\ 0$$</p><p>Jadi syaratnya</p><p>$$s^2 \\ge 4p$$</p><p>$\\blacksquare$</p><p>Syarat itu punya bacaan yang berguna. Karena $s^2 - 4p = (x+y)^2 - 4xy = (x-y)^2$, ia menyatakan hal yang sudah pasti benar untuk $x, y$ real — dan gagal tepat ketika pasangan bilangan real dengan jumlah $s$ dan hasil kali $p$ memang tidak ada.</p><p>Contohnya $s = 2$, $p = 5$: di situ $D = 4 - 20 = -16 &lt; 0$, dan memang tidak ada dua bilangan real yang berjumlah $2$ dan berhasil kali $5$. Akarnya ada, tetapi kompleks.</p><p><strong>Arah sebaliknya inilah yang paling sering dipakai di olimpiade.</strong> Kalau soal memberi jumlah dan hasil kali, jangan mencari kedua bilangannya lewat substitusi — susun persamaan kuadratnya, dan keduanya jatuh sekaligus.</p>",
+   "rubrik": [
+    "Mensubstitusikan $t = x$ ke $t^2 - st + p$ dan mengganti $s$, $p$ dengan bentuk aslinya",
+    "Menyederhanakannya sampai bernilai nol, sehingga $x$ terbukti akar",
+    "Melakukan hal yang sama untuk $y$",
+    "Menyebut bahwa persamaan kuadrat punya paling banyak dua akar, sehingga $\\{x,y\\}$ adalah seluruh akarnya",
+    "Menurunkan syarat real lewat diskriminan, memperoleh $s^2 \\ge 4p$",
+    "Untuk nilai penuh: mengenali $s^2 - 4p = (x-y)^2$"
+   ]
+  },
+  {
+   "id": "sp-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "sistem-persamaan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $x + y = 10$ dan $x - y = 4$. Tentukan nilai $xy$.</p>",
+   "jawaban": "21",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Dua persamaan, dua peubah. Perhatikan apa yang terjadi kalau keduanya dijumlahkan.",
+    "Menjumlahkan menghapus $y$; mengurangkan menghapus $x$.",
+    "Setelah $x$ dan $y$ diketahui, kalikan."
+   ],
+   "pembahasan": "<p><strong>Jumlahkan kedua persamaan.</strong> Suku $y$ dan $-y$ saling menghapus:</p><p>$$(x+y) + (x-y) = 10 + 4 \\quad\\Longrightarrow\\quad 2x = 14 \\quad\\Longrightarrow\\quad x = 7$$</p><p><strong>Kurangkan</strong> untuk memperoleh $y$:</p><p>$$(x+y) - (x-y) = 10 - 4 \\quad\\Longrightarrow\\quad 2y = 6 \\quad\\Longrightarrow\\quad y = 3$$</p><p>Maka</p><p>$$xy = 7 \\times 3 = \\boxed{21}$$</p><p>Periksa: $7 + 3 = 10$ dan $7 - 3 = 4$. Cocok.</p><p><strong>Cara kedua, tanpa mencari $x$ dan $y$.</strong> Perhatikan identitas</p><p>$$(x+y)^2 - (x-y)^2 = 4xy$$</p><p>sehingga</p><p>$$xy = \\frac{10^2 - 4^2}{4} = \\frac{100-16}{4} = \\frac{84}{4} = 21$$</p><p>Hasil yang sama. Cara pertama lebih alami di sini karena angkanya rapi, tetapi cara kedua menunjukkan pola yang akan terus dipakai: <strong>kalau yang ditanya bentuk simetris, sering ia bisa dihitung tanpa mencari peubahnya satu per satu.</strong></p><p>Gerakan \"jumlahkan lalu kurangkan\" adalah refleks pertama untuk sistem berbentuk $x+y$ dan $x-y$. Untuk sistem yang lain, eliminasi biasanya menuntut mengalikan salah satu persamaan lebih dulu supaya koefisiennya bisa saling menghapus.</p>",
    "rubrik": []
   },
   {
@@ -4101,6 +4719,162 @@
     "Menunjukkan $a' &lt; a$ sehingga bertentangan dengan keminimalan, memaksa $a = b$",
     "Menyelesaikan kasus dasar $a = b$ dan menyimpulkan $k = 3$"
    ]
+  },
+  {
+   "id": "vt-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "vieta"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan jumlah akar-akar persamaan</p><p>$$2x^2 - 8x + 6 = 0$$</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tidak perlu mencari akarnya. Ada rumus yang memberi jumlahnya langsung dari koefisien.",
+    "Jumlah akar adalah $-\\dfrac{b}{a}$ — perhatikan bahwa $a$ di sini bukan $1$.",
+    "Jangan lupa membagi dengan koefisien $x^2$."
+   ],
+   "pembahasan": "<p>Rumus Vieta memberi jumlah akar</p><p>$$x_1 + x_2 = -\\frac{b}{a}$$</p><p>Di sini $a = 2$, $b = -8$, sehingga</p><p>$$x_1 + x_2 = -\\frac{-8}{2} = \\frac{8}{2} = \\boxed{4}$$</p><p>Periksa dengan mencari akarnya. Bagi persamaannya dengan $2$:</p><p>$$x^2 - 4x + 3 = 0 \\quad\\Longrightarrow\\quad (x-1)(x-3) = 0$$</p><p>Akarnya $1$ dan $3$, dan memang $1 + 3 = 4$.</p><p><strong>Dua hal yang paling sering meleset di sini.</strong></p><p>Pertama, <strong>lupa membagi dengan $a$</strong>. Menjawab $8$ adalah kekeliruan yang muncul karena terbiasa dengan $a = 1$, di mana $-\\frac{b}{a}$ dan $-b$ kebetulan sama.</p><p>Kedua, <strong>salah tanda</strong>. Ada tanda minus pada jumlah akar, tetapi <strong>tidak</strong> pada hasil kali:</p><p>$$x_1 x_2 = \\frac{c}{a} = \\frac{6}{2} = 3$$</p><p>dan memang $1 \\times 3 = 3$.</p><p>Cara memeriksa yang cepat kalau ragu: pada $x^2 - 5x + 6 = 0$ akarnya jelas $2$ dan $3$, berjumlah $5$. Karena $b = -5$, jumlahnya memang $-b$, bukan $b$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "vt-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "vieta"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Akar-akar persamaan $x^2 + 5x + 6 = 0$ adalah $x_1$ dan $x_2$. Tentukan nilai $x_1^2 + x_2^2$.</p>",
+   "jawaban": "13",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Yang ditanya bentuk simetris akarnya, jadi akarnya sendiri tidak perlu dicari. Ambil jumlah dan hasil kalinya dari koefisien — dan perhatikan tandanya.",
+    "Koefisien $x$ bernilai positif, jadi jumlah akarnya negatif.",
+    "Pakai $x_1^2+x_2^2 = (x_1+x_2)^2 - 2x_1x_2$ — kuadrat menghapus tanda negatifnya."
+   ],
+   "pembahasan": "<p>Dari Vieta dengan $a = 1$, $b = 5$, $c = 6$:</p><p>$$x_1 + x_2 = -\\frac{5}{1} = -5, \\qquad x_1 x_2 = \\frac{6}{1} = 6$$</p><p>Perhatikan tandanya: jumlah akarnya <strong>negatif</strong>, sebab koefisien $x$ positif.</p><p>Tulis ulang yang ditanya:</p><p>$$x_1^2 + x_2^2 = \\left(x_1+x_2\\right)^2 - 2x_1x_2 = (-5)^2 - 2(6) = 25 - 12 = \\boxed{13}$$</p><p>Periksa: akarnya $-2$ dan $-3$, dan $4 + 9 = 13$.</p><p>Perhatikan bahwa tanda negatif pada jumlah akar <strong>lenyap saat dikuadratkan</strong>. Karena itu $x^2+5x+6 = 0$ dan $x^2-5x+6=0$ memberi $x_1^2+x_2^2$ yang sama, meski akarnya berlawanan tanda seluruhnya.</p><p>Yang <strong>tidak</strong> boleh dilakukan adalah menulis $(-5)^2 = -25$. Kurung pada $(-5)^2$ wajib: tanpa kurung, $-5^2$ berarti $-(5^2) = -25$, dan jawabannya akan meleset menjadi $-37$.</p><p>Bentuk lain yang bisa dihitung dari kedua besaran yang sama:</p><p>$$\\frac{1}{x_1}+\\frac{1}{x_2} = \\frac{-5}{6}, \\qquad\n\\left(x_1-x_2\\right)^2 = 25 - 24 = 1$$</p>",
+   "rubrik": []
+  },
+  {
+   "id": "vt-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "vieta"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Akar-akar persamaan $x^2 - 4x + m = 0$ adalah $x_1$ dan $x_2$, dengan</p><p>$$x_1^2 + x_2^2 = 10$$</p><p>Tentukan nilai $m$.</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kali ini yang dicari koefisiennya, bukan bentuk akarnya. Alurnya dibalik.",
+    "Nyatakan $x_1^2+x_2^2$ lewat Vieta — hasilnya akan memuat $m$.",
+    "Samakan dengan $10$, lalu selesaikan."
+   ],
+   "pembahasan": "<p>Dari Vieta dengan $a = 1$, $b = -4$, $c = m$:</p><p>$$x_1 + x_2 = 4, \\qquad x_1 x_2 = m$$</p><p>Nyatakan bentuk yang diketahui lewat keduanya:</p><p>$$x_1^2 + x_2^2 = \\left(x_1+x_2\\right)^2 - 2x_1x_2 = 16 - 2m$$</p><p>Samakan dengan yang diketahui:</p><p>$$16 - 2m = 10 \\quad\\Longrightarrow\\quad 2m = 6 \\quad\\Longrightarrow\\quad m = \\boxed{3}$$</p><p>Periksa: dengan $m = 3$ persamaannya $x^2-4x+3 = 0$, berakar $1$ dan $3$. Memang $1 + 9 = 10$.</p><p><strong>Periksa juga apakah akarnya real.</strong> Diskriminannya</p><p>$$D = 16 - 4m = 16 - 12 = 4 &gt; 0$$</p><p>jadi kedua akarnya real dan berbeda — soalnya konsisten.</p><p>Pemeriksaan itu bukan formalitas. Kalau soal memberi $x_1^2+x_2^2 = 20$, perhitungan yang sama memberi $m = -2$, dan itu sah. Tetapi kalau diberi $x_1^2+x_2^2 = 4$, hasilnya $m = 6$ dengan $D = 16-24 = -8 &lt; 0$ — akarnya kompleks. Rumus Vieta tetap berlaku di sana, tetapi kalau soal menuntut akar <strong>real</strong>, jawabannya harus ditolak.</p><p>Alur \"dibalik\" seperti ini sering muncul: soal memberi keterangan tentang akar, dan yang dicari koefisiennya. Langkahnya selalu sama — nyatakan keterangan itu lewat Vieta, lalu selesaikan persamaan yang muncul.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "vt-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "vieta",
+    "manipulasi-aljabar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Akar-akar persamaan $x^2 - 3x + 1 = 0$ adalah $x_1$ dan $x_2$. Tentukan nilai $x_1^3 + x_2^3$.</p>",
+   "jawaban": "18",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Coba hitung diskriminannya dulu: akarnya tidak rasional, jadi mencarinya satu per satu akan menyulitkan. Harus ada jalan yang tidak menyentuh akarnya.",
+    "Nyatakan $x_1^3+x_2^3$ lewat jumlah dan hasil kali akarnya.",
+    "Identitasnya $x_1^3+x_2^3 = (x_1+x_2)^3 - 3x_1x_2(x_1+x_2)$."
+   ],
+   "pembahasan": "<p>Dari Vieta:</p><p>$$x_1 + x_2 = 3, \\qquad x_1 x_2 = 1$$</p><p>Akarnya sendiri adalah $\\frac{3 \\pm \\sqrt5}{2}$ — tidak rasional, dan memangkatkan tiganya akan berantakan. Vieta menghindari itu seluruhnya.</p><p>Pakai identitas jumlah pangkat tiga:</p><p>$$x_1^3 + x_2^3 = \\left(x_1+x_2\\right)^3 - 3x_1x_2\\left(x_1+x_2\\right)$$</p><p>Substitusikan:</p><p>$$x_1^3+x_2^3 = 3^3 - 3(1)(3) = 27 - 9 = \\boxed{18}$$</p><p><strong>Cara kedua, lewat persamaannya sendiri.</strong> Karena $x_1$ akar, ia memenuhi $x_1^2 = 3x_1 - 1$. Kalikan dengan $x_1$:</p><p>$$x_1^3 = 3x_1^2 - x_1 = 3\\left(3x_1 - 1\\right) - x_1 = 8x_1 - 3$$</p><p>Hal yang sama berlaku untuk $x_2$, sehingga</p><p>$$x_1^3 + x_2^3 = 8\\left(x_1+x_2\\right) - 6 = 8(3) - 6 = 18$$</p><p>Hasil yang sama.</p><p>Cara kedua ini layak dikenali karena ia bekerja untuk pangkat berapa pun tanpa menghafal identitas: <strong>pakai persamaannya untuk menurunkan pangkat</strong>. Setiap kali muncul $x^2$, ganti dengan $3x - 1$. Untuk $x_1^4 + x_2^4$ misalnya, teruskan satu langkah lagi.</p><p>Bertingkat dari yang sudah dikenal:</p><p>$$x_1^2+x_2^2 = 9 - 2 = 7, \\qquad x_1^3+x_2^3 = 18, \\qquad\nx_1^4+x_2^4 = 7^2 - 2(1)^2 = 47$$</p>",
+   "rubrik": []
+  },
+  {
+   "id": "vt-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "vieta",
+    "persamaan-kuadrat"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Akar-akar persamaan $x^2 - 6x + 4 = 0$ adalah $a$ dan $b$. Tentukan nilai $(a-b)^2$.</p>",
+   "jawaban": "20",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Bentuk $(a-b)^2$ terlihat tidak simetris, tetapi setelah dijabarkan ia simetris juga.",
+    "$(a-b)^2 = (a+b)^2 - 4ab$ — periksa dengan menjabarkan kedua ruas.",
+    "Setelah itu, Vieta memberi keduanya langsung."
+   ],
+   "pembahasan": "<p>Selisih $a - b$ berubah tanda kalau kedua akarnya ditukar, jadi ia <strong>tidak</strong> simetris — dan Vieta tidak bisa memberinya langsung. Tetapi kuadratnya simetris, dan itu cukup.</p><p>Jabarkan:</p><p>$$(a-b)^2 = a^2 - 2ab + b^2$$</p><p>Bandingkan dengan</p><p>$$(a+b)^2 = a^2 + 2ab + b^2$$</p><p>Keduanya berbeda $4ab$, sehingga</p><p>$$(a-b)^2 = (a+b)^2 - 4ab$$</p><p>Dari Vieta: $a+b = 6$ dan $ab = 4$. Maka</p><p>$$(a-b)^2 = 6^2 - 4(4) = 36 - 16 = \\boxed{20}$$</p><p>Periksa: akarnya $3 \\pm \\sqrt5$, sehingga $a - b = 2\\sqrt5$ dan $(a-b)^2 = 20$. Cocok.</p><p><strong>Hubungannya dengan diskriminan.</strong> Bentuk $(a+b)^2 - 4ab$ dengan $a+b = -\\frac{b}{a}$ dan $ab = \\frac{c}{a}$ menjadi</p><p>$$(a-b)^2 = \\frac{b^2}{a^2} - \\frac{4c}{a} = \\frac{b^2-4ac}{a^2} = \\frac{D}{a^2}$$</p><p>Jadi $(a-b)^2$ tidak lain adalah diskriminan dibagi $a^2$. Di sini $D = 36-16 = 20$ dan $a = 1$, memberi $20$ — cocok.</p><p>Itu menjelaskan mengapa $D$ menentukan jenis akar. Kalau $D &gt; 0$ maka $(a-b)^2 &gt; 0$ sehingga kedua akarnya berbeda; kalau $D = 0$ maka $a = b$; dan kalau $D &lt; 0$ maka $(a-b)^2$ negatif, yang mustahil untuk bilangan real — jadi akarnya tidak real.</p><p>Perhatikan bahwa yang bisa ditentukan hanya $(a-b)^2$, bukan $a-b$ sendiri. Tandanya bergantung pada akar mana yang disebut $a$, dan soal tidak menentukannya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "vt-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "vieta"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan rumus Vieta untuk persamaan kuadrat: jika $x_1$ dan $x_2$ akar-akar $ax^2+bx+c = 0$ dengan $a \\ne 0$, maka</p><p>$$x_1 + x_2 = -\\frac{b}{a}, \\qquad x_1 x_2 = \\frac{c}{a}$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kalau $x_1$ dan $x_2$ akarnya, maka polinomialnya bisa ditulis dalam bentuk terfaktor. Tulis bentuk itu.",
+    "Jabarkan $a(x-x_1)(x-x_2)$ dan bandingkan koefisiennya dengan $ax^2+bx+c$.",
+    "Cara lain: pakai rumus akar dan jumlahkan langsung — perhatikan apa yang terjadi pada akar kuadratnya."
+   ],
+   "pembahasan": "<h4>Cara pertama: bandingkan koefisien</h4><p>Karena $x_1$ dan $x_2$ akar-akar $ax^2+bx+c$ dan $a \\ne 0$, polinomial itu bisa ditulis dalam bentuk terfaktor</p><p>$$ax^2+bx+c = a\\left(x - x_1\\right)\\left(x - x_2\\right)$$</p><p>Faktor $a$ di depan diperlukan supaya koefisien $x^2$ pada kedua ruas cocok.</p><p>Jabarkan ruas kanan:</p><p>$$a\\left(x^2 - x_2 x - x_1 x + x_1x_2\\right)\n= ax^2 - a\\left(x_1+x_2\\right)x + a\\,x_1x_2$$</p><p>Kedua ruas adalah polinomial yang sama, jadi koefisien tiap pangkat $x$ harus cocok:</p><p>$$b = -a\\left(x_1+x_2\\right), \\qquad c = a\\,x_1x_2$$</p><p>Bagi keduanya dengan $a$ — sah karena $a \\ne 0$:</p><p>$$x_1 + x_2 = -\\frac{b}{a}, \\qquad x_1 x_2 = \\frac{c}{a}$$</p><h4>Cara kedua: lewat rumus akar</h4><p>Kedua akarnya</p><p>$$x_1 = \\frac{-b + \\sqrt{D}}{2a}, \\qquad x_2 = \\frac{-b - \\sqrt{D}}{2a},\n\\qquad D = b^2-4ac$$</p><p><strong>Jumlahkan.</strong> Suku $\\sqrt D$ saling menghapus:</p><p>$$x_1 + x_2 = \\frac{(-b + \\sqrt D) + (-b - \\sqrt D)}{2a} = \\frac{-2b}{2a} = -\\frac{b}{a}$$</p><p><strong>Kalikan.</strong> Bentuknya selisih kuadrat:</p><p>$$x_1 x_2 = \\frac{(-b)^2 - \\left(\\sqrt D\\right)^2}{4a^2} = \\frac{b^2 - D}{4a^2}\n= \\frac{b^2 - \\left(b^2-4ac\\right)}{4a^2} = \\frac{4ac}{4a^2} = \\frac{c}{a}$$</p><p>$\\blacksquare$</p><p>Cara pertama lebih baik karena ia <strong>tidak bergantung pada rumus akar</strong>, sehingga tetap berlaku ketika akarnya kompleks — dan perumumannya ke derajat tiga dan seterusnya mengikuti pola yang persis sama. Cara kedua lebih lugas tetapi hanya rapi untuk kuadrat.</p><p>Perhatikan di mana syarat $a \\ne 0$ dipakai: pada pembagian di langkah terakhir cara pertama, dan pada penyebut rumus akar di cara kedua. Tanpa syarat itu persamaannya bahkan bukan kuadrat.</p>",
+   "rubrik": [
+    "Menulis bentuk terfaktor $a(x-x_1)(x-x_2)$, <strong>dengan faktor $a$ di depan</strong> dan alasannya",
+    "Menjabarkannya dengan benar menjadi $ax^2 - a(x_1+x_2)x + a\\,x_1x_2$",
+    "Menyamakan koefisien tiap pangkat $x$ pada kedua ruas",
+    "Membagi dengan $a$ dan menyebut $a \\ne 0$ sebagai alasan sahnya",
+    "<strong>Atau</strong>, jalur rumus akar: menjumlahkan dan menunjukkan $\\sqrt D$ saling menghapus",
+    "Jalur rumus akar: mengalikan lewat selisih kuadrat dan menyederhanakan sampai $\\frac{c}{a}$"
+   ]
+  },
+  {
+   "id": "vt-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-K",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "jurus": [
+    "vieta"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Akar-akar persamaan $x^2 - 7x + 12 = 0$ adalah $x_1$ dan $x_2$. Tentukan nilai $x_1^2 + x_2^2$.</p>",
+   "jawaban": "25",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Yang ditanya bentuk simetris akar-akarnya, bukan akarnya sendiri. Itu tanda paling jelas untuk jurus ini.",
+    "Rumus Vieta memberi $x_1+x_2 = -\\frac{b}{a}$ dan $x_1x_2 = \\frac{c}{a}$ tanpa menghitung akar.",
+    "Tulis ulang $x_1^2+x_2^2$ lewat kedua bentuk itu."
+   ],
+   "pembahasan": "<p>Rumus Vieta untuk $ax^2+bx+c = 0$:</p><p>$$x_1 + x_2 = -\\frac{b}{a}, \\qquad x_1 x_2 = \\frac{c}{a}$$</p><p>Di sini $a = 1$, $b = -7$, $c = 12$, sehingga</p><p>$$x_1 + x_2 = 7, \\qquad x_1 x_2 = 12$$</p><p>Tulis ulang yang ditanya:</p><p>$$x_1^2 + x_2^2 = \\left(x_1+x_2\\right)^2 - 2x_1x_2 = 7^2 - 2(12) = 49 - 24 = \\boxed{25}$$</p><p>Periksa: akarnya memang $3$ dan $4$, dan $9 + 16 = 25$.</p><p>Di sini akarnya kebetulan rasional, jadi mencarinya juga bisa. Tetapi kekuatan Vieta baru terasa ketika akarnya tidak rasional. Pada $x^2 - 7x + 11 = 0$ misalnya, akarnya $\\frac{7 \\pm \\sqrt5}{2}$ — dan menghitung $x_1^2+x_2^2$ darinya jauh lebih panjang, padahal Vieta langsung memberi $49 - 22 = 27$.</p><p><strong>Aturan kerjanya selalu sama:</strong> tulis ulang bentuk yang ditanya lewat $x_1+x_2$ dan $x_1x_2$. Beberapa yang sering muncul:</p><p>$$\\frac{1}{x_1} + \\frac{1}{x_2} = \\frac{x_1+x_2}{x_1x_2}, \\qquad\n\\left(x_1-x_2\\right)^2 = \\left(x_1+x_2\\right)^2 - 4x_1x_2$$</p>",
+   "rubrik": []
   },
   {
    "id": "wl-01",

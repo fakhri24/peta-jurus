@@ -4,8 +4,8 @@ nama: Sistem Persamaan
 pilar: aljabar
 tahap: osn-k
 prasyarat: [faktorisasi]
-contoh: []
-latihan: []
+contoh: [sp-contoh-1]
+latihan: [sp-01, sp-02, sp-03, sp-04, sp-05, sp-06]
 ---
 
 ## Kapan dipakai

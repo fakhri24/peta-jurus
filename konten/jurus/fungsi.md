@@ -4,8 +4,8 @@ nama: Fungsi dan Sifatnya
 pilar: aljabar
 tahap: osn-k
 prasyarat: [manipulasi-aljabar]
-contoh: []
-latihan: []
+contoh: [fn-contoh-1]
+latihan: [fn-01, fn-02, fn-03, fn-04, fn-05, fn-06]
 ---
 
 ## Kapan dipakai

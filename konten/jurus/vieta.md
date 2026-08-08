@@ -4,8 +4,8 @@ nama: Rumus Vieta
 pilar: aljabar
 tahap: osn-k
 prasyarat: [persamaan-kuadrat]
-contoh: []
-latihan: []
+contoh: [vt-contoh-1]
+latihan: [vt-01, vt-02, vt-03, vt-04, vt-05, vt-06]
 ---
 
 ## Kapan dipakai
