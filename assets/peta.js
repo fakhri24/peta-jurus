@@ -293,5 +293,7 @@
   }
 
   Inti.pasangKepala('index.html');
-  Inti.muatData().then(jalan).catch(function (e) { Inti.galat(e.message); });
+  /* Halaman ini tidak menyentuh data.soal sama sekali — status, gembok, dan ajakan
+     semuanya dihitung dari jurus dan kemajuan. */
+  Inti.muatData({ soal: false }).then(jalan).catch(function (e) { Inti.galat(e.message); });
 })();

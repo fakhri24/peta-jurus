@@ -19,6 +19,7 @@ python3 scripts/build.py          # konten/*.md → data/*.json  (butuh pyyaml)
 python3 tests/test_build.py       # 47 tes
 python3 tests/test_build.py TestRumusSelamat.test_garis_bawah_bukan_huruf_miring   # satu tes
 node scripts/periksa-rumus.js     # tiap rumus di data/*.json benar-benar dirender KaTeX
+node scripts/periksa-muatan.js    # berkas data apa yang benar-benar diminta tiap halaman
 ```
 
 Tidak ada linter, tidak ada package manager, tidak ada build step untuk situsnya —
@@ -65,6 +66,11 @@ di `assets/katex/`, bukan CDN, supaya offline jalan).
 
 - `assets/inti.js` mengekspor global `Inti`: data, localStorage, penjadwalan, render
   rumus, `lolos()` untuk escape HTML.
+- **Halaman menyatakan data apa yang dipakainya** lewat `Inti.muatData({ soal: false })`.
+  Bawaannya memuat semuanya, jadi halaman yang lupa menyatakan tetap bekerja — hanya
+  tidak hemat. `peta.js` satu-satunya yang menolak `soal.json` sekarang, dan itu
+  memangkas halaman masuk dari 327 KB jadi 40 KB. `node scripts/periksa-muatan.js`
+  menunjukkan angkanya per halaman.
 - `assets/soal-ui.js` mengekspor global `SoalUI`: hanya tangga petunjuk, dipakai bersama
   oleh halaman jurus dan latihan.
 - Tiap halaman punya satu skripnya sendiri dan selalu ditutup dengan pola yang sama:

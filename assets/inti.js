@@ -55,18 +55,35 @@ var Inti = (function () {
 
   // ---------------------------------------------------------------- data
 
-  function muatData() {
-    return Promise.all([
-      fetch('data/jurus.json').then(function (r) { return r.json(); }),
-      fetch('data/soal.json').then(function (r) { return r.json(); })
-    ]).then(function (hasil) {
+  /* Halaman menyatakan data apa yang dipakainya:
+
+         Inti.muatData()                 jurus + seluruh soal (bawaan)
+         Inti.muatData({ soal: false })  jurus saja
+
+     Peta tidak menyentuh data.soal sama sekali, jadi tidak ada gunanya ia mengurai
+     ratusan KB soal setiap kali dibuka.
+
+     Bawaannya memuat semuanya, supaya halaman yang lupa menyatakan kebutuhannya
+     tetap bekerja — hanya tidak hemat. Kelak, saat soal.json dipecah per bidang,
+     bidang yang diperlukan diumumkan lewat kunci `soal` yang sama. */
+  function muatData(perlu) {
+    var perluSoal = !perlu || perlu.soal !== false;
+
+    var permintaan = [fetch('data/jurus.json').then(function (r) { return r.json(); })];
+    if (perluSoal) {
+      permintaan.push(fetch('data/soal.json').then(function (r) { return r.json(); }));
+    }
+
+    return Promise.all(permintaan).then(function (hasil) {
       data.ukuran = hasil[0].ukuran || {};
       data.urutJurus = [];
       hasil[0].simpul.forEach(function (j) {
         data.jurus[j.id] = j;
         data.urutJurus.push(j.id);
       });
-      hasil[1].soal.forEach(function (s) { data.soal[s.id] = s; });
+      if (perluSoal) {
+        hasil[1].soal.forEach(function (s) { data.soal[s.id] = s; });
+      }
       return data;
     }).catch(function (e) {
       // fetch() memang gagal di file:// — ini penyebab tersering.

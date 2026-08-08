@@ -96,13 +96,39 @@ Pilihan bidang dan tahap disimpan di kunci localStorage sendiri,
 `peta-jurus/tampilan/v1` — sengaja terpisah dari kemajuan, supaya preferensi perangkat
 tidak ikut terbawa saat kemajuan diekspor dan dipindah.
 
-**0.5 Pisah `soal.json` per bidang — ditunda, tapi jamnya sudah berdetak.** Setelah Fase
-1.2 ukurannya **227 KB untuk 127 soal** (~1,8 KB per soal, lebih besar dari perkiraan awal
-1,35 KB karena soal OSN-P berpembahasan panjang). Pada 630 soal angkanya menuju ~1,1 MB,
-dan **seluruhnya diambil di setiap halaman** serta ikut di-*precache* `sw.js` saat install.
-Pecah jadi `data/soal-<pilar>.json` dan muat sesuai kebutuhan halaman. Tetap **paling
-lambat akhir Fase 2** — tapi kalau teori bilangan saja sudah 227 KB, batas itu jangan
-digeser lagi.
+**0.5 Pisah `soal.json` per bidang — ditunda sampai akhir Fase 2, sengaja.** Setelah Fase
+1.3 ukurannya **287 KB untuk 155 soal** (~1,8 KB per soal, lebih besar dari perkiraan awal
+1,35 KB karena pembahasan OSN-P dan OSN panjang). Pada 630 soal angkanya menuju ~1,1 MB.
+
+**Sambungannya sudah dipasang 8 Agustus 2026.** Halaman kini menyatakan kebutuhan
+datanya lewat `Inti.muatData({ soal: false })`, dan `peta.js` — yang tidak menyentuh
+`data.soal` sama sekali — berhenti memuatnya. Halaman masuk turun dari 327 KB jadi 40 KB.
+Ukur dengan `node scripts/periksa-muatan.js`, yang menjalankan tiap halaman di Node
+dengan `fetch` tiruan dan mencatat apa yang benar-benar diminta.
+
+**Pemecahannya sendiri belum**, dan dua alasannya:
+
+*Tidak bisa diuji dengan satu bidang.* Yang dikerjakan pemecahan itu justru memuat
+subset yang tepat dan menangani sesi lintas bidang — dan sekarang tidak ada yang bisa
+dilintasi.
+
+*Rancangan "per bidang" ternyata hanya separuh cocok.* Setelah ditelusuri, kebutuhan tiap
+halaman begini:
+
+| Halaman | Butuh soal |
+|---|---|
+| `index.html` | tidak sama sekali — sudah beres |
+| `jurus.html` | satu bidang saja |
+| `latihan.html` | sesi harian menjangkau jurus jatuh tempo di bidang mana pun |
+| `jurnal.html` | riwayat menunjuk soal lintas bidang |
+| `simulasi.html` | seluruhnya |
+
+Jadi memecah per bidang hanya menolong `jurus.html`. Tiga halaman lain tetap butuh lintas
+bidang, dan rancangan yang benar untuk mereka — indeks ringkas, pemuatan sesuai
+permintaan, atau memang memuat semuanya — baru bisa diputuskan ketika bidang kedua
+membuat polanya nyata.
+
+Batasnya tetap **akhir Fase 2**.
 
 **0.6 Koreksi CLAUDE.md — selesai 8 Agustus 2026**, lalu diperbarui lagi mengikuti
 0.1–0.4.
