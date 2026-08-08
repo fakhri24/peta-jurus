@@ -4,8 +4,8 @@ nama: Suku Banyak
 pilar: aljabar
 tahap: osn-p
 prasyarat: [persamaan-kuadrat]
-contoh: []
-latihan: []
+contoh: [sb-contoh-1]
+latihan: [sb-01, sb-02, sb-03, sb-04, sb-05, sb-06]
 ---
 
 ## Kapan dipakai

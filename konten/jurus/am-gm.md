@@ -4,8 +4,8 @@ nama: Ketaksamaan AM-GM
 pilar: aljabar
 tahap: osn-p
 prasyarat: [ketaksamaan-dasar]
-contoh: []
-latihan: []
+contoh: [ag-contoh-1]
+latihan: [ag-01, ag-02, ag-03, ag-04, ag-05, ag-06]
 ---
 
 ## Kapan dipakai

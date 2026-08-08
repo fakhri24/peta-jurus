@@ -154,6 +154,161 @@
    "rubrik": []
   },
   {
+   "id": "ag-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "am-gm"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Diketahui $a$ dan $b$ bilangan real positif dengan $ab = 16$. Tentukan nilai terkecil dari $a + b$.</p>",
+   "jawaban": "8",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Perhatikan mana yang dikunci soal dan mana yang ditanya: hasil kalinya tetap, jumlahnya dicari.",
+    "$a + b \\ge 2\\sqrt{ab}$ untuk $a, b &gt; 0$.",
+    "Setelah batasnya diperoleh, periksa nilai $a$ dan $b$ yang mencapainya."
+   ],
+   "pembahasan": "<p>Hasil kalinya tetap, jumlahnya ditanya — terapkan AM-GM langsung:</p><p>$$a + b \\ \\ge\\ 2\\sqrt{ab} = 2\\sqrt{16} = 2 \\times 4 = 8$$</p><p><strong>Periksa kesamaannya tercapai.</strong> Kesamaan pada AM-GM berlaku tepat ketika $a = b$. Digabung dengan $ab = 16$:</p><p>$$a^2 = 16 \\quad\\Longrightarrow\\quad a = 4$$</p><p>(akar negatifnya dibuang karena $a &gt; 0$), sehingga $b = 4$ juga. Substitusikan: $4 + 4 = 8$. Tercapai.</p><p>Nilai terkecilnya adalah $\\boxed{8}$.</p><p>Bandingkan dengan pilihan lain untuk merasakan mengapa: $a = 2$, $b = 8$ memberi $10$; $a = 1$, $b = 16$ memberi $17$. Semakin timpang kedua bilangannya, semakin besar jumlahnya — dan itu isi AM-GM dalam satu kalimat.</p><p><strong>Dua arah yang layak diingat berpasangan.</strong></p><ul><li>Hasil kali tetap $\\Rightarrow$ jumlah paling <strong>kecil</strong> ketika keduanya sama.</li><li>Jumlah tetap $\\Rightarrow$ hasil kali paling <strong>besar</strong> ketika keduanya sama.</li></ul><p>Keduanya datang dari ketaksamaan yang sama, hanya dibaca dari arah berbeda. Mengenali mana yang tetap dan mana yang ditanya adalah langkah pertama pada setiap soal AM-GM.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ag-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "am-gm"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Untuk $x &gt; 0$, tentukan nilai terkecil dari</p><p>$$x + \\frac{4}{x}$$</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Periksa hasil kali kedua sukunya. Kalau ia ternyata tidak bergantung pada $x$, itu keadaan yang sangat menguntungkan.",
+    "$x \\cdot \\frac4x = 4$, tetap.",
+    "Setelah batas diperoleh, cari $x$ yang membuat kedua suku sama."
+   ],
+   "pembahasan": "<p>Hasil kali kedua sukunya</p><p>$$x \\cdot \\frac{4}{x} = 4$$</p><p>tetap, jadi AM-GM bisa dipakai langsung. Keduanya positif karena $x &gt; 0$:</p><p>$$x + \\frac{4}{x} \\ \\ge\\ 2\\sqrt{x \\cdot \\frac4x} = 2\\sqrt4 = \\boxed{4}$$</p><p><strong>Periksa kesamaannya.</strong> Dibutuhkan $x = \\frac4x$, yaitu $x^2 = 4$, yaitu $x = 2$. Substitusikan: $2 + 2 = 4$. Tercapai.</p><p><strong>Cara kedua, tanpa AM-GM.</strong> Tinjau selisihnya terhadap $4$:</p><p>$$x + \\frac4x - 4 = \\frac{x^2 - 4x + 4}{x} = \\frac{(x-2)^2}{x}$$</p><p>Pembilangnya kuadrat, jadi tak negatif; penyebutnya positif karena $x &gt; 0$. Maka seluruh pecahannya tak negatif, sehingga $x + \\frac4x \\ge 4$ — dengan kesamaan tepat ketika $x = 2$.</p><p>Kedua jalur memberi hasil yang sama, dan keduanya bergantung pada $x &gt; 0$: pada jalur pertama karena AM-GM menuntutnya, pada jalur kedua karena tanda penyebutnya menentukan arah.</p><p>Pola umumnya layak dikenali: untuk $x &gt; 0$ dan konstanta $c &gt; 0$,</p><p>$$x + \\frac{c}{x} \\ \\ge\\ 2\\sqrt{c}$$</p><p>dengan kesamaan di $x = \\sqrt c$. Jadi nilai minimumnya hanya bergantung pada $c$, dan titik pencapaiannya selalu akar kuadratnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ag-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "am-gm"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $x$, $y$, $z$ bilangan real positif dengan $x + y + z = 9$. Tentukan nilai terbesar dari $xyz$.</p>",
+   "jawaban": "27",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kali ini tiga peubah, tetapi keadaannya sama seperti dua peubah: jumlahnya dikunci, hasil kalinya dicari.",
+    "$\\frac{x+y+z}{3} \\ge \\sqrt[3]{xyz}$ untuk $x,y,z &gt; 0$.",
+    "Jumlahnya tetap, jadi hasil kalinya paling besar ketika ketiganya sama."
+   ],
+   "pembahasan": "<p>AM-GM untuk tiga bilangan positif:</p><p>$$\\frac{x+y+z}{3} \\ \\ge\\ \\sqrt[3]{xyz}$$</p><p>dengan kesamaan tepat ketika $x = y = z$.</p><p>Substitusikan jumlahnya:</p><p>$$\\frac{9}{3} = 3 \\ \\ge\\ \\sqrt[3]{xyz}$$</p><p>Pangkatkan tiga kedua ruas — sah karena keduanya positif dan memangkatkan tiga menjaga arah:</p><p>$$27 \\ \\ge\\ xyz$$</p><p><strong>Periksa kesamaannya tercapai.</strong> Dibutuhkan $x = y = z$, dan digabung dengan $x+y+z = 9$ diperoleh $x = y = z = 3$. Ketiganya positif, jadi memenuhi syarat soal. Substitusikan: $3 \\times 3 \\times 3 = 27$. Tercapai.</p><p>Nilai terbesarnya adalah $\\boxed{27}$.</p><p>Bandingkan dengan pilihan lain: $x=1, y=1, z=7$ memberi $7$; $x=2,y=3,z=4$ memberi $24$. Semakin merata sebarannya, semakin besar hasil kalinya.</p><p><strong>Perumumannya berlaku untuk berapa pun banyak peubahnya.</strong> Untuk $n$ bilangan positif yang berjumlah $S$, hasil kalinya paling besar $\\left(\\frac{S}{n}\\right)^n$, dicapai ketika semuanya sama.</p><p>Perhatikan bahwa arah pemangkatan tiga di atas perlu alasan. Untuk bilangan positif, $a \\ge b$ memang menurunkan $a^3 \\ge b^3$; tetapi kalau tandanya belum dipastikan, langkah itu tidak sah.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ag-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "am-gm"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Untuk $x &gt; 0$, tentukan nilai terkecil dari</p><p>$$x^2 + \\frac{16}{x}$$</p>",
+   "jawaban": "12",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Coba dulu cara yang biasa pada dua suku, lalu periksa hasil kalinya. Ia masih memuat $x$ — dan di situlah cara itu gagal.",
+    "Pecah salah satu suku menjadi beberapa bagian yang sama, supaya hasil kali seluruhnya menjadi tetap.",
+    "Pecah $\\frac{16}{x}$ menjadi dua bagian $\\frac{8}{x}$, lalu terapkan AM-GM pada <strong>tiga</strong> suku."
+   ],
+   "pembahasan": "<p><strong>Mengapa penerapan langsung gagal.</strong> Kalau AM-GM dipakai pada dua suku apa adanya:</p><p>$$x^2 + \\frac{16}{x} \\ \\ge\\ 2\\sqrt{x^2 \\cdot \\frac{16}{x}} = 2\\sqrt{16x} = 8\\sqrt{x}$$</p><p>Batasnya masih memuat $x$, jadi ia bukan bilangan tetap dan tidak menjawab apa pun. <strong>Tandanya penerapannya belum tepat.</strong></p><p><strong>Pecah supaya hasil kalinya tetap.</strong> Tulis $\\frac{16}{x} = \\frac{8}{x} + \\frac{8}{x}$ dan terapkan AM-GM pada tiga suku:</p><p>$$x^2 + \\frac{8}{x} + \\frac{8}{x} \\ \\ge\\ 3\\sqrt[3]{x^2 \\cdot \\frac{8}{x} \\cdot \\frac{8}{x}}$$</p><p>Hitung isi akarnya — di sinilah $x$ lenyap:</p><p>$$x^2 \\cdot \\frac{8}{x} \\cdot \\frac{8}{x} = \\frac{64x^2}{x^2} = 64$$</p><p>Maka</p><p>$$x^2 + \\frac{16}{x} \\ \\ge\\ 3\\sqrt[3]{64} = 3 \\times 4 = 12$$</p><p><strong>Periksa kesamaannya tercapai.</strong> Dibutuhkan ketiga suku sama:</p><p>$$x^2 = \\frac{8}{x} \\quad\\Longrightarrow\\quad x^3 = 8 \\quad\\Longrightarrow\\quad x = 2$$</p><p>Substitusikan: $4 + \\frac{16}{2} = 4 + 8 = 12$. Tercapai.</p><p>Nilai terkecilnya adalah $\\boxed{12}$.</p><p><strong>Inilah keterampilan inti pada AM-GM tingkat lanjut: memecah suku.</strong> Aturan memilihnya begini — pecah sedemikian rupa sehingga pangkat $x$ pada hasil kali seluruh suku saling menghapus. Di sini $x^2$ berpangkat $+2$ dan tiap $\\frac{8}{x}$ berpangkat $-1$; dua suku negatif menyeimbangkan satu suku positif, jadi pecahannya harus <strong>dua</strong> bagian.</p><p>Kalau soalnya $x^3 + \\frac{c}{x}$, dibutuhkan tiga bagian; kalau $x^2 + \\frac{c}{x^2}$, cukup dua suku apa adanya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ag-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "am-gm"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Diketahui $a$, $b$, $c$ bilangan real positif dengan $abc = 8$. Tentukan nilai terkecil dari $a + b + c$.</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Yang tetap hasil kalinya, yang ditanya jumlahnya — arah yang berlawanan dengan soal sebelumnya.",
+    "AM-GM tiga bilangan: $\\frac{a+b+c}{3} \\ge \\sqrt[3]{abc}$.",
+    "Setelah batas diperoleh, cari nilai $a$, $b$, $c$ yang mencapainya dan periksa ia memenuhi kendala."
+   ],
+   "pembahasan": "<p>Terapkan AM-GM untuk tiga bilangan positif:</p><p>$$\\frac{a+b+c}{3} \\ \\ge\\ \\sqrt[3]{abc} = \\sqrt[3]{8} = 2$$</p><p>Kalikan kedua ruas dengan $3$ — sah karena $3 &gt; 0$:</p><p>$$a + b + c \\ \\ge\\ 6$$</p><p><strong>Periksa kesamaannya tercapai.</strong> Kesamaan berlaku tepat ketika $a = b = c$. Digabung dengan kendala $abc = 8$:</p><p>$$a^3 = 8 \\quad\\Longrightarrow\\quad a = 2$$</p><p>sehingga $a = b = c = 2$. Ketiganya positif dan hasil kalinya memang $8$, jadi kendala soalnya terpenuhi. Substitusikan: $2+2+2 = 6$. Tercapai.</p><p>Nilai terkecilnya adalah $\\boxed{6}$.</p><p>Bandingkan dengan pilihan lain: $a=1, b=2, c=4$ memberi $7$; $a=1,b=1,c=8$ memberi $10$. Sebaran yang merata memberi jumlah terkecil.</p><p><strong>Perhatikan pasangan soal ini dengan yang sebelumnya.</strong> Pada soal jumlah tetap, yang ditanya hasil kali, dan yang muncul nilai <strong>maksimum</strong>. Di sini hasil kalinya yang tetap, yang ditanya jumlah, dan yang muncul nilai <strong>minimum</strong>. Ketaksamaannya sama persis; yang berbeda hanya besaran mana yang dikunci.</p><p>Cara mengenalinya cepat: <strong>besaran yang dikunci menentukan arah</strong>. Kalau yang dikunci berada di ruas kanan AM-GM (rata-rata geometri), maka ruas kiri punya batas bawah — jadi jumlahnya minimum. Kalau yang dikunci di ruas kiri, ruas kanan punya batas atas — jadi hasil kalinya maksimum.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ag-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "am-gm",
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan ketaksamaan AM-GM untuk dua bilangan: untuk sembarang bilangan real $a, b &gt; 0$,</p><p>$$\\frac{a+b}{2} \\ \\ge\\ \\sqrt{ab}$$</p><p>dan tentukan kapan kesamaannya tercapai.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pindahkan semuanya ke satu ruas, lalu usahakan sisanya menjadi kuadrat.",
+    "Karena ada akar, tulis $a = \\left(\\sqrt a\\right)^2$ dan $b = \\left(\\sqrt b\\right)^2$ — sah karena keduanya positif.",
+    "Setelah itu, $a + b - 2\\sqrt{ab}$ akan berbentuk kuadrat sempurna."
+   ],
+   "pembahasan": "<p>Kedua ruas tak negatif, jadi ketaksamaannya setara dengan</p><p>$$a + b - 2\\sqrt{ab} \\ \\ge\\ 0$$</p><p><strong>Tulis ulang lewat akar.</strong> Karena $a &gt; 0$ dan $b &gt; 0$, keduanya punya akar kuadrat real positif, dan</p><p>$$a = \\left(\\sqrt a\\right)^2, \\qquad b = \\left(\\sqrt b\\right)^2, \\qquad\n\\sqrt{ab} = \\sqrt a \\cdot \\sqrt b$$</p><p>Langkah terakhir itu sah <strong>karena keduanya tak negatif</strong>; untuk bilangan negatif, $\\sqrt{ab} = \\sqrt a \\sqrt b$ tidak berlaku.</p><p>Substitusikan:</p><p>$$a + b - 2\\sqrt{ab} = \\left(\\sqrt a\\right)^2 - 2\\sqrt a \\sqrt b + \\left(\\sqrt b\\right)^2$$</p><p>Ruas kanan adalah kuadrat sempurna:</p><p>$$= \\left(\\sqrt a - \\sqrt b\\right)^2$$</p><p><strong>Simpulkan.</strong> Kuadrat bilangan real tidak pernah negatif, jadi</p><p>$$a + b - 2\\sqrt{ab} = \\left(\\sqrt a - \\sqrt b\\right)^2 \\ \\ge\\ 0$$</p><p>Pindahkan dan bagi dengan $2$ — sah karena $2 &gt; 0$:</p><p>$$\\frac{a+b}{2} \\ \\ge\\ \\sqrt{ab} \\qquad \\blacksquare$$</p><h4>Kapan kesamaannya tercapai</h4><p>Kesamaan berlaku tepat ketika $\\left(\\sqrt a - \\sqrt b\\right)^2 = 0$, yaitu</p><p>$$\\sqrt a = \\sqrt b \\quad\\Longrightarrow\\quad a = b$$</p><p>Langkah terakhir sah karena fungsi akar kuadrat satu-satu pada bilangan tak negatif.</p><p>Perhatikan bahwa <strong>seluruh pembuktian bertumpu pada satu fakta yang sama</strong> seperti seluruh ketaksamaan aljabar dasar: kuadrat bilangan real tak negatif. Yang berbeda hanya bentuk apa yang berhasil disusun menjadi kuadrat.</p><p>Bacaan geometrisnya juga menarik. Pada segitiga siku-siku dengan tinggi ke sisi miring membagi sisi itu menjadi $a$ dan $b$, tingginya bernilai $\\sqrt{ab}$ sedangkan jari-jari lingkaran luarnya $\\frac{a+b}{2}$. Tinggi tidak pernah melebihi jari-jari — dan keduanya sama tepat ketika segitiganya sama kaki.</p>",
+   "rubrik": [
+    "Menyusun ulang menjadi bentuk \"sesuatu $\\ge 0$\"",
+    "Menulis $a$ dan $b$ sebagai kuadrat akarnya, dengan menyebut $a, b &gt; 0$ sebagai alasan sahnya",
+    "Memakai $\\sqrt{ab} = \\sqrt a \\sqrt b$ dan menyebut syarat tak negatifnya",
+    "Mengenali hasilnya sebagai $\\left(\\sqrt a - \\sqrt b\\right)^2$",
+    "Menyimpulkan tak negatif, lalu menyusun kembali ke bentuk yang diminta",
+    "Menentukan syarat kesamaan $a = b$"
+   ]
+  },
+  {
+   "id": "ag-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "am-gm"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Untuk $x &gt; 0$, tentukan nilai terkecil dari</p><p>$$x + \\frac{9}{x}$$</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kedua sukunya positif, dan hasil kalinya ternyata tetap. Periksa berapa nilai $x \\cdot \\frac9x$.",
+    "Kalau hasil kali dua bilangan positif tetap, jumlahnya paling kecil ketika keduanya sama.",
+    "Ketaksamaan yang menyatakan itu: $a + b \\ge 2\\sqrt{ab}$ untuk $a, b &gt; 0$."
+   ],
+   "pembahasan": "<p>Perhatikan hasil kali kedua sukunya:</p><p>$$x \\cdot \\frac{9}{x} = 9$$</p><p><strong>Tetap</strong> — tidak bergantung pada $x$ sama sekali. Itulah keadaan yang dijawab AM-GM.</p><p>Untuk dua bilangan positif $a$ dan $b$:</p><p>$$\\frac{a+b}{2} \\ \\ge\\ \\sqrt{ab} \\quad\\Longleftrightarrow\\quad a + b \\ \\ge\\ 2\\sqrt{ab}$$</p><p>dengan kesamaan <strong>tepat ketika $a = b$</strong>.</p><p>Terapkan dengan $a = x$ dan $b = \\frac9x$, keduanya positif karena $x &gt; 0$:</p><p>$$x + \\frac{9}{x} \\ \\ge\\ 2\\sqrt{x \\cdot \\frac9x} = 2\\sqrt{9} = 6$$</p><p><strong>Periksa kesamaannya tercapai.</strong> Dibutuhkan</p><p>$$x = \\frac{9}{x} \\quad\\Longrightarrow\\quad x^2 = 9 \\quad\\Longrightarrow\\quad x = 3$$</p><p>(akar negatifnya dibuang karena $x &gt; 0$). Substitusikan: $3 + \\frac93 = 6$. Tercapai.</p><p>Nilai terkecilnya adalah $\\boxed{6}$.</p><p><strong>Langkah terakhir itu bagian dari jawaban.</strong> AM-GM hanya memberi batas bawah; ia menjadi nilai minimum setelah ditunjukkan ada $x$ sah yang mencapainya. Kalau kendala soal melarang nilai itu — misalnya kalau soal menuntut $x \\ge 5$ — batasnya tidak tercapai dan minimumnya lebih besar.</p><p><strong>Syarat $x &gt; 0$ juga tidak bisa dibuang.</strong> Untuk $x &lt; 0$ bentuk ini justru bernilai paling besar $-6$; contohnya $x = -3$ memberi $-6$, dan $x = -1$ memberi $-10$. AM-GM memang hanya berlaku untuk bilangan positif.</p>",
+   "rubrik": []
+  },
+  {
    "id": "ap-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
    "pilar": "teori-bilangan",
@@ -2021,6 +2176,182 @@
    "rubrik": []
   },
   {
+   "id": "ind-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "induksi",
+    "barisan-deret"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan nilai dari</p><p>$$1^2 + 2^2 + 3^2 + \\cdots + 10^2$$</p>",
+   "jawaban": "385",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Menjumlahkan sepuluh suku bisa, tetapi ada rumus tertutup yang layak dikenali.",
+    "Jumlah kuadrat $n$ bilangan asli pertama adalah $\\frac{n(n+1)(2n+1)}{6}$.",
+    "Substitusikan $n = 10$ dan hitung bertahap."
+   ],
+   "pembahasan": "<p>Rumus jumlah kuadrat $n$ bilangan asli pertama:</p><p>$$1^2 + 2^2 + \\cdots + n^2 = \\frac{n(n+1)(2n+1)}{6}$$</p><p>Substitusikan $n = 10$:</p><p>$$\\frac{10 \\times 11 \\times 21}{6}$$</p><p>Hitung bertahap, dan sederhanakan sebelum mengalikan:</p><p>$$= \\frac{10 \\times 11 \\times 21}{6} = \\frac{2310}{6} = \\boxed{385}$$</p><p>Periksa dengan menjumlahkan langsung:</p><p>$$1 + 4 + 9 + 16 + 25 + 36 + 49 + 64 + 81 + 100 = 385$$</p><p>Cocok.</p><p>Rumus itu sendiri dibuktikan dengan induksi, dan pembuktiannya mengikuti pola yang sama: basis di $n = 1$, lalu tunjukkan</p><p>$$\\frac{k(k+1)(2k+1)}{6} + (k+1)^2 = \\frac{(k+1)(k+2)(2k+3)}{6}$$</p><p>Tiga rumus jumlah yang layak dikenali seketika, karena ketiganya muncul terus-menerus:</p><p>$$\\sum_{k=1}^{n} k = \\frac{n(n+1)}{2}, \\qquad\n\\sum_{k=1}^{n} k^2 = \\frac{n(n+1)(2n+1)}{6}, \\qquad\n\\sum_{k=1}^{n} k^3 = \\left(\\frac{n(n+1)}{2}\\right)^2$$</p><p>Yang ketiga punya bentuk yang mengejutkan: jumlah pangkat tiga selalu sama dengan <strong>kuadrat dari jumlah</strong> bilangannya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ind-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "induksi"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa untuk setiap bilangan asli $n$,</p><p>$$1^3 + 2^3 + \\cdots + n^3 = \\left(\\frac{n(n+1)}{2}\\right)^2$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Alurnya sama seperti pembuktian jumlah biasa: basis, lalu langkah $k \\to k+1$.",
+    "Pada langkah induksi, tambahkan $(k+1)^3$ ke hipotesis.",
+    "Yang perlu ditunjukkan: $\\left(\\frac{k(k+1)}{2}\\right)^2 + (k+1)^3 = \\left(\\frac{(k+1)(k+2)}{2}\\right)^2$. Keluarkan $(k+1)^2$ sebagai faktor persekutuan."
+   ],
+   "pembahasan": "<h4>Basis</h4><p>Untuk $n = 1$: ruas kiri $= 1$, dan ruas kanan $= \\left(\\frac{1 \\cdot 2}{2}\\right)^2 = 1$. Cocok.</p><h4>Langkah induksi</h4><p>Andaikan benar untuk $n = k$:</p><p>$$1^3 + 2^3 + \\cdots + k^3 = \\left(\\frac{k(k+1)}{2}\\right)^2 = \\frac{k^2(k+1)^2}{4}$$</p><p>Tambahkan suku berikutnya:</p><p>$$1^3 + \\cdots + k^3 + (k+1)^3 = \\frac{k^2(k+1)^2}{4} + (k+1)^3$$</p><p><strong>Keluarkan $(k+1)^2$ sebagai faktor persekutuan</strong> — ini langkah kuncinya:</p><p>$$= (k+1)^2\\left[\\frac{k^2}{4} + (k+1)\\right] = (k+1)^2 \\cdot \\frac{k^2 + 4k + 4}{4}$$</p><p>Pembilangnya kuadrat sempurna:</p><p>$$= (k+1)^2 \\cdot \\frac{(k+2)^2}{4} = \\frac{(k+1)^2(k+2)^2}{4}\n= \\left(\\frac{(k+1)(k+2)}{2}\\right)^2$$</p><p>Itu persis bentuk yang diminta untuk $n = k+1$.</p><h4>Kesimpulan</h4><p>Basis benar dan langkah induksinya berlaku, jadi pernyataannya benar untuk setiap bilangan asli $n$. $\\blacksquare$</p><p>Perhatikan bahwa ruas kanannya tidak lain adalah $\\left(1+2+\\cdots+n\\right)^2$. Jadi yang baru saja dibuktikan bisa dibaca:</p><p>$$1^3 + 2^3 + \\cdots + n^3 = \\left(1 + 2 + \\cdots + n\\right)^2$$</p><p>Untuk $n = 4$ misalnya: $1 + 8 + 27 + 64 = 100 = 10^2$, dan $1+2+3+4 = 10$. Kesamaan yang tidak terduga itu punya bukti tanpa kata lewat susunan persegi — tetapi induksi membuktikannya tanpa perlu gambar sama sekali.</p><p>Langkah \"keluarkan $(k+1)^2$\" adalah bagian yang paling sering macet. Aturan umumnya: pada langkah induksi, <strong>carilah faktor persekutuan antara hipotesis dan suku baru</strong> sebelum menjabarkan apa pun. Menjabarkan lebih dulu hampir selalu menghasilkan polinomial berderajat empat yang harus difaktorkan ulang.</p>",
+   "rubrik": [
+    "Memeriksa basis pada $n = 1$",
+    "Menuliskan hipotesis induksi untuk $n = k$ secara eksplisit",
+    "Menambahkan $(k+1)^3$ dan memakai hipotesis",
+    "Mengeluarkan $(k+1)^2$ sebagai faktor persekutuan",
+    "Mengenali $k^2+4k+4 = (k+2)^2$ dan menyusun kembali ke bentuk yang diminta",
+    "Menutup dengan prinsip induksi"
+   ]
+  },
+  {
+   "id": "ind-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "induksi",
+    "barisan-deret"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan nilai dari</p><p>$$1^3 + 2^3 + 3^3 + 4^3 + 5^3$$</p>",
+   "jawaban": "225",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Menjumlahkan lima suku memang cepat, tetapi periksa dulu apakah hasilnya punya bentuk yang mengejutkan.",
+    "Jumlah pangkat tiga $n$ bilangan asli pertama sama dengan <strong>kuadrat</strong> dari jumlah bilangannya.",
+    "$1+2+3+4+5 = 15$."
+   ],
+   "pembahasan": "<p>Rumus jumlah pangkat tiga:</p><p>$$1^3 + 2^3 + \\cdots + n^3 = \\left(\\frac{n(n+1)}{2}\\right)^2 = \\left(1+2+\\cdots+n\\right)^2$$</p><p>Untuk $n = 5$, jumlah bilangannya</p><p>$$1+2+3+4+5 = \\frac{5 \\times 6}{2} = 15$$</p><p>sehingga</p><p>$$1^3+2^3+3^3+4^3+5^3 = 15^2 = \\boxed{225}$$</p><p>Periksa dengan menjumlahkan langsung:</p><p>$$1 + 8 + 27 + 64 + 125 = 225$$</p><p>Cocok.</p><p>Kesamaan ini terus berlaku: $1^3+2^3 = 9 = 3^2$, dan $1+2 = 3$; lalu $1^3+2^3+3^3 = 36 = 6^2$, dan $1+2+3 = 6$. Bahwa jumlah pangkat tiga selalu berupa kuadrat sempurna — dan tepat kuadrat dari jumlah bilangannya — adalah salah satu kesamaan paling mengejutkan di aljabar dasar.</p><p><strong>Akibat yang berguna di soal olimpiade:</strong> jumlah pangkat tiga berurutan selalu kuadrat sempurna. Soal seperti \"buktikan $1^3+\\cdots+n^3$ kuadrat sempurna\" karena itu selesai seketika begitu rumusnya dikenali.</p><p>Untuk menghitungnya cepat, jangan memangkatkan tiga satu per satu lalu menjumlahkan. Hitung jumlah bilangannya dulu — itu satu perkalian — lalu kuadratkan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ind-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "induksi"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa $2^n &gt; n$ untuk setiap bilangan asli $n$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pernyataannya berlaku untuk setiap $n$, dan bentuk untuk $n+1$ bisa disusun dari bentuk untuk $n$ — meski yang dibandingkan pertidaksamaan, bukan kesamaan.",
+    "Basis: periksa $n = 1$.",
+    "Langkah induksi: dari $2^k &gt; k$, kalikan dengan $2$ untuk memperoleh $2^{k+1} &gt; 2k$. Lalu tinggal ditunjukkan $2k \\ge k+1$."
+   ],
+   "pembahasan": "<h4>Basis</h4><p>Untuk $n = 1$: $2^1 = 2 &gt; 1$. Benar.</p><h4>Langkah induksi</h4><p>Andaikan benar untuk $n = k$, yaitu</p><p>$$2^k &gt; k$$</p><p>Akan ditunjukkan $2^{k+1} &gt; k+1$.</p><p><strong>Kalikan hipotesis dengan $2$.</strong> Karena $2 &gt; 0$, arah pertidaksamaannya tidak berubah:</p><p>$$2^{k+1} = 2 \\cdot 2^k &gt; 2k$$</p><p><strong>Hubungkan $2k$ dengan $k+1$.</strong> Untuk setiap bilangan asli $k \\ge 1$,</p><p>$$2k - (k+1) = k - 1 \\ \\ge\\ 0 \\quad\\Longrightarrow\\quad 2k \\ \\ge\\ k+1$$</p><p><strong>Rangkaikan keduanya.</strong></p><p>$$2^{k+1} &gt; 2k \\ \\ge\\ k+1$$</p><p>sehingga $2^{k+1} &gt; k+1$.</p><h4>Kesimpulan</h4><p>Basis benar dan langkah induksinya berlaku, jadi $2^n &gt; n$ untuk setiap bilangan asli $n$. $\\blacksquare$</p><p><strong>Dua hal yang layak diperhatikan.</strong></p><p>Pertama, langkah induksi pada pertidaksamaan hampir selalu berbentuk rangkaian: dari hipotesis diperoleh satu batas, lalu batas itu dibandingkan dengan yang diinginkan. Kedua perbandingan disambung dengan tanda yang searah.</p><p>Kedua, perhatikan bahwa satu tanda tegas ($&gt;$) dan satu tanda tidak tegas ($\\ge$) disambung menjadi tanda tegas. Itu sah: kalau $a &gt; b$ dan $b \\ge c$, maka $a &gt; c$. Kalau keduanya tidak tegas, kesimpulannya juga tidak tegas — dan pada soal yang menuntut ketegasan, perbedaan itu menentukan.</p><p>Perhatikan pula bahwa $2k \\ge k+1$ menjadi kesamaan tepat di $k=1$. Di situlah batas argumennya paling ketat, dan itu sebabnya basisnya harus $n = 1$ dan bukan yang lain.</p>",
+   "rubrik": [
+    "Memeriksa basis pada $n = 1$",
+    "Menuliskan hipotesis induksi $2^k &gt; k$ secara eksplisit",
+    "Mengalikan hipotesis dengan $2$, dan menyebut bahwa arah tidak berubah karena pengalinya positif",
+    "Membuktikan $2k \\ge k+1$ untuk $k \\ge 1$, bukan menyatakannya begitu saja",
+    "Merangkaikan kedua pertidaksamaan menjadi $2^{k+1} &gt; k+1$"
+   ]
+  },
+  {
+   "id": "ind-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "induksi"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan dengan induksi matematika bahwa $7^n - 1$ habis dibagi $6$ untuk setiap bilangan asli $n$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Basisnya mudah. Yang perlu dipikirkan adalah bagaimana menghubungkan $7^{k+1}-1$ dengan $7^k-1$.",
+    "Tulis $7^{k+1} - 1 = 7 \\cdot 7^k - 1$, lalu sisipkan $-7 + 7$ supaya bentuk $7^k - 1$ muncul.",
+    "Hasilnya $7\\left(7^k-1\\right) + 6$ — dan kedua sukunya habis dibagi $6$."
+   ],
+   "pembahasan": "<h4>Basis</h4><p>Untuk $n = 1$: $7^1 - 1 = 6$, yang habis dibagi $6$. Benar.</p><h4>Langkah induksi</h4><p>Andaikan benar untuk $n = k$, yaitu $6 \\mid \\left(7^k - 1\\right)$. Artinya ada bilangan bulat $m$ dengan</p><p>$$7^k - 1 = 6m$$</p><p>Akan ditunjukkan $6 \\mid \\left(7^{k+1} - 1\\right)$.</p><p><strong>Susun ulang supaya bentuk hipotesis muncul.</strong></p><p>$$7^{k+1} - 1 = 7 \\cdot 7^k - 1$$</p><p>Sisipkan $-7 + 7$ agar $7^k - 1$ terbentuk:</p><p>$$= 7 \\cdot 7^k - 7 + 6 = 7\\left(7^k - 1\\right) + 6$$</p><p><strong>Pakai hipotesis.</strong> Substitusikan $7^k - 1 = 6m$:</p><p>$$7^{k+1} - 1 = 7(6m) + 6 = 6(7m + 1)$$</p><p>Karena $7m+1$ bilangan bulat, ruas kanan habis dibagi $6$.</p><h4>Kesimpulan</h4><p>Basis benar dan langkah induksinya berlaku, jadi $6 \\mid \\left(7^n-1\\right)$ untuk setiap bilangan asli $n$. $\\blacksquare$</p><p>Langkah \"sisipkan $-7+7$\" adalah gerakan baku pada soal keterbagian dengan induksi. Tujuannya satu: <strong>memaksa bentuk hipotesis muncul</strong>, supaya ia bisa dipakai. Tanpa itu, $7 \\cdot 7^k - 1$ tidak memberi jalan apa pun.</p><p>Ada bukti lain yang jauh lebih pendek lewat faktorisasi:</p><p>$$7^n - 1 = (7-1)\\left(7^{n-1} + 7^{n-2} + \\cdots + 1\\right) = 6 \\times (\\text{bilangan bulat})$$</p><p>Bahkan berlaku umum: $a^n - 1$ selalu habis dibagi $a-1$. Tetapi yang dilatih di sini adalah menyusun langkah induksinya — dan keterampilan itu terpakai justru pada soal yang tidak punya faktorisasi rapi.</p>",
+   "rubrik": [
+    "Memeriksa basis pada $n = 1$",
+    "Menuliskan hipotesis sebagai $7^k - 1 = 6m$ untuk suatu bilangan bulat $m$ — bukan sekadar \"habis dibagi 6\"",
+    "Menyusun ulang $7^{k+1}-1$ menjadi $7\\left(7^k-1\\right) + 6$",
+    "Mensubstitusikan hipotesis dan mengeluarkan faktor $6$",
+    "Menyebut bahwa faktor keduanya bilangan bulat, sehingga keterbagiannya tegak"
+   ]
+  },
+  {
+   "id": "ind-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "induksi",
+    "barisan-deret"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Barisan $a_1, a_2, a_3, \\ldots$ didefinisikan oleh</p><p>$$a_1 = 1, \\qquad a_{n+1} = 2a_n + 1$$</p><p>Tentukan nilai $a_6$.</p>",
+   "jawaban": "63",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Barisan seperti ini didefinisikan bertahap: tiap suku dibangun dari suku sebelumnya.",
+    "Hitung suku demi suku dari $a_1$ sampai $a_6$.",
+    "Perhatikan pola yang muncul — tiap suku ternyata satu kurang dari pangkat $2$."
+   ],
+   "pembahasan": "<p>Hitung berurutan dari $a_1$:</p><p>$$a_1 = 1$$ $$a_2 = 2(1) + 1 = 3$$ $$a_3 = 2(3) + 1 = 7$$ $$a_4 = 2(7) + 1 = 15$$ $$a_5 = 2(15) + 1 = 31$$ $$a_6 = 2(31) + 1 = \\boxed{63}$$</p><p><strong>Polanya terlihat:</strong> $1, 3, 7, 15, 31, 63$ — masing-masing satu kurang dari $2, 4, 8, 16, 32, 64$. Jadi dugaannya</p><p>$$a_n = 2^n - 1$$</p><p>Dugaan itu bisa dibuktikan dengan induksi. Basisnya $a_1 = 2^1 - 1 = 1$, cocok. Untuk langkah induksi, andaikan $a_k = 2^k - 1$; maka</p><p>$$a_{k+1} = 2a_k + 1 = 2\\left(2^k - 1\\right) + 1 = 2^{k+1} - 2 + 1 = 2^{k+1} - 1$$</p><p>persis bentuk yang diminta. Jadi $a_n = 2^n - 1$ untuk setiap $n$, dan $a_6 = 64 - 1 = 63$ — cocok dengan perhitungan langsung.</p><p><strong>Inilah pasangan kerja yang khas.</strong> Menghitung beberapa suku memberi <strong>dugaan</strong>; induksi memberi <strong>bukti</strong>. Keduanya diperlukan: pola dari enam suku pertama bukan jaminan, dan induksi tidak bisa dimulai tanpa rumus yang ditebak lebih dulu.</p><p>Untuk soal yang hanya menanyakan $a_6$, menghitung langsung sudah cukup. Tetapi kalau yang ditanya $a_{100}$, rumus tertutupnya wajib — dan di situlah pola serta induksi menjadi satu-satunya jalan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ind-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "induksi"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 2,
+   "soal": "<p>Buktikan bahwa untuk setiap bilangan asli $n$,</p><p>$$1 + 2 + 3 + \\cdots + n = \\frac{n(n+1)}{2}$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pernyataannya berlaku untuk <strong>setiap</strong> $n$, dan bentuk untuk $n+1$ bisa disusun dari bentuk untuk $n$. Itu tanda paling jelas.",
+    "Ada dua langkah wajib: periksa kasus terkecil, lalu tunjukkan kebenaran di $k$ menurunkan kebenaran di $k+1$.",
+    "Pada langkah kedua, tulis $S_{k+1} = S_k + (k+1)$ lalu ganti $S_k$ dengan hipotesisnya."
+   ],
+   "pembahasan": "<p>Sebut pernyataan yang akan dibuktikan sebagai $P(n)$.</p><h4>Langkah 1: basis</h4><p>Untuk $n = 1$:</p><p>$$\\text{ruas kiri} = 1, \\qquad \\text{ruas kanan} = \\frac{1 \\cdot 2}{2} = 1$$</p><p>Cocok, jadi $P(1)$ benar.</p><h4>Langkah 2: langkah induksi</h4><p>Andaikan $P(k)$ benar untuk suatu bilangan asli $k$, yaitu</p><p>$$1 + 2 + \\cdots + k = \\frac{k(k+1)}{2}$$</p><p>Akan ditunjukkan $P(k+1)$ juga benar, yaitu jumlahnya sampai $k+1$ bernilai $\\frac{(k+1)(k+2)}{2}$.</p><p>Jumlah sampai $k+1$ adalah jumlah sampai $k$ ditambah satu suku:</p><p>$$\\underbrace{1 + 2 + \\cdots + k}_{\\text{pakai hipotesis}} + (k+1)\n= \\frac{k(k+1)}{2} + (k+1)$$</p><p>Keluarkan $(k+1)$ sebagai faktor persekutuan:</p><p>$$= (k+1)\\left(\\frac{k}{2} + 1\\right) = (k+1) \\cdot \\frac{k+2}{2} = \\frac{(k+1)(k+2)}{2}$$</p><p>Itu persis bentuk yang diminta untuk $n = k+1$, jadi $P(k+1)$ benar.</p><h4>Kesimpulan</h4><p>$P(1)$ benar, dan $P(k)$ selalu menurunkan $P(k+1)$. Menurut prinsip induksi matematika, $P(n)$ benar untuk setiap bilangan asli $n$. $\\blacksquare$</p><p><strong>Perhatikan di mana hipotesis dipakai</strong> — pada langkah mengganti $1+2+\\cdots+k$ dengan $\\frac{k(k+1)}{2}$. Kalau pembuktian $P(k+1)$ berjalan tanpa menyentuh $P(k)$, yang kamu tulis bukan pembuktian induksi, dan biasanya ada yang keliru.</p><p>Basisnya juga bukan formalitas. Tanpa basis, langkah induksi saja bisa \"membuktikan\" pernyataan yang salah: dari $1+2+\\cdots+n = \\frac{n(n+1)}{2} + 5$, langkah $k \\to k+1$ tetap berjalan mulus — hanya basisnya yang gagal.</p><p>Ada bukti lain tanpa induksi, yang konon ditemukan Gauss saat kecil: jumlahkan deretnya dengan dirinya sendiri dalam urutan terbalik. Tiap pasangan berjumlah $n+1$, dan ada $n$ pasangan, jadi $2S = n(n+1)$.</p>",
+   "rubrik": [
+    "Memeriksa basis pada $n = 1$, dengan kedua ruas dihitung",
+    "Menuliskan hipotesis induksi secara eksplisit untuk $n = k$",
+    "Menyatakan dengan jelas apa yang akan dibuktikan untuk $n = k+1$",
+    "Menulis jumlah sampai $k+1$ sebagai jumlah sampai $k$ ditambah $(k+1)$, dan <strong>memakai hipotesis</strong> di situ",
+    "Menyederhanakan sampai berbentuk $\\frac{(k+1)(k+2)}{2}$",
+    "Menutup dengan menyatakan prinsip induksinya"
+   ]
+  },
+  {
    "id": "kd-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
    "pilar": "teori-bilangan",
@@ -3590,6 +3921,162 @@
    "rubrik": []
   },
   {
+   "id": "sb-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "suku-banyak"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan derajat dari polinomial</p><p>$$\\left(x^2 + 1\\right)\\left(x^3 - 2\\right)$$</p>",
+   "jawaban": "5",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kamu tidak perlu menjabarkan seluruh hasil kalinya.",
+    "Derajat hasil kali dua polinomial adalah jumlah derajatnya.",
+    "Periksa saja bahwa koefisien utamanya tidak nol."
+   ],
+   "pembahasan": "<p>Derajat hasil kali dua polinomial tak nol adalah <strong>jumlah</strong> derajatnya:</p><p>$$\\deg(PQ) = \\deg P + \\deg Q$$</p><p>Alasannya: suku berderajat tertinggi pada hasil kali datang dari mengalikan kedua suku tertinggi, dan hasil kali dua bilangan tak nol tidak pernah nol — jadi suku itu tidak bisa lenyap.</p><p>Di sini $\\deg\\left(x^2+1\\right) = 2$ dan $\\deg\\left(x^3-2\\right) = 3$, sehingga</p><p>$$\\deg = 2 + 3 = \\boxed{5}$$</p><p>Periksa dengan menjabarkan:</p><p>$$\\left(x^2+1\\right)\\left(x^3-2\\right) = x^5 - 2x^2 + x^3 - 2$$</p><p>Suku tertingginya $x^5$ — memang berderajat $5$.</p><p><strong>Bandingkan dengan penjumlahan</strong>, yang aturannya berbeda:</p><p>$$\\deg(P+Q) \\ \\le\\ \\max\\left(\\deg P, \\deg Q\\right)$$</p><p>Di sini tandanya <strong>tidak</strong> selalu sama, sebab suku tertingginya bisa saling menghapus. Contohnya $\\left(x^3+x\\right) + \\left(-x^3+1\\right) = x + 1$, yang berderajat $1$ meski kedua penjumlahnya berderajat $3$.</p><p>Itu sebabnya aturan hasil kali lebih dapat diandalkan daripada aturan penjumlahan — asalkan kedua polinomialnya tak nol.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sb-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "suku-banyak",
+    "teorema-sisa-faktor"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan sisa pembagian $x^3 - 2x + 1$ oleh $(x - 2)$.</p>",
+   "jawaban": "5",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Membagi bersusun bisa, tetapi ada jalan yang jauh lebih pendek untuk pembagi berbentuk linear.",
+    "Sisa pembagian oleh $(x-a)$ adalah $P(a)$.",
+    "Di sini $a = 2$."
+   ],
+   "pembahasan": "<p><strong>Teorema sisa</strong> menyatakan bahwa sisa pembagian $P(x)$ oleh $(x-a)$ adalah $P(a)$.</p><p>Alasannya satu baris. Tulis pembagiannya:</p><p>$$P(x) = (x-a)Q(x) + r$$</p><p>Sisanya berderajat kurang dari $1$, jadi ia konstanta. Masukkan $x = a$: suku pertama lenyap, menyisakan $P(a) = r$.</p><p>Di sini $a = 2$, sehingga sisanya</p><p>$$P(2) = 2^3 - 2(2) + 1 = 8 - 4 + 1 = \\boxed{5}$$</p><p>Periksa dengan pembagian bersusun:</p><p>$$x^3 - 2x + 1 = (x-2)\\left(x^2 + 2x + 2\\right) + 5$$</p><p>Cocok — tetapi jalur teorema sisa hanya menuntut satu substitusi.</p><p><strong>Perhatikan tandanya.</strong> Sisa pembagian oleh $(x-2)$ adalah $P(2)$, bukan $P(-2)$. Kalau pembaginya $(x+3)$, tulis ulang sebagai $\\left(x - (-3)\\right)$ dan sisanya $P(-3)$. Kekeliruan tanda di sini adalah yang paling sering terjadi.</p><p>Untuk pembagi berkoefisien bukan satu, sesuaikan dulu. Sisa pembagian oleh $(2x-1)$ adalah $P\\!\\left(\\frac12\\right)$, sebab $2x - 1 = 0$ tepat di $x = \\frac12$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sb-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "suku-banyak",
+    "sistem-persamaan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Polinomial $P$ berderajat $2$ memenuhi $P(0) = 1$, $P(1) = 3$, dan $P(2) = 7$. Tentukan nilai $P(3)$.</p>",
+   "jawaban": "13",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Polinomial berderajat $2$ punya tiga koefisien tak diketahui. Tiga keterangan berarti tiga persamaan.",
+    "Tulis $P(x) = ax^2+bx+c$, lalu substitusikan ketiga nilai yang diketahui.",
+    "$P(0)$ langsung memberi $c$, jadi mulailah dari situ."
+   ],
+   "pembahasan": "<p>Tulis bentuk umumnya:</p><p>$$P(x) = ax^2 + bx + c$$</p><p>Tiga koefisien tak diketahui, dan soal memberi tiga keterangan — cukup untuk menentukan semuanya.</p><p><strong>Dari $P(0) = 1$:</strong></p><p>$$c = 1$$</p><p>Substitusi $x = 0$ selalu memberi konstantanya langsung, jadi mulai dari sana menghemat satu peubah sejak awal.</p><p><strong>Dari $P(1) = 3$:</strong></p><p>$$a + b + c = 3 \\quad\\Longrightarrow\\quad a + b = 2$$</p><p><strong>Dari $P(2) = 7$:</strong></p><p>$$4a + 2b + c = 7 \\quad\\Longrightarrow\\quad 4a + 2b = 6 \\quad\\Longrightarrow\\quad 2a + b = 3$$</p><p><strong>Selesaikan.</strong> Kurangkan persamaan kedua dari yang ketiga:</p><p>$$(2a+b) - (a+b) = 3 - 2 \\quad\\Longrightarrow\\quad a = 1$$</p><p>sehingga $b = 2 - 1 = 1$.</p><p>Jadi $P(x) = x^2 + x + 1$, dan</p><p>$$P(3) = 9 + 3 + 1 = \\boxed{13}$$</p><p>Periksa ketiga keterangan: $P(0) = 1$, $P(1) = 3$, $P(2) = 7$. Semuanya cocok.</p><p><strong>Aturan umum yang layak diingat:</strong> polinomial berderajat $n$ ditentukan sepenuhnya oleh nilainya di $n+1$ titik berbeda. Untuk derajat $2$ dibutuhkan tiga titik; kalau soal hanya memberi dua, jawabannya tidak tunggal.</p><p>Perhatikan pula bahwa selisih nilainya — $3-1 = 2$, lalu $7-3 = 4$ — bertambah $2$ tiap langkah. Selisih kedua yang tetap adalah ciri polinomial derajat dua, dan itu cara cepat memeriksa hasil: selisih berikutnya harus $6$, memberi $P(3) = 7 + 6 = 13$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sb-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "suku-banyak"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Polinomial $P$ berderajat $3$ dengan koefisien utama $1$ mempunyai akar-akar $1$, $2$, dan $3$. Tentukan nilai $P(0)$.</p>",
+   "jawaban": "-6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kalau akar-akarnya diketahui, bentuk terfaktornya bisa ditulis langsung.",
+    "Koefisien utama $1$ berarti tidak ada faktor pengali di depan.",
+    "Setelah bentuk terfaktornya ditulis, substitusikan $x = 0$ — jangan menjabarkannya lebih dulu."
+   ],
+   "pembahasan": "<p>Kalau $P$ berderajat $3$ dengan akar $1$, $2$, $3$, maka ketiga faktor linearnya diketahui:</p><p>$$P(x) = a(x-1)(x-2)(x-3)$$</p><p>Koefisien utamanya adalah $a$ — yaitu koefisien $x^3$ setelah dijabarkan. Karena soal menyebut koefisien utamanya $1$, maka $a = 1$:</p><p>$$P(x) = (x-1)(x-2)(x-3)$$</p><p>Substitusikan $x = 0$ <strong>tanpa menjabarkan</strong>:</p><p>$$P(0) = (0-1)(0-2)(0-3) = (-1)(-2)(-3) = \\boxed{-6}$$</p><p>Perhatikan tandanya: tiga faktor negatif memberi hasil negatif. Kalau derajatnya genap, hasilnya akan positif.</p><p>Menjabarkan lebih dulu memberi</p><p>$$P(x) = x^3 - 6x^2 + 11x - 6$$</p><p>dan $P(0) = -6$ terbaca dari konstantanya. Cocok, tetapi melewati tiga perkalian yang tidak perlu.</p><p><strong>Hubungannya dengan Vieta.</strong> Konstanta polinomial monik berderajat $3$ selalu bernilai $-x_1x_2x_3$. Di sini $-(1)(2)(3) = -6$ — cocok, dan itu jalur ketiga yang bahkan tidak menuntut menuliskan bentuk terfaktornya.</p><p><strong>Kata \"koefisien utama $1$\" tidak boleh dilewati.</strong> Tanpa keterangan itu, $P$ bisa berupa kelipatan berapa pun dari $(x-1)(x-2)(x-3)$, dan $P(0)$ tidak tertentu. Soal yang memberi akar tanpa menyebut koefisien utama biasanya menanyakan sesuatu yang tidak bergantung padanya — misalnya perbandingan dua nilai.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sb-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "suku-banyak"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan jumlah semua koefisien pada penjabaran</p><p>$$(2x - 3)^4$$</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan menjabarkan. Ada substitusi yang langsung memberi jumlah koefisien.",
+    "Kalau $P(x) = a_nx^n + \\cdots + a_1x + a_0$, apa nilai $P(1)$?",
+    "Substitusikan $x = 1$ ke bentuk asli, tanpa dijabarkan."
+   ],
+   "pembahasan": "<p>Misalkan penjabarannya</p><p>$$P(x) = a_4x^4 + a_3x^3 + a_2x^2 + a_1x + a_0$$</p><p>Yang ditanya adalah $a_4 + a_3 + a_2 + a_1 + a_0$.</p><p><strong>Substitusikan $x = 1$.</strong> Setiap pangkat $x$ menjadi $1$, sehingga</p><p>$$P(1) = a_4 + a_3 + a_2 + a_1 + a_0$$</p><p>Jadi jumlah koefisien mana pun selalu sama dengan nilai polinomialnya di $x = 1$.</p><p>Hitung dari bentuk aslinya, tanpa menjabarkan:</p><p>$$P(1) = \\left(2(1) - 3\\right)^4 = (-1)^4 = \\boxed{1}$$</p><p>Periksa dengan menjabarkan:</p><p>$$(2x-3)^4 = 16x^4 - 96x^3 + 216x^2 - 216x + 81$$</p><p>Jumlah koefisiennya $16 - 96 + 216 - 216 + 81 = 1$. Cocok — tetapi lewat lima perhitungan binomial yang seluruhnya tidak perlu.</p><p><strong>Dua substitusi yang layak dikenali berpasangan:</strong></p><ul><li>$P(1)$ memberi <strong>jumlah seluruh koefisien</strong>.</li><li>$P(-1)$ memberi <strong>jumlah koefisien suku genap dikurangi jumlah koefisien suku ganjil</strong>.</li></ul><p>Menggabungkan keduanya memberi masing-masing kelompok:</p><p>$$\\frac{P(1) + P(-1)}{2} = \\text{jumlah koefisien pangkat genap}$$</p><p>Di sini $P(-1) = (-2-3)^4 = 625$, sehingga jumlah koefisien pangkat genapnya $\\frac{1+625}{2} = 313$ — dan memang $16 + 216 + 81 = 313$.</p><p>Trik substitusi nilai khusus semacam ini muncul terus-menerus pada soal koefisien, dan hampir selalu lebih cepat daripada menjabarkan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sb-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "suku-banyak"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $P$ dan $Q$ polinomial berderajat paling tinggi $n$. Buktikan bahwa jika $P(x) = Q(x)$ untuk $n+1$ nilai $x$ yang berbeda, maka $P$ dan $Q$ polinomial yang sama.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tinjau selisihnya. Apa yang bisa dikatakan tentang derajat $P - Q$ dan tentang akar-akarnya?",
+    "Setiap titik tempat $P$ dan $Q$ bernilai sama adalah akar dari $P-Q$.",
+    "Polinomial tak nol berderajat $d$ punya paling banyak $d$ akar. Bandingkan dengan banyaknya akar yang kamu punya."
+   ],
+   "pembahasan": "<p>Tinjau selisihnya:</p><p>$$R(x) = P(x) - Q(x)$$</p><p><strong>Derajatnya.</strong> Karena $\\deg P \\le n$ dan $\\deg Q \\le n$, maka $\\deg R \\le n$ — selisih dua polinomial tidak pernah menaikkan derajat.</p><p><strong>Akarnya.</strong> Misalkan $x_1, x_2, \\ldots, x_{n+1}$ adalah $n+1$ nilai berbeda tempat $P$ dan $Q$ bernilai sama. Untuk setiap $i$,</p><p>$$R(x_i) = P(x_i) - Q(x_i) = 0$$</p><p>Jadi $R$ punya paling sedikit $n+1$ akar yang berbeda.</p><p><strong>Kontradiksinya.</strong> Andaikan $R$ bukan polinomial nol. Maka ia punya derajat tertentu, sebut $d = \\deg R$, dengan $0 \\le d \\le n$. Polinomial tak nol berderajat $d$ punya paling banyak $d$ akar — sedangkan $R$ punya paling sedikit $n+1$ akar. Karena</p><p>$$n + 1 &gt; n \\ \\ge\\ d$$</p><p>banyaknya akar melebihi batasnya. Mustahil.</p><p>Perlu pula ditutup kasus $d = 0$: di situ $R$ konstanta tak nol, yang tidak punya akar sama sekali — juga bertentangan dengan adanya $n+1$ akar.</p><p>Jadi pengandaian itu salah, dan $R$ adalah polinomial nol. Artinya</p><p>$$P(x) = Q(x) \\quad \\text{untuk setiap } x$$</p><p>$\\blacksquare$</p><p><strong>Syarat \"berbeda\" pada $n+1$ nilai itu wajib.</strong> Kalau titiknya berulang, yang kamu punya bukan $n+1$ akar berbeda, dan batas banyaknya akar tidak dilanggar.</p><p>Banyaknya titik juga tidak bisa dikurangi. Dua polinomial berderajat paling tinggi $2$ bisa saja bernilai sama di tiga... tepatnya, dua polinomial berbeda berderajat $\\le 2$ bisa bernilai sama di paling banyak $2$ titik — contohnya $x^2$ dan $3x - 2$, yang bertemu di $x = 1$ dan $x = 2$. Titik ketiga yang cocok akan memaksa keduanya identik.</p><p><strong>Akibat yang paling sering dipakai:</strong> untuk membuktikan dua polinomial berderajat $\\le n$ sama, cukup diperiksa di $n+1$ titik. Itu mengubah pernyataan tentang <strong>semua</strong> bilangan real menjadi pemeriksaan berhingga.</p>",
+   "rubrik": [
+    "Membentuk selisih $R = P - Q$ dan menyatakan $\\deg R \\le n$",
+    "Menunjukkan tiap titik kesamaan menjadi akar $R$, sehingga $R$ punya paling sedikit $n+1$ akar",
+    "Mengandaikan $R$ tak nol dan memanggil batas \"polinomial berderajat $d$ punya paling banyak $d$ akar\"",
+    "Menyatakan kontradiksinya secara eksplisit lewat $n+1 &gt; n \\ge d$",
+    "Menutup kasus $R$ konstanta tak nol",
+    "Menyimpulkan $R$ polinomial nol, sehingga $P = Q$ untuk setiap $x$"
+   ]
+  },
+  {
+   "id": "sb-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "suku-banyak"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $P(x) = x^3 - 2x^2 + 5x - 1$. Tentukan nilai $P(2)$.</p>",
+   "jawaban": "9",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Substitusikan $x = 2$ ke setiap suku, lalu jumlahkan.",
+    "Hitung tiap pangkat lebih dulu: $2^3 = 8$ dan $2^2 = 4$.",
+    "Perhatikan tanda pada suku $-2x^2$."
+   ],
+   "pembahasan": "<p>Substitusikan $x = 2$:</p><p>$$P(2) = 2^3 - 2\\left(2^2\\right) + 5(2) - 1 = 8 - 2(4) + 10 - 1$$</p><p>$$= 8 - 8 + 10 - 1 = \\boxed{9}$$</p><p><strong>Cara kedua: skema Horner.</strong> Susun ulang polinomialnya sebagai perkalian bersarang:</p><p>$$P(x) = \\Big(\\big((x - 2)x + 5\\big)x - 1\\Big)$$</p><p>lalu hitung dari dalam dengan $x = 2$:</p><p>$$2 - 2 = 0, \\qquad 0 \\times 2 + 5 = 5, \\qquad 5 \\times 2 - 1 = 9$$</p><p>Hasil yang sama, tetapi tanpa memangkatkan apa pun — hanya kalikan dan tambah berulang. Untuk polinomial berderajat tinggi, cara ini jauh lebih hemat dan lebih kecil peluang salahnya.</p><p>Menghitung $P(a)$ akan sering dipakai, dan bukan hanya untuk mencari nilai. <strong>Teorema sisa</strong> menyatakan $P(a)$ adalah sisa pembagian $P(x)$ oleh $(x-a)$; jadi perhitungan di atas sekaligus memberitahu bahwa $P(x)$ dibagi $(x-2)$ bersisa $9$.</p><p>Kesalahan yang paling sering pada substitusi adalah tanda. Suku $-2x^2$ berarti $-2 \\times x^2$, bukan $(-2x)^2$. Untuk $x$ negatif bedanya makin menentukan: pada $x = -1$, yang pertama memberi $-2$ dan yang kedua memberi $4$.</p>",
+   "rubrik": []
+  },
+  {
    "id": "sp-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
    "pilar": "aljabar",
@@ -3903,6 +4390,164 @@
     "Buang kelipatan tiap prima secara berurutan: kalikan $60$ dengan $\\left(1-\\tfrac12\\right)\\left(1-\\tfrac13\\right)\\left(1-\\tfrac15\\right)$."
    ],
    "pembahasan": "<p>Yang diminta adalah banyaknya anggota sistem residu <strong>tereduksi</strong> modulo $60$, yaitu $\\varphi(60)$.</p><p>Faktorkan: $60 = 2^2 \\cdot 3 \\cdot 5$. Prima yang muncul adalah $2$, $3$, dan $5$.</p><p>$$\\varphi(60) = 60\\left(1 - \\frac12\\right)\\left(1 - \\frac13\\right)\\left(1 - \\frac15\\right)\n= 60 \\cdot \\frac12 \\cdot \\frac23 \\cdot \\frac45 = 16$$</p><p>Jadi ada $\\boxed{16}$ bilangan.</p><p>Daftarnya: $1, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 49, 53, 59$ — tepat enam belas.</p><p>Perhatikan bahwa yang menentukan hanyalah <strong>prima mana saja yang muncul</strong>, bukan pangkatnya. Faktor $2^2$ tetap menyumbang satu kurungan $\\left(1-\\tfrac12\\right)$, sama seperti kalau pangkatnya satu.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tel-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "deret-teleskopik"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan nilai dari</p><p>$$\\left(2^2 - 1^2\\right) + \\left(3^2 - 2^2\\right) + \\left(4^2 - 3^2\\right) + \\cdots\n+ \\left(10^2 - 9^2\\right)$$</p>",
+   "jawaban": "99",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan menghitung tiap kurung. Tulis semuanya berderet tanpa kurung dan perhatikan polanya.",
+    "Tiap suku positif pada satu kurung punya pasangan negatif di kurung berikutnya.",
+    "Yang tersisa hanya suku paling awal dan paling akhir."
+   ],
+   "pembahasan": "<p>Buka seluruh kurungnya dan tuliskan berderet:</p><p>$$-1^2 + 2^2 - 2^2 + 3^2 - 3^2 + 4^2 - \\cdots - 9^2 + 10^2$$</p><p>Setiap $k^2$ untuk $k = 2, 3, \\ldots, 9$ muncul <strong>dua kali</strong> dengan tanda berlawanan — sekali sebagai suku positif di satu kurung, sekali sebagai suku negatif di kurung berikutnya. Semuanya saling menghapus.</p><p>Yang tersisa hanya dua ujung:</p><p>$$10^2 - 1^2 = 100 - 1 = \\boxed{99}$$</p><p>Bentuk umumnya sangat sederhana:</p><p>$$\\sum_{k=1}^{n} \\left[(k+1)^2 - k^2\\right] = (n+1)^2 - 1^2$$</p><p>Deret ini adalah wujud teleskop yang paling telanjang — selisihnya sudah tertulis di soal, jadi tidak ada yang perlu dipecah lebih dulu.</p><p>Ada bacaan lain yang menarik. Karena $(k+1)^2 - k^2 = 2k+1$, deret di atas sebenarnya sama dengan $3 + 5 + 7 + \\cdots + 19$ — jumlah bilangan ganjil dari $3$ sampai $19$. Dan memang jumlahnya $99$, yaitu $10^2 - 1^2$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tel-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "deret-teleskopik"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan nilai dari</p><p>$$\\frac{1}{1 \\cdot 3} + \\frac{1}{3 \\cdot 5} + \\frac{1}{5 \\cdot 7} + \\cdots + \\frac{1}{19 \\cdot 21}$$</p><p>Tulis jawabanmu sebagai pecahan paling sederhana.</p>",
+   "jawaban": "10/21",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Polanya sama seperti sebelumnya, tetapi kedua penyebutnya kini berjarak $2$, bukan $1$.",
+    "Pecahan parsialnya: $\\frac{1}{k(k+2)} = \\frac12\\left(\\frac1k - \\frac{1}{k+2}\\right)$ — perhatikan faktor $\\frac12$ di depan.",
+    "Jangan lupa faktor itu saat menjumlahkan."
+   ],
+   "pembahasan": "<p>Penyebutnya berbentuk $k(k+2)$ dengan $k = 1, 3, 5, \\ldots, 19$. Pecahan parsialnya:</p><p>$$\\frac{1}{k(k+2)} = \\frac{1}{2}\\left(\\frac{1}{k} - \\frac{1}{k+2}\\right)$$</p><p>Periksa: ruas kanan bernilai $\\frac12 \\cdot \\frac{(k+2)-k}{k(k+2)} = \\frac12 \\cdot \\frac{2}{k(k+2)} = \\frac{1}{k(k+2)}$. Cocok.</p><p><strong>Faktor $\\frac12$ itu yang paling sering terlupa.</strong> Ia muncul karena selisih kedua penyebutnya $2$, bukan $1$. Untuk jarak $d$, faktornya $\\frac1d$.</p><p>Tuliskan deretnya:</p><p>$$\\frac{1}{2}\\left[\\left(\\frac11 - \\frac13\\right) + \\left(\\frac13 - \\frac15\\right)\n+ \\cdots + \\left(\\frac{1}{19} - \\frac{1}{21}\\right)\\right]$$</p><p>Bagian tengahnya saling menghapus, menyisakan</p><p>$$\\frac{1}{2}\\left(1 - \\frac{1}{21}\\right) = \\frac{1}{2} \\cdot \\frac{20}{21}\n= \\boxed{\\frac{10}{21}}$$</p><p>Perhatikan bahwa di sini yang tersisa tetap <strong>dua</strong> suku, bukan empat — sebab $k$ hanya menjelajahi bilangan ganjil, sehingga tiap $\\frac{1}{k+2}$ selalu bertemu pasangannya. Kalau $k$ menjelajahi <strong>semua</strong> bilangan dari $1$ sampai $19$, yang tersisa akan menjadi empat suku: dua di awal dan dua di akhir.</p><p>Itu sebabnya menuliskan beberapa suku secara nyata lebih dapat diandalkan daripada menerapkan rumus dari ingatan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tel-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "deret-teleskopik"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan bilangan asli $n$ yang memenuhi</p><p>$$\\frac{1}{1 \\cdot 2} + \\frac{1}{2 \\cdot 3} + \\cdots + \\frac{1}{n(n+1)} = \\frac{99}{100}$$</p>",
+   "jawaban": "99",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Cari dulu bentuk umum jumlahnya sebagai fungsi dari $n$, baru samakan dengan yang diketahui.",
+    "Setelah diteleskopkan, jumlahnya $1 - \\frac{1}{n+1}$.",
+    "Sederhanakan menjadi $\\frac{n}{n+1}$, lalu samakan dengan $\\frac{99}{100}$."
+   ],
+   "pembahasan": "<p>Pecah tiap suku menjadi selisih:</p><p>$$\\frac{1}{k(k+1)} = \\frac1k - \\frac{1}{k+1}$$</p><p>Bagian tengahnya saling menghapus, menyisakan dua ujung:</p><p>$$\\sum_{k=1}^{n} \\frac{1}{k(k+1)} = 1 - \\frac{1}{n+1} = \\frac{n+1-1}{n+1} = \\frac{n}{n+1}$$</p><p>Samakan dengan yang diketahui:</p><p>$$\\frac{n}{n+1} = \\frac{99}{100}$$</p><p>Kalikan silang:</p><p>$$100n = 99(n+1) = 99n + 99 \\quad\\Longrightarrow\\quad n = \\boxed{99}$$</p><p>Periksa: $\\frac{99}{99+1} = \\frac{99}{100}$. Cocok.</p><p>Ada jalan yang lebih cepat lagi. Bentuk $\\frac{n}{n+1}$ selalu berupa pecahan yang pembilangnya tepat satu kurang dari penyebutnya — dan $\\frac{99}{100}$ memang begitu, jadi $n = 99$ terbaca langsung tanpa mengalikan silang.</p><p>Perhatikan pula apa yang dikatakan bentuk umum itu. Karena $\\frac{n}{n+1} = 1 -\n\\frac{1}{n+1}$, jumlahnya selalu <strong>kurang dari $1$</strong> berapa pun $n$-nya, tetapi bisa sedekat apa pun ke $1$. Untuk $n$ yang membesar tanpa batas, jumlahnya menuju $1$ — dan itulah nilai deret tak hingganya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tel-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "deret-teleskopik"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan nilai dari</p><p>$$\\frac{1}{\\sqrt1+\\sqrt2} + \\frac{1}{\\sqrt2+\\sqrt3} + \\cdots + \\frac{1}{\\sqrt{99}+\\sqrt{100}}$$</p>",
+   "jawaban": "9",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Bentuknya bukan pecahan biasa, tetapi gagasannya sama: ubah tiap suku menjadi selisih.",
+    "Rasionalkan penyebutnya — kalikan dengan sekawannya, $\\sqrt{k+1} - \\sqrt{k}$.",
+    "Penyebutnya akan menjadi $1$, dan yang tersisa persis selisih dua akar."
+   ],
+   "pembahasan": "<p>Rasionalkan tiap suku dengan mengalikan pembilang dan penyebut dengan sekawan penyebutnya:</p><p>$$\\frac{1}{\\sqrt{k}+\\sqrt{k+1}} \\cdot \\frac{\\sqrt{k+1}-\\sqrt{k}}{\\sqrt{k+1}-\\sqrt{k}}\n= \\frac{\\sqrt{k+1}-\\sqrt{k}}{\\left(\\sqrt{k+1}\\right)^2 - \\left(\\sqrt{k}\\right)^2}$$</p><p>Penyebutnya menjadi selisih kuadrat:</p><p>$$= \\frac{\\sqrt{k+1}-\\sqrt{k}}{(k+1) - k} = \\sqrt{k+1} - \\sqrt{k}$$</p><p>Penyebutnya lenyap seluruhnya — dan yang tersisa persis bentuk selisih yang dibutuhkan teleskop.</p><p>Tuliskan deretnya:</p><p>$$\\left(\\sqrt2 - \\sqrt1\\right) + \\left(\\sqrt3 - \\sqrt2\\right) + \\cdots\n+ \\left(\\sqrt{100} - \\sqrt{99}\\right)$$</p><p>Bagian tengahnya saling menghapus, menyisakan</p><p>$$\\sqrt{100} - \\sqrt{1} = 10 - 1 = \\boxed{9}$$</p><p>Bahwa hasilnya bilangan bulat memang disusun begitu: kedua ujungnya sengaja dipilih kuadrat sempurna.</p><p><strong>Merasionalkan penyebut di sini bukan sekadar merapikan bentuk</strong> — ia yang mengubah pecahan menjadi selisih, dan tanpa itu tidak ada yang bisa diteleskopkan. Pola yang sama bekerja pada bentuk lain berpenyebut akar:</p><p>$$\\frac{1}{\\sqrt{k+2}+\\sqrt{k}} = \\frac{\\sqrt{k+2}-\\sqrt{k}}{2}$$</p><p>dengan faktor $\\frac12$ muncul karena selisih di dalam akarnya $2$ — persis seperti faktor $\\frac1d$ pada pecahan parsial.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tel-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "deret-teleskopik"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan nilai dari</p><p>$$1 \\cdot 1! + 2 \\cdot 2! + 3 \\cdot 3! + 4 \\cdot 4! + 5 \\cdot 5!$$</p>",
+   "jawaban": "719",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Menghitung langsung bisa, tetapi carilah dulu apakah tiap suku bisa ditulis sebagai selisih dua faktorial.",
+    "Perhatikan $(k+1)! - k!$ dan jabarkan: $(k+1)! = (k+1) \\cdot k!$.",
+    "Hasilnya $(k+1)! - k! = k \\cdot k!$ — persis bentuk tiap suku di soal."
+   ],
+   "pembahasan": "<p>Cari bentuk selisihnya. Karena $(k+1)! = (k+1) \\cdot k!$,</p><p>$$(k+1)! - k! = (k+1)\\cdot k! - k! = \\left[(k+1) - 1\\right] k! = k \\cdot k!$$</p><p>Jadi tiap suku di soal <strong>sudah</strong> berupa selisih dua faktorial berurutan.</p><p>Tuliskan deretnya:</p><p>$$\\left(2! - 1!\\right) + \\left(3! - 2!\\right) + \\left(4! - 3!\\right) + \\left(5! - 4!\\right)\n+ \\left(6! - 5!\\right)$$</p><p>Bagian tengahnya saling menghapus, menyisakan</p><p>$$6! - 1! = 720 - 1 = \\boxed{719}$$</p><p>Periksa dengan menghitung langsung:</p><p>$$1 + 4 + 18 + 96 + 600 = 719$$</p><p>Cocok — tetapi jalur teleskop tidak menuntut menghitung satu pun faktorial selain yang terakhir.</p><p>Bentuk umumnya:</p><p>$$\\sum_{k=1}^{n} k \\cdot k! = (n+1)! - 1$$</p><p>Keuntungannya baru terasa pada $n$ yang besar. Untuk $n = 20$, menghitung langsung berarti menjumlahkan dua puluh bilangan raksasa; lewat teleskop, jawabannya $21! - 1$ dalam satu baris.</p><p><strong>Pelajaran yang lebih umum:</strong> teleskop tidak terbatas pada pecahan. Setiap kali kamu bisa menulis suku ke-$k$ sebagai $f(k+1) - f(k)$ untuk suatu $f$, deretnya runtuh menjadi dua ujung. Yang berbeda hanya cara menemukan $f$-nya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tel-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "deret-teleskopik",
+    "induksi"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa untuk setiap bilangan asli $n$,</p><p>$$\\sum_{k=1}^{n} \\frac{1}{k(k+1)} = \\frac{n}{n+1}$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ada dua jalur yang sama sahnya: mengubah tiap suku jadi selisih lalu menjumlahkan, atau membuktikan rumusnya bertahap dari $n$ ke $n+1$.",
+    "Jalur teleskop: buktikan dulu $\\frac{1}{k(k+1)} = \\frac1k - \\frac{1}{k+1}$, lalu jumlahkan dan tunjukkan apa yang menghapus apa.",
+    "Jalur induksi: pada langkah $k \\to k+1$, tambahkan suku $\\frac{1}{(k+1)(k+2)}$ ke hipotesis lalu sederhanakan."
+   ],
+   "pembahasan": "<h4>Cara pertama: teleskop</h4><p><strong>Buktikan pecahan parsialnya lebih dulu.</strong></p><p>$$\\frac{1}{k} - \\frac{1}{k+1} = \\frac{(k+1) - k}{k(k+1)} = \\frac{1}{k(k+1)}$$</p><p><strong>Jumlahkan.</strong> Substitusikan bentuk itu ke seluruh deret:</p><p>$$\\sum_{k=1}^{n} \\frac{1}{k(k+1)} = \\sum_{k=1}^{n}\\left(\\frac{1}{k} - \\frac{1}{k+1}\\right)$$</p><p>Tuliskan sukunya secara nyata:</p><p>$$\\left(\\frac11 - \\frac12\\right) + \\left(\\frac12 - \\frac13\\right) + \\cdots\n+ \\left(\\frac1n - \\frac{1}{n+1}\\right)$$</p><p>Untuk setiap $j$ dengan $2 \\le j \\le n$, suku $-\\frac1j$ muncul pada kurung ke-$(j-1)$ dan suku $+\\frac1j$ muncul pada kurung ke-$j$. Keduanya saling menghapus. Yang tidak punya pasangan hanya $+\\frac11$ pada kurung pertama dan $-\\frac{1}{n+1}$ pada kurung terakhir.</p><p>Maka</p><p>$$\\sum_{k=1}^{n} \\frac{1}{k(k+1)} = 1 - \\frac{1}{n+1} = \\frac{n+1-1}{n+1} = \\frac{n}{n+1}$$</p><h4>Cara kedua: induksi matematika</h4><p><strong>Basis.</strong> Untuk $n = 1$: ruas kiri $= \\frac{1}{1 \\cdot 2} = \\frac12$, dan ruas kanan $= \\frac{1}{2}$. Cocok.</p><p><strong>Langkah induksi.</strong> Andaikan benar untuk $n = m$, yaitu</p><p>$$\\sum_{k=1}^{m} \\frac{1}{k(k+1)} = \\frac{m}{m+1}$$</p><p>Tinjau $n = m+1$. Tambahkan suku berikutnya ke kedua ruas hipotesis:</p><p>$$\\sum_{k=1}^{m+1} \\frac{1}{k(k+1)} = \\frac{m}{m+1} + \\frac{1}{(m+1)(m+2)}$$</p><p>Satukan dengan penyebut $(m+1)(m+2)$:</p><p>$$= \\frac{m(m+2) + 1}{(m+1)(m+2)} = \\frac{m^2+2m+1}{(m+1)(m+2)} = \\frac{(m+1)^2}{(m+1)(m+2)}\n= \\frac{m+1}{m+2}$$</p><p>Itu persis bentuk yang diminta untuk $n = m+1$.</p><p>Kedua langkah terpenuhi, jadi pernyataannya berlaku untuk setiap bilangan asli $n$. $\\blacksquare$</p><p>Perbedaan keduanya layak diperhatikan. <strong>Induksi hanya bisa memeriksa rumus yang sudah kamu punya</strong>; ia tidak menemukannya. Teleskop justru <strong>menghasilkan</strong> rumusnya — dan itu yang kamu butuhkan di ruang ujian, ketika tidak ada yang memberitahu jawabannya lebih dulu.</p>",
+   "rubrik": [
+    "Jalur teleskop: membuktikan $\\frac{1}{k(k+1)} = \\frac1k - \\frac{1}{k+1}$, bukan sekadar memakainya",
+    "Jalur teleskop: menuliskan deretnya secara nyata dan menjelaskan suku mana yang berpasangan",
+    "Jalur teleskop: menyatakan hanya dua ujung yang tersisa, lalu menyederhanakan menjadi $\\frac{n}{n+1}$",
+    "<strong>Atau</strong>, jalur induksi: memeriksa basis $n = 1$",
+    "Jalur induksi: menuliskan hipotesis dan menambahkan suku ke-$(m+1)$ padanya",
+    "Jalur induksi: menyederhanakan sampai berbentuk $\\frac{m+1}{m+2}$, dengan pemfaktoran $m^2+2m+1 = (m+1)^2$ ditulis eksplisit"
+   ]
+  },
+  {
+   "id": "tel-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "deret-teleskopik"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan nilai dari</p><p>$$\\frac{1}{1 \\cdot 2} + \\frac{1}{2 \\cdot 3} + \\frac{1}{3 \\cdot 4} + \\cdots + \\frac{1}{9 \\cdot 10}$$</p><p>Tulis jawabanmu sebagai pecahan paling sederhana.</p>",
+   "jawaban": "9/10",
+   "jawaban_alt": [
+    "0,9",
+    "0.9"
+   ],
+   "petunjuk": [
+    "Menjumlahkan sembilan pecahan satu per satu bisa, tetapi susunan penyebutnya terlalu teratur untuk kebetulan.",
+    "Tiap suku bisa ditulis sebagai <strong>selisih</strong> dua pecahan: $\\frac{1}{k(k+1)} = \\frac1k - \\frac{1}{k+1}$.",
+    "Tulis beberapa suku pertama dalam bentuk selisih itu dan lihat apa yang saling menghapus."
+   ],
+   "pembahasan": "<p>Pecah tiap suku menjadi selisih:</p><p>$$\\frac{1}{k(k+1)} = \\frac{1}{k} - \\frac{1}{k+1}$$</p><p>Periksa: ruas kanan bernilai $\\frac{(k+1) - k}{k(k+1)} = \\frac{1}{k(k+1)}$. Cocok.</p><p>Tuliskan seluruh deretnya dalam bentuk itu:</p><p>$$\\left(\\frac11 - \\frac12\\right) + \\left(\\frac12 - \\frac13\\right) + \\left(\\frac13 - \\frac14\\right)\n+ \\cdots + \\left(\\frac19 - \\frac{1}{10}\\right)$$</p><p>Sekarang perhatikan apa yang terjadi. Suku $-\\frac12$ pada kurung pertama menghapus $+\\frac12$ pada kurung kedua; $-\\frac13$ menghapus $+\\frac13$; dan seterusnya. <strong>Seluruh bagian tengahnya lenyap</strong>, menyisakan hanya dua ujung:</p><p>$$\\frac{1}{1} - \\frac{1}{10} = \\frac{10 - 1}{10} = \\boxed{\\frac{9}{10}}$$</p><p>Itulah yang disebut deret teleskopik — seperti teleskop lipat yang menyusut menjadi dua ujungnya saja.</p><p>Bentuk umumnya:</p><p>$$\\sum_{k=1}^{n} \\frac{1}{k(k+1)} = 1 - \\frac{1}{n+1} = \\frac{n}{n+1}$$</p><p>Untuk $n = 9$ memang $\\frac{9}{10}$.</p><p><strong>Kebiasaan yang menyelamatkan:</strong> tulis tiga suku pertama dan dua suku terakhir secara nyata sebelum menyimpulkan apa yang menghapus apa. Pada deret yang selisihnya berjarak lebih dari satu, yang tersisa bukan dua suku melainkan lebih — dan menebaknya tanpa menuliskan hampir selalu meleset.</p>",
    "rubrik": []
   },
   {

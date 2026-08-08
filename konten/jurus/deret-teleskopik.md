@@ -4,8 +4,8 @@ nama: Deret Teleskopik
 pilar: aljabar
 tahap: osn-p
 prasyarat: [barisan-deret, faktorisasi]
-contoh: []
-latihan: []
+contoh: [tel-contoh-1]
+latihan: [tel-01, tel-02, tel-03, tel-04, tel-05, tel-06]
 ---
 
 ## Kapan dipakai

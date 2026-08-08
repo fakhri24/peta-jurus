@@ -4,8 +4,8 @@ nama: Induksi Matematika
 pilar: aljabar
 tahap: osn-p
 prasyarat: [barisan-deret]
-contoh: []
-latihan: []
+contoh: [ind-contoh-1]
+latihan: [ind-01, ind-02, ind-03, ind-04, ind-05, ind-06]
 ---
 
 ## Kapan dipakai

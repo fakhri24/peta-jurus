@@ -785,8 +785,17 @@
    "prasyarat": [
     "barisan-deret"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "ind-contoh-1"
+   ],
+   "latihan": [
+    "ind-01",
+    "ind-02",
+    "ind-03",
+    "ind-04",
+    "ind-05",
+    "ind-06"
+   ],
    "kapan_dipakai": "<p>Pernyataan berlaku <strong>untuk setiap bilangan asli $n$</strong>, dan bentuk untuk $n+1$ terasa bisa disusun dari bentuk untuk $n$. Ciri lain: ada rumus yang sudah kamu tebak dari pola, dan kamu perlu membuktikannya.</p>",
    "inti": "<p>Dua langkah, dan keduanya wajib:</p><ol><li><strong>Basis.</strong> Tunjukkan pernyataannya benar untuk $n$ terkecil.</li><li><strong>Langkah induksi.</strong> Andaikan benar untuk $n = k$, lalu buktikan benar untuk $n = k+1$.</li></ol><p>Yang menentukan mutu pembuktian adalah langkah kedua: di situ hipotesis induksi harus benar-benar <strong>dipakai</strong>, bukan sekadar disebut. Kalau pembuktian $n = k+1$ berjalan tanpa menyentuh yang $n = k$, biasanya induksinya tidak diperlukan sama sekali — atau ada yang salah.</p><p><strong>Induksi kuat</strong> mengandaikan pernyataannya benar untuk semua nilai dari basis sampai $k$, bukan hanya di $k$. Ia diperlukan ketika langkah $k+1$ bersandar pada dua nilai sebelumnya atau lebih — misalnya pada barisan yang tiap sukunya dibangun dari dua suku sebelumnya.</p><p>Untuk deret, pola kerjanya hampir selalu sama: tulis $S_{k+1} = S_k + U_{k+1}$, ganti $S_k$ dengan hipotesis induksi, lalu sederhanakan sampai berbentuk rumus untuk $k+1$.</p>",
    "jebakan": "<ul><li><strong>Melewatkan basis.</strong> Tanpa basis, langkah induksi membuktikan pernyataan salah pun bisa \"berhasil\".</li><li><strong>Basis di tempat yang keliru.</strong> Kalau pernyataannya berlaku untuk $n \\ge 3$, basisnya $n = 3$.</li><li><strong>Tidak memakai hipotesis induksi.</strong> Ini bukan soal gaya penulisan; kalau ia tidak dipakai, yang kamu tulis bukan pembuktian induksi.</li><li><strong>Mengubah yang dibuktikan di tengah jalan.</strong> Pernyataan untuk $k+1$ harus dirumuskan lebih dulu, lalu dicapai — bukan disesuaikan dengan hasil yang terlanjur keluar.</li></ul>",
@@ -803,8 +812,17 @@
     "barisan-deret",
     "faktorisasi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "tel-contoh-1"
+   ],
+   "latihan": [
+    "tel-01",
+    "tel-02",
+    "tel-03",
+    "tel-04",
+    "tel-05",
+    "tel-06"
+   ],
    "kapan_dipakai": "<p>Deret panjang dengan suku berbentuk pecahan yang penyebutnya hasil kali dua bilangan berdekatan, atau selisih yang polanya rapi. Ciri paling terang: banyak suku, tetapi soal menuntut nilai <strong>eksak</strong>.</p>",
    "inti": "<p>Gagasannya satu kalimat: <strong>tulis tiap suku sebagai selisih dua bentuk yang berurutan</strong>, lalu biarkan bagian tengahnya saling menghapus.</p><p>$$\\sum_{k=1}^{n} \\left(f(k) - f(k+1)\\right) = f(1) - f(n+1)$$</p><p>Seluruh isi tengah lenyap; yang tersisa hanya dua ujung.</p><p>Bentuk yang paling sering muncul:</p><p>$$\\frac{1}{k(k+1)} = \\frac{1}{k} - \\frac{1}{k+1}$$</p><p>sehingga</p><p>$$\\sum_{k=1}^{n} \\frac{1}{k(k+1)} = 1 - \\frac{1}{n+1} = \\frac{n}{n+1}$$</p><p>Lebih umum, pecahan parsial menyediakan selisihnya:</p><p>$$\\frac{1}{k(k+d)} = \\frac{1}{d}\\left(\\frac{1}{k} - \\frac{1}{k+d}\\right)$$</p><p>Untuk $d &gt; 1$, yang tersisa bukan dua suku melainkan $d$ suku di tiap ujung — dan itu bagian yang paling sering salah dihitung.</p><p>Teleskop juga bekerja di luar pecahan: $k \\cdot k! = (k+1)! - k!$, dan $\\sqrt{k+1} - \\sqrt{k} = \\dfrac{1}{\\sqrt{k+1}+\\sqrt{k}}$.</p>",
    "jebakan": "<ul><li><strong>Salah menghitung sisa di ujung.</strong> Untuk selisih berjarak $d$, yang tersisa $d$ suku di awal dan $d$ suku di akhir, bukan satu.</li><li><strong>Lupa faktor $\\frac{1}{d}$</strong> pada pecahan parsial.</li><li><strong>Menuliskan pola tanpa memeriksanya.</strong> Tulis tiga suku pertama dan dua suku terakhir secara nyata sebelum menyimpulkan apa yang menghapus apa.</li></ul>",
@@ -872,8 +890,17 @@
    "prasyarat": [
     "ketaksamaan-dasar"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "ag-contoh-1"
+   ],
+   "latihan": [
+    "ag-01",
+    "ag-02",
+    "ag-03",
+    "ag-04",
+    "ag-05",
+    "ag-06"
+   ],
    "kapan_dipakai": "<p>Semua peubahnya <strong>positif</strong>, dan soal meminta nilai terbesar atau terkecil dari jumlah atau hasil kali. Ciri paling terang: satu di antara jumlah dan hasil kali diketahui tetap, lalu yang lain ditanyakan.</p>",
    "inti": "<p>Untuk bilangan positif $a_1, \\dots, a_n$:</p><p>$$\\frac{a_1 + a_2 + \\cdots + a_n}{n} \\ \\ge\\ \\sqrt[n]{a_1 a_2 \\cdots a_n}$$</p><p>dengan kesamaan <strong>tepat ketika semuanya sama</strong>.</p><p>Bentuk dua peubah yang paling sering dipakai:</p><p>$$a + b \\ge 2\\sqrt{ab}, \\qquad a, b &gt; 0$$</p><p>Cara membacanya: kalau hasil kali tetap, jumlahnya paling kecil saat kedua bilangan sama; kalau jumlahnya tetap, hasil kalinya paling besar saat keduanya sama.</p><p><strong>Syarat kesamaan itu bagian dari jawaban, bukan pelengkap.</strong> Soal \"tentukan nilai minimum\" belum selesai sebelum ditunjukkan nilai itu benar-benar tercapai — yaitu ada pilihan peubah yang membuat semuanya sama sekaligus memenuhi kendala soal.</p><p>Kalau penerapan langsung tidak memberi batas yang tetap, biasanya pemecahannya <strong>memecah suku</strong>: tulis satu suku menjadi beberapa bagian yang sama supaya kesamaannya bisa tercapai. Contohnya pada $x + \\frac{4}{x^2}$, pecah $\\frac{4}{x^2}$ jadi dua bagian $\\frac{2}{x^2}$ lalu terapkan AM-GM pada tiga suku.</p>",
    "jebakan": "<ul><li><strong>Memakainya pada bilangan yang bisa negatif.</strong> AM-GM menuntut semua suku positif.</li><li><strong>Berhenti sebelum memeriksa kesamaan.</strong> Batas yang tidak pernah tercapai bukan nilai minimum; ia hanya batas bawah.</li><li><strong>Menerapkannya pada suku yang salah</strong> sehingga yang keluar bukan bilangan tetap. Kalau hasilnya masih memuat peubah, penerapannya belum berguna.</li></ul>",
@@ -933,8 +960,17 @@
    "prasyarat": [
     "persamaan-kuadrat"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "sb-contoh-1"
+   ],
+   "latihan": [
+    "sb-01",
+    "sb-02",
+    "sb-03",
+    "sb-04",
+    "sb-05",
+    "sb-06"
+   ],
    "kapan_dipakai": "<p>Ada polinomial berderajat tiga ke atas, atau soal berbicara tentang derajat, koefisien, dan pembagian antar-polinomial.</p>",
    "inti": "<p>Tulis $P(x) = a_n x^n + \\cdots + a_1 x + a_0$ dengan $a_n \\ne 0$; derajatnya $n$.</p><p><strong>Pembagian bersusun.</strong> Untuk polinomial $P$ dan pembagi $D$ tak nol, ada $Q$ dan $R$ tunggal dengan</p><p>$$P(x) = D(x) Q(x) + R(x), \\qquad \\deg R &lt; \\deg D$$</p><p>Bentuknya persis algoritma pembagian pada bilangan bulat, dan dipakai dengan cara yang sama.</p><p>Akibat yang paling sering dipakai: sisa pembagian oleh polinomial berderajat $d$ selalu berderajat kurang dari $d$. Jadi sisa pembagian oleh $(x-a)(x-b)$ berbentuk $px + q$ — dua bilangan tak diketahui, dan soalnya berubah menjadi mencari keduanya.</p><p><strong>Aturan derajat</strong> yang sering menutup soal tanpa perhitungan:</p><p>$$\\deg(PQ) = \\deg P + \\deg Q, \\qquad \\deg(P + Q) \\le \\max(\\deg P, \\deg Q)$$</p><p>Ketaksamaan pada yang kedua bisa ketat kalau suku tertingginya saling menghapus.</p><p>Polinomial berderajat $n$ punya paling banyak $n$ akar. Akibatnya: kalau dua polinomial berderajat $\\le n$ bernilai sama di $n+1$ titik berbeda, keduanya polinomial yang sama. Itu senjata utama pada soal \"tentukan $P$\".</p>",
    "jebakan": "<ul><li><strong>Lupa sisa bisa berupa polinomial</strong>, bukan bilangan. Sisa pembagian oleh kuadrat adalah bentuk linear.</li><li><strong>Mengira koefisien utama boleh nol.</strong> Derajat ditentukan oleh koefisien tak nol tertinggi; kalau ia memuat parameter, kasus nolnya harus diperiksa.</li><li><strong>Menyimpulkan dua polinomial sama dari beberapa titik saja</strong> tanpa memastikan jumlah titiknya melebihi derajatnya.</li></ul>",
