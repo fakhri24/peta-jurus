@@ -2,6 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+Rencana pengembangannya ada di `PLAN.md` — fase, cakupan, dan target isi per jurus.
+Baca itu dulu sebelum menambah konten atau membuka bidang baru.
+
 ## Bahasa
 
 Nama variabel, nama fungsi, komentar, pesan galat, dan seluruh dokumentasi ditulis
@@ -111,8 +114,17 @@ Tidak bisa ditegakkan mesin, tapi sama mengikatnya:
 
 - **Petunjuk 1 tidak boleh menyebut nama jurusnya.** Kalau disebut, gerbangnya kehilangan
   gunanya. Urutan petunjuk berjenjang dari dorongan halus → sebut jurus → langkah pertama.
-- **`sumber` ditulis apa adanya.** Soal yang ada sekarang disusun sendiri dengan gaya OSN
-  dan ditulis begitu. Jangan pernah mengarang atribusi seperti "OSN-K 2013 soal 8".
+- **`sumber` ditulis apa adanya.** Sebagian besar soal disusun sendiri dengan gaya OSN dan
+  ditulis begitu apa adanya (`Latihan 1 — susunan sendiri, gaya OSN-K`). Atribusi ke
+  naskah asli — `OSN 2025 nomor 3` — **hanya boleh untuk naskah yang benar-benar diunduh
+  dari situs resmi dan terdaftar di `konten/arsip.yml`**, dan soalnya wajib memuat
+  `arsip:` yang merujuk entri itu. Jangan pernah mengarang atribusi, dan jangan pernah
+  memberi atribusi tahun+nomor pada soal dari salinan tak resmi: asal-usulnya tidak bisa
+  diverifikasi. Kalau soalnya bagus tapi sumbernya tak resmi, tulis ulang sebagai soal
+  susunan sendiri dan beri label begitu.
+- **Tidak ada PDF naskah di repo ini** — arsip menyimpan metadata dan tautan ke sumber
+  resminya saja. Mengunduh dan menyebarkan ulang adalah dua izin yang berbeda; rinciannya
+  di `PLAN.md` Fase 5.
 - **Varian jawaban ditulis eksplisit di `jawaban_alt`**, bukan ditebak kode.
   `periksaJawaban()` sengaja lugu: rapikan spasi, samakan huruf, bandingkan sebagai angka.
 
@@ -120,11 +132,22 @@ Format frontmatter lengkap ada di README.md.
 
 ## Jebakan
 
-- `NAMA_PILAR` dan `NAMA_TAHAP` disalin di `peta.js`, `jurus.js`, dan `simulasi.js`.
-  Pilar baru muncul sendiri di peta (dikelompokkan `build.py`), tapi judulnya tampil
-  sebagai slug mentah sampai ketiga berkas itu ditambahi.
+- `NAMA_PILAR` ada di **dua** berkas, `peta.js` dan `jurus.js` — dan keduanya sudah
+  memuat keempat bidang OSN (`teori-bilangan`, `aljabar`, `geometri`, `kombinatorika`),
+  jadi menambah bidang tidak menuntut sentuhan JS. `simulasi.js` tidak menampilkan nama
+  pilar sama sekali. Yang tersalin di tiga berkas adalah peta tahapnya, dengan dua nama
+  berbeda: `NAMA_TAHAP` di `peta.js` dan `jurus.js`, `TAHAP` di `simulasi.js`.
+- **Urutan bidang di halaman peta alfabetis menurut slug**, bukan pilihan siapa pun:
+  `build.py` mengurutkan simpul `(pilar, tingkat, x)` dan `gambar()` di `peta.js`
+  memakai urutan itu apa adanya lewat `Object.keys`. Menambah `aljabar` akan melempar
+  `teori-bilangan` ke dasar halaman.
 - Prasyarat lintas pilar tetap mengunci jurusnya, tapi garisnya **tidak digambar** —
-  `gambarPilar()` melewati tepi yang pangkalnya di pilar lain.
+  `gambarPilar()` melewati tepi yang pangkalnya di pilar lain. Akibatnya siswa melihat
+  gembok tanpa penyebab yang terlihat begitu ada bidang kedua.
+- **`![gambar](berkas)` tidak didukung dan gagal diam-diam.** Pola tautan di `_sebaris()`
+  menangkap `[alt](url)` lebih dulu dan meninggalkan tanda serunya, jadi keluarannya
+  `!<a href="…">alt</a>` — bukan galat, hanya halaman yang salah. Tidak ada aturan `img`
+  di `styles.css`. Geometri terhalang ini.
 - Semua HTML dirakit lewat `innerHTML`; teks dari data harus lewat `Inti.lolos()`, tapi
   bidang hasil build (`soal`, `pembahasan`, `petunjuk`, `inti`) sudah berupa HTML dan
   memang dipasang mentah.
