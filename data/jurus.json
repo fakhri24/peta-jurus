@@ -1,0 +1,446 @@
+{
+ "ukuran": {
+  "teori-bilangan": {
+   "lebar": 804,
+   "tinggi": 944
+  }
+ },
+ "simpul": [
+  {
+   "id": "keterbagian",
+   "nama": "Keterbagian",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "prasyarat": [],
+   "contoh": [
+    "ket-contoh-1",
+    "ket-contoh-2"
+   ],
+   "latihan": [
+    "ket-01",
+    "ket-02",
+    "ket-03",
+    "ket-04"
+   ],
+   "kapan_dipakai": "<p>Soal menyebut kata <em>habis dibagi</em>, <em>kelipatan</em>, <em>faktor</em>, atau <em>sisa</em>. Juga saat kamu melihat bentuk seperti $n \\mid a$ dan ingin menariknya jadi persamaan.</p>",
+   "inti": "<p>$a \\mid b$ dibaca \"$a$ membagi $b$\", artinya ada bilangan bulat $k$ dengan $b = ak$.</p><p>Kalimat kuncinya: <strong>keterbagian itu selalu bisa diubah jadi persamaan.</strong> Begitu kamu tulis $b = ak$, soalnya berpindah dari bahasa \"habis dibagi\" ke bahasa aljabar biasa.</p><p>Empat sifat yang dipakai hampir setiap hari:</p><ol><li>Kalau $a \\mid b$ dan $a \\mid c$, maka $a \\mid (bx + cy)$ untuk sembarang bulat $x, y$.</li><li>Kalau $a \\mid b$ dan $b \\mid c$, maka $a \\mid c$.</li><li>Kalau $a \\mid b$ dan $b \\neq 0$, maka $|a| \\le |b|$.</li><li>$a \\mid b$ dan $b \\mid a$ berarti $a = \\pm b$.</li></ol><p>Sifat pertama yang paling sering menyelamatkan. Kalau dua bilangan sama-sama habis dibagi $d$, maka <strong>selisihnya</strong> juga — dan selisih biasanya jauh lebih sederhana daripada kedua bilangan asalnya.</p>",
+   "jebakan": "<ul><li><strong>Lupa $0$.</strong> $a \\mid 0$ selalu benar untuk $a$ berapa pun. Ini sering jadi solusi yang terlewat saat soal minta \"semua $n$\".</li><li><strong>Sifat 3 dipakai tanpa syarat $b \\neq 0$.</strong> Kalau $b = 0$ kesimpulannya batal.</li><li><strong>Membagi dua ruas tanpa hak.</strong> Dari $ac \\mid bc$ tidak boleh langsung ditarik $a \\mid b$ — itu baru sah kalau $c \\neq 0$.</li><li><strong>Berhenti di \"habis dibagi\".</strong> Kalau macet, tulis ulang jadi $b = ak$. Hampir selalu ada yang bergerak setelah itu.</li></ul>",
+   "tingkat": 0,
+   "x": 318,
+   "y": 24
+  },
+  {
+   "id": "algoritma-pembagian",
+   "nama": "Algoritma Pembagian",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "keterbagian"
+   ],
+   "contoh": [
+    "ap-contoh-1"
+   ],
+   "latihan": [
+    "ap-01",
+    "ap-02",
+    "ap-03"
+   ],
+   "kapan_dipakai": "<p>Soal berbicara tentang <strong>sisa</strong>, atau kamu ingin membagi semua bilangan bulat menjadi beberapa golongan untuk diperiksa satu per satu.</p>",
+   "inti": "<p>Untuk sembarang bulat $a$ dan bulat positif $b$, ada tepat satu pasang $q$ dan $r$ dengan</p><p>$$a = bq + r, \\qquad 0 \\le r &lt; b$$</p><p>Kata <strong>tepat satu</strong> itu yang bekerja. Karena sisanya tunggal dan pasti berada di $\\{0, 1, \\dots, b-1\\}$, seluruh bilangan bulat terbelah rapi jadi $b$ golongan.</p><p>Dari sini lahir jurus paling murah dalam teori bilangan: <strong>periksa semua kemungkinan sisa</strong>. Kalau soal melibatkan pembagian oleh $3$, cukup tulis $n = 3k$, $n = 3k+1$, $n = 3k+2$ dan kerjakan tiga kasus. Tiga kasus itu meliputi semua bilangan bulat di dunia — tanpa terkecuali.</p>",
+   "jebakan": "<ul><li><strong>Menganggap sisa boleh negatif.</strong> Menurut definisinya $0 \\le r &lt; b$. Untuk $a = -7$ dan $b = 3$, sisanya $2$ (karena $-7 = 3(-3) + 2$), bukan $-1$.</li><li><strong>Lupa kasus $r = 0$.</strong> Saat memeriksa golongan sisa, $n = 3k$ sama pentingnya dengan dua golongan lainnya.</li><li><strong>Memilih pembagi yang salah.</strong> Kalau soal berbicara tentang kuadrat, periksa sisa terhadap $4$ atau $8$ — bukan $2$. Kuadrat hanya bersisa $0$ atau $1$ modulo $4$, dan fakta itu jauh lebih tajam.</li></ul>",
+   "tingkat": 1,
+   "x": 220,
+   "y": 136
+  },
+  {
+   "id": "bilangan-prima",
+   "nama": "Bilangan Prima & Faktorisasi",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "keterbagian"
+   ],
+   "contoh": [
+    "bp-contoh-1"
+   ],
+   "latihan": [
+    "bp-01",
+    "bp-02",
+    "bp-03"
+   ],
+   "kapan_dipakai": "<p>Soal menyebut prima, atau meminta sesuatu tentang <strong>struktur</strong> sebuah bilangan: banyaknya faktor, kuadrat sempurna, pangkat tiga sempurna, atau kapan dua bilangan tidak berbagi faktor.</p>",
+   "inti": "<p>Setiap bilangan bulat $n &gt; 1$ punya penulisan tunggal</p><p>$$n = p_1^{a_1} p_2^{a_2} \\cdots p_k^{a_k}$$</p><p>dengan $p_i$ prima berbeda. Ini <strong>Teorema Dasar Aritmetika</strong>, dan ketunggalannya itulah seluruh kekuatannya: dua penulisan yang tampak berbeda untuk bilangan yang sama harus punya pangkat prima yang identik. Menyamakan pangkat di kedua ruas adalah langkah yang sering menyelesaikan soal dalam satu tarikan.</p><p>Dua sifat turunan yang paling sering dipakai:</p><ol><li><strong>Lema Euclid.</strong> Kalau $p$ prima dan $p \\mid ab$, maka $p \\mid a$ atau $p \\mid b$. Sifat ini khas prima — untuk komposit tidak berlaku ($6 \\mid 4 \\cdot 9$ tapi $6$ tidak membagi $4$ maupun $9$).</li><li>$n$ adalah <strong>kuadrat sempurna</strong> tepat ketika semua pangkat $a_i$ genap. Pangkat tiga sempurna: semua $a_i$ kelipatan tiga.</li></ol><p>Untuk menguji keprimaan $n$, cukup coba bagi dengan prima sampai $\\sqrt{n}$ — kalau tidak ada yang membagi, $n$ prima.</p>",
+   "jebakan": "<ul><li><strong>Menganggap $1$ prima.</strong> Bukan. Kalau $1$ dihitung prima, ketunggalan faktorisasi runtuh — dan bersamanya hampir seluruh teori bilangan.</li><li><strong>Melupakan $2$.</strong> Satu-satunya prima genap. Hampir semua soal bergaya \"buktikan semua prima berbentuk…\" punya $2$ sebagai kekecualian yang harus diperiksa terpisah.</li><li><strong>Memakai lema Euclid pada bilangan komposit.</strong> Itu langkah yang tampak sah tapi salah.</li></ul>",
+   "tingkat": 1,
+   "x": 416,
+   "y": 136
+  },
+  {
+   "id": "kongruensi-dasar",
+   "nama": "Kongruensi",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "algoritma-pembagian"
+   ],
+   "contoh": [
+    "kd-contoh-1"
+   ],
+   "latihan": [
+    "kd-01",
+    "kd-02",
+    "kd-03"
+   ],
+   "kapan_dipakai": "<p>Hampir selalu, begitu soal menyebut sisa pembagian — dan terutama saat kamu ingin <strong>membuktikan sesuatu tidak mungkin</strong>. Kongruensi adalah alat pembuktian ketidakmungkinan yang paling murah yang kamu punya.</p>",
+   "inti": "<p>$a \\equiv b \\pmod{m}$ berarti $m \\mid (a - b)$.</p><p>Kekuatannya: kongruensi boleh <strong>dijumlah, dikurang, dan dikali</strong> seperti persamaan biasa. Jadi seluruh refleks aljabarmu tetap terpakai, hanya saja dunianya menyusut jadi $m$ bilangan.</p><p>Pola pemakaian yang paling berhasil: kalau kamu curiga sebuah persamaan tidak punya solusi bulat, <strong>ambil modulo yang tepat</strong> dan tunjukkan kedua ruas tidak pernah cocok.</p><p>Modulo yang paling sering berguna, karena himpunan nilainya sempit:</p><table><thead><tr><th>Bentuk</th><th>Modulo</th><th>Nilai yang mungkin</th></tr></thead><tbody><tr><td>$x^2$</td><td>$4$</td><td>$0, 1$</td></tr><tr><td>$x^2$</td><td>$8$</td><td>$0, 1, 4$</td></tr><tr><td>$x^2$</td><td>$3$</td><td>$0, 1$</td></tr><tr><td>$x^3$</td><td>$9$</td><td>$0, 1, 8$</td></tr></tbody></table><p>Contoh cara pakainya: $x^2 + y^2 = 3z^2$ tidak punya solusi bulat tak nol, dan itu ketahuan hanya dengan melihat semuanya modulo $4$.</p>",
+   "jebakan": "<ul><li><strong>Membagi kedua ruas sembarangan.</strong> Ini kesalahan terbesar. Dari $6 \\equiv 12 \\pmod{6}$ tidak boleh disimpulkan $1 \\equiv 2 \\pmod 6$. Pembagian hanya sah kalau pembaginya relatif prima terhadap modulusnya.</li><li><strong>Memangkatkan eksponennya dengan aturan modulo yang sama.</strong> $a^k \\bmod m$ tidak ditentukan oleh $k \\bmod m$. Eksponen punya aturannya sendiri — itu wilayah Fermat dan Euler.</li><li><strong>Memilih modulo asal-asalan.</strong> Modulo yang berguna adalah yang membuat himpunan nilai ruas kiri dan ruas kanan tidak beririsan. Kalau tidak menghasilkan tabrakan, ganti.</li></ul>",
+   "tingkat": 2,
+   "x": 24,
+   "y": 248
+  },
+  {
+   "id": "fpb-kpk",
+   "nama": "FPB & KPK",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "algoritma-pembagian",
+    "bilangan-prima"
+   ],
+   "contoh": [
+    "fk-contoh-1"
+   ],
+   "latihan": [
+    "fk-01",
+    "fk-02"
+   ],
+   "kapan_dipakai": "<p>Soal menyebut faktor persekutuan, kelipatan persekutuan, pecahan paling sederhana, atau kata <strong>relatif prima</strong> / <em>saling asing</em>.</p>",
+   "inti": "<p>Lewat faktorisasi prima, dengan $\\gcd$ mengambil pangkat terkecil dan $\\operatorname{lcm}$ pangkat terbesar:</p><p>$$\\gcd(a,b) \\cdot \\operatorname{lcm}(a,b) = ab$$</p><p>Rumus ini sering jadi jalan pintas: kalau soal memberi $\\gcd$ dan $\\operatorname{lcm}$, kamu langsung tahu hasil kalinya.</p><p>Dua bilangan disebut <strong>relatif prima</strong> kalau $\\gcd(a,b) = 1$. Ini syarat yang muncul di mana-mana, dan gunanya satu: <strong>memisahkan</strong>. Kalau $\\gcd(m,n) = 1$ dan keduanya membagi $N$, maka $mn \\mid N$. Tanpa syarat relatif prima, kesimpulan itu palsu — $4 \\mid 12$ dan $6 \\mid 12$ tapi $24 \\nmid 12$.</p><p>Trik yang sering menolong: tulis $a = d\\alpha$, $b = d\\beta$ dengan $d = \\gcd(a,b)$ dan $\\gcd(\\alpha, \\beta) = 1$. Soal yang tadinya berantakan biasanya langsung rapi.</p>",
+   "jebakan": "<ul><li><strong>Memakai \"$m \\mid N$ dan $n \\mid N$ berarti $mn \\mid N$\" tanpa memeriksa $\\gcd(m,n) = 1$.</strong> Ini kesalahan paling sering di seluruh teori bilangan tingkat awal.</li><li><strong>Mengira $\\gcd(a,b) \\cdot \\operatorname{lcm}(a,b) = ab$ berlaku untuk tiga bilangan.</strong> Tidak. Untuk tiga bilangan rumusnya lain sama sekali.</li><li><strong>Lupa $\\gcd(a, 0) = a$.</strong> Muncul sebagai kasus batas di algoritma Euklid.</li></ul>",
+   "tingkat": 2,
+   "x": 220,
+   "y": 248
+  },
+  {
+   "id": "tau-sigma",
+   "nama": "Banyaknya & Jumlah Faktor",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "bilangan-prima"
+   ],
+   "contoh": [
+    "ts-contoh-1"
+   ],
+   "latihan": [
+    "ts-01",
+    "ts-02"
+   ],
+   "kapan_dipakai": "<p>Soal menghitung <strong>ada berapa</strong> faktor sebuah bilangan, menjumlahkan seluruh faktornya, atau memberi syarat seperti \"punya tepat 12 faktor\".</p>",
+   "inti": "<p>Kalau $n = p_1^{a_1} \\cdots p_k^{a_k}$, maka</p><p>$$\\tau(n) = (a_1+1)(a_2+1)\\cdots(a_k+1)$$</p><p>$$\\sigma(n) = \\prod_i \\frac{p_i^{a_i+1} - 1}{p_i - 1}$$</p><p>Rumus $\\tau$ lahir dari pencacahan langsung: setiap faktor dibentuk dengan memilih pangkat $p_i$ dari $0$ sampai $a_i$ — ada $a_i + 1$ pilihan, dan pilihannya saling bebas.</p><p>Soal olimpiade biasanya membalik arahnya: diberi $\\tau(n) = 12$, cari $n$ yang memenuhi. Karena $12 = 12 = 6\\cdot2 = 4\\cdot3 = 3\\cdot2\\cdot2$, pola pangkatnya cuma beberapa kemungkinan — dan pencacahannya berhingga.</p><p>Satu fakta yang sering jadi kunci: <strong>$\\tau(n)$ ganjil tepat ketika $n$ kuadrat sempurna</strong>, karena faktor selalu berpasangan $d \\leftrightarrow n/d$ kecuali saat $d = \\sqrt{n}$.</p>",
+   "jebakan": "<ul><li><strong>Lupa menambah satu.</strong> Pangkat $a$ memberi $a+1$ pilihan, bukan $a$.</li><li><strong>Mengalikan $\\tau$ pada bilangan yang tidak relatif prima.</strong> $\\tau$ multiplikatif hanya saat $\\gcd(m,n)=1$.</li><li><strong>Melupakan $1$ dan $n$ sendiri</strong> saat menghitung faktor dengan tangan.</li></ul>",
+   "tingkat": 2,
+   "x": 416,
+   "y": 248
+  },
+  {
+   "id": "legendre-faktorial",
+   "nama": "Pangkat Prima dalam Faktorial",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "bilangan-prima"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal menanyakan <strong>berapa banyak nol di belakang</strong> $n!$, atau pangkat tertinggi suatu prima yang membagi faktorial atau koefisien binomial.</p>",
+   "inti": "<p>Rumus Legendre: pangkat prima $p$ dalam $n!$ adalah</p><p>$$v_p(n!) = \\left\\lfloor \\frac{n}{p} \\right\\rfloor + \\left\\lfloor \\frac{n}{p^2} \\right\\rfloor\n+ \\left\\lfloor \\frac{n}{p^3} \\right\\rfloor + \\cdots$$</p><p>Jumlahnya berhenti sendiri begitu $p^k &gt; n$.</p><p>Cara membacanya: suku pertama mencacah kelipatan $p$, suku kedua menambahkan satu lagi untuk kelipatan $p^2$ (yang menyumbang dua faktor $p$), dan seterusnya. Tidak ada yang terhitung dua kali — tiap bilangan disumbangkan sebanyak pangkat $p$ di dalamnya.</p><p>Untuk banyaknya nol di belakang $n!$, yang dicari adalah $v_5(n!)$ — bukan $v_2$. Nol lahir dari pasangan $2 \\times 5$, dan faktor $2$ selalu jauh lebih berlimpah, jadi $5$ yang menjadi penghambatnya.</p>",
+   "jebakan": "<ul><li><strong>Berhenti di suku pertama.</strong> $v_5(100!) = 20 + 4 = 24$, bukan $20$. Kelipatan $25$ menyumbang dua kali.</li><li><strong>Menghitung $v_2$ untuk soal nol di belakang.</strong> Yang langka itu $5$.</li><li><strong>Membulatkan, bukan membuang.</strong> $\\lfloor \\cdot \\rfloor$ selalu ke bawah.</li></ul>",
+   "tingkat": 2,
+   "x": 612,
+   "y": 248
+  },
+  {
+   "id": "sistem-residu",
+   "nama": "Sistem Residu",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "kongruensi-dasar"
+   ],
+   "contoh": [
+    "sr-contoh-1"
+   ],
+   "latihan": [
+    "sr-01",
+    "sr-02"
+   ],
+   "kapan_dipakai": "<p>Kamu perlu berpikir tentang <strong>seluruh</strong> bilangan bulat sekaligus, bukan satu per satu — misalnya saat mau membuktikan sesuatu berlaku untuk semua $n$, atau mau menghitung ada berapa nilai yang memenuhi suatu kongruensi.</p>",
+   "inti": "<p>Sistem residu lengkap modulo $m$ adalah himpunan yang memuat tepat satu wakil dari setiap kelas sisa, biasanya $\\{0, 1, \\dots, m-1\\}$. Sistem residu <strong>tereduksi</strong> hanya memuat yang relatif prima terhadap $m$; banyaknya adalah $\\varphi(m)$.</p><p>Sifat yang membuat semuanya bekerja:</p><blockquote><p>Kalau $\\gcd(a, m) = 1$ dan $x$ menjelajahi seluruh sistem residu lengkap, maka $ax$ juga menjelajahi seluruh sistem residu lengkap — hanya urutannya teracak.</p></blockquote><p>Artinya <strong>mengalikan dengan bilangan yang relatif prima itu sekadar mengocok kartu</strong>: tidak ada kelas sisa yang hilang, tidak ada yang muncul dua kali. Dari satu pengamatan inilah Teorema Fermat Kecil dan Teorema Euler dibuktikan — keduanya hanya soal mengalikan seluruh kartu yang sudah dikocok itu.</p><p>Syarat $\\gcd(a,m)=1$ tidak bisa dilepas. Modulo $6$, mengalikan dengan $2$ memampatkan enam kelas menjadi tiga saja.</p>",
+   "jebakan": "<ul><li><strong>Melupakan syarat relatif prima.</strong> Tanpa itu, pengocokan berubah jadi pemampatan dan seluruh argumennya batal.</li><li><strong>Mengira sistem residu harus $\\{0,\\dots,m-1\\}$.</strong> Boleh apa saja asal satu wakil per kelas. Untuk modulo ganjil, memakai wakil simetris $\\{-\\frac{m-1}{2}, \\dots,\n  \\frac{m-1}{2}\\}$ sering memangkas separuh pekerjaan.</li></ul>",
+   "tingkat": 3,
+   "x": 24,
+   "y": 360
+  },
+  {
+   "id": "uji-keterbagian",
+   "nama": "Uji Keterbagian & Digit",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "kongruensi-dasar"
+   ],
+   "contoh": [
+    "uk-contoh-1"
+   ],
+   "latihan": [
+    "uk-01",
+    "uk-02",
+    "uk-03"
+   ],
+   "kapan_dipakai": "<p>Soal berbicara tentang <strong>angka penyusun</strong> bilangan: jumlah digit, digit terakhir, membalik urutan digit, atau mencari digit yang hilang.</p>",
+   "inti": "<p>Kuncinya satu baris. Bilangan dengan digit $d_k \\dots d_1 d_0$ bernilai</p><p>$$N = \\sum_{i} d_i \\cdot 10^i$$</p><p>Semua uji keterbagian lahir dari melihat $10^i$ modulo sesuatu:</p><ul><li>$10 \\equiv 1 \\pmod 9$, jadi $N \\equiv$ jumlah digitnya $\\pmod 9$. Hal yang sama berlaku modulo $3$.</li><li>$10 \\equiv -1 \\pmod{11}$, jadi $N \\equiv$ jumlah digit berselang-seling $\\pmod{11}$.</li><li>$10^3 = 1000 \\equiv 1 \\pmod{37}$, jadi digit yang dikelompokkan tiga-tiga bekerja untuk $37$.</li><li>$2^k \\mid 10^k$, jadi keterbagian oleh $8$ hanya bergantung pada tiga digit terakhir.</li></ul><p>Satu fakta turunan yang sering menutup soal: <strong>sebuah bilangan dan jumlah digitnya selalu kongruen modulo $9$.</strong> Karena itu keduanya punya sisa yang sama — dan itu memasung kemungkinan yang harus diperiksa.</p>",
+   "jebakan": "<ul><li><strong>Mengira digit boleh bernilai berapa pun.</strong> Digit selalu $0$–$9$, dan digit terdepan tidak boleh $0$. Batas ini biasanya justru yang menyelesaikan soalnya.</li><li><strong>Menghitung jumlah digit terus-menerus tanpa alasan.</strong> Yang lestari adalah sisanya modulo $9$, bukan jumlah digitnya sendiri.</li><li><strong>Lupa banyaknya digit ikut dibatasi.</strong> Bilangan tiga digit ada di antara $100$ dan $999$ — dua kurungan yang sering menghabiskan kasus.</li></ul>",
+   "tingkat": 3,
+   "x": 220,
+   "y": 360
+  },
+  {
+   "id": "turun-tak-hingga",
+   "nama": "Turun Tak Hingga",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "bilangan-prima",
+    "kongruensi-dasar"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal meminta <strong>membuktikan tidak ada solusi bulat positif</strong>, dan kongruensi saja tidak cukup untuk menutupnya.</p>",
+   "inti": "<p>Andaikan ada solusi. Tunjukkan bahwa dari solusi itu bisa dibuat solusi lain yang <strong>lebih kecil</strong> tapi tetap bulat positif. Ulangi tanpa henti — mustahil, karena bilangan bulat positif tidak bisa turun selamanya. Jadi solusi awalnya tidak pernah ada.</p><p>Bentuk yang paling praktis: ambil solusi dengan nilai <strong>terkecil</strong>, lalu turunkan lagi. Kontradiksinya langsung terlihat.</p><blockquote><p>Alurnya pada $x^2 + y^2 = 3z^2$: modulo $3$, kuadrat hanya bernilai $0$ atau $1$, jadi $x^2 + y^2 \\equiv 0$ memaksa $3 \\mid x$ dan $3 \\mid y$. Tulis $x = 3x_1$, $y = 3y_1$, maka $3x_1^2 + 3y_1^2 = z^2$ — sehingga $3 \\mid z$ juga. Kini $(x/3, y/3, z/3)$ solusi yang lebih kecil. Turun tanpa dasar, jadi tidak ada solusi tak nol.</p></blockquote><p>Perhatikan pasangannya: kongruensi yang memaksa keterbagian, lalu penurunan yang memanen kontradiksi. Keduanya hampir selalu muncul bersama.</p>",
+   "jebakan": "<ul><li><strong>Lupa mengecualikan solusi nol.</strong> $(0,0,0)$ biasanya memang solusi; yang dibuktikan tidak ada adalah solusi tak nol.</li><li><strong>Penurunannya tidak benar-benar menurun.</strong> Pastikan solusi barunya bulat <strong>dan</strong> benar- benar lebih kecil. Kalau ukurannya bisa tetap, argumennya bocor.</li><li><strong>Berhenti di kongruensi.</strong> Kongruensi hanya memaksa keterbagian; penurunannya yang menutup soal.</li></ul>",
+   "tingkat": 3,
+   "x": 416,
+   "y": 360
+  },
+  {
+   "id": "algoritma-euklid",
+   "nama": "Algoritma Euklid",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "fpb-kpk"
+   ],
+   "contoh": [
+    "ae-contoh-1"
+   ],
+   "latihan": [
+    "ae-01",
+    "ae-02"
+   ],
+   "kapan_dipakai": "<p>Kamu perlu $\\gcd$ dari bilangan yang terlalu besar untuk difaktorkan — atau, jauh lebih sering di olimpiade, kamu perlu $\\gcd$ dari dua <strong>bentuk aljabar</strong> seperti $\\gcd(n+1,\\, n^2+3)$.</p>",
+   "inti": "<p>$$\\gcd(a, b) = \\gcd(b,\\ a \\bmod b)$$</p><p>Ulangi sampai sisanya nol; yang tersisa itulah FPB-nya. Tidak perlu memfaktorkan apa pun.</p><p>Untuk olimpiade, bentuk yang paling berguna adalah versi selisihnya:</p><p>$$\\gcd(a, b) = \\gcd(a - b,\\ b)$$</p><p>Karena setiap pembagi bersama $a$ dan $b$ juga membagi selisihnya. Inilah alat untuk menjinakkan $\\gcd$ berbentuk aljabar: kurangi kelipatan yang pas sampai variabelnya lenyap dan tinggal konstanta.</p><blockquote><p>Contoh alurnya: $\\gcd(n+1,\\, n^2+3)$. Karena $n^2 + 3 = (n+1)(n-1) + 4$, maka $\\gcd(n+1,\\, n^2+3) = \\gcd(n+1,\\, 4)$ — dan sisanya tinggal memeriksa $n+1$ modulo $4$.</p></blockquote>",
+   "jebakan": "<ul><li><strong>Berhenti terlalu cepat.</strong> Hasilnya adalah sisa <strong>tak nol yang terakhir</strong>, bukan sisa nol.</li><li><strong>Lupa bahwa hasilnya masih bersyarat.</strong> $\\gcd(n+1, 4)$ belum satu angka — nilainya $1$, $2$, atau $4$ tergantung $n$. Soal biasanya menanyakan tepat pada percabangan ini.</li><li><strong>Mengurangi kelipatan yang tidak menghabiskan variabel.</strong> Pilih pengalinya supaya suku berpangkat tertinggi benar-benar hilang.</li></ul>",
+   "tingkat": 3,
+   "x": 612,
+   "y": 360
+  },
+  {
+   "id": "fermat-kecil",
+   "nama": "Teorema Fermat Kecil",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "sistem-residu"
+   ],
+   "contoh": [
+    "fkl-contoh-1"
+   ],
+   "latihan": [
+    "fkl-01",
+    "fkl-02",
+    "fkl-03"
+   ],
+   "kapan_dipakai": "<p>Ada <strong>pangkat besar</strong> dan <strong>modulus prima</strong>. Begitu kamu melihat $2^{2019} \\bmod 13$ atau sejenisnya, ini jurus pertama yang dicoba.</p>",
+   "inti": "<p>Kalau $p$ prima dan $p \\nmid a$:</p><p>$$a^{p-1} \\equiv 1 \\pmod p$$</p><p>Ada bentuk kedua yang berlaku <strong>tanpa syarat</strong>, termasuk saat $p \\mid a$:</p><p>$$a^p \\equiv a \\pmod p$$</p><p>Cara memakainya selalu sama: eksponennya dipotong modulo $p - 1$.</p><blockquote><p>$2^{2019} \\bmod 13$. Di sini $p - 1 = 12$, dan $2019 = 12 \\cdot 168 + 3$. Jadi $2^{2019} \\equiv 2^3 = 8 \\pmod{13}$.</p></blockquote><p>Perhatikan pergantian modulusnya: <strong>bilangan pokok dihitung modulo $p$, eksponen dihitung modulo $p-1$.</strong> Dua modulus berbeda dalam satu langkah — di situlah kebanyakan orang tergelincir.</p>",
+   "jebakan": "<ul><li><strong>Lupa memeriksa $p \\nmid a$.</strong> Bentuk $a^{p-1} \\equiv 1$ batal kalau $p$ membagi $a$. Kalau ragu, pakai bentuk $a^p \\equiv a$ yang selalu aman.</li><li><strong>Memakainya untuk modulus komposit.</strong> $n = 15$ bukan prima, jadi $a^{14} \\equiv 1\n  \\pmod{15}$ tidak benar. Untuk komposit, yang berlaku adalah Teorema Euler.</li><li><strong>Mereduksi eksponen modulo $p$, bukan $p-1$.</strong> Kesalahan yang paling sering, dan paling sulit terlihat karena hasilnya tetap \"kelihatan masuk akal\".</li><li><strong>Mengira kebalikannya benar.</strong> $a^{n-1} \\equiv 1 \\pmod n$ tidak menjamin $n$ prima — ada bilangan Carmichael yang lolos uji ini padahal komposit.</li></ul>",
+   "tingkat": 4,
+   "x": 24,
+   "y": 472
+  },
+  {
+   "id": "diophantine-taklinear",
+   "nama": "Diophantine Taklinear",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "turun-tak-hingga",
+    "tau-sigma"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Persamaan dengan solusi bulat yang memuat hasil kali atau pangkat — $xy + ax + by = c$, $x^2 - y^2 = n$, atau pecahan seperti $\\frac1x + \\frac1y = \\frac1n$.</p>",
+   "inti": "<p>Tidak ada satu rumus. Yang ada empat refleks, dicoba berurutan:</p><ol><li><strong>Faktorkan.</strong> Ubah jadi (sesuatu)(sesuatu) = konstanta, lalu cacah pasangan pembaginya. Untuk $xy + ax + by$, tambahkan $ab$ ke kedua ruas: $(x+b)(y+a) = c + ab$. Ini <em>pemfaktoran Simon</em>, dan ia menyelesaikan lebih banyak soal daripada yang pantas.</li><li><strong>Selisih kuadrat.</strong> $x^2 - y^2 = (x-y)(x+y)$. Perhatikan kedua faktornya selalu berparitas sama — itu sendiri sudah membatasi banyak.</li><li><strong>Ambil modulo.</strong> Untuk membuktikan tidak ada solusi. Modulo $4$, $8$, $9$ dulu.</li><li><strong>Batasi ukurannya.</strong> Kalau $x \\le y \\le z$, maka $\\frac1x$ adalah yang terbesar, dan itu memaksa $x$ kecil. Sisanya diperiksa dengan tangan.</li></ol><p>Refleks keempat sering terlupa padahal paling ampuh untuk soal pecahan satuan: begitu $x$ terkurung di rentang kecil, soalnya berubah jadi pencacahan berhingga.</p>",
+   "jebakan": "<ul><li><strong>Faktorisasi tanpa menyaring.</strong> Setelah $(x+b)(y+a) = N$, kamu masih harus membuang pasangan yang membuat $x$ atau $y$ jatuh di luar syarat soal.</li><li><strong>Melupakan pembagi negatif</strong> ketika soal membolehkan bilangan bulat sembarang.</li><li><strong>Menghabiskan waktu mencari solusi yang tidak ada.</strong> Kalau lima menit tidak ada gerak, cobalah membuktikan sebaliknya lewat modulo.</li></ul>",
+   "tingkat": 4,
+   "x": 220,
+   "y": 472
+  },
+  {
+   "id": "vieta-jumping",
+   "nama": "Vieta Jumping",
+   "pilar": "teori-bilangan",
+   "tahap": "osn",
+   "prasyarat": [
+    "turun-tak-hingga"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Ciri khasnya sangat spesifik: persamaan <strong>simetris berderajat dua</strong> pada dua variabel, dengan syarat berupa bilangan bulat — misalnya $\\dfrac{a^2+b^2}{ab+1}$ diminta bulat. Begitu kamu melihat pola itu, hampir pasti ini jurusnya.</p>",
+   "inti": "<p>Perlakukan persamaannya sebagai <strong>kuadrat dalam satu variabel</strong>, dengan variabel lain dianggap tetap. Kalau $(a, b)$ solusi, maka $a$ adalah akar dari suatu persamaan kuadrat — dan akar keduanya, sebut $a'$, memberi solusi baru $(a', b)$.</p><p>Rumus Vieta memberi kedua akar tanpa perlu menghitung apa pun:</p><p>$$a + a' = (\\text{koefisien}), \\qquad a \\cdot a' = (\\text{konstanta})$$</p><p>Yang pertama menjamin $a'$ <strong>bulat</strong>; yang kedua sering menjamin $a'$ <strong>positif</strong>. Jadi lompatan itu menghasilkan solusi bulat positif yang lebih kecil — dan kamu kembali ke turun tak hingga.</p><p>Kerangka pembuktiannya hampir selalu sama:</p><ol><li>Ambil solusi dengan $a + b$ terkecil, misalkan $a \\ge b$.</li><li>Lompat: ganti $a$ dengan akar Vieta yang lain, $a'$.</li><li>Tunjukkan $(a', b)$ juga solusi, bulat, tak negatif, dan lebih kecil.</li><li>Kontradiksi dengan keminimalan — kecuali di kasus dasar, yang justru memberi jawabannya.</li></ol>",
+   "jebakan": "<ul><li><strong>Lupa membuktikan $a'$ bulat.</strong> Itu datang dari $a + a' = $ bilangan bulat, bukan dari rumus akar kuadrat.</li><li><strong>Lupa membuktikan $a' \\ge 0$.</strong> Tanpa itu penurunannya tidak sah, karena bisa lolos ke bilangan negatif.</li><li><strong>Melewatkan kasus dasar.</strong> Justru di situ jawabannya berada — nilai yang dicari muncul ketika penurunan berhenti.</li><li><strong>Memakainya pada persamaan tak simetris.</strong> Kesimetrian yang membuat pertukaran peran $a$ dan $b$ sah.</li></ul>",
+   "tingkat": 4,
+   "x": 416,
+   "y": 472
+  },
+  {
+   "id": "bezout",
+   "nama": "Identitas Bézout",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "algoritma-euklid"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Kamu perlu <strong>membuat</strong> sebuah bilangan dari dua bilangan lain lewat penjumlahan berkelipatan — atau perlu membuktikan sesuatu ada, tanpa harus menemukannya.</p>",
+   "inti": "<p>Untuk sembarang bulat $a, b$ tidak keduanya nol, ada bulat $x, y$ dengan</p><p>$$ax + by = \\gcd(a, b)$$</p><p>Akibat pentingnya: $ax + by$ bisa bernilai $n$ untuk bulat $x, y$ <strong>tepat ketika</strong> $\\gcd(a,b) \\mid n$. Jadi himpunan semua nilai yang bisa dibentuk persis himpunan kelipatan FPB-nya — tidak lebih, tidak kurang.</p><p>Bentuk yang paling sering dipakai di olimpiade adalah kasus $\\gcd(a,b) = 1$: ada $x, y$ dengan $ax + by = 1$. Dari sini lahir <strong>invers modulo</strong>: kalau $\\gcd(a,m) = 1$, maka $x$ pada $ax + my = 1$ memenuhi $ax \\equiv 1 \\pmod m$ — dan itulah satu-satunya alasan pembagian dalam kongruensi kadang boleh dilakukan.</p><p>Untuk mencari $x$ dan $y$ secara nyata, jalankan algoritma Euklid lalu telusuri balik.</p>",
+   "jebakan": "<ul><li><strong>Mengira $x$ dan $y$ tunggal.</strong> Tidak. Kalau $(x_0, y_0)$ satu solusi, maka $(x_0 + kb/d,\\ y_0 - ka/d)$ juga, untuk setiap bulat $k$.</li><li><strong>Mengira $x, y$ pasti positif.</strong> Hampir selalu salah satunya negatif.</li><li><strong>Memakainya untuk mencari solusi padahal soal hanya butuh keberadaan.</strong> Bézout paling kuat justru sebagai alat eksistensi — sering kamu tidak perlu tahu $x$ dan $y$-nya sama sekali.</li></ul>",
+   "tingkat": 4,
+   "x": 612,
+   "y": 472
+  },
+  {
+   "id": "wilson",
+   "nama": "Teorema Wilson",
+   "pilar": "teori-bilangan",
+   "tahap": "osn",
+   "prasyarat": [
+    "fermat-kecil"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Ada <strong>faktorial</strong> dan <strong>modulus prima</strong> dalam satu soal. Kalau kamu melihat $(p-1)!$ atau sesuatu yang bisa didorong ke bentuk itu, ini jurusnya.</p>",
+   "inti": "<p>$p$ prima <strong>tepat ketika</strong></p><p>$$(p-1)! \\equiv -1 \\pmod p$$</p><p>Ini satu-satunya uji keprimaan yang berupa kesetaraan penuh — berlaku dua arah, tidak seperti Fermat Kecil.</p><p>Alasannya elegan: kalikan seluruh $1, 2, \\dots, p-1$. Setiap unsur berpasangan dengan inversnya, dan hasil kali tiap pasangan adalah $1$. Yang tersisa hanya unsur yang menjadi invers dirinya sendiri, yaitu $x^2 \\equiv 1$, yaitu $x = 1$ dan $x = p-1$. Hasil kalinya $1 \\cdot (p-1) \\equiv -1$.</p><p>Secara praktis Wilson jarang dipakai untuk menguji prima — untuk itu ia terlalu lambat. Gunanya adalah <strong>menyederhanakan faktorial dalam kongruensi</strong>.</p>",
+   "jebakan": "<ul><li><strong>Memakainya pada modulus komposit.</strong> Untuk $n$ komposit dan $n &gt; 4$, justru $(n-1)! \\equiv 0 \\pmod n$.</li><li><strong>Salah mengingat ruas kanannya.</strong> $-1$, bukan $1$. Modulo $p$, nilai $-1$ sama dengan $p - 1$.</li><li><strong>Lupa kasus $p = 2$.</strong> Di situ $(p-1)! = 1$ dan $-1 \\equiv 1 \\pmod 2$, jadi tetap benar — tapi patut dicek terpisah kalau soalnya rewel.</li></ul>",
+   "tingkat": 5,
+   "x": 24,
+   "y": 584
+  },
+  {
+   "id": "fungsi-euler",
+   "nama": "Fungsi Euler & Teorema Euler",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "fermat-kecil",
+    "fpb-kpk"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Pangkat besar dengan <strong>modulus komposit</strong> — persis situasi ketika Fermat Kecil tidak bisa dipakai. Juga saat soal mencacah bilangan yang relatif prima terhadap sesuatu.</p>",
+   "inti": "<p>$\\varphi(n)$ adalah banyaknya bilangan di $\\{1, \\dots, n\\}$ yang relatif prima terhadap $n$. Dari faktorisasi prima:</p><p>$$\\varphi(n) = n \\prod_{p \\mid n} \\left(1 - \\frac{1}{p}\\right)$$</p><p>Contohnya $\\varphi(12) = 12 \\cdot \\frac12 \\cdot \\frac23 = 4$, yaitu $\\{1, 5, 7, 11\\}$.</p><p><strong>Teorema Euler.</strong> Kalau $\\gcd(a, n) = 1$:</p><p>$$a^{\\varphi(n)} \\equiv 1 \\pmod n$$</p><p>Ini perumuman Fermat Kecil — untuk $n = p$ prima, $\\varphi(p) = p - 1$ dan keduanya berimpit. Pemakaiannya juga sama: eksponen dipotong modulo $\\varphi(n)$.</p><p>$\\varphi$ bersifat <strong>multiplikatif</strong>: $\\varphi(mn) = \\varphi(m)\\varphi(n)$ asalkan $\\gcd(m,n) = 1$. Sifat ini yang membuat menghitungnya cepat.</p>",
+   "jebakan": "<ul><li><strong>Melupakan syarat $\\gcd(a,n) = 1$.</strong> Tanpa itu teoremanya batal. Untuk $a$ yang berbagi faktor dengan $n$, pecah dulu dengan Teorema Sisa Cina.</li><li><strong>Mengira $\\varphi$ multiplikatif tanpa syarat.</strong> $\\varphi(4) = 2$ tapi $\\varphi(2)\\varphi(2) = 1$. Syarat relatif prima itu wajib.</li><li><strong>Memakai $\\varphi(n)$ padahal ada eksponen yang lebih kecil.</strong> $\\varphi(n)$ selalu bekerja, tapi belum tentu yang terkecil — yang terkecil adalah orde elemennya.</li></ul>",
+   "tingkat": 5,
+   "x": 220,
+   "y": 584
+  },
+  {
+   "id": "kongruensi-linear",
+   "nama": "Kongruensi Linear",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "kongruensi-dasar",
+    "bezout"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal meminta menyelesaikan $ax \\equiv b \\pmod m$, atau kamu tiba di bentuk itu di tengah jalan dan ingin \"membagi\" kedua ruas.</p>",
+   "inti": "<p>$ax \\equiv b \\pmod m$ punya solusi tepat ketika $d = \\gcd(a, m)$ membagi $b$. Kalau ada, solusinya <strong>tepat $d$ buah</strong> yang berbeda modulo $m$.</p><p>Kasus yang paling sering: $\\gcd(a,m) = 1$. Di situ solusinya tunggal, yaitu $x \\equiv a^{-1} b \\pmod m$, dengan $a^{-1}$ dari Bézout.</p><p>Inilah jawaban tepat atas pertanyaan \"kapan boleh membagi dalam kongruensi\": boleh mengalikan dengan invers, dan invers hanya ada kalau pembaginya relatif prima terhadap modulusnya. Kalau tidak relatif prima, modulusnya ikut menyusut:</p><p>$$ad \\equiv bd \\pmod m \\quad\\Longrightarrow\\quad a \\equiv b \\ \\left(\\bmod \\frac{m}{\\gcd(d,m)}\\right)$$</p>",
+   "jebakan": "<ul><li><strong>Mencoret faktor bersama tanpa mengecilkan modulusnya.</strong> Dari $2x \\equiv 4 \\pmod 6$ bukan $x \\equiv 2 \\pmod 6$, melainkan $x \\equiv 2 \\pmod 3$ — yang berarti dua solusi modulo $6$, yaitu $2$ dan $5$.</li><li><strong>Menjawab satu solusi padahal ada $d$.</strong> Kalau soal menanyakan \"berapa banyak $x$\", cacahnya persis $\\gcd(a,m)$.</li><li><strong>Mencari invers padahal tidak ada.</strong> Periksa $\\gcd(a,m) = 1$ lebih dulu.</li></ul>",
+   "tingkat": 5,
+   "x": 416,
+   "y": 584
+  },
+  {
+   "id": "diophantine-linear",
+   "nama": "Persamaan Diophantine Linear",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "bezout"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal berbentuk $ax + by = c$ dengan $x, y$ diminta bulat — sering berbaju cerita: uang pecahan, jumlah hewan, banyak kursi.</p>",
+   "inti": "<p>$ax + by = c$ punya solusi bulat <strong>tepat ketika</strong> $d = \\gcd(a,b)$ membagi $c$.</p><p>Kalau ada, seluruh solusinya adalah</p><p>$$x = x_0 + \\frac{b}{d}t, \\qquad y = y_0 - \\frac{a}{d}t, \\qquad t \\in \\mathbb{Z}$$</p><p>dengan $(x_0, y_0)$ satu solusi apa pun yang berhasil kamu temukan.</p><p>Tiga langkah yang selalu sama:</p><ol><li>Hitung $d = \\gcd(a,b)$ dan periksa $d \\mid c$. Kalau tidak, jawabannya \"tidak ada\".</li><li>Cari satu solusi — lewat Bézout, atau sering cukup dengan mencoba nilai kecil.</li><li>Tulis keluarga solusinya, lalu terapkan batasan soal (biasanya $x, y &gt; 0$) untuk memangkas $t$ menjadi rentang berhingga.</li></ol><p>Langkah ketiga itu yang biasanya menjadi seluruh isi soal olimpiade: bukan mencari solusi, tapi <strong>mencacah berapa banyak</strong> yang memenuhi syarat tambahan.</p>",
+   "jebakan": "<ul><li><strong>Melupakan syarat $d \\mid c$</strong> lalu menghabiskan waktu mencari solusi yang tidak ada.</li><li><strong>Salah tanda pada keluarga solusi.</strong> $x$ bertambah $b/d$ sementara $y$ <strong>berkurang</strong> $a/d$. Cek dengan mensubstitusi balik satu nilai $t$.</li><li><strong>Lupa \"bilangan asli\" berarti positif.</strong> Batas $x \\ge 1$, bukan $x \\ge 0$, dan itu sering mengubah cacahnya tepat satu.</li></ul>",
+   "tingkat": 5,
+   "x": 612,
+   "y": 584
+  },
+  {
+   "id": "orde-elemen",
+   "nama": "Orde Elemen",
+   "pilar": "teori-bilangan",
+   "tahap": "osn",
+   "prasyarat": [
+    "fungsi-euler"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal tentang <strong>periode</strong> — kapan $a^k$ berulang, atau mencari $n$ terkecil dengan $a^n \\equiv 1$. Juga saat kamu perlu membatasi prima yang mungkin membagi bentuk seperti $2^n - 1$.</p>",
+   "inti": "<p>Orde $a$ modulo $n$, ditulis $\\operatorname{ord}_n(a)$, adalah bilangan positif terkecil $d$ dengan $a^d \\equiv 1 \\pmod n$ (ada asalkan $\\gcd(a,n)=1$).</p><p>Sifat yang menjadi seluruh isi jurus ini:</p><p>$$a^k \\equiv 1 \\pmod n \\quad\\Longleftrightarrow\\quad \\operatorname{ord}_n(a) \\mid k$$</p><p>Bukan \"$k$ kelipatan sesuatu yang mirip\" — tepat habis dibagi. Akibat langsungnya, $\\operatorname{ord}_n(a) \\mid \\varphi(n)$, dan untuk modulus prima $\\operatorname{ord}_p(a) \\mid p - 1$.</p><p>Dari sini lahir jurus pembatas prima yang sangat berguna:</p><blockquote><p>Kalau $p \\mid 2^n - 1$, maka $\\operatorname{ord}_p(2) \\mid n$. Digabung dengan $\\operatorname{ord}_p(2) \\mid p-1$, calon $p$ langsung tersaring jadi sedikit sekali.</p></blockquote>",
+   "jebakan": "<ul><li><strong>Mengira orde selalu $\\varphi(n)$.</strong> Itu hanya batas atas. Orde $2$ modulo $7$ adalah $3$, bukan $6$.</li><li><strong>Menyimpulkan dari $a^k \\equiv 1$ bahwa $k$ adalah ordenya.</strong> $k$ hanya kelipatan orde.</li><li><strong>Lupa syarat $\\gcd(a,n) = 1$.</strong> Tanpa itu $a^d \\equiv 1$ tidak pernah tercapai.</li></ul>",
+   "tingkat": 6,
+   "x": 220,
+   "y": 696
+  },
+  {
+   "id": "teorema-sisa-cina",
+   "nama": "Teorema Sisa Cina",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "kongruensi-linear"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Ada <strong>beberapa syarat sisa sekaligus</strong>: \"bersisa 2 kalau dibagi 3, bersisa 3 kalau dibagi 5, bersisa 2 kalau dibagi 7\". Atau — pemakaian yang lebih dalam — kamu ingin memecah satu soal modulo besar menjadi beberapa soal modulo pangkat prima yang lebih mudah.</p>",
+   "inti": "<p>Kalau $m_1, m_2, \\dots, m_k$ saling relatif prima berpasangan, maka sistem</p><p>$$x \\equiv a_1 \\pmod{m_1}, \\quad \\dots, \\quad x \\equiv a_k \\pmod{m_k}$$</p><p>punya solusi <strong>tunggal</strong> modulo $M = m_1 m_2 \\cdots m_k$.</p><p>Cara membacanya yang lebih berguna: bekerja modulo $M$ itu <strong>sama saja</strong> dengan bekerja modulo tiap $m_i$ secara terpisah. Jadi soal modulo $1000$ boleh dipecah jadi modulo $8$ dan modulo $125$ — dua soal kecil menggantikan satu soal besar.</p><p>Untuk sistem kecil, tidak perlu rumus. Ambil kongruensi dengan modulus terbesar, tulis $x = a_k + m_k t$, substitusikan ke kongruensi berikutnya, selesaikan $t$, ulangi.</p>",
+   "jebakan": "<ul><li><strong>Modulusnya tidak relatif prima.</strong> Teoremanya batal. Sistem seperti $x \\equiv 1\n  \\pmod 4$ dan $x \\equiv 2 \\pmod 6$ harus diperiksa kecocokannya dengan tangan — kadang ada solusi, kadang tidak sama sekali.</li><li><strong>Menjawab satu bilangan, padahal jawabannya satu kelas.</strong> Solusinya adalah $x \\equiv r\n  \\pmod M$ — bilangan yang memenuhi ada tak hingga banyaknya.</li><li><strong>Salah menghitung $M$.</strong> Modulus gabungannya hasil kali, bukan jumlah atau KPK dari sesuatu yang lain.</li></ul>",
+   "tingkat": 6,
+   "x": 416,
+   "y": 696
+  },
+  {
+   "id": "lte",
+   "nama": "Lifting the Exponent",
+   "pilar": "teori-bilangan",
+   "tahap": "osn",
+   "prasyarat": [
+    "legendre-faktorial",
+    "orde-elemen"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal menanyakan <strong>pangkat tertinggi sebuah prima</strong> yang membagi $a^n \\pm b^n$. Ciri khasnya: ada selisih atau jumlah pangkat, dan yang ditanya keterbagian oleh pangkat prima.</p>",
+   "inti": "<p>Tulis $v_p(x)$ untuk pangkat $p$ dalam $x$. Kalau $p$ prima ganjil, $p \\mid a - b$, dan $p \\nmid a$, $p \\nmid b$:</p><p>$$v_p(a^n - b^n) = v_p(a - b) + v_p(n)$$</p><p>Kalau $n$ ganjil, $p \\mid a + b$, dan $p$ tidak membagi $a$ maupun $b$:</p><p>$$v_p(a^n + b^n) = v_p(a + b) + v_p(n)$$</p><p>Untuk $p = 2$ rumusnya berbeda dan harus diingat terpisah. Untuk $n$ genap:</p><p>$$v_2(a^n - b^n) = v_2(a-b) + v_2(a+b) + v_2(n) - 1$$</p><p>Nilai jurus ini: soal yang tampak menuntut perhitungan raksasa selesai dalam dua baris.</p>",
+   "jebakan": "<ul><li><strong>Melupakan syaratnya.</strong> $p \\mid a - b$ itu wajib. Tanpa itu rumusnya memberi angka yang salah — dan tetap terlihat masuk akal.</li><li><strong>Memakai rumus $p$ ganjil untuk $p = 2$.</strong> Kasus $2$ punya rumus sendiri. Ini kesalahan paling sering pada jurus ini.</li><li><strong>Memakai bentuk $a^n + b^n$ untuk $n$ genap.</strong> Bentuk itu hanya berlaku untuk $n$ ganjil.</li></ul>",
+   "tingkat": 7,
+   "x": 318,
+   "y": 808
+  }
+ ]
+}

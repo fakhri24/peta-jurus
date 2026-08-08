@@ -1,0 +1,47 @@
+name: Bangun konten
+
+# Setiap dorongan yang menyentuh tulisan di konten/ dibangun ulang jadi data/*.json,
+# lalu hasilnya dikomit balik. Jadi tidak ada yang perlu ingat menjalankan
+# scripts/build.py sebelum push.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'konten/**'
+      - 'scripts/build.py'
+      - '.github/workflows/build-konten.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bangun:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install pyyaml
+
+      - name: Jalankan tes
+        run: python3 tests/test_build.py
+
+      - name: Bangun data
+        run: python3 scripts/build.py
+
+      - name: Komit kalau ada yang berubah
+        run: |
+          if [ -n "$(git status --porcelain data/)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/
+            git commit -m "Bangun ulang data dari konten/"
+            git push
+          else
+            echo "data/ sudah sesuai — tidak ada yang dikomit."
+          fi

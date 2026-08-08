@@ -1,0 +1,15 @@
+{
+  "name": "Peta Jurus — Rute Belajar Olimpiade Matematika",
+  "short_name": "Peta Jurus",
+  "description": "Belajar materi olimpiade matematika SMA secara runtut: peta jurus berprasyarat, petunjuk berjenjang, dan latihan terjadwal.",
+  "lang": "id",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f1f3f0",
+  "theme_color": "#f1f3f0",
+  "icons": [
+    { "src": "assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
