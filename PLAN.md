@@ -33,22 +33,21 @@ Poin 2 dan 4 yang paling mahal. Selebihnya pekerjaan kode yang terukur.
 
 ## 2. Keadaan sekarang
 
-22 jurus, 155 soal (132 latihan + 23 contoh), semuanya teori bilangan.
-`data/soal.json` sudah 287 KB — lihat catatan pada 0.5.
+**44 jurus, 309 soal** (264 latihan + 45 contoh) di dua bidang: teori bilangan dan
+aljabar. `data/soal.json` sudah 602 KB — lihat catatan pada 0.5.
 
-Sebaran per tahap:
+| Bidang | OSN-K | OSN-P | OSN | Status |
+|---|---|---|---|---|
+| Teori bilangan | 8 | 10 | 4 | **tuntas** |
+| Aljabar | 10 | 7 | 5 | **tuntas** |
 
-| Tahap | Jurus | Sudah di lantai 6 | Kosong |
-|---|---|---|---|
-| OSN-K | 8 | 8 | 0 |
-| OSN-P | 10 | 10 | 0 |
-| OSN | 4 | 4 | 0 |
+**Kedua bidang tuntas di ketiga tahap** — 44 dari 44 jurus punya minimal satu contoh
+terpandu dan enam latihan. `build.py` tidak lagi mencetak baris "Belum ada latihan di:".
 
-**Teori bilangan tuntas sejak 8 Agustus 2026** — 22 dari 22 jurus punya minimal satu
-contoh terpandu dan enam latihan, di ketiga tahap. Satu bidang penuh sudah bisa ditempuh
-dari jurus tanpa prasyarat sampai jurus terdalam tanpa menabrak lubang.
+Jalur lintas bidang sudah bisa ditempuh sungguhan: `polinomial-bulat` di aljabar
+berprasyarat `keterbagian` di teori bilangan, dan keduanya kini berisi.
 
-Yang belum ada sama sekali adalah tiga bidang lainnya: aljabar, kombinatorika, geometri.
+Yang belum ada sama sekali: **kombinatorika** dan **geometri**.
 
 ### Perkiraan cakupan penuh
 
