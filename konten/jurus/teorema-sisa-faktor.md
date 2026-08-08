@@ -4,8 +4,8 @@ nama: Teorema Sisa dan Faktor
 pilar: aljabar
 tahap: osn-p
 prasyarat: [suku-banyak]
-contoh: []
-latihan: []
+contoh: [tsf-contoh-1]
+latihan: [tsf-01, tsf-02, tsf-03, tsf-04, tsf-05, tsf-06]
 ---
 
 ## Kapan dipakai

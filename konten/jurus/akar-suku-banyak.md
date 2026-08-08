@@ -4,8 +4,8 @@ nama: Akar dan Koefisien Suku Banyak
 pilar: aljabar
 tahap: osn-p
 prasyarat: [vieta, suku-banyak]
-contoh: []
-latihan: []
+contoh: [asb-contoh-1]
+latihan: [asb-01, asb-02, asb-03, asb-04, asb-05, asb-06]
 ---
 
 ## Kapan dipakai

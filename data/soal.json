@@ -467,6 +467,162 @@
    "rubrik": []
   },
   {
+   "id": "asb-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "akar-suku-banyak"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan hasil kali akar-akar persamaan</p><p>$$x^3 - 2x^2 + 3x - 4 = 0$$</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tidak perlu mencari akarnya — persamaan ini bahkan tidak punya akar rasional.",
+    "Hasil kali akar kubik adalah $-\\frac{a_0}{a_3}$.",
+    "Perhatikan tanda minus di depannya, dan tanda konstantanya sendiri."
+   ],
+   "pembahasan": "<p>Rumus Vieta memberi hasil kali akar kubik:</p><p>$$x_1x_2x_3 = -\\frac{a_0}{a_3}$$</p><p>Di sini $a_0 = -4$ dan $a_3 = 1$, sehingga</p><p>$$x_1x_2x_3 = -\\frac{-4}{1} = \\boxed{4}$$</p><p>Dua tanda minus saling menghapus — itu bagian yang paling sering meleset.</p><p>Perhatikan bahwa persamaan ini tidak punya akar rasional. Kandidatnya $\\pm1, \\pm2, \\pm4$, dan tidak satu pun berhasil:</p><p>$$P(1) = -2, \\quad P(2) = 2, \\quad P(4) = 40, \\quad P(-1) = -10$$</p><p>Jadi mencari akarnya satu per satu memang tidak akan menolong — dan Vieta memberi jawabannya tanpa menyentuh akarnya sama sekali.</p><p><strong>Tanda pada rumus Vieta bergantung pada derajat.</strong> Untuk kubik hasil kali akarnya $-\\frac{a_0}{a_3}$; untuk kuadrat ia $+\\frac{a_0}{a_2}$. Bentuk umumnya</p><p>$$x_1x_2\\cdots x_n = (-1)^n \\frac{a_0}{a_n}$$</p><p>Jadi tandanya positif untuk derajat genap dan negatif untuk derajat ganjil. Menghafal satu kasus lalu memakainya di kasus lain adalah kekeliruan yang wajar tetapi mahal.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "asb-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "akar-suku-banyak"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Akar-akar persamaan $x^3 + 2x^2 - 5x - 6 = 0$ adalah $a$, $b$, $c$. Tentukan nilai</p><p>$$a^2 + b^2 + c^2$$</p>",
+   "jawaban": "14",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Bentuk yang ditanya tidak berubah kalau ketiga akarnya ditukar-tukar. Bentuk semacam itu bisa dihitung dari koefisiennya saja.",
+    "Kuadratkan $a+b+c$: hasilnya memuat jumlah kuadrat <strong>dan</strong> jumlah hasil kali berpasangan.",
+    "$(a+b+c)^2 = a^2+b^2+c^2 + 2(ab+ac+bc)$."
+   ],
+   "pembahasan": "<p>Ambil dua besaran Vieta yang diperlukan. Di sini $a_3 = 1$, $a_2 = 2$, $a_1 = -5$:</p><p>$$a+b+c = -\\frac{2}{1} = -2, \\qquad ab+ac+bc = \\frac{-5}{1} = -5$$</p><p>Tulis ulang bentuk yang ditanya. Dari penjabaran kuadrat jumlah tiga suku:</p><p>$$(a+b+c)^2 = a^2+b^2+c^2 + 2(ab+ac+bc)$$</p><p>sehingga</p><p>$$a^2+b^2+c^2 = (a+b+c)^2 - 2(ab+ac+bc)$$</p><p>Substitusikan:</p><p>$$a^2+b^2+c^2 = (-2)^2 - 2(-5) = 4 + 10 = \\boxed{14}$$</p><p>Periksa: polinomialnya memfaktor menjadi $(x-2)(x+1)(x+3)$, jadi akarnya $2, -1, -3$. Dan</p><p>$$4 + 1 + 9 = 14$$</p><p>Cocok.</p><p><strong>Dua tanda yang menentukan di sini.</strong> Pertama, $a+b+c = -2$ bernilai negatif — tetapi kuadratnya positif, jadi tanda itu lenyap. Kedua, $ab+ac+bc = -5$ juga negatif, dan mengurangkan dua kalinya berarti <strong>menambah</strong> $10$. Salah satu saja terlewat, jawabannya meleset jauh.</p><p>Bentuk simetris lain yang bisa dihitung dari besaran yang sama:</p><p>$$\\frac1a + \\frac1b + \\frac1c = \\frac{ab+ac+bc}{abc} = \\frac{-5}{6}$$</p><p>dengan $abc = -\\frac{-6}{1} = 6$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "asb-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "akar-suku-banyak"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Akar-akar persamaan $x^3 - 5x^2 + 8x - 4 = 0$ adalah $a$, $b$, $c$. Tentukan nilai</p><p>$$\\frac1a + \\frac1b + \\frac1c$$</p>",
+   "jawaban": "2",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Satukan ketiga pecahan menjadi satu pecahan lebih dulu.",
+    "Pembilangnya akan menjadi $bc + ac + ab$, dan penyebutnya $abc$ — keduanya besaran Vieta.",
+    "Ambil kedua nilai itu dari koefisiennya, lalu bagi."
+   ],
+   "pembahasan": "<p>Satukan ketiga pecahan dengan penyebut bersama $abc$:</p><p>$$\\frac1a + \\frac1b + \\frac1c = \\frac{bc + ac + ab}{abc}$$</p><p>Kedua bagiannya adalah besaran Vieta. Dengan $a_3 = 1$, $a_1 = 8$, $a_0 = -4$:</p><p>$$ab+ac+bc = \\frac{a_1}{a_3} = \\frac{8}{1} = 8, \\qquad\nabc = -\\frac{a_0}{a_3} = -\\frac{-4}{1} = 4$$</p><p>Maka</p><p>$$\\frac1a+\\frac1b+\\frac1c = \\frac{8}{4} = \\boxed{2}$$</p><p>Periksa: polinomialnya memfaktor menjadi $(x-1)(x-2)^2$, jadi akarnya $1$, $2$, $2$. Dan</p><p>$$\\frac11 + \\frac12 + \\frac12 = 2$$</p><p>Cocok.</p><p>Perhatikan bahwa salah satu akarnya <strong>berulang</strong>. Rumus Vieta tetap berlaku, asalkan akar kembar dihitung sebanyak kelipatannya — di sini $2$ dihitung dua kali. Kalau tidak, jumlah akarnya akan terbaca $3$ alih-alih $5$.</p><p><strong>Syarat yang layak diperiksa:</strong> ketiga akarnya tak nol, sebab keduanya menjadi penyebut. Itu terjamin oleh $abc = 4 \\ne 0$. Kalau konstantanya nol, salah satu akarnya nol dan bentuk yang ditanya tidak terdefinisi.</p><p>Pola \"satukan pecahan lalu baca sebagai besaran Vieta\" bekerja untuk banyak bentuk lain:</p><p>$$\\frac{1}{ab} + \\frac{1}{ac} + \\frac{1}{bc} = \\frac{c + b + a}{abc}$$</p>",
+   "rubrik": []
+  },
+  {
+   "id": "asb-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "akar-suku-banyak",
+    "manipulasi-aljabar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Akar-akar persamaan $x^3 - 3x^2 + 2 = 0$ adalah $a$, $b$, $c$. Tentukan nilai</p><p>$$a^3 + b^3 + c^3$$</p>",
+   "jawaban": "21",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Perhatikan bahwa koefisien $x$ bernilai nol. Itu bukan kelalaian penulisan soal — ia menyederhanakan salah satu besaran yang akan kamu pakai.",
+    "Ada jalan yang tidak menuntut identitas apa pun: tiap akar memenuhi persamaannya sendiri.",
+    "Dari $a^3 = 3a^2 - 2$, jumlahkan ketiganya dan yang tersisa memuat $a^2+b^2+c^2$."
+   ],
+   "pembahasan": "<p><strong>Ambil besaran Vieta.</strong> Perhatikan koefisien $x$ bernilai $0$:</p><p>$$a+b+c = 3, \\qquad ab+ac+bc = \\frac{0}{1} = 0, \\qquad abc = -\\frac{2}{1} = -2$$</p><p><strong>Pakai persamaannya sendiri.</strong> Karena $a$ akar, ia memenuhi</p><p>$$a^3 - 3a^2 + 2 = 0 \\quad\\Longrightarrow\\quad a^3 = 3a^2 - 2$$</p><p>Hal yang sama berlaku untuk $b$ dan $c$. Jumlahkan ketiganya:</p><p>$$a^3+b^3+c^3 = 3\\left(a^2+b^2+c^2\\right) - 6$$</p><p><strong>Hitung jumlah kuadratnya.</strong></p><p>$$a^2+b^2+c^2 = (a+b+c)^2 - 2(ab+ac+bc) = 3^2 - 2(0) = 9$$</p><p>Substitusikan:</p><p>$$a^3+b^3+c^3 = 3(9) - 6 = 27 - 6 = \\boxed{21}$$</p><p><strong>Cara kedua, lewat identitas.</strong></p><p>$$a^3+b^3+c^3 - 3abc = (a+b+c)\\left(a^2+b^2+c^2 - ab-ac-bc\\right)$$</p><p>Substitusikan: ruas kanan $= 3(9 - 0) = 27$, sehingga</p><p>$$a^3+b^3+c^3 = 27 + 3abc = 27 + 3(-2) = 21$$</p><p>Hasil yang sama.</p><p><strong>Cara pertama lebih layak dikuasai.</strong> Ia tidak menuntut mengingat identitas apa pun, dan bekerja untuk pangkat berapa pun: untuk $a^4+b^4+c^4$, kalikan $a^3 = 3a^2-2$ dengan $a$ sekali lagi lalu ulangi penurunannya. Identitas hanya membantu sampai pangkat tiga.</p><p>Perhatikan pula bahwa koefisien $x$ yang nol membuat $ab+ac+bc = 0$ — dan itu memangkas banyak perhitungan. Melihat koefisien yang hilang sebagai <strong>keterangan</strong>, bukan sebagai kelalaian penulisan soal, adalah kebiasaan yang berguna.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "asb-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "akar-suku-banyak"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Sebuah persamaan pangkat tiga dengan koefisien utama $1$ mempunyai akar-akar $1$, $2$, dan $3$. Tentukan koefisien $x$ pada persamaan itu.</p>",
+   "jawaban": "11",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Alurnya dibalik dari biasanya: akarnya diketahui, koefisiennya yang dicari. Hubungan antara keduanya bekerja ke dua arah.",
+    "Koefisien $x$ pada kubik monik sama dengan jumlah hasil kali akar <strong>berpasangan</strong>.",
+    "Hitung $ab + ac + bc$ untuk $a=1$, $b=2$, $c=3$."
+   ],
+   "pembahasan": "<p><strong>Cara pertama: lewat Vieta.</strong> Untuk kubik monik $x^3 + a_2x^2 + a_1x + a_0$,</p><p>$$a_1 = ab+ac+bc$$</p><p>yaitu jumlah hasil kali akar berpasangan, dengan tanda <strong>positif</strong>.</p><p>Hitung untuk $a=1$, $b=2$, $c=3$:</p><p>$$ab+ac+bc = (1)(2) + (1)(3) + (2)(3) = 2 + 3 + 6 = \\boxed{11}$$</p><p><strong>Cara kedua: susun polinomialnya.</strong> Karena akarnya diketahui dan koefisien utamanya $1$:</p><p>$$P(x) = (x-1)(x-2)(x-3)$$</p><p>Jabarkan bertahap:</p><p>$$(x-1)(x-2) = x^2 - 3x + 2$$</p><p>$$\\left(x^2-3x+2\\right)(x-3) = x^3 - 3x^2 - 3x^2 + 9x + 2x - 6 = x^3 - 6x^2 + 11x - 6$$</p><p>Koefisien $x$-nya $11$. Cocok.</p><p>Sekalian periksa yang lain: koefisien $x^2$ adalah $-6 = -(1+2+3)$ ✓, dan konstantanya $-6 = -(1)(2)(3)$ ✓.</p><p><strong>Arah terbalik ini sering muncul di olimpiade</strong> dengan pembungkus berbeda: \"susun persamaan yang akarnya …\", atau \"tentukan persamaan baru yang akarnya dua kali akar persamaan lama\". Semuanya diselesaikan dengan menghitung besaran Vieta yang baru, lalu menyusun polinomialnya dari situ.</p><p>Contohnya: kalau akarnya digandakan menjadi $2, 4, 6$, maka jumlahnya menjadi $12$, jumlah hasil kali berpasangan menjadi $4 \\times 11 = 44$, dan hasil kalinya $8 \\times 6 = 48$ — memberi $x^3 - 12x^2 + 44x - 48$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "asb-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "akar-suku-banyak",
+    "suku-banyak"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan rumus Vieta untuk persamaan pangkat tiga: jika $x_1, x_2, x_3$ adalah akar-akar</p><p>$$a_3x^3 + a_2x^2 + a_1x + a_0 = 0, \\qquad a_3 \\ne 0$$</p><p>maka</p><p>$$\\sum x_i = -\\frac{a_2}{a_3}, \\qquad \\sum_{i&lt;j} x_ix_j = \\frac{a_1}{a_3},\n\\qquad x_1x_2x_3 = -\\frac{a_0}{a_3}$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tulis polinomialnya dalam bentuk terfaktor memakai ketiga akarnya, dengan faktor pengali yang tepat di depan.",
+    "Jabarkan $a_3(x-x_1)(x-x_2)(x-x_3)$ secara teliti, kelompokkan menurut pangkat $x$.",
+    "Bandingkan koefisien tiap pangkat pada kedua ruas."
+   ],
+   "pembahasan": "<p>Karena $x_1, x_2, x_3$ akar-akarnya dan $a_3 \\ne 0$, polinomialnya bisa ditulis dalam bentuk terfaktor</p><p>$$a_3x^3+a_2x^2+a_1x+a_0 = a_3\\left(x-x_1\\right)\\left(x-x_2\\right)\\left(x-x_3\\right)$$</p><p>Faktor $a_3$ di depan diperlukan supaya koefisien $x^3$ pada kedua ruas cocok.</p><p><strong>Jabarkan ruas kanan.</strong> Kalikan dua faktor pertama:</p><p>$$(x-x_1)(x-x_2) = x^2 - \\left(x_1+x_2\\right)x + x_1x_2$$</p><p>Kalikan dengan faktor ketiga:</p><p>$$\\left[x^2 - (x_1+x_2)x + x_1x_2\\right](x - x_3)$$</p><p>$$= x^3 - (x_1+x_2)x^2 + x_1x_2\\,x - x_3x^2 + (x_1+x_2)x_3\\,x - x_1x_2x_3$$</p><p>Kelompokkan menurut pangkat $x$:</p><p>$$= x^3 - \\left(x_1+x_2+x_3\\right)x^2\n+ \\left(x_1x_2 + x_1x_3 + x_2x_3\\right)x - x_1x_2x_3$$</p><p>Kalikan dengan $a_3$:</p><p>$$a_3x^3 - a_3\\left(\\sum x_i\\right)x^2 + a_3\\left(\\sum_{i&lt;j} x_ix_j\\right)x\n- a_3\\,x_1x_2x_3$$</p><p><strong>Bandingkan koefisien.</strong> Kedua ruas adalah polinomial yang sama, jadi koefisien tiap pangkat $x$ harus cocok:</p><p>$$a_2 = -a_3\\sum x_i, \\qquad a_1 = a_3\\sum_{i&lt;j}x_ix_j, \\qquad a_0 = -a_3\\,x_1x_2x_3$$</p><p>Bagi masing-masing dengan $a_3$ — sah karena $a_3 \\ne 0$:</p><p>$$\\sum x_i = -\\frac{a_2}{a_3}, \\qquad \\sum_{i&lt;j} x_ix_j = \\frac{a_1}{a_3},\n\\qquad x_1x_2x_3 = -\\frac{a_0}{a_3}$$</p><p>$\\blacksquare$</p><p><strong>Asal tanda berselang-selingnya sekarang terlihat.</strong> Setiap kali sebuah akar \"diambil\" dari faktor $(x - x_i)$, ia membawa tanda minus. Suku dengan satu akar memuat satu minus, dua akar memuat dua minus yang saling menghapus, tiga akar memuat tiga minus. Karena itu polanya minus, plus, minus.</p><p>Pembuktian yang sama berlaku untuk derajat berapa pun tanpa perubahan gagasan, dan memberi bentuk umumnya:</p><p>$$\\sum_{i_1 &lt; \\cdots &lt; i_k} x_{i_1}\\cdots x_{i_k} = (-1)^k \\frac{a_{n-k}}{a_n}$$</p><p><strong>Bahwa polinomialnya bisa ditulis terfaktor</strong> adalah langkah yang bersandar pada teorema faktor: tiap akar $x_i$ memberi faktor $(x - x_i)$, dan ketiganya sudah menghabiskan derajatnya.</p>",
+   "rubrik": [
+    "Menulis bentuk terfaktor dengan faktor $a_3$ di depan, beserta alasannya",
+    "Menjabarkan hasil kali tiga faktor secara benar",
+    "Mengelompokkan hasilnya menurut pangkat $x$",
+    "Menyamakan koefisien tiap pangkat pada kedua ruas",
+    "Membagi dengan $a_3$ dan menyebut $a_3 \\ne 0$ sebagai alasan sahnya",
+    "Untuk nilai penuh: menjelaskan asal pola tanda berselang-selingnya"
+   ]
+  },
+  {
+   "id": "asb-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "akar-suku-banyak"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Akar-akar persamaan $x^3 - 6x^2 + 11x - 6 = 0$ adalah $a$, $b$, dan $c$. Tentukan nilai $a+b+c$.</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Yang ditanya bentuk simetris akarnya, jadi akarnya sendiri tidak perlu dicari.",
+    "Rumus Vieta berlaku untuk derajat berapa pun, bukan hanya kuadrat.",
+    "Untuk kubik $ax^3+bx^2+cx+d$, jumlah akarnya $-\\frac{b}{a}$ — pola yang sama seperti pada kuadrat."
+   ],
+   "pembahasan": "<p>Rumus Vieta untuk kubik $a_3x^3 + a_2x^2 + a_1x + a_0 = 0$ dengan akar $x_1, x_2, x_3$:</p><p>$$x_1+x_2+x_3 = -\\frac{a_2}{a_3}, \\qquad\nx_1x_2 + x_1x_3 + x_2x_3 = \\frac{a_1}{a_3}, \\qquad\nx_1x_2x_3 = -\\frac{a_0}{a_3}$$</p><p>Perhatikan <strong>tanda yang berselang-seling</strong>: minus, plus, minus. Polanya berlanjut untuk derajat yang lebih tinggi.</p><p>Di sini $a_3 = 1$, $a_2 = -6$, $a_1 = 11$, $a_0 = -6$, sehingga</p><p>$$a+b+c = -\\frac{-6}{1} = \\boxed{6}$$</p><p>Periksa: polinomialnya memang $(x-1)(x-2)(x-3)$, jadi akarnya $1, 2, 3$ dengan jumlah $6$.</p><p>Sekalian dua yang lain:</p><p>$$ab+ac+bc = \\frac{11}{1} = 11, \\qquad abc = -\\frac{-6}{1} = 6$$</p><p>dan memang $1\\cdot2 + 1\\cdot3 + 2\\cdot3 = 11$ serta $1 \\cdot 2 \\cdot 3 = 6$.</p><p><strong>Cara mengingat tandanya</strong> tanpa menghafal: tulis bentuk terfaktornya $a_3(x-x_1)(x-x_2)(x-x_3)$ dan jabarkan. Setiap kali sebuah akar diambil, ia membawa tanda minus — jadi suku dengan satu akar bertanda minus, dua akar bertanda plus, tiga akar bertanda minus lagi.</p><p>Seperti pada kuadrat, seluruh isi jurus ini adalah <strong>menulis ulang bentuk yang ditanya</strong> lewat ketiga besaran itu.</p>",
+   "rubrik": []
+  },
+  {
    "id": "bd-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
    "pilar": "aljabar",
@@ -4393,6 +4549,161 @@
    "rubrik": []
   },
   {
+   "id": "ss-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "substitusi-simetri"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $x &gt; 0$ dan</p><p>$$x^2 + \\frac{1}{x^2} = 7$$</p><p>Tentukan nilai $x + \\dfrac{1}{x}$.</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hubungkan kedua bentuk itu dengan mengkuadratkan yang ditanya.",
+    "$\\left(x+\\frac1x\\right)^2 = x^2 + 2 + \\frac{1}{x^2}$ — suku tengahnya menyederhana jadi $2$.",
+    "Setelah nilai kuadratnya diperoleh, pilih tanda yang benar dengan memakai syarat $x &gt; 0$."
+   ],
+   "pembahasan": "<p>Sebut $t = x + \\frac1x$ dan kuadratkan:</p><p>$$t^2 = \\left(x + \\frac1x\\right)^2 = x^2 + 2 \\cdot x \\cdot \\frac1x + \\frac{1}{x^2}\n= x^2 + \\frac{1}{x^2} + 2$$</p><p>Substitusikan yang diketahui:</p><p>$$t^2 = 7 + 2 = 9 \\quad\\Longrightarrow\\quad t = \\pm 3$$</p><p><strong>Pilih tandanya.</strong> Karena $x &gt; 0$, maka $\\frac1x &gt; 0$ juga, sehingga jumlah keduanya positif. Jadi</p><p>$$t = \\boxed{3}$$</p><p>Periksa: dari $x + \\frac1x = 3$ diperoleh $x^2-3x+1 = 0$, berakar $\\frac{3\\pm\\sqrt5}{2}$ — keduanya positif. Untuk $x = \\frac{3+\\sqrt5}{2} \\approx 2{,}618$, memang $x^2 + \\frac{1}{x^2} \\approx 6{,}854 + 0{,}146 = 7$.</p><p><strong>Langkah memilih tanda itu wajib.</strong> Mengkuadratkan menghapus keterangan tanda, jadi ia harus dikembalikan dari syarat soal. Tanpa syarat $x &gt; 0$, kedua nilai $\\pm 3$ sah — dan $t = -3$ memang tercapai untuk $x$ negatif.</p><p>Perhatikan pula bahwa $|t| \\ge 2$ selalu berlaku untuk $x$ real tak nol. Nilai $t = 3$ memenuhi; kalau perhitungan memberi $t^2 = 1$ misalnya, kedua akarnya melanggar batas itu dan tidak ada $x$ real yang memenuhi soalnya.</p><p>Hubungan bertingkat yang berguna:</p><p>$$x^2 + \\frac{1}{x^2} = t^2 - 2, \\qquad x^3+\\frac{1}{x^3} = t^3 - 3t,\n\\qquad x^4+\\frac{1}{x^4} = \\left(t^2-2\\right)^2 - 2$$</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ss-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "substitusi-simetri"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $x + \\dfrac{1}{x} = 3$. Tentukan nilai</p><p>$$x^4 + \\frac{1}{x^4}$$</p>",
+   "jawaban": "47",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Naik bertingkat, jangan melompat. Cari $x^2 + \\frac{1}{x^2}$ lebih dulu.",
+    "Dari $t = x+\\frac1x$, berlaku $x^2+\\frac{1}{x^2} = t^2 - 2$.",
+    "Ulangi gerakan yang sama sekali lagi: $x^4+\\frac{1}{x^4} = \\left(x^2+\\frac{1}{x^2}\\right)^2 - 2$."
+   ],
+   "pembahasan": "<p><strong>Tingkat pertama.</strong> Kuadratkan yang diketahui:</p><p>$$\\left(x+\\frac1x\\right)^2 = x^2 + \\frac{1}{x^2} + 2$$</p><p>sehingga</p><p>$$x^2 + \\frac{1}{x^2} = 3^2 - 2 = 7$$</p><p><strong>Tingkat kedua.</strong> Ulangi gerakan yang sama, kali ini pada $x^2$:</p><p>$$\\left(x^2+\\frac{1}{x^2}\\right)^2 = x^4 + 2 \\cdot x^2 \\cdot \\frac{1}{x^2} + \\frac{1}{x^4}\n= x^4 + \\frac{1}{x^4} + 2$$</p><p>sehingga</p><p>$$x^4 + \\frac{1}{x^4} = 7^2 - 2 = 49 - 2 = \\boxed{47}$$</p><p><strong>Mengapa bertingkat, bukan melompat.</strong> Bentuk $\\left(x+\\frac1x\\right)^4$ juga bisa dijabarkan, tetapi ia memuat empat suku tengah yang harus dikelompokkan ulang — $x^4 + 4x^2 + 6 + \\frac{4}{x^2} + \\frac{1}{x^4}$ — dan menyelesaikannya berarti kembali membutuhkan $x^2+\\frac{1}{x^2}$. Jadi tidak ada yang dihemat, dan peluang salahnya lebih besar.</p><p><strong>Pola umumnya:</strong> setiap kali kamu mengkuadratkan bentuk $y + \\frac1y$, suku tengahnya selalu tepat $2$. Karena itu naik dari pangkat $n$ ke pangkat $2n$ selalu berupa \"kuadratkan lalu kurangi $2$\".</p><p>Untuk pangkat ganjil, gerakannya berbeda — dipakai perkalian, bukan pengkuadratan:</p><p>$$\\left(x+\\frac1x\\right)\\left(x^2+\\frac{1}{x^2}\\right)\n= x^3 + \\frac{1}{x^3} + x + \\frac1x$$</p><p>memberi $x^3+\\frac{1}{x^3} = 3 \\times 7 - 3 = 18$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ss-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "substitusi-simetri"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan jumlah semua akar real dari persamaan</p><p>$$x^4 - 10x^3 + 26x^2 - 10x + 1 = 0$$</p>",
+   "jawaban": "10",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Periksa koefisiennya: $1, -10, 26, -10, 1$ — membaca sama dari kedua arah.",
+    "Bagi dengan $x^2$ setelah memastikan $x = 0$ bukan akar, lalu beri nama $t = x + \\frac1x$.",
+    "Setiap nilai $t$ dengan $|t| &gt; 2$ menyumbang dua akar real, dan jumlah kedua akar itu tepat $t$."
+   ],
+   "pembahasan": "<p>Koefisiennya palindromik, jadi pakai gerakan baku.</p><p><strong>Periksa $x = 0$:</strong> substitusi memberi $1 \\ne 0$, jadi bukan akar. Membagi dengan $x^2$ aman.</p><p>$$x^2 - 10x + 26 - \\frac{10}{x} + \\frac{1}{x^2} = 0$$</p><p>Kelompokkan dan substitusikan $t = x + \\frac1x$, dengan $x^2+\\frac{1}{x^2} = t^2-2$:</p><p>$$\\left(t^2 - 2\\right) - 10t + 26 = 0 \\quad\\Longrightarrow\\quad t^2 - 10t + 24 = 0$$</p><p>Faktorkan: $(t-4)(t-6) = 0$, jadi $t = 4$ atau $t = 6$.</p><p><strong>Periksa batasnya.</strong> Keduanya memenuhi $|t| \\ge 2$, jadi keduanya menghasilkan $x$ real.</p><p><strong>Kembalikan ke $x$.</strong></p><p>Untuk $t = 4$: $x + \\frac1x = 4$, yaitu $x^2 - 4x + 1 = 0$. Diskriminannya $12 &gt; 0$, jadi dua akar real, dan menurut Vieta <strong>jumlahnya $4$</strong>.</p><p>Untuk $t = 6$: $x^2 - 6x + 1 = 0$. Diskriminannya $32 &gt; 0$, jadi dua akar real dengan <strong>jumlah $6$</strong>.</p><p>Jumlah seluruh akar realnya</p><p>$$4 + 6 = \\boxed{10}$$</p><p><strong>Perhatikan jalan pintasnya.</strong> Karena $x + \\frac1x = t$ berarti $x^2 - tx + 1 = 0$, jumlah kedua akar yang lahir dari suatu $t$ <strong>tepat sama dengan $t$ itu sendiri</strong>. Jadi jumlah seluruh akar realnya sama dengan jumlah nilai $t$ yang sah — di sini $4 + 6 = 10$, tanpa menghitung satu pun akar.</p><p>Periksa lewat Vieta pada persamaan aslinya: jumlah seluruh akarnya (real maupun tidak) adalah $-\\frac{-10}{1} = 10$. Cocok — dan memang di sini keempat akarnya real, sehingga kedua angka itu berimpit.</p><p><strong>Kalau salah satu $t$ melanggar $|t| \\ge 2$</strong>, kedua akar yang lahir darinya kompleks dan tidak boleh ikut dijumlahkan. Di situlah jumlah akar real dan jumlah Vieta akan berbeda.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ss-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "substitusi-simetri",
+    "akar-suku-banyak"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Bilangan real $x$, $y$, $z$ memenuhi</p><p>$$x+y+z = 3, \\qquad x^2+y^2+z^2 = 5, \\qquad x^3+y^3+z^3 = 9$$</p><p>Tentukan nilai $xyz$.</p>",
+   "jawaban": "0",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ketiga keterangan tidak berubah kalau peubahnya ditukar-tukar. Ubah semuanya menjadi tiga besaran dasar: $e_1 = x+y+z$, $e_2 = xy+yz+zx$, $e_3 = xyz$.",
+    "$e_1$ langsung diketahui. Dapatkan $e_2$ dari $x^2+y^2+z^2 = e_1^2 - 2e_2$.",
+    "Untuk $e_3$, pakai identitas $x^3+y^3+z^3 = e_1^3 - 3e_1e_2 + 3e_3$."
+   ],
+   "pembahasan": "<p>Sebut besaran simetris dasarnya</p><p>$$e_1 = x+y+z, \\qquad e_2 = xy+yz+zx, \\qquad e_3 = xyz$$</p><p><strong>Dari keterangan pertama:</strong> $e_1 = 3$.</p><p><strong>Dari keterangan kedua.</strong> Karena</p><p>$$x^2+y^2+z^2 = e_1^2 - 2e_2$$</p><p>maka</p><p>$$5 = 9 - 2e_2 \\quad\\Longrightarrow\\quad e_2 = 2$$</p><p><strong>Dari keterangan ketiga.</strong> Identitas untuk jumlah pangkat tiga tiga peubah:</p><p>$$x^3+y^3+z^3 = e_1^3 - 3e_1e_2 + 3e_3$$</p><p>Substitusikan:</p><p>$$9 = 27 - 3(3)(2) + 3e_3 = 27 - 18 + 3e_3 = 9 + 3e_3$$</p><p>sehingga</p><p>$$3e_3 = 0 \\quad\\Longrightarrow\\quad xyz = \\boxed{0}$$</p><p><strong>Periksa.</strong> Dengan $e_1=3$, $e_2=2$, $e_3=0$, ketiga bilangan itu adalah akar dari</p><p>$$t^3 - 3t^2 + 2t = 0 \\quad\\Longrightarrow\\quad t(t-1)(t-2) = 0$$</p><p>yaitu $0$, $1$, $2$. Periksa ketiga keterangan: jumlahnya $3$ ✓; jumlah kuadratnya $0+1+4 = 5$ ✓; jumlah pangkat tiganya $0+1+8 = 9$ ✓.</p><p><strong>Jawaban $xyz = 0$ punya bacaan langsung:</strong> salah satu bilangannya memang nol.</p><p>Kalau identitas pangkat tiganya tidak diingat, ia bisa diturunkan dari yang lebih dikenal:</p><p>$$x^3+y^3+z^3 - 3xyz = (x+y+z)\\left(x^2+y^2+z^2 - xy-yz-zx\\right)$$</p><p>Substitusikan: ruas kanan $= 3(5 - 2) = 9$, sehingga $9 - 3e_3 = 9$ dan $e_3 = 0$. Hasil yang sama, tanpa menghafal bentuk yang lebih panjang.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ss-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "substitusi-simetri"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan jumlah semua akar real dari persamaan</p><p>$$(x-1)^4 + (x-3)^4 = 16$$</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Menjabarkan langsung akan memberi polinomial derajat empat yang berantakan. Perhatikan letak kedua bentuk di dalam kurung — keduanya berjarak sama dari suatu titik.",
+    "Kedua bentuk di dalam kurung berpusat di $1$ dan $3$. Titik tengahnya $2$.",
+    "Substitusikan $y = x - 2$; kedua kurung menjadi $y+1$ dan $y-1$, dan suku berpangkat ganjil akan saling menghapus."
+   ],
+   "pembahasan": "<p><strong>Geser ke titik tengahnya.</strong> Kedua bentuk di dalam kurung berpusat di $1$ dan $3$, yang titik tengahnya $2$. Substitusikan</p><p>$$y = x - 2 \\quad\\Longrightarrow\\quad x - 1 = y+1, \\qquad x - 3 = y-1$$</p><p>Persamaannya menjadi</p><p>$$(y+1)^4 + (y-1)^4 = 16$$</p><p><strong>Jabarkan.</strong> Kedua penjabaran hanya berbeda tanda pada suku berpangkat ganjil:</p><p>$$(y+1)^4 = y^4 + 4y^3 + 6y^2 + 4y + 1$$ $$(y-1)^4 = y^4 - 4y^3 + 6y^2 - 4y + 1$$</p><p>Menjumlahkannya menghapus seluruh suku ganjil:</p><p>$$2y^4 + 12y^2 + 2 = 16 \\quad\\Longrightarrow\\quad y^4 + 6y^2 - 7 = 0$$</p><p><strong>Selesaikan sebagai bikuadrat.</strong> Substitusikan $u = y^2$:</p><p>$$u^2 + 6u - 7 = 0 \\quad\\Longrightarrow\\quad (u+7)(u-1) = 0$$</p><p>Jadi $u = -7$ atau $u = 1$. Karena $u = y^2 \\ge 0$, nilai $u = -7$ <strong>dibuang</strong>.</p><p>Dari $y^2 = 1$ diperoleh $y = \\pm 1$, sehingga</p><p>$$x = y + 2 = 1 \\text{ atau } 3$$</p><p>Jumlah akar realnya</p><p>$$1 + 3 = \\boxed{4}$$</p><p>Periksa $x = 1$: $(0)^4 + (-2)^4 = 16$ ✓. Periksa $x = 3$: $(2)^4 + 0^4 = 16$ ✓.</p><p><strong>Substitusi yang menggeser ke titik tengah</strong> adalah gerakan yang layak dikenali. Ia mengubah bentuk yang tidak simetris menjadi simetris, dan kesimetrian itulah yang menghapus suku berpangkat ganjil — memangkas derajat efektifnya dari empat menjadi dua.</p><p>Pola yang sama bekerja untuk $(x-a)^4 + (x-b)^4 = c$ apa pun: geser ke $\\frac{a+b}{2}$. Dan untuk kubik, menggeser bisa dipakai membuang suku $x^2$ seluruhnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ss-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "substitusi-simetri",
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa untuk setiap bilangan real $x \\ne 0$ berlaku</p><p>$$\\left|x + \\frac{1}{x}\\right| \\ \\ge\\ 2$$</p><p>dan jelaskan mengapa hal ini penting saat memakai substitusi $t = x + \\frac1x$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pisahkan menurut tanda $x$, sebab arah ketaksamaan bergantung padanya.",
+    "Untuk $x &gt; 0$, tinjau selisih $x + \\frac1x - 2$ dan satukan menjadi satu pecahan.",
+    "Untuk $x &lt; 0$, tulis $x = -u$ dengan $u &gt; 0$ dan pakai hasil kasus pertama."
+   ],
+   "pembahasan": "<h4>Kasus $x &gt; 0$</h4><p>Tinjau selisihnya terhadap $2$:</p><p>$$x + \\frac1x - 2 = \\frac{x^2 - 2x + 1}{x} = \\frac{(x-1)^2}{x}$$</p><p>Pembilangnya kuadrat, jadi tak negatif; penyebutnya positif. Maka seluruh pecahannya tak negatif:</p><p>$$x + \\frac1x \\ \\ge\\ 2$$</p><p>Karena ruas kirinya positif, nilai mutlaknya sama dengan dirinya sendiri, sehingga $\\left|x+\\frac1x\\right| \\ge 2$.</p><p>Kesamaan berlaku tepat ketika $(x-1)^2 = 0$, yaitu $x = 1$.</p><h4>Kasus $x &lt; 0$</h4><p>Tulis $x = -u$ dengan $u &gt; 0$. Maka</p><p>$$x + \\frac1x = -u - \\frac1u = -\\left(u + \\frac1u\\right)$$</p><p>Menurut kasus pertama, $u + \\frac1u \\ge 2$, sehingga</p><p>$$x + \\frac1x \\ \\le\\ -2$$</p><p>Nilai mutlaknya karena itu paling sedikit $2$. Kesamaan berlaku ketika $u = 1$, yaitu $x = -1$.</p><p>Kedua kasus menghabiskan semua kemungkinan ($x \\ne 0$), jadi</p><p>$$\\left|x + \\frac1x\\right| \\ \\ge\\ 2 \\qquad \\blacksquare$$</p><h4>Mengapa ini penting</h4><p>Substitusi $t = x + \\frac1x$ mengubah persamaan berderajat empat menjadi kuadrat dalam $t$ — tetapi <strong>tidak setiap nilai $t$ berasal dari $x$ real</strong>. Yang baru saja dibuktikan menyatakan hanya $t$ dengan $|t| \\ge 2$ yang mungkin.</p><p>Akibatnya di soal: setelah menyelesaikan persamaan dalam $t$, <strong>nilai $t$ dengan $|t| &lt; 2$ harus dibuang</strong>. Kalau tidak, kamu akan melaporkan akar real yang sebenarnya kompleks.</p><p>Contohnya pada $x^4 + x^3 + x^2 + x + 1 = 0$: membagi $x^2$ dan mensubstitusikan memberi $t^2 + t - 1 = 0$, berakar $t = \\frac{-1\\pm\\sqrt5}{2}$. Keduanya bernilai antara $-2$ dan $2$, jadi <strong>tidak ada</strong> akar real sama sekali — dan memang persamaan itu tidak punya akar real.</p><p>Arah sebaliknya juga berlaku: untuk setiap $t$ dengan $|t| \\ge 2$, persamaan $x^2 - tx + 1 = 0$ punya diskriminan $t^2 - 4 \\ge 0$, sehingga akar realnya memang ada. Jadi syarat $|t| \\ge 2$ bukan sekadar perlu, melainkan tepat.</p>",
+   "rubrik": [
+    "Memisahkan pembuktian menjadi kasus $x &gt; 0$ dan $x &lt; 0$",
+    "Kasus positif: menyusun selisihnya menjadi $\\frac{(x-1)^2}{x}$ dan menyimpulkan tandanya dari pembilang <strong>dan</strong> penyebut",
+    "Kasus negatif: memakai substitusi $x = -u$ dan mengaitkannya ke kasus pertama",
+    "Menyatakan syarat kesamaan, yaitu $x = \\pm 1$",
+    "Menjelaskan akibatnya pada substitusi: nilai $t$ dengan $|t| &lt; 2$ harus dibuang"
+   ]
+  },
+  {
+   "id": "ss-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "substitusi-simetri"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa akar real dari persamaan</p><p>$$x^4 - 5x^3 + 8x^2 - 5x + 1 = 0\\ ?$$</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Perhatikan koefisiennya: $1, -5, 8, -5, 1$ — membaca sama dari depan dan dari belakang.",
+    "Untuk polinomial semacam itu, bagi kedua ruas dengan $x^2$ lebih dulu. Periksa dulu apakah $x = 0$ solusi.",
+    "Setelah dibagi, kelompokkan menjadi $\\left(x^2+\\frac{1}{x^2}\\right) - 5\\left(x+\\frac1x\\right) + 8$, lalu beri nama $t = x + \\frac1x$."
+   ],
+   "pembahasan": "<p><strong>Kenali polanya.</strong> Koefisiennya $1, -5, 8, -5, 1$ — sama dibaca dari kedua arah. Polinomial semacam ini disebut <strong>palindromik</strong>, dan ia hampir selalu menyerah pada substitusi $t = x + \\frac1x$.</p><p><strong>Periksa $x = 0$.</strong> Substitusikan: $0 - 0 + 0 - 0 + 1 = 1 \\ne 0$, jadi $x = 0$ bukan akar. Karena itu membagi dengan $x^2$ tidak menghilangkan solusi apa pun.</p><p><strong>Bagi dengan $x^2$:</strong></p><p>$$x^2 - 5x + 8 - \\frac{5}{x} + \\frac{1}{x^2} = 0$$</p><p><strong>Kelompokkan</strong> suku yang berpasangan:</p><p>$$\\left(x^2 + \\frac{1}{x^2}\\right) - 5\\left(x + \\frac{1}{x}\\right) + 8 = 0$$</p><p><strong>Substitusikan $t = x + \\frac1x$.</strong> Karena $t^2 = x^2 + 2 + \\frac{1}{x^2}$, maka $x^2+\\frac{1}{x^2} = t^2 - 2$:</p><p>$$\\left(t^2 - 2\\right) - 5t + 8 = 0 \\quad\\Longrightarrow\\quad t^2 - 5t + 6 = 0$$</p><p>Faktorkan: $(t-2)(t-3) = 0$, jadi $t = 2$ atau $t = 3$.</p><p><strong>Kembalikan ke $x$.</strong></p><p>Untuk $t = 2$: $x + \\frac1x = 2$, yaitu $x^2 - 2x + 1 = 0$, yaitu $(x-1)^2 = 0$. Memberi $x = 1$ — <strong>satu</strong> akar (kembar).</p><p>Untuk $t = 3$: $x + \\frac1x = 3$, yaitu $x^2 - 3x + 1 = 0$. Diskriminannya $9 - 4 = 5 &gt; 0$, jadi <strong>dua</strong> akar real berbeda, yaitu $\\frac{3 \\pm \\sqrt5}{2}$.</p><p>Seluruhnya ada $\\boxed{3}$ akar real yang berbeda.</p><p><strong>Batas pada $t$ layak diperiksa.</strong> Untuk $x$ real tak nol, nilai $t = x+\\frac1x$ selalu memenuhi $|t| \\ge 2$. Kedua nilai yang diperoleh, $2$ dan $3$, memenuhi syarat itu — jadi keduanya benar-benar menghasilkan $x$ real. Kalau muncul $t$ dengan $|t| &lt; 2$, ia harus dibuang.</p><p>Perhatikan bahwa persamaan berderajat empat ini runtuh menjadi kuadrat hanya dengan satu penamaan. Itulah yang ditawarkan jurus ini: <strong>beri nama bentuk yang berulang, dan derajatnya turun separuh.</strong></p>",
+   "rubrik": []
+  },
+  {
    "id": "tel-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
    "pilar": "aljabar",
@@ -4855,6 +5166,161 @@
     "Setelah $t$ terkurung oleh syarat modulo $5$, tulis ulang $x$ dan masukkan ke syarat modulo $3$."
    ],
    "pembahasan": "<p>Modulusnya $3$, $5$, $7$ — saling relatif prima berpasangan, jadi menurut Teorema Sisa Cina solusinya tunggal modulo $3 \\times 5 \\times 7 = 105$.</p><p><strong>Mulai dari modulus terbesar.</strong> Dari $x \\equiv 2 \\pmod 7$, tulis</p><p>$$x = 7t + 2$$</p><p><strong>Masukkan ke syarat modulo $5$.</strong> Dituntut $x \\equiv 3 \\pmod 5$:</p><p>$$7t + 2 \\equiv 3 \\pmod 5 \\quad\\Longrightarrow\\quad 2t \\equiv 1 \\pmod 5$$</p><p>sebab $7 \\equiv 2 \\pmod 5$. Invers $2$ modulo $5$ adalah $3$, jadi</p><p>$$t \\equiv 3 \\pmod 5 \\quad\\Longrightarrow\\quad t = 5s + 3$$</p><p>Substitusikan kembali:</p><p>$$x = 7(5s + 3) + 2 = 35s + 23$$</p><p><strong>Masukkan ke syarat modulo $3$.</strong> Dituntut $x \\equiv 2 \\pmod 3$:</p><p>$$35s + 23 \\equiv 2 \\pmod 3$$</p><p>Karena $35 \\equiv 2$ dan $23 \\equiv 2 \\pmod 3$:</p><p>$$2s + 2 \\equiv 2 \\pmod 3 \\quad\\Longrightarrow\\quad 2s \\equiv 0 \\pmod 3\n\\quad\\Longrightarrow\\quad s \\equiv 0 \\pmod 3$$</p><p>Tulis $s = 3u$, sehingga</p><p>$$x = 35(3u) + 23 = 105u + 23$$</p><p>Bilangan asli terkecilnya diperoleh pada $u = 0$, yaitu $x = \\boxed{23}$.</p><p>Periksa: $23 = 3 \\times 7 + 2$, $23 = 5 \\times 4 + 3$, $23 = 7 \\times 3 + 2$. Ketiganya cocok.</p><p>Perhatikan bahwa jawabannya berbentuk $105u + 23$ — solusinya tunggal <strong>modulo $105$</strong>, bukan tunggal secara mutlak. Memulai dari modulus terbesar membuat angka yang dibawa tetap kecil di setiap langkah.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tsf-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-faktor"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan sisa pembagian $x^2 + 3x - 4$ oleh $(x + 2)$.</p>",
+   "jawaban": "-6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Sisa pembagian oleh bentuk linear diperoleh dengan satu substitusi.",
+    "Perhatikan tandanya: pembaginya $(x+2)$, jadi tulis ulang sebagai $\\left(x - (-2)\\right)$.",
+    "Sisanya adalah $P(-2)$, bukan $P(2)$."
+   ],
+   "pembahasan": "<p>Tulis ulang pembaginya supaya bentuknya jelas:</p><p>$$x + 2 = x - (-2)$$</p><p>jadi $a = -2$. Menurut teorema sisa, sisanya adalah $P(-2)$:</p><p>$$P(-2) = (-2)^2 + 3(-2) - 4 = 4 - 6 - 4 = \\boxed{-6}$$</p><p>Periksa: $x^2+3x-4 = (x+2)(x+1) - 6$. Jabarkan ruas kanan: $x^2+3x+2-6 = x^2+3x-4$. Cocok.</p><p><strong>Tanda itu yang paling sering meleset.</strong> Kalau dihitung $P(2) = 4 + 6 - 4 = 6$, jawabannya salah tanda <strong>dan</strong> salah nilai. Kebiasaan yang menyelamatkan: tulis ulang pembaginya menjadi bentuk $(x - a)$ lebih dulu, lalu baca $a$ dari situ.</p><p>Beberapa contoh pembacaan:</p><table><thead><tr><th>Pembagi</th><th>Bentuk $(x-a)$</th><th>Sisanya</th></tr></thead><tbody><tr><td>$x - 3$</td><td>$x - 3$</td><td>$P(3)$</td></tr><tr><td>$x + 5$</td><td>$x - (-5)$</td><td>$P(-5)$</td></tr><tr><td>$2x - 1$</td><td>$2\\left(x - \\tfrac12\\right)$</td><td>$P\\!\\left(\\tfrac12\\right)$</td></tr><tr><td>$x$</td><td>$x - 0$</td><td>$P(0)$</td></tr></tbody></table><p>Baris terakhir layak diingat: sisa pembagian oleh $x$ selalu berupa konstanta pada polinomialnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tsf-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-faktor"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan nilai $k$ agar $(x - 2)$ merupakan faktor dari</p><p>$$x^3 - 3x^2 + kx - 4$$</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Syarat \"merupakan faktor\" bisa diterjemahkan menjadi syarat tentang nilai.",
+    "$(x-a)$ faktor $P$ tepat ketika $P(a) = 0$.",
+    "Hitung $P(2)$ — hasilnya akan memuat $k$ — lalu samakan dengan nol."
+   ],
+   "pembahasan": "<p><strong>Teorema faktor</strong> menyatakan $(x-a)$ merupakan faktor $P$ tepat ketika $P(a) = 0$.</p><p>Alasannya langsung dari teorema sisa: sisa pembagian oleh $(x-a)$ adalah $P(a)$, dan \"merupakan faktor\" berarti sisanya nol.</p><p>Di sini $a = 2$, jadi syaratnya $P(2) = 0$:</p><p>$$P(2) = 2^3 - 3(2)^2 + k(2) - 4 = 8 - 12 + 2k - 4 = 2k - 8$$</p><p>Samakan dengan nol:</p><p>$$2k - 8 = 0 \\quad\\Longrightarrow\\quad k = \\boxed{4}$$</p><p>Periksa: dengan $k = 4$ polinomialnya menjadi $x^3-3x^2+4x-4$, dan</p><p>$$P(2) = 8 - 12 + 8 - 4 = 0$$</p><p>Memang nol, jadi $(x-2)$ faktornya. Membaginya memberi</p><p>$$x^3-3x^2+4x-4 = (x-2)\\left(x^2 - x + 2\\right)$$</p><p>Perhatikan bahwa faktor keduanya tidak punya akar real — diskriminannya $1 - 8 = -7 &lt; 0$. Jadi $x = 2$ adalah satu-satunya akar real, meski derajatnya tiga.</p><p><strong>Pola soal ini sering muncul dengan pembungkus berbeda:</strong> \"tentukan $k$ agar habis dibagi\", \"agar $x = 2$ akarnya\", atau \"agar sisanya nol\". Ketiganya kalimat yang sama, dan ketiganya diselesaikan dengan satu substitusi.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tsf-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-faktor"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan sisa pembagian $8x^3 + 4x - 3$ oleh $(2x - 1)$.</p>",
+   "jawaban": "0",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pembaginya berkoefisien bukan satu. Tentukan dulu nilai $x$ yang membuatnya nol.",
+    "$2x - 1 = 0$ tepat di $x = \\frac12$.",
+    "Sisanya adalah $P\\!\\left(\\frac12\\right)$."
+   ],
+   "pembahasan": "<p>Pembaginya bukan berbentuk $(x-a)$ apa adanya, jadi cari dulu akarnya:</p><p>$$2x - 1 = 0 \\quad\\Longrightarrow\\quad x = \\frac{1}{2}$$</p><p>Teorema sisa tetap berlaku dengan nilai itu. Alasannya: tulis</p><p>$$P(x) = (2x-1)Q(x) + r$$</p><p>dengan $r$ konstanta karena derajat pembaginya $1$. Masukkan $x = \\frac12$; faktor $(2x-1)$ lenyap, menyisakan $P\\!\\left(\\frac12\\right) = r$.</p><p>Hitung:</p><p>$$P\\!\\left(\\tfrac12\\right) = 8\\left(\\tfrac12\\right)^3 + 4\\left(\\tfrac12\\right) - 3\n= 8 \\cdot \\tfrac18 + 2 - 3 = 1 + 2 - 3 = \\boxed{0}$$</p><p>Sisanya nol, yang berarti $(2x-1)$ <strong>merupakan faktor</strong> dari $8x^3+4x-3$.</p><p>Periksa dengan membagi:</p><p>$$8x^3 + 4x - 3 = (2x-1)\\left(4x^2 + 2x + 3\\right)$$</p><p>Jabarkan untuk memastikan: $8x^3+4x^2+6x - 4x^2-2x-3 = 8x^3+4x-3$. Cocok.</p><p><strong>Kekeliruan yang sering terjadi</strong> adalah memakai $P(1)$ atau $P(2)$ — membaca angka pada pembagi alih-alih mencari akarnya. Aturannya selalu sama: <strong>nolkan pembaginya, lalu substitusikan nilai itu.</strong></p><p>Perhatikan pula bahwa sisanya tetap sama seandainya pembaginya ditulis $\\left(x - \\frac12\\right)$. Yang berubah hanya hasil baginya — ia menjadi dua kali lipat, sebab $2x-1 = 2\\left(x-\\frac12\\right)$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tsf-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-faktor",
+    "sistem-persamaan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Polinomial $P(x)$ dibagi $(x-1)$ bersisa $3$, dan dibagi $(x-2)$ bersisa $5$. Misalkan $S(x)$ adalah sisa pembagian $P(x)$ oleh $(x-1)(x-2)$. Tentukan nilai $S(3)$.</p>",
+   "jawaban": "7",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Sisa pembagian oleh polinomial berderajat dua berbentuk apa? Derajatnya harus kurang dari dua.",
+    "Tulis $P(x) = (x-1)(x-2)Q(x) + px + q$, lalu masukkan $x = 1$ dan $x = 2$.",
+    "Kedua substitusi menghapus $Q$ seluruhnya, menyisakan sistem dua persamaan."
+   ],
+   "pembahasan": "<p><strong>Bentuk sisanya.</strong> Karena pembaginya berderajat $2$, sisanya berderajat kurang dari $2$ — yaitu berbentuk linear:</p><p>$$P(x) = (x-1)(x-2)\\,Q(x) + px + q$$</p><p>Dua bilangan tak diketahui, $p$ dan $q$, jadi dibutuhkan dua persamaan.</p><p><strong>Substitusikan $x = 1$.</strong> Faktor $(x-1)$ lenyap, sehingga seluruh suku $Q$ hilang:</p><p>$$P(1) = p + q$$</p><p>Dan menurut teorema sisa, $P(1)$ adalah sisa pembagian oleh $(x-1)$, yaitu $3$:</p><p>$$p + q = 3$$</p><p><strong>Substitusikan $x = 2$.</strong> Dengan cara yang sama:</p><p>$$P(2) = 2p + q = 5$$</p><p><strong>Selesaikan sistemnya.</strong> Kurangkan persamaan pertama dari yang kedua:</p><p>$$p = 2 \\quad\\Longrightarrow\\quad q = 3 - 2 = 1$$</p><p>Jadi sisanya</p><p>$$S(x) = 2x + 1$$</p><p>dan</p><p>$$S(3) = 2(3) + 1 = \\boxed{7}$$</p><p>Periksa: $S(1) = 3$ dan $S(2) = 5$ — cocok dengan kedua keterangan soal.</p><p><strong>Perhatikan bahwa $Q$ tidak pernah dicari, dan memang tidak bisa.</strong> Soal tidak memberi cukup keterangan untuk menentukan $P$ seluruhnya — ada tak hingga banyak polinomial yang memenuhi kedua syarat itu. Yang tertentu hanyalah sisanya, dan itu yang ditanya.</p><p>Pola ini berlaku umum. Untuk pembagi berderajat $3$, sisanya berbentuk $ax^2+bx+c$ dengan <strong>tiga</strong> bilangan tak diketahui — jadi dibutuhkan tiga keterangan. Menyiapkan bentuk sisa yang benar adalah langkah pertama, dan salah menebak derajatnya membuat sistemnya tidak bisa diselesaikan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tsf-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-faktor"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa akar rasional dari persamaan</p><p>$$2x^3 - 3x^2 - 3x + 2 = 0\\ ?$$</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kandidat akar rasional pada polinomial berkoefisien bulat bisa disaring lebih dulu — jumlahnya berhingga.",
+    "Kalau $\\frac{p}{q}$ akar dalam bentuk paling sederhana, maka $p$ membagi konstanta dan $q$ membagi koefisien utama.",
+    "Di sini konstantanya $2$ dan koefisien utamanya $2$, jadi kandidatnya sedikit."
+   ],
+   "pembahasan": "<p><strong>Saring kandidatnya.</strong> Untuk polinomial berkoefisien bulat, kalau $\\frac{p}{q}$ akar dalam bentuk paling sederhana, maka</p><p>$$p \\mid a_0 = 2, \\qquad q \\mid a_n = 2$$</p><p>Jadi $p \\in \\{\\pm1, \\pm2\\}$ dan $q \\in \\{1, 2\\}$, memberi kandidat</p><p>$$\\pm 1, \\qquad \\pm 2, \\qquad \\pm \\tfrac12$$</p><p>Enam kandidat saja — dari tak hingga banyak bilangan rasional.</p><p><strong>Uji satu per satu</strong> dengan teorema faktor.</p><p>$$P(1) = 2 - 3 - 3 + 2 = -2 \\ne 0$$ $$P(-1) = -2 - 3 + 3 + 2 = 0 \\quad \\checkmark$$ $$P(2) = 16 - 12 - 6 + 2 = 0 \\quad \\checkmark$$ $$P\\!\\left(\\tfrac12\\right) = 2 \\cdot \\tfrac18 - 3 \\cdot \\tfrac14 - \\tfrac32 + 2\n= \\tfrac14 - \\tfrac34 - \\tfrac32 + 2 = 0 \\quad \\checkmark$$</p><p>Tiga akar ditemukan: $-1$, $2$, dan $\\frac12$. Karena derajatnya $3$, tidak mungkin ada akar keempat — jadi kandidat sisanya tidak perlu diuji.</p><p>Ada $\\boxed{3}$ akar rasional.</p><p>Periksa lewat pemfaktoran:</p><p>$$2x^3-3x^2-3x+2 = (x+1)(x-2)(2x-1)$$</p><p>Jabarkan sebagian untuk memastikan: $(x+1)(x-2) = x^2-x-2$, lalu dikali $(2x-1)$ memberi $2x^3-2x^2-4x-x^2+x+2 = 2x^3-3x^2-3x+2$. Cocok.</p><p>Periksa juga lewat Vieta: hasil kali akarnya harus $-\\frac{a_0}{a_n} = -1$, dan memang $(-1)(2)\\left(\\frac12\\right) = -1$.</p><p><strong>Aturan akar rasional adalah penyaring, bukan jaminan.</strong> Ia memberi daftar kandidat berhingga, tetapi tidak menjanjikan satu pun di antaranya benar-benar akar. Polinomial $x^3 - 2$ misalnya punya kandidat $\\pm1, \\pm2$ — dan tidak satu pun berhasil, sebab akar sesungguhnya $\\sqrt[3]{2}$ tidak rasional.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tsf-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-faktor",
+    "suku-banyak"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan teorema sisa: untuk polinomial $P$ dan bilangan $a$, sisa pembagian $P(x)$ oleh $(x-a)$ adalah $P(a)$. Turunkan pula teorema faktor darinya.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Mulai dari algoritma pembagian untuk polinomial: $P(x) = (x-a)Q(x) + R(x)$ dengan syarat pada derajat $R$.",
+    "Syarat derajatnya yang menentukan bentuk $R$. Berapa derajat pembaginya, dan apa artinya bagi $R$?",
+    "Setelah $R$ diketahui berupa konstanta, substitusikan $x = a$."
+   ],
+   "pembahasan": "<h4>Teorema sisa</h4><p>Menurut algoritma pembagian untuk polinomial, untuk pembagi tak nol $(x-a)$ ada polinomial $Q$ dan $R$ yang <strong>tunggal</strong> dengan</p><p>$$P(x) = (x-a)\\,Q(x) + R(x), \\qquad \\deg R &lt; \\deg(x-a)$$</p><p>Karena $\\deg(x-a) = 1$, syaratnya menjadi $\\deg R &lt; 1$. Polinomial berderajat kurang dari $1$ adalah <strong>konstanta</strong> — termasuk polinomial nol. Tulis $R(x) = r$.</p><p>Jadi</p><p>$$P(x) = (x-a)\\,Q(x) + r$$</p><p>dan persamaan ini berlaku untuk <strong>setiap</strong> nilai $x$, sebab kedua ruas polinomial yang sama.</p><p>Substitusikan $x = a$:</p><p>$$P(a) = (a-a)\\,Q(a) + r = 0 \\cdot Q(a) + r = r$$</p><p>Jadi sisanya $r = P(a)$. $\\blacksquare$</p><h4>Teorema faktor</h4><p>$(x-a)$ merupakan faktor $P$ tepat ketika pembagiannya bersisa nol, yaitu $r = 0$. Dan menurut yang baru dibuktikan, $r = P(a)$. Maka</p><p>$$(x-a) \\mid P(x) \\iff P(a) = 0$$</p><p>$\\blacksquare$</p><h4>Catatan atas langkah-langkahnya</h4><p><strong>Langkah \"$\\deg R &lt; 1$ berarti $R$ konstanta\" itu inti pembuktiannya.</strong> Tanpa syarat derajat pada algoritma pembagian, $R$ bisa berupa polinomial apa pun dan substitusi $x = a$ tidak memberi keterangan tunggal.</p><p><strong>Langkah \"berlaku untuk setiap $x$\" juga perlu dinyatakan.</strong> Yang dilakukan bukan menyelesaikan persamaan, melainkan memanfaatkan bahwa kedua ruasnya polinomial identik — sehingga nilai apa pun boleh dimasukkan, termasuk $x = a$ yang membuat pembaginya nol.</p><p>Perhatikan pula bahwa $Q$ tidak pernah dihitung. Itulah penghematan yang ditawarkan teorema ini: pertanyaan tentang pembagian dijawab tanpa membagi sama sekali.</p><p>Untuk pembagi berderajat lebih tinggi, gagasan yang sama diperluas. Sisa pembagian oleh $(x-a)(x-b)$ berderajat kurang dari $2$, jadi berbentuk $px+q$; mensubstitusikan $x = a$ dan $x = b$ memberi dua persamaan yang menentukan keduanya.</p>",
+   "rubrik": [
+    "Memanggil algoritma pembagian dengan syarat derajat sisanya",
+    "Menyimpulkan $R$ konstanta <strong>dari</strong> syarat $\\deg R &lt; 1$, bukan mengandaikannya",
+    "Menyatakan persamaannya berlaku untuk setiap $x$ karena kedua ruas polinomial yang sama",
+    "Mensubstitusikan $x = a$ dan menyimpulkan $r = P(a)$",
+    "Menurunkan teorema faktor sebagai kasus $r = 0$, dengan kesetaraan dua arah"
+   ]
+  },
+  {
+   "id": "tsf-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-faktor"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan sisa pembagian $x^3 + 2x^2 - 5x + 1$ oleh $(x - 1)$.</p>",
+   "jawaban": "-1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Membagi bersusun bisa, tetapi untuk pembagi berbentuk $(x-a)$ ada jalan satu langkah.",
+    "Tulis $P(x) = (x-a)Q(x) + r$ dengan $r$ konstanta, lalu masukkan $x = a$.",
+    "Di sini $a = 1$, jadi sisanya cukup dihitung sebagai $P(1)$."
+   ],
+   "pembahasan": "<p><strong>Teorema sisa.</strong> Sisa pembagian $P(x)$ oleh $(x-a)$ adalah $P(a)$.</p><p>Alasannya satu baris. Menurut algoritma pembagian,</p><p>$$P(x) = (x-a)\\,Q(x) + r$$</p><p>dengan $\\deg r &lt; \\deg(x-a) = 1$, sehingga $r$ konstanta. Masukkan $x = a$: faktor $(x-a)$ lenyap, menyisakan</p><p>$$P(a) = 0 \\cdot Q(a) + r = r$$</p><p>Di sini $a = 1$:</p><p>$$P(1) = 1^3 + 2(1)^2 - 5(1) + 1 = 1 + 2 - 5 + 1 = \\boxed{-1}$$</p><p>Periksa dengan pembagian bersusun:</p><p>$$x^3+2x^2-5x+1 = (x-1)\\left(x^2 + 3x - 2\\right) - 1$$</p><p>Cocok — tetapi jalur teorema sisa hanya menuntut satu substitusi, tanpa mencari $Q$ sama sekali.</p><p><strong>Teorema faktor</strong> adalah kasus khususnya: $(x-a)$ merupakan faktor $P$ tepat ketika sisanya nol, yaitu ketika $P(a) = 0$. Di sini $P(1) = -1 \\ne 0$, jadi $(x-1)$ <strong>bukan</strong> faktor.</p><p>Keduanya mengubah pertanyaan tentang <strong>pembagian</strong> menjadi pertanyaan tentang <strong>nilai</strong> — dan menghitung nilai jauh lebih murah daripada membagi. Itulah seluruh isi jurus ini.</p>",
    "rubrik": []
   },
   {

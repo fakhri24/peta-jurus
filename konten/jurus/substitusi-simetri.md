@@ -4,8 +4,8 @@ nama: Substitusi dan Kesimetrian
 pilar: aljabar
 tahap: osn-p
 prasyarat: [sistem-persamaan, vieta]
-contoh: []
-latihan: []
+contoh: [ss-contoh-1]
+latihan: [ss-01, ss-02, ss-03, ss-04, ss-05, ss-06]
 ---
 
 ## Kapan dipakai
