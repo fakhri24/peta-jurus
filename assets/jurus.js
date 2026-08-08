@@ -151,5 +151,11 @@
   }
 
   Inti.pasangKepala('');
-  Inti.muatData().then(gambar).catch(function (e) { Inti.galat(e.message); });
+  /* Halaman ini hanya menampilkan satu jurus, jadi cukup soal bidangnya sendiri. */
+  Inti.muatData({
+    soal: function (d) {
+      var j = d.jurus[new URLSearchParams(location.search).get('id')];
+      return j ? [j.pilar] : [];
+    }
+  }).then(gambar).catch(function (e) { Inti.galat(e.message); });
 })();

@@ -30,7 +30,7 @@ var Inti = (function () {
     'kehabisan-waktu': 'Kehabisan waktu'
   };
 
-  var data = { jurus: {}, soal: {}, ukuran: {}, urutJurus: [] };
+  var data = { jurus: {}, soal: {}, ukuran: {}, urutJurus: [], pilarSoal: {} };
 
   // ---------------------------------------------------------------- tanggal
 
@@ -55,43 +55,91 @@ var Inti = (function () {
 
   // ---------------------------------------------------------------- data
 
-  /* Halaman menyatakan data apa yang dipakainya:
+  /* Halaman menyatakan bidang apa yang soalnya dipakai:
 
-         Inti.muatData()                 jurus + seluruh soal (bawaan)
-         Inti.muatData({ soal: false })  jurus saja
+         Inti.muatData({ soal: false })            jurus saja, tanpa soal
+         Inti.muatData()                           semua bidang
+         Inti.muatData({ soal: ['aljabar'] })      bidang tertentu
+         Inti.muatData({ soal: function (d) {…} }) bidang ditentukan setelah jurus termuat
 
-     Peta tidak menyentuh data.soal sama sekali, jadi tidak ada gunanya ia mengurai
-     ratusan KB soal setiap kali dibuka.
+     Soal dipecah per bidang di data/soal-<pilar>.json. Peta tidak menyentuh
+     data.soal sama sekali; halaman jurus hanya perlu satu bidang; latihan dan
+     jurnal perlu bidang yang benar-benar dirujuk kemajuan siswa.
 
-     Bawaannya memuat semuanya, supaya halaman yang lupa menyatakan kebutuhannya
-     tetap bekerja — hanya tidak hemat. Kelak, saat soal.json dipecah per bidang,
-     bidang yang diperlukan diumumkan lewat kunci `soal` yang sama. */
+     Bawaannya memuat semuanya, jadi halaman yang lupa menyatakan kebutuhannya
+     tetap bekerja — hanya tidak hemat.
+
+     jurus.json selalu diambil lebih dulu dan sendirian: peta soal→bidang
+     diturunkan darinya, dan bentuk fungsi di atas butuh data itu untuk memutuskan.
+     Karena itu pemuatannya berurutan, bukan sejajar. */
   function muatData(perlu) {
-    var perluSoal = !perlu || perlu.soal !== false;
+    var spek = (perlu && 'soal' in perlu) ? perlu.soal : 'semua';
 
-    var permintaan = [fetch('data/jurus.json').then(function (r) { return r.json(); })];
-    if (perluSoal) {
-      permintaan.push(fetch('data/soal.json').then(function (r) { return r.json(); }));
-    }
+    return fetch('data/jurus.json').then(function (r) { return r.json(); })
+      .then(function (hasil) {
+        data.ukuran = hasil.ukuran || {};
+        data.urutJurus = [];
+        hasil.simpul.forEach(function (j) {
+          data.jurus[j.id] = j;
+          data.urutJurus.push(j.id);
+          /* Tiap soal terdaftar di tepat satu jurus, jadi bidangnya bisa
+             diturunkan di sini tanpa berkas tambahan. */
+          j.contoh.concat(j.latihan).forEach(function (sid) {
+            data.pilarSoal[sid] = j.pilar;
+          });
+        });
 
-    return Promise.all(permintaan).then(function (hasil) {
-      data.ukuran = hasil[0].ukuran || {};
-      data.urutJurus = [];
-      hasil[0].simpul.forEach(function (j) {
-        data.jurus[j.id] = j;
-        data.urutJurus.push(j.id);
+        var pilar = pilihPilar(spek);
+        if (!pilar.length) return data;
+
+        return Promise.all(pilar.map(function (p) {
+          return fetch('data/soal-' + p + '.json').then(function (r) { return r.json(); });
+        })).then(function (bagian) {
+          bagian.forEach(function (b) {
+            b.soal.forEach(function (s) { data.soal[s.id] = s; });
+          });
+          return data;
+        });
+      }).catch(function (e) {
+        // fetch() memang gagal di file:// — ini penyebab tersering.
+        throw new Error(
+          'Data tidak bisa dimuat. Kalau kamu membuka berkas ini langsung lewat ' +
+          'file://, jalankan "python3 -m http.server" dulu lalu buka localhost. (' + e.message + ')'
+        );
       });
-      if (perluSoal) {
-        hasil[1].soal.forEach(function (s) { data.soal[s.id] = s; });
-      }
-      return data;
-    }).catch(function (e) {
-      // fetch() memang gagal di file:// — ini penyebab tersering.
-      throw new Error(
-        'Data tidak bisa dimuat. Kalau kamu membuka berkas ini langsung lewat ' +
-        'file://, jalankan "python3 -m http.server" dulu lalu buka localhost. (' + e.message + ')'
-      );
+  }
+
+  /* Bidang yang benar-benar punya berkas soal. Bidang tanpa soal tidak dibangun
+     berkasnya, jadi memintanya akan 404 dan menggagalkan seluruh pemuatan. */
+  function pilarBersoal() {
+    var ada = {};
+    data.urutJurus.forEach(function (jid) {
+      var j = data.jurus[jid];
+      if (j.contoh.length || j.latihan.length) ada[j.pilar] = true;
     });
+    return Object.keys(ada);
+  }
+
+  function pilihPilar(spek) {
+    if (spek === false) return [];
+    if (typeof spek === 'function') spek = spek(data);
+    if (spek === 'semua' || spek === true || spek == null) return pilarBersoal();
+
+    var punya = pilarBersoal();
+    return (Array.isArray(spek) ? spek : [spek]).filter(function (p, i, a) {
+      return punya.indexOf(p) >= 0 && a.indexOf(p) === i;
+    });
+  }
+
+  /* Bidang mana saja yang memuat daftar soal ini — dipakai halaman yang bertolak
+     dari id soal (jurnal, latihan?soal=…) alih-alih dari jurus. */
+  function pilarDariSoal(ids) {
+    var ada = {};
+    (ids || []).forEach(function (sid) {
+      var p = data.pilarSoal[sid];
+      if (p) ada[p] = true;
+    });
+    return Object.keys(ada);
   }
 
   // ---------------------------------------------------------------- kemajuan
@@ -396,6 +444,7 @@ var Inti = (function () {
     hariIni: hariIni,
     tambahHari: tambahHari,
     muatData: muatData,
+    pilarDariSoal: pilarDariSoal,
     kemajuan: kemajuan,
     simpanKemajuan: simpanKemajuan,
     tampilan: tampilan,

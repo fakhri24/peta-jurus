@@ -212,5 +212,6 @@
   });
 
   Inti.pasangKepala('simulasi.html');
+  /* Simulasi menyusun naskah dari seluruh kolam soal, jadi semua bidang dimuat. */
   Inti.muatData().then(tampilkanPersiapan).catch(function (e) { Inti.galat(e.message); });
 })();

@@ -29,9 +29,13 @@ const path = require('path');
 const vm = require('vm');
 
 const AKAR = path.resolve(process.argv[2] || '.');
+/* Tiap halaman diukur beserta query yang khas dipakainya — tanpa itu, halaman
+   yang bergantung pada ?id= atau ?jurus= akan terlihat lebih hemat daripada
+   kenyataannya. */
 const HALAMAN = process.argv[3]
-  ? [process.argv[3]]
-  : ['peta.js', 'jurus.js', 'latihan.js', 'jurnal.js', 'simulasi.js'];
+  ? [[process.argv[3], process.argv[4] || '']]
+  : [['peta.js', ''], ['jurus.js', '?id=vieta'], ['latihan.js', '?jurus=vieta'],
+     ['latihan.js', ''], ['jurnal.js', ''], ['simulasi.js', '']];
 
 function elemenPalsu() {
   return {
@@ -44,7 +48,7 @@ function elemenPalsu() {
   };
 }
 
-function jalankan(halaman) {
+function jalankan(halaman, query) {
   const diminta = [];
   const simpanan = {};
 
@@ -70,7 +74,7 @@ function jalankan(halaman) {
       createElement: () => elemenPalsu(),
       body: elemenPalsu()
     },
-    location: { search: '', href: 'http://uji/' },
+    location: { search: query || '', href: 'http://uji/' + (query || '') },
     setTimeout, clearTimeout, setInterval, clearInterval,
     Promise, URLSearchParams, Date, Math, JSON, Number, String, Array, Object, Error,
     isFinite, parseInt, parseFloat, encodeURIComponent, decodeURIComponent, RegExp,
@@ -94,32 +98,32 @@ function jalankan(halaman) {
 const baris = [];
 let adaGagal = false;
 
-for (const halaman of HALAMAN) {
+for (const [halaman, query] of HALAMAN) {
   let diminta;
   try {
-    diminta = jalankan(halaman);
+    diminta = jalankan(halaman, query);
   } catch (e) {
-    baris.push([halaman, 'GAGAL: ' + e.message, '']);
+    baris.push([halaman + query, 'GAGAL: ' + e.message, '']);
     adaGagal = true;
     continue;
   }
-  baris.push([halaman, diminta, null]);
+  baris.push([halaman + query, diminta, null]);
 }
 
 /* fetch dipanggil di dalam Promise, jadi tunggu satu putaran sebelum melapor. */
 setTimeout(() => {
-  console.log('halaman        berkas data yang diminta                 ukuran');
-  console.log('-------------- ---------------------------------------- ------');
+  console.log('halaman                  berkas data yang diminta                        ukuran');
+  console.log('------------------------ ---------------------------------------------- ------');
   for (const [halaman, diminta] of baris) {
     if (typeof diminta === 'string') {
-      console.log(`${halaman.padEnd(14)} ${diminta}`);
+      console.log(`${halaman.padEnd(24)} ${diminta}`);
       continue;
     }
     const daftar = diminta.length ? diminta.join(' + ') : '(tidak ada)';
     const kb = Math.round(
       diminta.reduce((n, u) => n + fs.statSync(path.join(AKAR, u)).size, 0) / 1024
     );
-    console.log(`${halaman.padEnd(14)} ${daftar.padEnd(40)} ${String(kb).padStart(4)} KB`);
+    console.log(`${halaman.padEnd(24)} ${daftar.padEnd(46)} ${String(kb).padStart(4)} KB`);
   }
   process.exit(adaGagal ? 1 : 0);
 }, 300);

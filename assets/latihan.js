@@ -298,5 +298,38 @@
   }
 
   Inti.pasangKepala('latihan.html');
-  Inti.muatData().then(jalan).catch(function (e) { Inti.galat(e.message); });
+  /* Bidang yang dimuat mengikuti cara masuknya — lihat tiga jalur di kepala berkas.
+     Untuk sesi hari ini, sumbernya hanya jurus yang jatuh tempo atau yang terbuka,
+     jadi cukup bidang keduanya. */
+  Inti.muatData({
+    soal: function (d) {
+      var p = new URLSearchParams(location.search);
+      var sid = p.get('soal');
+      if (sid) return Inti.pilarDariSoal([sid]);
+
+      var jid = p.get('jurus');
+      if (jid) return d.jurus[jid] ? [d.jurus[jid].pilar] : [];
+
+      /* Sesi hari ini. Jurus mana yang akan menyumbang soal sudah bisa
+         ditentukan dari jurus.json dan kemajuan saja — daftar id latihan ada di
+         jurus.json, dan "sudah dikerjakan" dibaca dari riwayat. Jadi bidangnya
+         bisa dipersempit sebelum satu berkas soal pun diambil. */
+      var k = Inti.kemajuan();
+
+      var ulang = Inti.jurusPerluDiulang(k);
+      if (ulang.length) {
+        return ulang.map(function (id) { return d.jurus[id].pilar; });
+      }
+
+      /* Tanpa ulangan, sesinya diambil dari jurus terbuka **pertama** yang masih
+         punya latihan belum dikerjakan — bukan dari semuanya. */
+      var terbuka = Inti.terbukaBelumDikuasai(k);
+      for (var i = 0; i < terbuka.length; i++) {
+        var j = d.jurus[terbuka[i]];
+        var segar = j.latihan.some(function (sid) { return !Inti.sudahDikerjakan(sid, k); });
+        if (segar) return [j.pilar];
+      }
+      return [];
+    }
+  }).then(jalan).catch(function (e) { Inti.galat(e.message); });
 })();

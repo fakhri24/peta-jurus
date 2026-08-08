@@ -5,7 +5,7 @@
    — cache dulu, perbarui diam-diam di latar — karena isinya jarang berubah dan
    latihan saat offline justru intinya. */
 
-var CACHE = 'peta-jurus-v4';
+var CACHE = 'peta-jurus-v5';
 
 /* Wajib ada. Kalau salah satu gagal, install ikut gagal — lebih baik ketahuan
    daripada situsnya setengah jalan saat offline. */
@@ -28,9 +28,28 @@ var KERANGKA = [
   'assets/katex/katex.min.css',
   'assets/katex/katex.min.js',
   'assets/katex/auto-render.min.js',
-  'data/jurus.json',
-  'data/soal.json'
+  'data/jurus.json'
 ];
+
+/* Soal per bidang. Sengaja **tidak** di KERANGKA: menunggunya membuat install
+   memanjang oleh ratusan KB yang belum tentu dipakai siswa hari itu — dan dengan
+   empat bidang, angkanya berlipat. Sebagai gantinya ia diambil di latar setelah
+   install selesai, jadi latihan offline tetap utuh tanpa menahan pemasangan.
+
+   Daftarnya diturunkan dari jurus.json, bukan ditulis tangan, supaya bidang baru
+   tidak pernah terlupa. */
+function berkasSoal(c) {
+  return c.match('data/jurus.json')
+    .then(function (r) { return r ? r.json() : null; })
+    .then(function (d) {
+      if (!d) return [];
+      var ada = {};
+      d.simpul.forEach(function (j) {
+        if (j.contoh.length || j.latihan.length) ada[j.pilar] = true;
+      });
+      return Object.keys(ada).map(function (p) { return 'data/soal-' + p + '.json'; });
+    });
+}
 
 /* Font KaTeX. Boleh gagal satu-dua tanpa menggagalkan install — yang jarang
    dipakai (Fraktur, Script) tidak layak menjatuhkan seluruh pemasangan. */
@@ -62,9 +81,15 @@ self.addEventListener('install', function (e) {
     caches.open(CACHE)
       .then(function (c) {
         return c.addAll(KERANGKA).then(function () {
-          return Promise.all(FONT.map(function (u) {
-            return c.add(u).catch(function () {});
-          }));
+          /* Font boleh gagal satu-dua tanpa menggagalkan install, dan soal diambil
+             di latar — keduanya tidak ditunggu. */
+          Promise.all(FONT.map(function (u) { return c.add(u).catch(function () {}); }))
+            .then(function () { return berkasSoal(c); })
+            .then(function (daftar) {
+              return Promise.all(daftar.map(function (u) {
+                return c.add(u).catch(function () {});
+              }));
+            });
         });
       })
       .then(function () { return self.skipWaiting(); })

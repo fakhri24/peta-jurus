@@ -561,14 +561,30 @@ def main():
         ) + "\n",
         encoding="utf-8",
     )
-    (DATA / "soal.json").write_text(
-        json.dumps(
-            {"soal": sorted(soal.values(), key=lambda s: s["id"])},
-            ensure_ascii=False,
-            indent=1,
-        ) + "\n",
-        encoding="utf-8",
-    )
+    # Soal dipecah per bidang, bukan satu berkas besar. Halaman menyatakan bidang apa
+    # yang dipakainya lewat Inti.muatData, jadi jurus.html tidak lagi mengunduh soal
+    # bidang lain. Berkas lama data/soal.json sengaja dihapus supaya tidak ada dua
+    # sumber kebenaran yang bisa berbeda diam-diam.
+    lama = DATA / "soal.json"
+    if lama.exists():
+        lama.unlink()
+
+    per_pilar = {}
+    for s in soal.values():
+        per_pilar.setdefault(s["pilar"], []).append(s)
+
+    for pilar in URUT_PILAR:
+        berkas = DATA / ("soal-%s.json" % pilar)
+        isi = sorted(per_pilar.get(pilar, []), key=lambda s: s["id"])
+        if not isi:
+            # Bidang tanpa soal tidak diberi berkas; peramban memang tidak akan memintanya.
+            if berkas.exists():
+                berkas.unlink()
+            continue
+        berkas.write_text(
+            json.dumps({"soal": isi}, ensure_ascii=False, indent=1) + "\n",
+            encoding="utf-8",
+        )
 
     tanpa_latihan = [j["id"] for j in jurus.values() if not j["latihan"]]
     print("Selesai. %d jurus, %d soal." % (len(jurus), len(soal)))

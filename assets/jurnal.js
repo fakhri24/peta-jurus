@@ -182,5 +182,15 @@
   }
 
   Inti.pasangKepala('jurnal.html');
-  Inti.muatData().then(gambar).catch(function (e) { Inti.galat(e.message); });
+  /* Jurnal hanya menampilkan soal yang pernah dikerjakan siswa, jadi bidangnya
+     diturunkan dari riwayat dan jurnal salahnya sendiri. */
+  Inti.muatData({
+    soal: function () {
+      var k = Inti.kemajuan();
+      return Inti.pilarDariSoal(
+        k.riwayat.map(function (r) { return r.soal; })
+          .concat(k.jurnal_salah.map(function (r) { return r.soal; }))
+      );
+    }
+  }).then(gambar).catch(function (e) { Inti.galat(e.message); });
 })();

@@ -95,39 +95,39 @@ Pilihan bidang dan tahap disimpan di kunci localStorage sendiri,
 `peta-jurus/tampilan/v1` — sengaja terpisah dari kemajuan, supaya preferensi perangkat
 tidak ikut terbawa saat kemajuan diekspor dan dipindah.
 
-**0.5 Pisah `soal.json` per bidang — ditunda sampai akhir Fase 2, sengaja.** Setelah Fase
-1.3 ukurannya **287 KB untuk 155 soal** (~1,8 KB per soal, lebih besar dari perkiraan awal
-1,35 KB karena pembahasan OSN-P dan OSN panjang). Pada 630 soal angkanya menuju ~1,1 MB.
+**0.5 Pisah `soal.json` per bidang — selesai 9 Agustus 2026.**
 
-**Sambungannya sudah dipasang 8 Agustus 2026.** Halaman kini menyatakan kebutuhan
-datanya lewat `Inti.muatData({ soal: false })`, dan `peta.js` — yang tidak menyentuh
-`data.soal` sama sekali — berhenti memuatnya. Halaman masuk turun dari 327 KB jadi 40 KB.
-Ukur dengan `node scripts/periksa-muatan.js`, yang menjalankan tiap halaman di Node
-dengan `fetch` tiruan dan mencatat apa yang benar-benar diminta.
+Sebelum dikerjakan, ongkosnya diukur dulu — dan hasilnya mengoreksi asumsi rencana ini.
+Mengurai `soal.json` 600 KB ternyata hanya **1 ms**, jadi "seluruhnya diambil di setiap
+halaman" bukan masalah kecepatan halaman. Yang benar-benar mahal adalah **muatan
+install**: `KERANGKA` menahan 1052 KB sebelum service worker siap, dan `soal.json`
+46% di antaranya.
 
-**Pemecahannya sendiri belum**, dan dua alasannya:
+Karena itu pemecahan per bidang saja **tidak cukup** — selama seluruh berkasnya tetap di
+`KERANGKA`, muatan installnya tidak berkurang sedikit pun. Yang dikerjakan dua hal
+sekaligus:
 
-*Tidak bisa diuji dengan satu bidang.* Yang dikerjakan pemecahan itu justru memuat
-subset yang tepat dan menangani sesi lintas bidang — dan sekarang tidak ada yang bisa
-dilintasi.
+1. `build.py` memecah menjadi `data/soal-<pilar>.json`, dan halaman menyatakan bidang yang
+   dipakainya lewat `Inti.muatData({ soal: … })`.
+2. Berkas soal **dikeluarkan dari `KERANGKA`** dan diambil di latar setelah install.
+   Daftarnya diturunkan dari `jurus.json`, bukan ditulis tangan.
 
-*Rancangan "per bidang" ternyata hanya separuh cocok.* Setelah ditelusuri, kebutuhan tiap
-halaman begini:
+Hasilnya:
 
-| Halaman | Butuh soal |
-|---|---|
-| `index.html` | tidak sama sekali — sudah beres |
-| `jurus.html` | satu bidang saja |
-| `latihan.html` | sesi harian menjangkau jurus jatuh tempo di bidang mana pun |
-| `jurnal.html` | riwayat menunjuk soal lintas bidang |
-| `simulasi.html` | seluruhnya |
+| | Sebelum | Sesudah |
+|---|---|---|
+| Muatan install (`KERANGKA`) | 1052 KB | **454 KB** |
+| `jurus.html?id=…` | 685 KB | **398 KB** |
+| `jurnal.html` | 685 KB | **83 KB** |
+| `latihan.html` (siswa baru) | 685 KB | **370 KB** |
+| `index.html` | 83 KB | 83 KB |
+| `simulasi.html` | 685 KB | 685 KB (memang perlu semua) |
 
-Jadi memecah per bidang hanya menolong `jurus.html`. Tiga halaman lain tetap butuh lintas
-bidang, dan rancangan yang benar untuk mereka — indeks ringkas, pemuatan sesuai
-permintaan, atau memang memuat semuanya — baru bisa diputuskan ketika bidang kedua
-membuat polanya nyata.
+`latihan.html` bisa dipersempit karena pemilihan sesinya sebenarnya tidak menyentuh isi
+soal sama sekali — daftar id ada di `jurus.json` dan "sudah dikerjakan" dibaca dari
+riwayat. Jadi bidangnya sudah bisa ditentukan sebelum satu berkas soal pun diambil.
 
-Batasnya tetap **akhir Fase 2**.
+Ukur ulang kapan saja dengan `node scripts/periksa-muatan.js`.
 
 **0.6 Koreksi CLAUDE.md — selesai 8 Agustus 2026**, lalu diperbarui lagi mengikuti
 0.1–0.4.

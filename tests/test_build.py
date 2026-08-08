@@ -7,6 +7,7 @@ dibuktikan tidak merusak rumus.
 """
 
 import sys
+import json
 import unittest
 from pathlib import Path
 
@@ -269,6 +270,38 @@ class TestTinggiPerTahap(unittest.TestCase):
         self.assertEqual(galat, [])
         self.assertEqual(ukuran["aljabar"]["tinggi_sampai"]["osn-k"], build.tinggi_untuk(0))
         self.assertEqual(ukuran["aljabar"]["tinggi_sampai"]["osn"], ukuran["aljabar"]["tinggi"])
+
+
+class TestPecahSoalPerBidang(unittest.TestCase):
+    """Soal dipecah per bidang; berkas gabungan lama tidak boleh tertinggal."""
+
+    def test_berkas_gabungan_lama_tidak_ada(self):
+        # Dua sumber kebenaran yang bisa berbeda diam-diam lebih berbahaya daripada
+        # satu berkas besar, jadi build.py menghapusnya.
+        self.assertFalse((build.DATA / "soal.json").exists())
+
+    def test_ada_berkas_per_bidang_yang_terisi(self):
+        ada = [p for p in build.DATA.glob("soal-*.json")]
+        self.assertTrue(ada, "tidak ada data/soal-<pilar>.json sama sekali")
+        for berkas in ada:
+            pilar = berkas.stem[len("soal-"):]
+            self.assertIn(pilar, build.URUT_PILAR)
+
+    def test_tiap_soal_terdaftar_di_jurus_sebidang(self):
+        # Peta soal->bidang di inti.js diturunkan dari daftar contoh/latihan tiap
+        # jurus, bukan dari berkas terpisah. Kalau ada soal yang tidak terdaftar,
+        # halaman yang bertolak dari id soal tidak akan tahu bidang mana yang dimuat.
+        jurus = json.loads((build.DATA / "jurus.json").read_text(encoding="utf-8"))
+        terdaftar = {}
+        for j in jurus["simpul"]:
+            for sid in j["contoh"] + j["latihan"]:
+                terdaftar.setdefault(sid, set()).add(j["pilar"])
+
+        for berkas in build.DATA.glob("soal-*.json"):
+            pilar = berkas.stem[len("soal-"):]
+            for s in json.loads(berkas.read_text(encoding="utf-8"))["soal"]:
+                self.assertIn(s["id"], terdaftar, "%s tidak terdaftar di jurus mana pun" % s["id"])
+                self.assertEqual(terdaftar[s["id"]], {pilar}, "%s terdaftar lintas bidang" % s["id"])
 
 
 class TestPeriksa(unittest.TestCase):

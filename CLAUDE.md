@@ -16,7 +16,7 @@ Ikuti itu untuk kode baru — pembacanya guru dan siswa, bukan hanya programmer.
 ```sh
 python3 -m http.server 8000       # wajib lewat server; fetch() mati di file://
 python3 scripts/build.py          # konten/*.md → data/*.json  (butuh pyyaml)
-python3 tests/test_build.py       # 47 tes
+python3 tests/test_build.py       # 50 tes
 python3 tests/test_build.py TestRumusSelamat.test_garis_bawah_bukan_huruf_miring   # satu tes
 node scripts/periksa-rumus.js     # tiap rumus di data/*.json benar-benar dirender KaTeX
 node scripts/periksa-muatan.js    # berkas data apa yang benar-benar diminta tiap halaman
@@ -35,7 +35,7 @@ kotak merah di layar siswa. Alur GitHub Actions menjalankannya sebelum mengomit 
 ## Alur data
 
 `konten/jurus/*.md` + `konten/soal/*.md` → `scripts/build.py` → `data/jurus.json` +
-`data/soal.json` → halaman statis mengambilnya dengan `fetch()`.
+`data/soal-<pilar>.json` → halaman statis mengambilnya dengan `fetch()`.
 
 `data/*.json` adalah **hasil build yang ikut dikomit**, jangan pernah diedit tangan —
 `.github/workflows/build-konten.yml` menjalankan tes, membangun ulang, dan mengomit
@@ -66,11 +66,17 @@ di `assets/katex/`, bukan CDN, supaya offline jalan).
 
 - `assets/inti.js` mengekspor global `Inti`: data, localStorage, penjadwalan, render
   rumus, `lolos()` untuk escape HTML.
-- **Halaman menyatakan data apa yang dipakainya** lewat `Inti.muatData({ soal: false })`.
-  Bawaannya memuat semuanya, jadi halaman yang lupa menyatakan tetap bekerja — hanya
-  tidak hemat. `peta.js` satu-satunya yang menolak `soal.json` sekarang, dan itu
-  memangkas halaman masuk dari 327 KB jadi 40 KB. `node scripts/periksa-muatan.js`
-  menunjukkan angkanya per halaman.
+- **Halaman menyatakan bidang apa yang soalnya dipakai** lewat
+  `Inti.muatData({ soal: … })` — `false`, daftar pilar, atau fungsi yang memutuskan
+  setelah `jurus.json` termuat. Bawaannya semua bidang, jadi halaman yang lupa
+  menyatakan tetap bekerja, hanya tidak hemat.
+- **`jurus.json` selalu diambil lebih dulu dan sendirian**, bukan sejajar dengan soal:
+  peta soal→bidang (`data.pilarSoal`) diturunkan darinya, dan bentuk fungsi di atas butuh
+  data itu untuk memutuskan. Peta itu bisa diturunkan karena tiap soal terdaftar di tepat
+  satu jurus — dijaga tes `test_tiap_soal_terdaftar_di_jurus_sebidang`.
+- `node scripts/periksa-muatan.js` menunjukkan berkas apa yang **benar-benar** diminta tiap
+  halaman, beserta ukurannya. Jalankan setiap kali menyentuh `muatData` atau pemilihan
+  bidang di halaman mana pun.
 - `assets/soal-ui.js` mengekspor global `SoalUI`: hanya tangga petunjuk, dipakai bersama
   oleh halaman jurus dan latihan.
 - Tiap halaman punya satu skripnya sendiri dan selalu ditutup dengan pola yang sama:
@@ -110,9 +116,13 @@ sudah mencoba. Konsekuensinya di kode: **rekam `tangga.dibuka()` sebelum memangg
 justru intinya.
 
 - Berkas tingkat atas yang baru **wajib ditambahkan ke `KERANGKA`** — kalau tidak,
-  situsnya patah saat offline.
-- **Naikkan `CACHE`** (`peta-jurus-v2`) setiap kali aset berubah, kalau tidak siswa
-  memegang versi lama.
+  situsnya patah saat offline. **Kecuali `data/soal-<pilar>.json`**, yang sengaja di luar
+  `KERANGKA`: menunggunya memanjangkan install oleh ratusan KB yang belum tentu dipakai
+  hari itu. Ia diambil di latar setelah install, lewat `berkasSoal()` yang menurunkan
+  daftarnya dari `jurus.json` — jadi bidang baru tidak pernah terlupa, dan latihan offline
+  tetap utuh begitu pengambilan latarnya selesai.
+- **Naikkan `CACHE`** (sekarang `peta-jurus-v5`) setiap kali aset berubah, kalau tidak
+  siswa memegang versi lama.
 - Kunci cache membuang query, karena `jurus.html?id=…` dan `latihan.html?soal=…` memakai
   kerangka HTML yang sama.
 - Saat mengembangkan: halaman yang seperti tidak berubah biasanya service worker —

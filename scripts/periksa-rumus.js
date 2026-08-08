@@ -54,7 +54,12 @@ function pisah(teks) {
   return keluar;
 }
 
-const data = JSON.parse(fs.readFileSync(path.join(AKAR, 'data/soal.json'), 'utf8'));
+/* Soal dipecah per bidang; kumpulkan seluruhnya supaya tidak ada yang lolos periksa. */
+const data = { soal: [] };
+for (const f of fs.readdirSync(path.join(AKAR, 'data')).sort()) {
+  if (!/^soal-.*\.json$/.test(f)) continue;
+  data.soal.push(...JSON.parse(fs.readFileSync(path.join(AKAR, 'data', f), 'utf8')).soal);
+}
 const hanya = process.argv[3] ? new Set(process.argv[3].split(',')) : null;
 
 let jumlah = 0; const gagal = [];
