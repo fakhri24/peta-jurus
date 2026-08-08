@@ -359,8 +359,17 @@
    "prasyarat": [
     "turun-tak-hingga"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "vj-contoh-1"
+   ],
+   "latihan": [
+    "vj-01",
+    "vj-02",
+    "vj-03",
+    "vj-04",
+    "vj-05",
+    "vj-06"
+   ],
    "kapan_dipakai": "<p>Ciri khasnya sangat spesifik: persamaan <strong>simetris berderajat dua</strong> pada dua variabel, dengan syarat berupa bilangan bulat — misalnya $\\dfrac{a^2+b^2}{ab+1}$ diminta bulat. Begitu kamu melihat pola itu, hampir pasti ini jurusnya.</p>",
    "inti": "<p>Perlakukan persamaannya sebagai <strong>kuadrat dalam satu variabel</strong>, dengan variabel lain dianggap tetap. Kalau $(a, b)$ solusi, maka $a$ adalah akar dari suatu persamaan kuadrat — dan akar keduanya, sebut $a'$, memberi solusi baru $(a', b)$.</p><p>Rumus Vieta memberi kedua akar tanpa perlu menghitung apa pun:</p><p>$$a + a' = (\\text{koefisien}), \\qquad a \\cdot a' = (\\text{konstanta})$$</p><p>Yang pertama menjamin $a'$ <strong>bulat</strong>; yang kedua sering menjamin $a'$ <strong>positif</strong>. Jadi lompatan itu menghasilkan solusi bulat positif yang lebih kecil — dan kamu kembali ke turun tak hingga.</p><p>Kerangka pembuktiannya hampir selalu sama:</p><ol><li>Ambil solusi dengan $a + b$ terkecil, misalkan $a \\ge b$.</li><li>Lompat: ganti $a$ dengan akar Vieta yang lain, $a'$.</li><li>Tunjukkan $(a', b)$ juga solusi, bulat, tak negatif, dan lebih kecil.</li><li>Kontradiksi dengan keminimalan — kecuali di kasus dasar, yang justru memberi jawabannya.</li></ol>",
    "jebakan": "<ul><li><strong>Lupa membuktikan $a'$ bulat.</strong> Itu datang dari $a + a' = $ bilangan bulat, bukan dari rumus akar kuadrat.</li><li><strong>Lupa membuktikan $a' \\ge 0$.</strong> Tanpa itu penurunannya tidak sah, karena bisa lolos ke bilangan negatif.</li><li><strong>Melewatkan kasus dasar.</strong> Justru di situ jawabannya berada — nilai yang dicari muncul ketika penurunan berhenti.</li><li><strong>Memakainya pada persamaan tak simetris.</strong> Kesimetrian yang membuat pertukaran peran $a$ dan $b$ sah.</li></ul>",
@@ -402,8 +411,17 @@
    "prasyarat": [
     "fermat-kecil"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "wl-contoh-1"
+   ],
+   "latihan": [
+    "wl-01",
+    "wl-02",
+    "wl-03",
+    "wl-04",
+    "wl-05",
+    "wl-06"
+   ],
    "kapan_dipakai": "<p>Ada <strong>faktorial</strong> dan <strong>modulus prima</strong> dalam satu soal. Kalau kamu melihat $(p-1)!$ atau sesuatu yang bisa didorong ke bentuk itu, ini jurusnya.</p>",
    "inti": "<p>$p$ prima <strong>tepat ketika</strong></p><p>$$(p-1)! \\equiv -1 \\pmod p$$</p><p>Ini satu-satunya uji keprimaan yang berupa kesetaraan penuh — berlaku dua arah, tidak seperti Fermat Kecil.</p><p>Alasannya elegan: kalikan seluruh $1, 2, \\dots, p-1$. Setiap unsur berpasangan dengan inversnya, dan hasil kali tiap pasangan adalah $1$. Yang tersisa hanya unsur yang menjadi invers dirinya sendiri, yaitu $x^2 \\equiv 1$, yaitu $x = 1$ dan $x = p-1$. Hasil kalinya $1 \\cdot (p-1) \\equiv -1$.</p><p>Secara praktis Wilson jarang dipakai untuk menguji prima — untuk itu ia terlalu lambat. Gunanya adalah <strong>menyederhanakan faktorial dalam kongruensi</strong>.</p>",
    "jebakan": "<ul><li><strong>Memakainya pada modulus komposit.</strong> Untuk $n$ komposit dan $n &gt; 4$, justru $(n-1)! \\equiv 0 \\pmod n$.</li><li><strong>Salah mengingat ruas kanannya.</strong> $-1$, bukan $1$. Modulo $p$, nilai $-1$ sama dengan $p - 1$.</li><li><strong>Lupa kasus $p = 2$.</strong> Di situ $(p-1)! = 1$ dan $-1 \\equiv 1 \\pmod 2$, jadi tetap benar — tapi patut dicek terpisah kalau soalnya rewel.</li></ul>",
@@ -499,8 +517,17 @@
    "prasyarat": [
     "fungsi-euler"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "oe-contoh-1"
+   ],
+   "latihan": [
+    "oe-01",
+    "oe-02",
+    "oe-03",
+    "oe-04",
+    "oe-05",
+    "oe-06"
+   ],
    "kapan_dipakai": "<p>Soal tentang <strong>periode</strong> — kapan $a^k$ berulang, atau mencari $n$ terkecil dengan $a^n \\equiv 1$. Juga saat kamu perlu membatasi prima yang mungkin membagi bentuk seperti $2^n - 1$.</p>",
    "inti": "<p>Orde $a$ modulo $n$, ditulis $\\operatorname{ord}_n(a)$, adalah bilangan positif terkecil $d$ dengan $a^d \\equiv 1 \\pmod n$ (ada asalkan $\\gcd(a,n)=1$).</p><p>Sifat yang menjadi seluruh isi jurus ini:</p><p>$$a^k \\equiv 1 \\pmod n \\quad\\Longleftrightarrow\\quad \\operatorname{ord}_n(a) \\mid k$$</p><p>Bukan \"$k$ kelipatan sesuatu yang mirip\" — tepat habis dibagi. Akibat langsungnya, $\\operatorname{ord}_n(a) \\mid \\varphi(n)$, dan untuk modulus prima $\\operatorname{ord}_p(a) \\mid p - 1$.</p><p>Dari sini lahir jurus pembatas prima yang sangat berguna:</p><blockquote><p>Kalau $p \\mid 2^n - 1$, maka $\\operatorname{ord}_p(2) \\mid n$. Digabung dengan $\\operatorname{ord}_p(2) \\mid p-1$, calon $p$ langsung tersaring jadi sedikit sekali.</p></blockquote>",
    "jebakan": "<ul><li><strong>Mengira orde selalu $\\varphi(n)$.</strong> Itu hanya batas atas. Orde $2$ modulo $7$ adalah $3$, bukan $6$.</li><li><strong>Menyimpulkan dari $a^k \\equiv 1$ bahwa $k$ adalah ordenya.</strong> $k$ hanya kelipatan orde.</li><li><strong>Lupa syarat $\\gcd(a,n) = 1$.</strong> Tanpa itu $a^d \\equiv 1$ tidak pernah tercapai.</li></ul>",
@@ -543,8 +570,17 @@
     "legendre-faktorial",
     "orde-elemen"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "lte-contoh-1"
+   ],
+   "latihan": [
+    "lte-01",
+    "lte-02",
+    "lte-03",
+    "lte-04",
+    "lte-05",
+    "lte-06"
+   ],
    "kapan_dipakai": "<p>Soal menanyakan <strong>pangkat tertinggi sebuah prima</strong> yang membagi $a^n \\pm b^n$. Ciri khasnya: ada selisih atau jumlah pangkat, dan yang ditanya keterbagian oleh pangkat prima.</p>",
    "inti": "<p>Tulis $v_p(x)$ untuk pangkat $p$ dalam $x$. Kalau $p$ prima ganjil, $p \\mid a - b$, dan $p \\nmid a$, $p \\nmid b$:</p><p>$$v_p(a^n - b^n) = v_p(a - b) + v_p(n)$$</p><p>Kalau $n$ ganjil, $p \\mid a + b$, dan $p$ tidak membagi $a$ maupun $b$:</p><p>$$v_p(a^n + b^n) = v_p(a + b) + v_p(n)$$</p><p>Untuk $p = 2$ rumusnya berbeda dan harus diingat terpisah. Untuk $n$ genap:</p><p>$$v_2(a^n - b^n) = v_2(a-b) + v_2(a+b) + v_2(n) - 1$$</p><p>Nilai jurus ini: soal yang tampak menuntut perhitungan raksasa selesai dalam dua baris.</p>",
    "jebakan": "<ul><li><strong>Melupakan syaratnya.</strong> $p \\mid a - b$ itu wajib. Tanpa itu rumusnya memberi angka yang salah — dan tetap terlihat masuk akal.</li><li><strong>Memakai rumus $p$ ganjil untuk $p = 2$.</strong> Kasus $2$ punya rumus sendiri. Ini kesalahan paling sering pada jurus ini.</li><li><strong>Memakai bentuk $a^n + b^n$ untuk $n$ genap.</strong> Bentuk itu hanya berlaku untuk $n$ ganjil.</li></ul>",

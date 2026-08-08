@@ -10,6 +10,7 @@ on:
     paths:
       - 'konten/**'
       - 'scripts/build.py'
+      - 'scripts/periksa-rumus.js'
       - '.github/workflows/build-konten.yml'
   workflow_dispatch:
 
@@ -33,6 +34,12 @@ jobs:
 
       - name: Bangun data
         run: python3 scripts/build.py
+
+      # Dijalankan setelah build, karena yang diperiksa hasilnya. Rumus yang salah
+      # ketik lolos build.py tanpa keluhan dan baru terlihat sebagai kotak merah di
+      # layar siswa — di sini ia menggagalkan alur, jadi tidak pernah sampai ke sana.
+      - name: Periksa seluruh rumus bisa dirender KaTeX
+        run: node scripts/periksa-rumus.js
 
       - name: Komit kalau ada yang berubah
         run: |

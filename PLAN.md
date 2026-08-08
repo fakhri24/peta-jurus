@@ -33,23 +33,22 @@ Poin 2 dan 4 yang paling mahal. Selebihnya pekerjaan kode yang terukur.
 
 ## 2. Keadaan sekarang
 
-22 jurus, 127 soal (108 latihan + 19 contoh), semuanya teori bilangan.
-`data/soal.json` sudah 227 KB — lihat catatan pada 0.5.
+22 jurus, 155 soal (132 latihan + 23 contoh), semuanya teori bilangan.
+`data/soal.json` sudah 287 KB — lihat catatan pada 0.5.
 
-Sebaran per tahap — ini bagian yang penting:
+Sebaran per tahap:
 
 | Tahap | Jurus | Sudah di lantai 6 | Kosong |
 |---|---|---|---|
 | OSN-K | 8 | 8 | 0 |
 | OSN-P | 10 | 10 | 0 |
-| OSN | 4 | 0 | 4 |
+| OSN | 4 | 4 | 0 |
 
-Yang masih kosong tinggal empat, semuanya tahap OSN: `vieta-jumping`, `wilson`,
-`orde-elemen`, `lte`.
+**Teori bilangan tuntas sejak 8 Agustus 2026** — 22 dari 22 jurus punya minimal satu
+contoh terpandu dan enam latihan, di ketiga tahap. Satu bidang penuh sudah bisa ditempuh
+dari jurus tanpa prasyarat sampai jurus terdalam tanpa menabrak lubang.
 
-Kesimpulan jujurnya: **teori bilangan sudah utuh untuk OSN-K dan OSN-P** sejak
-8 Agustus 2026 — dua dari tiga tahap, dan itu mencakup sebagian besar peserta. Yang
-belum ada sama sekali adalah tiga bidang lainnya.
+Yang belum ada sama sekali adalah tiga bidang lainnya: aljabar, kombinatorika, geometri.
 
 ### Perkiraan cakupan penuh
 
@@ -122,9 +121,8 @@ Bidang ini strukturnya sudah lengkap; yang kurang isinya. Dikerjakan menurut tah
 karena tahap itulah yang menentukan seorang siswa bisa memakai situs ini atau tidak.
 
 **1.1 Naikkan 8 jurus OSN-K ke lantai 6 latihan — selesai 8 Agustus 2026.** 26 soal
-ditambahkan (18 isian, 8 uraian), semuanya susunan sendiri. Situs ini sekarang tuntas
-untuk satu kelompok pengguna nyata: peserta OSN-K yang melatih teori bilangan. **Ini
-titik rilis pertama yang layak diumumkan ke siswa.**
+ditambahkan (18 isian, 8 uraian), semuanya susunan sendiri. Seluruh jalur OSN-K teori
+bilangan kini bisa ditempuh tanpa menabrak jurus kosong.
 
 Catatan untuk penambahan berikutnya: setiap jawaban numerik diverifikasi lebih dulu
 dengan Python sebelum soalnya ditulis, dan seluruh berkas diperiksa ulang setelah
@@ -141,9 +139,15 @@ Sebabnya bukan selera: `turun-tak-hingga` dan sebagian besar `bezout` memang tek
 dilatih. Konsekuensinya rubrik memikul beban lebih berat di tahap ini — dan rubrik yang
 hanya menulis "jawaban benar" tidak akan menolong siswa menilai dirinya sendiri.
 
-**1.3 Isi 4 jurus OSN.** `vieta-jumping`, `wilson`, `orde-elemen`, `lte`. 24 latihan + 4 contoh = 28 soal. Ini
-yang paling sulit ditulis dan paling sedikit pemakainya — kerjakan terakhir, dan tidak
-apa-apa kalau tertinggal sementara Fase 2 jalan.
+**1.3 Isi 4 jurus OSN — selesai 8 Agustus 2026.** `vieta-jumping`, `wilson`,
+`orde-elemen`, `lte`: 28 soal (24 latihan + 4 contoh; 22 isian, 6 uraian). **Teori
+bilangan tuntas.**
+
+Fase ini juga melahirkan `scripts/periksa-rumus.js`. Saat menulis 28 soal berisi rumus
+padat, kebutuhannya jadi jelas: `tests/test_build.py` menjaga keluaran `markdown_ke_html`,
+tetapi tidak ada apa pun yang memeriksa apakah rumus yang selamat itu **sah** menurut
+KaTeX. Rumus salah ketik lolos build tanpa keluhan dan baru terlihat sebagai kotak merah
+di layar siswa. Pemeriksa itu kini jalan di GitHub Actions sebelum data dikomit balik.
 
 **Selesai kalau:** tidak ada jurus teori bilangan dengan latihan di bawah 6, dan
 `build.py` tidak lagi mencetak baris "Belum ada latihan di: …".
@@ -335,8 +339,16 @@ Ditulis supaya tidak berulang kali diperdebatkan:
 **Melebar sebelum dalam.** Godaan terbesarnya adalah membuka empat bidang sekaligus dan
 mengisi masing-masing sepertiga. Hasilnya empat bidang setengah jadi yang tidak bisa
 dipakai siapa pun untuk apa pun. Urutan fase di atas ada justru untuk mencegah itu:
-di ujung Fase 1.1 ada satu kelompok siswa yang benar-benar terlayani, dan jumlah itu
-bertambah tiap fase.
+satu bidang ditutup tuntas sampai tahap tertinggi sebelum bidang berikutnya dibuka.
+
+**Tergoda mempercepat supaya cepat dipakai.** Ini bukan tujuan proyek, dan ditulis di
+sini supaya tidak menyelinap masuk lewat pintu belakang. Situs ini akan dipakai ketika
+sudah terbukti bisa ditempuh utuh dari awal sampai akhir — bukan ketika sudah "cukup
+untuk sebagian siswa". Karena itu, saat memilih urutan pekerjaan, argumen "ini lebih
+cepat berdampak" tidak sah; yang sah adalah kelengkapan dan ketahanan jangka panjang.
+Konsekuensi praktisnya: lantai 6 latihan tidak boleh dilonggarkan, jurus tidak boleh
+dibiarkan setengah terisi untuk mengejar bidang berikutnya, dan pekerjaan kerangka
+tidak ditunda dengan alasan kontennya lebih terlihat.
 
 **Mutu soal turun saat mengejar jumlah.** Lantai 6 latihan per jurus bisa dipenuhi
 dengan enam soal seragam yang melatih satu pola yang sama. Yang membuat situs ini ada

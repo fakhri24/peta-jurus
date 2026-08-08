@@ -4,8 +4,8 @@ nama: Orde Elemen
 pilar: teori-bilangan
 tahap: osn
 prasyarat: [fungsi-euler]
-contoh: []
-latihan: []
+contoh: [oe-contoh-1]
+latihan: [oe-01, oe-02, oe-03, oe-04, oe-05, oe-06]
 ---
 
 ## Kapan dipakai

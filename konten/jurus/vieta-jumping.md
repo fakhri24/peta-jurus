@@ -4,8 +4,8 @@ nama: Vieta Jumping
 pilar: teori-bilangan
 tahap: osn
 prasyarat: [turun-tak-hingga]
-contoh: []
-latihan: []
+contoh: [vj-contoh-1]
+latihan: [vj-01, vj-02, vj-03, vj-04, vj-05, vj-06]
 ---
 
 ## Kapan dipakai

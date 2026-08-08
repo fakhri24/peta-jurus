@@ -18,10 +18,18 @@ python3 -m http.server 8000       # wajib lewat server; fetch() mati di file://
 python3 scripts/build.py          # konten/*.md → data/*.json  (butuh pyyaml)
 python3 tests/test_build.py       # 47 tes
 python3 tests/test_build.py TestRumusSelamat.test_garis_bawah_bukan_huruf_miring   # satu tes
+node scripts/periksa-rumus.js     # tiap rumus di data/*.json benar-benar dirender KaTeX
 ```
 
 Tidak ada linter, tidak ada package manager, tidak ada build step untuk situsnya —
 yang di-build hanya isinya.
+
+`periksa-rumus.js` perkakas pengembangan, **bukan** dependensi situs: ia memakai berkas
+KaTeX yang sudah ada di `assets/katex/`, tanpa mengunduh apa pun. Jalankan setelah
+`build.py`, karena yang diperiksa hasilnya. `tests/test_build.py` menjaga keluaran
+`markdown_ke_html`; yang tidak dijaganya adalah apakah rumus yang selamat itu **sah**
+menurut KaTeX. Rumus salah ketik lolos build tanpa keluhan dan baru terlihat sebagai
+kotak merah di layar siswa. Alur GitHub Actions menjalankannya sebelum mengomit balik.
 
 ## Alur data
 

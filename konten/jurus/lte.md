@@ -4,8 +4,8 @@ nama: Lifting the Exponent
 pilar: teori-bilangan
 tahap: osn
 prasyarat: [legendre-faktorial, orde-elemen]
-contoh: []
-latihan: []
+contoh: [lte-contoh-1]
+latihan: [lte-01, lte-02, lte-03, lte-04, lte-05, lte-06]
 ---
 
 ## Kapan dipakai

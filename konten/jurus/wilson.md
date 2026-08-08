@@ -4,8 +4,8 @@ nama: Teorema Wilson
 pilar: teori-bilangan
 tahap: osn
 prasyarat: [fermat-kecil]
-contoh: []
-latihan: []
+contoh: [wl-contoh-1]
+latihan: [wl-01, wl-02, wl-03, wl-04, wl-05, wl-06]
 ---
 
 ## Kapan dipakai
