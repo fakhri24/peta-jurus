@@ -603,8 +603,17 @@
    "pilar": "aljabar",
    "tahap": "osn-k",
    "prasyarat": [],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "ma-contoh-1"
+   ],
+   "latihan": [
+    "ma-01",
+    "ma-02",
+    "ma-03",
+    "ma-04",
+    "ma-05",
+    "ma-06"
+   ],
    "kapan_dipakai": "<p>Hampir selalu, sebagai langkah pertama. Kamu melihat bentuk yang berantakan dan menduga ada bentuk lain yang lebih jinak — jumlah kuadrat, hasil kali, atau pecahan yang bisa disederhanakan.</p>",
    "inti": "<p>Beberapa identitas yang harus dikenali seketika, bukan diturunkan ulang tiap kali:</p><p>$$(a \\pm b)^2 = a^2 \\pm 2ab + b^2, \\qquad a^2 - b^2 = (a-b)(a+b)$$</p><p>$$a^3 \\pm b^3 = (a \\pm b)\\left(a^2 \\mp ab + b^2\\right)$$</p><p>$$(a+b+c)^2 = a^2+b^2+c^2 + 2(ab+bc+ca)$$</p><p>Yang paling sering menolong di olimpiade adalah yang terakhir, dibalik: begitu kamu punya $a+b+c$ dan $ab+bc+ca$, kamu punya $a^2+b^2+c^2$ tanpa tahu $a$, $b$, $c$ sama sekali.</p><p>Satu lagi yang sering menyelamatkan:</p><p>$$a^3+b^3+c^3-3abc = (a+b+c)\\left(a^2+b^2+c^2-ab-bc-ca\\right)$$</p><p>Akibatnya, kalau $a+b+c = 0$ maka $a^3+b^3+c^3 = 3abc$.</p><p><strong>Refleks yang dilatih di sini:</strong> jangan menjabarkan kalau bisa memfaktorkan, dan jangan mencari nilai tiap peubah kalau yang ditanya hanya bentuk simetrisnya.</p>",
    "jebakan": "<ul><li><strong>Menjabarkan lebih dulu.</strong> Bentuk yang sudah terfaktor biasanya sudah berada di wujud paling berguna. Menjabarkannya membuang keterangan.</li><li><strong>Mengira harus tahu tiap peubah.</strong> Soal olimpiade sering hanya bisa dijawab lewat bentuk simetrisnya, dan memang tidak menuntut nilai satu-satu.</li><li><strong>Salah tanda pada $a^3 - b^3$.</strong> Faktor keduanya $a^2 + ab + b^2$ — tandanya berlawanan dengan faktor pertama.</li></ul>",
@@ -620,8 +629,17 @@
    "prasyarat": [
     "manipulasi-aljabar"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "bd-contoh-1"
+   ],
+   "latihan": [
+    "bd-01",
+    "bd-02",
+    "bd-03",
+    "bd-04",
+    "bd-05",
+    "bd-06"
+   ],
    "kapan_dipakai": "<p>Ada pola yang berulang dengan selisih tetap atau rasio tetap — bilangan tersusun, jumlah berurutan, bunga berlipat, atau soal cerita yang menyebut \"bertambah sekian setiap\".</p>",
    "inti": "<p><strong>Aritmetika</strong>, beda $b$:</p><p>$$U_n = a + (n-1)b, \\qquad S_n = \\frac{n}{2}\\left(2a + (n-1)b\\right) = \\frac{n}{2}(U_1 + U_n)$$</p><p><strong>Geometri</strong>, rasio $r$:</p><p>$$U_n = a r^{n-1}, \\qquad S_n = \\frac{a\\left(r^n - 1\\right)}{r - 1} \\quad (r \\ne 1)$$</p><p>Untuk $|r| &lt; 1$, deret tak hingganya menuju</p><p>$$S_\\infty = \\frac{a}{1-r}$$</p><p>Bentuk $S_n = \\frac{n}{2}(U_1 + U_n)$ layak diingat terpisah: ia membaca deret aritmetika sebagai \"banyaknya suku dikali rata-rata ujung\", dan itu sering lebih cepat daripada memasukkan $a$ dan $b$.</p><p>Dua jumlah yang muncul terus-menerus:</p><p>$$1 + 2 + \\cdots + n = \\frac{n(n+1)}{2}, \\qquad\n1^2 + 2^2 + \\cdots + n^2 = \\frac{n(n+1)(2n+1)}{6}$$</p>",
    "jebakan": "<ul><li><strong>Salah menghitung banyak suku.</strong> Dari $7$ sampai $31$ dengan beda $3$ ada $\\frac{31-7}{3} + 1 = 9$ suku, bukan $8$. Tambahan $1$ itu hampir selalu terlupa.</li><li><strong>Memakai $S_\\infty$ tanpa memeriksa $|r| &lt; 1$.</strong> Di luar itu deretnya tidak menuju bilangan mana pun.</li><li><strong>Mengira $U_n = a + nb$.</strong> Sukunya dimulai dari $U_1 = a$, jadi yang benar $(n-1)b$.</li></ul>",
@@ -637,8 +655,17 @@
    "prasyarat": [
     "manipulasi-aljabar"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "el-contoh-1"
+   ],
+   "latihan": [
+    "el-01",
+    "el-02",
+    "el-03",
+    "el-04",
+    "el-05",
+    "el-06"
+   ],
    "kapan_dipakai": "<p>Peubah muncul di <strong>pangkat</strong>, atau soal memuat $\\log$. Juga saat kamu perlu membandingkan bilangan berpangkat besar tanpa menghitungnya.</p>",
    "inti": "<p>Aturan pangkat, semuanya turun dari satu gagasan — pangkat mencacah berapa kali dikalikan:</p><p>$$a^m a^n = a^{m+n}, \\qquad \\frac{a^m}{a^n} = a^{m-n}, \\qquad \\left(a^m\\right)^n = a^{mn},\n\\qquad a^{-n} = \\frac{1}{a^n}$$</p><p>Logaritma adalah kebalikannya:</p><p>$$\\log_a b = c \\iff a^c = b$$</p><p>sehingga aturan pangkat berubah menjadi aturan logaritma:</p><p>$$\\log_a (xy) = \\log_a x + \\log_a y, \\qquad \\log_a x^n = n \\log_a x,\n\\qquad \\log_a x = \\frac{\\log_b x}{\\log_b a}$$</p><p>Aturan terakhir — ganti basis — yang paling sering dibutuhkan, karena ia menyatukan logaritma berbasis berbeda menjadi satu peubah.</p><p><strong>Untuk persamaan eksponen</strong>, kuncinya menyamakan basis: dari $a^{f(x)} = a^{g(x)}$ dengan $a &gt; 0$, $a \\ne 1$, diperoleh $f(x) = g(x)$.</p><p><strong>Untuk membandingkan pangkat besar</strong>, samakan pangkatnya alih-alih menghitung: $2^{100} = \\left(2^{10}\\right)^{10} = 1024^{10}$ dan $3^{60} = \\left(3^6\\right)^{10} =\n729^{10}$, jadi yang pertama lebih besar.</p>",
    "jebakan": "<ul><li><strong>Lupa syarat domain.</strong> Pada $\\log_a x$, dibutuhkan $x &gt; 0$, $a &gt; 0$, dan $a \\ne 1$. Solusi yang melanggar itu harus dibuang.</li><li><strong>Mengira $\\log(x+y) = \\log x + \\log y$.</strong> Yang benar berlaku untuk hasil kali.</li><li><strong>Membagi kedua ruas dengan $a^{f(x)}$</strong> tanpa menyadari nilainya tidak pernah nol — itu aman, tetapi kebalikannya, mengalikan dengan sesuatu yang bisa nol, tidak.</li></ul>",
@@ -654,8 +681,17 @@
    "prasyarat": [
     "manipulasi-aljabar"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "fkt-contoh-1"
+   ],
+   "latihan": [
+    "fkt-01",
+    "fkt-02",
+    "fkt-03",
+    "fkt-04",
+    "fkt-05",
+    "fkt-06"
+   ],
    "kapan_dipakai": "<p>Ruas kanan bernilai nol, atau kamu perlu mengubah jumlah menjadi hasil kali supaya bisa memakai \"hasil kali nol\" atau mencacah pasangan pembagi.</p>",
    "inti": "<p>Empat cara yang menutup hampir semua soal OSN-K:</p><ol><li><strong>Faktor persekutuan.</strong> Selalu dicoba lebih dulu.</li><li><strong>Pengelompokan.</strong> $ax + ay + bx + by = (a+b)(x+y)$.</li><li><strong>Bentuk kuadrat.</strong> $x^2 + (p+q)x + pq = (x+p)(x+q)$ — cari dua bilangan yang berjumlah koefisien tengah dan berhasil kali konstanta.</li><li><strong>Identitas.</strong> Selisih kuadrat, jumlah dan selisih pangkat tiga.</li></ol><p>Yang membuat faktorisasi berharga adalah akibatnya: dari $AB = 0$ langsung diperoleh $A = 0$ atau $B = 0$. Persamaan berderajat tinggi runtuh menjadi beberapa persamaan sederhana.</p><p>Untuk soal bilangan bulat, akibatnya berbeda tetapi sama kuatnya: dari $AB = n$ dengan $A$ dan $B$ bulat, keduanya harus berupa pasangan pembagi $n$ — dan pembagi $n$ jumlahnya berhingga.</p>",
    "jebakan": "<ul><li><strong>Membagi dengan sesuatu yang mungkin nol.</strong> Dari $x^2 = 3x$, membagi $x$ menghilangkan solusi $x = 0$. Pindahkan ruas dan faktorkan: $x(x-3) = 0$.</li><li><strong>Berhenti setelah satu langkah.</strong> $x^4 - 16 = (x^2-4)(x^2+4)$ masih bisa dilanjutkan menjadi $(x-2)(x+2)(x^2+4)$.</li><li><strong>Memaksa memfaktorkan yang tidak terfaktor</strong> atas bilangan rasional. Periksa diskriminannya sebelum menghabiskan waktu.</li></ul>",
@@ -705,8 +741,17 @@
    "prasyarat": [
     "manipulasi-aljabar"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "nm-contoh-1"
+   ],
+   "latihan": [
+    "nm-01",
+    "nm-02",
+    "nm-03",
+    "nm-04",
+    "nm-05",
+    "nm-06"
+   ],
    "kapan_dipakai": "<p>Ada tanda $|\\cdot|$ dalam persamaan atau pertidaksamaan, atau soal berbicara tentang <strong>jarak</strong> — pada garis bilangan, jarak $x$ ke $a$ adalah $|x - a|$.</p>",
    "inti": "<p>Definisinya berupa dua kasus, dan hampir semua soal diselesaikan dengan memecah kasus itu:</p><p>$$|x| = \\begin{cases} x &amp; x \\ge 0 \\\\ -x &amp; x &lt; 0 \\end{cases}$$</p><p>Yang menentukan batas kasus adalah <strong>titik nol tiap bentuk di dalam tanda mutlak</strong>. Untuk $|x-2| + |x+3|$, titik kritisnya $x = 2$ dan $x = -3$, sehingga garis bilangan terbagi menjadi tiga daerah — periksa satu per satu.</p><p>Dua sifat yang memangkas banyak pekerjaan:</p><p>$$|x| = a \\iff x = \\pm a \\quad (a \\ge 0), \\qquad |x| &lt; a \\iff -a &lt; x &lt; a$$</p><p>$$|x| &gt; a \\iff x &lt; -a \\text{ atau } x &gt; a$$</p><p>Dan ketaksamaan segitiga:</p><p>$$|x + y| \\le |x| + |y|$$</p><p>dengan kesamaan tepat ketika $x$ dan $y$ bertanda sama.</p><p><strong>Tafsiran jarak</strong> sering menyelesaikan soal tanpa perhitungan sama sekali: $|x-2| + |x+3|$ adalah jumlah jarak $x$ ke $2$ dan ke $-3$, jadi nilai terkecilnya $5$ — dicapai di seluruh ruas di antaranya.</p>",
    "jebakan": "<ul><li><strong>Mengira $\\sqrt{x^2} = x$.</strong> Yang benar $\\sqrt{x^2} = |x|$.</li><li><strong>Mengkuadratkan tanpa syarat.</strong> Dari $|x-1| = x-3$, mengkuadratkan memberi solusi palsu; ruas kanan harus tak negatif lebih dulu.</li><li><strong>Lupa memeriksa solusi terhadap daerah kasusnya.</strong> Solusi yang lahir di kasus $x &lt; 0$ tetapi bernilai positif harus dibuang.</li></ul>",

@@ -4,8 +4,8 @@ nama: Faktorisasi
 pilar: aljabar
 tahap: osn-k
 prasyarat: [manipulasi-aljabar]
-contoh: []
-latihan: []
+contoh: [fkt-contoh-1]
+latihan: [fkt-01, fkt-02, fkt-03, fkt-04, fkt-05, fkt-06]
 ---
 
 ## Kapan dipakai

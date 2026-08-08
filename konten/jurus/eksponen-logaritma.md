@@ -4,8 +4,8 @@ nama: Eksponen dan Logaritma
 pilar: aljabar
 tahap: osn-k
 prasyarat: [manipulasi-aljabar]
-contoh: []
-latihan: []
+contoh: [el-contoh-1]
+latihan: [el-01, el-02, el-03, el-04, el-05, el-06]
 ---
 
 ## Kapan dipakai

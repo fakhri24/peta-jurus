@@ -4,8 +4,8 @@ nama: Barisan dan Deret
 pilar: aljabar
 tahap: osn-k
 prasyarat: [manipulasi-aljabar]
-contoh: []
-latihan: []
+contoh: [bd-contoh-1]
+latihan: [bd-01, bd-02, bd-03, bd-04, bd-05, bd-06]
 ---
 
 ## Kapan dipakai

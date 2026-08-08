@@ -4,8 +4,8 @@ nama: Nilai Mutlak
 pilar: aljabar
 tahap: osn-k
 prasyarat: [manipulasi-aljabar]
-contoh: []
-latihan: []
+contoh: [nm-contoh-1]
+latihan: [nm-01, nm-02, nm-03, nm-04, nm-05, nm-06]
 ---
 
 ## Kapan dipakai

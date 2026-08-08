@@ -4,8 +4,8 @@ nama: Manipulasi Bentuk Aljabar
 pilar: aljabar
 tahap: osn-k
 prasyarat: []
-contoh: []
-latihan: []
+contoh: [ma-contoh-1]
+latihan: [ma-01, ma-02, ma-03, ma-04, ma-05, ma-06]
 ---
 
 ## Kapan dipakai
