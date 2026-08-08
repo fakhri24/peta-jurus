@@ -5,7 +5,7 @@ pilar: teori-bilangan
 tahap: osn-k
 prasyarat: [algoritma-pembagian]
 contoh: [kd-contoh-1]
-latihan: [kd-01, kd-02, kd-03]
+latihan: [kd-01, kd-02, kd-03, kd-04, kd-05, kd-06]
 ---
 
 ## Kapan dipakai

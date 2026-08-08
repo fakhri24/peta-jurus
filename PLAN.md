@@ -33,27 +33,25 @@ Poin 2 dan 4 yang paling mahal. Selebihnya pekerjaan kode yang terukur.
 
 ## 2. Keadaan sekarang
 
-22 jurus, 38 soal (27 latihan + 11 contoh), semuanya teori bilangan.
-`data/jurus.json` 39 KB, `data/soal.json` 51 KB.
+22 jurus, 64 soal (53 latihan + 11 contoh), semuanya teori bilangan.
 
 Sebaran per tahap — ini bagian yang penting:
 
-| Tahap | Jurus | Punya latihan | Kosong |
+| Tahap | Jurus | Sudah di lantai 6 | Kosong |
 |---|---|---|---|
 | OSN-K | 8 | 8 | 0 |
-| OSN-P | 10 | 2 | 8 |
+| OSN-P | 10 | 0 | 8 |
 | OSN | 4 | 0 | 4 |
 
 Jurus yang masih kosong: `legendre-faktorial`, `turun-tak-hingga`, `bezout`,
 `diophantine-linear`, `diophantine-taklinear`, `fungsi-euler`, `kongruensi-linear`,
-`teorema-sisa-cina`, `vieta-jumping`, `wilson`, `orde-elemen`, `lte`.
+`teorema-sisa-cina`, `vieta-jumping`, `wilson`, `orde-elemen`, `lte`. Di luar itu,
+`sistem-residu` punya 2 latihan dan `fermat-kecil` punya 3 — keduanya masih di bawah
+lantai.
 
 Kesimpulan jujurnya: **situs ini sekarang alat persiapan OSN-K teori bilangan, dan
-tidak lebih dari itu.** Kerangkanya jadi, isinya baru satu sudut.
-
-Bahkan yang "terisi" pun masih di bawah lantai: 8 jurus OSN-K punya 2–4 latihan
-(22 seluruhnya), padahal lantainya 6 — butuh 48. Kurang **26 soal** hanya untuk
-membereskan OSN-K.
+tidak lebih dari itu** — tapi untuk kelompok itu ia sudah utuh: kedelapan jurusnya
+tuntas di lantai 6 latihan sejak 8 Agustus 2026.
 
 ### Perkiraan cakupan penuh
 
@@ -125,9 +123,15 @@ berkas JS — dijaga tes, bukan ingatan.
 Bidang ini strukturnya sudah lengkap; yang kurang isinya. Dikerjakan menurut tahap,
 karena tahap itulah yang menentukan seorang siswa bisa memakai situs ini atau tidak.
 
-**1.1 Naikkan 8 jurus OSN-K ke lantai 6 latihan.** 26 soal. Setelah ini situs benar-benar
-tuntas untuk satu kelompok pengguna nyata: peserta OSN-K yang melatih teori bilangan.
-Ini titik rilis pertama yang layak diumumkan ke siswa.
+**1.1 Naikkan 8 jurus OSN-K ke lantai 6 latihan — selesai 8 Agustus 2026.** 26 soal
+ditambahkan (18 isian, 8 uraian), semuanya susunan sendiri. Situs ini sekarang tuntas
+untuk satu kelompok pengguna nyata: peserta OSN-K yang melatih teori bilangan. **Ini
+titik rilis pertama yang layak diumumkan ke siswa.**
+
+Catatan untuk penambahan berikutnya: setiap jawaban numerik diverifikasi lebih dulu
+dengan Python sebelum soalnya ditulis, dan seluruh berkas diperiksa ulang setelah
+dibangun — rumus yang rusak dimakan Markdown, `$` yang tak tertutup, dan kelengkapan
+petunjuk/rubrik. Pada volume segini, ketelitian tangan saja tidak cukup.
 
 **1.2 Isi 8 jurus OSN-P yang kosong** + naikkan `sistem-residu` dan `fermat-kecil` ke 6.
 55 latihan + 8 contoh = 63 soal. Perhatikan `teorema-sisa-cina` dan `kongruensi-linear` — keduanya di tingkat 5–6,

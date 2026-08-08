@@ -43,6 +43,96 @@
    "rubrik": []
   },
   {
+   "id": "ae-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "algoritma-euklid"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan $\\gcd(1071, 462)$.</p>",
+   "jawaban": "21",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Memfaktorkan keduanya bisa, tapi ada cara yang tidak menuntut faktorisasi sama sekali.",
+    "Ganti pasangannya berulang-ulang: $\\gcd(a, b) = \\gcd(b,\\ a \\bmod b)$, sampai salah satunya nol.",
+    "Mulai dari $1071 = 2 \\times 462 + 147$."
+   ],
+   "pembahasan": "<p>Pakai algoritma Euklid: berulang kali ganti pasangan $(a, b)$ menjadi $(b,\\ a \\bmod b)$. Yang membenarkan langkah ini adalah $\\gcd(a,b) = \\gcd(b,\\ a - qb)$ — setiap pembagi persekutuan $a$ dan $b$ juga membagi $a - qb$, dan sebaliknya.</p><p>$$1071 = 2 \\times 462 + 147$$ $$462 = 3 \\times 147 + 21$$ $$147 = 7 \\times 21 + 0$$</p><p>Sisa nol tercapai, jadi FPB-nya adalah sisa tak nol terakhir:</p><p>$$\\gcd(1071, 462) = \\boxed{21}$$</p><p>Periksa lewat faktorisasi: $1071 = 3 \\times 357 = 3 \\times 3 \\times 7 \\times 17$ dan $462 = 2 \\times 3 \\times 7 \\times 11$. Prima persekutuannya $3$ dan $7$, memberi $21$.</p><p>Perhatikan bahwa algoritma Euklid tidak pernah memfaktorkan apa pun — itulah kekuatannya. Untuk bilangan besar, memfaktorkan jauh lebih mahal daripada membagi bersisa beberapa kali.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ae-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "algoritma-euklid"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Untuk bilangan asli $n$, ada berapa nilai berbeda yang bisa diambil oleh $\\gcd(n,\\ n + 12)$?</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kedua bilangannya bergerak bersamaan saat $n$ berubah, tapi selisihnya tetap. Manfaatkan itu.",
+    "Kurangkan yang kecil dari yang besar: $\\gcd(n, n+12) = \\gcd(n, 12)$.",
+    "Nilai $\\gcd(n, 12)$ selalu berupa pembagi $12$. Tinggal periksa pembagi mana saja yang benar-benar tercapai."
+   ],
+   "pembahasan": "<p>Langkah pertama algoritma Euklid mengurangkan kelipatan bilangan yang lebih kecil:</p><p>$$\\gcd(n,\\ n+12) = \\gcd\\left(n,\\ (n + 12) - n\\right) = \\gcd(n, 12)$$</p><p>Jadi berapa pun $n$-nya, hasilnya adalah FPB antara $n$ dan $12$ — yang selalu merupakan pembagi $12$. Pembagi positif $12$ ada enam:</p><p>$$1,\\ 2,\\ 3,\\ 4,\\ 6,\\ 12$$</p><p>Tinggal dipastikan keenamnya benar-benar tercapai oleh suatu $n$ asli. Ambil saja $n$ sama dengan pembagi yang diinginkan:</p><p>$$\\gcd(1,12) = 1, \\quad \\gcd(2,12) = 2, \\quad \\gcd(3,12) = 3$$ $$\\gcd(4,12) = 4, \\quad \\gcd(6,12) = 6, \\quad \\gcd(12,12) = 12$$</p><p>Keenamnya tercapai, jadi ada $\\boxed{6}$ nilai berbeda.</p><p>Langkah \"tunjukkan nilainya benar-benar tercapai\" itu wajib. Menemukan bahwa hasilnya selalu membagi $12$ baru memberi batas atas — belum menjamin semuanya muncul.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ae-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "algoritma-euklid"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan bilangan asli $n$ terkecil yang lebih dari $10$ sehingga</p><p>$$\\gcd\\left(n^2 + 5,\\ n + 2\\right) &gt; 1$$</p>",
+   "jawaban": "13",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Mencoba $n$ satu per satu bisa panjang. Sederhanakan dulu FPB-nya supaya tidak lagi memuat $n^2$.",
+    "Bagi $n^2 + 5$ oleh $n + 2$ dan sisakan konstantanya: $n^2 + 5 = (n+2)(n-2) + 9$.",
+    "Jadi FPB-nya membagi $9$. Supaya lebih dari $1$, dibutuhkan $3 \\mid n + 2$."
+   ],
+   "pembahasan": "<p>Bagi $n^2 + 5$ oleh $n + 2$:</p><p>$$n^2 + 5 = (n+2)(n-2) + 9$$</p><p>Menurut algoritma Euklid,</p><p>$$\\gcd\\left(n^2+5,\\ n+2\\right) = \\gcd\\left(n+2,\\ 9\\right)$$</p><p>Sekarang $n^2$ sudah lenyap dan yang tersisa hanya FPB dengan konstanta $9$.</p><p>Nilai itu lebih dari $1$ tepat ketika $n + 2$ berbagi faktor dengan $9$ — yaitu ketika $3 \\mid n + 2$, atau</p><p>$$n \\equiv 1 \\pmod 3$$</p><p>Bilangan asli lebih dari $10$ yang memenuhi: $n = 13, 16, 19, \\ldots$, dan yang terkecil adalah $\\boxed{13}$.</p><p>Periksa: $13^2 + 5 = 174$ dan $13 + 2 = 15$, dengan $\\gcd(174, 15) = 3 &gt; 1$. Sementara untuk $n = 11$ dan $n = 12$: $\\gcd(126, 13) = 1$ dan $\\gcd(149, 14) = 1$ — memang keduanya gagal.</p><p>Pola ini berlaku umum: untuk mencari $\\gcd$ antara polinomial dan bentuk linear, bagi polinomialnya oleh bentuk linear itu; sisanya konstanta, dan konstanta itulah yang membatasi seluruh kemungkinan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ae-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "algoritma-euklid"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa $\\gcd(2n + 1,\\ 9n + 4) = 1$ untuk setiap bilangan asli $n$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Sebutlah $d$ pembagi persekutuan keduanya. Apa lagi yang otomatis dibagi $d$?",
+    "Pembagi persekutuan membagi setiap kombinasi $x(2n+1) + y(9n+4)$ dengan $x, y$ bulat. Cari kombinasi yang melenyapkan $n$.",
+    "Perhatikan $9(2n+1) - 2(9n+4) = 1$."
+   ],
+   "pembahasan": "<p>Misalkan $d = \\gcd(2n+1,\\ 9n+4)$. Maka $d \\mid 2n+1$ dan $d \\mid 9n+4$.</p><p>Pembagi persekutuan membagi setiap kombinasi bulat dari keduanya. Pilih kombinasi yang menghapus $n$: kalikan yang pertama dengan $9$ dan yang kedua dengan $2$, lalu kurangkan.</p><p>$$9(2n + 1) = 18n + 9$$ $$2(9n + 4) = 18n + 8$$</p><p>Selisihnya</p><p>$$9(2n+1) - 2(9n+4) = (18n + 9) - (18n + 8) = 1$$</p><p>Karena $d$ membagi $2n+1$ dan $9n+4$, ia membagi kombinasi bulat itu, yaitu $d \\mid 1$.</p><p>Satu-satunya bilangan asli yang membagi $1$ adalah $1$ sendiri, jadi $d = 1$ untuk setiap bilangan asli $n$. $\\blacksquare$</p><p>Cara yang sama lewat algoritma Euklid: $9n + 4 = 4(2n+1) + n$, lalu $2n + 1 = 2 \\cdot n + 1$, lalu $n = n \\cdot 1 + 0$ — berujung pada $1$ juga.</p><p>Yang membuat pasangan ini selalu saling asing adalah nilai $1$ pada kombinasinya. Kalau kombinasi terkecilnya bernilai $k$, yang bisa disimpulkan hanyalah $d \\mid k$ — dan FPB-nya belum tentu $1$.</p>",
+   "rubrik": [
+    "Memisalkan $d$ sebagai pembagi persekutuan dan menyatakan $d \\mid 2n+1$ serta $d \\mid 9n+4$",
+    "Menyatakan bahwa $d$ membagi setiap kombinasi bulat dari keduanya",
+    "Memilih kombinasi yang melenyapkan $n$, yaitu $9(2n+1) - 2(9n+4)$",
+    "Menghitung kombinasinya sampai memperoleh $1$",
+    "Menyimpulkan $d \\mid 1$ sehingga $d = 1$, dan menyatakan bahwa ini berlaku untuk setiap $n$"
+   ]
+  },
+  {
    "id": "ae-contoh-1",
    "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
    "pilar": "teori-bilangan",
@@ -130,6 +220,75 @@
    ],
    "pembahasan": "<p>Mulailah dari syarat dengan pembagi terbesar, karena daftarnya paling jarang. Bilangan yang bersisa $3$ dibagi $4$ adalah</p><p>$$3,\\ 7,\\ 11,\\ 15,\\ 19,\\ \\dots$$</p><p>Sekarang periksa sisanya terhadap $3$:</p><ul><li>$3 \\div 3$ bersisa $0$ — bukan.</li><li>$7 \\div 3$ bersisa $1$ — bukan.</li><li>$11 \\div 3$ bersisa $2$ — <strong>ya</strong>.</li></ul><p>Jawabannya $\\boxed{11}$.</p><p>Seluruh solusinya sebetulnya berbentuk $n \\equiv 11 \\pmod{12}$, yaitu $11, 23, 35, \\dots$ Kalau soalnya memuat lebih banyak syarat, mendaftar satu per satu jadi tidak praktis — di situlah Teorema Sisa Cina mengambil alih.</p>",
    "rubrik": []
+  },
+  {
+   "id": "ap-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "algoritma-pembagian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Bilangan asli $n$ bersisa $4$ ketika dibagi $9$. Tentukan sisa pembagian $n^2 + 2n$ oleh $9$.</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kamu tidak perlu tahu $n$ yang mana. Tulis $n$ dalam bentuk yang memuat sisanya.",
+    "Algoritma pembagian memberi $n = 9q + 4$ untuk suatu bilangan bulat $q$. Substitusikan.",
+    "Setelah dijabarkan, buang semua suku yang memuat faktor $9$ — sisanya tinggal dari $4^2 + 2 \\cdot 4$."
+   ],
+   "pembahasan": "<p>Menurut algoritma pembagian, ada bilangan bulat $q$ sehingga</p><p>$$n = 9q + 4$$</p><p>Substitusikan:</p><p>$$n^2 + 2n = (9q+4)^2 + 2(9q+4) = 81q^2 + 72q + 16 + 18q + 8$$</p><p>$$= 81q^2 + 90q + 24$$</p><p>Suku $81q^2$ dan $90q$ keduanya habis dibagi $9$, jadi sisanya hanya ditentukan oleh $24$:</p><p>$$24 = 9 \\times 2 + 6$$</p><p>Sisanya adalah $\\boxed{6}$.</p><p>Lebih cepat lagi dengan bahasa kongruensi: dari $n \\equiv 4 \\pmod 9$,</p><p>$$n^2 + 2n \\equiv 4^2 + 2 \\times 4 = 24 \\equiv 6 \\pmod 9$$</p><p>Keduanya perhitungan yang sama; bentuk kongruensi hanya menyembunyikan $q$ yang memang tidak pernah dipakai.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ap-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "algoritma-pembagian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa bilangan bulat $n$ dengan $1 \\le n \\le 500$ yang <strong>tidak</strong> habis dibagi $3$ maupun $5$?</p>",
+   "jawaban": "267",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Menghitung yang \"tidak\" biasanya lebih mudah lewat menghitung yang \"iya\", lalu dikurangkan.",
+    "Banyaknya kelipatan $d$ sampai $N$ adalah $\\left\\lfloor N/d \\right\\rfloor$ — itu langsung dari algoritma pembagian.",
+    "Kelipatan $3$ dan kelipatan $5$ punya irisan: kelipatan $15$. Jangan mengurangkannya dua kali."
+   ],
+   "pembahasan": "<p>Banyaknya kelipatan $d$ di antara $1$ dan $N$ adalah $\\left\\lfloor N/d \\right\\rfloor$. Alasannya langsung dari algoritma pembagian: menulis $N = dq + r$ dengan $0 \\le r &lt; d$ membuat kelipatannya tepat $d, 2d, \\ldots, qd$.</p><p>Hitung ketiganya:</p><p>$$\\left\\lfloor \\frac{500}{3} \\right\\rfloor = 166, \\qquad\n\\left\\lfloor \\frac{500}{5} \\right\\rfloor = 100, \\qquad\n\\left\\lfloor \\frac{500}{15} \\right\\rfloor = 33$$</p><p>Yang habis dibagi $3$ <strong>atau</strong> $5$ ada</p><p>$$166 + 100 - 33 = 233$$</p><p>Pengurangan $33$ itu perlu karena kelipatan $15$ sudah terhitung dua kali — sekali sebagai kelipatan $3$, sekali sebagai kelipatan $5$.</p><p>Maka yang tidak habis dibagi keduanya ada</p><p>$$500 - 233 = \\boxed{267}$$</p><p>Perhatikan bahwa irisannya adalah kelipatan $15$, bukan kelipatan $3 \\times 5$ secara kebetulan — melainkan karena $\\operatorname{lcm}(3,5) = 15$. Kalau soalnya berbunyi $4$ dan $6$, irisannya kelipatan $12$, bukan $24$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ap-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "algoritma-pembagian"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 2,
+   "soal": "<p>Buktikan bahwa di antara sembarang tiga bilangan bulat berurutan, tepat satu di antaranya habis dibagi $3$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kata \"tepat satu\" menuntut dua hal: paling sedikit satu, dan tidak lebih dari satu.",
+    "Tulis bilangan pertamanya sebagai hasil pembagian oleh $3$ — sisanya hanya punya tiga kemungkinan.",
+    "Dengan $n = 3q + r$ dan $r \\in \\{0, 1, 2\\}$, periksa ketiga kasus itu satu per satu."
+   ],
+   "pembahasan": "<p>Misalkan ketiga bilangan berurutan itu $n$, $n+1$, dan $n+2$.</p><p>Menurut algoritma pembagian, ada bilangan bulat $q$ dan $r$ dengan</p><p>$$n = 3q + r, \\qquad r \\in \\{0, 1, 2\\}$$</p><p>dan pasangan $(q, r)$ itu tunggal. Tinjau ketiga kemungkinan $r$.</p><p><strong>Kasus $r = 0$.</strong> Maka $n = 3q$ habis dibagi $3$. Sementara $n + 1 = 3q + 1$ dan $n + 2 = 3q + 2$ bersisa $1$ dan $2$, jadi keduanya tidak habis dibagi $3$.</p><p><strong>Kasus $r = 1$.</strong> Maka $n + 2 = 3q + 3 = 3(q+1)$ habis dibagi $3$, sedangkan $n$ dan $n+1$ bersisa $1$ dan $2$.</p><p><strong>Kasus $r = 2$.</strong> Maka $n + 1 = 3q + 3 = 3(q+1)$ habis dibagi $3$, sedangkan $n$ dan $n+2$ bersisa $2$ dan $1$.</p><p>Pada setiap kasus tepat satu dari ketiganya habis dibagi $3$, dan kasusnya sudah menghabiskan semua kemungkinan. $\\blacksquare$</p><p>Ketunggalan sisa pada algoritma pembagian itulah yang memberi kata \"tepat\" — tanpanya kita hanya membuktikan ada paling sedikit satu.</p>",
+   "rubrik": [
+    "Menuliskan ketiga bilangan sebagai $n$, $n+1$, $n+2$ dan menerapkan algoritma pembagian pada $n$",
+    "Menyatakan bahwa sisanya hanya tiga kemungkinan, $r \\in \\{0,1,2\\}$",
+    "Memeriksa ketiga kasus dan menunjuk mana yang habis dibagi $3$ pada masing-masing",
+    "Menunjukkan pada tiap kasus bahwa dua yang lain <strong>tidak</strong> habis dibagi $3$ — ini yang menegakkan kata \"tepat satu\"",
+    "Menyatakan bahwa ketiga kasus sudah menghabiskan semua kemungkinan"
+   ]
   },
   {
    "id": "ap-contoh-1",
@@ -222,6 +381,76 @@
    ]
   },
   {
+   "id": "bp-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "bilangan-prima"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Ada berapa bilangan prima di antara $90$ dan $110$?</p>",
+   "jawaban": "5",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kamu tidak perlu mencoba semua pembagi sampai bilangannya sendiri. Ada batas yang jauh lebih pendek.",
+    "Kalau $n = ab$ dengan $a \\le b$, maka $a \\le \\sqrt{n}$. Jadi cukup uji pembagi sampai $\\sqrt{n}$.",
+    "Di sini $\\sqrt{110} &lt; 11$, jadi cukup uji $2, 3, 5, 7$ saja untuk setiap kandidat."
+   ],
+   "pembahasan": "<p>Untuk menguji keprimaan $n$, cukup mencari pembagi sampai $\\sqrt{n}$. Sebabnya: kalau $n = ab$ dengan $1 &lt; a \\le b &lt; n$, maka $a^2 \\le ab = n$, sehingga $a \\le \\sqrt{n}$. Jadi faktor sejati terkecil — kalau ada — pasti tidak melebihi $\\sqrt{n}$.</p><p>Karena $\\sqrt{110} \\approx 10{,}5$, cukup diuji pembagi prima $2$, $3$, $5$, dan $7$.</p><p>Bilangan genap dan kelipatan $5$ langsung gugur, jadi kandidatnya tinggal</p><p>$$91,\\ 93,\\ 97,\\ 99,\\ 101,\\ 103,\\ 107,\\ 109$$</p><p>Uji satu per satu:</p><ul><li>$91 = 7 \\times 13$ — bukan prima</li><li>$93 = 3 \\times 31$ — bukan prima</li><li>$97$ — tidak habis dibagi $2, 3, 5, 7$ — <strong>prima</strong></li><li>$99 = 9 \\times 11$ — bukan prima</li><li>$101$ — <strong>prima</strong></li><li>$103$ — <strong>prima</strong></li><li>$107$ — <strong>prima</strong></li><li>$109$ — <strong>prima</strong></li></ul><p>Ada $\\boxed{5}$ bilangan prima: $97, 101, 103, 107, 109$.</p><p>Yang paling sering meloloskan diri adalah $91$. Ia ganjil, bukan kelipatan $3$ maupun $5$, dan terlihat prima sampai kamu benar-benar mencoba $7$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bp-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "bilangan-prima"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan jumlah semua bilangan asli $n$ sehingga $n^2 - 1$ merupakan bilangan prima.</p>",
+   "jawaban": "2",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan mencoba satu per satu. Bentuk $n^2 - 1$ punya sesuatu yang mencurigakan.",
+    "$n^2 - 1 = (n-1)(n+1)$ — jadi bilangan itu sudah tertulis sebagai hasil kali.",
+    "Prima hanya punya dua faktor positif. Jadi salah satu dari $(n-1)$ atau $(n+1)$ terpaksa bernilai $1$."
+   ],
+   "pembahasan": "<p>Faktorkan:</p><p>$$n^2 - 1 = (n-1)(n+1)$$</p><p>Bilangan itu sudah tersaji sebagai hasil kali dua faktor. Supaya hasilnya prima, faktor yang lebih kecil harus bernilai $1$ — kalau kedua faktor lebih dari $1$, hasil kalinya punya pembagi sejati dan tidak mungkin prima.</p><p>Karena $n$ asli, faktor yang lebih kecil adalah $n - 1$. Maka</p><p>$$n - 1 = 1 \\quad\\Longrightarrow\\quad n = 2$$</p><p>Periksa: $n = 2$ memberi $n^2 - 1 = 3$, yang memang prima.</p><p>Perlu juga dipastikan tidak ada yang terlewat di ujung bawah. Untuk $n = 1$ diperoleh $n^2 - 1 = 0$, dan $0$ bukan prima.</p><p>Jadi hanya $n = 2$ yang memenuhi, dan jumlah semua nilai $n$ adalah $\\boxed{2}$.</p><p>Pola ini sering muncul: begitu sebuah ungkapan bisa difaktorkan dan hasilnya dituntut prima, faktor-faktornya langsung terkunci. Bandingkan dengan $n^2 - 4 = (n-2)(n+2)$, yang prima hanya untuk $n = 3$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bp-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "bilangan-prima"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa jika $2^n - 1$ merupakan bilangan prima, maka $n$ juga prima.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Membuktikan \"jika A maka B\" secara langsung di sini sulit. Coba bentuk kebalikannya.",
+    "Buktikan yang setara: kalau $n$ <strong>bukan</strong> prima, maka $2^n - 1$ juga bukan prima.",
+    "Tulis $n = ab$ dengan $1 &lt; a, b &lt; n$, lalu ingat identitas $x^a - 1 = (x-1)(x^{a-1} + \\cdots + 1)$ dengan $x = 2^b$."
+   ],
+   "pembahasan": "<p>Dibuktikan lewat kontraposisi: cukup ditunjukkan bahwa kalau $n$ bukan prima, maka $2^n - 1$ juga bukan prima.</p><p>Perhatikan dulu $n = 1$: di situ $2^1 - 1 = 1$, dan $1$ bukan prima, jadi kasus ini tidak melanggar apa pun.</p><p>Sekarang misalkan $n$ komposit, sehingga $n = ab$ untuk suatu bilangan asli $a, b$ dengan $1 &lt; a &lt; n$ dan $1 &lt; b &lt; n$.</p><p>Pakai identitas</p><p>$$x^a - 1 = (x - 1)\\left(x^{a-1} + x^{a-2} + \\cdots + x + 1\\right)$$</p><p>dengan $x = 2^b$. Karena $\\left(2^b\\right)^a = 2^{ab} = 2^n$, diperoleh</p><p>$$2^n - 1 = \\left(2^b - 1\\right)\\left(2^{b(a-1)} + 2^{b(a-2)} + \\cdots + 2^b + 1\\right)$$</p><p>Tinggal dipastikan kedua faktornya benar-benar lebih dari $1$.</p><p>Faktor pertama: karena $b &gt; 1$, maka $2^b - 1 \\ge 2^2 - 1 = 3 &gt; 1$.</p><p>Faktor kedua: ia adalah jumlah $a$ suku yang semuanya positif dan salah satunya $1$, dengan $a &gt; 1$, jadi nilainya paling sedikit $2^b + 1 &gt; 1$.</p><p>Jadi $2^n - 1$ tertulis sebagai hasil kali dua bilangan yang masing-masing lebih dari $1$, sehingga $2^n - 1$ komposit.</p><p>Dengan demikian, kalau $2^n - 1$ prima maka $n$ tidak mungkin komposit dan tidak mungkin $1$ — jadi $n$ prima. $\\blacksquare$</p><p>Kebalikannya tidak berlaku: $n = 11$ prima, tetapi $2^{11} - 1 = 2047 = 23 \\times 89$. Prima berbentuk $2^p - 1$ disebut prima Mersenne, dan sampai sekarang belum diketahui apakah jumlahnya tak hingga.</p>",
+   "rubrik": [
+    "Menyatakan bahwa yang dibuktikan adalah kontraposisinya, dan bahwa itu setara dengan pernyataan aslinya",
+    "Menulis $n = ab$ dengan $1 &lt; a, b &lt; n$ sebagai bentuk umum bilangan komposit",
+    "Memakai identitas $x^a - 1 = (x-1)(x^{a-1} + \\cdots + 1)$ dengan substitusi $x = 2^b$",
+    "Menuliskan pemfaktoran $2^n - 1$ secara eksplisit",
+    "Membuktikan <strong>kedua</strong> faktornya lebih dari $1$ — tanpa langkah ini pemfaktorannya belum membuktikan apa-apa",
+    "Menutup kasus $n = 1$"
+   ]
+  },
+  {
    "id": "bp-contoh-1",
    "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-K",
    "pilar": "teori-bilangan",
@@ -283,6 +512,96 @@
    ],
    "pembahasan": "<p>Tulis $a = 6\\alpha$ dan $b = 6\\beta$ dengan $\\gcd(\\alpha,\\beta) = 1$. Dari $a + b = 36$,</p><p>$$6(\\alpha + \\beta) = 36 \\quad\\Longrightarrow\\quad \\alpha + \\beta = 6$$</p><p>Pasangan terurut bulat positif yang berjumlah $6$:</p><p>$$(1,5),\\ (2,4),\\ (3,3),\\ (4,2),\\ (5,1)$$</p><p>Sekarang saring dengan syarat relatif prima:</p><ul><li>$(2,4)$ dan $(4,2)$: $\\gcd = 2$ — buang.</li><li>$(3,3)$: $\\gcd = 3$ — buang.</li><li>$(1,5)$ dan $(5,1)$: $\\gcd = 1$ — lolos.</li></ul><p>Tersisa $\\boxed{2}$ pasangan, yaitu $(a,b) = (6,30)$ dan $(30,6)$.</p><p>Karena soal menyebut pasangan <strong>terurut</strong>, $(6,30)$ dan $(30,6)$ dihitung berbeda. Kalau kata itu tidak ada, jawabannya jadi $1$ — perbedaan yang sering menentukan benar salahnya.</p>",
    "rubrik": []
+  },
+  {
+   "id": "fk-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "fpb-kpk"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Ada berapa bilangan asli $n \\le 100$ yang memenuhi $\\gcd(n, 10) = 1$?</p>",
+   "jawaban": "40",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Terjemahkan syaratnya jadi kalimat tentang faktor. Kapan sebuah bilangan tidak berbagi faktor apa pun dengan $10$?",
+    "$10 = 2 \\times 5$, jadi $\\gcd(n,10) = 1$ berarti $n$ tidak habis dibagi $2$ dan tidak habis dibagi $5$.",
+    "Hitung yang habis dibagi $2$ atau $5$, lalu kurangkan dari $100$ — jangan lupa irisannya."
+   ],
+   "pembahasan": "<p>Karena $10 = 2 \\times 5$, syarat $\\gcd(n, 10) = 1$ berarti $n$ tidak memuat faktor $2$ maupun faktor $5$.</p><p>Hitung yang melanggar:</p><p>$$\\left\\lfloor \\frac{100}{2} \\right\\rfloor = 50, \\qquad\n\\left\\lfloor \\frac{100}{5} \\right\\rfloor = 20, \\qquad\n\\left\\lfloor \\frac{100}{10} \\right\\rfloor = 10$$</p><p>Yang habis dibagi $2$ atau $5$ ada $50 + 20 - 10 = 60$; angka $10$ dikurangkan karena kelipatan $10$ sudah terhitung pada kedua kelompok.</p><p>Maka yang memenuhi ada</p><p>$$100 - 60 = \\boxed{40}$$</p><p>Bisa juga dilihat berpola: dalam setiap blok sepuluh bilangan berurutan, yang saling asing dengan $10$ persis ada empat — yang berakhiran $1, 3, 7, 9$. Karena $100$ terdiri atas sepuluh blok penuh, hasilnya $10 \\times 4 = 40$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fk-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "fpb-kpk"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Dua bilangan asli mempunyai FPB sebesar $12$ dan hasil kali $2160$. Tentukan KPK kedua bilangan itu.</p>",
+   "jawaban": "180",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Perhatikan apa yang <strong>tidak</strong> ditanyakan: kedua bilangannya sendiri. Mungkin kamu memang tidak perlu mencarinya.",
+    "Ada identitas yang mengikat FPB, KPK, dan hasil kali dua bilangan menjadi satu persamaan: $\\gcd(a,b) \\times \\operatorname{lcm}(a,b) = ab$.",
+    "Substitusikan yang diketahui: $12 \\times \\operatorname{lcm}(a,b) = 2160$."
+   ],
+   "pembahasan": "<p>Untuk sembarang bilangan asli $a$ dan $b$ berlaku</p><p>$$\\gcd(a,b) \\times \\operatorname{lcm}(a,b) = ab$$</p><p>Alasannya terlihat dari faktorisasi prima: pada setiap prima, FPB mengambil pangkat yang lebih kecil dan KPK mengambil pangkat yang lebih besar — dan jumlah keduanya sama dengan jumlah pangkat pada $a$ dan $b$.</p><p>Substitusikan yang diketahui:</p><p>$$12 \\times \\operatorname{lcm}(a,b) = 2160 \\quad\\Longrightarrow\\quad\n\\operatorname{lcm}(a,b) = \\frac{2160}{12} = \\boxed{180}$$</p><p>Kalau ingin memastikan pasangannya benar-benar ada: tulis $a = 12x$ dan $b = 12y$ dengan $\\gcd(x,y) = 1$. Dari $144xy = 2160$ diperoleh $xy = 15$, sehingga $(x,y)$ bisa $(1,15)$ atau $(3,5)$ — memberi pasangan $(12, 180)$ dan $(36, 60)$. Keduanya berFPB $12$ dan berKPK $180$.</p><p>Perhatikan bahwa KPK-nya tunggal meski pasangan bilangannya tidak — itulah gunanya memakai identitas alih-alih mencari bilangannya satu per satu.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fk-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "fpb-kpk"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tiga lampu berkedip masing-masing setiap $15$ detik, $20$ detik, dan $24$ detik. Ketiganya berkedip bersamaan pada detik ke-$0$. Pada detik ke berapa ketiganya berikutnya berkedip bersamaan?</p>",
+   "jawaban": "120",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Terjemahkan dulu ke bahasa bilangan: detik ke berapa saja lampu pertama berkedip? Lampu kedua?",
+    "Lampu berkedip bersamaan pada detik yang merupakan kelipatan persekutuan ketiga selangnya.",
+    "Yang ditanya \"berikutnya\", jadi yang dicari kelipatan persekutuan <strong>terkecil</strong> yang positif."
+   ],
+   "pembahasan": "<p>Lampu pertama berkedip pada detik yang merupakan kelipatan $15$, lampu kedua pada kelipatan $20$, dan lampu ketiga pada kelipatan $24$. Ketiganya berkedip bersamaan tepat pada detik yang merupakan kelipatan persekutuan ketiganya — dan yang berikutnya setelah detik ke-$0$ adalah kelipatan persekutuan terkecilnya.</p><p>Faktorkan:</p><p>$$15 = 3 \\times 5, \\qquad 20 = 2^2 \\times 5, \\qquad 24 = 2^3 \\times 3$$</p><p>KPK mengambil pangkat tertinggi dari setiap prima yang muncul:</p><p>$$\\operatorname{lcm}(15, 20, 24) = 2^3 \\times 3 \\times 5 = \\boxed{120}$$</p><p>Periksa: $120 = 8 \\times 15 = 6 \\times 20 = 5 \\times 24$.</p><p>Kesalahan yang sering terjadi adalah mengalikan ketiganya, $15 \\times 20 \\times 24 = 7200$. Itu memang kelipatan persekutuan, tetapi jauh dari yang terkecil — mengalikan hanya benar kalau ketiganya saling asing berpasangan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fk-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "fpb-kpk"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa $\\gcd(a,b) \\times \\operatorname{lcm}(a,b) = ab$ untuk sembarang bilangan asli $a$ dan $b$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kedua ruas adalah bilangan asli. Dua bilangan asli sama kalau seluruh faktor primanya sama — jadi ke situlah arah pembuktiannya.",
+    "Tulis $a$ dan $b$ dalam faktorisasi prima memakai himpunan prima yang sama, dengan pangkat nol kalau primanya tidak muncul. Lalu bandingkan pangkat tiap prima di kedua ruas.",
+    "Pada prima $p$, FPB memakai $\\min(\\alpha, \\beta)$ dan KPK memakai $\\max(\\alpha, \\beta)$. Yang perlu ditunjukkan tinggal $\\min + \\max = \\alpha + \\beta$."
+   ],
+   "pembahasan": "<p>Tulis $a$ dan $b$ dalam faktorisasi prima atas himpunan prima yang sama $p_1, p_2, \\ldots, p_k$ — prima yang tidak muncul diberi pangkat $0$:</p><p>$$a = \\prod_{i=1}^{k} p_i^{\\alpha_i}, \\qquad b = \\prod_{i=1}^{k} p_i^{\\beta_i}$$</p><p>Dari definisi, FPB mengambil pangkat terkecil dan KPK mengambil pangkat terbesar pada setiap prima:</p><p>$$\\gcd(a,b) = \\prod_{i=1}^{k} p_i^{\\min(\\alpha_i, \\beta_i)}, \\qquad\n\\operatorname{lcm}(a,b) = \\prod_{i=1}^{k} p_i^{\\max(\\alpha_i, \\beta_i)}$$</p><p>Kalikan keduanya. Karena pangkat bertambah saat basisnya sama:</p><p>$$\\gcd(a,b) \\times \\operatorname{lcm}(a,b) = \\prod_{i=1}^{k} p_i^{\\min(\\alpha_i, \\beta_i) + \\max(\\alpha_i, \\beta_i)}$$</p><p>Sekarang inti pembuktiannya. Untuk sepasang bilangan real $\\alpha$ dan $\\beta$ mana pun,</p><p>$$\\min(\\alpha, \\beta) + \\max(\\alpha, \\beta) = \\alpha + \\beta$$</p><p>sebab salah satu dari keduanya adalah $\\alpha$ dan yang lain adalah $\\beta$ — kalau $\\alpha \\le \\beta$ maka minimumnya $\\alpha$ dan maksimumnya $\\beta$, dan kalau $\\alpha &gt; \\beta$ tinggal ditukar. Dalam kedua hal jumlahnya sama.</p><p>Maka</p><p>$$\\gcd(a,b) \\times \\operatorname{lcm}(a,b) = \\prod_{i=1}^{k} p_i^{\\alpha_i + \\beta_i}\n= \\left(\\prod_{i=1}^{k} p_i^{\\alpha_i}\\right)\\left(\\prod_{i=1}^{k} p_i^{\\beta_i}\\right) = ab$$</p><p>$\\blacksquare$</p><p>Identitas ini hanya berlaku untuk <strong>dua</strong> bilangan. Untuk tiga bilangan ia gugur: ambil $a = b = c = 2$, maka $\\gcd = 2$ dan $\\operatorname{lcm} = 2$, sedangkan hasil kalinya $8$.</p>",
+   "rubrik": [
+    "Menulis $a$ dan $b$ dalam faktorisasi prima atas himpunan prima yang sama, dengan pangkat $0$ untuk prima yang tidak muncul",
+    "Menyatakan FPB sebagai hasil kali $p^{\\min}$ dan KPK sebagai hasil kali $p^{\\max}$",
+    "Mengalikan keduanya dan menggabungkan pangkat pada tiap prima",
+    "Membuktikan $\\min(\\alpha,\\beta) + \\max(\\alpha,\\beta) = \\alpha + \\beta$, bukan sekadar memakainya",
+    "Menyimpulkan hasilnya sama dengan $ab$"
+   ]
   },
   {
    "id": "fk-contoh-1",
@@ -465,6 +784,75 @@
    "rubrik": []
   },
   {
+   "id": "kd-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "kongruensi-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan dua angka terakhir dari $7^{2026}$.</p>",
+   "jawaban": "49",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "\"Dua angka terakhir\" adalah cara lain menyebut sisa pembagian oleh sesuatu. Oleh berapa?",
+    "Kerjakan modulo $100$. Hitung pangkat-pangkat kecil $7$ sampai kamu bertemu $1$.",
+    "$7^4 = 2401 \\equiv 1 \\pmod{100}$. Sekarang tinggal urusan $2026$ dibagi $4$."
+   ],
+   "pembahasan": "<p>Dua angka terakhir sebuah bilangan sama saja dengan sisanya dibagi $100$.</p><p>Hitung pangkat kecil $7$ modulo $100$:</p><p>$$7^1 \\equiv 7, \\qquad 7^2 = 49, \\qquad 7^3 = 343 \\equiv 43, \\qquad 7^4 = 2401 \\equiv 1 \\pmod{100}$$</p><p>Begitu bertemu $1$, siklusnya tertutup: pangkatnya berulang setiap $4$ langkah.</p><p>Bagi pangkatnya oleh $4$:</p><p>$$2026 = 4 \\times 506 + 2$$</p><p>Maka</p><p>$$7^{2026} = 7^{4 \\times 506 + 2} = \\left(7^4\\right)^{506} \\times 7^2 \\equiv 1^{506} \\times 49 = 49 \\pmod{100}$$</p><p>Dua angka terakhirnya adalah $\\boxed{49}$.</p><p>Yang dicari selalu pangkat terkecil yang memberi $1$ — begitu ketemu, sisa pekerjaannya hanya membagi eksponen oleh panjang siklus itu. Jangan menebak panjangnya dari satu dua suku: di sini $7^2 = 49$ dan $7^3 \\equiv 43$ tidak memberi petunjuk apa-apa bahwa tutupnya justru di langkah keempat.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kd-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "kongruensi-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan sisa pembagian</p><p>$$1! + 2! + 3! + \\cdots + 100!$$</p><p>oleh $15$.</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Seratus suku, tapi kamu tidak akan menghitung semuanya. Cari suku-suku yang tidak menyumbang apa-apa.",
+    "$15 = 3 \\times 5$. Mulai dari suku ke berapa faktorialnya sudah memuat $3$ dan $5$ sekaligus?",
+    "Untuk $n \\ge 5$, hasil kali $1 \\times 2 \\times \\cdots \\times n$ memuat $3$ dan $5$, jadi $15 \\mid n!$. Sisanya tinggal empat suku pertama."
+   ],
+   "pembahasan": "<p>Karena $15 = 3 \\times 5$, sebuah faktorial habis dibagi $15$ begitu ia memuat faktor $3$ dan faktor $5$ sekaligus. Itu terjadi mulai dari $5!$:</p><p>$$5! = 120 = 15 \\times 8$$</p><p>Untuk setiap $n \\ge 5$, bilangan $n!$ memuat $5!$ sebagai faktor, jadi $15 \\mid n!$ juga. Artinya seluruh suku dari $5!$ sampai $100!$ menyumbang sisa $0$.</p><p>Yang tersisa hanya empat suku pertama:</p><p>$$1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33$$</p><p>Maka</p><p>$$33 = 15 \\times 2 + 3$$</p><p>Sisanya adalah $\\boxed{3}$.</p><p>Bentuk soal seperti ini — deret panjang yang ekornya runtuh menjadi nol — sangat sering muncul. Pertanyaan pertamanya selalu sama: mulai suku ke berapa modulusnya sudah termuat?</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kd-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "kongruensi-dasar"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 2,
+   "soal": "<p>Buktikan bahwa jumlah kuadrat tiga bilangan bulat berurutan tidak pernah habis dibagi $3$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Beri nama ketiganya sehingga penjumlahannya serapi mungkin. Menaruh yang tengah sebagai $n$ jauh lebih enak daripada memulai dari yang pertama.",
+    "Dengan $n-1$, $n$, $n+1$, jabarkan jumlah kuadratnya dan lihat apa yang tersisa.",
+    "Hasilnya $3n^2 + 2$. Sekarang tinjau bentuk itu modulo $3$."
+   ],
+   "pembahasan": "<p>Namai ketiga bilangan berurutan itu $n-1$, $n$, dan $n+1$ dengan $n$ bilangan bulat. Memilih yang tengah sebagai $n$ membuat suku-suku silangnya saling menghapus.</p><p>Jumlah kuadratnya:</p><p>$$(n-1)^2 + n^2 + (n+1)^2 = \\left(n^2 - 2n + 1\\right) + n^2 + \\left(n^2 + 2n + 1\\right)$$</p><p>$$= 3n^2 + 2$$</p><p>Tinjau modulo $3$. Suku $3n^2$ jelas habis dibagi $3$, sehingga</p><p>$$3n^2 + 2 \\equiv 2 \\pmod 3$$</p><p>untuk setiap bilangan bulat $n$.</p><p>Sisanya selalu $2$, tidak pernah $0$. Jadi jumlah kuadrat tiga bilangan bulat berurutan tidak pernah habis dibagi $3$. $\\blacksquare$</p><p>Hasilnya bahkan lebih kuat daripada yang diminta: sisanya bukan sekadar bukan nol, tetapi selalu tepat $2$ — berapa pun bilangan yang dipilih.</p>",
+   "rubrik": [
+    "Menamai ketiga bilangan sebagai $n-1$, $n$, $n+1$ — atau bentuk lain yang setara, asalkan benar-benar berurutan",
+    "Menjabarkan jumlah kuadratnya sampai menjadi $3n^2 + 2$",
+    "Meninjau bentuk itu modulo $3$ dan menyatakan $3n^2 \\equiv 0$",
+    "Menyimpulkan sisanya selalu $2$, sehingga tidak pernah habis dibagi $3$",
+    "Berlaku untuk <strong>setiap</strong> bilangan bulat $n$, bukan hanya yang positif"
+   ]
+  },
+  {
    "id": "kd-contoh-1",
    "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-K",
    "pilar": "teori-bilangan",
@@ -568,6 +956,55 @@
    ],
    "pembahasan": "<p>Kalikan dengan $6ab$:</p><p>$$6b + 6a = ab \\quad\\Longrightarrow\\quad ab - 6a - 6b = 0$$</p><p>Tambahkan $36$ ke kedua ruas supaya ruas kiri bisa difaktorkan:</p><p>$$ab - 6a - 6b + 36 = 36 \\quad\\Longrightarrow\\quad (a-6)(b-6) = 36$$</p><p>Karena $\\frac{1}{a} &lt; \\frac{1}{6}$, pastilah $a &gt; 6$, jadi $a - 6$ dan $b - 6$ keduanya bulat positif. Dengan syarat $a \\le b$, pasangan pembagi $36$ yang memenuhi $d \\le e$ dan $de = 36$ ada lima:</p><p>$$(1,36),\\ (2,18),\\ (3,12),\\ (4,9),\\ (6,6)$$</p><p>memberi $(a,b) = (7,42), (8,24), (9,18), (10,15), (12,12)$ — ada $\\boxed{5}$ pasangan.</p><p>Trik menambahkan konstanta agar bisa difaktorkan ini sering disebut <em>pemfaktoran Simon</em>. Begitu kamu melihat $xy + px + qy$, refleks pertamanya adalah menambahkan $pq$.</p>",
    "rubrik": []
+  },
+  {
+   "id": "ket-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "keterbagian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Bilangan bulat positif $n$ habis dibagi $6$, dan $n^2$ habis dibagi $45$. Tentukan nilai terkecil $n$ yang mungkin.</p>",
+   "jawaban": "30",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ada dua syarat sekaligus. Pecah keduanya menjadi syarat atas faktor-faktor prima.",
+    "$45 = 3^2 \\times 5$. Kalau $5$ membagi $n^2$, apa yang bisa kamu simpulkan tentang $n$ sendiri?",
+    "Karena $5$ prima, $5 \\mid n^2$ memaksa $5 \\mid n$. Sekarang gabungkan dengan $6 \\mid n$."
+   ],
+   "pembahasan": "<p>Terjemahkan kedua syarat ke dalam faktor prima.</p><p>Syarat pertama: $6 = 2 \\times 3$, jadi $2 \\mid n$ dan $3 \\mid n$.</p><p>Syarat kedua: $45 = 3^2 \\times 5$, jadi $9 \\mid n^2$ dan $5 \\mid n^2$.</p><p>Bagian $5 \\mid n^2$ itu yang menentukan. Karena $5$ prima, kalau $5$ membagi hasil kali $n \\times n$ maka $5$ harus membagi salah satu faktornya — dan kedua faktornya sama, jadi $5 \\mid n$.</p><p>Bagian $9 \\mid n^2$ tidak menambah apa pun: dari $3 \\mid n$ sudah otomatis $9 \\mid n^2$.</p><p>Jadi $n$ habis dibagi $2$, $3$, dan $5$ sekaligus, sehingga $30 \\mid n$. Nilai terkecilnya</p><p>$$n = \\boxed{30}$$</p><p>Periksa: $30$ habis dibagi $6$, dan $30^2 = 900 = 45 \\times 20$.</p><p>Langkah $5 \\mid n^2 \\Rightarrow 5 \\mid n$ bertumpu pada $5$ yang prima. Untuk modulus yang bukan prima langkah itu tidak sah — misalnya $4 \\mid 6^2$ padahal $4 \\nmid 6$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ket-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "keterbagian"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa $n^5 - n$ habis dibagi $30$ untuk setiap bilangan bulat $n$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "$30$ terlalu besar untuk diserang langsung. Pecah dulu jadi bagian-bagian yang lebih kecil.",
+    "$30 = 2 \\times 3 \\times 5$, dan ketiganya saling asing — jadi cukup buktikan keterbagian oleh masing-masing.",
+    "Mulai dengan memfaktorkan: $n^5 - n = n(n^4 - 1) = (n-1)n(n+1)(n^2+1)$."
+   ],
+   "pembahasan": "<p>Karena $30 = 2 \\times 3 \\times 5$ dengan ketiga faktornya saling asing, cukup dibuktikan bahwa $n^5 - n$ habis dibagi $2$, oleh $3$, dan oleh $5$ secara terpisah.</p><p>Faktorkan lebih dulu:</p><p>$$n^5 - n = n(n^4 - 1) = n(n^2-1)(n^2+1) = (n-1)\\,n\\,(n+1)\\,(n^2+1)$$</p><p><strong>Habis dibagi $2$ dan $3$.</strong> Bagian $(n-1)n(n+1)$ adalah tiga bilangan bulat berurutan. Di antara tiga bilangan berurutan pasti ada yang genap, jadi hasil kalinya habis dibagi $2$. Pasti pula ada tepat satu yang habis dibagi $3$, jadi hasil kalinya habis dibagi $3$.</p><p><strong>Habis dibagi $5$.</strong> Tinjau $n$ menurut sisanya dibagi $5$.</p><ul><li>Jika $n \\equiv 0 \\pmod 5$, maka $5 \\mid n$.</li><li>Jika $n \\equiv 1 \\pmod 5$, maka $5 \\mid n - 1$.</li><li>Jika $n \\equiv 4 \\pmod 5$, maka $5 \\mid n + 1$.</li><li>Jika $n \\equiv 2$ atau $n \\equiv 3 \\pmod 5$, maka $n^2 \\equiv 4 \\pmod 5$, sehingga $n^2 + 1 \\equiv 5 \\equiv 0 \\pmod 5$.</li></ul><p>Kelima kemungkinan sisa sudah tercakup, jadi $5 \\mid n^5 - n$ selalu.</p><p>Karena $2$, $3$, dan $5$ saling asing dan ketiganya membagi $n^5 - n$, hasil kalinya juga membagi:</p><p>$$30 \\mid n^5 - n \\qquad \\blacksquare$$</p><p>Dua kasus terakhir itu yang paling mudah terlewat. Kalau kamu hanya melihat $(n-1)n(n+1)$, kamu kehilangan $n \\equiv 2, 3$ — dan di situlah faktor $n^2+1$ bekerja.</p>",
+   "rubrik": [
+    "Memecah $30$ menjadi $2 \\times 3 \\times 5$ dan menyebutkan bahwa ketiganya saling asing, sehingga keterbagian boleh dibuktikan terpisah lalu digabung",
+    "Memfaktorkan $n^5 - n = (n-1)n(n+1)(n^2+1)$",
+    "Menyimpulkan keterbagian oleh $2$ dan oleh $3$ dari tiga bilangan berurutan",
+    "Membuktikan keterbagian oleh $5$ dengan meninjau seluruh sisa $n$ modulo $5$",
+    "Menangani kasus $n \\equiv 2, 3 \\pmod 5$ lewat faktor $n^2 + 1$",
+    "Menggabungkan ketiganya menjadi kesimpulan $30 \\mid n^5 - n$"
+   ]
   },
   {
    "id": "ket-contoh-1",
@@ -728,6 +1165,96 @@
    "rubrik": []
   },
   {
+   "id": "ts-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "tau-sigma"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan $\\sigma(60)$, yaitu jumlah semua faktor positif dari $60$.</p>",
+   "jawaban": "168",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Mendaftar semua faktornya bisa, tapi ada cara yang tidak menuntut ketelitian sebanyak itu.",
+    "Faktorkan $60$ atas prima lebih dulu, lalu pakai rumus jumlah faktor.",
+    "Setiap faktor berbentuk $2^a 3^b 5^c$; menjumlahkan semuanya sama dengan mengalikan $(1+2+4)(1+3)(1+5)$."
+   ],
+   "pembahasan": "<p>Faktorkan:</p><p>$$60 = 2^2 \\times 3 \\times 5$$</p><p>Setiap faktor positif $60$ berbentuk $2^a 3^b 5^c$ dengan $0 \\le a \\le 2$, $0 \\le b \\le 1$, dan $0 \\le c \\le 1$. Menjumlahkan seluruhnya sama dengan menjabarkan hasil kali</p><p>$$\\sigma(60) = \\left(1 + 2 + 2^2\\right)\\left(1 + 3\\right)\\left(1 + 5\\right)$$</p><p>sebab setiap suku pada penjabarannya memilih satu pangkat dari tiap kurung, dan setiap faktor $60$ muncul tepat sekali.</p><p>$$\\sigma(60) = 7 \\times 4 \\times 6 = \\boxed{168}$$</p><p>Periksa dengan mendaftar: $1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60$ — dua belas faktor, berjumlah $168$. Cocok pula dengan $\\tau(60) = 3 \\times 2 \\times 2 = 12$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ts-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "tau-sigma"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa bilangan asli $n &lt; 100$ yang memenuhi $\\tau(n) = 3$, yaitu punya tepat tiga faktor positif?</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Angka $3$ itu sangat kaku — ia prima. Tanyakan dengan berapa cara $3$ bisa ditulis sebagai hasil kali bilangan-bilangan yang semuanya lebih dari $1$.",
+    "Kalau $n = p_1^{a_1} \\cdots p_k^{a_k}$ maka $\\tau(n) = (a_1+1)\\cdots(a_k+1)$. Karena $3$ prima, hasil kali itu hanya boleh punya satu faktor.",
+    "Jadi $n$ berbentuk $p^2$ dengan $p$ prima. Tinggal cacah yang kurang dari $100$."
+   ],
+   "pembahasan": "<p>Kalau $n = p_1^{a_1} p_2^{a_2} \\cdots p_k^{a_k}$, maka</p><p>$$\\tau(n) = (a_1 + 1)(a_2 + 1) \\cdots (a_k + 1)$$</p><p>Kita menuntut hasil kali itu bernilai $3$. Karena $3$ prima, ia tidak bisa ditulis sebagai hasil kali dua bilangan yang keduanya lebih dari $1$. Jadi hanya boleh ada satu kurung, artinya $k = 1$, dan kurung itu bernilai $3$:</p><p>$$a_1 + 1 = 3 \\quad\\Longrightarrow\\quad a_1 = 2$$</p><p>Maka $n = p^2$ untuk suatu prima $p$. Syarat $n &lt; 100$ memberi $p^2 &lt; 100$, yaitu $p &lt; 10$:</p><p>$$p = 2, 3, 5, 7 \\quad\\Longrightarrow\\quad n = 4, 9, 25, 49$$</p><p>Ada $\\boxed{4}$ bilangan.</p><p>Perhatikan bahwa ketiga faktor $p^2$ adalah $1$, $p$, dan $p^2$ — persis tiga, dan itu cocok. Sebaliknya $p^3$ punya empat faktor, dan $pq$ dengan $p \\ne q$ punya empat juga. Bilangan berfaktor tepat tiga selalu kuadrat suatu prima.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ts-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "tau-sigma"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan jumlah semua faktor positif dari $2^4 \\times 3^3$ yang merupakan kelipatan $6$.</p>",
+   "jawaban": "1170",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Rumus $\\sigma$ menjumlahkan <strong>semua</strong> faktor. Di sini hanya sebagian yang diminta, jadi rumusnya belum bisa dipakai langsung.",
+    "Tulis syaratnya sebagai batasan pangkat: faktor berbentuk $2^a 3^b$ yang kelipatan $6$ berarti $a \\ge 1$ dan $b \\ge 1$.",
+    "Keluarkan satu $6$ dari setiap faktor semacam itu — yang tersisa adalah faktor sembarang dari $2^3 \\times 3^2$."
+   ],
+   "pembahasan": "<p>Setiap faktor positif $2^4 \\times 3^3$ berbentuk $2^a 3^b$ dengan $0 \\le a \\le 4$ dan $0 \\le b \\le 3$. Faktor itu kelipatan $6 = 2 \\times 3$ tepat ketika $a \\ge 1$ <strong>dan</strong> $b \\ge 1$.</p><p>Keluarkan satu faktor $6$ dari masing-masing:</p><p>$$2^a 3^b = 6 \\times 2^{a-1} 3^{b-1}, \\qquad 0 \\le a - 1 \\le 3, \\quad 0 \\le b - 1 \\le 2$$</p><p>Jadi faktor-faktor yang diminta persis $6$ dikali faktor sembarang dari $2^3 \\times 3^2$ — dan pemetaan itu satu-satu ke kedua arah. Maka jumlahnya</p><p>$$6 \\times \\sigma\\left(2^3 \\times 3^2\\right)\n= 6 \\times \\left(1 + 2 + 4 + 8\\right)\\left(1 + 3 + 9\\right)$$</p><p>$$= 6 \\times 15 \\times 13 = \\boxed{1170}$$</p><p>Sebagai pemeriksaan kasar: $\\sigma\\left(2^4 3^3\\right) = 31 \\times 40 = 1240$, dan jumlah yang bukan kelipatan $6$ adalah $1240 - 1170 = 70$. Memang benar: faktor yang bukan kelipatan $6$ adalah yang kehilangan $2$ atau kehilangan $3$, yaitu $\\left(1+3+9+27\\right) + \\left(1+2+4+8+16\\right) - 1 = 40 + 31 - 1 = 70$.</p><p>Teknik \"keluarkan dulu bagian yang wajib\" ini bekerja untuk syarat kelipatan apa pun, asalkan yang wajib itu benar-benar membagi bilangannya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "ts-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "tau-sigma"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa hasil kali semua faktor positif dari bilangan asli $n$ sama dengan $n^{\\tau(n)/2}$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Eksponen $\\tau(n)/2$ itu memberi petunjuk: separuh dari banyaknya faktor. Kenapa separuh?",
+    "Setiap faktor $d$ punya pasangan $n/d$, dan pasangan itu juga faktor $n$. Berapa hasil kali sepasang?",
+    "Kalikan seluruh faktor dua kali — sekali urut naik, sekali urut turun — lalu bandingkan dengan hasil kali yang dicari."
+   ],
+   "pembahasan": "<p>Misalkan $P$ adalah hasil kali semua faktor positif $n$, dan tulis faktor-faktornya</p><p>$$d_1, d_2, \\ldots, d_m, \\qquad m = \\tau(n)$$</p><p>Kuncinya: kalau $d$ faktor $n$, maka $n/d$ juga faktor $n$. Lebih dari itu, pemetaan $d \\mapsto n/d$ menukar-nukar daftar faktor itu di antara dirinya sendiri — ia memasangkan setiap faktor dengan faktor lain, dan tidak ada yang keluar dari daftar.</p><p>Karena itu, mengalikan seluruh $n/d_i$ sama saja dengan mengalikan seluruh $d_i$:</p><p>$$\\prod_{i=1}^{m} \\frac{n}{d_i} = \\prod_{i=1}^{m} d_i = P$$</p><p>Di sisi lain, ruas kirinya bisa dihitung langsung:</p><p>$$\\prod_{i=1}^{m} \\frac{n}{d_i} = \\frac{n^m}{\\prod_{i=1}^{m} d_i} = \\frac{n^m}{P}$$</p><p>Menyamakan keduanya:</p><p>$$P = \\frac{n^m}{P} \\quad\\Longrightarrow\\quad P^2 = n^m \\quad\\Longrightarrow\\quad\nP = n^{m/2} = n^{\\tau(n)/2}$$</p><p>Akar positif yang diambil, karena $P$ hasil kali bilangan-bilangan positif. $\\blacksquare$</p><p>Eksponen $\\tau(n)/2$ boleh saja bukan bilangan bulat — itu terjadi tepat ketika $\\tau(n)$ ganjil, yaitu ketika $n$ kuadrat sempurna. Contohnya $n = 9$: faktornya $1, 3, 9$ dengan hasil kali $27$, dan memang $9^{3/2} = 27$.</p>",
+   "rubrik": [
+    "Menyatakan pemasangan $d \\leftrightarrow n/d$ dan bahwa $n/d$ memang faktor $n$",
+    "Menyatakan bahwa pemetaan itu memindahkan daftar faktor ke dirinya sendiri, sehingga hasil kali seluruh $n/d_i$ sama dengan hasil kali seluruh $d_i$",
+    "Menghitung $\\prod (n/d_i) = n^{\\tau(n)}/P$",
+    "Menyusun persamaan $P^2 = n^{\\tau(n)}$ dan menyelesaikannya",
+    "Menyebut bahwa akar yang diambil positif"
+   ]
+  },
+  {
    "id": "ts-contoh-1",
    "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-K",
    "pilar": "teori-bilangan",
@@ -814,6 +1341,75 @@
     "Menyatakan bahwa kumpulan digitnya sama, hanya pangkat $10$-nya yang bertukar",
     "Memakai $10 \\equiv 1 \\pmod 9$ sehingga setiap $10^j \\equiv 1$",
     "Menyimpulkan $N$ dan $M$ sama-sama kongruen dengan jumlah digitnya, lalu selisihnya $\\equiv 0$"
+   ]
+  },
+  {
+   "id": "uk-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "uji-keterbagian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Digit $a$ dipilih sehingga bilangan lima digit $\\overline{2a1a4}$ habis dibagi $3$. Ada berapa nilai $a$ yang mungkin?</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Untuk keterbagian oleh $3$, seluruh nilai tempatnya tidak penting — ada besaran lain yang menentukan.",
+    "Sebuah bilangan habis dibagi $3$ tepat ketika jumlah digitnya habis dibagi $3$.",
+    "Jumlah digitnya $7 + 2a$. Sekarang cari digit $a$ yang membuatnya kelipatan $3$."
+   ],
+   "pembahasan": "<p>Sebuah bilangan habis dibagi $3$ tepat ketika jumlah digitnya habis dibagi $3$. Sebabnya, setiap nilai tempat bersisa $1$ modulo $3$: $10 \\equiv 1$, $100 \\equiv 1$, dan seterusnya, sehingga bilangannya kongruen dengan jumlah digitnya.</p><p>Jumlah digit $\\overline{2a1a4}$ adalah</p><p>$$2 + a + 1 + a + 4 = 7 + 2a$$</p><p>Syaratnya $3 \\mid 7 + 2a$. Karena $7 \\equiv 1$ dan $2 \\equiv -1 \\pmod 3$:</p><p>$$7 + 2a \\equiv 1 - a \\pmod 3$$</p><p>Jadi dibutuhkan $a \\equiv 1 \\pmod 3$. Digit yang memenuhi:</p><p>$$a = 1, 4, 7$$</p><p>Periksa satu: $a = 4$ memberi $24144$ dengan jumlah digit $15$, memang kelipatan $3$.</p><p>Ada $\\boxed{3}$ nilai.</p><p>Perhatikan bahwa $a$ terbatas pada $0$ sampai $9$ karena ia sebuah digit. Kalau batas itu dilupakan, jawabannya akan tak hingga.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "uk-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "uji-keterbagian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan sisa pembagian bilangan</p><p>$$\\underbrace{111\\cdots1}_{2026 \\text{ digit}}$$</p><p>oleh $9$.</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Bilangannya terlalu besar untuk dibagi langsung, tapi bentuknya sangat teratur. Apa yang mudah dihitung darinya?",
+    "Sisa pembagian oleh $9$ sama dengan sisa pembagian jumlah digitnya oleh $9$.",
+    "Semua digitnya $1$ dan ada $2026$ buah, jadi jumlah digitnya $2026$. Tinggal $2026$ dibagi $9$."
+   ],
+   "pembahasan": "<p>Sisa pembagian sebuah bilangan oleh $9$ sama dengan sisa pembagian jumlah digitnya oleh $9$ — karena setiap nilai tempat bersisa $1$ modulo $9$.</p><p>Bilangan itu terdiri atas $2026$ digit yang semuanya $1$, jadi jumlah digitnya</p><p>$$\\underbrace{1 + 1 + \\cdots + 1}_{2026} = 2026$$</p><p>Sekarang tinggal mencari sisa $2026$ dibagi $9$. Pakai aturan yang sama sekali lagi: jumlah digit $2026$ adalah $2 + 0 + 2 + 6 = 10$, dan jumlah digit $10$ adalah $1$.</p><p>Jadi sisanya $\\boxed{1}$.</p><p>Periksa langsung: $2026 = 9 \\times 225 + 1$.</p><p>Aturan jumlah digit boleh dipakai berulang sampai bilangannya cukup kecil untuk dilihat sekaligus. Hasil akhirnya disebut akar digital, dan untuk bilangan yang bukan kelipatan $9$ ia persis sama dengan sisanya dibagi $9$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "uk-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-K",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-k",
+   "jurus": [
+    "uji-keterbagian"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa sebuah bilangan asli habis dibagi $11$ jika dan hanya jika selisih berselang-seling digit-digitnya habis dibagi $11$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Aturan digit selalu datang dari sifat nilai tempatnya. Hitung dulu $10^k$ modulo modulusnya.",
+    "Modulo $11$, bilangan $10 \\equiv -1$. Jadi berapa nilai $10^k$ modulo $11$?",
+    "Tulis bilangannya sebagai $\\sum a_k 10^k$, ganti setiap $10^k$ dengan $(-1)^k$, dan lihat apa yang tersisa."
+   ],
+   "pembahasan": "<p>Tulis bilangan asli $N$ atas digit-digitnya:</p><p>$$N = a_m 10^m + a_{m-1} 10^{m-1} + \\cdots + a_1 \\cdot 10 + a_0$$</p><p>dengan $a_0$ digit satuan.</p><p>Kuncinya ada pada nilai tempat. Modulo $11$,</p><p>$$10 \\equiv -1 \\pmod{11} \\quad\\Longrightarrow\\quad 10^k \\equiv (-1)^k \\pmod{11}$$</p><p>Jadi nilai tempat genap bersisa $1$ dan nilai tempat ganjil bersisa $-1$.</p><p>Substitusikan ke $N$:</p><p>$$N \\equiv a_m (-1)^m + a_{m-1}(-1)^{m-1} + \\cdots - a_1 + a_0 \\pmod{11}$$</p><p>Ruas kanannya persis selisih berselang-seling digit-digit $N$; sebutlah $S$:</p><p>$$S = a_0 - a_1 + a_2 - a_3 + \\cdots$$</p><p>Maka $N \\equiv S \\pmod{11}$.</p><p>Karena keduanya kongruen modulo $11$, salah satunya habis dibagi $11$ tepat ketika yang lain juga:</p><p>$$11 \\mid N \\iff 11 \\mid S$$</p><p>$\\blacksquare$</p><p>Perhatikan bahwa yang dibuktikan lebih kuat daripada yang diminta: bukan hanya keterbagiannya yang sejalan, melainkan <strong>sisanya sama</strong>. Contohnya $N = 3729$ memberi $S = 9 - 2 + 7 - 3 = 11$, jadi $11 \\mid 3729$; memang $3729 = 11 \\times 339$.</p><p>Aturan untuk $3$ dan $9$ lahir dari langkah yang sama, hanya saja di sana $10 \\equiv 1$ sehingga semua digit bertanda sama — itulah kenapa yang muncul jumlah digit, bukan selisih berselang-seling.</p>",
+   "rubrik": [
+    "Menulis $N$ sebagai $\\sum a_k 10^k$ dengan $a_k$ digit-digitnya",
+    "Menghitung $10 \\equiv -1 \\pmod{11}$ dan menyimpulkan $10^k \\equiv (-1)^k$",
+    "Mensubstitusikan itu untuk memperoleh $N \\equiv \\sum a_k (-1)^k \\pmod{11}$",
+    "Mengenali ruas kanan sebagai selisih berselang-seling digit",
+    "Menyimpulkan <strong>kedua arah</strong> dari \"jika dan hanya jika\" — kekongruenan memberi keduanya sekaligus, tapi itu perlu dinyatakan"
    ]
   },
   {

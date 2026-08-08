@@ -5,7 +5,7 @@ pilar: teori-bilangan
 tahap: osn-k
 prasyarat: [bilangan-prima]
 contoh: [ts-contoh-1]
-latihan: [ts-01, ts-02]
+latihan: [ts-01, ts-02, ts-03, ts-04, ts-05, ts-06]
 ---
 
 ## Kapan dipakai

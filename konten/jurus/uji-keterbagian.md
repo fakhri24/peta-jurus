@@ -5,7 +5,7 @@ pilar: teori-bilangan
 tahap: osn-k
 prasyarat: [kongruensi-dasar]
 contoh: [uk-contoh-1]
-latihan: [uk-01, uk-02, uk-03]
+latihan: [uk-01, uk-02, uk-03, uk-04, uk-05, uk-06]
 ---
 
 ## Kapan dipakai

@@ -25,7 +25,9 @@
     "ket-01",
     "ket-02",
     "ket-03",
-    "ket-04"
+    "ket-04",
+    "ket-05",
+    "ket-06"
    ],
    "kapan_dipakai": "<p>Soal menyebut kata <em>habis dibagi</em>, <em>kelipatan</em>, <em>faktor</em>, atau <em>sisa</em>. Juga saat kamu melihat bentuk seperti $n \\mid a$ dan ingin menariknya jadi persamaan.</p>",
    "inti": "<p>$a \\mid b$ dibaca \"$a$ membagi $b$\", artinya ada bilangan bulat $k$ dengan $b = ak$.</p><p>Kalimat kuncinya: <strong>keterbagian itu selalu bisa diubah jadi persamaan.</strong> Begitu kamu tulis $b = ak$, soalnya berpindah dari bahasa \"habis dibagi\" ke bahasa aljabar biasa.</p><p>Empat sifat yang dipakai hampir setiap hari:</p><ol><li>Kalau $a \\mid b$ dan $a \\mid c$, maka $a \\mid (bx + cy)$ untuk sembarang bulat $x, y$.</li><li>Kalau $a \\mid b$ dan $b \\mid c$, maka $a \\mid c$.</li><li>Kalau $a \\mid b$ dan $b \\neq 0$, maka $|a| \\le |b|$.</li><li>$a \\mid b$ dan $b \\mid a$ berarti $a = \\pm b$.</li></ol><p>Sifat pertama yang paling sering menyelamatkan. Kalau dua bilangan sama-sama habis dibagi $d$, maka <strong>selisihnya</strong> juga — dan selisih biasanya jauh lebih sederhana daripada kedua bilangan asalnya.</p>",
@@ -48,7 +50,10 @@
    "latihan": [
     "ap-01",
     "ap-02",
-    "ap-03"
+    "ap-03",
+    "ap-04",
+    "ap-05",
+    "ap-06"
    ],
    "kapan_dipakai": "<p>Soal berbicara tentang <strong>sisa</strong>, atau kamu ingin membagi semua bilangan bulat menjadi beberapa golongan untuk diperiksa satu per satu.</p>",
    "inti": "<p>Untuk sembarang bulat $a$ dan bulat positif $b$, ada tepat satu pasang $q$ dan $r$ dengan</p><p>$$a = bq + r, \\qquad 0 \\le r &lt; b$$</p><p>Kata <strong>tepat satu</strong> itu yang bekerja. Karena sisanya tunggal dan pasti berada di $\\{0, 1, \\dots, b-1\\}$, seluruh bilangan bulat terbelah rapi jadi $b$ golongan.</p><p>Dari sini lahir jurus paling murah dalam teori bilangan: <strong>periksa semua kemungkinan sisa</strong>. Kalau soal melibatkan pembagian oleh $3$, cukup tulis $n = 3k$, $n = 3k+1$, $n = 3k+2$ dan kerjakan tiga kasus. Tiga kasus itu meliputi semua bilangan bulat di dunia — tanpa terkecuali.</p>",
@@ -71,7 +76,10 @@
    "latihan": [
     "bp-01",
     "bp-02",
-    "bp-03"
+    "bp-03",
+    "bp-04",
+    "bp-05",
+    "bp-06"
    ],
    "kapan_dipakai": "<p>Soal menyebut prima, atau meminta sesuatu tentang <strong>struktur</strong> sebuah bilangan: banyaknya faktor, kuadrat sempurna, pangkat tiga sempurna, atau kapan dua bilangan tidak berbagi faktor.</p>",
    "inti": "<p>Setiap bilangan bulat $n &gt; 1$ punya penulisan tunggal</p><p>$$n = p_1^{a_1} p_2^{a_2} \\cdots p_k^{a_k}$$</p><p>dengan $p_i$ prima berbeda. Ini <strong>Teorema Dasar Aritmetika</strong>, dan ketunggalannya itulah seluruh kekuatannya: dua penulisan yang tampak berbeda untuk bilangan yang sama harus punya pangkat prima yang identik. Menyamakan pangkat di kedua ruas adalah langkah yang sering menyelesaikan soal dalam satu tarikan.</p><p>Dua sifat turunan yang paling sering dipakai:</p><ol><li><strong>Lema Euclid.</strong> Kalau $p$ prima dan $p \\mid ab$, maka $p \\mid a$ atau $p \\mid b$. Sifat ini khas prima — untuk komposit tidak berlaku ($6 \\mid 4 \\cdot 9$ tapi $6$ tidak membagi $4$ maupun $9$).</li><li>$n$ adalah <strong>kuadrat sempurna</strong> tepat ketika semua pangkat $a_i$ genap. Pangkat tiga sempurna: semua $a_i$ kelipatan tiga.</li></ol><p>Untuk menguji keprimaan $n$, cukup coba bagi dengan prima sampai $\\sqrt{n}$ — kalau tidak ada yang membagi, $n$ prima.</p>",
@@ -94,7 +102,10 @@
    "latihan": [
     "kd-01",
     "kd-02",
-    "kd-03"
+    "kd-03",
+    "kd-04",
+    "kd-05",
+    "kd-06"
    ],
    "kapan_dipakai": "<p>Hampir selalu, begitu soal menyebut sisa pembagian — dan terutama saat kamu ingin <strong>membuktikan sesuatu tidak mungkin</strong>. Kongruensi adalah alat pembuktian ketidakmungkinan yang paling murah yang kamu punya.</p>",
    "inti": "<p>$a \\equiv b \\pmod{m}$ berarti $m \\mid (a - b)$.</p><p>Kekuatannya: kongruensi boleh <strong>dijumlah, dikurang, dan dikali</strong> seperti persamaan biasa. Jadi seluruh refleks aljabarmu tetap terpakai, hanya saja dunianya menyusut jadi $m$ bilangan.</p><p>Pola pemakaian yang paling berhasil: kalau kamu curiga sebuah persamaan tidak punya solusi bulat, <strong>ambil modulo yang tepat</strong> dan tunjukkan kedua ruas tidak pernah cocok.</p><p>Modulo yang paling sering berguna, karena himpunan nilainya sempit:</p><table><thead><tr><th>Bentuk</th><th>Modulo</th><th>Nilai yang mungkin</th></tr></thead><tbody><tr><td>$x^2$</td><td>$4$</td><td>$0, 1$</td></tr><tr><td>$x^2$</td><td>$8$</td><td>$0, 1, 4$</td></tr><tr><td>$x^2$</td><td>$3$</td><td>$0, 1$</td></tr><tr><td>$x^3$</td><td>$9$</td><td>$0, 1, 8$</td></tr></tbody></table><p>Contoh cara pakainya: $x^2 + y^2 = 3z^2$ tidak punya solusi bulat tak nol, dan itu ketahuan hanya dengan melihat semuanya modulo $4$.</p>",
@@ -117,7 +128,11 @@
    ],
    "latihan": [
     "fk-01",
-    "fk-02"
+    "fk-02",
+    "fk-03",
+    "fk-04",
+    "fk-05",
+    "fk-06"
    ],
    "kapan_dipakai": "<p>Soal menyebut faktor persekutuan, kelipatan persekutuan, pecahan paling sederhana, atau kata <strong>relatif prima</strong> / <em>saling asing</em>.</p>",
    "inti": "<p>Lewat faktorisasi prima, dengan $\\gcd$ mengambil pangkat terkecil dan $\\operatorname{lcm}$ pangkat terbesar:</p><p>$$\\gcd(a,b) \\cdot \\operatorname{lcm}(a,b) = ab$$</p><p>Rumus ini sering jadi jalan pintas: kalau soal memberi $\\gcd$ dan $\\operatorname{lcm}$, kamu langsung tahu hasil kalinya.</p><p>Dua bilangan disebut <strong>relatif prima</strong> kalau $\\gcd(a,b) = 1$. Ini syarat yang muncul di mana-mana, dan gunanya satu: <strong>memisahkan</strong>. Kalau $\\gcd(m,n) = 1$ dan keduanya membagi $N$, maka $mn \\mid N$. Tanpa syarat relatif prima, kesimpulan itu palsu — $4 \\mid 12$ dan $6 \\mid 12$ tapi $24 \\nmid 12$.</p><p>Trik yang sering menolong: tulis $a = d\\alpha$, $b = d\\beta$ dengan $d = \\gcd(a,b)$ dan $\\gcd(\\alpha, \\beta) = 1$. Soal yang tadinya berantakan biasanya langsung rapi.</p>",
@@ -139,7 +154,11 @@
    ],
    "latihan": [
     "ts-01",
-    "ts-02"
+    "ts-02",
+    "ts-03",
+    "ts-04",
+    "ts-05",
+    "ts-06"
    ],
    "kapan_dipakai": "<p>Soal menghitung <strong>ada berapa</strong> faktor sebuah bilangan, menjumlahkan seluruh faktornya, atau memberi syarat seperti \"punya tepat 12 faktor\".</p>",
    "inti": "<p>Kalau $n = p_1^{a_1} \\cdots p_k^{a_k}$, maka</p><p>$$\\tau(n) = (a_1+1)(a_2+1)\\cdots(a_k+1)$$</p><p>$$\\sigma(n) = \\prod_i \\frac{p_i^{a_i+1} - 1}{p_i - 1}$$</p><p>Rumus $\\tau$ lahir dari pencacahan langsung: setiap faktor dibentuk dengan memilih pangkat $p_i$ dari $0$ sampai $a_i$ — ada $a_i + 1$ pilihan, dan pilihannya saling bebas.</p><p>Soal olimpiade biasanya membalik arahnya: diberi $\\tau(n) = 12$, cari $n$ yang memenuhi. Karena $12 = 12 = 6\\cdot2 = 4\\cdot3 = 3\\cdot2\\cdot2$, pola pangkatnya cuma beberapa kemungkinan — dan pencacahannya berhingga.</p><p>Satu fakta yang sering jadi kunci: <strong>$\\tau(n)$ ganjil tepat ketika $n$ kuadrat sempurna</strong>, karena faktor selalu berpasangan $d \\leftrightarrow n/d$ kecuali saat $d = \\sqrt{n}$.</p>",
@@ -201,7 +220,10 @@
    "latihan": [
     "uk-01",
     "uk-02",
-    "uk-03"
+    "uk-03",
+    "uk-04",
+    "uk-05",
+    "uk-06"
    ],
    "kapan_dipakai": "<p>Soal berbicara tentang <strong>angka penyusun</strong> bilangan: jumlah digit, digit terakhir, membalik urutan digit, atau mencari digit yang hilang.</p>",
    "inti": "<p>Kuncinya satu baris. Bilangan dengan digit $d_k \\dots d_1 d_0$ bernilai</p><p>$$N = \\sum_{i} d_i \\cdot 10^i$$</p><p>Semua uji keterbagian lahir dari melihat $10^i$ modulo sesuatu:</p><ul><li>$10 \\equiv 1 \\pmod 9$, jadi $N \\equiv$ jumlah digitnya $\\pmod 9$. Hal yang sama berlaku modulo $3$.</li><li>$10 \\equiv -1 \\pmod{11}$, jadi $N \\equiv$ jumlah digit berselang-seling $\\pmod{11}$.</li><li>$10^3 = 1000 \\equiv 1 \\pmod{37}$, jadi digit yang dikelompokkan tiga-tiga bekerja untuk $37$.</li><li>$2^k \\mid 10^k$, jadi keterbagian oleh $8$ hanya bergantung pada tiga digit terakhir.</li></ul><p>Satu fakta turunan yang sering menutup soal: <strong>sebuah bilangan dan jumlah digitnya selalu kongruen modulo $9$.</strong> Karena itu keduanya punya sisa yang sama — dan itu memasung kemungkinan yang harus diperiksa.</p>",
@@ -241,7 +263,11 @@
    ],
    "latihan": [
     "ae-01",
-    "ae-02"
+    "ae-02",
+    "ae-03",
+    "ae-04",
+    "ae-05",
+    "ae-06"
    ],
    "kapan_dipakai": "<p>Kamu perlu $\\gcd$ dari bilangan yang terlalu besar untuk difaktorkan — atau, jauh lebih sering di olimpiade, kamu perlu $\\gcd$ dari dua <strong>bentuk aljabar</strong> seperti $\\gcd(n+1,\\, n^2+3)$.</p>",
    "inti": "<p>$$\\gcd(a, b) = \\gcd(b,\\ a \\bmod b)$$</p><p>Ulangi sampai sisanya nol; yang tersisa itulah FPB-nya. Tidak perlu memfaktorkan apa pun.</p><p>Untuk olimpiade, bentuk yang paling berguna adalah versi selisihnya:</p><p>$$\\gcd(a, b) = \\gcd(a - b,\\ b)$$</p><p>Karena setiap pembagi bersama $a$ dan $b$ juga membagi selisihnya. Inilah alat untuk menjinakkan $\\gcd$ berbentuk aljabar: kurangi kelipatan yang pas sampai variabelnya lenyap dan tinggal konstanta.</p><blockquote><p>Contoh alurnya: $\\gcd(n+1,\\, n^2+3)$. Karena $n^2 + 3 = (n+1)(n-1) + 4$, maka $\\gcd(n+1,\\, n^2+3) = \\gcd(n+1,\\, 4)$ — dan sisanya tinggal memeriksa $n+1$ modulo $4$.</p></blockquote>",

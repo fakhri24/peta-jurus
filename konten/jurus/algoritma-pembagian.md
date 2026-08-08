@@ -5,7 +5,7 @@ pilar: teori-bilangan
 tahap: osn-k
 prasyarat: [keterbagian]
 contoh: [ap-contoh-1]
-latihan: [ap-01, ap-02, ap-03]
+latihan: [ap-01, ap-02, ap-03, ap-04, ap-05, ap-06]
 ---
 
 ## Kapan dipakai

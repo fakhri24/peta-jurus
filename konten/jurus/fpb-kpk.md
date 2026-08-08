@@ -5,7 +5,7 @@ pilar: teori-bilangan
 tahap: osn-k
 prasyarat: [algoritma-pembagian, bilangan-prima]
 contoh: [fk-contoh-1]
-latihan: [fk-01, fk-02]
+latihan: [fk-01, fk-02, fk-03, fk-04, fk-05, fk-06]
 ---
 
 ## Kapan dipakai

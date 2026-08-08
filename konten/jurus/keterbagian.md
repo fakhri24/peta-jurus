@@ -5,7 +5,7 @@ pilar: teori-bilangan
 tahap: osn-k
 prasyarat: []
 contoh: [ket-contoh-1, ket-contoh-2]
-latihan: [ket-01, ket-02, ket-03, ket-04]
+latihan: [ket-01, ket-02, ket-03, ket-04, ket-05, ket-06]
 ---
 
 ## Kapan dipakai

@@ -5,7 +5,7 @@ pilar: teori-bilangan
 tahap: osn-k
 prasyarat: [fpb-kpk]
 contoh: [ae-contoh-1]
-latihan: [ae-01, ae-02]
+latihan: [ae-01, ae-02, ae-03, ae-04, ae-05, ae-06]
 ---
 
 ## Kapan dipakai
