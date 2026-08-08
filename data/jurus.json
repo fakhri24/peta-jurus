@@ -1,5 +1,14 @@
 {
  "ukuran": {
+  "aljabar": {
+   "lebar": 1196,
+   "tinggi": 720,
+   "tinggi_sampai": {
+    "osn-k": 496,
+    "osn-p": 608,
+    "osn": 720
+   }
+  },
   "teori-bilangan": {
    "lebar": 804,
    "tinggi": 944,
@@ -587,6 +596,383 @@
    "tingkat": 7,
    "x": 318,
    "y": 808
+  },
+  {
+   "id": "manipulasi-aljabar",
+   "nama": "Manipulasi Bentuk Aljabar",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "prasyarat": [],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Hampir selalu, sebagai langkah pertama. Kamu melihat bentuk yang berantakan dan menduga ada bentuk lain yang lebih jinak — jumlah kuadrat, hasil kali, atau pecahan yang bisa disederhanakan.</p>",
+   "inti": "<p>Beberapa identitas yang harus dikenali seketika, bukan diturunkan ulang tiap kali:</p><p>$$(a \\pm b)^2 = a^2 \\pm 2ab + b^2, \\qquad a^2 - b^2 = (a-b)(a+b)$$</p><p>$$a^3 \\pm b^3 = (a \\pm b)\\left(a^2 \\mp ab + b^2\\right)$$</p><p>$$(a+b+c)^2 = a^2+b^2+c^2 + 2(ab+bc+ca)$$</p><p>Yang paling sering menolong di olimpiade adalah yang terakhir, dibalik: begitu kamu punya $a+b+c$ dan $ab+bc+ca$, kamu punya $a^2+b^2+c^2$ tanpa tahu $a$, $b$, $c$ sama sekali.</p><p>Satu lagi yang sering menyelamatkan:</p><p>$$a^3+b^3+c^3-3abc = (a+b+c)\\left(a^2+b^2+c^2-ab-bc-ca\\right)$$</p><p>Akibatnya, kalau $a+b+c = 0$ maka $a^3+b^3+c^3 = 3abc$.</p><p><strong>Refleks yang dilatih di sini:</strong> jangan menjabarkan kalau bisa memfaktorkan, dan jangan mencari nilai tiap peubah kalau yang ditanya hanya bentuk simetrisnya.</p>",
+   "jebakan": "<ul><li><strong>Menjabarkan lebih dulu.</strong> Bentuk yang sudah terfaktor biasanya sudah berada di wujud paling berguna. Menjabarkannya membuang keterangan.</li><li><strong>Mengira harus tahu tiap peubah.</strong> Soal olimpiade sering hanya bisa dijawab lewat bentuk simetrisnya, dan memang tidak menuntut nilai satu-satu.</li><li><strong>Salah tanda pada $a^3 - b^3$.</strong> Faktor keduanya $a^2 + ab + b^2$ — tandanya berlawanan dengan faktor pertama.</li></ul>",
+   "tingkat": 0,
+   "x": 514,
+   "y": 24
+  },
+  {
+   "id": "barisan-deret",
+   "nama": "Barisan dan Deret",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "manipulasi-aljabar"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Ada pola yang berulang dengan selisih tetap atau rasio tetap — bilangan tersusun, jumlah berurutan, bunga berlipat, atau soal cerita yang menyebut \"bertambah sekian setiap\".</p>",
+   "inti": "<p><strong>Aritmetika</strong>, beda $b$:</p><p>$$U_n = a + (n-1)b, \\qquad S_n = \\frac{n}{2}\\left(2a + (n-1)b\\right) = \\frac{n}{2}(U_1 + U_n)$$</p><p><strong>Geometri</strong>, rasio $r$:</p><p>$$U_n = a r^{n-1}, \\qquad S_n = \\frac{a\\left(r^n - 1\\right)}{r - 1} \\quad (r \\ne 1)$$</p><p>Untuk $|r| &lt; 1$, deret tak hingganya menuju</p><p>$$S_\\infty = \\frac{a}{1-r}$$</p><p>Bentuk $S_n = \\frac{n}{2}(U_1 + U_n)$ layak diingat terpisah: ia membaca deret aritmetika sebagai \"banyaknya suku dikali rata-rata ujung\", dan itu sering lebih cepat daripada memasukkan $a$ dan $b$.</p><p>Dua jumlah yang muncul terus-menerus:</p><p>$$1 + 2 + \\cdots + n = \\frac{n(n+1)}{2}, \\qquad\n1^2 + 2^2 + \\cdots + n^2 = \\frac{n(n+1)(2n+1)}{6}$$</p>",
+   "jebakan": "<ul><li><strong>Salah menghitung banyak suku.</strong> Dari $7$ sampai $31$ dengan beda $3$ ada $\\frac{31-7}{3} + 1 = 9$ suku, bukan $8$. Tambahan $1$ itu hampir selalu terlupa.</li><li><strong>Memakai $S_\\infty$ tanpa memeriksa $|r| &lt; 1$.</strong> Di luar itu deretnya tidak menuju bilangan mana pun.</li><li><strong>Mengira $U_n = a + nb$.</strong> Sukunya dimulai dari $U_1 = a$, jadi yang benar $(n-1)b$.</li></ul>",
+   "tingkat": 1,
+   "x": 24,
+   "y": 136
+  },
+  {
+   "id": "eksponen-logaritma",
+   "nama": "Eksponen dan Logaritma",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "manipulasi-aljabar"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Peubah muncul di <strong>pangkat</strong>, atau soal memuat $\\log$. Juga saat kamu perlu membandingkan bilangan berpangkat besar tanpa menghitungnya.</p>",
+   "inti": "<p>Aturan pangkat, semuanya turun dari satu gagasan — pangkat mencacah berapa kali dikalikan:</p><p>$$a^m a^n = a^{m+n}, \\qquad \\frac{a^m}{a^n} = a^{m-n}, \\qquad \\left(a^m\\right)^n = a^{mn},\n\\qquad a^{-n} = \\frac{1}{a^n}$$</p><p>Logaritma adalah kebalikannya:</p><p>$$\\log_a b = c \\iff a^c = b$$</p><p>sehingga aturan pangkat berubah menjadi aturan logaritma:</p><p>$$\\log_a (xy) = \\log_a x + \\log_a y, \\qquad \\log_a x^n = n \\log_a x,\n\\qquad \\log_a x = \\frac{\\log_b x}{\\log_b a}$$</p><p>Aturan terakhir — ganti basis — yang paling sering dibutuhkan, karena ia menyatukan logaritma berbasis berbeda menjadi satu peubah.</p><p><strong>Untuk persamaan eksponen</strong>, kuncinya menyamakan basis: dari $a^{f(x)} = a^{g(x)}$ dengan $a &gt; 0$, $a \\ne 1$, diperoleh $f(x) = g(x)$.</p><p><strong>Untuk membandingkan pangkat besar</strong>, samakan pangkatnya alih-alih menghitung: $2^{100} = \\left(2^{10}\\right)^{10} = 1024^{10}$ dan $3^{60} = \\left(3^6\\right)^{10} =\n729^{10}$, jadi yang pertama lebih besar.</p>",
+   "jebakan": "<ul><li><strong>Lupa syarat domain.</strong> Pada $\\log_a x$, dibutuhkan $x &gt; 0$, $a &gt; 0$, dan $a \\ne 1$. Solusi yang melanggar itu harus dibuang.</li><li><strong>Mengira $\\log(x+y) = \\log x + \\log y$.</strong> Yang benar berlaku untuk hasil kali.</li><li><strong>Membagi kedua ruas dengan $a^{f(x)}$</strong> tanpa menyadari nilainya tidak pernah nol — itu aman, tetapi kebalikannya, mengalikan dengan sesuatu yang bisa nol, tidak.</li></ul>",
+   "tingkat": 1,
+   "x": 220,
+   "y": 136
+  },
+  {
+   "id": "faktorisasi",
+   "nama": "Faktorisasi",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "manipulasi-aljabar"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Ruas kanan bernilai nol, atau kamu perlu mengubah jumlah menjadi hasil kali supaya bisa memakai \"hasil kali nol\" atau mencacah pasangan pembagi.</p>",
+   "inti": "<p>Empat cara yang menutup hampir semua soal OSN-K:</p><ol><li><strong>Faktor persekutuan.</strong> Selalu dicoba lebih dulu.</li><li><strong>Pengelompokan.</strong> $ax + ay + bx + by = (a+b)(x+y)$.</li><li><strong>Bentuk kuadrat.</strong> $x^2 + (p+q)x + pq = (x+p)(x+q)$ — cari dua bilangan yang berjumlah koefisien tengah dan berhasil kali konstanta.</li><li><strong>Identitas.</strong> Selisih kuadrat, jumlah dan selisih pangkat tiga.</li></ol><p>Yang membuat faktorisasi berharga adalah akibatnya: dari $AB = 0$ langsung diperoleh $A = 0$ atau $B = 0$. Persamaan berderajat tinggi runtuh menjadi beberapa persamaan sederhana.</p><p>Untuk soal bilangan bulat, akibatnya berbeda tetapi sama kuatnya: dari $AB = n$ dengan $A$ dan $B$ bulat, keduanya harus berupa pasangan pembagi $n$ — dan pembagi $n$ jumlahnya berhingga.</p>",
+   "jebakan": "<ul><li><strong>Membagi dengan sesuatu yang mungkin nol.</strong> Dari $x^2 = 3x$, membagi $x$ menghilangkan solusi $x = 0$. Pindahkan ruas dan faktorkan: $x(x-3) = 0$.</li><li><strong>Berhenti setelah satu langkah.</strong> $x^4 - 16 = (x^2-4)(x^2+4)$ masih bisa dilanjutkan menjadi $(x-2)(x+2)(x^2+4)$.</li><li><strong>Memaksa memfaktorkan yang tidak terfaktor</strong> atas bilangan rasional. Periksa diskriminannya sebelum menghabiskan waktu.</li></ul>",
+   "tingkat": 1,
+   "x": 416,
+   "y": 136
+  },
+  {
+   "id": "fungsi",
+   "nama": "Fungsi dan Sifatnya",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "manipulasi-aljabar"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal memberi aturan $f$ dan menanyakan nilai di suatu titik, atau menanyakan komposisi, invers, dan sifat seperti ganjil–genap.</p>",
+   "inti": "<p>Fungsi adalah aturan yang memberi <strong>tepat satu</strong> keluaran untuk tiap masukan. Dari sana lahir seluruh sifat yang dipakai.</p><p><strong>Komposisi.</strong> $(f \\circ g)(x) = f(g(x))$ — dikerjakan dari dalam ke luar. Urutannya penting: $f \\circ g$ dan $g \\circ f$ umumnya berbeda.</p><p><strong>Invers.</strong> $f^{-1}$ ada tepat ketika $f$ satu-satu. Cara mencarinya: tulis $y = f(x)$, selesaikan $x$ dalam $y$, lalu tukar nama. Sifat yang berguna:</p><p>$$f\\left(f^{-1}(x)\\right) = x, \\qquad (f \\circ g)^{-1} = g^{-1} \\circ f^{-1}$$</p><p>Perhatikan urutan terbalik pada yang kedua.</p><p><strong>Ganjil dan genap.</strong> $f$ genap kalau $f(-x) = f(x)$, ganjil kalau $f(-x) = -f(x)$. Sifat ini sering memangkas soal: pada fungsi ganjil, $f(0) = 0$ otomatis.</p><p><strong>Refleks olimpiade:</strong> kalau soal memberi hubungan seperti $f(x) + 2f(1-x) = x$, jangan mencari rumus $f$ langsung. Ganti $x$ dengan $1-x$ untuk memperoleh persamaan kedua, lalu selesaikan keduanya sebagai sistem dua peubah $f(x)$ dan $f(1-x)$.</p>",
+   "jebakan": "<ul><li><strong>Membalik urutan komposisi.</strong> $(f \\circ g)$ berarti $g$ dulu.</li><li><strong>Mencari invers fungsi yang tidak satu-satu</strong> tanpa membatasi domainnya.</li><li><strong>Mengira $f^{-1}(x) = \\dfrac{1}{f(x)}$.</strong> Lambangnya sama, artinya sama sekali berbeda.</li></ul>",
+   "tingkat": 1,
+   "x": 612,
+   "y": 136
+  },
+  {
+   "id": "ketaksamaan-dasar",
+   "nama": "Ketaksamaan Dasar",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "manipulasi-aljabar"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal meminta <strong>nilai terbesar atau terkecil</strong>, atau meminta membuktikan satu bentuk tidak pernah melebihi bentuk lain.</p>",
+   "inti": "<p>Satu fakta yang menjadi dasar hampir semua ketaksamaan aljabar:</p><p>$$x^2 \\ge 0 \\quad \\text{untuk setiap } x \\text{ real}$$</p><p>dengan kesamaan tepat ketika $x = 0$. Semua yang lain dibangun dari situ.</p><p>Contoh terpenting, dan yang paling sering langsung dipakai:</p><p>$$a^2 + b^2 \\ge 2ab$$</p><p>sebab selisihnya $(a-b)^2 \\ge 0$. Untuk $a, b &gt; 0$, membaginya dengan $ab$ memberi</p><p>$$\\frac{a}{b} + \\frac{b}{a} \\ge 2$$</p><p>Aturan kerjanya selalu sama: <strong>pindahkan semuanya ke satu ruas, lalu tunjukkan sisanya jumlah kuadrat.</strong> Kalau berhasil, ketaksamaannya terbukti sekaligus dengan syarat kesamaannya.</p><p>Sifat operasi yang harus dijaga:</p><ul><li>Menambah bilangan apa pun tidak mengubah arah.</li><li>Mengalikan dengan bilangan <strong>positif</strong> tidak mengubah arah; dengan <strong>negatif</strong>, arahnya berbalik.</li><li>Mengkuadratkan hanya aman kalau kedua ruas tak negatif.</li></ul>",
+   "jebakan": "<ul><li><strong>Mengalikan dengan sesuatu yang belum diketahui tandanya.</strong> Kalau tandanya belum dipastikan, arah ketaksamaannya tidak bisa dipertahankan.</li><li><strong>Lupa menyebut kapan kesamaan tercapai.</strong> Soal nilai maksimum belum selesai sebelum ditunjukkan nilai itu benar-benar dicapai.</li><li><strong>Membalik ketaksamaan saat mengambil kebalikan</strong> tanpa memastikan keduanya sepositif.</li></ul>",
+   "tingkat": 1,
+   "x": 808,
+   "y": 136
+  },
+  {
+   "id": "nilai-mutlak",
+   "nama": "Nilai Mutlak",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "manipulasi-aljabar"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Ada tanda $|\\cdot|$ dalam persamaan atau pertidaksamaan, atau soal berbicara tentang <strong>jarak</strong> — pada garis bilangan, jarak $x$ ke $a$ adalah $|x - a|$.</p>",
+   "inti": "<p>Definisinya berupa dua kasus, dan hampir semua soal diselesaikan dengan memecah kasus itu:</p><p>$$|x| = \\begin{cases} x &amp; x \\ge 0 \\\\ -x &amp; x &lt; 0 \\end{cases}$$</p><p>Yang menentukan batas kasus adalah <strong>titik nol tiap bentuk di dalam tanda mutlak</strong>. Untuk $|x-2| + |x+3|$, titik kritisnya $x = 2$ dan $x = -3$, sehingga garis bilangan terbagi menjadi tiga daerah — periksa satu per satu.</p><p>Dua sifat yang memangkas banyak pekerjaan:</p><p>$$|x| = a \\iff x = \\pm a \\quad (a \\ge 0), \\qquad |x| &lt; a \\iff -a &lt; x &lt; a$$</p><p>$$|x| &gt; a \\iff x &lt; -a \\text{ atau } x &gt; a$$</p><p>Dan ketaksamaan segitiga:</p><p>$$|x + y| \\le |x| + |y|$$</p><p>dengan kesamaan tepat ketika $x$ dan $y$ bertanda sama.</p><p><strong>Tafsiran jarak</strong> sering menyelesaikan soal tanpa perhitungan sama sekali: $|x-2| + |x+3|$ adalah jumlah jarak $x$ ke $2$ dan ke $-3$, jadi nilai terkecilnya $5$ — dicapai di seluruh ruas di antaranya.</p>",
+   "jebakan": "<ul><li><strong>Mengira $\\sqrt{x^2} = x$.</strong> Yang benar $\\sqrt{x^2} = |x|$.</li><li><strong>Mengkuadratkan tanpa syarat.</strong> Dari $|x-1| = x-3$, mengkuadratkan memberi solusi palsu; ruas kanan harus tak negatif lebih dulu.</li><li><strong>Lupa memeriksa solusi terhadap daerah kasusnya.</strong> Solusi yang lahir di kasus $x &lt; 0$ tetapi bernilai positif harus dibuang.</li></ul>",
+   "tingkat": 1,
+   "x": 1004,
+   "y": 136
+  },
+  {
+   "id": "induksi",
+   "nama": "Induksi Matematika",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "barisan-deret"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Pernyataan berlaku <strong>untuk setiap bilangan asli $n$</strong>, dan bentuk untuk $n+1$ terasa bisa disusun dari bentuk untuk $n$. Ciri lain: ada rumus yang sudah kamu tebak dari pola, dan kamu perlu membuktikannya.</p>",
+   "inti": "<p>Dua langkah, dan keduanya wajib:</p><ol><li><strong>Basis.</strong> Tunjukkan pernyataannya benar untuk $n$ terkecil.</li><li><strong>Langkah induksi.</strong> Andaikan benar untuk $n = k$, lalu buktikan benar untuk $n = k+1$.</li></ol><p>Yang menentukan mutu pembuktian adalah langkah kedua: di situ hipotesis induksi harus benar-benar <strong>dipakai</strong>, bukan sekadar disebut. Kalau pembuktian $n = k+1$ berjalan tanpa menyentuh yang $n = k$, biasanya induksinya tidak diperlukan sama sekali — atau ada yang salah.</p><p><strong>Induksi kuat</strong> mengandaikan pernyataannya benar untuk semua nilai dari basis sampai $k$, bukan hanya di $k$. Ia diperlukan ketika langkah $k+1$ bersandar pada dua nilai sebelumnya atau lebih — misalnya pada barisan yang tiap sukunya dibangun dari dua suku sebelumnya.</p><p>Untuk deret, pola kerjanya hampir selalu sama: tulis $S_{k+1} = S_k + U_{k+1}$, ganti $S_k$ dengan hipotesis induksi, lalu sederhanakan sampai berbentuk rumus untuk $k+1$.</p>",
+   "jebakan": "<ul><li><strong>Melewatkan basis.</strong> Tanpa basis, langkah induksi membuktikan pernyataan salah pun bisa \"berhasil\".</li><li><strong>Basis di tempat yang keliru.</strong> Kalau pernyataannya berlaku untuk $n \\ge 3$, basisnya $n = 3$.</li><li><strong>Tidak memakai hipotesis induksi.</strong> Ini bukan soal gaya penulisan; kalau ia tidak dipakai, yang kamu tulis bukan pembuktian induksi.</li><li><strong>Mengubah yang dibuktikan di tengah jalan.</strong> Pernyataan untuk $k+1$ harus dirumuskan lebih dulu, lalu dicapai — bukan disesuaikan dengan hasil yang terlanjur keluar.</li></ul>",
+   "tingkat": 2,
+   "x": 122,
+   "y": 248
+  },
+  {
+   "id": "deret-teleskopik",
+   "nama": "Deret Teleskopik",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "barisan-deret",
+    "faktorisasi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Deret panjang dengan suku berbentuk pecahan yang penyebutnya hasil kali dua bilangan berdekatan, atau selisih yang polanya rapi. Ciri paling terang: banyak suku, tetapi soal menuntut nilai <strong>eksak</strong>.</p>",
+   "inti": "<p>Gagasannya satu kalimat: <strong>tulis tiap suku sebagai selisih dua bentuk yang berurutan</strong>, lalu biarkan bagian tengahnya saling menghapus.</p><p>$$\\sum_{k=1}^{n} \\left(f(k) - f(k+1)\\right) = f(1) - f(n+1)$$</p><p>Seluruh isi tengah lenyap; yang tersisa hanya dua ujung.</p><p>Bentuk yang paling sering muncul:</p><p>$$\\frac{1}{k(k+1)} = \\frac{1}{k} - \\frac{1}{k+1}$$</p><p>sehingga</p><p>$$\\sum_{k=1}^{n} \\frac{1}{k(k+1)} = 1 - \\frac{1}{n+1} = \\frac{n}{n+1}$$</p><p>Lebih umum, pecahan parsial menyediakan selisihnya:</p><p>$$\\frac{1}{k(k+d)} = \\frac{1}{d}\\left(\\frac{1}{k} - \\frac{1}{k+d}\\right)$$</p><p>Untuk $d &gt; 1$, yang tersisa bukan dua suku melainkan $d$ suku di tiap ujung — dan itu bagian yang paling sering salah dihitung.</p><p>Teleskop juga bekerja di luar pecahan: $k \\cdot k! = (k+1)! - k!$, dan $\\sqrt{k+1} - \\sqrt{k} = \\dfrac{1}{\\sqrt{k+1}+\\sqrt{k}}$.</p>",
+   "jebakan": "<ul><li><strong>Salah menghitung sisa di ujung.</strong> Untuk selisih berjarak $d$, yang tersisa $d$ suku di awal dan $d$ suku di akhir, bukan satu.</li><li><strong>Lupa faktor $\\frac{1}{d}$</strong> pada pecahan parsial.</li><li><strong>Menuliskan pola tanpa memeriksanya.</strong> Tulis tiga suku pertama dan dua suku terakhir secara nyata sebelum menyimpulkan apa yang menghapus apa.</li></ul>",
+   "tingkat": 2,
+   "x": 318,
+   "y": 248
+  },
+  {
+   "id": "persamaan-kuadrat",
+   "nama": "Persamaan Kuadrat",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "faktorisasi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Ada $x^2$ sebagai pangkat tertinggi — langsung, atau setelah substitusi yang mengubah soalnya jadi berbentuk kuadrat.</p>",
+   "inti": "<p>Untuk $ax^2 + bx + c = 0$ dengan $a \\ne 0$:</p><p>$$x = \\frac{-b \\pm \\sqrt{D}}{2a}, \\qquad D = b^2 - 4ac$$</p><p><strong>Diskriminan $D$ menjawab pertanyaan tentang akar tanpa menghitung akarnya:</strong></p><ul><li>$D &gt; 0$: dua akar real berbeda</li><li>$D = 0$: satu akar kembar</li><li>$D &lt; 0$: tidak ada akar real</li></ul><p>Di olimpiade, $D$ jauh lebih sering dipakai untuk ini daripada untuk menghitung akar. Soal \"tentukan $m$ agar persamaan punya dua akar berbeda\" adalah soal tentang $D$, bukan tentang $x$.</p><p><strong>Melengkapkan kuadrat</strong> sering lebih berguna daripada rumus akar:</p><p>$$ax^2+bx+c = a\\left(x + \\frac{b}{2a}\\right)^2 + c - \\frac{b^2}{4a}$$</p><p>Dari bentuk itu, nilai ekstremnya terbaca langsung: untuk $a &gt; 0$ nilai minimumnya $c - \\frac{b^2}{4a}$ di $x = -\\frac{b}{2a}$.</p><p><strong>Substitusi</strong> memperluas jangkauannya. Persamaan $x^4 - 5x^2 + 4 = 0$ menjadi kuadrat dengan $u = x^2$; $2^{2x} - 3 \\cdot 2^x + 2 = 0$ menjadi kuadrat dengan $u = 2^x$.</p>",
+   "jebakan": "<ul><li><strong>Lupa syarat $a \\ne 0$.</strong> Kalau $a$ memuat parameter, kasus $a = 0$ harus diperiksa terpisah — di situ persamaannya linear, bukan kuadrat.</li><li><strong>Lupa mengembalikan substitusi.</strong> Menemukan $u = 4$ belum menjawab apa pun sampai $x^2 = 4$ diselesaikan.</li><li><strong>Membuang akar negatif pada substitusi yang menuntut positif.</strong> Untuk $u = 2^x$, nilai $u \\le 0$ harus dibuang karena $2^x$ selalu positif.</li></ul>",
+   "tingkat": 2,
+   "x": 514,
+   "y": 248
+  },
+  {
+   "id": "sistem-persamaan",
+   "nama": "Sistem Persamaan",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "faktorisasi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Ada beberapa persamaan dan beberapa peubah sekaligus. Di olimpiade, sistemnya jarang linear — biasanya simetris atau bisa dibuat simetris.</p>",
+   "inti": "<p>Untuk sistem linear, tiga cara baku: substitusi, eliminasi, dan penjumlahan berbobot. Yang terakhir sering paling cepat pada soal simetris.</p><p>Yang lebih berharga adalah <strong>memakai kesimetrian</strong>. Kalau sistemnya tidak berubah saat peubahnya ditukar, jangan cari tiap peubah — cari bentuk simetrisnya lebih dulu:</p><p>$$s = x + y, \\qquad p = xy$$</p><p>Hampir semua bentuk simetris bisa ditulis lewat $s$ dan $p$:</p><p>$$x^2 + y^2 = s^2 - 2p, \\qquad x^3 + y^3 = s^3 - 3ps, \\qquad\n\\frac1x + \\frac1y = \\frac{s}{p}$$</p><p>Setelah $s$ dan $p$ diketahui, $x$ dan $y$ adalah akar dari</p><p>$$t^2 - st + p = 0$$</p><p><strong>Menjumlahkan dan mengurangkan seluruh persamaan</strong> juga sering membuka jalan pada sistem simetris — hasilnya biasanya jauh lebih sederhana daripada persamaan aslinya.</p>",
+   "jebakan": "<ul><li><strong>Kehilangan solusi saat membagi.</strong> Membagi dua persamaan menghilangkan kasus penyebutnya nol; periksa kasus itu terpisah.</li><li><strong>Lupa memeriksa $s^2 \\ge 4p$.</strong> Tanpa itu, $x$ dan $y$ yang diperoleh tidak real.</li><li><strong>Menukar peran $s$ dan $p$</strong> pada rumus $x^3+y^3$. Cek dengan angka kecil kalau ragu.</li></ul>",
+   "tingkat": 2,
+   "x": 710,
+   "y": 248
+  },
+  {
+   "id": "am-gm",
+   "nama": "Ketaksamaan AM-GM",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "ketaksamaan-dasar"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Semua peubahnya <strong>positif</strong>, dan soal meminta nilai terbesar atau terkecil dari jumlah atau hasil kali. Ciri paling terang: satu di antara jumlah dan hasil kali diketahui tetap, lalu yang lain ditanyakan.</p>",
+   "inti": "<p>Untuk bilangan positif $a_1, \\dots, a_n$:</p><p>$$\\frac{a_1 + a_2 + \\cdots + a_n}{n} \\ \\ge\\ \\sqrt[n]{a_1 a_2 \\cdots a_n}$$</p><p>dengan kesamaan <strong>tepat ketika semuanya sama</strong>.</p><p>Bentuk dua peubah yang paling sering dipakai:</p><p>$$a + b \\ge 2\\sqrt{ab}, \\qquad a, b &gt; 0$$</p><p>Cara membacanya: kalau hasil kali tetap, jumlahnya paling kecil saat kedua bilangan sama; kalau jumlahnya tetap, hasil kalinya paling besar saat keduanya sama.</p><p><strong>Syarat kesamaan itu bagian dari jawaban, bukan pelengkap.</strong> Soal \"tentukan nilai minimum\" belum selesai sebelum ditunjukkan nilai itu benar-benar tercapai — yaitu ada pilihan peubah yang membuat semuanya sama sekaligus memenuhi kendala soal.</p><p>Kalau penerapan langsung tidak memberi batas yang tetap, biasanya pemecahannya <strong>memecah suku</strong>: tulis satu suku menjadi beberapa bagian yang sama supaya kesamaannya bisa tercapai. Contohnya pada $x + \\frac{4}{x^2}$, pecah $\\frac{4}{x^2}$ jadi dua bagian $\\frac{2}{x^2}$ lalu terapkan AM-GM pada tiga suku.</p>",
+   "jebakan": "<ul><li><strong>Memakainya pada bilangan yang bisa negatif.</strong> AM-GM menuntut semua suku positif.</li><li><strong>Berhenti sebelum memeriksa kesamaan.</strong> Batas yang tidak pernah tercapai bukan nilai minimum; ia hanya batas bawah.</li><li><strong>Menerapkannya pada suku yang salah</strong> sehingga yang keluar bukan bilangan tetap. Kalau hasilnya masih memuat peubah, penerapannya belum berguna.</li></ul>",
+   "tingkat": 2,
+   "x": 906,
+   "y": 248
+  },
+  {
+   "id": "persamaan-fungsional",
+   "nama": "Persamaan Fungsional",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "prasyarat": [
+    "fungsi",
+    "induksi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal memberi hubungan yang berlaku <strong>untuk semua</strong> $x$ dan $y$, lalu meminta seluruh fungsi yang memenuhinya. Bentuknya seperti $f(x+y) = f(x) + f(y)$.</p>",
+   "inti": "<p>Tidak ada rumus; yang ada urutan gerakan yang hampir selalu dicoba.</p><ol><li><strong>Substitusi nilai khusus.</strong> Coba $x = 0$, $y = 0$, $x = y$, $y = -x$, $y = 1$. Tiap substitusi memberi persamaan baru yang lebih sederhana.</li><li><strong>Cari $f(0)$ dan $f(1)$.</strong> Keduanya biasanya terkunci sejak awal dan menjadi tumpuan langkah berikutnya.</li><li><strong>Periksa kesimetrian.</strong> Tukar $x$ dan $y$; kalau ruas kiri simetris tetapi ruas kanan tidak, kamu mendapat persamaan tambahan secara gratis.</li><li><strong>Bangun bertahap.</strong> Dari $f(1)$ ke $f(n)$ lewat induksi, lalu ke bilangan rasional.</li><li><strong>Tebak dan buktikan.</strong> Setelah pola terlihat, tebak bentuk $f$, lalu <strong>buktikan tidak ada yang lain</strong>.</li></ol><p>Langkah terakhir yang paling sering dilupakan. Menemukan satu fungsi yang memenuhi bukan jawaban; soal menanyakan <strong>semua</strong> fungsi, jadi ketunggalannya harus ditegakkan.</p><p>Dan apa pun jawabannya, <strong>periksa balik</strong> — substitusikan fungsi yang kamu peroleh ke persamaan aslinya. Langkah substitusi bisa memperluas himpunan solusi tanpa terasa.</p>",
+   "jebakan": "<ul><li><strong>Lupa memeriksa balik.</strong> Fungsi yang lahir dari rangkaian substitusi belum tentu memenuhi persamaan aslinya.</li><li><strong>Mengira menemukan satu solusi sudah cukup.</strong> Yang diminta seluruhnya.</li><li><strong>Mengabaikan domain.</strong> Sifat yang berlaku untuk bilangan rasional tidak otomatis berlaku untuk real tanpa syarat tambahan seperti kemonotonan atau kekontinuan.</li></ul>",
+   "tingkat": 3,
+   "x": 122,
+   "y": 360
+  },
+  {
+   "id": "vieta",
+   "nama": "Rumus Vieta",
+   "pilar": "aljabar",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "persamaan-kuadrat"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal menanyakan sesuatu <strong>tentang akar-akar</strong> — jumlahnya, hasil kalinya, jumlah kuadratnya — tetapi tidak menanyakan akarnya sendiri. Itu tanda paling jelas.</p>",
+   "inti": "<p>Untuk $ax^2 + bx + c = 0$ dengan akar $x_1$ dan $x_2$:</p><p>$$x_1 + x_2 = -\\frac{b}{a}, \\qquad x_1 x_2 = \\frac{c}{a}$$</p><p>Nilainya diperoleh <strong>tanpa menghitung akarnya</strong>, bahkan ketika akarnya tidak rasional atau tidak real sama sekali.</p><p>Hampir semua soal Vieta menuntut menulis ulang bentuk yang ditanya lewat $x_1+x_2$ dan $x_1x_2$:</p><p>$$x_1^2 + x_2^2 = (x_1+x_2)^2 - 2x_1x_2$$</p><p>$$\\frac{1}{x_1} + \\frac{1}{x_2} = \\frac{x_1+x_2}{x_1x_2}, \\qquad\n(x_1 - x_2)^2 = (x_1+x_2)^2 - 4x_1x_2$$</p><p>Bentuk terakhir menghubungkan Vieta dengan diskriminan: $(x_1-x_2)^2 = D/a^2$.</p><p><strong>Arah sebaliknya</strong> sama bergunanya. Kalau kamu tahu dua bilangan berjumlah $s$ dan berhasil kali $p$, keduanya adalah akar $t^2 - st + p = 0$ — dan itu cara termurah menyusun persamaan dari akar yang diminta.</p>",
+   "jebakan": "<ul><li><strong>Lupa membagi $a$.</strong> Jumlah akarnya $-b/a$, bukan $-b$. Untuk $a = 1$ keduanya sama, dan kebiasaan itu menggigit begitu $a \\ne 1$.</li><li><strong>Salah tanda pada jumlah akar.</strong> Ada tanda minus di sana, tidak pada hasil kali.</li><li><strong>Memakai Vieta tanpa memeriksa akarnya real</strong> pada soal yang menuntut akar real. Vieta tetap berlaku untuk akar kompleks; syarat realnya datang dari $D \\ge 0$.</li></ul>",
+   "tingkat": 3,
+   "x": 318,
+   "y": 360
+  },
+  {
+   "id": "suku-banyak",
+   "nama": "Suku Banyak",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "persamaan-kuadrat"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Ada polinomial berderajat tiga ke atas, atau soal berbicara tentang derajat, koefisien, dan pembagian antar-polinomial.</p>",
+   "inti": "<p>Tulis $P(x) = a_n x^n + \\cdots + a_1 x + a_0$ dengan $a_n \\ne 0$; derajatnya $n$.</p><p><strong>Pembagian bersusun.</strong> Untuk polinomial $P$ dan pembagi $D$ tak nol, ada $Q$ dan $R$ tunggal dengan</p><p>$$P(x) = D(x) Q(x) + R(x), \\qquad \\deg R &lt; \\deg D$$</p><p>Bentuknya persis algoritma pembagian pada bilangan bulat, dan dipakai dengan cara yang sama.</p><p>Akibat yang paling sering dipakai: sisa pembagian oleh polinomial berderajat $d$ selalu berderajat kurang dari $d$. Jadi sisa pembagian oleh $(x-a)(x-b)$ berbentuk $px + q$ — dua bilangan tak diketahui, dan soalnya berubah menjadi mencari keduanya.</p><p><strong>Aturan derajat</strong> yang sering menutup soal tanpa perhitungan:</p><p>$$\\deg(PQ) = \\deg P + \\deg Q, \\qquad \\deg(P + Q) \\le \\max(\\deg P, \\deg Q)$$</p><p>Ketaksamaan pada yang kedua bisa ketat kalau suku tertingginya saling menghapus.</p><p>Polinomial berderajat $n$ punya paling banyak $n$ akar. Akibatnya: kalau dua polinomial berderajat $\\le n$ bernilai sama di $n+1$ titik berbeda, keduanya polinomial yang sama. Itu senjata utama pada soal \"tentukan $P$\".</p>",
+   "jebakan": "<ul><li><strong>Lupa sisa bisa berupa polinomial</strong>, bukan bilangan. Sisa pembagian oleh kuadrat adalah bentuk linear.</li><li><strong>Mengira koefisien utama boleh nol.</strong> Derajat ditentukan oleh koefisien tak nol tertinggi; kalau ia memuat parameter, kasus nolnya harus diperiksa.</li><li><strong>Menyimpulkan dua polinomial sama dari beberapa titik saja</strong> tanpa memastikan jumlah titiknya melebihi derajatnya.</li></ul>",
+   "tingkat": 3,
+   "x": 514,
+   "y": 360
+  },
+  {
+   "id": "cauchy-schwarz",
+   "nama": "Ketaksamaan Cauchy-Schwarz",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "prasyarat": [
+    "am-gm"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>AM-GM sudah dicoba dan tidak memberi batas yang cukup ketat. Ciri khasnya: ada <strong>jumlah kuadrat</strong> dikali jumlah kuadrat, atau pecahan berbentuk $\\dfrac{a_i^2}{b_i}$.</p>",
+   "inti": "<p>$$\\left(\\sum a_i b_i\\right)^2 \\ \\le\\ \\left(\\sum a_i^2\\right)\\left(\\sum b_i^2\\right)$$</p><p>dengan kesamaan tepat ketika kedua barisan <strong>sebanding</strong> — yaitu ada $\\lambda$ dengan $a_i = \\lambda b_i$ untuk semua $i$.</p><p>Bentuk yang paling sering langsung dipakai di olimpiade adalah <strong>bentuk Engel</strong>, kadang disebut lema Titu:</p><p>$$\\frac{a_1^2}{b_1} + \\frac{a_2^2}{b_2} + \\cdots + \\frac{a_n^2}{b_n}\n\\ \\ge\\ \\frac{\\left(a_1 + a_2 + \\cdots + a_n\\right)^2}{b_1 + b_2 + \\cdots + b_n}$$</p><p>untuk $b_i &gt; 0$. Begitu kamu melihat jumlah pecahan berpembilang kuadrat, ini gerakan pertama.</p><p>Bedanya dengan AM-GM layak diingat: AM-GM menukar jumlah dengan hasil kali, sedangkan Cauchy-Schwarz menukar <strong>jumlah hasil kali</strong> dengan hasil kali jumlah. Kalau soalnya memuat kendala berbentuk jumlah dan yang ditanya juga jumlah, Cauchy-Schwarz biasanya lebih cocok.</p><p>Menyiapkan bentuknya adalah bagian tersulit. Sering satu suku perlu ditulis ulang, misalnya $a = \\dfrac{a^2}{a}$, supaya bentuk Engel bisa dipasang.</p>",
+   "jebakan": "<ul><li><strong>Memakai bentuk Engel dengan penyebut tak positif.</strong> Syarat $b_i &gt; 0$ wajib.</li><li><strong>Salah memasangkan $a_i$ dan $b_i$.</strong> Pemasangan yang keliru tetap memberi ketaksamaan yang benar, tetapi batasnya tidak berguna.</li><li><strong>Lupa memeriksa kesamaan.</strong> Syaratnya kesebandingan, bukan kesamaan seperti pada AM-GM.</li></ul>",
+   "tingkat": 3,
+   "x": 710,
+   "y": 360
+  },
+  {
+   "id": "penataan-ulang",
+   "nama": "Ketaksamaan Penataan Ulang",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "prasyarat": [
+    "am-gm"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Ada dua barisan bilangan dan soal membandingkan <strong>jumlah hasil kali berpasangan</strong> pada urutan yang berbeda-beda. Juga ampuh pada ketaksamaan simetris yang membandel terhadap AM-GM.</p>",
+   "inti": "<p>Misalkan $a_1 \\le a_2 \\le \\cdots \\le a_n$ dan $b_1 \\le b_2 \\le \\cdots \\le b_n$. Maka di antara semua cara memasangkan kedua barisan,</p><p>$$\\underbrace{\\sum a_i b_i}_{\\text{searah}} \\ \\ge\\ \\sum a_i b_{\\sigma(i)}\n\\ \\ge\\ \\underbrace{\\sum a_i b_{n+1-i}}_{\\text{berlawanan arah}}$$</p><p>untuk permutasi $\\sigma$ apa pun.</p><p>Kalimatnya: <strong>pasangkan besar dengan besar untuk hasil terbesar; besar dengan kecil untuk hasil terkecil.</strong> Itu saja isinya, dan ia jauh lebih sering berguna daripada yang terlihat.</p><p>Akibat langsung yang sering dipakai — <strong>ketaksamaan Chebyshev</strong>: kalau kedua barisan terurut searah,</p><p>$$\\frac{1}{n}\\sum a_i b_i \\ \\ge\\ \\left(\\frac{1}{n}\\sum a_i\\right)\\left(\\frac{1}{n}\\sum b_i\\right)$$</p><p>Untuk ketaksamaan simetris, gerakan bakunya: <strong>andaikan tanpa mengurangi keumuman</strong> $a \\ge b \\ge c$. Kesimetrian soal membuat pengandaian itu sah, dan setelah urutannya tetap, penataan ulang bisa dipasang.</p>",
+   "jebakan": "<ul><li><strong>Lupa mengurutkan.</strong> Ketaksamaannya berbicara tentang barisan <strong>terurut</strong>; tanpa itu pernyataannya tidak bermakna.</li><li><strong>Mengklaim \"tanpa mengurangi keumuman\" pada bentuk yang tidak simetris.</strong> Kalau menukar peubah mengubah soal, pengandaian urutan tidak sah.</li><li><strong>Memakainya pada barisan yang tandanya campur</strong> tanpa memeriksa akibatnya terhadap arah.</li></ul>",
+   "tingkat": 3,
+   "x": 906,
+   "y": 360
+  },
+  {
+   "id": "akar-suku-banyak",
+   "nama": "Akar dan Koefisien Suku Banyak",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "vieta",
+    "suku-banyak"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Polinomial berderajat tiga ke atas, dan yang ditanya bentuk simetris akar-akarnya — jumlah, hasil kali, jumlah kuadrat — bukan akarnya satu per satu.</p>",
+   "inti": "<p>Perluasan Vieta. Untuk $a_n x^n + \\cdots + a_0 = 0$ dengan akar $x_1, \\dots, x_n$:</p><p>$$\\sum x_i = -\\frac{a_{n-1}}{a_n}, \\qquad \\sum_{i&lt;j} x_i x_j = \\frac{a_{n-2}}{a_n},\n\\qquad \\sum_{i&lt;j&lt;k} x_i x_j x_k = -\\frac{a_{n-3}}{a_n}$$</p><p>dan seterusnya, dengan tanda berselang-seling, sampai</p><p>$$x_1 x_2 \\cdots x_n = (-1)^n \\frac{a_0}{a_n}$$</p><p>Untuk kubik $ax^3+bx^2+cx+d = 0$, ketiganya:</p><p>$$x_1+x_2+x_3 = -\\frac{b}{a}, \\qquad x_1x_2+x_1x_3+x_2x_3 = \\frac{c}{a},\n\\qquad x_1x_2x_3 = -\\frac{d}{a}$$</p><p>Seperti pada kuadrat, seluruh isinya adalah <strong>menulis ulang bentuk yang ditanya</strong> lewat ketiganya:</p><p>$$\\sum x_i^2 = \\left(\\sum x_i\\right)^2 - 2\\sum_{i&lt;j} x_i x_j$$</p><p>$$\\sum \\frac{1}{x_i} = \\frac{\\sum_{i&lt;j} x_i x_j}{x_1x_2x_3}$$</p><p><strong>Akar sekawan.</strong> Kalau koefisiennya real dan $z$ akar kompleks, maka $\\bar{z}$ juga akar. Akibatnya polinomial berderajat ganjil berkoefisien real selalu punya paling sedikit satu akar real.</p>",
+   "jebakan": "<ul><li><strong>Salah pola tanda.</strong> Tandanya berselang-seling mulai dari minus; menghafalkannya setengah-setengah lebih berbahaya daripada tidak sama sekali.</li><li><strong>Lupa membagi $a_n$</strong> ketika koefisien utamanya bukan $1$.</li><li><strong>Mengira akar kompleks datang sendiri-sendiri.</strong> Untuk koefisien real ia selalu berpasangan dengan sekawannya.</li></ul>",
+   "tingkat": 4,
+   "x": 220,
+   "y": 472
+  },
+  {
+   "id": "polinomial-bulat",
+   "nama": "Polinomial Berkoefisien Bulat",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "prasyarat": [
+    "suku-banyak",
+    "keterbagian"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Polinomial dengan koefisien bulat, dan soal berbicara tentang <strong>keterbagian</strong> atau nilai bulat — misalnya \"buktikan $P(n)$ tidak pernah prima\" atau \"tentukan semua $n$ bulat dengan $P(n)$ kuadrat sempurna\".</p>",
+   "inti": "<p>Satu sifat yang menjadi seluruh isi jurus ini:</p><p>$$(a - b) \\ \\big|\\ \\left(P(a) - P(b)\\right) \\qquad \\text{untuk } a, b \\text{ bulat}$$</p><p>Alasannya dari faktorisasi $a^k - b^k = (a-b)\\left(a^{k-1} + \\cdots + b^{k-1}\\right)$ pada tiap suku, lalu dijumlahkan.</p><p>Akibat yang paling sering dipakai:</p><ul><li>Kalau $P(a) = P(b)$ untuk $a \\ne b$, maka nilai-nilainya berulang dengan periode yang dibatasi $a - b$.</li><li>$P(n) \\bmod m$ hanya bergantung pada $n \\bmod m$. Jadi memeriksa $m$ nilai sudah menutup seluruh bilangan bulat.</li><li>Kalau $P(n)$ selalu prima untuk semua $n$, ambil $p = P(0)$; maka $p \\mid P(kp)$ untuk setiap $k$, sehingga $P(kp)$ hanya bisa $\\pm p$ — dan polinomial tak konstan tidak bisa bernilai sama berkali-kali.</li></ul><p><strong>Akar rasional.</strong> Kalau $\\frac{p}{q}$ akar $P$ dalam bentuk paling sederhana, maka $p \\mid a_0$ dan $q \\mid a_n$. Untuk polinomial monik berkoefisien bulat, akibatnya tajam: akar rasionalnya pasti bulat dan pasti membagi konstanta.</p><p>Inilah jurus aljabar pertama yang berprasyarat lintas bidang — pemicunya aljabar, tetapi alat kerjanya keterbagian.</p>",
+   "jebakan": "<ul><li><strong>Memakai sifat $(a-b) \\mid (P(a)-P(b))$ untuk $a, b$ tak bulat.</strong> Ia menuntut keduanya bulat.</li><li><strong>Lupa koefisiennya harus bulat.</strong> Untuk koefisien rasional, sifatnya gugur.</li><li><strong>Mengira akar rasional pasti bulat</strong> pada polinomial tak monik. Yang bulat hanya kalau koefisien utamanya $1$ atau $-1$.</li></ul>",
+   "tingkat": 4,
+   "x": 416,
+   "y": 472
+  },
+  {
+   "id": "substitusi-simetri",
+   "nama": "Substitusi dan Kesimetrian",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "sistem-persamaan",
+    "vieta"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Bentuknya tidak berubah ketika peubahnya ditukar, atau ada bentuk berulang yang layak diberi nama sendiri. Ciri lain: derajatnya tinggi, tetapi susunannya sangat teratur.</p>",
+   "inti": "<p>Dua gerakan yang berbeda, sering dipakai bersama.</p><p><strong>Beri nama bentuk yang berulang.</strong> Kalau $x + \\frac1x$ muncul berkali-kali, sebut ia $t$. Persamaan berderajat empat sering runtuh jadi kuadrat dengan satu penamaan:</p><p>$$x^4 + x^3 - 4x^2 + x + 1 = 0 \\ \\xrightarrow{\\ \\div x^2\\ }\\\n\\left(x^2 + \\frac{1}{x^2}\\right) + \\left(x + \\frac1x\\right) - 4 = 0$$</p><p>lalu $t = x + \\frac1x$ memberi $x^2 + \\frac{1}{x^2} = t^2 - 2$, dan sisanya kuadrat biasa. Polinomial dengan koefisien yang membaca sama dari depan dan belakang hampir selalu menyerah pada gerakan ini.</p><p><strong>Pakai kesimetrian.</strong> Untuk sistem yang simetris, ganti $x, y$ dengan $s = x+y$ dan $p = xy$. Untuk tiga peubah, dengan</p><p>$$e_1 = x+y+z, \\qquad e_2 = xy+yz+zx, \\qquad e_3 = xyz$$</p><p>Setiap polinomial simetris bisa ditulis lewat $e_1, e_2, e_3$ — dan setelah ketiganya diketahui, $x, y, z$ adalah akar dari</p><p>$$t^3 - e_1 t^2 + e_2 t - e_3 = 0$$</p><p><strong>Substitusi yang menggeser</strong> juga sering menolong: mengganti $x = y + c$ untuk menghilangkan suku tertentu, misalnya membuang suku kuadrat dari sebuah kubik.</p>",
+   "jebakan": "<ul><li><strong>Lupa membatasi peubah baru.</strong> Untuk $x$ real tak nol, $t = x + \\frac1x$ hanya bisa bernilai $|t| \\ge 2$. Solusi $t$ di luar itu tidak memberi $x$ real.</li><li><strong>Membagi dengan $x^2$ tanpa memeriksa $x = 0$.</strong> Periksa dulu apakah $x=0$ solusi.</li><li><strong>Mengira semua sistem simetris.</strong> Kalau menukar peubah mengubah persamaannya, gerakan ini tidak sah.</li></ul>",
+   "tingkat": 4,
+   "x": 612,
+   "y": 472
+  },
+  {
+   "id": "teorema-sisa-faktor",
+   "nama": "Teorema Sisa dan Faktor",
+   "pilar": "aljabar",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "suku-banyak"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal menanyakan <strong>sisa pembagian</strong> polinomial, atau menanyakan apakah suatu bentuk linear merupakan faktornya, atau memberi keterangan berupa nilai $P$ di beberapa titik.</p>",
+   "inti": "<p><strong>Teorema sisa.</strong> Sisa pembagian $P(x)$ oleh $(x - a)$ adalah $P(a)$.</p><p>Alasannya satu baris: tulis $P(x) = (x-a)Q(x) + r$ dengan $r$ konstanta, lalu masukkan $x = a$.</p><p><strong>Teorema faktor.</strong> $(x-a)$ faktor $P(x)$ tepat ketika $P(a) = 0$.</p><p>Keduanya mengubah soal tentang pembagian menjadi soal tentang <strong>nilai</strong> — dan menghitung nilai jauh lebih murah daripada membagi bersusun.</p><p>Untuk pembagi berderajat lebih tinggi, gagasannya diperluas. Sisa pembagian oleh $(x-a)(x-b)$ berbentuk $px+q$, sehingga</p><p>$$P(x) = (x-a)(x-b)Q(x) + px + q$$</p><p>Masukkan $x = a$ dan $x = b$ untuk memperoleh dua persamaan:</p><p>$$P(a) = pa + q, \\qquad P(b) = pb + q$$</p><p>Dua persamaan, dua bilangan tak diketahui — selesai tanpa menyentuh $Q$ sama sekali.</p><p><strong>Akar rasional.</strong> Kalau $P$ berkoefisien bulat dan $\\frac{p}{q}$ akarnya dalam bentuk paling sederhana, maka $p$ membagi konstanta dan $q$ membagi koefisien utama. Ini menyaring kandidat akar dari tak hingga menjadi beberapa saja.</p>",
+   "jebakan": "<ul><li><strong>Salah tanda.</strong> Sisa pembagian oleh $(x + 3)$ adalah $P(-3)$, bukan $P(3)$.</li><li><strong>Memakai pembagi berkoefisien bukan satu tanpa menyesuaikan.</strong> Sisa pembagian oleh $(2x - 1)$ adalah $P\\!\\left(\\frac12\\right)$.</li><li><strong>Lupa bentuk sisa untuk pembagi derajat tinggi.</strong> Untuk pembagi berderajat tiga, sisanya berbentuk kuadrat — tiga bilangan tak diketahui, jadi butuh tiga nilai.</li></ul>",
+   "tingkat": 4,
+   "x": 808,
+   "y": 472
+  },
+  {
+   "id": "bilangan-kompleks",
+   "nama": "Bilangan Kompleks dan Akar Satuan",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "prasyarat": [
+    "akar-suku-banyak"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Persamaan berbentuk $z^n = 1$ atau $z^n = c$, jumlah yang polanya berulang tiap beberapa suku, atau soal yang menuntut memilih sebagian koefisien binomial menurut sisanya.</p>",
+   "inti": "<p>Tulis $i^2 = -1$. Setiap bilangan kompleks bisa ditulis $z = r(\\cos\\theta + i\\sin\\theta)$ dengan $r = |z|$.</p><p><strong>Rumus De Moivre</strong> membuat pangkat menjadi mudah:</p><p>$$z^n = r^n\\left(\\cos n\\theta + i \\sin n\\theta\\right)$$</p><p><strong>Akar satuan.</strong> Persamaan $z^n = 1$ punya tepat $n$ akar:</p><p>$$\\omega_k = \\cos\\frac{2\\pi k}{n} + i \\sin\\frac{2\\pi k}{n}, \\qquad k = 0, 1, \\dots, n-1$$</p><p>Dua sifat yang menjadi alasan jurus ini ada:</p><p>$$1 + \\omega + \\omega^2 + \\cdots + \\omega^{n-1} = 0 \\qquad (\\omega \\ne 1)$$</p><p>$$\\omega^n = 1 \\quad\\Longrightarrow\\quad \\omega^k \\text{ hanya bergantung pada } k \\bmod n$$</p><p>Yang pertama membuat akar satuan bekerja sebagai <strong>penyaring</strong>: menjumlahkan sebuah bentuk atas seluruh akar satuan menghapus semua suku kecuali yang pangkatnya kelipatan $n$. Itu cara baku menghitung jumlah koefisien binomial berindeks tertentu.</p><p>Untuk $n = 3$, akar tak trivialnya memenuhi $\\omega^2 + \\omega + 1 = 0$ — hubungan yang langsung menyederhanakan banyak bentuk.</p>",
+   "jebakan": "<ul><li><strong>Mengira $\\sqrt{ab} = \\sqrt{a}\\sqrt{b}$ berlaku untuk bilangan negatif.</strong> Dari sana lahir \"bukti\" bahwa $1 = -1$.</li><li><strong>Lupa akar kompleks berpasangan sekawan</strong> pada polinomial berkoefisien real.</li><li><strong>Salah menghitung banyak akar.</strong> Persamaan $z^n = c$ dengan $c \\ne 0$ selalu punya tepat $n$ akar berbeda, bukan satu.</li></ul>",
+   "tingkat": 5,
+   "x": 514,
+   "y": 584
   }
  ]
 }
