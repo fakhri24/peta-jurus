@@ -4,8 +4,8 @@ nama: Diophantine Taklinear
 pilar: teori-bilangan
 tahap: osn-p
 prasyarat: [turun-tak-hingga, tau-sigma]
-contoh: []
-latihan: []
+contoh: [dtl-contoh-1]
+latihan: [dtl-01, dtl-02, dtl-03, dtl-04, dtl-05, dtl-06]
 ---
 
 ## Kapan dipakai

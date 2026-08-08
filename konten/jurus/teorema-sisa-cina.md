@@ -4,8 +4,8 @@ nama: Teorema Sisa Cina
 pilar: teori-bilangan
 tahap: osn-p
 prasyarat: [kongruensi-linear]
-contoh: []
-latihan: []
+contoh: [tsc-contoh-1]
+latihan: [tsc-01, tsc-02, tsc-03, tsc-04, tsc-05, tsc-06]
 ---
 
 ## Kapan dipakai

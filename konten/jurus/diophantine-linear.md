@@ -4,8 +4,8 @@ nama: Persamaan Diophantine Linear
 pilar: teori-bilangan
 tahap: osn-p
 prasyarat: [bezout]
-contoh: []
-latihan: []
+contoh: [dl-contoh-1]
+latihan: [dl-01, dl-02, dl-03, dl-04, dl-05, dl-06]
 ---
 
 ## Kapan dipakai

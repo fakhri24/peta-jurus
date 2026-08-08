@@ -4,8 +4,8 @@ nama: Kongruensi Linear
 pilar: teori-bilangan
 tahap: osn-p
 prasyarat: [kongruensi-dasar, bezout]
-contoh: []
-latihan: []
+contoh: [kl-contoh-1]
+latihan: [kl-01, kl-02, kl-03, kl-04, kl-05, kl-06]
 ---
 
 ## Kapan dipakai

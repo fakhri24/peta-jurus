@@ -4,8 +4,8 @@ nama: Fungsi Euler & Teorema Euler
 pilar: teori-bilangan
 tahap: osn-p
 prasyarat: [fermat-kecil, fpb-kpk]
-contoh: []
-latihan: []
+contoh: [fe-contoh-1]
+latihan: [fe-01, fe-02, fe-03, fe-04, fe-05, fe-06]
 ---
 
 ## Kapan dipakai

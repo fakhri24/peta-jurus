@@ -472,6 +472,626 @@
    "rubrik": []
   },
   {
+   "id": "bz-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "bezout"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan bilangan asli terkecil yang dapat dituliskan dalam bentuk $6x + 15y$ dengan $x$ dan $y$ bilangan bulat.</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "$x$ dan $y$ boleh negatif, jadi jangan hanya mencoba nilai positif kecil.",
+    "Setiap nilai $6x + 15y$ pasti kelipatan sesuatu. Apa yang membagi kedua koefisiennya?",
+    "Identitas Bézout menyatakan nilai positif terkecil yang bisa dicapai persis $\\gcd(6, 15)$."
+   ],
+   "pembahasan": "<p>Setiap bilangan berbentuk $6x + 15y$ habis dibagi $3$, sebab $3 \\mid 6$ dan $3 \\mid 15$. Jadi tidak mungkin memperoleh $1$ maupun $2$.</p><p>Identitas Bézout menyatakan lebih dari sekadar batas itu: nilai positif <strong>terkecil</strong> yang bisa dicapai oleh $ax + by$ persis sama dengan $\\gcd(a,b)$. Di sini</p><p>$$\\gcd(6, 15) = 3$$</p><p>Tinggal ditunjukkan $3$ memang tercapai:</p><p>$$6(-2) + 15(1) = -12 + 15 = 3$$</p><p>Jadi jawabannya $\\boxed{3}$.</p><p>Lebih jauh lagi, himpunan seluruh nilai $6x + 15y$ persis himpunan kelipatan $3$ — tidak lebih, tidak kurang. Setiap kelipatan $3$ bisa diperoleh dengan mengalikan penulisan di atas, dan tidak ada nilai di luar kelipatan $3$ yang mungkin.</p><p>Perhatikan bahwa $x = -2$ bernilai negatif. Kalau $x$ dan $y$ dibatasi tak negatif, soalnya berubah sama sekali: $3$ tidak lagi tercapai, dan yang terkecil menjadi $6$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bz-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "bezout"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan invers dari $7$ modulo $26$, yaitu bilangan $x$ dengan $0 \\le x &lt; 26$ yang memenuhi $7x \\equiv 1 \\pmod{26}$.</p>",
+   "jawaban": "15",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Invers itu ada karena $\\gcd(7, 26) = 1$. Yang dicari sebenarnya adalah $x$ pada $7x + 26y = 1$.",
+    "Jalankan algoritma Euklid pada $26$ dan $7$, lalu telusuri balik untuk menyatakan $1$ sebagai kombinasi keduanya.",
+    "$26 = 3 \\times 7 + 5$, lalu $7 = 1 \\times 5 + 2$, lalu $5 = 2 \\times 2 + 1$."
+   ],
+   "pembahasan": "<p>Karena $\\gcd(7, 26) = 1$, identitas Bézout memberi bulat $x, y$ dengan</p><p>$$7x + 26y = 1$$</p><p>Mengambil persamaan itu modulo $26$ menghasilkan $7x \\equiv 1 \\pmod{26}$ — jadi $x$ yang dicari persis $x$ pada Bézout.</p><p><strong>Algoritma Euklid.</strong></p><p>$$26 = 3 \\times 7 + 5$$ $$7 = 1 \\times 5 + 2$$ $$5 = 2 \\times 2 + 1$$</p><p><strong>Telusuri balik.</strong> Mulai dari sisa terakhir:</p><p>$$1 = 5 - 2 \\times 2$$</p><p>Ganti $2 = 7 - 1 \\times 5$:</p><p>$$1 = 5 - 2(7 - 5) = 3 \\times 5 - 2 \\times 7$$</p><p>Ganti $5 = 26 - 3 \\times 7$:</p><p>$$1 = 3(26 - 3 \\times 7) - 2 \\times 7 = 3 \\times 26 - 11 \\times 7$$</p><p>Jadi $7(-11) + 26(3) = 1$, sehingga $x \\equiv -11 \\pmod{26}$. Dalam rentang yang diminta,</p><p>$$x = -11 + 26 = \\boxed{15}$$</p><p>Periksa: $7 \\times 15 = 105 = 4 \\times 26 + 1$. Benar.</p><p>Inilah satu-satunya alasan \"pembagian\" dalam kongruensi kadang boleh dilakukan: yang sesungguhnya terjadi bukan membagi, melainkan mengalikan dengan invers — dan invers hanya ada ketika pembaginya relatif prima terhadap modulusnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bz-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "bezout"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa bilangan asli tidak lebih dari $100$ yang dapat dituliskan dalam bentuk $12x + 30y$ dengan $x, y$ bilangan bulat?</p>",
+   "jawaban": "16",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan mencoba menyusun bilangannya satu per satu. Tentukan dulu himpunan semua nilai yang bisa dibentuk.",
+    "Menurut Bézout, himpunan nilai $ax + by$ persis himpunan kelipatan $\\gcd(a,b)$.",
+    "$\\gcd(12, 30) = 6$, jadi tinggal mencacah kelipatan $6$ yang tidak melebihi $100$."
+   ],
+   "pembahasan": "<p>Identitas Bézout memberi keterangan lengkap tentang bentuk $ax + by$: himpunan seluruh nilainya untuk $x, y$ bulat persis himpunan <strong>kelipatan</strong> $\\gcd(a,b)$.</p><p>Arah pertama: setiap $12x + 30y$ habis dibagi $6$, karena $6$ membagi kedua koefisiennya. Arah kedua: $6$ sendiri tercapai, misalnya</p><p>$$12(-2) + 30(1) = 6$$</p><p>dan mengalikan penulisan itu dengan $k$ memberi setiap kelipatan $6k$.</p><p>Jadi yang perlu dicacah adalah kelipatan $6$ di antara $1$ dan $100$:</p><p>$$\\left\\lfloor \\frac{100}{6} \\right\\rfloor = 16$$</p><p>yaitu $6, 12, 18, \\ldots, 96$. Ada $\\boxed{16}$ bilangan.</p><p>Perhatikan bahwa soal ini akan berbeda jauh kalau $x$ dan $y$ dibatasi tak negatif. Di situ bukan semua kelipatan $6$ yang tercapai — $6$ dan $18$ misalnya tidak — dan pertanyaannya berubah menjadi soal Frobenius, yang jauh lebih rumit.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bz-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "bezout"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan bilangan bulat $x$ dengan $0 \\le x &lt; 101$ yang memenuhi</p><p>$$37x \\equiv 1 \\pmod{101}$$</p>",
+   "jawaban": "71",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "$101$ prima, jadi inversnya pasti ada. Yang dicari adalah $x$ pada $37x + 101y = 1$.",
+    "Jalankan algoritma Euklid pada $101$ dan $37$ sampai sisanya $1$, lalu telusuri balik.",
+    "$101 = 2 \\times 37 + 27$, lalu $37 = 1 \\times 27 + 10$, lalu $27 = 2 \\times 10 + 7$, lalu $10 = 1 \\times 7 + 3$, lalu $7 = 2 \\times 3 + 1$."
+   ],
+   "pembahasan": "<p><strong>Algoritma Euklid</strong> pada $101$ dan $37$:</p><p>$$101 = 2 \\times 37 + 27$$ $$37 = 1 \\times 27 + 10$$ $$27 = 2 \\times 10 + 7$$ $$10 = 1 \\times 7 + 3$$ $$7 = 2 \\times 3 + 1$$</p><p>Sisa $1$ tercapai, jadi $\\gcd(37, 101) = 1$ dan inversnya ada.</p><p><strong>Telusuri balik</strong>, mengganti sisa satu per satu dari bawah:</p><p>$$1 = 7 - 2 \\times 3$$</p><p>Ganti $3 = 10 - 7$:</p><p>$$1 = 7 - 2(10 - 7) = 3 \\times 7 - 2 \\times 10$$</p><p>Ganti $7 = 27 - 2 \\times 10$:</p><p>$$1 = 3(27 - 2 \\times 10) - 2 \\times 10 = 3 \\times 27 - 8 \\times 10$$</p><p>Ganti $10 = 37 - 27$:</p><p>$$1 = 3 \\times 27 - 8(37 - 27) = 11 \\times 27 - 8 \\times 37$$</p><p>Ganti $27 = 101 - 2 \\times 37$:</p><p>$$1 = 11(101 - 2 \\times 37) - 8 \\times 37 = 11 \\times 101 - 30 \\times 37$$</p><p>Jadi $37(-30) + 101(11) = 1$, sehingga $x \\equiv -30 \\pmod{101}$, yaitu</p><p>$$x = -30 + 101 = \\boxed{71}$$</p><p>Periksa: $37 \\times 71 = 2627 = 26 \\times 101 + 1$. Benar.</p><p>Kuncinya adalah mengganti <strong>satu sisa pada satu langkah</strong>, dari yang terbawah ke atas. Mencoba melompat dua langkah sekaligus hampir selalu berujung salah tanda.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bz-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "bezout"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $a$, $b$, $c$ bilangan bulat dengan $\\gcd(a, b) = 1$. Buktikan bahwa jika $a \\mid bc$, maka $a \\mid c$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Syarat $\\gcd(a,b) = 1$ itu yang harus diterjemahkan menjadi sesuatu yang bisa dipakai dalam perhitungan.",
+    "Identitas Bézout mengubahnya menjadi persamaan: ada bulat $x, y$ dengan $ax + by = 1$.",
+    "Kalikan persamaan itu dengan $c$, lalu periksa kedua suku di ruas kirinya."
+   ],
+   "pembahasan": "<p>Karena $\\gcd(a,b) = 1$, identitas Bézout memberi bilangan bulat $x$ dan $y$ dengan</p><p>$$ax + by = 1$$</p><p>Kalikan kedua ruas dengan $c$:</p><p>$$acx + bcy = c$$</p><p>Sekarang periksa kedua suku di ruas kiri.</p><p><strong>Suku pertama.</strong> $acx$ memuat faktor $a$, jadi $a \\mid acx$.</p><p><strong>Suku kedua.</strong> Menurut yang diketahui, $a \\mid bc$. Maka $a$ juga membagi kelipatan $bc$ mana pun, khususnya $a \\mid bcy$.</p><p>Karena $a$ membagi kedua suku, ia membagi jumlahnya:</p><p>$$a \\mid acx + bcy = c$$</p><p>Jadi $a \\mid c$. $\\blacksquare$</p><p>Syarat $\\gcd(a,b) = 1$ tidak bisa dibuang. Ambil $a = 4$, $b = 6$, $c = 2$: di situ $a \\mid bc$ sebab $4 \\mid 12$, tetapi $4 \\nmid 2$. Yang gagal adalah adanya $x, y$ dengan $4x + 6y = 1$ — mustahil, karena ruas kiri selalu genap.</p><p>Kasus khusus $a$ prima adalah Lema Euklid: kalau $p \\mid bc$ maka $p \\mid b$ atau $p \\mid c$. Ia mengikuti langsung, sebab $p$ prima berarti $\\gcd(p, b)$ hanya bisa $1$ atau $p$.</p>",
+   "rubrik": [
+    "Menerjemahkan $\\gcd(a,b) = 1$ menjadi identitas Bézout $ax + by = 1$",
+    "Mengalikan kedua ruas dengan $c$ untuk memperoleh $acx + bcy = c$",
+    "Menunjukkan $a \\mid acx$",
+    "Menunjukkan $a \\mid bcy$ dengan memakai hipotesis $a \\mid bc$",
+    "Menyimpulkan $a$ membagi jumlahnya, yaitu $c$"
+   ]
+  },
+  {
+   "id": "bz-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "bezout"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa untuk bilangan bulat $a$ dan $b$ yang tidak keduanya nol,</p><p>$$\\gcd(a,b) = 1 \\iff \\text{ada bulat } x, y \\text{ dengan } ax + by = 1$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ini pernyataan dua arah, jadi ada dua hal yang harus dibuktikan terpisah. Yang mana yang lebih mudah?",
+    "Arah \"$\\Leftarrow$\" hampir langsung: kalau $d$ membagi $a$ dan $b$, apa yang dibagi $d$ pada $ax + by$?",
+    "Arah \"$\\Rightarrow$\" adalah isi identitas Bézout. Untuk membuktikannya sendiri, tinjau himpunan semua nilai positif $ax + by$ dan ambil yang terkecil."
+   ],
+   "pembahasan": "<h4>Arah mudah: jika ada $x, y$ dengan $ax + by = 1$, maka $\\gcd(a,b) = 1$</h4><p>Misalkan $d = \\gcd(a,b)$. Karena $d \\mid a$ dan $d \\mid b$, maka $d$ membagi setiap kombinasi bulat keduanya, khususnya</p><p>$$d \\mid ax + by = 1$$</p><p>Satu-satunya bilangan asli yang membagi $1$ adalah $1$, jadi $d = 1$.</p><h4>Arah sebaliknya: jika $\\gcd(a,b) = 1$, maka ada $x, y$ dengan $ax + by = 1$</h4><p>Tinjau himpunan</p><p>$$S = \\{\\,ax + by : x, y \\in \\mathbb{Z}\\,\\} \\cap \\mathbb{Z}^{+}$$</p><p>yaitu semua nilai <strong>positif</strong> yang bisa dibentuk.</p><p>$S$ tidak kosong: kalau $a \\ne 0$, maka $a \\cdot a + b \\cdot 0 = a^2 &gt; 0$ ada di dalamnya. Menurut prinsip terurut baik, $S$ punya anggota terkecil; sebut $d_0 = ax_0 + by_0$.</p><p><strong>Klaim: $d_0 \\mid a$.</strong> Bagi $a$ oleh $d_0$ dengan algoritma pembagian:</p><p>$$a = q d_0 + r, \\qquad 0 \\le r &lt; d_0$$</p><p>Maka</p><p>$$r = a - q d_0 = a - q(ax_0 + by_0) = a(1 - qx_0) + b(-qy_0)$$</p><p>sehingga $r$ juga berbentuk $ax + by$. Tetapi $0 \\le r &lt; d_0$ sementara $d_0$ anggota positif terkecil — jadi $r$ tidak boleh positif, artinya $r = 0$ dan $d_0 \\mid a$.</p><p>Dengan cara yang sama $d_0 \\mid b$. Jadi $d_0$ pembagi persekutuan $a$ dan $b$, sehingga $d_0 \\le \\gcd(a,b) = 1$. Karena $d_0$ positif, $d_0 = 1$.</p><p>Maka $ax_0 + by_0 = 1$, yang dicari. $\\blacksquare$</p><p>Perhatikan bahwa arah kedua sekaligus membuktikan bentuk umum identitas Bézout: tanpa memakai $\\gcd(a,b) = 1$, penalaran yang sama menunjukkan nilai positif terkecil dari $ax+by$ selalu tepat sama dengan $\\gcd(a,b)$.</p>",
+   "rubrik": [
+    "Menyatakan bahwa dua arah harus dibuktikan terpisah",
+    "Arah mudah: memakai $d \\mid a$ dan $d \\mid b$ untuk menyimpulkan $d \\mid ax + by = 1$, sehingga $d = 1$",
+    "Arah sebaliknya: membentuk himpunan nilai positif $ax + by$ dan menyatakan ia tidak kosong",
+    "Memakai prinsip terurut baik untuk mengambil anggota terkecil $d_0$",
+    "Membuktikan $d_0 \\mid a$ lewat algoritma pembagian, dengan menunjukkan sisanya juga berbentuk $ax + by$ sehingga terpaksa nol",
+    "Menyimpulkan $d_0$ pembagi persekutuan, lalu $d_0 = 1$"
+   ]
+  },
+  {
+   "id": "bz-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "bezout"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan bilangan asli terkecil $x$ yang memenuhi $17x + 5y = 1$ untuk suatu bilangan bulat $y$.</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Persamaan itu punya solusi karena $\\gcd(17,5) = 1$. Yang dicari hanya $x$-nya, jadi $y$ boleh disingkirkan.",
+    "Menyingkirkan $y$ berarti bekerja modulo $5$: dari $17x + 5y = 1$ diperoleh $17x \\equiv 1 \\pmod 5$.",
+    "Sederhanakan $17 \\equiv 2 \\pmod 5$, lalu selesaikan $2x \\equiv 1 \\pmod 5$."
+   ],
+   "pembahasan": "<p>Karena $\\gcd(17, 5) = 1$, identitas Bézout menjamin ada bulat $x, y$ dengan $17x + 5y = 1$.</p><p>Untuk mencari $x$ saja, tinjau persamaannya modulo $5$ — suku $5y$ lenyap:</p><p>$$17x \\equiv 1 \\pmod 5$$</p><p>Karena $17 = 3 \\times 5 + 2$, kita punya $17 \\equiv 2 \\pmod 5$, sehingga</p><p>$$2x \\equiv 1 \\pmod 5$$</p><p>Coba $x = 0, 1, 2, 3, 4$: nilai $2x$ berturut-turut $0, 2, 4, 6 \\equiv 1, 8 \\equiv 3$. Yang memberi $1$ adalah $x = 3$.</p><p>Jadi $x \\equiv 3 \\pmod 5$, dan bilangan asli terkecilnya adalah $\\boxed{3}$.</p><p>Periksa: $17 \\times 3 = 51$, dan $51 + 5y = 1$ memberi $y = -10$. Memang $17(3) + 5(-10) = 51 - 50 = 1$.</p><p>Perhatikan $y$ bernilai negatif. Itu bukan kekeliruan — pada identitas Bézout hampir selalu salah satu dari $x$ atau $y$ negatif, sebab $ax$ dan $by$ harus saling meniadakan sampai tersisa bilangan sekecil $\\gcd(a,b)$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dl-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan bilangan asli terkecil yang lebih dari $20$ sehingga persamaan $6x + 9y = c$ punya solusi bulat.</p>",
+   "jawaban": "21",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Sebelum mencari solusi, tanyakan lebih dulu nilai $c$ apa saja yang mungkin.",
+    "Persamaan $ax + by = c$ punya solusi bulat tepat ketika $\\gcd(a,b) \\mid c$.",
+    "$\\gcd(6,9) = 3$, jadi $c$ harus kelipatan $3$."
+   ],
+   "pembahasan": "<p>Persamaan $ax + by = c$ punya solusi bulat <strong>tepat ketika</strong> $\\gcd(a,b)$ membagi $c$.</p><p>Di sini</p><p>$$\\gcd(6, 9) = 3$$</p><p>jadi $c$ harus kelipatan $3$ — dan setiap kelipatan $3$ memang tercapai, sebab $6(-1) + 9(1) = 3$ dan penulisan itu tinggal dikalikan.</p><p>Kelipatan $3$ terkecil yang lebih dari $20$ adalah $\\boxed{21}$.</p><p>Periksa: $6x + 9y = 21$ dipenuhi misalnya oleh $x = 2$, $y = 1$.</p><p>Perhatikan bahwa $c = 21$ juga punya solusi dengan kedua peubah positif. Itu tidak selalu terjadi: $c = 3$ memenuhi syarat keterbagian dan punya solusi bulat, tetapi tidak punya solusi dengan $x, y$ keduanya positif. Syarat $\\gcd(a,b) \\mid c$ menjamin solusi <strong>bulat</strong>, bukan solusi positif.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dl-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa pasangan bilangan asli $(x, y)$ yang memenuhi $7x + 11y = 200$?</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "$\\gcd(7,11) = 1$, jadi solusi bulat pasti ada. Yang perlu dicacah adalah yang keduanya positif.",
+    "Ambil modulo $7$ untuk melenyapkan $x$ dan mengurung $y$ dalam satu kelas sisa.",
+    "Setelah $y$ terkurung, batas $x \\ge 1$ memberi $11y \\le 193$ — dan tinggal dicacah."
+   ],
+   "pembahasan": "<p>Karena $\\gcd(7, 11) = 1$ membagi $200$, solusi bulatnya ada.</p><p><strong>Kurung $y$.</strong> Ambil modulo $7$:</p><p>$$11y \\equiv 200 \\pmod 7$$</p><p>Karena $11 \\equiv 4$ dan $200 = 28 \\times 7 + 4$ sehingga $200 \\equiv 4 \\pmod 7$:</p><p>$$4y \\equiv 4 \\pmod 7$$</p><p>Karena $\\gcd(4,7) = 1$, boleh dibagi $4$ — yaitu dikalikan invers $4$ modulo $7$ — memberi</p><p>$$y \\equiv 1 \\pmod 7$$</p><p><strong>Pasang batasnya.</strong> Dari $7x = 200 - 11y \\ge 7$ diperoleh $11y \\le 193$, yaitu $y \\le 17$.</p><p>Nilai $y \\equiv 1 \\pmod 7$ dengan $1 \\le y \\le 17$:</p><p>$$y = 1,\\ 8,\\ 15$$</p><p>Masing-masing memberi</p><p>$$(x,y) = (27, 1),\\ (16, 8),\\ (5, 15)$$</p><p>Ada $\\boxed{3}$ pasangan.</p><p>Perhatikan pola $x$-nya: $27, 16, 5$ — turun $11$ setiap kali, sementara $y$ naik $7$. Itulah keluarga solusi $x = x_0 - 11t$, $y = y_0 + 7t$: $x$ bergeser sebesar koefisien $y$, dan $y$ bergeser sebesar koefisien $x$, dengan arah berlawanan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dl-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Sebuah pertunjukan menjual tiket dewasa seharga Rp7.000 dan tiket anak seharga Rp4.000. Suatu hari terkumpul tepat Rp100.000, dengan sedikitnya satu tiket dewasa dan sedikitnya satu tiket anak terjual. Ada berapa kemungkinan banyaknya tiket dewasa dan tiket anak yang terjual?</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Terjemahkan dulu ceritanya ke satu persamaan. Peubahnya harus bilangan asli, bukan sembarang bilangan.",
+    "Dalam satuan ribuan rupiah, persamaannya $7a + 4b = 100$ dengan $a, b \\ge 1$.",
+    "Ambil modulo $4$ untuk mengurung $a$, lalu cacah yang muat dalam batasnya."
+   ],
+   "pembahasan": "<p>Misalkan $a$ banyaknya tiket dewasa dan $b$ banyaknya tiket anak. Dalam satuan ribuan rupiah,</p><p>$$7a + 4b = 100, \\qquad a \\ge 1,\\ b \\ge 1$$</p><p><strong>Kurung $a$.</strong> Ambil modulo $4$ supaya $4b$ lenyap:</p><p>$$7a \\equiv 100 \\pmod 4$$</p><p>Karena $7 \\equiv 3$ dan $100 \\equiv 0 \\pmod 4$:</p><p>$$3a \\equiv 0 \\pmod 4$$</p><p>Karena $\\gcd(3,4) = 1$, ini memaksa $a \\equiv 0 \\pmod 4$.</p><p><strong>Pasang batasnya.</strong> Dari $4b = 100 - 7a \\ge 4$ diperoleh $7a \\le 96$, yaitu $a \\le 13$.</p><p>Nilai $a$ kelipatan $4$ dengan $1 \\le a \\le 13$:</p><p>$$a = 4,\\ 8,\\ 12$$</p><p>Masing-masing memberi</p><p>$$(a, b) = (4, 18),\\ (8, 11),\\ (12, 4)$$</p><p>Ada $\\boxed{3}$ kemungkinan.</p><p>Periksa satu: $12$ tiket dewasa dan $4$ tiket anak memberi $12 \\times 7000 + 4 \\times 4000 = 84000 + 16000 = 100000$. Cocok.</p><p>Syarat \"sedikitnya satu\" itu yang membuat $a = 0$ tidak dihitung — padahal $a = 0$ dengan $b = 25$ memenuhi persamaannya. Dalam soal cerita, batas semacam ini hampir selalu tersembunyi di dalam kalimat, bukan di dalam rumus.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dl-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa pasangan bilangan asli $(x, y)$ yang memenuhi $13x + 17y = 300$?</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Koefisiennya besar, jadi rentang yang mungkin sempit. Perkirakan dulu seberapa besar $y$ boleh.",
+    "Ambil modulo $13$ untuk mengurung $y$ dalam satu kelas sisa modulo $13$.",
+    "Karena jaraknya $13$, mungkin hanya ada satu nilai $y$ yang muat — periksa dengan teliti."
+   ],
+   "pembahasan": "<p>$\\gcd(13, 17) = 1$ membagi $300$, jadi solusi bulatnya ada.</p><p><strong>Kurung $y$.</strong> Ambil modulo $13$:</p><p>$$17y \\equiv 300 \\pmod{13}$$</p><p>Karena $17 \\equiv 4$ dan $300 = 23 \\times 13 + 1$ sehingga $300 \\equiv 1 \\pmod{13}$:</p><p>$$4y \\equiv 1 \\pmod{13}$$</p><p>Cari invers $4$ modulo $13$: karena $4 \\times 10 = 40 = 39 + 1 \\equiv 1$, inversnya $10$. Kalikan kedua ruas dengan $10$:</p><p>$$y \\equiv 10 \\pmod{13}$$</p><p><strong>Pasang batasnya.</strong> Dari $13x = 300 - 17y \\ge 13$ diperoleh $17y \\le 287$, yaitu $y \\le 16$.</p><p>Nilai $y \\equiv 10 \\pmod{13}$ dengan $1 \\le y \\le 16$: hanya $y = 10$. Nilai berikutnya, $y = 23$, sudah melewati batas.</p><p>Untuk $y = 10$:</p><p>$$13x = 300 - 170 = 130 \\quad\\Longrightarrow\\quad x = 10$$</p><p>Jadi hanya ada $\\boxed{1}$ pasangan, yaitu $(x, y) = (10, 10)$.</p><p>Ketika koefisiennya besar dibandingkan ruas kanan, jarak antarsolusi — di sini $17$ pada $x$ dan $13$ pada $y$ — melebihi rentang yang tersedia, sehingga solusi positifnya sedikit atau bahkan tidak ada sama sekali. Itu sebabnya memasang batas lebih dulu sering menghemat banyak pekerjaan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dl-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan bilangan asli <strong>terbesar</strong> yang tidak dapat dituliskan sebagai $5x + 8y$ dengan $x$ dan $y$ bilangan bulat tak negatif.</p>",
+   "jawaban": "27",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Perhatikan bedanya dengan soal Bézout biasa: di sini $x$ dan $y$ tidak boleh negatif, dan itu mengubah segalanya.",
+    "Kelompokkan bilangan menurut sisanya dibagi $5$. Pada setiap kelas, cari nilai terkecil yang bisa dibentuk.",
+    "Bilangan yang tidak terbentuk pada suatu kelas adalah yang lebih kecil dari nilai terkecil itu — dan yang terbesar di antara semuanya adalah jawabannya."
+   ],
+   "pembahasan": "<p>Karena $\\gcd(5,8) = 1$, setiap bilangan bulat bisa ditulis $5x + 8y$ kalau $x, y$ boleh negatif. Batasan $x, y \\ge 0$ itulah yang membuat sebagian bilangan tidak tercapai.</p><p><strong>Kelompokkan menurut sisa dibagi $5$.</strong> Karena menambah $5$ selalu bisa dilakukan (dengan menaikkan $x$), pada tiap kelas sisa cukup dicari nilai <strong>terkecil</strong> yang bisa dibentuk; semua yang lebih besar pada kelas itu otomatis ikut terbentuk.</p><p>Nilai terkecil pada tiap kelas dicapai dengan memakai $8y$ sesedikit mungkin:</p><table><thead><tr><th>$y$</th><th>$8y$</th><th>$8y \\bmod 5$</th></tr></thead><tbody><tr><td>$0$</td><td>$0$</td><td>$0$</td></tr><tr><td>$1$</td><td>$8$</td><td>$3$</td></tr><tr><td>$2$</td><td>$16$</td><td>$1$</td></tr><tr><td>$3$</td><td>$24$</td><td>$4$</td></tr><tr><td>$4$</td><td>$32$</td><td>$2$</td></tr></tbody></table><p>Kelima kelas sisa sudah terwakili. Jadi bilangan terkecil yang bisa dibentuk pada masing-masing kelas adalah $0, 8, 16, 24, 32$.</p><p><strong>Cari yang tidak terbentuk.</strong> Pada kelas sisa $2$, nilai terkecil yang terbentuk adalah $32$. Jadi bilangan terbesar pada kelas itu yang <strong>tidak</strong> terbentuk adalah</p><p>$$32 - 5 = 27$$</p><p>Untuk kelas-kelas lain, bilangan tak terbentuk terbesarnya lebih kecil: $24 - 5 = 19$, $16 - 5 = 11$, $8 - 5 = 3$, dan pada kelas $0$ semuanya terbentuk.</p><p>Yang terbesar di antara semuanya adalah $\\boxed{27}$.</p><p>Periksa: $27 = 5x + 8y$ menuntut $y \\in \\{0,1,2,3\\}$, memberi $27, 19, 11, 3$ sebagai sisa untuk $5x$ — tidak satu pun kelipatan $5$. Sementara $28 = 5(4) + 8(1)$ terbentuk, begitu pula seluruh bilangan setelahnya.</p><p>Untuk $a, b$ saling asing, hasil umumnya adalah $ab - a - b$. Di sini $5 \\times 8 - 5 - 8 = 27$, cocok.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dl-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-linear"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa persamaan $ax + by = c$ punya solusi bulat $(x, y)$ jika dan hanya jika $\\gcd(a, b)$ membagi $c$. Di sini $a$ dan $b$ bilangan bulat yang tidak keduanya nol.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Dua arah, dan seperti biasa satu jauh lebih mudah. Mulai dari yang mudah.",
+    "Arah \"ada solusi $\\Rightarrow$ $d \\mid c$\": kalau $d$ membagi $a$ dan $b$, apa yang bisa dikatakan tentang $ax + by$?",
+    "Arah sebaliknya memakai identitas Bézout: ada $x_0, y_0$ dengan $ax_0 + by_0 = d$. Apa yang terjadi kalau persamaan itu dikalikan $c/d$?"
+   ],
+   "pembahasan": "<p>Tulis $d = \\gcd(a,b)$.</p><h4>Arah pertama: jika ada solusi, maka $d \\mid c$</h4><p>Misalkan $(x, y)$ solusi bulat, jadi $ax + by = c$.</p><p>Karena $d \\mid a$ dan $d \\mid b$, bilangan $d$ membagi setiap kombinasi bulat keduanya. Khususnya</p><p>$$d \\mid ax + by = c$$</p><h4>Arah kedua: jika $d \\mid c$, maka ada solusi</h4><p>Menurut identitas Bézout, ada bulat $x_0, y_0$ dengan</p><p>$$a x_0 + b y_0 = d$$</p><p>Karena $d \\mid c$, ada bilangan bulat $k$ dengan $c = kd$. Kalikan persamaan Bézout dengan $k$:</p><p>$$a\\,(k x_0) + b\\,(k y_0) = kd = c$$</p><p>Jadi $(x, y) = (k x_0,\\ k y_0)$ adalah solusi bulat — dan ia benar-benar bulat karena $k$, $x_0$, dan $y_0$ semuanya bulat.</p><p>Kedua arah terbukti. $\\blacksquare$</p><h4>Bentuk seluruh solusinya</h4><p>Setelah satu solusi $(x_0', y_0')$ diperoleh, semua solusi lainnya adalah</p><p>$$x = x_0' + \\frac{b}{d}t, \\qquad y = y_0' - \\frac{a}{d}t, \\qquad t \\in \\mathbb{Z}$$</p><p>Bahwa keduanya memang solusi terlihat dari substitusi: tambahan pada $ax$ adalah $a\\frac{b}{d}t$ dan pengurangan pada $by$ adalah $b\\frac{a}{d}t$ — keduanya sama besar dan saling meniadakan.</p><p>Perhatikan pembagian oleh $d$ pada rumus itu. Tanpa $d$, langkahnya terlalu besar dan sebagian solusi terlewat: untuk $6x + 9y = 21$, langkah pada $x$ adalah $9/3 = 3$, bukan $9$.</p>",
+   "rubrik": [
+    "Menyatakan bahwa dua arah harus dibuktikan terpisah, dengan $d = \\gcd(a,b)$",
+    "Arah pertama: memakai $d \\mid a$ dan $d \\mid b$ untuk menyimpulkan $d \\mid ax + by = c$",
+    "Arah kedua: memanggil identitas Bézout untuk memperoleh $ax_0 + by_0 = d$",
+    "Menulis $c = kd$ dan mengalikan persamaan Bézout dengan $k$",
+    "Menyatakan bahwa solusi yang diperoleh benar-benar bulat, karena $k$ bulat"
+   ]
+  },
+  {
+   "id": "dl-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa pasangan bilangan asli $(x, y)$ yang memenuhi $3x + 5y = 100$?</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Periksa dulu apakah solusinya ada sama sekali, sebelum mencari-cari.",
+    "Untuk menyingkirkan satu peubah, ambil persamaannya modulo salah satu koefisien. Modulo $3$ akan melenyapkan $x$.",
+    "Setelah $y$ terkurung dalam satu kelas sisa, tinggal cacah berapa nilai yang muat dalam batas $x, y \\ge 1$."
+   ],
+   "pembahasan": "<p><strong>Langkah 1: apakah ada solusi?</strong> $\\gcd(3,5) = 1$, dan $1 \\mid 100$, jadi solusi bulat pasti ada.</p><p><strong>Langkah 2: kurung salah satu peubah.</strong> Ambil modulo $3$ supaya $3x$ lenyap:</p><p>$$5y \\equiv 100 \\pmod 3$$</p><p>Karena $5 \\equiv 2$ dan $100 \\equiv 1 \\pmod 3$:</p><p>$$2y \\equiv 1 \\pmod 3$$</p><p>Coba $y = 0, 1, 2$: nilai $2y$ berturut-turut $0, 2, 1$. Jadi $y \\equiv 2 \\pmod 3$.</p><p><strong>Langkah 3: pasang batasnya.</strong> Dibutuhkan $y \\ge 1$ dan $x \\ge 1$. Dari $3x = 100 - 5y \\ge 3$ diperoleh $5y \\le 97$, yaitu $y \\le 19$.</p><p>Nilai $y$ yang memenuhi $y \\equiv 2 \\pmod 3$ dan $1 \\le y \\le 19$:</p><p>$$y = 2,\\ 5,\\ 8,\\ 11,\\ 14,\\ 17$$</p><p>Masing-masing memberi satu $x$:</p><p>$$(x,y) = (30,2),\\ (25,5),\\ (20,8),\\ (15,11),\\ (10,14),\\ (5,17)$$</p><p>Ada $\\boxed{6}$ pasangan.</p><p>Perhatikan bahwa $y = 20$ juga memenuhi $y \\equiv 2 \\pmod 3$, tetapi memberi $x = 0$ — dan $0$ bukan bilangan asli. Batas $x \\ge 1$, bukan $x \\ge 0$, itulah yang memangkas cacahnya tepat satu.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dtl-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-taklinear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa pasangan bilangan asli $(x, y)$ yang memenuhi</p><p>$$xy + 2x + 3y = 30\\ ?$$</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ruas kirinya hampir bisa difaktorkan. Yang kurang hanyalah sebuah konstanta.",
+    "Untuk $xy + ax + by$, tambahkan $ab$ ke kedua ruas: di sini tambahkan $6$.",
+    "Setelah menjadi $(x+3)(y+2) = 36$, ingat bahwa $x \\ge 1$ dan $y \\ge 1$ membatasi kedua faktornya."
+   ],
+   "pembahasan": "<p>Ruas kiri hampir berbentuk hasil kali. Tambahkan $2 \\times 3 = 6$ ke kedua ruas:</p><p>$$xy + 2x + 3y + 6 = 36$$</p><p>Sekarang ruas kiri bisa difaktorkan:</p><p>$$(x + 3)(y + 2) = 36$$</p><p>Inilah <em>pemfaktoran Simon</em>: pada $xy + ax + by$, tambahan yang tepat selalu $ab$.</p><p><strong>Pasang batasnya.</strong> Karena $x \\ge 1$ maka $x + 3 \\ge 4$; karena $y \\ge 1$ maka $y + 2 \\ge 3$.</p><p>Daftar pembagi $36$ sebagai nilai $x+3$, lalu periksa syaratnya:</p><table><thead><tr><th>$x+3$</th><th>$y+2$</th><th>$x$</th><th>$y$</th><th>memenuhi?</th></tr></thead><tbody><tr><td>$4$</td><td>$9$</td><td>$1$</td><td>$7$</td><td>ya</td></tr><tr><td>$6$</td><td>$6$</td><td>$3$</td><td>$4$</td><td>ya</td></tr><tr><td>$9$</td><td>$4$</td><td>$6$</td><td>$2$</td><td>ya</td></tr><tr><td>$12$</td><td>$3$</td><td>$9$</td><td>$1$</td><td>ya</td></tr><tr><td>$18$</td><td>$2$</td><td>$15$</td><td>$0$</td><td>tidak, $y = 0$</td></tr><tr><td>$36$</td><td>$1$</td><td>$33$</td><td>$-1$</td><td>tidak</td></tr></tbody></table><p>Pembagi $1, 2, 3$ juga gugur karena memberi $x + 3 &lt; 4$.</p><p>Ada $\\boxed{4}$ pasangan: $(1,7)$, $(3,4)$, $(6,2)$, $(9,1)$.</p><p>Periksa satu: $3 \\times 4 + 2 \\times 3 + 3 \\times 4 = 12 + 6 + 12 = 30$. Benar.</p><p>Perhatikan bahwa konstanta yang ditambahkan adalah hasil kali koefisien $x$ dan $y$ <strong>bersilang</strong>: koefisien $x$ adalah $2$ dan ia menjadi bagian dari $(y+2)$, sedangkan koefisien $y$ adalah $3$ dan ia menjadi $(x+3)$. Tertukar sedikit saja, pemfaktorannya gagal.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dtl-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-taklinear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa pasangan bilangan asli $(x, y)$ dengan $x \\le y$ yang memenuhi</p><p>$$\\frac{1}{x} + \\frac{1}{y} = \\frac{1}{12}\\ ?$$</p>",
+   "jawaban": "8",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hilangkan pecahannya lebih dulu dengan mengalikan kedua ruas dengan $12xy$.",
+    "Kamu akan sampai di $xy - 12x - 12y = 0$. Tambahkan konstanta yang tepat supaya bisa difaktorkan.",
+    "Setelah menjadi $(x-12)(y-12) = 144$, tunjukkan kedua faktornya harus positif, lalu cacah pasangan pembagi $144$ dengan $d \\le e$."
+   ],
+   "pembahasan": "<p>Kalikan kedua ruas dengan $12xy$:</p><p>$$12y + 12x = xy \\quad\\Longrightarrow\\quad xy - 12x - 12y = 0$$</p><p>Tambahkan $144$ ke kedua ruas agar ruas kiri bisa difaktorkan:</p><p>$$xy - 12x - 12y + 144 = 144 \\quad\\Longrightarrow\\quad (x-12)(y-12) = 144$$</p><p><strong>Kedua faktornya positif.</strong> Karena $\\frac1x &lt; \\frac1{12}$, pastilah $x &gt; 12$; begitu pula $y &gt; 12$. Jadi $x - 12$ dan $y - 12$ keduanya bilangan asli.</p><p><strong>Cacah pasangan pembagi.</strong> Yang diminta $x \\le y$, jadi pasangan $(d,e)$ dengan $de = 144$ dan $d \\le e$. Karena</p><p>$$144 = 2^4 \\times 3^2 \\quad\\Longrightarrow\\quad \\tau(144) = 5 \\times 3 = 15$$</p><p>banyaknya pasangan dengan $d \\le e$ adalah $\\frac{15 + 1}{2} = 8$ — pembagi berpasangan dua-dua, dan $144 = 12^2$ menyisakan satu pasangan berimpit $(12,12)$.</p><p>Daftarnya:</p><p>$$(1,144),\\ (2,72),\\ (3,48),\\ (4,36),\\ (6,24),\\ (8,18),\\ (9,16),\\ (12,12)$$</p><p>memberi</p><p>$$(x,y) = (13,156),\\ (14,84),\\ (15,60),\\ (16,48),\\ (18,36),\\ (20,30),\\ (21,28),\\ (24,24)$$</p><p>Ada $\\boxed{8}$ pasangan.</p><p>Langkah \"tunjukkan $x &gt; 12$\" itu bukan basa-basi. Tanpanya, pembagi negatif $144$ ikut terhitung dan cacahnya melonjak — padahal semuanya memberi $x$ atau $y$ tak positif.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dtl-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-taklinear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa pasangan bilangan bulat $(x, y)$ dengan $x &gt; 0$ dan $y \\ge 0$ yang memenuhi</p><p>$$x^2 - y^2 = 2026\\ ?$$</p>",
+   "jawaban": "0",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Faktorkan seperti biasa, lalu periksa syarat paritas kedua faktornya sebelum mencacah apa pun.",
+    "$(x-y) + (x+y) = 2x$ selalu genap, jadi $x-y$ dan $x+y$ berparitas sama.",
+    "Kalau keduanya genap, hasil kalinya habis dibagi $4$. Periksa $2026$ terhadap $4$."
+   ],
+   "pembahasan": "<p>Faktorkan:</p><p>$$(x - y)(x + y) = 2026$$</p><p><strong>Syarat paritas.</strong> Jumlah kedua faktor adalah $2x$, yang genap — jadi $x-y$ dan $x+y$ berparitas sama. Ada dua kemungkinan:</p><ul><li>Keduanya ganjil. Maka hasil kalinya ganjil. Tetapi $2026$ genap, jadi mustahil.</li><li>Keduanya genap. Maka hasil kalinya habis dibagi $4$.</li></ul><p><strong>Periksa $2026$ terhadap $4$.</strong> Karena</p><p>$$2026 = 2 \\times 1013$$</p><p>dan $1013$ ganjil, maka $2026$ habis dibagi $2$ tetapi tidak habis dibagi $4$:</p><p>$$2026 = 4 \\times 506 + 2$$</p><p>Jadi kemungkinan kedua juga mustahil.</p><p>Kedua kemungkinan gugur, sehingga tidak ada solusi sama sekali. Jawabannya $\\boxed{0}$.</p><p>Bilangan yang <strong>tidak</strong> bisa ditulis sebagai selisih dua kuadrat persis bilangan yang bersisa $2$ modulo $4$ — yaitu genap tetapi bukan kelipatan $4$. Semua bilangan ganjil bisa ($n = \\left(\\frac{n+1}{2}\\right)^2 - \\left(\\frac{n-1}{2}\\right)^2$), dan semua kelipatan $4$ juga bisa.</p><p>Perhatikan bahwa mencari pasangan pembagi $2026$ satu per satu akan memakan waktu lama dan tetap berujung nihil. Memeriksa paritas lebih dulu menutup soal dalam dua baris.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dtl-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-taklinear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa tripel bilangan asli $(x, y, z)$ dengan $x \\le y \\le z$ yang memenuhi</p><p>$$\\frac{1}{x} + \\frac{1}{y} + \\frac{1}{z} = 1\\ ?$$</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Memfaktorkan tidak akan menolong di sini. Refleks yang dipakai adalah membatasi ukuran peubahnya.",
+    "Karena $x \\le y \\le z$, suku $\\frac1x$ adalah yang terbesar. Jadi $\\frac{3}{x} \\ge 1$, yang mengurung $x$ ke rentang sangat sempit.",
+    "Setelah $x$ diketahui, ulangi gagasan yang sama untuk mengurung $y$, lalu $z$ ditentukan."
+   ],
+   "pembahasan": "<p><strong>Kurung $x$.</strong> Karena $x \\le y \\le z$, suku $\\frac1x$ yang terbesar, sehingga</p><p>$$1 = \\frac1x + \\frac1y + \\frac1z \\ \\le\\ \\frac{3}{x} \\quad\\Longrightarrow\\quad x \\le 3$$</p><p>Selain itu $\\frac1x &lt; 1$ memaksa $x \\ge 2$. Jadi $x \\in \\{2, 3\\}$.</p><p><strong>Kasus $x = 2$.</strong> Persamaannya menjadi</p><p>$$\\frac1y + \\frac1z = \\frac12$$</p><p>Dengan cara yang sama, $\\frac12 \\le \\frac2y$ memberi $y \\le 4$; dan $\\frac1y &lt; \\frac12$ memberi $y \\ge 3$.</p><ul><li>$y = 3$: $\\frac1z = \\frac12 - \\frac13 = \\frac16$, jadi $z = 6$. Tripelnya $(2,3,6)$.</li><li>$y = 4$: $\\frac1z = \\frac12 - \\frac14 = \\frac14$, jadi $z = 4$. Tripelnya $(2,4,4)$.</li></ul><p><strong>Kasus $x = 3$.</strong> Persamaannya menjadi</p><p>$$\\frac1y + \\frac1z = \\frac23$$</p><p>Di sini $\\frac23 \\le \\frac2y$ memberi $y \\le 3$, dan $y \\ge x = 3$ memberi $y \\ge 3$. Jadi $y = 3$, sehingga $\\frac1z = \\frac23 - \\frac13 = \\frac13$ dan $z = 3$. Tripelnya $(3,3,3)$.</p><p>Seluruhnya ada $\\boxed{3}$ tripel:</p><p>$$(2,3,6), \\qquad (2,4,4), \\qquad (3,3,3)$$</p><p>Teknik ini — mengurutkan peubah lalu memakai suku terbesar untuk membatasi — mengubah soal yang tampaknya tak berhingga menjadi pemeriksaan beberapa kasus. Tanpa syarat $x \\le y \\le z$, ketiga tripel itu masih sama, hanya terhitung berkali-kali dalam urutan berbeda.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dtl-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-taklinear"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa sebuah bilangan asli $n$ dapat dituliskan sebagai selisih dua kuadrat bilangan bulat jika dan hanya jika $n$ ganjil atau $n$ habis dibagi $4$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Faktorkan $x^2 - y^2$ dan periksa apa yang dipaksakan oleh paritas kedua faktornya.",
+    "Arah pertama: kalau $n = (x-y)(x+y)$, tunjukkan kedua faktor berparitas sama, lalu tarik kesimpulan tentang $n$.",
+    "Arah kedua bersifat membangun: untuk $n$ ganjil coba $x = \\frac{n+1}{2}$; untuk $n = 4m$ coba $x = m + 1$."
+   ],
+   "pembahasan": "<p>Tulis $n = x^2 - y^2 = (x - y)(x + y)$ dan sebut $u = x - y$, $v = x + y$.</p><h4>Arah pertama: jika $n$ selisih dua kuadrat, maka $n$ ganjil atau $4 \\mid n$</h4><p>Jumlah kedua faktor adalah</p><p>$$u + v = (x-y) + (x+y) = 2x$$</p><p>yang genap. Dua bilangan bulat berjumlah genap pasti berparitas sama. Ada dua kemungkinan:</p><ul><li><strong>Keduanya ganjil.</strong> Maka $n = uv$ ganjil.</li><li><strong>Keduanya genap.</strong> Tulis $u = 2u'$ dan $v = 2v'$, sehingga $n = 4u'v'$, yaitu $4 \\mid n$.</li></ul><p>Jadi $n$ ganjil atau habis dibagi $4$. Tidak ada kemungkinan ketiga, sehingga bilangan yang bersisa $2$ modulo $4$ tidak pernah menjadi selisih dua kuadrat.</p><h4>Arah kedua: jika $n$ ganjil atau $4 \\mid n$, maka $n$ selisih dua kuadrat</h4><p>Cukup ditunjukkan penulisannya secara nyata.</p><p><strong>Kalau $n$ ganjil</strong>, tulis $n = 2m + 1$. Ambil</p><p>$$x = m + 1, \\qquad y = m$$</p><p>Maka</p><p>$$x^2 - y^2 = (m+1)^2 - m^2 = 2m + 1 = n$$</p><p><strong>Kalau $4 \\mid n$</strong>, tulis $n = 4m$. Ambil</p><p>$$x = m + 1, \\qquad y = m - 1$$</p><p>Maka</p><p>$$x^2 - y^2 = (m+1)^2 - (m-1)^2 = 4m = n$$</p><p>Kedua arah terbukti. $\\blacksquare$</p><p>Perhatikan bahwa pada arah kedua, $y$ boleh bernilai $0$ — misalnya $n = 4$ memberi $x = 2$, $y = 0$. Kalau soal menuntut $x$ dan $y$ keduanya <strong>asli</strong>, kasus $n = 4$ gugur, dan pernyataannya perlu dirumuskan ulang.</p>",
+   "rubrik": [
+    "Memfaktorkan $n = (x-y)(x+y)$ dan menamai kedua faktornya",
+    "Menunjukkan jumlah kedua faktor genap, sehingga keduanya berparitas sama",
+    "Menangani kedua kasus paritas: keduanya ganjil memberi $n$ ganjil, keduanya genap memberi $4 \\mid n$",
+    "Arah sebaliknya untuk $n$ ganjil, dengan penulisan nyata yang diperiksa",
+    "Arah sebaliknya untuk $4 \\mid n$, dengan penulisan nyata yang diperiksa",
+    "Menyatakan kedua arah sudah lengkap, sehingga kesetaraannya terbukti"
+   ]
+  },
+  {
+   "id": "dtl-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-taklinear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa pasangan bilangan asli $(x, y)$ dengan $x \\le y$ yang memenuhi</p><p>$$xy = 3(x + y)\\ ?$$</p>",
+   "jawaban": "2",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pindahkan semuanya ke satu ruas dulu, lalu lihat apakah bentuknya bisa difaktorkan dengan tambahan konstanta.",
+    "Dari $xy - 3x - 3y = 0$, tambahkan $9$ ke kedua ruas.",
+    "Setelah menjadi $(x-3)(y-3) = 9$, buktikan kedua faktornya harus positif sebelum mencacah."
+   ],
+   "pembahasan": "<p>Pindahkan dan faktorkan:</p><p>$$xy - 3x - 3y = 0 \\quad\\Longrightarrow\\quad xy - 3x - 3y + 9 = 9\n\\quad\\Longrightarrow\\quad (x-3)(y-3) = 9$$</p><p><strong>Kedua faktornya positif.</strong> Hasil kalinya $9 &gt; 0$, jadi $x-3$ dan $y-3$ bertanda sama. Andaikan keduanya negatif: maka $x \\le 2$ dan $y \\le 2$, sehingga $xy \\le 4$ sementara $3(x+y) \\ge 6$ — mustahil. Jadi keduanya positif.</p><p>Kasus salah satu nol juga gugur, karena hasil kalinya akan $0$, bukan $9$.</p><p><strong>Cacah pasangan pembagi.</strong> Pasangan $(d, e)$ dengan $de = 9$ dan $d \\le e$:</p><p>$$(1, 9), \\qquad (3, 3)$$</p><p>Masing-masing memberi</p><p>$$(x, y) = (4, 12), \\qquad (6, 6)$$</p><p>Ada $\\boxed{2}$ pasangan.</p><p>Periksa: $4 \\times 12 = 48$ dan $3(4 + 12) = 48$. Benar. Juga $6 \\times 6 = 36$ dan $3(6+6) = 36$.</p><p>Langkah membuktikan kedua faktor positif sering dilewati, padahal ia yang mencegah pasangan seperti $(-1, -9)$ ikut terhitung. Pada soal ini pasangan negatif memberi $x = 2$, $y = -6$ — bukan bilangan asli, tetapi baru ketahuan setelah diperiksa.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "dtl-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "diophantine-taklinear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa pasangan bilangan asli $(x, y)$ yang memenuhi $x^2 - y^2 = 45$?</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Refleks pertama untuk persamaan tak linear: bisakah ruas kirinya difaktorkan?",
+    "$x^2 - y^2 = (x-y)(x+y)$, jadi soalnya berubah menjadi mencacah pasangan pembagi $45$.",
+    "Perhatikan syarat tambahannya: $x - y$ dan $x + y$ harus berparitas sama, dan keduanya positif dengan $x - y &lt; x + y$."
+   ],
+   "pembahasan": "<p>Faktorkan ruas kiri:</p><p>$$(x - y)(x + y) = 45$$</p><p>Karena $x, y$ asli dan $x^2 &gt; y^2$, kedua faktornya positif dengan $x - y &lt; x + y$.</p><p><strong>Syarat paritas.</strong> Jumlah kedua faktor adalah $(x-y) + (x+y) = 2x$, yang genap. Dua bilangan berjumlah genap pasti berparitas sama. Di sini $45$ ganjil, jadi kedua faktornya otomatis ganjil — syarat itu terpenuhi sendiri.</p><p><strong>Cacah pasangan pembagi.</strong> Pasangan $(d, e)$ dengan $de = 45$ dan $d &lt; e$:</p><p>$$(1, 45), \\qquad (3, 15), \\qquad (5, 9)$$</p><p>Masing-masing memberi $x = \\dfrac{d+e}{2}$ dan $y = \\dfrac{e-d}{2}$:</p><table><thead><tr><th>$(d, e)$</th><th>$x$</th><th>$y$</th></tr></thead><tbody><tr><td>$(1, 45)$</td><td>$23$</td><td>$22$</td></tr><tr><td>$(3, 15)$</td><td>$9$</td><td>$6$</td></tr><tr><td>$(5, 9)$</td><td>$7$</td><td>$2$</td></tr></tbody></table><p>Ketiganya memberi $x, y$ bilangan asli. Jadi ada $\\boxed{3}$ pasangan.</p><p>Periksa satu: $9^2 - 6^2 = 81 - 36 = 45$. Benar.</p><p>Syarat paritas itu yang sering terlupa, dan ia menggigit begitu ruas kanannya genap. Untuk $x^2 - y^2 = 30$, pasangan $(2, 15)$ memang berhasil kali $30$, tetapi paritasnya berbeda sehingga $x$ dan $y$ tidak bulat.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fe-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "fungsi-euler"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan $\\varphi(2025)$.</p>",
+   "jawaban": "1080",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Faktorkan $2025$ lebih dulu. Bilangan ini kebetulan sangat rapi.",
+    "$2025 = 45^2 = (9 \\times 5)^2 = 3^4 \\times 5^2$.",
+    "Hanya ada dua prima berbeda, jadi hasil kalinya cuma dua faktor."
+   ],
+   "pembahasan": "<p>Faktorkan:</p><p>$$2025 = 45^2 = (3^2 \\times 5)^2 = 3^4 \\times 5^2$$</p><p>Prima berbedanya hanya $3$ dan $5$, sehingga</p><p>$$\\varphi(2025) = 2025\\left(1 - \\frac13\\right)\\left(1 - \\frac15\\right)\n= 2025 \\times \\frac23 \\times \\frac45$$</p><p>Hitung bertahap:</p><p>$$2025 \\times \\frac23 = 1350, \\qquad 1350 \\times \\frac45 = \\boxed{1080}$$</p><p>Periksa lewat sifat multiplikatif:</p><p>$$\\varphi(3^4) = 3^4 - 3^3 = 81 - 27 = 54, \\qquad \\varphi(5^2) = 25 - 5 = 20$$</p><p>dan $54 \\times 20 = 1080$. Cocok.</p><p>Rumus $\\varphi(p^k) = p^k - p^{k-1}$ punya bacaan yang mudah diingat: dari $p^k$ bilangan pertama, yang <strong>tidak</strong> relatif prima terhadap $p^k$ persis kelipatan $p$, dan banyaknya $p^{k-1}$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fe-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "fungsi-euler"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan sisa pembagian $3^{2026}$ oleh $100$.</p>",
+   "jawaban": "29",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Modulusnya komposit, jadi Fermat Kecil tidak berlaku. Yang dipakai perumumannya.",
+    "Periksa dulu $\\gcd(3, 100) = 1$, lalu hitung $\\varphi(100)$ — itulah panjang siklus yang dipakai memotong eksponen.",
+    "Setelah $2026$ direduksi modulo $\\varphi(100)$, hitung pangkat kecilnya langsung."
+   ],
+   "pembahasan": "<p>Karena $100$ bukan prima, Fermat Kecil tidak bisa dipakai. Yang berlaku adalah Teorema Euler, dan syaratnya terpenuhi: $\\gcd(3, 100) = 1$.</p><p><strong>Hitung $\\varphi(100)$.</strong> Dari $100 = 2^2 \\times 5^2$:</p><p>$$\\varphi(100) = 100 \\times \\frac12 \\times \\frac45 = 40$$</p><p>Maka $3^{40} \\equiv 1 \\pmod{100}$.</p><p><strong>Potong eksponennya.</strong></p><p>$$2026 = 40 \\times 50 + 26$$</p><p>sehingga</p><p>$$3^{2026} = \\left(3^{40}\\right)^{50} \\times 3^{26} \\equiv 3^{26} \\pmod{100}$$</p><p><strong>Hitung $3^{26}$ modulo $100$</strong> dengan mengkuadratkan berulang:</p><p>$$3^2 = 9, \\qquad 3^4 = 81, \\qquad 3^8 \\equiv 81^2 = 6561 \\equiv 61$$</p><p>$$3^{16} \\equiv 61^2 = 3721 \\equiv 21$$</p><p>Karena $26 = 16 + 8 + 2$:</p><p>$$3^{26} \\equiv 21 \\times 61 \\times 9 \\pmod{100}$$</p><p>Hitung bertahap: $21 \\times 61 = 1281 \\equiv 81$, lalu $81 \\times 9 = 729 \\equiv 29$.</p><p>Sisanya adalah $\\boxed{29}$.</p><p>Perhatikan bahwa $\\varphi(n)$ belum tentu siklus <strong>terpendek</strong>. Di sini $3^{20} \\equiv 1\n\\pmod{100}$ juga berlaku, jadi memotong eksponen modulo $20$ pun benar. Memakai $\\varphi(n)$ selalu aman, hanya kadang lebih panjang dari yang perlu.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fe-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "fungsi-euler"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan bilangan asli terkecil $n$ yang memenuhi $\\varphi(n) = 8$.</p>",
+   "jawaban": "15",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ini soal terbalik: nilainya diketahui, bilangannya dicari. Batasi dulu rentang $n$ yang masuk akal.",
+    "Karena $\\varphi(n) &lt; n$ untuk $n &gt; 1$, pastilah $n &gt; 8$. Batas atasnya juga tidak jauh, sebab $\\varphi(n)$ tumbuh bersama $n$.",
+    "Periksa $n = 9, 10, 11, \\ldots$ satu per satu dengan rumus $\\varphi$ sampai bertemu $8$."
+   ],
+   "pembahasan": "<p>Karena $\\varphi(n) \\le n - 1$ untuk $n &gt; 1$, syarat $\\varphi(n) = 8$ memaksa $n \\ge 9$.</p><p>Periksa berurutan, memakai $\\varphi(p^k) = p^k - p^{k-1}$ dan sifat multiplikatif:</p><table><thead><tr><th>$n$</th><th>faktorisasi</th><th>$\\varphi(n)$</th></tr></thead><tbody><tr><td>$9$</td><td>$3^2$</td><td>$6$</td></tr><tr><td>$10$</td><td>$2 \\times 5$</td><td>$1 \\times 4 = 4$</td></tr><tr><td>$11$</td><td>prima</td><td>$10$</td></tr><tr><td>$12$</td><td>$2^2 \\times 3$</td><td>$2 \\times 2 = 4$</td></tr><tr><td>$13$</td><td>prima</td><td>$12$</td></tr><tr><td>$14$</td><td>$2 \\times 7$</td><td>$1 \\times 6 = 6$</td></tr><tr><td>$15$</td><td>$3 \\times 5$</td><td>$2 \\times 4 = 8$</td></tr></tbody></table><p>Yang pertama mencapai $8$ adalah $n = \\boxed{15}$.</p><p>Periksa langsung: bilangan di $\\{1, \\ldots, 15\\}$ yang relatif prima terhadap $15$ adalah $1, 2, 4, 7, 8, 11, 13, 14$ — tepat delapan.</p><p>Nilai $8$ ternyata dicapai oleh beberapa $n$: selain $15$, juga $16$, $20$, $24$, dan $30$. Fungsi $\\varphi$ jauh dari satu-satu, jadi soal \"tentukan $n$ dari $\\varphi(n)$\" hampir selalu harus meminta yang terkecil atau meminta semuanya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fe-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "fungsi-euler"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan sisa pembagian $2^{2026}$ oleh $125$.</p>",
+   "jawaban": "114",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Modulusnya $5^3$ — bukan prima, jadi alat untuk modulus prima tidak berlaku di sini. Periksa dulu apakah $2$ dan $125$ relatif prima.",
+    "Yang berlaku untuk modulus komposit adalah Teorema Euler: $\\varphi(125) = 125 - 25 = 100$, jadi eksponennya dipotong modulo $100$.",
+    "Setelah tersisa $2^{26}$, hitung dengan mengkuadratkan berulang modulo $125$."
+   ],
+   "pembahasan": "<p>Karena $\\gcd(2, 125) = 1$, Teorema Euler berlaku.</p><p><strong>Hitung $\\varphi(125)$.</strong> Dari $125 = 5^3$:</p><p>$$\\varphi(5^3) = 5^3 - 5^2 = 125 - 25 = 100$$</p><p>Maka $2^{100} \\equiv 1 \\pmod{125}$.</p><p><strong>Potong eksponennya.</strong></p><p>$$2026 = 100 \\times 20 + 26 \\quad\\Longrightarrow\\quad 2^{2026} \\equiv 2^{26} \\pmod{125}$$</p><p><strong>Hitung $2^{26}$ modulo $125$.</strong> Kuadratkan berulang:</p><p>$$2^7 = 128 \\equiv 3 \\pmod{125}$$</p><p>Bentuk ini yang paling menolong. Karena $26 = 7 \\times 3 + 5$:</p><p>$$2^{26} = \\left(2^{7}\\right)^{3} \\times 2^{5} \\equiv 3^3 \\times 32 = 27 \\times 32 = 864$$</p><p>Sisakan modulo $125$:</p><p>$$864 = 6 \\times 125 + 114 \\quad\\Longrightarrow\\quad 2^{26} \\equiv \\boxed{114} \\pmod{125}$$</p><p>Periksa dengan jalur lain: $2^{10} = 1024 = 8 \\times 125 + 24 \\equiv 24$, lalu $2^{20} \\equiv 24^2 = 576 = 4 \\times 125 + 76 \\equiv 76$, lalu $2^{26} \\equiv 76 \\times 64 = 4864 = 38 \\times 125 + 114 \\equiv 114$. Cocok.</p><p>Menemukan pangkat kecil yang hasilnya sederhana — di sini $2^7 \\equiv 3$ — sering memangkas perhitungan jauh lebih banyak daripada mengkuadratkan berulang secara mekanis.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fe-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "fungsi-euler"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa bilangan asli $n \\le 100$ yang membuat $\\varphi(n)$ bernilai ganjil?</p>",
+   "jawaban": "2",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan menghitung seratus nilai. Cari alasan struktural mengapa $\\varphi(n)$ hampir selalu genap.",
+    "Untuk $p$ prima ganjil, $\\varphi(p^k) = p^{k-1}(p-1)$ memuat faktor $p - 1$ yang genap.",
+    "Yang tersisa hanyalah $n$ yang tidak punya faktor prima ganjil sama sekali — yaitu pangkat $2$. Periksa kasus itu satu per satu."
+   ],
+   "pembahasan": "<p>Tinjau faktorisasi $n$ dan pakai sifat multiplikatif:</p><p>$$\\varphi(n) = \\prod_{p^k \\,\\|\\, n} \\varphi\\!\\left(p^k\\right), \\qquad\n\\varphi\\!\\left(p^k\\right) = p^{k-1}(p-1)$$</p><p><strong>Kalau $n$ punya faktor prima ganjil $p$.</strong> Maka salah satu faktornya adalah $p^{k-1}(p-1)$, dan $p - 1$ genap karena $p$ ganjil. Satu faktor genap sudah membuat seluruh hasil kalinya genap. Jadi $\\varphi(n)$ genap.</p><p><strong>Kalau $n$ tidak punya faktor prima ganjil.</strong> Maka $n$ berupa pangkat $2$, yaitu $n \\in \\{1, 2, 4, 8, 16, 32, 64\\}$ dalam rentang yang diberikan. Hitung:</p><p>$$\\varphi(1) = 1, \\qquad \\varphi(2) = 1, \\qquad \\varphi(4) = 2, \\qquad \\varphi(8) = 4$$</p><p>$$\\varphi(16) = 8, \\qquad \\varphi(32) = 16, \\qquad \\varphi(64) = 32$$</p><p>Yang ganjil hanya $\\varphi(1)$ dan $\\varphi(2)$, keduanya bernilai $1$.</p><p>Jadi ada $\\boxed{2}$ bilangan, yaitu $n = 1$ dan $n = 2$.</p><p>Hasil ini berlaku untuk batas berapa pun: $\\varphi(n)$ ganjil <strong>hanya</strong> untuk $n = 1$ dan $n = 2$. Kalau soalnya mengganti $100$ dengan sejuta, jawabannya tetap $2$.</p><p>Alasannya bisa diringkas satu kalimat: untuk $n \\ge 3$, bilangan $\\varphi(n)$ mencacah anggota yang berpasangan $a \\leftrightarrow n - a$, dan tidak ada anggota yang berpasangan dengan dirinya sendiri.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fe-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "fungsi-euler"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa untuk setiap bilangan asli $n$,</p><p>$$\\sum_{d \\mid n} \\varphi(d) = n$$</p><p>dengan penjumlahan diambil atas semua pembagi positif $n$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ruas kanan mencacah $n$ benda. Cari himpunan berukuran $n$, lalu kelompokkan anggotanya sehingga tiap kelompok berukuran $\\varphi(d)$.",
+    "Ambil himpunan $\\{1, 2, \\ldots, n\\}$ dan kelompokkan menurut $\\gcd(k, n)$.",
+    "Tunjukkan kelompok dengan $\\gcd(k,n) = d$ beranggota tepat $\\varphi(n/d)$, lalu perhatikan bahwa $d$ dan $n/d$ menjelajahi pembagi yang sama."
+   ],
+   "pembahasan": "<p>Tinjau himpunan</p><p>$$S = \\{1, 2, \\ldots, n\\}$$</p><p>yang jelas beranggota $n$. Gagasannya: kelompokkan anggota $S$ menurut FPB-nya dengan $n$, lalu hitung ukuran tiap kelompok.</p><p><strong>Pengelompokan.</strong> Untuk setiap pembagi $d \\mid n$, tulis</p><p>$$S_d = \\{\\, k \\in S : \\gcd(k, n) = d \\,\\}$$</p><p>Setiap $k \\in S$ masuk ke tepat satu kelompok, sebab $\\gcd(k,n)$ bernilai tunggal dan selalu merupakan pembagi $n$. Jadi</p><p>$$n = |S| = \\sum_{d \\mid n} |S_d|$$</p><p><strong>Ukuran tiap kelompok.</strong> Syarat $\\gcd(k, n) = d$ menuntut $d \\mid k$; tulis $k = d m$. Dengan $1 \\le k \\le n$ diperoleh $1 \\le m \\le n/d$. Selain itu</p><p>$$\\gcd(k, n) = d \\iff \\gcd(dm,\\ n) = d \\iff \\gcd\\!\\left(m,\\ \\frac{n}{d}\\right) = 1$$</p><p>Jadi $S_d$ berpadanan satu-satu dengan bilangan $m$ di $\\{1, \\ldots, n/d\\}$ yang relatif prima terhadap $n/d$ — dan banyaknya persis $\\varphi(n/d)$:</p><p>$$|S_d| = \\varphi\\!\\left(\\frac{n}{d}\\right)$$</p><p><strong>Gabungkan.</strong></p><p>$$n = \\sum_{d \\mid n} \\varphi\\!\\left(\\frac{n}{d}\\right)$$</p><p>Terakhir, ketika $d$ menjelajahi semua pembagi $n$, bilangan $n/d$ juga menjelajahi semua pembagi $n$ — hanya urutannya terbalik. Jadi penjumlahan itu sama saja dengan</p><p>$$\\sum_{d \\mid n} \\varphi(d) = n$$</p><p>$\\blacksquare$</p><p>Contohnya untuk $n = 12$: pembaginya $1, 2, 3, 4, 6, 12$ dengan $\\varphi$ berturut-turut $1, 1, 2, 2, 2, 4$, dan jumlahnya $12$.</p><p>Pola pembuktian ini — mencacah satu himpunan dengan dua cara — muncul di seluruh matematika olimpiade. Yang menentukan bukan manipulasi rumusnya, melainkan pemilihan himpunan dan pengelompokannya.</p>",
+   "rubrik": [
+    "Memilih himpunan $\\{1, \\ldots, n\\}$ dan menyatakan ukurannya $n$",
+    "Mengelompokkan menurut $\\gcd(k,n)$ dan menyatakan setiap anggota masuk <strong>tepat satu</strong> kelompok",
+    "Menurunkan kesetaraan $\\gcd(dm, n) = d \\iff \\gcd(m, n/d) = 1$",
+    "Menyimpulkan ukuran kelompoknya $\\varphi(n/d)$",
+    "Menyatakan bahwa $d \\mapsto n/d$ hanya membalik urutan pembagi, sehingga kedua bentuk penjumlahan sama"
+   ]
+  },
+  {
+   "id": "fe-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "fungsi-euler"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan $\\varphi(360)$.</p>",
+   "jawaban": "96",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Rumus $\\varphi$ bekerja atas faktor prima, jadi langkah pertamanya selalu sama.",
+    "Faktorkan $360$ atas prima: $360 = 2^3 \\times 3^2 \\times 5$.",
+    "Pakai $\\varphi(n) = n \\prod_{p \\mid n}\\left(1 - \\frac1p\\right)$, dengan hasil kali diambil atas prima <strong>berbeda</strong> yang membagi $n$."
+   ],
+   "pembahasan": "<p>Faktorkan lebih dulu:</p><p>$$360 = 2^3 \\times 3^2 \\times 5$$</p><p>Prima berbeda yang membagi $360$ adalah $2$, $3$, dan $5$. Maka</p><p>$$\\varphi(360) = 360\\left(1 - \\frac12\\right)\\left(1 - \\frac13\\right)\\left(1 - \\frac15\\right)\n= 360 \\times \\frac12 \\times \\frac23 \\times \\frac45$$</p><p>Hitung bertahap:</p><p>$$360 \\times \\frac12 = 180, \\qquad 180 \\times \\frac23 = 120, \\qquad 120 \\times \\frac45 = \\boxed{96}$$</p><p>Bisa juga lewat sifat multiplikatif, karena $8$, $9$, dan $5$ saling asing berpasangan:</p><p>$$\\varphi(360) = \\varphi(8)\\,\\varphi(9)\\,\\varphi(5) = 4 \\times 6 \\times 4 = 96$$</p><p>dengan $\\varphi(p^k) = p^k - p^{k-1}$.</p><p>Perhatikan bahwa yang masuk ke dalam hasil kali adalah prima <strong>berbeda</strong>, bukan pangkatnya. Meski $2$ muncul tiga kali dalam faktorisasi, faktor $\\left(1 - \\frac12\\right)$ hanya dipakai sekali.</p>",
+   "rubrik": []
+  },
+  {
    "id": "fk-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
    "pilar": "teori-bilangan",
@@ -691,6 +1311,76 @@
     "Membuktikan $n^7 \\equiv n \\pmod 2$",
     "Membuktikan $n^7 \\equiv n \\pmod 3$, misalnya lewat $n^7 = (n^3)^2 \\cdot n$",
     "Menyimpulkan kembali ke $42$ <strong>dengan menyebut</strong> alasan relatif prima berpasangan"
+   ]
+  },
+  {
+   "id": "fkl-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "fermat-kecil"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan sisa pembagian $2^{100}$ oleh $101$.</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Periksa dulu apakah modulusnya prima. Itu menentukan alat mana yang boleh dipakai.",
+    "$101$ prima dan $101 \\nmid 2$, jadi Fermat Kecil berlaku dengan eksponen $p - 1$.",
+    "Bandingkan eksponen yang diminta dengan $p - 1$. Kadang keduanya persis sama."
+   ],
+   "pembahasan": "<p>Periksa keprimaan $101$: cukup diuji pembagi sampai $\\sqrt{101} \\approx 10{,}05$, yaitu $2, 3, 5, 7$. Tidak satu pun membaginya, jadi $101$ prima.</p><p>Karena $101$ prima dan $101 \\nmid 2$, Teorema Fermat Kecil memberi</p><p>$$2^{101 - 1} = 2^{100} \\equiv 1 \\pmod{101}$$</p><p>Eksponen yang diminta persis $p - 1$, jadi tidak ada yang perlu dipotong sama sekali.</p><p>Sisanya adalah $\\boxed{1}$.</p><p>Soal seperti ini menguji satu hal saja: apakah kamu memeriksa keprimaan modulusnya sebelum mulai menghitung. Kalau $101$ diganti $100$, Fermat Kecil tidak berlaku dan jawabannya sama sekali berbeda — di sana yang dipakai Teorema Euler dengan $\\varphi(100) = 40$.</p><p>Perhatikan juga syarat kedua, $p \\nmid a$. Untuk $a = 101$ misalnya, $101^{100} \\equiv 0$, bukan $1$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fkl-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "fermat-kecil"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan sisa pembagian $3^{2026}$ oleh $17$.</p>",
+   "jawaban": "8",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Eksponennya terlalu besar untuk dihitung langsung. Periksa dulu sifat modulusnya — itu menentukan panjang siklus yang boleh kamu pakai.",
+    "$17$ prima, jadi Fermat Kecil memberi $3^{16} \\equiv 1 \\pmod{17}$. Potong eksponennya modulo $16$.",
+    "Setelah tersisa $3^{10}$, hitung dengan mengkuadratkan berulang — dan perhatikan bahwa $3^8$ memberi nilai yang sangat mudah dipakai."
+   ],
+   "pembahasan": "<p>Karena $17$ prima dan $17 \\nmid 3$, Teorema Fermat Kecil memberi</p><p>$$3^{16} \\equiv 1 \\pmod{17}$$</p><p><strong>Potong eksponennya.</strong> Bagi $2026$ oleh $16$:</p><p>$$2026 = 16 \\times 126 + 10$$</p><p>sehingga</p><p>$$3^{2026} = \\left(3^{16}\\right)^{126} \\times 3^{10} \\equiv 3^{10} \\pmod{17}$$</p><p><strong>Hitung $3^{10}$ modulo $17$</strong> dengan mengkuadratkan berulang:</p><p>$$3^2 = 9$$ $$3^4 = 81 = 4 \\times 17 + 13 \\equiv 13 \\equiv -4$$ $$3^8 \\equiv (-4)^2 = 16 \\equiv -1$$</p><p>Nilai $-1$ itu yang membuat sisanya mudah. Karena $10 = 8 + 2$:</p><p>$$3^{10} = 3^8 \\times 3^2 \\equiv (-1) \\times 9 = -9 \\equiv 17 - 9 = \\boxed{8} \\pmod{17}$$</p><p>Periksa arah lain: dari $3^8 \\equiv -1$ diperoleh $3^{16} \\equiv 1$, cocok dengan Fermat Kecil. Angka $8$ di sini adalah <strong>orde</strong> $3$ modulo $17$ yang setengah jalan — pangkat terkecil yang memberi $-1$.</p><p>Memakai wakil negatif seperti $-4$ dan $-1$ alih-alih $13$ dan $16$ memangkas banyak perhitungan. Setiap kali sebuah sisa melewati separuh modulus, menggantinya dengan wakil negatif hampir selalu menguntungkan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fkl-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "fermat-kecil"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa $a^{13} \\equiv a \\pmod{2730}$ untuk setiap bilangan bulat $a$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Modulusnya besar dan komposit. Pecah dulu atas faktor primanya, lalu tangani satu per satu.",
+    "$2730 = 2 \\times 3 \\times 5 \\times 7 \\times 13$ — lima prima berbeda, semuanya berpangkat satu.",
+    "Untuk tiap prima $p$, periksa apakah $p - 1$ membagi $12$. Kalau ya, Fermat Kecil langsung memberi hasilnya."
+   ],
+   "pembahasan": "<p>Faktorkan modulusnya:</p><p>$$2730 = 2 \\times 3 \\times 5 \\times 7 \\times 13$$</p><p>Kelima primanya berbeda dan berpangkat satu. Karena itu, cukup dibuktikan</p><p>$$a^{13} \\equiv a \\pmod p$$</p><p>untuk masing-masing $p \\in \\{2, 3, 5, 7, 13\\}$ — bilangan yang habis dibagi kelima prima itu otomatis habis dibagi hasil kalinya, sebab kelimanya saling asing.</p><p><strong>Kunci perhitungannya.</strong> Daftar $p - 1$ untuk kelima prima:</p><p>$$2 - 1 = 1, \\quad 3 - 1 = 2, \\quad 5 - 1 = 4, \\quad 7 - 1 = 6, \\quad 13 - 1 = 12$$</p><p>Kelimanya membagi $12$. Itu bukan kebetulan — modulusnya memang disusun demikian.</p><p><strong>Buktikan untuk satu prima $p$.</strong> Ada dua kasus.</p><p><em>Kasus $p \\mid a$.</em> Maka $a \\equiv 0 \\pmod p$, sehingga $a^{13} \\equiv 0 \\equiv a$. Terpenuhi.</p><p><em>Kasus $p \\nmid a$.</em> Fermat Kecil memberi $a^{p-1} \\equiv 1 \\pmod p$. Karena $(p-1) \\mid 12$, tulis $12 = (p-1)k$ untuk suatu bilangan asli $k$. Maka</p><p>$$a^{12} = \\left(a^{p-1}\\right)^{k} \\equiv 1^{k} = 1 \\pmod p$$</p><p>Kalikan kedua ruas dengan $a$:</p><p>$$a^{13} \\equiv a \\pmod p$$</p><p>Kedua kasus memberi kesimpulan yang sama, jadi $a^{13} \\equiv a \\pmod p$ berlaku untuk <strong>setiap</strong> bilangan bulat $a$ dan setiap $p$ di daftar itu.</p><p><strong>Gabungkan.</strong> Kelima prima itu berbeda, jadi saling asing berpasangan. Karena masing- masing membagi $a^{13} - a$, hasil kalinya juga membagi:</p><p>$$2730 \\mid a^{13} - a \\quad\\Longrightarrow\\quad a^{13} \\equiv a \\pmod{2730}$$</p><p>$\\blacksquare$</p><p>Perhatikan bahwa kasus $p \\mid a$ tidak boleh dilewati. Fermat Kecil mensyaratkan $p \\nmid a$; tanpa memisahkan kasusnya, pembuktian ini hanya berlaku untuk sebagian bilangan bulat.</p><p>Konstruksi yang sama menghasilkan keluarga pernyataan serupa. Untuk eksponen $n$, ambil modulus berupa hasil kali seluruh prima $p$ dengan $(p-1) \\mid (n-1)$ — misalnya $a^7 \\equiv a \\pmod{42}$, sebab $42 = 2 \\times 3 \\times 7$ dan $1, 2, 6$ semuanya membagi $6$.</p>",
+   "rubrik": [
+    "Memfaktorkan $2730$ menjadi lima prima berbeda berpangkat satu",
+    "Menyatakan bahwa cukup dibuktikan modulo tiap prima, <strong>dengan alasan</strong> kelimanya saling asing",
+    "Memeriksa bahwa $p - 1$ membagi $12$ untuk kelima prima",
+    "Menangani kasus $p \\mid a$ secara terpisah",
+    "Menerapkan Fermat Kecil pada kasus $p \\nmid a$, memakai $12 = (p-1)k$ untuk memperoleh $a^{12} \\equiv 1$",
+    "Menggabungkan kelima keterbagian menjadi $2730 \\mid a^{13} - a$"
    ]
   },
   {
@@ -1055,6 +1745,312 @@
    ]
   },
   {
+   "id": "kl-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "kongruensi-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Ada berapa solusi berbeda modulo $15$ dari kongruensi</p><p>$$6x \\equiv 9 \\pmod{15}\\ ?$$</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan langsung mencoba lima belas nilai. Ada aturan yang langsung memberi cacahnya.",
+    "Hitung $d = \\gcd(6, 15)$ dan periksa apakah $d$ membagi $9$.",
+    "Kalau $d \\mid b$, banyaknya solusi berbeda modulo $m$ tepat $d$ buah."
+   ],
+   "pembahasan": "<p>Hitung $d = \\gcd(6, 15) = 3$.</p><p><strong>Apakah ada solusi?</strong> Kongruensi $ax \\equiv b \\pmod m$ punya solusi tepat ketika $d = \\gcd(a,m)$ membagi $b$. Di sini $3 \\mid 9$, jadi solusinya ada.</p><p><strong>Ada berapa?</strong> Kalau solusinya ada, banyaknya tepat $d$ buah yang berbeda modulo $m$. Jadi ada $\\boxed{3}$ solusi.</p><p>Untuk melihatnya secara nyata, bagi seluruhnya dengan $3$ — modulusnya ikut menyusut:</p><p>$$2x \\equiv 3 \\pmod 5$$</p><p>Invers $2$ modulo $5$ adalah $3$, sebab $2 \\times 3 = 6 \\equiv 1$. Maka</p><p>$$x \\equiv 3 \\times 3 = 9 \\equiv 4 \\pmod 5$$</p><p>Solusi modulo $5$ tunggal, yaitu $x \\equiv 4$. Diangkat kembali ke modulo $15$, kelas itu pecah menjadi tiga:</p><p>$$x \\equiv 4,\\ 9,\\ 14 \\pmod{15}$$</p><p>Periksa: $6 \\times 4 = 24 \\equiv 9$, $6 \\times 9 = 54 \\equiv 9$, $6 \\times 14 = 84 \\equiv 9$ — ketiganya modulo $15$. Benar.</p><p>Yang paling sering keliru adalah membagi $6x \\equiv 9 \\pmod{15}$ menjadi $2x \\equiv 3 \\pmod{15}$ — modulusnya lupa ikut dibagi. Kongruensi hasilnya salah, dan dua dari tiga solusinya hilang.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kl-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "kongruensi-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan bilangan bulat $x$ dengan $0 \\le x &lt; 26$ yang memenuhi</p><p>$$7x \\equiv 5 \\pmod{26}$$</p>",
+   "jawaban": "23",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "$\\gcd(7, 26) = 1$, jadi solusinya tunggal. Yang dibutuhkan invers $7$ modulo $26$.",
+    "Cari invers lewat algoritma Euklid pada $26$ dan $7$, lalu telusuri balik.",
+    "Setelah invers ditemukan, kalikan kedua ruas dengan invers itu."
+   ],
+   "pembahasan": "<p>Karena $\\gcd(7, 26) = 1$ membagi $5$, solusinya ada dan tunggal modulo $26$.</p><p><strong>Cari invers $7$ modulo $26$.</strong> Jalankan algoritma Euklid:</p><p>$$26 = 3 \\times 7 + 5, \\qquad 7 = 1 \\times 5 + 2, \\qquad 5 = 2 \\times 2 + 1$$</p><p>Telusuri balik:</p><p>$$1 = 5 - 2 \\times 2 = 5 - 2(7 - 5) = 3 \\times 5 - 2 \\times 7$$</p><p>$$= 3(26 - 3 \\times 7) - 2 \\times 7 = 3 \\times 26 - 11 \\times 7$$</p><p>Jadi $-11 \\times 7 \\equiv 1 \\pmod{26}$, sehingga</p><p>$$7^{-1} \\equiv -11 \\equiv 15 \\pmod{26}$$</p><p><strong>Selesaikan.</strong> Kalikan kedua ruas dengan $15$:</p><p>$$x \\equiv 15 \\times 5 = 75 \\pmod{26}$$</p><p>Sisakan: $75 = 2 \\times 26 + 23$, jadi</p><p>$$x = \\boxed{23}$$</p><p>Periksa: $7 \\times 23 = 161 = 6 \\times 26 + 5$. Benar.</p><p>Perhatikan langkah $-11 \\equiv 15$. Invers yang keluar dari penelusuran balik hampir selalu negatif; menambahkan modulus sekali sudah cukup membawanya ke rentang yang diminta.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kl-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "kongruensi-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan jumlah semua bilangan bulat $x$ dengan $0 \\le x &lt; 12$ yang memenuhi</p><p>$$4x \\equiv 8 \\pmod{12}$$</p>",
+   "jawaban": "26",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Cari dulu ada berapa solusinya, supaya kamu tahu berapa banyak yang harus dijumlahkan.",
+    "$\\gcd(4,12) = 4$ dan $4 \\mid 8$, jadi ada empat solusi berbeda modulo $12$.",
+    "Bagi seluruhnya dengan $4$ — modulusnya ikut dibagi — lalu angkat kembali solusinya ke modulo $12$."
+   ],
+   "pembahasan": "<p>Hitung $d = \\gcd(4, 12) = 4$. Karena $4 \\mid 8$, solusinya ada, dan banyaknya tepat $4$ buah modulo $12$.</p><p><strong>Sederhanakan.</strong> Bagi kedua ruas <strong>dan modulusnya</strong> dengan $4$:</p><p>$$x \\equiv 2 \\pmod 3$$</p><p>Modulusnya menyusut dari $12$ menjadi $12/4 = 3$. Ini bagian yang harus dijaga: membagi kongruensi tanpa membagi modulusnya akan mengubah himpunan solusinya.</p><p><strong>Angkat kembali ke modulo $12$.</strong> Kelas $x \\equiv 2 \\pmod 3$ pecah menjadi empat kelas modulo $12$:</p><p>$$x = 2,\\ 5,\\ 8,\\ 11$$</p><p>Periksa satu: $4 \\times 5 = 20 = 12 + 8 \\equiv 8 \\pmod{12}$. Benar.</p><p><strong>Jumlahkan.</strong></p><p>$$2 + 5 + 8 + 11 = \\boxed{26}$$</p><p>Keempat solusinya membentuk barisan aritmetika berbeda $3$ — dan itu berlaku umum. Kalau $ax \\equiv b \\pmod m$ punya $d$ solusi, solusinya selalu berjarak $m/d$ satu sama lain, jadi begitu satu ditemukan, sisanya tinggal ditambahkan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kl-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "kongruensi-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan bilangan asli terkecil $x$ yang memenuhi</p><p>$$15x \\equiv 6 \\pmod{21}$$</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Koefisien dan modulusnya berbagi faktor. Periksa lebih dulu apakah solusinya ada.",
+    "$\\gcd(15, 21) = 3$ dan $3 \\mid 6$, jadi solusinya ada. Bagi seluruhnya dengan $3$, modulus termasuk.",
+    "Setelah menjadi $5x \\equiv 2 \\pmod 7$, kalikan dengan invers $5$ modulo $7$."
+   ],
+   "pembahasan": "<p>Hitung $d = \\gcd(15, 21) = 3$. Karena $3 \\mid 6$, solusinya ada — dan ada tiga buah modulo $21$.</p><p><strong>Sederhanakan.</strong> Bagi kedua ruas dan modulusnya dengan $3$:</p><p>$$5x \\equiv 2 \\pmod 7$$</p><p><strong>Cari invers $5$ modulo $7$.</strong> Coba kelipatan $5$: $5, 10 \\equiv 3, 15 \\equiv 1$. Jadi $5 \\times 3 \\equiv 1$, sehingga $5^{-1} \\equiv 3 \\pmod 7$.</p><p><strong>Selesaikan.</strong> Kalikan kedua ruas dengan $3$:</p><p>$$x \\equiv 3 \\times 2 = 6 \\pmod 7$$</p><p>Bilangan asli terkecil yang memenuhi adalah $x = \\boxed{6}$.</p><p>Periksa: $15 \\times 6 = 90 = 4 \\times 21 + 6$. Benar.</p><p>Kalau yang diminta seluruh solusinya modulo $21$, kelas $x \\equiv 6 \\pmod 7$ diangkat menjadi</p><p>$$x \\equiv 6,\\ 13,\\ 20 \\pmod{21}$$</p><p>— tiga buah, sesuai dengan $d = 3$. Perhatikan bahwa jaraknya $7 = 21/3$, bukan $3$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kl-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "kongruensi-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa bilangan bulat $x$ dengan $0 \\le x &lt; 100$ yang memenuhi</p><p>$$12x \\equiv 30 \\pmod{42}\\ ?$$</p>",
+   "jawaban": "14",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Selesaikan kongruensinya lebih dulu; pencacahan menyusul setelah bentuknya sesederhana mungkin.",
+    "$\\gcd(12, 42) = 6$ dan $6 \\mid 30$, jadi bagi seluruhnya dengan $6$ — modulusnya menjadi $7$.",
+    "Setelah tersisa satu kelas modulo $7$, cacah berapa anggotanya yang jatuh di $[0, 100)$."
+   ],
+   "pembahasan": "<p>Hitung $d = \\gcd(12, 42) = 6$. Karena $6 \\mid 30$, solusinya ada.</p><p><strong>Sederhanakan.</strong> Bagi kedua ruas dan modulusnya dengan $6$:</p><p>$$2x \\equiv 5 \\pmod 7$$</p><p><strong>Cari invers $2$ modulo $7$.</strong> Karena $2 \\times 4 = 8 \\equiv 1$, inversnya $4$. Maka</p><p>$$x \\equiv 4 \\times 5 = 20 \\equiv 6 \\pmod 7$$</p><p>Jadi solusinya persis bilangan yang bersisa $6$ dibagi $7$.</p><p><strong>Cacah dalam $[0, 100)$.</strong> Bilangan tersebut adalah</p><p>$$6,\\ 13,\\ 20,\\ \\ldots,\\ 97$$</p><p>Ini barisan aritmetika berbeda $7$. Banyaknya suku:</p><p>$$\\frac{97 - 6}{7} + 1 = \\frac{91}{7} + 1 = 13 + 1 = \\boxed{14}$$</p><p>Periksa ujungnya: suku berikutnya $104$, sudah melewati $100$. Dan $12 \\times 6 = 72 =\n42 + 30 \\equiv 30 \\pmod{42}$. Benar.</p><p>Perhatikan bahwa jawabannya <strong>bukan</strong> $6 \\times \\lceil \\cdot \\rceil$ dari sesuatu. Setelah disederhanakan, yang tersisa satu kelas modulo $7$ — bukan enam kelas modulo $42$ yang harus dicacah satu per satu. Menyederhanakan lebih dulu memangkas pekerjaan enam kali lipat.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "kl-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "kongruensi-linear"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa kongruensi $ax \\equiv b \\pmod m$ punya solusi bulat $x$ jika dan hanya jika $\\gcd(a, m)$ membagi $b$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Terjemahkan kongruensinya menjadi persamaan biasa lebih dulu — apa arti $m \\mid ax - b$?",
+    "Bentuk itu setara dengan $ax + my = b$ untuk suatu bulat $y$, dan itu persamaan Diophantine linear.",
+    "Setelah setara, pernyataannya tinggal syarat keterbagian pada persamaan Diophantine linear."
+   ],
+   "pembahasan": "<p>Tulis $d = \\gcd(a, m)$.</p><p><strong>Terjemahkan ke persamaan.</strong> Menurut definisi kongruensi,</p><p>$$ax \\equiv b \\pmod m \\iff m \\mid ax - b \\iff ax - b = m(-y) \\text{ untuk suatu bulat } y$$</p><p>yaitu</p><p>$$ax \\equiv b \\pmod m \\iff \\exists\\, y \\in \\mathbb{Z} : ax + my = b$$</p><p>Jadi mencari solusi kongruensi persis sama dengan mencari solusi bulat persamaan Diophantine linear $ax + my = b$.</p><h4>Arah pertama: jika ada solusi, maka $d \\mid b$</h4><p>Misalkan $x$ solusinya, sehingga $ax + my = b$ untuk suatu bulat $y$. Karena $d \\mid a$ dan $d \\mid m$, bilangan $d$ membagi kombinasi bulat keduanya:</p><p>$$d \\mid ax + my = b$$</p><h4>Arah kedua: jika $d \\mid b$, maka ada solusi</h4><p>Identitas Bézout memberi bulat $x_0, y_0$ dengan</p><p>$$a x_0 + m y_0 = d$$</p><p>Karena $d \\mid b$, tulis $b = kd$ untuk suatu bulat $k$. Kalikan persamaan Bézout dengan $k$:</p><p>$$a\\,(k x_0) + m\\,(k y_0) = kd = b$$</p><p>Jadi $x = k x_0$ memenuhi $ax \\equiv b \\pmod m$.</p><p>Kedua arah terbukti. $\\blacksquare$</p><h4>Berapa banyak solusinya</h4><p>Kalau solusinya ada, banyaknya tepat $d$ buah yang berbeda modulo $m$. Sebabnya: dari keluarga solusi persamaan Diophantine,</p><p>$$x = x_0' + \\frac{m}{d}t, \\qquad t \\in \\mathbb{Z}$$</p><p>dan nilai-nilai itu berulang setiap $t$ bertambah $d$, sebab $\\frac{m}{d} \\times d = m$. Jadi tepat $d$ kelas berbeda modulo $m$, berjarak $m/d$ satu sama lain.</p><p>Kasus $d = 1$ memberi solusi tunggal — dan itulah situasi yang paling sering dipakai, sebab di situ $a$ punya invers modulo $m$.</p>",
+   "rubrik": [
+    "Menerjemahkan $ax \\equiv b \\pmod m$ menjadi persamaan $ax + my = b$, dengan menyebut kesetaraannya",
+    "Arah pertama: memakai $d \\mid a$ dan $d \\mid m$ untuk menyimpulkan $d \\mid b$",
+    "Arah kedua: memanggil identitas Bézout dan mengalikannya dengan $k = b/d$",
+    "Menyatakan bahwa $x$ yang diperoleh benar-benar bulat",
+    "Untuk nilai penuh: menjelaskan mengapa banyaknya solusi tepat $d$ modulo $m$, berjarak $m/d$"
+   ]
+  },
+  {
+   "id": "kl-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "kongruensi-linear"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan bilangan bulat $x$ dengan $0 \\le x &lt; 11$ yang memenuhi</p><p>$$5x \\equiv 3 \\pmod{11}$$</p>",
+   "jawaban": "5",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Periksa dulu apakah solusinya ada, dan kalau ada, ada berapa.",
+    "Karena $\\gcd(5, 11) = 1$, solusinya tunggal modulo $11$. Yang dibutuhkan adalah invers $5$.",
+    "Cari $x$ dengan $5x \\equiv 1 \\pmod{11}$ lebih dulu, lalu kalikan hasilnya dengan $3$."
+   ],
+   "pembahasan": "<p><strong>Ada berapa solusi?</strong> Menurut aturannya, $ax \\equiv b \\pmod m$ punya solusi tepat ketika $d = \\gcd(a,m)$ membagi $b$, dan kalau ada, solusinya tepat $d$ buah modulo $m$.</p><p>Di sini $\\gcd(5, 11) = 1$, yang membagi $3$. Jadi solusinya ada dan tunggal.</p><p><strong>Cari invers $5$ modulo $11$.</strong> Yang dicari $t$ dengan $5t \\equiv 1 \\pmod{11}$. Coba kelipatan $5$:</p><p>$$5, \\quad 10, \\quad 15 \\equiv 4, \\quad 20 \\equiv 9, \\quad 25 \\equiv 3, \\quad\n30 \\equiv 8, \\quad 35 \\equiv 2, \\quad 40 \\equiv 7, \\quad 45 \\equiv 1$$</p><p>Jadi $5 \\times 9 \\equiv 1$, sehingga $5^{-1} \\equiv 9 \\pmod{11}$.</p><p><strong>Selesaikan.</strong> Kalikan kedua ruas dengan $9$:</p><p>$$x \\equiv 9 \\times 3 = 27 \\equiv 5 \\pmod{11}$$</p><p>Jadi $x = \\boxed{5}$.</p><p>Periksa: $5 \\times 5 = 25 = 2 \\times 11 + 3$. Benar.</p><p>Perhatikan apa yang sebenarnya dilakukan: bukan \"membagi kedua ruas dengan $5$\", melainkan mengalikan dengan invers $5$. Pembagian dalam kongruensi tidak selalu sah — yang selalu sah adalah mengalikan, dan invers hanya ada ketika pengalinya relatif prima terhadap modulus.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "lf-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "legendre-faktorial"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan pangkat tertinggi $3$ yang membagi $50!$.</p>",
+   "jawaban": "22",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan menghitung $50!$. Yang ditanya hanya berapa kali faktor $3$ muncul di dalamnya.",
+    "Cacah dulu kelipatan $3$ sampai $50$, lalu ingat bahwa kelipatan $9$ menyumbang lebih dari satu.",
+    "Jumlahkan $\\lfloor 50/3 \\rfloor + \\lfloor 50/9 \\rfloor + \\lfloor 50/27 \\rfloor + \\cdots$"
+   ],
+   "pembahasan": "<p>Rumus Legendre memberi</p><p>$$v_3(50!) = \\left\\lfloor \\frac{50}{3} \\right\\rfloor + \\left\\lfloor \\frac{50}{9} \\right\\rfloor\n+ \\left\\lfloor \\frac{50}{27} \\right\\rfloor + \\left\\lfloor \\frac{50}{81} \\right\\rfloor + \\cdots$$</p><p>Hitung suku demi suku:</p><p>$$\\left\\lfloor \\frac{50}{3} \\right\\rfloor = 16, \\qquad\n\\left\\lfloor \\frac{50}{9} \\right\\rfloor = 5, \\qquad\n\\left\\lfloor \\frac{50}{27} \\right\\rfloor = 1, \\qquad\n\\left\\lfloor \\frac{50}{81} \\right\\rfloor = 0$$</p><p>Jumlahnya berhenti begitu $3^k &gt; 50$. Maka</p><p>$$v_3(50!) = 16 + 5 + 1 = \\boxed{22}$$</p><p>Setiap suku menambahkan satu faktor untuk bilangan yang memuat pangkat $3$ lebih tinggi. Contohnya $27 = 3^3$ terhitung tiga kali: sekali di suku pertama, sekali di suku kedua, dan sekali di suku ketiga — persis sebanyak pangkat $3$ di dalamnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "lf-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "legendre-faktorial"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Berapa banyak angka nol berurutan di ujung kanan $2026!$?</p>",
+   "jawaban": "505",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Sama seperti sebelumnya: yang menentukan adalah prima yang paling langka di dalam $10$.",
+    "Hitung $v_5(2026!)$ dengan rumus Legendre.",
+    "Jumlahnya baru berhenti di $5^5 = 3125$, jadi ada lima suku yang perlu dihitung — jangan berhenti terlalu cepat."
+   ],
+   "pembahasan": "<p>Banyaknya nol di ujung sama dengan $v_5(2026!)$, karena faktor $2$ selalu berlebih.</p><p>$$v_5(2026!) = \\left\\lfloor \\frac{2026}{5} \\right\\rfloor + \\left\\lfloor \\frac{2026}{25} \\right\\rfloor\n+ \\left\\lfloor \\frac{2026}{125} \\right\\rfloor + \\left\\lfloor \\frac{2026}{625} \\right\\rfloor\n+ \\left\\lfloor \\frac{2026}{3125} \\right\\rfloor$$</p><p>Hitung satu per satu:</p><p>$$\\left\\lfloor \\frac{2026}{5} \\right\\rfloor = 405, \\qquad\n\\left\\lfloor \\frac{2026}{25} \\right\\rfloor = 81, \\qquad\n\\left\\lfloor \\frac{2026}{125} \\right\\rfloor = 16$$</p><p>$$\\left\\lfloor \\frac{2026}{625} \\right\\rfloor = 3, \\qquad\n\\left\\lfloor \\frac{2026}{3125} \\right\\rfloor = 0$$</p><p>Maka</p><p>$$v_5(2026!) = 405 + 81 + 16 + 3 = \\boxed{505}$$</p><p>Perhatikan bahwa pembagiannya selalu dibuang ke bawah, bukan dibulatkan: $2026/625 = 3{,}24$ memberi $3$, bukan $3$ karena pembulatan — melainkan karena hanya ada tiga kelipatan $625$ yang tidak melebihi $2026$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "lf-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "legendre-faktorial"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan bilangan asli terkecil $n$ sehingga $n!$ habis dibagi $10^{10}$.</p>",
+   "jawaban": "45",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ubah syaratnya jadi syarat atas pangkat prima. Faktor mana yang menjadi penghambat?",
+    "$10^{10} = 2^{10} \\times 5^{10}$, dan faktor $2$ selalu berlebih. Jadi syaratnya $v_5(n!) \\ge 10$.",
+    "Coba $n$ di sekitar $40$–$50$, lalu geser sampai persis melewati batas."
+   ],
+   "pembahasan": "<p>Syarat $10^{10} \\mid n!$ berarti $2^{10} \\mid n!$ dan $5^{10} \\mid n!$. Karena $v_2(n!)$ selalu jauh lebih besar daripada $v_5(n!)$, syarat yang menentukan hanyalah</p><p>$$v_5(n!) \\ge 10$$</p><p>Nilai $v_5(n!)$ naik seiring $n$, jadi tinggal dicari titik ia pertama kali mencapai $10$.</p><p>Untuk $n = 40$:</p><p>$$v_5(40!) = \\left\\lfloor \\frac{40}{5} \\right\\rfloor + \\left\\lfloor \\frac{40}{25} \\right\\rfloor\n= 8 + 1 = 9$$</p><p>Belum cukup. Nilainya tidak berubah untuk $n = 41, \\ldots, 44$, karena tidak ada kelipatan $5$ baru di antaranya.</p><p>Untuk $n = 45$:</p><p>$$v_5(45!) = \\left\\lfloor \\frac{45}{5} \\right\\rfloor + \\left\\lfloor \\frac{45}{25} \\right\\rfloor\n= 9 + 1 = 10$$</p><p>Tepat mencapai $10$. Jadi $n$ terkecilnya adalah $\\boxed{45}$.</p><p>Perhatikan bahwa $v_5(n!)$ melompat, bukan naik satu-satu: dari $n = 49$ ke $n = 50$ ia naik dua sekaligus, karena $50 = 2 \\times 5^2$ menyumbang dua faktor $5$. Karena itu ada nilai yang tidak pernah dicapai — dan soal \"tepat sekian nol\" kadang tidak punya jawaban.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "lf-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "legendre-faktorial"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan pangkat tertinggi $2$ yang membagi $\\dbinom{100}{50}$.</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Koefisien binomial adalah hasil bagi faktorial. Pangkat prima pada hasil bagi adalah selisih pangkat prima pada pembilang dan penyebut.",
+    "$\\dbinom{100}{50} = \\dfrac{100!}{50!\\,50!}$, jadi $v_2 = v_2(100!) - 2\\,v_2(50!)$.",
+    "Hitung kedua rumus Legendre itu secara terpisah, lalu kurangkan."
+   ],
+   "pembahasan": "<p>Tulis</p><p>$$\\binom{100}{50} = \\frac{100!}{50! \\times 50!}$$</p><p>Pangkat prima pada hasil bagi adalah selisihnya:</p><p>$$v_2\\!\\left(\\binom{100}{50}\\right) = v_2(100!) - 2\\,v_2(50!)$$</p><p>Hitung $v_2(100!)$:</p><p>$$50 + 25 + 12 + 6 + 3 + 1 = 97$$</p><p>dari $\\lfloor 100/2 \\rfloor, \\lfloor 100/4 \\rfloor, \\ldots, \\lfloor 100/64 \\rfloor$.</p><p>Hitung $v_2(50!)$:</p><p>$$25 + 12 + 6 + 3 + 1 = 47$$</p><p>dari $\\lfloor 50/2 \\rfloor, \\lfloor 50/4 \\rfloor, \\ldots, \\lfloor 50/32 \\rfloor$.</p><p>Maka</p><p>$$v_2\\!\\left(\\binom{100}{50}\\right) = 97 - 2 \\times 47 = 97 - 94 = \\boxed{3}$$</p><p>Hasil yang sekecil itu bukan kebetulan. Ada cara lain melihatnya — teorema Kummer — yang menyatakan pangkat $p$ pada $\\binom{m+n}{m}$ sama dengan banyaknya \"menyimpan\" saat menjumlahkan $m$ dan $n$ dalam basis $p$. Menjumlahkan $50 + 50$ dalam basis $2$ memang menyimpan tepat tiga kali.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "lf-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "legendre-faktorial"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan $v_7(1000!)$, yaitu pangkat tertinggi $7$ yang membagi $1000!$.</p>",
+   "jawaban": "164",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Rumusnya sama seperti biasa; yang berubah hanya primanya. Tentukan dulu sampai pangkat berapa $7^k$ masih tidak melebihi $1000$.",
+    "$7^1 = 7$, $7^2 = 49$, $7^3 = 343$, $7^4 = 2401$ — jadi hanya tiga suku yang tidak nol.",
+    "Jumlahkan $\\lfloor 1000/7 \\rfloor + \\lfloor 1000/49 \\rfloor + \\lfloor 1000/343 \\rfloor$."
+   ],
+   "pembahasan": "<p>Tentukan dulu berapa suku yang perlu dihitung. Pangkat $7$ yang tidak melebihi $1000$:</p><p>$$7, \\quad 49, \\quad 343, \\quad (2401 &gt; 1000)$$</p><p>Jadi hanya tiga suku pertama yang tidak nol.</p><p>$$v_7(1000!) = \\left\\lfloor \\frac{1000}{7} \\right\\rfloor + \\left\\lfloor \\frac{1000}{49} \\right\\rfloor\n+ \\left\\lfloor \\frac{1000}{343} \\right\\rfloor$$</p><p>$$= 142 + 20 + 2 = \\boxed{164}$$</p><p>Periksa suku demi suku: $1000 = 7 \\times 142 + 6$, lalu $1000 = 49 \\times 20 + 20$, lalu $1000 = 343 \\times 2 + 314$.</p><p>Ada cara memeriksa hasilnya secara kasar. Deret $\\lfloor n/p \\rfloor + \\lfloor n/p^2 \\rfloor + \\cdots$ selalu kurang dari deret geometri $\\frac{n}{p} + \\frac{n}{p^2} + \\cdots = \\frac{n}{p-1}$. Di sini batas atasnya $1000/6 \\approx 166{,}7$ — dan $164$ memang tepat di bawahnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "lf-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "legendre-faktorial"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa $\\dfrac{(2n)!}{n!\\,n!}$ merupakan bilangan bulat untuk setiap bilangan asli $n$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Sebuah pecahan bernilai bulat tepat ketika untuk setiap prima, pangkat di pembilang tidak kurang dari pangkat di penyebut.",
+    "Jadi cukup dibuktikan $v_p\\big((2n)!\\big) \\ge 2\\,v_p(n!)$ untuk setiap prima $p$.",
+    "Setelah rumus Legendre dipasang, semuanya bergantung pada satu ketaksamaan sederhana: $\\lfloor 2x \\rfloor \\ge 2\\lfloor x \\rfloor$."
+   ],
+   "pembahasan": "<p>Sebuah bilangan rasional positif bernilai bulat tepat ketika, untuk <strong>setiap</strong> prima $p$, pangkat $p$ pada pembilangnya tidak kurang daripada pangkat $p$ pada penyebutnya. Jadi cukup dibuktikan</p><p>$$v_p\\big((2n)!\\big) \\ \\ge\\ v_p(n!\\,n!) = 2\\,v_p(n!)$$</p><p>untuk setiap prima $p$.</p><p>Pasang rumus Legendre pada kedua ruas:</p><p>$$v_p\\big((2n)!\\big) = \\sum_{k \\ge 1} \\left\\lfloor \\frac{2n}{p^k} \\right\\rfloor, \\qquad\n2\\,v_p(n!) = \\sum_{k \\ge 1} 2\\left\\lfloor \\frac{n}{p^k} \\right\\rfloor$$</p><p>Kedua deret dijumlahkan atas $k$ yang sama, jadi cukup dibandingkan suku demi suku. Yang perlu dibuktikan tinggal</p><p>$$\\left\\lfloor \\frac{2n}{p^k} \\right\\rfloor \\ \\ge\\ 2\\left\\lfloor \\frac{n}{p^k} \\right\\rfloor$$</p><p><strong>Ketaksamaan $\\lfloor 2x \\rfloor \\ge 2\\lfloor x \\rfloor$.</strong> Tulis $x = \\lfloor x \\rfloor + f$ dengan $0 \\le f &lt; 1$. Maka</p><p>$$\\lfloor 2x \\rfloor = \\left\\lfloor 2\\lfloor x \\rfloor + 2f \\right\\rfloor\n= 2\\lfloor x \\rfloor + \\lfloor 2f \\rfloor \\ \\ge\\ 2\\lfloor x \\rfloor$$</p><p>sebab $2\\lfloor x \\rfloor$ bulat sehingga boleh dikeluarkan dari lantai, dan $\\lfloor 2f \\rfloor \\ge 0$.</p><p>Terapkan dengan $x = n/p^k$. Setiap suku pada deret pertama tidak kurang daripada suku padanannya pada deret kedua, jadi jumlahnya pun demikian. Karena itu berlaku untuk setiap prima $p$, hasil baginya bulat. $\\blacksquare$</p><p>Perhatikan bahwa pembuktian ini tidak menyebut kombinatorika sama sekali. Ada bukti lain yang jauh lebih pendek — $\\binom{2n}{n}$ mencacah cara memilih $n$ benda dari $2n$, dan cacahan pasti bulat. Yang dilatih di sini justru caranya bekerja lewat pangkat prima, karena cara itulah yang bertahan ketika soalnya tidak lagi punya tafsiran mencacah.</p>",
+   "rubrik": [
+    "Menyatakan syarat kebulatan sebagai perbandingan pangkat prima pembilang dan penyebut, untuk <strong>setiap</strong> prima",
+    "Memasang rumus Legendre pada $v_p\\big((2n)!\\big)$ dan $2v_p(n!)$",
+    "Menyadari kedua deret berjalan atas $k$ yang sama sehingga boleh dibandingkan suku demi suku",
+    "Membuktikan $\\lfloor 2x \\rfloor \\ge 2\\lfloor x \\rfloor$, bukan sekadar memakainya",
+    "Menyimpulkan ketaksamaannya untuk seluruh prima, sehingga hasil baginya bulat"
+   ]
+  },
+  {
+   "id": "lf-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "legendre-faktorial"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Berapa banyak angka nol berurutan di ujung kanan $100!$?</p>",
+   "jawaban": "24",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Nol di ujung lahir dari faktor $10$. Pecah $10$ atas prima, lalu tanyakan mana yang lebih langka.",
+    "$10 = 2 \\times 5$. Faktor $2$ jauh lebih berlimpah daripada $5$ di dalam faktorial, jadi banyaknya nol ditentukan oleh $5$.",
+    "Pakai rumus Legendre: $v_5(100!) = \\lfloor 100/5 \\rfloor + \\lfloor 100/25 \\rfloor + \\cdots$"
+   ],
+   "pembahasan": "<p>Setiap nol di ujung kanan berasal dari satu faktor $10 = 2 \\times 5$. Jadi banyaknya nol sama dengan banyaknya pasangan $2$–$5$ yang bisa dibentuk, yaitu</p><p>$$\\min\\left(v_2(100!),\\ v_5(100!)\\right)$$</p><p>Kelipatan $2$ jauh lebih rapat daripada kelipatan $5$, sehingga $v_5$ selalu yang lebih kecil. Cukup hitung pangkat $5$.</p><p>Rumus Legendre:</p><p>$$v_5(100!) = \\left\\lfloor \\frac{100}{5} \\right\\rfloor + \\left\\lfloor \\frac{100}{25} \\right\\rfloor\n+ \\left\\lfloor \\frac{100}{125} \\right\\rfloor + \\cdots$$</p><p>$$= 20 + 4 + 0 = \\boxed{24}$$</p><p>Cara membacanya: ada $20$ kelipatan $5$ di antara $1$ sampai $100$, masing-masing menyumbang paling sedikit satu faktor $5$. Empat di antaranya — $25, 50, 75, 100$ — menyumbang satu faktor lagi, dan itulah tambahan $4$ pada suku kedua. Tidak ada kelipatan $125$, jadi jumlahnya berhenti.</p><p>Berhenti di $20$ adalah kesalahan yang paling sering terjadi. Suku kedua bukan koreksi kecil yang boleh diabaikan.</p>",
+   "rubrik": []
+  },
+  {
    "id": "sr-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
    "pilar": "teori-bilangan",
@@ -1099,6 +2095,98 @@
     "Mengandaikan $ax_1 \\equiv ax_2 \\pmod m$ dan menurunkan $m \\mid a(x_1-x_2)$",
     "Memakai $\\gcd(a,m) = 1$ untuk menyimpulkan $m \\mid (x_1 - x_2)$",
     "Menyimpulkan $x_1 = x_2$, sehingga pemetaannya injektif dan karenanya menjelajahi semua kelas"
+   ]
+  },
+  {
+   "id": "sr-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "sistem-residu"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan jumlah semua bilangan di antara $1$ sampai $20$ yang relatif prima terhadap $20$.</p>",
+   "jawaban": "80",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Mendaftar lalu menjumlahkan bisa. Tapi perhatikan dulu apakah anggotanya punya kesimetrian.",
+    "Kalau $\\gcd(k, 20) = 1$, apakah $\\gcd(20 - k, 20)$ juga $1$? Periksa alasannya.",
+    "Anggotanya berpasangan $k \\leftrightarrow 20 - k$, dan tiap pasangan berjumlah $20$."
+   ],
+   "pembahasan": "<p>Bilangan di $\\{1, \\ldots, 20\\}$ yang relatif prima terhadap $20 = 2^2 \\times 5$ adalah yang tidak habis dibagi $2$ maupun $5$:</p><p>$$1,\\ 3,\\ 7,\\ 9,\\ 11,\\ 13,\\ 17,\\ 19$$</p><p>Banyaknya $\\varphi(20) = 20 \\times \\frac12 \\times \\frac45 = 8$, sesuai.</p><p><strong>Cara cepat: berpasangan.</strong> Kalau $\\gcd(k, 20) = 1$, maka $\\gcd(20 - k,\\ 20) = 1$ juga — sebab setiap pembagi persekutuan $20-k$ dan $20$ juga membagi selisihnya, yaitu $k$. Jadi anggotanya berpasangan</p><p>$$1 \\leftrightarrow 19, \\qquad 3 \\leftrightarrow 17, \\qquad 7 \\leftrightarrow 13,\n\\qquad 9 \\leftrightarrow 11$$</p><p>Tiap pasangan berjumlah $20$, dan ada $\\varphi(20)/2 = 4$ pasangan. Maka jumlahnya</p><p>$$4 \\times 20 = \\boxed{80}$$</p><p>Penjumlahan langsung memberi hasil yang sama: $1+3+7+9+11+13+17+19 = 80$.</p><p>Secara umum, untuk $n &gt; 1$ jumlah seluruh anggota sistem residu tereduksi adalah</p><p>$$\\frac{n\\,\\varphi(n)}{2}$$</p><p>Pemasangan itu tidak pernah menemui anggota yang berpasangan dengan dirinya sendiri, sebab $k = n - k$ menuntut $n = 2k$, dan bilangan semacam itu tidak relatif prima terhadap $n$ untuk $n &gt; 2$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sr-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "sistem-residu"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Ada berapa anggota sistem residu tereduksi modulo $36$?</p>",
+   "jawaban": "12",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ingat bedanya dengan sistem residu <strong>lengkap</strong>, yang beranggota $36$.",
+    "Sistem tereduksi hanya memuat kelas sisa yang relatif prima terhadap modulusnya.",
+    "Banyaknya persis $\\varphi(36)$, jadi faktorkan $36$ lalu pakai rumusnya."
+   ],
+   "pembahasan": "<p>Sistem residu <strong>lengkap</strong> modulo $36$ memuat satu wakil dari setiap kelas sisa, jadi beranggota $36$. Sistem residu <strong>tereduksi</strong> hanya menyimpan kelas yang relatif prima terhadap $36$, dan banyaknya menurut definisi adalah $\\varphi(36)$.</p><p>Faktorkan:</p><p>$$36 = 2^2 \\times 3^2$$</p><p>Maka</p><p>$$\\varphi(36) = 36\\left(1 - \\frac12\\right)\\left(1 - \\frac13\\right)\n= 36 \\times \\frac12 \\times \\frac23 = \\boxed{12}$$</p><p>Daftarnya, sebagai pemeriksaan:</p><p>$$1,\\ 5,\\ 7,\\ 11,\\ 13,\\ 17,\\ 19,\\ 23,\\ 25,\\ 29,\\ 31,\\ 35$$</p><p>— tepat dua belas, yaitu yang tidak habis dibagi $2$ maupun $3$.</p><p>Sistem tereduksi inilah yang menjadi panggung Teorema Euler: mengalikan seluruh anggotanya dengan sebuah bilangan yang relatif prima terhadap $36$ hanya mengocok daftar itu, tanpa menambah atau menghilangkan anggota.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sr-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "sistem-residu"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan sisa pembagian hasil kali semua anggota sistem residu tereduksi modulo $10$ — yaitu $1 \\times 3 \\times 7 \\times 9$ — oleh $10$.</p>",
+   "jawaban": "9",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Menghitung langsung memang bisa. Tapi perhatikan dulu apakah anggotanya bisa dipasangkan.",
+    "Pasangkan setiap anggota dengan <strong>inversnya</strong> modulo $10$. Pasangan semacam itu menyumbang $1$ pada hasil kali.",
+    "Yang tersisa hanyalah anggota yang menjadi invers bagi dirinya sendiri. Cari mana saja."
+   ],
+   "pembahasan": "<p>Sistem residu tereduksi modulo $10$ adalah $\\{1, 3, 7, 9\\}$.</p><p><strong>Cara langsung.</strong></p><p>$$1 \\times 3 \\times 7 \\times 9 = 189 = 18 \\times 10 + 9$$</p><p>Sisanya $\\boxed{9}$.</p><p><strong>Cara berpasangan</strong>, yang jauh lebih berguna untuk modulus besar. Pasangkan setiap anggota dengan inversnya modulo $10$:</p><p>$$3 \\times 7 = 21 \\equiv 1 \\pmod{10}$$</p><p>jadi $3$ dan $7$ saling invers dan hasil kalinya menyumbang $1$.</p><p>Yang tersisa adalah anggota yang menjadi invers bagi dirinya sendiri, yaitu yang memenuhi $a^2 \\equiv 1 \\pmod{10}$:</p><p>$$1^2 = 1, \\qquad 9^2 = 81 \\equiv 1$$</p><p>Keduanya, $1$ dan $9$, berpasangan dengan dirinya sendiri. Maka seluruh hasil kalinya</p><p>$$1 \\times 9 \\times \\underbrace{(3 \\times 7)}_{\\equiv\\, 1} \\equiv 9 \\pmod{10}$$</p><p>Karena $9 \\equiv -1 \\pmod{10}$, hasilnya bisa ditulis $-1$.</p><p>Pola \"$-1$\" itu bukan kebetulan. Untuk modulus prima, hasil kali seluruh sistem residu tereduksi selalu $\\equiv -1$ — itulah Teorema Wilson. Untuk modulus komposit hasilnya $\\equiv 1$ pada sebagian besar kasus, dengan pengecualian yang persis bisa didaftar, dan $10$ termasuk pengecualiannya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "sr-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "sistem-residu",
+    "fungsi-euler"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $\\gcd(a, n) = 1$. Buktikan Teorema Euler:</p><p>$$a^{\\varphi(n)} \\equiv 1 \\pmod n$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ruas kirinya memuat $a$ sebanyak $\\varphi(n)$ kali. Cari himpunan beranggota $\\varphi(n)$ yang bisa dikalikan seluruhnya dengan $a$.",
+    "Pakai sifat pengocokan: mengalikan sistem residu tereduksi dengan $a$ hanya mengubah urutannya, tidak menambah atau menghilangkan kelas.",
+    "Di ruas yang satu akan muncul faktor $a^{\\varphi(n)}$; di ruas lain tidak. Coret hasil kali bersamanya — dan jelaskan mengapa boleh dicoret."
+   ],
+   "pembahasan": "<p>Misalkan</p><p>$$r_1, r_2, \\ldots, r_{\\varphi(n)}$$</p><p>adalah sistem residu tereduksi modulo $n$, yaitu wakil dari seluruh kelas sisa yang relatif prima terhadap $n$.</p><p><strong>Langkah 1: mengalikan dengan $a$ hanya mengocok.</strong> Tinjau daftar</p><p>$$a r_1,\\ a r_2,\\ \\ldots,\\ a r_{\\varphi(n)}$$</p><p>Ada dua hal yang perlu ditunjukkan.</p><p><em>Setiap $ar_i$ tetap relatif prima terhadap $n$.</em> Sebab $\\gcd(a,n) = 1$ dan $\\gcd(r_i, n) = 1$, sehingga tidak ada prima pembagi $n$ yang membagi $ar_i$.</p><p><em>Tidak ada dua yang jatuh di kelas yang sama.</em> Andaikan $ar_i \\equiv ar_j \\pmod n$. Karena $\\gcd(a,n) = 1$, bilangan $a$ punya invers modulo $n$; kalikan kedua ruas dengan invers itu untuk memperoleh $r_i \\equiv r_j \\pmod n$, yang berarti $i = j$.</p><p>Jadi daftar kedua memuat $\\varphi(n)$ kelas berbeda yang semuanya relatif prima terhadap $n$ — dan kelas semacam itu hanya ada $\\varphi(n)$ buah. Maka daftar kedua adalah daftar pertama, hanya teracak urutannya.</p><p><strong>Langkah 2: kalikan semuanya.</strong> Karena kedua daftar memuat kelas yang sama, hasil kalinya kongruen:</p><p>$$\\prod_{i=1}^{\\varphi(n)} (a r_i) \\equiv \\prod_{i=1}^{\\varphi(n)} r_i \\pmod n$$</p><p>Ruas kiri bisa dipisah, karena ada $\\varphi(n)$ faktor $a$:</p><p>$$a^{\\varphi(n)} \\prod_{i=1}^{\\varphi(n)} r_i \\equiv \\prod_{i=1}^{\\varphi(n)} r_i \\pmod n$$</p><p><strong>Langkah 3: coret.</strong> Tulis $R = \\prod r_i$. Setiap $r_i$ relatif prima terhadap $n$, jadi $\\gcd(R, n) = 1$ dan $R$ punya invers modulo $n$. Kalikan kedua ruas dengan invers itu:</p><p>$$a^{\\varphi(n)} \\equiv 1 \\pmod n$$</p><p>$\\blacksquare$</p><p>Untuk $n = p$ prima, $\\varphi(p) = p - 1$ dan pernyataannya menjadi Teorema Fermat Kecil. Jadi Fermat Kecil bukan teorema terpisah, melainkan kasus khusus — dan pembuktiannya persis pembuktian ini.</p><p>Langkah ketiga itu yang paling sering ditulis sembarangan sebagai \"bagi kedua ruas dengan $R$\". Pembagian dalam kongruensi tidak selalu sah; yang membuatnya sah di sini adalah $\\gcd(R, n) = 1$, dan itu perlu dinyatakan.</p>",
+   "rubrik": [
+    "Menamai sistem residu tereduksi $r_1, \\ldots, r_{\\varphi(n)}$",
+    "Membuktikan setiap $ar_i$ tetap relatif prima terhadap $n$",
+    "Membuktikan $ar_i$ semuanya berbeda modulo $n$, dengan memakai keberadaan invers $a$",
+    "Menyimpulkan kedua daftar memuat kelas sisa yang sama, sehingga hasil kalinya kongruen",
+    "Memisahkan $a^{\\varphi(n)}$ dari hasil kalinya",
+    "Mencoret $R$ dengan menyatakan <strong>alasannya</strong>, yaitu $\\gcd(R,n) = 1$ sehingga $R$ punya invers"
    ]
   },
   {
@@ -1274,6 +2362,341 @@
    ],
    "pembahasan": "<p>Faktorkan lebih dulu:</p><p>$$2024 = 8 \\times 253 = 2^3 \\times 11 \\times 23$$</p><p>($253$ habis dibagi $11$ karena $2 - 5 + 3 = 0$.)</p><p>Setiap faktor positif dibentuk dengan memilih pangkat masing-masing prima secara bebas:</p><ul><li>pangkat $2$: boleh $0, 1, 2, 3$ — ada $4$ pilihan</li><li>pangkat $11$: boleh $0, 1$ — ada $2$ pilihan</li><li>pangkat $23$: boleh $0, 1$ — ada $2$ pilihan</li></ul><p>$$\\tau(2024) = 4 \\times 2 \\times 2 = \\boxed{16}$$</p><p>Kesalahan yang paling sering: memakai pangkatnya langsung, yaitu $3 \\times 1 \\times 1$. Yang benar selalu <strong>pangkat ditambah satu</strong>, karena pangkat $0$ juga sebuah pilihan yang sah.</p>",
    "rubrik": []
+  },
+  {
+   "id": "tsc-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-cina"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan bilangan asli terkecil yang bersisa $1$ jika dibagi $4$ dan bersisa $2$ jika dibagi $5$.</p>",
+   "jawaban": "17",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Dua syarat, dan modulusnya relatif prima. Solusinya tunggal modulo $20$.",
+    "Tulis $x = 5t + 2$ dari syarat kedua, lalu masukkan ke syarat pertama.",
+    "Untuk sistem sekecil ini, mendaftar bilangan yang bersisa $2$ dibagi $5$ lalu memeriksanya juga cukup cepat."
+   ],
+   "pembahasan": "<p>Karena $\\gcd(4,5) = 1$, solusinya tunggal modulo $4 \\times 5 = 20$.</p><p><strong>Cara substitusi.</strong> Dari $x \\equiv 2 \\pmod 5$, tulis</p><p>$$x = 5t + 2$$</p><p>Masukkan ke $x \\equiv 1 \\pmod 4$:</p><p>$$5t + 2 \\equiv 1 \\pmod 4 \\quad\\Longrightarrow\\quad t + 2 \\equiv 1 \\pmod 4$$</p><p>sebab $5 \\equiv 1 \\pmod 4$. Maka</p><p>$$t \\equiv -1 \\equiv 3 \\pmod 4 \\quad\\Longrightarrow\\quad t = 4s + 3$$</p><p>Substitusikan kembali:</p><p>$$x = 5(4s + 3) + 2 = 20s + 17$$</p><p>Bilangan asli terkecilnya adalah $\\boxed{17}$.</p><p><strong>Cara mendaftar.</strong> Bilangan yang bersisa $2$ dibagi $5$: $2, 7, 12, 17, 22, \\ldots$ Sisanya dibagi $4$ berturut-turut $2, 3, 0, 1, 2, \\ldots$ — yang pertama memberi $1$ adalah $17$.</p><p>Periksa: $17 = 4 \\times 4 + 1$ dan $17 = 5 \\times 3 + 2$. Cocok.</p><p>Untuk sistem dua kongruensi dengan modulus kecil, mendaftar sering lebih cepat daripada substitusi. Yang perlu dijaga hanya satu: daftarnya dimulai dari modulus <strong>terbesar</strong>, supaya langkahnya paling sedikit.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tsc-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-cina"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan bilangan asli terkecil yang bersisa $3$ jika dibagi $7$, bersisa $4$ jika dibagi $9$, dan bersisa $5$ jika dibagi $11$.</p>",
+   "jawaban": "346",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Modulusnya saling relatif prima berpasangan, jadi solusinya tunggal modulo $7 \\times 9 \\times 11 = 693$.",
+    "Mulai dari modulus terbesar: tulis $x = 11t + 5$, lalu masukkan ke syarat modulo $9$.",
+    "Kerjakan dua kongruensi dulu sampai tuntas, baru masukkan yang ketiga. Mengerjakan ketiganya sekaligus mudah tersesat."
+   ],
+   "pembahasan": "<p>Modulus $7$, $9$, $11$ saling relatif prima berpasangan, jadi solusinya tunggal modulo</p><p>$$M = 7 \\times 9 \\times 11 = 693$$</p><p><strong>Langkah 1: gabungkan modulo $11$ dan modulo $9$.</strong> Dari $x \\equiv 5 \\pmod{11}$, tulis</p><p>$$x = 11t + 5$$</p><p>Masukkan ke $x \\equiv 4 \\pmod 9$:</p><p>$$11t + 5 \\equiv 4 \\pmod 9 \\quad\\Longrightarrow\\quad 2t \\equiv -1 \\equiv 8 \\pmod 9$$</p><p>sebab $11 \\equiv 2 \\pmod 9$. Invers $2$ modulo $9$ adalah $5$, karena $2 \\times 5 = 10 \\equiv 1$. Maka</p><p>$$t \\equiv 5 \\times 8 = 40 \\equiv 4 \\pmod 9 \\quad\\Longrightarrow\\quad t = 9s + 4$$</p><p>Substitusikan kembali:</p><p>$$x = 11(9s + 4) + 5 = 99s + 49$$</p><p><strong>Langkah 2: masukkan syarat modulo $7$.</strong> Dituntut $x \\equiv 3 \\pmod 7$:</p><p>$$99s + 49 \\equiv 3 \\pmod 7$$</p><p>Karena $99 = 14 \\times 7 + 1$ sehingga $99 \\equiv 1$, dan $49 \\equiv 0 \\pmod 7$:</p><p>$$s \\equiv 3 \\pmod 7 \\quad\\Longrightarrow\\quad s = 7u + 3$$</p><p>Substitusikan kembali:</p><p>$$x = 99(7u + 3) + 49 = 693u + 297 + 49 = 693u + 346$$</p><p>Bilangan asli terkecilnya adalah $\\boxed{346}$.</p><p>Periksa ketiganya: $346 = 7 \\times 49 + 3$, $346 = 9 \\times 38 + 4$, dan $346 = 11 \\times 31 + 5$. Semuanya cocok.</p><p>Perhatikan bahwa $9$ dan $11$ tidak prima maupun berpangkat prima yang sama — yang dibutuhkan Teorema Sisa Cina hanyalah <strong>saling relatif prima berpasangan</strong>, bukan prima. Kalau salah satu modulus diganti $21$, syarat itu gugur terhadap $7$ dan teoremanya tidak lagi berlaku begitu saja.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tsc-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-cina"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa bilangan asli $n \\le 1000$ yang bersisa $3$ jika dibagi $8$ dan bersisa $5$ jika dibagi $9$?</p>",
+   "jawaban": "14",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Selesaikan sistemnya lebih dulu; pencacahan baru masuk akal setelah bentuk solusinya diketahui.",
+    "Karena $\\gcd(8,9) = 1$, solusinya satu kelas modulo $72$ — jadi bilangan yang dicari berjarak $72$.",
+    "Setelah solusi terkecil ditemukan, cacah berapa suku barisan itu yang tidak melebihi $1000$."
+   ],
+   "pembahasan": "<p><strong>Selesaikan sistemnya.</strong> Dari $n \\equiv 5 \\pmod 9$, tulis</p><p>$$n = 9t + 5$$</p><p>Masukkan ke $n \\equiv 3 \\pmod 8$:</p><p>$$9t + 5 \\equiv 3 \\pmod 8 \\quad\\Longrightarrow\\quad t \\equiv -2 \\equiv 6 \\pmod 8$$</p><p>sebab $9 \\equiv 1 \\pmod 8$. Tulis $t = 8s + 6$:</p><p>$$n = 9(8s + 6) + 5 = 72s + 59$$</p><p>Jadi solusinya persis bilangan yang bersisa $59$ dibagi $72$ — satu kelas modulo $8 \\times 9 = 72$, sesuai Teorema Sisa Cina.</p><p><strong>Cacah yang tidak melebihi $1000$.</strong> Bilangannya</p><p>$$59,\\ 131,\\ 203,\\ \\ldots$$</p><p>Dituntut $72s + 59 \\le 1000$, yaitu</p><p>$$72s \\le 941 \\quad\\Longrightarrow\\quad s \\le \\frac{941}{72} = 13{,}07\\ldots$$</p><p>Karena $s \\ge 0$ bulat, nilai yang mungkin $s = 0, 1, \\ldots, 13$ — sebanyak $\\boxed{14}$ bilangan.</p><p>Periksa ujungnya: $s = 13$ memberi $n = 72 \\times 13 + 59 = 936 + 59 = 995 \\le 1000$, sedangkan $s = 14$ memberi $1067$ yang sudah melewati batas. Dan $995 = 8 \\times 124 + 3$, $995 = 9 \\times 110 + 5$. Benar.</p><p>Pola ini berulang di banyak soal pencacahan: menyelesaikan sistem lebih dulu mengubah dua syarat sisa menjadi satu barisan aritmetika, dan mencacah barisan aritmetika itu perkara sepele.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tsc-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-cina",
+    "fungsi-euler"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan tiga angka terakhir dari $7^{2026}$.</p>",
+   "jawaban": "649",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tiga angka terakhir berarti modulo $1000$. Modulus itu bukan pangkat prima — pecah dulu.",
+    "$1000 = 8 \\times 125$, dan keduanya relatif prima. Kerjakan modulo $8$ dan modulo $125$ secara terpisah.",
+    "Setelah kedua sisanya diperoleh, gabungkan kembali dengan substitusi seperti biasa."
+   ],
+   "pembahasan": "<p>Tiga angka terakhir berarti sisa modulo $1000$. Karena</p><p>$$1000 = 8 \\times 125, \\qquad \\gcd(8, 125) = 1$$</p><p>Teorema Sisa Cina membolehkan soal ini dipecah menjadi dua soal yang jauh lebih kecil.</p><p><strong>Modulo $8$.</strong> Karena $7 \\equiv -1 \\pmod 8$:</p><p>$$7^{2026} \\equiv (-1)^{2026} = 1 \\pmod 8$$</p><p><strong>Modulo $125$.</strong> Di sini $\\gcd(7,125) = 1$, jadi Teorema Euler berlaku dengan</p><p>$$\\varphi(125) = 125 - 25 = 100$$</p><p>Karena $2026 = 100 \\times 20 + 26$:</p><p>$$7^{2026} \\equiv 7^{26} \\pmod{125}$$</p><p>Hitung bertahap: $7^2 = 49$, lalu</p><p>$$7^4 = 49^2 = 2401 = 19 \\times 125 + 26 \\equiv 26$$</p><p>$$7^8 \\equiv 26^2 = 676 = 5 \\times 125 + 51 \\equiv 51$$</p><p>$$7^{16} \\equiv 51^2 = 2601 = 20 \\times 125 + 101 \\equiv 101$$</p><p>Karena $26 = 16 + 8 + 2$:</p><p>$$7^{26} \\equiv 101 \\times 51 \\times 49 \\pmod{125}$$</p><p>Hitung bertahap: $101 \\times 51 = 5151 = 41 \\times 125 + 26 \\equiv 26$, lalu $26 \\times 49 = 1274 = 10 \\times 125 + 24 \\equiv 24$.</p><p>Jadi $7^{2026} \\equiv 24 \\pmod{125}$.</p><p><strong>Gabungkan.</strong> Dicari $x$ dengan</p><p>$$x \\equiv 1 \\pmod 8, \\qquad x \\equiv 24 \\pmod{125}$$</p><p>Dari yang kedua, tulis $x = 125t + 24$. Masukkan ke yang pertama:</p><p>$$125t + 24 \\equiv 1 \\pmod 8$$</p><p>Karena $125 = 15 \\times 8 + 5 \\equiv 5$ dan $24 \\equiv 0 \\pmod 8$:</p><p>$$5t \\equiv 1 \\pmod 8$$</p><p>Invers $5$ modulo $8$ adalah $5$, sebab $5 \\times 5 = 25 \\equiv 1$. Maka $t \\equiv 5 \\pmod 8$, tulis $t = 8s + 5$:</p><p>$$x = 125(8s + 5) + 24 = 1000s + 649$$</p><p>Tiga angka terakhirnya adalah $\\boxed{649}$.</p><p>Perhatikan pembagian kerjanya: modulo $8$ diselesaikan dalam satu baris karena $7 \\equiv -1$, sementara modulo $125$ memerlukan Teorema Euler. Memecah $1000$ bukan sekadar mempercepat — ia mengubah satu soal sulit menjadi satu soal sepele dan satu soal sedang.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tsc-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-cina"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan bilangan asli terkecil yang bersisa $1$ jika dibagi $2$, $3$, $4$, $5$, maupun $6$, dan habis dibagi $7$.</p>",
+   "jawaban": "301",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Lima syarat pertama semuanya bersisa $1$. Bisakah kelimanya diringkas menjadi satu syarat?",
+    "Kalau $n - 1$ habis dibagi $2, 3, 4, 5, 6$, maka $n - 1$ kelipatan KPK-nya.",
+    "Setelah tersisa dua syarat, gabungkan dengan substitusi seperti biasa."
+   ],
+   "pembahasan": "<p><strong>Ringkas lima syarat pertama.</strong> Semuanya berbunyi \"bersisa $1$\", jadi semuanya sama dengan mengatakan $n - 1$ habis dibagi $2$, $3$, $4$, $5$, dan $6$. Artinya $n-1$ kelipatan persekutuan kelimanya, yaitu kelipatan</p><p>$$\\operatorname{lcm}(2,3,4,5,6) = 60$$</p><p>Jadi</p><p>$$n \\equiv 1 \\pmod{60}$$</p><p>Lima syarat runtuh menjadi satu. Ini yang membuat soalnya jinak — tanpa langkah ini, kamu akan menggabungkan enam kongruensi satu per satu.</p><p><strong>Gabungkan dengan syarat ketujuh.</strong> Dituntut pula $n \\equiv 0 \\pmod 7$. Karena $\\gcd(60, 7) = 1$, solusinya tunggal modulo $420$.</p><p>Tulis $n = 60t + 1$ dan masukkan ke $n \\equiv 0 \\pmod 7$:</p><p>$$60t + 1 \\equiv 0 \\pmod 7$$</p><p>Karena $60 = 8 \\times 7 + 4 \\equiv 4 \\pmod 7$:</p><p>$$4t \\equiv -1 \\equiv 6 \\pmod 7$$</p><p>Invers $4$ modulo $7$ adalah $2$, sebab $4 \\times 2 = 8 \\equiv 1$. Maka</p><p>$$t \\equiv 2 \\times 6 = 12 \\equiv 5 \\pmod 7 \\quad\\Longrightarrow\\quad t = 7s + 5$$</p><p>Substitusikan kembali:</p><p>$$n = 60(7s + 5) + 1 = 420s + 301$$</p><p>Bilangan asli terkecilnya adalah $\\boxed{301}$.</p><p>Periksa: $301 = 60 \\times 5 + 1$, jadi ia bersisa $1$ dibagi $2,3,4,5,6$. Dan $301 = 7 \\times 43$, jadi habis dibagi $7$. Cocok.</p><p>Perhatikan bahwa $\\operatorname{lcm}(2,3,4,5,6) = 60$, bukan $720$. Mengalikan seluruh modulus adalah kekeliruan yang wajar tetapi mahal — ia akan memberi jawaban yang jauh lebih besar dan salah.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tsc-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-cina"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $m$ dan $n$ bilangan asli dengan $\\gcd(m, n) = 1$. Buktikan bahwa sistem</p><p>$$x \\equiv a \\pmod m, \\qquad x \\equiv b \\pmod n$$</p><p>punya solusi bulat, dan bahwa solusinya tunggal modulo $mn$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ada dua hal terpisah: keberadaan solusi, dan ketunggalannya. Kerjakan berurutan.",
+    "Untuk keberadaan, tulis $x = a + mt$ dari kongruensi pertama lalu selesaikan $t$ dari kongruensi kedua — di situ $\\gcd(m,n)=1$ menjamin invers $m$ modulo $n$ ada.",
+    "Untuk ketunggalan, ambil dua solusi lalu tinjau selisihnya: apa yang membagi selisih itu?"
+   ],
+   "pembahasan": "<h4>Keberadaan</h4><p>Dari kongruensi pertama, setiap kandidat solusi berbentuk</p><p>$$x = a + mt, \\qquad t \\in \\mathbb{Z}$$</p><p>Masukkan ke kongruensi kedua:</p><p>$$a + mt \\equiv b \\pmod n \\quad\\Longrightarrow\\quad mt \\equiv b - a \\pmod n$$</p><p>Karena $\\gcd(m, n) = 1$, bilangan $m$ punya invers modulo $n$; sebut $m^{-1}$. Maka</p><p>$$t \\equiv m^{-1}(b - a) \\pmod n$$</p><p>Kongruensi ini selalu punya solusi $t$, dan setiap $t$ semacam itu memberi</p><p>$$x = a + mt$$</p><p>yang memenuhi kedua kongruensi sekaligus. Jadi solusinya ada.</p><h4>Ketunggalan modulo $mn$</h4><p>Misalkan $x_1$ dan $x_2$ keduanya solusi. Maka</p><p>$$x_1 \\equiv x_2 \\pmod m \\quad \\text{dan} \\quad x_1 \\equiv x_2 \\pmod n$$</p><p>sebab keduanya kongruen dengan $a$ modulo $m$ dan dengan $b$ modulo $n$. Artinya</p><p>$$m \\mid x_1 - x_2 \\quad \\text{dan} \\quad n \\mid x_1 - x_2$$</p><p>Di sinilah syarat $\\gcd(m,n) = 1$ dipakai untuk kedua kalinya: kalau dua bilangan yang saling asing masing-masing membagi sesuatu, hasil kalinya juga membagi. Maka</p><p>$$mn \\mid x_1 - x_2 \\quad\\Longrightarrow\\quad x_1 \\equiv x_2 \\pmod{mn}$$</p><p>Jadi solusinya tunggal modulo $mn$. $\\blacksquare$</p><p>Syarat $\\gcd(m,n) = 1$ tidak bisa dilonggarkan. Ambil $m = 4$, $n = 6$, dengan $x \\equiv 1 \\pmod 4$ dan $x \\equiv 2 \\pmod 6$: kongruensi pertama menuntut $x$ ganjil, kedua menuntut $x$ genap, jadi tidak ada solusi sama sekali. Yang gagal adalah langkah \"$m$ punya invers modulo $n$\".</p>",
+   "rubrik": [
+    "Memisahkan pembuktian menjadi keberadaan dan ketunggalan",
+    "Menulis $x = a + mt$ dan mensubstitusikannya ke kongruensi kedua",
+    "Menyatakan invers $m$ modulo $n$ ada <strong>karena</strong> $\\gcd(m,n) = 1$, lalu menyelesaikan $t$",
+    "Ketunggalan: menyimpulkan $m \\mid x_1 - x_2$ dan $n \\mid x_1 - x_2$ dari dua solusi sembarang",
+    "Memakai kesalingasingan untuk menyimpulkan $mn \\mid x_1 - x_2$ — langkah ini tidak boleh dilewati begitu saja"
+   ]
+  },
+  {
+   "id": "tsc-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "teorema-sisa-cina"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan bilangan asli terkecil yang bersisa $2$ jika dibagi $3$, bersisa $3$ jika dibagi $5$, dan bersisa $2$ jika dibagi $7$.</p>",
+   "jawaban": "23",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tiga syarat sisa sekaligus, dengan modulus yang saling relatif prima — solusinya tunggal modulo hasil kalinya.",
+    "Tidak perlu rumus. Mulai dari modulus terbesar: tulis $x = 7t + 2$, lalu masukkan ke syarat berikutnya.",
+    "Setelah $t$ terkurung oleh syarat modulo $5$, tulis ulang $x$ dan masukkan ke syarat modulo $3$."
+   ],
+   "pembahasan": "<p>Modulusnya $3$, $5$, $7$ — saling relatif prima berpasangan, jadi menurut Teorema Sisa Cina solusinya tunggal modulo $3 \\times 5 \\times 7 = 105$.</p><p><strong>Mulai dari modulus terbesar.</strong> Dari $x \\equiv 2 \\pmod 7$, tulis</p><p>$$x = 7t + 2$$</p><p><strong>Masukkan ke syarat modulo $5$.</strong> Dituntut $x \\equiv 3 \\pmod 5$:</p><p>$$7t + 2 \\equiv 3 \\pmod 5 \\quad\\Longrightarrow\\quad 2t \\equiv 1 \\pmod 5$$</p><p>sebab $7 \\equiv 2 \\pmod 5$. Invers $2$ modulo $5$ adalah $3$, jadi</p><p>$$t \\equiv 3 \\pmod 5 \\quad\\Longrightarrow\\quad t = 5s + 3$$</p><p>Substitusikan kembali:</p><p>$$x = 7(5s + 3) + 2 = 35s + 23$$</p><p><strong>Masukkan ke syarat modulo $3$.</strong> Dituntut $x \\equiv 2 \\pmod 3$:</p><p>$$35s + 23 \\equiv 2 \\pmod 3$$</p><p>Karena $35 \\equiv 2$ dan $23 \\equiv 2 \\pmod 3$:</p><p>$$2s + 2 \\equiv 2 \\pmod 3 \\quad\\Longrightarrow\\quad 2s \\equiv 0 \\pmod 3\n\\quad\\Longrightarrow\\quad s \\equiv 0 \\pmod 3$$</p><p>Tulis $s = 3u$, sehingga</p><p>$$x = 35(3u) + 23 = 105u + 23$$</p><p>Bilangan asli terkecilnya diperoleh pada $u = 0$, yaitu $x = \\boxed{23}$.</p><p>Periksa: $23 = 3 \\times 7 + 2$, $23 = 5 \\times 4 + 3$, $23 = 7 \\times 3 + 2$. Ketiganya cocok.</p><p>Perhatikan bahwa jawabannya berbentuk $105u + 23$ — solusinya tunggal <strong>modulo $105$</strong>, bukan tunggal secara mutlak. Memulai dari modulus terbesar membuat angka yang dibawa tetap kecil di setiap langkah.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tth-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "turun-tak-hingga"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa persamaan</p><p>$$x^2 + y^2 = 7z^2$$</p><p>tidak punya solusi bulat selain $(0, 0, 0)$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kongruensi dulu, penurunan kemudian. Modulo berapa yang paling menjanjikan di sini?",
+    "Daftar nilai kuadrat modulo $7$. Himpunannya sempit, dan itu membatasi $x^2 + y^2$ dengan keras.",
+    "Setelah terbukti $7 \\mid x$ dan $7 \\mid y$, substitusikan dan lihat apa yang terjadi pada $z$."
+   ],
+   "pembahasan": "<p>Andaikan ada solusi bulat tak nol. Ambil solusi $(x, y, z)$ dengan $x^2 + y^2 + z^2$ <strong>terkecil</strong> di antara semua solusi tak nol.</p><p><strong>Langkah kongruensi.</strong> Tinjau persamaannya modulo $7$. Kuadrat modulo $7$ hanya bernilai</p><p>$$0^2 \\equiv 0, \\quad (\\pm 1)^2 \\equiv 1, \\quad (\\pm 2)^2 \\equiv 4, \\quad (\\pm 3)^2 \\equiv 2$$</p><p>jadi himpunan kuadrat modulo $7$ adalah $\\{0, 1, 2, 4\\}$.</p><p>Persamaannya memberi $x^2 + y^2 \\equiv 0 \\pmod 7$. Periksa semua pasangan dari himpunan itu yang jumlahnya habis dibagi $7$:</p><ul><li>$1 + 6$: tetapi $6 \\notin \\{0,1,2,4\\}$</li><li>$2 + 5$: tetapi $5 \\notin \\{0,1,2,4\\}$</li><li>$4 + 3$: tetapi $3 \\notin \\{0,1,2,4\\}$</li><li>$0 + 0$: <strong>memenuhi</strong></li></ul><p>Satu-satunya kemungkinan adalah $x^2 \\equiv 0$ dan $y^2 \\equiv 0 \\pmod 7$. Karena $7$ prima, ini memaksa</p><p>$$7 \\mid x \\quad \\text{dan} \\quad 7 \\mid y$$</p><p><strong>Langkah turun.</strong> Tulis $x = 7x_1$ dan $y = 7y_1$. Substitusikan:</p><p>$$49x_1^2 + 49y_1^2 = 7z^2 \\quad\\Longrightarrow\\quad 7x_1^2 + 7y_1^2 = z^2$$</p><p>Ruas kirinya habis dibagi $7$, jadi $7 \\mid z^2$, dan karena $7$ prima, $7 \\mid z$. Tulis $z = 7z_1$:</p><p>$$7x_1^2 + 7y_1^2 = 49z_1^2 \\quad\\Longrightarrow\\quad x_1^2 + y_1^2 = 7z_1^2$$</p><p>Jadi $(x_1, y_1, z_1) = (x/7,\\ y/7,\\ z/7)$ juga solusi bulat, dan ia tak nol karena $(x,y,z)$ tak nol.</p><p><strong>Kontradiksinya.</strong> Tetapi</p><p>$$x_1^2 + y_1^2 + z_1^2 = \\frac{x^2 + y^2 + z^2}{49} &lt; x^2 + y^2 + z^2$$</p><p>bertentangan dengan pemilihan $(x,y,z)$ sebagai yang terkecil.</p><p>Jadi tidak ada solusi tak nol, dan satu-satunya solusi bulat adalah $(0,0,0)$. $\\blacksquare$</p><p>Yang membuat argumen ini bekerja adalah $7 \\equiv 3 \\pmod 4$. Untuk prima semacam itu, $-1$ bukan kuadrat modulo $p$, sehingga $x^2 + y^2 \\equiv 0$ memang memaksa keduanya nol. Bandingkan dengan $p = 5$: di sana $1 + 4 \\equiv 0$, dan persamaannya punya solusi tak nol seperti $(1, 2, 1)$.</p>",
+   "rubrik": [
+    "Mengambil solusi tak nol dengan ukuran terkecil — atau menyusun penurunan tak hingga yang setara",
+    "Mendaftar seluruh nilai kuadrat modulo $7$, yaitu $\\{0,1,2,4\\}$",
+    "Memeriksa semua pasangan dan menyimpulkan hanya $0 + 0$ yang memenuhi",
+    "Menyimpulkan $7 \\mid x$ dan $7 \\mid y$, dengan menyebut $7$ prima sebagai alasannya",
+    "Mensubstitusikan dan menurunkan $7 \\mid z$ juga — langkah ini sering terlewat",
+    "Menunjukkan solusi barunya bulat, tak nol, dan <strong>benar-benar lebih kecil</strong>, lalu menyatakan kontradiksinya"
+   ]
+  },
+  {
+   "id": "tth-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "turun-tak-hingga"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa tripel bilangan bulat $(x, y, z)$ dengan $|x| \\le 50$, $|y| \\le 50$, dan $|z| \\le 50$ yang memenuhi</p><p>$$x^2 + y^2 = 3z^2\\ ?$$</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan mencacah. Tanyakan lebih dulu: apakah persamaan ini punya solusi tak nol sama sekali?",
+    "Modulo $3$, kuadrat hanya bernilai $0$ atau $1$. Apa yang dipaksakan oleh $x^2 + y^2 \\equiv 0$?",
+    "Kalau setiap solusi selalu bisa dibagi $3$ dan menghasilkan solusi lebih kecil, hanya ada satu solusi yang selamat."
+   ],
+   "pembahasan": "<p>Pertanyaannya terlihat seperti soal mencacah, tetapi jawabannya ditentukan oleh satu fakta struktural: persamaan ini <strong>tidak punya solusi bulat selain nol</strong>.</p><p>Tinjau modulo $3$. Kuadrat modulo $3$ hanya bernilai $0$ atau $1$, sebab $0^2 \\equiv 0$ dan $(\\pm 1)^2 \\equiv 1$. Dari persamaannya, $x^2 + y^2 \\equiv 0 \\pmod 3$. Kemungkinan jumlahnya hanya $0+0 = 0$, $0+1 = 1$, dan $1+1 = 2$ — dan hanya yang pertama yang habis dibagi $3$. Maka</p><p>$$3 \\mid x \\quad \\text{dan} \\quad 3 \\mid y$$</p><p>Tulis $x = 3x_1$, $y = 3y_1$:</p><p>$$9x_1^2 + 9y_1^2 = 3z^2 \\quad\\Longrightarrow\\quad 3x_1^2 + 3y_1^2 = z^2$$</p><p>Sehingga $3 \\mid z^2$, dan karena $3$ prima, $3 \\mid z$. Tulis $z = 3z_1$, lalu</p><p>$$x_1^2 + y_1^2 = 3z_1^2$$</p><p>Setiap solusi karena itu menghasilkan solusi lain yang seluruh komponennya sepertiga darinya. Kalau ada solusi tak nol, prosesnya bisa diulang selamanya dan menghasilkan barisan bilangan asli yang menurun tanpa henti — mustahil.</p><p>Jadi satu-satunya solusi bulat adalah $(0, 0, 0)$, dan ia memenuhi seluruh batasan $|x|, |y|, |z| \\le 50$.</p><p>Banyaknya tripel adalah $\\boxed{1}$.</p><p>Batas $50$ pada soal sama sekali tidak berpengaruh — ia hanya membuat pertanyaannya terlihat seperti pencacahan. Kalau batasnya diganti $10^6$, jawabannya tetap $1$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tth-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "turun-tak-hingga"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa persamaan</p><p>$$x^3 + 2y^3 = 4z^3$$</p><p>tidak punya solusi bulat selain $(0, 0, 0)$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Di sini yang dipakai bukan kuadrat modulo prima, melainkan sesuatu yang jauh lebih sederhana: paritas.",
+    "Dari $x^3 = 4z^3 - 2y^3$, ruas kanan genap. Apa yang dipaksakan pada $x$?",
+    "Setelah $x = 2x_1$ disubstitusikan, ulangi penalaran yang sama pada $y$, lalu pada $z$."
+   ],
+   "pembahasan": "<p>Andaikan ada solusi bulat tak nol, dan ambil yang $|x| + |y| + |z|$ terkecil.</p><p><strong>Langkah pertama: $x$ genap.</strong> Tulis persamaannya sebagai</p><p>$$x^3 = 4z^3 - 2y^3 = 2\\left(2z^3 - y^3\\right)$$</p><p>Ruas kanan genap, jadi $x^3$ genap. Pangkat tiga bilangan ganjil selalu ganjil, sehingga $x$ sendiri genap. Tulis $x = 2x_1$:</p><p>$$8x_1^3 + 2y^3 = 4z^3 \\quad\\Longrightarrow\\quad 4x_1^3 + y^3 = 2z^3$$</p><p><strong>Langkah kedua: $y$ genap.</strong> Dari bentuk terakhir,</p><p>$$y^3 = 2z^3 - 4x_1^3 = 2\\left(z^3 - 2x_1^3\\right)$$</p><p>genap, jadi $y$ genap. Tulis $y = 2y_1$:</p><p>$$4x_1^3 + 8y_1^3 = 2z^3 \\quad\\Longrightarrow\\quad 2x_1^3 + 4y_1^3 = z^3$$</p><p><strong>Langkah ketiga: $z$ genap.</strong> Ruas kiri genap, jadi $z^3$ genap dan $z$ genap. Tulis $z = 2z_1$:</p><p>$$2x_1^3 + 4y_1^3 = 8z_1^3 \\quad\\Longrightarrow\\quad x_1^3 + 2y_1^3 = 4z_1^3$$</p><p>Bentuknya kembali persis seperti semula.</p><p><strong>Kontradiksinya.</strong> Jadi $(x_1, y_1, z_1) = (x/2,\\ y/2,\\ z/2)$ juga solusi bulat, tak nol, dengan</p><p>$$|x_1| + |y_1| + |z_1| = \\frac{|x| + |y| + |z|}{2} &lt; |x| + |y| + |z|$$</p><p>bertentangan dengan pemilihan yang terkecil. Maka tidak ada solusi tak nol. $\\blacksquare$</p><p>Perhatikan bahwa ketiga langkahnya harus dijalankan berurutan — masing-masing memakai hasil langkah sebelumnya. Berhenti setelah membuktikan $x$ genap tidak menghasilkan apa pun: yang menutup soal adalah kembalinya bentuk persamaan ke wujud semula setelah ketiganya dibagi $2$.</p>",
+   "rubrik": [
+    "Mengambil solusi tak nol terkecil, atau menyusun penurunan tak hingga yang setara",
+    "Membuktikan $x$ genap dari $x^3$ genap, dengan alasan pangkat tiga ganjil selalu ganjil",
+    "Mensubstitusikan $x = 2x_1$ dan menurunkan bentuk barunya dengan benar",
+    "Melanjutkan ke $y$ genap, lalu ke $z$ genap — ketiganya diperlukan",
+    "Menunjukkan persamaannya kembali ke bentuk semula setelah ketiganya dibagi $2$",
+    "Menyatakan solusi barunya bulat, tak nol, dan benar-benar lebih kecil, lalu menutup kontradiksinya"
+   ]
+  },
+  {
+   "id": "tth-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "turun-tak-hingga"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa $\\sqrt[3]{2}$ bukan bilangan rasional.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Alurnya sama seperti pada akar kuadrat, hanya pangkatnya berubah. Mulai dari pengandaian rasional.",
+    "Dari $a^3 = 2b^3$, simpulkan paritas $a$ — ingat bahwa pangkat tiga ganjil selalu ganjil.",
+    "Setelah $a = 2a_1$ disubstitusikan, perhatikan bahwa yang muncul adalah $b^3 = 4a_1^3$, dan dari situ $b$ juga genap."
+   ],
+   "pembahasan": "<p>Andaikan $\\sqrt[3]{2}$ rasional, sehingga ada bilangan asli $a$ dan $b$ dengan</p><p>$$\\sqrt[3]{2} = \\frac{a}{b} \\quad\\Longrightarrow\\quad a^3 = 2b^3$$</p><p><strong>Langkah turun.</strong> Ruas kanan genap, jadi $a^3$ genap. Karena pangkat tiga bilangan ganjil selalu ganjil, $a$ sendiri genap. Tulis $a = 2a_1$:</p><p>$$8a_1^3 = 2b^3 \\quad\\Longrightarrow\\quad b^3 = 4a_1^3$$</p><p>Ruas kanan genap, jadi $b^3$ genap dan $b$ genap. Tulis $b = 2b_1$:</p><p>$$8b_1^3 = 4a_1^3 \\quad\\Longrightarrow\\quad a_1^3 = 2b_1^3$$</p><p>Bentuknya kembali seperti semula, dengan</p><p>$$a_1 = \\frac{a}{2} &lt; a, \\qquad b_1 = \\frac{b}{2} &lt; b$$</p><p><strong>Kontradiksinya.</strong> Prosesnya bisa diulang selamanya, memberi barisan bilangan asli yang menurun tegas tanpa henti — mustahil. Jadi $\\sqrt[3]{2}$ tidak rasional. $\\blacksquare$</p><p>Bentuk yang lebih ringkas: pilih sejak awal $b$ <strong>terkecil</strong> di antara semua penulisan $\\sqrt[3]{2} = a/b$. Menemukan $b_1 &lt; b$ langsung menutup soal.</p><p>Argumen yang sama bekerja untuk $\\sqrt[n]{2}$ dengan $n$ berapa pun — yang dipakai hanya bahwa pangkat bilangan ganjil tetap ganjil. Lebih umum lagi, dengan faktorisasi prima tunggal: $a^n = 2b^n$ mustahil karena pangkat $2$ di ruas kiri kelipatan $n$, sedangkan di ruas kanan bersisa $1$ modulo $n$.</p>",
+   "rubrik": [
+    "Mengandaikan $\\sqrt[3]{2} = a/b$ untuk bilangan asli $a, b$, lalu menurunkan $a^3 = 2b^3$",
+    "Menyimpulkan $a$ genap, dengan alasan pangkat tiga bilangan ganjil selalu ganjil",
+    "Mensubstitusikan $a = 2a_1$ dan menurunkan $b^3 = 4a_1^3$ dengan benar",
+    "Menyimpulkan $b$ genap juga, lalu kembali ke bentuk $a_1^3 = 2b_1^3$",
+    "Menyatakan pasangan barunya bilangan asli dan benar-benar lebih kecil",
+    "Menutup dengan kemustahilan penurunan tak hingga, atau dengan pemilihan $b$ terkecil sejak awal"
+   ]
+  },
+  {
+   "id": "tth-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "turun-tak-hingga"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa persamaan</p><p>$$x^2 + y^2 = 11z^2$$</p><p>tidak punya solusi bulat selain $(0, 0, 0)$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Polanya sama seperti pada $7z^2$, tetapi daftar kuadratnya harus disusun ulang untuk modulus yang baru.",
+    "Daftar seluruh kuadrat modulo $11$, lalu periksa pasangan mana yang berjumlah nol.",
+    "Setelah $11 \\mid x$ dan $11 \\mid y$ terbukti, jangan lupa menurunkan $11 \\mid z$ sebelum menutup penurunannya."
+   ],
+   "pembahasan": "<p>Andaikan ada solusi bulat tak nol, dan ambil yang $x^2 + y^2 + z^2$ terkecil.</p><p><strong>Langkah kongruensi.</strong> Kuadrat modulo $11$:</p><p>$$(\\pm 1)^2 \\equiv 1, \\quad (\\pm 2)^2 \\equiv 4, \\quad (\\pm 3)^2 \\equiv 9, \\quad\n(\\pm 4)^2 \\equiv 5, \\quad (\\pm 5)^2 \\equiv 3$$</p><p>bersama $0^2 \\equiv 0$. Jadi himpunan kuadrat modulo $11$ adalah</p><p>$$\\{0,\\ 1,\\ 3,\\ 4,\\ 5,\\ 9\\}$$</p><p>Persamaannya menuntut $x^2 + y^2 \\equiv 0 \\pmod{11}$, yaitu dua anggota himpunan itu yang berjumlah $11$ atau $0$. Periksa setiap kemungkinan pasangan tak nol:</p><p>$$1 + 10, \\quad 3 + 8, \\quad 4 + 7, \\quad 5 + 6, \\quad 9 + 2$$</p><p>Pasangan yang dibutuhkan — $10$, $8$, $7$, $6$, $2$ — tidak satu pun ada di dalam himpunan kuadrat. Maka satu-satunya kemungkinan adalah</p><p>$$x^2 \\equiv 0 \\quad \\text{dan} \\quad y^2 \\equiv 0 \\pmod{11}$$</p><p>Karena $11$ prima, ini memaksa $11 \\mid x$ dan $11 \\mid y$.</p><p><strong>Langkah turun.</strong> Tulis $x = 11x_1$, $y = 11y_1$:</p><p>$$121x_1^2 + 121y_1^2 = 11z^2 \\quad\\Longrightarrow\\quad 11x_1^2 + 11y_1^2 = z^2$$</p><p>Ruas kiri habis dibagi $11$, jadi $11 \\mid z^2$ dan karenanya $11 \\mid z$. Tulis $z = 11z_1$:</p><p>$$x_1^2 + y_1^2 = 11z_1^2$$</p><p><strong>Kontradiksinya.</strong> Solusi barunya bulat, tak nol, dan</p><p>$$x_1^2 + y_1^2 + z_1^2 = \\frac{x^2+y^2+z^2}{121} &lt; x^2 + y^2 + z^2$$</p><p>bertentangan dengan pemilihan yang terkecil. Jadi solusi tak nol tidak ada. $\\blacksquare$</p><p>Sama seperti pada $7$, yang menentukan adalah $11 \\equiv 3 \\pmod 4$. Untuk prima $p$ semacam itu, $x^2 + y^2 \\equiv 0 \\pmod p$ selalu memaksa $p \\mid x$ dan $p \\mid y$ — dan seluruh argumen ini berjalan tanpa perubahan.</p>",
+   "rubrik": [
+    "Mengambil solusi tak nol terkecil, atau menyusun penurunan tak hingga yang setara",
+    "Mendaftar seluruh kuadrat modulo $11$ dengan benar, yaitu $\\{0,1,3,4,5,9\\}$",
+    "Memeriksa <strong>semua</strong> pasangan dan menyimpulkan hanya $0 + 0$ yang berjumlah nol modulo $11$",
+    "Menyimpulkan $11 \\mid x$ dan $11 \\mid y$ dengan menyebut $11$ prima",
+    "Menurunkan $11 \\mid z$ setelah substitusi",
+    "Menunjukkan solusi barunya lebih kecil dan menutup kontradiksinya"
+   ]
+  },
+  {
+   "id": "tth-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "turun-tak-hingga"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Ada berapa pasangan $(a, b)$ dengan $a, b \\in \\{0, 1, 2, 3, 4, 5, 6\\}$ yang memenuhi</p><p>$$a^2 + b^2 \\equiv 0 \\pmod 7\\ ?$$</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ini langkah pertama dari penurunan pada $x^2 + y^2 = 7z^2$, dipisahkan supaya bisa dilatih sendiri.",
+    "Daftar dulu nilai $a^2 \\bmod 7$ untuk $a = 0$ sampai $6$. Himpunannya jauh lebih kecil daripada tujuh nilai.",
+    "Setelah himpunan kuadratnya diketahui, periksa pasangan mana saja yang berjumlah habis dibagi $7$."
+   ],
+   "pembahasan": "<p>Hitung dulu seluruh kuadrat modulo $7$:</p><table><thead><tr><th>$a$</th><th>$0$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th><th>$6$</th></tr></thead><tbody><tr><td>$a^2 \\bmod 7$</td><td>$0$</td><td>$1$</td><td>$4$</td><td>$2$</td><td>$2$</td><td>$4$</td><td>$1$</td></tr></tbody></table><p>Jadi nilai yang mungkin hanya $\\{0, 1, 2, 4\\}$ — empat dari tujuh.</p><p>Sekarang cari pasangan nilai dari himpunan itu yang berjumlah habis dibagi $7$:</p><ul><li>$0 + 0 = 0$ — <strong>habis dibagi $7$</strong></li><li>$1 + 1 = 2$, $1 + 2 = 3$, $1 + 4 = 5$ — tidak</li><li>$2 + 2 = 4$, $2 + 4 = 6$ — tidak</li><li>$4 + 4 = 8 \\equiv 1$ — tidak</li></ul><p>Hanya $0 + 0$ yang berhasil. Artinya dibutuhkan $a^2 \\equiv 0$ dan $b^2 \\equiv 0$, yang dalam rentang yang diberikan hanya dipenuhi oleh $a = 0$ dan $b = 0$.</p><p>Ada $\\boxed{1}$ pasangan.</p><p>Inilah yang membuat penurunan pada $x^2 + y^2 = 7z^2$ bekerja: begitu $x^2 + y^2$ habis dibagi $7$, tidak ada pilihan lain selain $7 \\mid x$ dan $7 \\mid y$. Bandingkan dengan modulo $5$, di mana kuadratnya $\\{0,1,4\\}$ dan $1 + 4 = 5$ habis dibagi $5$ — di sana paksaannya hilang, dan persamaan padanannya memang punya solusi tak nol.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tth-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "pilar": "teori-bilangan",
+   "tahap": "osn-p",
+   "jurus": [
+    "turun-tak-hingga"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa $\\sqrt{2}$ bukan bilangan rasional.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Andaikan ia rasional. Tulis sebagai pecahan, lalu cari sesuatu yang bisa diperkecil terus-menerus.",
+    "Dari $a^2 = 2b^2$, paritas $a$ terkunci. Apa yang bisa disimpulkan tentang $a$, lalu tentang $b$?",
+    "Setelah $a$ dan $b$ keduanya genap, kamu punya pecahan baru dengan pembilang dan penyebut lebih kecil — dan prosesnya bisa diulang selamanya."
+   ],
+   "pembahasan": "<p>Andaikan $\\sqrt{2}$ rasional. Maka ada bilangan asli $a$ dan $b$ dengan</p><p>$$\\sqrt{2} = \\frac{a}{b} \\quad\\Longrightarrow\\quad a^2 = 2b^2$$</p><p><strong>Langkah turun.</strong> Ruas kanan genap, jadi $a^2$ genap. Kuadrat bilangan ganjil selalu ganjil, jadi $a$ sendiri genap. Tulis $a = 2a_1$:</p><p>$$4a_1^2 = 2b^2 \\quad\\Longrightarrow\\quad b^2 = 2a_1^2$$</p><p>Bentuknya persis sama seperti semula, hanya dengan pasangan $(b, a_1)$. Dengan alasan yang sama, $b$ genap; tulis $b = 2b_1$, sehingga</p><p>$$a_1^2 = 2b_1^2$$</p><p>Jadi dari pasangan bilangan asli $(a, b)$ yang memenuhi $a^2 = 2b^2$, selalu bisa dibuat pasangan bilangan asli lain $(a_1, b_1)$ yang juga memenuhinya, dengan</p><p>$$a_1 = \\frac{a}{2} &lt; a, \\qquad b_1 = \\frac{b}{2} &lt; b$$</p><p><strong>Kontradiksinya.</strong> Prosesnya bisa diulang tanpa henti, menghasilkan barisan bilangan asli</p><p>$$a &gt; a_1 &gt; a_2 &gt; a_3 &gt; \\cdots$$</p><p>yang menurun terus dan semuanya positif. Itu mustahil: barisan bilangan asli yang menurun tegas pasti berhenti setelah berhingga langkah.</p><p>Jadi pengandaian awalnya salah, dan $\\sqrt{2}$ tidak rasional. $\\blacksquare$</p><p>Bentuk yang lebih ringkas: ambil sejak awal pecahan $a/b$ dengan $b$ <strong>terkecil</strong>. Setelah menemukan $(a_1, b_1)$ dengan $b_1 &lt; b$, kontradiksinya langsung — tidak perlu mengulang prosesnya sama sekali. Kedua bentuk ini setara, dan yang kedua biasanya lebih rapi ditulis.</p>",
+   "rubrik": [
+    "Memulai dengan pengandaian $\\sqrt{2} = a/b$ untuk bilangan asli $a, b$, lalu menurunkan $a^2 = 2b^2$",
+    "Menyimpulkan $a$ genap dari $a^2$ genap, dengan alasan bahwa kuadrat ganjil selalu ganjil",
+    "Mensubstitusikan $a = 2a_1$ dan menurunkan $b^2 = 2a_1^2$, lalu menyimpulkan $b$ genap juga",
+    "Menunjukkan pasangan barunya <strong>benar-benar lebih kecil</strong> dan tetap bilangan asli",
+    "Menutup dengan kemustahilan barisan bilangan asli yang menurun selamanya — atau, setara, dengan memilih $b$ terkecil sejak awal"
+   ]
   },
   {
    "id": "uk-01",

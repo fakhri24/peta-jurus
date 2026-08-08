@@ -4,8 +4,8 @@ nama: Turun Tak Hingga
 pilar: teori-bilangan
 tahap: osn-p
 prasyarat: [bilangan-prima, kongruensi-dasar]
-contoh: []
-latihan: []
+contoh: [tth-contoh-1]
+latihan: [tth-01, tth-02, tth-03, tth-04, tth-05, tth-06]
 ---
 
 ## Kapan dipakai

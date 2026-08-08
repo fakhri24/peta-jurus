@@ -4,8 +4,8 @@ nama: Identitas Bézout
 pilar: teori-bilangan
 tahap: osn-p
 prasyarat: [algoritma-euklid]
-contoh: []
-latihan: []
+contoh: [bz-contoh-1]
+latihan: [bz-01, bz-02, bz-03, bz-04, bz-05, bz-06]
 ---
 
 ## Kapan dipakai

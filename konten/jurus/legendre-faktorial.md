@@ -4,8 +4,8 @@ nama: Pangkat Prima dalam Faktorial
 pilar: teori-bilangan
 tahap: osn-p
 prasyarat: [bilangan-prima]
-contoh: []
-latihan: []
+contoh: [lf-contoh-1]
+latihan: [lf-01, lf-02, lf-03, lf-04, lf-05, lf-06]
 ---
 
 ## Kapan dipakai

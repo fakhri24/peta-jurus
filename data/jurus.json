@@ -175,8 +175,17 @@
    "prasyarat": [
     "bilangan-prima"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "lf-contoh-1"
+   ],
+   "latihan": [
+    "lf-01",
+    "lf-02",
+    "lf-03",
+    "lf-04",
+    "lf-05",
+    "lf-06"
+   ],
    "kapan_dipakai": "<p>Soal menanyakan <strong>berapa banyak nol di belakang</strong> $n!$, atau pangkat tertinggi suatu prima yang membagi faktorial atau koefisien binomial.</p>",
    "inti": "<p>Rumus Legendre: pangkat prima $p$ dalam $n!$ adalah</p><p>$$v_p(n!) = \\left\\lfloor \\frac{n}{p} \\right\\rfloor + \\left\\lfloor \\frac{n}{p^2} \\right\\rfloor\n+ \\left\\lfloor \\frac{n}{p^3} \\right\\rfloor + \\cdots$$</p><p>Jumlahnya berhenti sendiri begitu $p^k &gt; n$.</p><p>Cara membacanya: suku pertama mencacah kelipatan $p$, suku kedua menambahkan satu lagi untuk kelipatan $p^2$ (yang menyumbang dua faktor $p$), dan seterusnya. Tidak ada yang terhitung dua kali — tiap bilangan disumbangkan sebanyak pangkat $p$ di dalamnya.</p><p>Untuk banyaknya nol di belakang $n!$, yang dicari adalah $v_5(n!)$ — bukan $v_2$. Nol lahir dari pasangan $2 \\times 5$, dan faktor $2$ selalu jauh lebih berlimpah, jadi $5$ yang menjadi penghambatnya.</p>",
    "jebakan": "<ul><li><strong>Berhenti di suku pertama.</strong> $v_5(100!) = 20 + 4 = 24$, bukan $20$. Kelipatan $25$ menyumbang dua kali.</li><li><strong>Menghitung $v_2$ untuk soal nol di belakang.</strong> Yang langka itu $5$.</li><li><strong>Membulatkan, bukan membuang.</strong> $\\lfloor \\cdot \\rfloor$ selalu ke bawah.</li></ul>",
@@ -197,7 +206,11 @@
    ],
    "latihan": [
     "sr-01",
-    "sr-02"
+    "sr-02",
+    "sr-03",
+    "sr-04",
+    "sr-05",
+    "sr-06"
    ],
    "kapan_dipakai": "<p>Kamu perlu berpikir tentang <strong>seluruh</strong> bilangan bulat sekaligus, bukan satu per satu — misalnya saat mau membuktikan sesuatu berlaku untuk semua $n$, atau mau menghitung ada berapa nilai yang memenuhi suatu kongruensi.</p>",
    "inti": "<p>Sistem residu lengkap modulo $m$ adalah himpunan yang memuat tepat satu wakil dari setiap kelas sisa, biasanya $\\{0, 1, \\dots, m-1\\}$. Sistem residu <strong>tereduksi</strong> hanya memuat yang relatif prima terhadap $m$; banyaknya adalah $\\varphi(m)$.</p><p>Sifat yang membuat semuanya bekerja:</p><blockquote><p>Kalau $\\gcd(a, m) = 1$ dan $x$ menjelajahi seluruh sistem residu lengkap, maka $ax$ juga menjelajahi seluruh sistem residu lengkap — hanya urutannya teracak.</p></blockquote><p>Artinya <strong>mengalikan dengan bilangan yang relatif prima itu sekadar mengocok kartu</strong>: tidak ada kelas sisa yang hilang, tidak ada yang muncul dua kali. Dari satu pengamatan inilah Teorema Fermat Kecil dan Teorema Euler dibuktikan — keduanya hanya soal mengalikan seluruh kartu yang sudah dikocok itu.</p><p>Syarat $\\gcd(a,m)=1$ tidak bisa dilepas. Modulo $6$, mengalikan dengan $2$ memampatkan enam kelas menjadi tiga saja.</p>",
@@ -241,8 +254,17 @@
     "bilangan-prima",
     "kongruensi-dasar"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "tth-contoh-1"
+   ],
+   "latihan": [
+    "tth-01",
+    "tth-02",
+    "tth-03",
+    "tth-04",
+    "tth-05",
+    "tth-06"
+   ],
    "kapan_dipakai": "<p>Soal meminta <strong>membuktikan tidak ada solusi bulat positif</strong>, dan kongruensi saja tidak cukup untuk menutupnya.</p>",
    "inti": "<p>Andaikan ada solusi. Tunjukkan bahwa dari solusi itu bisa dibuat solusi lain yang <strong>lebih kecil</strong> tapi tetap bulat positif. Ulangi tanpa henti — mustahil, karena bilangan bulat positif tidak bisa turun selamanya. Jadi solusi awalnya tidak pernah ada.</p><p>Bentuk yang paling praktis: ambil solusi dengan nilai <strong>terkecil</strong>, lalu turunkan lagi. Kontradiksinya langsung terlihat.</p><blockquote><p>Alurnya pada $x^2 + y^2 = 3z^2$: modulo $3$, kuadrat hanya bernilai $0$ atau $1$, jadi $x^2 + y^2 \\equiv 0$ memaksa $3 \\mid x$ dan $3 \\mid y$. Tulis $x = 3x_1$, $y = 3y_1$, maka $3x_1^2 + 3y_1^2 = z^2$ — sehingga $3 \\mid z$ juga. Kini $(x/3, y/3, z/3)$ solusi yang lebih kecil. Turun tanpa dasar, jadi tidak ada solusi tak nol.</p></blockquote><p>Perhatikan pasangannya: kongruensi yang memaksa keterbagian, lalu penurunan yang memanen kontradiksi. Keduanya hampir selalu muncul bersama.</p>",
    "jebakan": "<ul><li><strong>Lupa mengecualikan solusi nol.</strong> $(0,0,0)$ biasanya memang solusi; yang dibuktikan tidak ada adalah solusi tak nol.</li><li><strong>Penurunannya tidak benar-benar menurun.</strong> Pastikan solusi barunya bulat <strong>dan</strong> benar- benar lebih kecil. Kalau ukurannya bisa tetap, argumennya bocor.</li><li><strong>Berhenti di kongruensi.</strong> Kongruensi hanya memaksa keterbagian; penurunannya yang menutup soal.</li></ul>",
@@ -290,7 +312,10 @@
    "latihan": [
     "fkl-01",
     "fkl-02",
-    "fkl-03"
+    "fkl-03",
+    "fkl-04",
+    "fkl-05",
+    "fkl-06"
    ],
    "kapan_dipakai": "<p>Ada <strong>pangkat besar</strong> dan <strong>modulus prima</strong>. Begitu kamu melihat $2^{2019} \\bmod 13$ atau sejenisnya, ini jurus pertama yang dicoba.</p>",
    "inti": "<p>Kalau $p$ prima dan $p \\nmid a$:</p><p>$$a^{p-1} \\equiv 1 \\pmod p$$</p><p>Ada bentuk kedua yang berlaku <strong>tanpa syarat</strong>, termasuk saat $p \\mid a$:</p><p>$$a^p \\equiv a \\pmod p$$</p><p>Cara memakainya selalu sama: eksponennya dipotong modulo $p - 1$.</p><blockquote><p>$2^{2019} \\bmod 13$. Di sini $p - 1 = 12$, dan $2019 = 12 \\cdot 168 + 3$. Jadi $2^{2019} \\equiv 2^3 = 8 \\pmod{13}$.</p></blockquote><p>Perhatikan pergantian modulusnya: <strong>bilangan pokok dihitung modulo $p$, eksponen dihitung modulo $p-1$.</strong> Dua modulus berbeda dalam satu langkah — di situlah kebanyakan orang tergelincir.</p>",
@@ -308,8 +333,17 @@
     "turun-tak-hingga",
     "tau-sigma"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "dtl-contoh-1"
+   ],
+   "latihan": [
+    "dtl-01",
+    "dtl-02",
+    "dtl-03",
+    "dtl-04",
+    "dtl-05",
+    "dtl-06"
+   ],
    "kapan_dipakai": "<p>Persamaan dengan solusi bulat yang memuat hasil kali atau pangkat — $xy + ax + by = c$, $x^2 - y^2 = n$, atau pecahan seperti $\\frac1x + \\frac1y = \\frac1n$.</p>",
    "inti": "<p>Tidak ada satu rumus. Yang ada empat refleks, dicoba berurutan:</p><ol><li><strong>Faktorkan.</strong> Ubah jadi (sesuatu)(sesuatu) = konstanta, lalu cacah pasangan pembaginya. Untuk $xy + ax + by$, tambahkan $ab$ ke kedua ruas: $(x+b)(y+a) = c + ab$. Ini <em>pemfaktoran Simon</em>, dan ia menyelesaikan lebih banyak soal daripada yang pantas.</li><li><strong>Selisih kuadrat.</strong> $x^2 - y^2 = (x-y)(x+y)$. Perhatikan kedua faktornya selalu berparitas sama — itu sendiri sudah membatasi banyak.</li><li><strong>Ambil modulo.</strong> Untuk membuktikan tidak ada solusi. Modulo $4$, $8$, $9$ dulu.</li><li><strong>Batasi ukurannya.</strong> Kalau $x \\le y \\le z$, maka $\\frac1x$ adalah yang terbesar, dan itu memaksa $x$ kecil. Sisanya diperiksa dengan tangan.</li></ol><p>Refleks keempat sering terlupa padahal paling ampuh untuk soal pecahan satuan: begitu $x$ terkurung di rentang kecil, soalnya berubah jadi pencacahan berhingga.</p>",
    "jebakan": "<ul><li><strong>Faktorisasi tanpa menyaring.</strong> Setelah $(x+b)(y+a) = N$, kamu masih harus membuang pasangan yang membuat $x$ atau $y$ jatuh di luar syarat soal.</li><li><strong>Melupakan pembagi negatif</strong> ketika soal membolehkan bilangan bulat sembarang.</li><li><strong>Menghabiskan waktu mencari solusi yang tidak ada.</strong> Kalau lima menit tidak ada gerak, cobalah membuktikan sebaliknya lewat modulo.</li></ul>",
@@ -342,8 +376,17 @@
    "prasyarat": [
     "algoritma-euklid"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "bz-contoh-1"
+   ],
+   "latihan": [
+    "bz-01",
+    "bz-02",
+    "bz-03",
+    "bz-04",
+    "bz-05",
+    "bz-06"
+   ],
    "kapan_dipakai": "<p>Kamu perlu <strong>membuat</strong> sebuah bilangan dari dua bilangan lain lewat penjumlahan berkelipatan — atau perlu membuktikan sesuatu ada, tanpa harus menemukannya.</p>",
    "inti": "<p>Untuk sembarang bulat $a, b$ tidak keduanya nol, ada bulat $x, y$ dengan</p><p>$$ax + by = \\gcd(a, b)$$</p><p>Akibat pentingnya: $ax + by$ bisa bernilai $n$ untuk bulat $x, y$ <strong>tepat ketika</strong> $\\gcd(a,b) \\mid n$. Jadi himpunan semua nilai yang bisa dibentuk persis himpunan kelipatan FPB-nya — tidak lebih, tidak kurang.</p><p>Bentuk yang paling sering dipakai di olimpiade adalah kasus $\\gcd(a,b) = 1$: ada $x, y$ dengan $ax + by = 1$. Dari sini lahir <strong>invers modulo</strong>: kalau $\\gcd(a,m) = 1$, maka $x$ pada $ax + my = 1$ memenuhi $ax \\equiv 1 \\pmod m$ — dan itulah satu-satunya alasan pembagian dalam kongruensi kadang boleh dilakukan.</p><p>Untuk mencari $x$ dan $y$ secara nyata, jalankan algoritma Euklid lalu telusuri balik.</p>",
    "jebakan": "<ul><li><strong>Mengira $x$ dan $y$ tunggal.</strong> Tidak. Kalau $(x_0, y_0)$ satu solusi, maka $(x_0 + kb/d,\\ y_0 - ka/d)$ juga, untuk setiap bulat $k$.</li><li><strong>Mengira $x, y$ pasti positif.</strong> Hampir selalu salah satunya negatif.</li><li><strong>Memakainya untuk mencari solusi padahal soal hanya butuh keberadaan.</strong> Bézout paling kuat justru sebagai alat eksistensi — sering kamu tidak perlu tahu $x$ dan $y$-nya sama sekali.</li></ul>",
@@ -377,8 +420,17 @@
     "fermat-kecil",
     "fpb-kpk"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "fe-contoh-1"
+   ],
+   "latihan": [
+    "fe-01",
+    "fe-02",
+    "fe-03",
+    "fe-04",
+    "fe-05",
+    "fe-06"
+   ],
    "kapan_dipakai": "<p>Pangkat besar dengan <strong>modulus komposit</strong> — persis situasi ketika Fermat Kecil tidak bisa dipakai. Juga saat soal mencacah bilangan yang relatif prima terhadap sesuatu.</p>",
    "inti": "<p>$\\varphi(n)$ adalah banyaknya bilangan di $\\{1, \\dots, n\\}$ yang relatif prima terhadap $n$. Dari faktorisasi prima:</p><p>$$\\varphi(n) = n \\prod_{p \\mid n} \\left(1 - \\frac{1}{p}\\right)$$</p><p>Contohnya $\\varphi(12) = 12 \\cdot \\frac12 \\cdot \\frac23 = 4$, yaitu $\\{1, 5, 7, 11\\}$.</p><p><strong>Teorema Euler.</strong> Kalau $\\gcd(a, n) = 1$:</p><p>$$a^{\\varphi(n)} \\equiv 1 \\pmod n$$</p><p>Ini perumuman Fermat Kecil — untuk $n = p$ prima, $\\varphi(p) = p - 1$ dan keduanya berimpit. Pemakaiannya juga sama: eksponen dipotong modulo $\\varphi(n)$.</p><p>$\\varphi$ bersifat <strong>multiplikatif</strong>: $\\varphi(mn) = \\varphi(m)\\varphi(n)$ asalkan $\\gcd(m,n) = 1$. Sifat ini yang membuat menghitungnya cepat.</p>",
    "jebakan": "<ul><li><strong>Melupakan syarat $\\gcd(a,n) = 1$.</strong> Tanpa itu teoremanya batal. Untuk $a$ yang berbagi faktor dengan $n$, pecah dulu dengan Teorema Sisa Cina.</li><li><strong>Mengira $\\varphi$ multiplikatif tanpa syarat.</strong> $\\varphi(4) = 2$ tapi $\\varphi(2)\\varphi(2) = 1$. Syarat relatif prima itu wajib.</li><li><strong>Memakai $\\varphi(n)$ padahal ada eksponen yang lebih kecil.</strong> $\\varphi(n)$ selalu bekerja, tapi belum tentu yang terkecil — yang terkecil adalah orde elemennya.</li></ul>",
@@ -395,8 +447,17 @@
     "kongruensi-dasar",
     "bezout"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "kl-contoh-1"
+   ],
+   "latihan": [
+    "kl-01",
+    "kl-02",
+    "kl-03",
+    "kl-04",
+    "kl-05",
+    "kl-06"
+   ],
    "kapan_dipakai": "<p>Soal meminta menyelesaikan $ax \\equiv b \\pmod m$, atau kamu tiba di bentuk itu di tengah jalan dan ingin \"membagi\" kedua ruas.</p>",
    "inti": "<p>$ax \\equiv b \\pmod m$ punya solusi tepat ketika $d = \\gcd(a, m)$ membagi $b$. Kalau ada, solusinya <strong>tepat $d$ buah</strong> yang berbeda modulo $m$.</p><p>Kasus yang paling sering: $\\gcd(a,m) = 1$. Di situ solusinya tunggal, yaitu $x \\equiv a^{-1} b \\pmod m$, dengan $a^{-1}$ dari Bézout.</p><p>Inilah jawaban tepat atas pertanyaan \"kapan boleh membagi dalam kongruensi\": boleh mengalikan dengan invers, dan invers hanya ada kalau pembaginya relatif prima terhadap modulusnya. Kalau tidak relatif prima, modulusnya ikut menyusut:</p><p>$$ad \\equiv bd \\pmod m \\quad\\Longrightarrow\\quad a \\equiv b \\ \\left(\\bmod \\frac{m}{\\gcd(d,m)}\\right)$$</p>",
    "jebakan": "<ul><li><strong>Mencoret faktor bersama tanpa mengecilkan modulusnya.</strong> Dari $2x \\equiv 4 \\pmod 6$ bukan $x \\equiv 2 \\pmod 6$, melainkan $x \\equiv 2 \\pmod 3$ — yang berarti dua solusi modulo $6$, yaitu $2$ dan $5$.</li><li><strong>Menjawab satu solusi padahal ada $d$.</strong> Kalau soal menanyakan \"berapa banyak $x$\", cacahnya persis $\\gcd(a,m)$.</li><li><strong>Mencari invers padahal tidak ada.</strong> Periksa $\\gcd(a,m) = 1$ lebih dulu.</li></ul>",
@@ -412,8 +473,17 @@
    "prasyarat": [
     "bezout"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "dl-contoh-1"
+   ],
+   "latihan": [
+    "dl-01",
+    "dl-02",
+    "dl-03",
+    "dl-04",
+    "dl-05",
+    "dl-06"
+   ],
    "kapan_dipakai": "<p>Soal berbentuk $ax + by = c$ dengan $x, y$ diminta bulat — sering berbaju cerita: uang pecahan, jumlah hewan, banyak kursi.</p>",
    "inti": "<p>$ax + by = c$ punya solusi bulat <strong>tepat ketika</strong> $d = \\gcd(a,b)$ membagi $c$.</p><p>Kalau ada, seluruh solusinya adalah</p><p>$$x = x_0 + \\frac{b}{d}t, \\qquad y = y_0 - \\frac{a}{d}t, \\qquad t \\in \\mathbb{Z}$$</p><p>dengan $(x_0, y_0)$ satu solusi apa pun yang berhasil kamu temukan.</p><p>Tiga langkah yang selalu sama:</p><ol><li>Hitung $d = \\gcd(a,b)$ dan periksa $d \\mid c$. Kalau tidak, jawabannya \"tidak ada\".</li><li>Cari satu solusi — lewat Bézout, atau sering cukup dengan mencoba nilai kecil.</li><li>Tulis keluarga solusinya, lalu terapkan batasan soal (biasanya $x, y &gt; 0$) untuk memangkas $t$ menjadi rentang berhingga.</li></ol><p>Langkah ketiga itu yang biasanya menjadi seluruh isi soal olimpiade: bukan mencari solusi, tapi <strong>mencacah berapa banyak</strong> yang memenuhi syarat tambahan.</p>",
    "jebakan": "<ul><li><strong>Melupakan syarat $d \\mid c$</strong> lalu menghabiskan waktu mencari solusi yang tidak ada.</li><li><strong>Salah tanda pada keluarga solusi.</strong> $x$ bertambah $b/d$ sementara $y$ <strong>berkurang</strong> $a/d$. Cek dengan mensubstitusi balik satu nilai $t$.</li><li><strong>Lupa \"bilangan asli\" berarti positif.</strong> Batas $x \\ge 1$, bukan $x \\ge 0$, dan itu sering mengubah cacahnya tepat satu.</li></ul>",
@@ -446,8 +516,17 @@
    "prasyarat": [
     "kongruensi-linear"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "tsc-contoh-1"
+   ],
+   "latihan": [
+    "tsc-01",
+    "tsc-02",
+    "tsc-03",
+    "tsc-04",
+    "tsc-05",
+    "tsc-06"
+   ],
    "kapan_dipakai": "<p>Ada <strong>beberapa syarat sisa sekaligus</strong>: \"bersisa 2 kalau dibagi 3, bersisa 3 kalau dibagi 5, bersisa 2 kalau dibagi 7\". Atau — pemakaian yang lebih dalam — kamu ingin memecah satu soal modulo besar menjadi beberapa soal modulo pangkat prima yang lebih mudah.</p>",
    "inti": "<p>Kalau $m_1, m_2, \\dots, m_k$ saling relatif prima berpasangan, maka sistem</p><p>$$x \\equiv a_1 \\pmod{m_1}, \\quad \\dots, \\quad x \\equiv a_k \\pmod{m_k}$$</p><p>punya solusi <strong>tunggal</strong> modulo $M = m_1 m_2 \\cdots m_k$.</p><p>Cara membacanya yang lebih berguna: bekerja modulo $M$ itu <strong>sama saja</strong> dengan bekerja modulo tiap $m_i$ secara terpisah. Jadi soal modulo $1000$ boleh dipecah jadi modulo $8$ dan modulo $125$ — dua soal kecil menggantikan satu soal besar.</p><p>Untuk sistem kecil, tidak perlu rumus. Ambil kongruensi dengan modulus terbesar, tulis $x = a_k + m_k t$, substitusikan ke kongruensi berikutnya, selesaikan $t$, ulangi.</p>",
    "jebakan": "<ul><li><strong>Modulusnya tidak relatif prima.</strong> Teoremanya batal. Sistem seperti $x \\equiv 1\n  \\pmod 4$ dan $x \\equiv 2 \\pmod 6$ harus diperiksa kecocokannya dengan tangan — kadang ada solusi, kadang tidak sama sekali.</li><li><strong>Menjawab satu bilangan, padahal jawabannya satu kelas.</strong> Solusinya adalah $x \\equiv r\n  \\pmod M$ — bilangan yang memenuhi ada tak hingga banyaknya.</li><li><strong>Salah menghitung $M$.</strong> Modulus gabungannya hasil kali, bukan jumlah atau KPK dari sesuatu yang lain.</li></ul>",

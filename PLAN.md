@@ -33,25 +33,23 @@ Poin 2 dan 4 yang paling mahal. Selebihnya pekerjaan kode yang terukur.
 
 ## 2. Keadaan sekarang
 
-22 jurus, 64 soal (53 latihan + 11 contoh), semuanya teori bilangan.
+22 jurus, 127 soal (108 latihan + 19 contoh), semuanya teori bilangan.
+`data/soal.json` sudah 227 KB — lihat catatan pada 0.5.
 
 Sebaran per tahap — ini bagian yang penting:
 
 | Tahap | Jurus | Sudah di lantai 6 | Kosong |
 |---|---|---|---|
 | OSN-K | 8 | 8 | 0 |
-| OSN-P | 10 | 0 | 8 |
+| OSN-P | 10 | 10 | 0 |
 | OSN | 4 | 0 | 4 |
 
-Jurus yang masih kosong: `legendre-faktorial`, `turun-tak-hingga`, `bezout`,
-`diophantine-linear`, `diophantine-taklinear`, `fungsi-euler`, `kongruensi-linear`,
-`teorema-sisa-cina`, `vieta-jumping`, `wilson`, `orde-elemen`, `lte`. Di luar itu,
-`sistem-residu` punya 2 latihan dan `fermat-kecil` punya 3 — keduanya masih di bawah
-lantai.
+Yang masih kosong tinggal empat, semuanya tahap OSN: `vieta-jumping`, `wilson`,
+`orde-elemen`, `lte`.
 
-Kesimpulan jujurnya: **situs ini sekarang alat persiapan OSN-K teori bilangan, dan
-tidak lebih dari itu** — tapi untuk kelompok itu ia sudah utuh: kedelapan jurusnya
-tuntas di lantai 6 latihan sejak 8 Agustus 2026.
+Kesimpulan jujurnya: **teori bilangan sudah utuh untuk OSN-K dan OSN-P** sejak
+8 Agustus 2026 — dua dari tiga tahap, dan itu mencakup sebagian besar peserta. Yang
+belum ada sama sekali adalah tiga bidang lainnya.
 
 ### Perkiraan cakupan penuh
 
@@ -99,13 +97,13 @@ Pilihan bidang dan tahap disimpan di kunci localStorage sendiri,
 `peta-jurus/tampilan/v1` — sengaja terpisah dari kemajuan, supaya preferensi perangkat
 tidak ikut terbawa saat kemajuan diekspor dan dipindah.
 
-**0.5 Pisah `soal.json` per bidang — ditunda, sengaja.** Sekarang 51 KB untuk 38 soal
-(~1,35 KB per soal). Pada 630 soal angkanya sekitar 850 KB, dan **seluruhnya diambil di
-setiap halaman** serta ikut di-*precache* `sw.js` saat install. Pecah jadi
-`data/soal-<pilar>.json` dan muat sesuai kebutuhan halaman. Dikerjakan **paling lambat
-akhir Fase 2**: sekarang ia menambah cabang tanpa menyelesaikan masalah yang sudah ada,
-tapi kalau lewat batas itu ongkos ubahnya naik karena `Inti.muatData()` sudah dipakai
-lima halaman.
+**0.5 Pisah `soal.json` per bidang — ditunda, tapi jamnya sudah berdetak.** Setelah Fase
+1.2 ukurannya **227 KB untuk 127 soal** (~1,8 KB per soal, lebih besar dari perkiraan awal
+1,35 KB karena soal OSN-P berpembahasan panjang). Pada 630 soal angkanya menuju ~1,1 MB,
+dan **seluruhnya diambil di setiap halaman** serta ikut di-*precache* `sw.js` saat install.
+Pecah jadi `data/soal-<pilar>.json` dan muat sesuai kebutuhan halaman. Tetap **paling
+lambat akhir Fase 2** — tapi kalau teori bilangan saja sudah 227 KB, batas itu jangan
+digeser lagi.
 
 **0.6 Koreksi CLAUDE.md — selesai 8 Agustus 2026**, lalu diperbarui lagi mengikuti
 0.1–0.4.
@@ -133,10 +131,15 @@ dengan Python sebelum soalnya ditulis, dan seluruh berkas diperiksa ulang setela
 dibangun — rumus yang rusak dimakan Markdown, `$` yang tak tertutup, dan kelengkapan
 petunjuk/rubrik. Pada volume segini, ketelitian tangan saja tidak cukup.
 
-**1.2 Isi 8 jurus OSN-P yang kosong** + naikkan `sistem-residu` dan `fermat-kecil` ke 6.
-55 latihan + 8 contoh = 63 soal. Perhatikan `teorema-sisa-cina` dan `kongruensi-linear` — keduanya di tingkat 5–6,
-artinya siswa baru sampai ke sana setelah jalur panjang; contohnya harus benar-benar
-tuntas, bukan sekadar ada.
+**1.2 Isi 10 jurus OSN-P ke lantai 6 — selesai 8 Agustus 2026.** 63 soal ditambahkan
+(55 latihan + 8 contoh; 48 isian, 15 uraian). Kesepuluh jurus OSN-P kini punya minimal
+satu contoh terpandu dan enam latihan.
+
+Porsi uraian sengaja jauh lebih besar daripada di 1.1 — 15 dari 63, dibanding 8 dari 26.
+Sebabnya bukan selera: `turun-tak-hingga` dan sebagian besar `bezout` memang teknik
+**pembuktian**, dan mengubahnya jadi soal isian akan menguji hal yang berbeda dari yang
+dilatih. Konsekuensinya rubrik memikul beban lebih berat di tahap ini — dan rubrik yang
+hanya menulis "jawaban benar" tidak akan menolong siswa menilai dirinya sendiri.
 
 **1.3 Isi 4 jurus OSN.** `vieta-jumping`, `wilson`, `orde-elemen`, `lte`. 24 latihan + 4 contoh = 28 soal. Ini
 yang paling sulit ditulis dan paling sedikit pemakainya — kerjakan terakhir, dan tidak

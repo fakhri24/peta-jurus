@@ -5,7 +5,7 @@ pilar: teori-bilangan
 tahap: osn-p
 prasyarat: [kongruensi-dasar]
 contoh: [sr-contoh-1]
-latihan: [sr-01, sr-02]
+latihan: [sr-01, sr-02, sr-03, sr-04, sr-05, sr-06]
 ---
 
 ## Kapan dipakai

@@ -5,7 +5,7 @@ pilar: teori-bilangan
 tahap: osn-p
 prasyarat: [sistem-residu]
 contoh: [fkl-contoh-1]
-latihan: [fkl-01, fkl-02, fkl-03]
+latihan: [fkl-01, fkl-02, fkl-03, fkl-04, fkl-05, fkl-06]
 ---
 
 ## Kapan dipakai
