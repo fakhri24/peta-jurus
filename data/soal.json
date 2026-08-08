@@ -777,6 +777,161 @@
    "rubrik": []
   },
   {
+   "id": "bk-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "bilangan-kompleks"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Tentukan nilai $i^{100}$.</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pakai siklus empat langkah pada pangkat $i$.",
+    "Bagi $100$ oleh $4$ dan lihat sisanya.",
+    "Sisa $0$ berarti nilainya kembali ke titik awal siklus."
+   ],
+   "pembahasan": "<p>Pangkat $i$ berulang dengan periode $4$:</p><p>$$i^1 = i, \\qquad i^2 = -1, \\qquad i^3 = -i, \\qquad i^4 = 1$$</p><p>Bagi eksponennya:</p><p>$$100 = 4 \\times 25 + 0$$</p><p>Sisanya $0$, yang berarti eksponennya kelipatan $4$ tepat:</p><p>$$i^{100} = \\left(i^4\\right)^{25} = 1^{25} = \\boxed{1}$$</p><p><strong>Sisa $0$ layak diperhatikan tersendiri.</strong> Ia berarti nilainya kembali ke $i^4 = 1$, <strong>bukan</strong> ke $i^0$... yang kebetulan juga $1$. Jadi di sini keduanya berimpit dan tidak menimbulkan masalah — tetapi pada siklus lain, membaca sisa $0$ sebagai \"langkah pertama\" adalah kekeliruan yang menggigit.</p><p>Cara memeriksa yang cepat: bilangan habis dibagi $4$ tepat ketika dua digit terakhirnya habis dibagi $4$. Di sini $00$ habis dibagi $4$, jadi $i^{100} = 1$.</p><p>Beberapa nilai yang layak dikenali seketika:</p><p>$$i^{2} = -1, \\qquad i^{4} = 1, \\qquad \\frac{1}{i} = -i, \\qquad i^{-1} = -i$$</p><p>Yang terakhir diperoleh dari $i \\times (-i) = -i^2 = 1$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bk-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "bilangan-kompleks"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan nilai $|3 + 4i|$.</p>",
+   "jawaban": "5",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Modulus bilangan kompleks adalah jaraknya ke titik asal pada bidang.",
+    "Untuk $z = a+bi$, berlaku $|z| = \\sqrt{a^2+b^2}$.",
+    "Angkanya sengaja dipilih supaya hasilnya bulat."
+   ],
+   "pembahasan": "<p>Modulus bilangan kompleks $z = a + bi$ adalah</p><p>$$|z| = \\sqrt{a^2 + b^2}$$</p><p>Ini persis jarak titik $(a, b)$ ke titik asal pada bidang — rumus Pythagoras.</p><p>Di sini $a = 3$ dan $b = 4$:</p><p>$$|3+4i| = \\sqrt{3^2+4^2} = \\sqrt{9+16} = \\sqrt{25} = \\boxed{5}$$</p><p><strong>Cara kedua, lewat sekawan.</strong> Untuk $z = a+bi$, sekawannya $\\bar z = a - bi$, dan</p><p>$$z\\bar z = (a+bi)(a-bi) = a^2 - (bi)^2 = a^2 + b^2 = |z|^2$$</p><p>Di sini $(3+4i)(3-4i) = 9 + 16 = 25$, sehingga $|z| = 5$.</p><p>Bentuk kedua ini yang lebih sering berguna, sebab ia <strong>tidak melibatkan akar</strong> sampai langkah terakhir — dan pada perhitungan panjang, menunda akar hampir selalu menguntungkan.</p><p>Sifat modulus yang layak dikenali:</p><p>$$|z_1z_2| = |z_1||z_2|, \\qquad \\left|\\frac{z_1}{z_2}\\right| = \\frac{|z_1|}{|z_2|},\n\\qquad |z^n| = |z|^n$$</p><p>Yang <strong>tidak</strong> berlaku adalah $|z_1+z_2| = |z_1|+|z_2|$ — untuk penjumlahan yang ada hanya ketaksamaan segitiga, $|z_1+z_2| \\le |z_1|+|z_2|$, persis seperti pada nilai mutlak bilangan real.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bk-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "bilangan-kompleks"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Misalkan $\\omega$ adalah akar dari $z^3 = 1$ dengan $\\omega \\ne 1$. Tentukan nilai</p><p>$$1 + \\omega + \\omega^2$$</p>",
+   "jawaban": "0",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Faktorkan $z^3 - 1$. Salah satu faktornya akan memberi jawabannya langsung.",
+    "$z^3 - 1 = (z-1)\\left(z^2+z+1\\right)$.",
+    "Karena $\\omega \\ne 1$, faktor pertamanya tidak nol — jadi faktor keduanya yang harus nol."
+   ],
+   "pembahasan": "<p>Faktorkan persamaannya:</p><p>$$z^3 - 1 = 0 \\quad\\Longrightarrow\\quad (z-1)\\left(z^2 + z + 1\\right) = 0$$</p><p>Karena $\\omega$ akarnya, salah satu faktor bernilai nol saat $z = \\omega$.</p><p><strong>Faktor pertama tidak nol</strong>, sebab diketahui $\\omega \\ne 1$ sehingga $\\omega - 1 \\ne 0$.</p><p>Maka faktor keduanya yang harus nol:</p><p>$$\\omega^2 + \\omega + 1 = 0$$</p><p>yaitu</p><p>$$1 + \\omega + \\omega^2 = \\boxed{0}$$</p><p><strong>Periksa secara nyata.</strong> Kedua akar tak trivial dari $z^3=1$ adalah</p><p>$$\\omega = -\\frac12 \\pm \\frac{\\sqrt3}{2}i$$</p><p>Untuk yang pertama, $\\omega^2 = -\\frac12 - \\frac{\\sqrt3}{2}i$, sehingga</p><p>$$1 + \\left(-\\tfrac12 + \\tfrac{\\sqrt3}{2}i\\right) + \\left(-\\tfrac12 - \\tfrac{\\sqrt3}{2}i\\right)\n= 1 - 1 + 0 = 0$$</p><p>Cocok.</p><p><strong>Hasil ini berlaku umum.</strong> Untuk $\\omega$ akar ke-$n$ dari satuan dengan $\\omega \\ne 1$,</p><p>$$1 + \\omega + \\omega^2 + \\cdots + \\omega^{n-1} = 0$$</p><p>Itulah yang membuat akar satuan bekerja sebagai <strong>penyaring</strong>: menjumlahkan sebuah bentuk atas seluruh akar satuan menghapus semua suku kecuali yang pangkatnya kelipatan $n$.</p><p>Hubungan $\\omega^2 = -1-\\omega$ juga sering dipakai untuk menyederhanakan bentuk yang memuat $\\omega$ — setiap pangkat bisa diturunkan sampai berderajat paling tinggi satu.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bk-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "bilangan-kompleks"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan nilai $(1+i)^8$.</p>",
+   "jawaban": "16",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan menjabarkan dengan binomial sampai pangkat delapan. Hitung pangkat kecilnya lebih dulu.",
+    "$(1+i)^2$ menyederhana jauh lebih rapi daripada yang terlihat — hitunglah.",
+    "Setelah $(1+i)^2 = 2i$ diperoleh, tinggal dipangkatkan empat."
+   ],
+   "pembahasan": "<p><strong>Hitung pangkat duanya lebih dulu.</strong></p><p>$$(1+i)^2 = 1 + 2i + i^2 = 1 + 2i - 1 = 2i$$</p><p>Suku realnya lenyap seluruhnya — itulah yang membuat $(1+i)$ begitu enak dipangkatkan.</p><p><strong>Naikkan bertahap.</strong></p><p>$$(1+i)^8 = \\left[(1+i)^2\\right]^4 = (2i)^4 = 2^4 \\cdot i^4 = 16 \\times 1 = \\boxed{16}$$</p><p><strong>Cara kedua, lewat bentuk kutub.</strong> Modulusnya $|1+i| = \\sqrt{1+1} = \\sqrt2$, dan sudutnya $45° = \\frac{\\pi}{4}$. Menurut rumus De Moivre:</p><p>$$(1+i)^8 = \\left(\\sqrt2\\right)^8\\left(\\cos\\frac{8\\pi}{4} + i\\sin\\frac{8\\pi}{4}\\right)\n= 16\\left(\\cos 2\\pi + i \\sin 2\\pi\\right) = 16$$</p><p>Hasil yang sama.</p><p><strong>Bandingkan dengan menjabarkan binomial.</strong> Penjabaran $(1+i)^8$ punya sembilan suku, dan tiap suku menuntut menghitung pangkat $i$ — bekerja, tetapi jauh lebih panjang dan lebih rawan salah.</p><p>Aturan umumnya: <strong>untuk memangkatkan bilangan kompleks, cari pangkat kecil yang menyederhana, lalu naikkan bertahap.</strong> Kalau tidak ada yang menyederhana, barulah bentuk kutub dipakai.</p><p>Beberapa yang layak dikenali:</p><p>$$(1+i)^2 = 2i, \\qquad (1-i)^2 = -2i, \\qquad (1+i)(1-i) = 2, \\qquad (1+i)^4 = -4$$</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bk-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "bilangan-kompleks"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $\\omega$ akar dari $z^3 = 1$ dengan $\\omega \\ne 1$. Tentukan nilai</p><p>$$(1+\\omega)\\left(1+\\omega^2\\right)$$</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jabarkan hasil kalinya lebih dulu, jangan menghitung $\\omega$ secara nyata.",
+    "Penjabarannya memuat $\\omega^3$ — dan nilainya sudah diketahui dari soal.",
+    "Sisanya memuat $1 + \\omega + \\omega^2$, yang bernilai nol."
+   ],
+   "pembahasan": "<p><strong>Jabarkan.</strong></p><p>$$(1+\\omega)\\left(1+\\omega^2\\right) = 1 + \\omega^2 + \\omega + \\omega^3$$</p><p><strong>Pakai kedua fakta yang tersedia.</strong> Dari $z^3 = 1$ diketahui $\\omega^3 = 1$. Dan karena $\\omega \\ne 1$, berlaku $1 + \\omega + \\omega^2 = 0$.</p><p>Kelompokkan sesuai keduanya:</p><p>$$1 + \\omega + \\omega^2 + \\omega^3 = \\underbrace{\\left(1+\\omega+\\omega^2\\right)}_{= \\, 0}\n+ \\underbrace{\\omega^3}_{= \\, 1} = 0 + 1 = \\boxed{1}$$</p><p><strong>Cara kedua, lewat faktorisasi.</strong> Dari $1 + \\omega + \\omega^2 = 0$ diperoleh</p><p>$$1 + \\omega = -\\omega^2, \\qquad 1 + \\omega^2 = -\\omega$$</p><p>sehingga</p><p>$$(1+\\omega)\\left(1+\\omega^2\\right) = \\left(-\\omega^2\\right)(-\\omega) = \\omega^3 = 1$$</p><p>Hasil yang sama, dan cara ini menunjukkan gerakan yang sering dipakai: <strong>ganti $1+\\omega$ dengan $-\\omega^2$</strong> untuk menurunkan derajat.</p><p><strong>Periksa secara nyata.</strong> Dengan $\\omega = -\\frac12 + \\frac{\\sqrt3}{2}i$:</p><p>$$1+\\omega = \\tfrac12 + \\tfrac{\\sqrt3}{2}i, \\qquad\n1+\\omega^2 = \\tfrac12 - \\tfrac{\\sqrt3}{2}i$$</p><p>Keduanya sekawan, jadi hasil kalinya $\\left(\\frac12\\right)^2 + \\left(\\frac{\\sqrt3}{2}\\right)^2\n= \\frac14 + \\frac34 = 1$. Cocok.</p><p><strong>Pelajaran umumnya:</strong> pada soal yang memuat akar satuan, hampir semua penyederhanaan datang dari dua hubungan saja — $\\omega^n = 1$ dan jumlah seluruh akarnya nol. Menghitung $\\omega$ secara nyata hampir tidak pernah diperlukan, dan biasanya justru memperpanjang pekerjaan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bk-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "bilangan-kompleks",
+    "barisan-deret"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $\\omega$ akar ke-$n$ dari satuan dengan $\\omega \\ne 1$, yaitu $\\omega^n = 1$. Buktikan bahwa</p><p>$$1 + \\omega + \\omega^2 + \\cdots + \\omega^{n-1} = 0$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tiap suku di ruas kiri diperoleh dari suku sebelumnya dengan mengalikan $\\omega$. Ada rumus jumlah yang berlaku persis untuk susunan semacam itu.",
+    "Rumus jumlah deret geometri memuat pembagian oleh $r - 1$ — periksa dulu bahwa ia tidak nol.",
+    "Setelah rumusnya dipasang, pembilangnya menjadi $\\omega^n - 1$, yang nilainya sudah diketahui."
+   ],
+   "pembahasan": "<h4>Cara pertama: rumus deret geometri</h4><p>Ruas kiri adalah deret geometri dengan suku pertama $1$ dan rasio $\\omega$, sebanyak $n$ suku.</p><p><strong>Periksa syaratnya.</strong> Rumus jumlah deret geometri menuntut rasionya bukan $1$ — dan itu diketahui, sebab $\\omega \\ne 1$. Langkah ini wajib: tanpa syarat itu, pembaginya nol.</p><p>Pakai rumusnya:</p><p>$$1 + \\omega + \\cdots + \\omega^{n-1} = \\frac{\\omega^n - 1}{\\omega - 1}$$</p><p><strong>Pakai $\\omega^n = 1$.</strong> Pembilangnya menjadi</p><p>$$\\omega^n - 1 = 1 - 1 = 0$$</p><p>sedangkan penyebutnya $\\omega - 1 \\ne 0$. Maka seluruh pecahannya bernilai</p><p>$$\\frac{0}{\\omega-1} = 0$$</p><h4>Cara kedua: tanpa rumus</h4><p>Sebut $S = 1 + \\omega + \\cdots + \\omega^{n-1}$. Kalikan dengan $\\omega$:</p><p>$$\\omega S = \\omega + \\omega^2 + \\cdots + \\omega^{n-1} + \\omega^n$$</p><p>Karena $\\omega^n = 1$, suku terakhirnya kembali menjadi $1$ — dan daftar itu memuat <strong>anggota yang persis sama</strong> dengan $S$, hanya urutannya bergeser. Jadi</p><p>$$\\omega S = S \\quad\\Longrightarrow\\quad (\\omega - 1)S = 0$$</p><p>Karena $\\omega \\ne 1$, faktor $\\omega - 1$ tidak nol, sehingga $S = 0$. $\\blacksquare$</p><h4>Catatan</h4><p><strong>Cara kedua lebih menjelaskan.</strong> Ia memperlihatkan mengapa jumlahnya nol: mengalikan dengan $\\omega$ hanya <strong>mengocok</strong> himpunan pangkatnya, tidak mengubah jumlahnya — dan satu-satunya bilangan yang tidak berubah saat dikalikan $\\omega \\ne 1$ adalah nol.</p><p>Pola pengocokan itu persis sama dengan yang dipakai pada pembuktian Teorema Euler lewat sistem residu tereduksi: mengalikan seluruh anggota dengan sesuatu hanya menyusun ulang daftarnya.</p><p><strong>Akibat yang paling sering dipakai</strong> adalah sifat penyaring. Untuk polinomial $P$, jumlah $\\sum_{k=0}^{n-1} P\\!\\left(\\omega^k\\right)$ menghapus seluruh suku kecuali yang pangkatnya kelipatan $n$ — sebab tiap pangkat yang bukan kelipatan $n$ menjumlahkan seluruh akar satuan dan berakhir nol. Dari situ lahir cara baku menghitung jumlah koefisien binomial berindeks tertentu.</p><p>Untuk $n = 3$, hasilnya memberi hubungan yang sudah dipakai berkali-kali: $\\omega^2 = -1-\\omega$.</p>",
+   "rubrik": [
+    "Mengenali ruas kiri sebagai deret geometri dengan rasio $\\omega$ dan $n$ suku",
+    "<strong>Memeriksa</strong> $\\omega \\ne 1$ sebelum memakai rumus jumlahnya",
+    "Memasang rumusnya dan memakai $\\omega^n = 1$ untuk menolkan pembilangnya",
+    "Menyatakan penyebutnya tidak nol, sehingga hasilnya benar-benar $0$",
+    "<strong>Atau</strong>, jalur kedua: mengalikan $S$ dengan $\\omega$ dan menunjukkan hasilnya $S$ lagi",
+    "Jalur kedua: menyimpulkan $(\\omega-1)S = 0$ lalu memakai $\\omega \\ne 1$"
+   ]
+  },
+  {
+   "id": "bk-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "bilangan-kompleks"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan nilai $i^{2026}$.</p>",
+   "jawaban": "-1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hitung beberapa pangkat pertama $i$ dan cari polanya.",
+    "$i^1 = i$, $i^2 = -1$, $i^3 = -i$, $i^4 = 1$ — lalu berulang.",
+    "Karena siklusnya $4$, yang menentukan hanyalah sisa $2026$ dibagi $4$."
+   ],
+   "pembahasan": "<p>Hitung pangkat pertama $i$:</p><p>$$i^1 = i, \\qquad i^2 = -1, \\qquad i^3 = i^2 \\cdot i = -i, \\qquad i^4 = i^2 \\cdot i^2 = 1$$</p><p>Setelah empat langkah nilainya kembali ke $1$, jadi pangkatnya <strong>berulang dengan periode $4$</strong>.</p><p>Bagi eksponennya oleh $4$:</p><p>$$2026 = 4 \\times 506 + 2$$</p><p>Maka</p><p>$$i^{2026} = \\left(i^4\\right)^{506} \\times i^2 = 1^{506} \\times (-1) = \\boxed{-1}$$</p><p><strong>Cara membaca sisanya:</strong> sisa $0$ memberi $1$, sisa $1$ memberi $i$, sisa $2$ memberi $-1$, sisa $3$ memberi $-i$. Di sini sisanya $2$.</p><p>Untuk memeriksa sisa pembagian oleh $4$ dengan cepat, cukup lihat <strong>dua digit terakhir</strong>: $26 = 6 \\times 4 + 2$, jadi $2026 \\equiv 2 \\pmod 4$. Cocok.</p><p>Perhatikan bahwa struktur ini persis sama dengan mencari sisa pangkat dalam kongruensi: temukan pangkat terkecil yang memberi $1$, lalu potong eksponennya. Bedanya di sini siklusnya selalu $4$ dan tidak perlu dicari.</p><p>Akar keempat dari $1$ adalah $1$, $i$, $-1$, $-i$ — dan keempatnya persis nilai yang muncul dalam siklus di atas. Itu bukan kebetulan: pangkat $i$ menjelajahi seluruh akar keempat satuan.</p>",
+   "rubrik": []
+  },
+  {
    "id": "bp-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
    "pilar": "teori-bilangan",
@@ -1094,6 +1249,164 @@
     "Sederhanakan $17 \\equiv 2 \\pmod 5$, lalu selesaikan $2x \\equiv 1 \\pmod 5$."
    ],
    "pembahasan": "<p>Karena $\\gcd(17, 5) = 1$, identitas Bézout menjamin ada bulat $x, y$ dengan $17x + 5y = 1$.</p><p>Untuk mencari $x$ saja, tinjau persamaannya modulo $5$ — suku $5y$ lenyap:</p><p>$$17x \\equiv 1 \\pmod 5$$</p><p>Karena $17 = 3 \\times 5 + 2$, kita punya $17 \\equiv 2 \\pmod 5$, sehingga</p><p>$$2x \\equiv 1 \\pmod 5$$</p><p>Coba $x = 0, 1, 2, 3, 4$: nilai $2x$ berturut-turut $0, 2, 4, 6 \\equiv 1, 8 \\equiv 3$. Yang memberi $1$ adalah $x = 3$.</p><p>Jadi $x \\equiv 3 \\pmod 5$, dan bilangan asli terkecilnya adalah $\\boxed{3}$.</p><p>Periksa: $17 \\times 3 = 51$, dan $51 + 5y = 1$ memberi $y = -10$. Memang $17(3) + 5(-10) = 51 - 50 = 1$.</p><p>Perhatikan $y$ bernilai negatif. Itu bukan kekeliruan — pada identitas Bézout hampir selalu salah satu dari $x$ atau $y$ negatif, sebab $ax$ dan $by$ harus saling meniadakan sampai tersisa bilangan sekecil $\\gcd(a,b)$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "cs-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "cauchy-schwarz"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $x$ dan $y$ bilangan real positif dengan $x + y = 4$. Tentukan nilai terkecil dari</p><p>$$\\frac{1}{x} + \\frac{1}{y}$$</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Polanya sama seperti sebelumnya, hanya angkanya berbeda.",
+    "Tulis tiap suku sebagai $\\frac{1^2}{x}$, lalu terapkan bentuk Engel.",
+    "Batasnya $\\frac{(1+1)^2}{x+y}$."
+   ],
+   "pembahasan": "<p>Tulis dengan pembilang kuadrat dan terapkan bentuk Engel:</p><p>$$\\frac{1}{x} + \\frac{1}{y} = \\frac{1^2}{x} + \\frac{1^2}{y}\n\\ \\ge\\ \\frac{(1+1)^2}{x+y} = \\frac{4}{4} = \\boxed{1}$$</p><p><strong>Periksa kesamaannya tercapai.</strong> Dibutuhkan $x = y$, dan dengan $x+y = 4$ diperoleh $x = y = 2$. Keduanya positif. Substitusikan: $\\frac12 + \\frac12 = 1$. Tercapai.</p><p>Bandingkan dengan pilihan lain: $x=1, y=3$ memberi $1 + \\frac13 = \\frac43$; $x = 0{,}5$, $y = 3{,}5$ memberi $2 + \\frac{2}{7} \\approx 2{,}29$. Semakin timpang, semakin besar.</p><p><strong>Hasil umumnya layak dikenali.</strong> Untuk $x + y = s$ dengan keduanya positif,</p><p>$$\\frac1x + \\frac1y \\ \\ge\\ \\frac{4}{s}$$</p><p>Jadi nilai minimumnya berbanding terbalik dengan jumlahnya. Pada soal sebelumnya $s = 1$ memberi $4$; di sini $s = 4$ memberi $1$.</p><p>Perumumannya untuk $n$ peubah positif berjumlah $s$:</p><p>$$\\frac{1}{x_1} + \\cdots + \\frac{1}{x_n} \\ \\ge\\ \\frac{n^2}{s}$$</p><p>yang langsung dari bentuk Engel dengan seluruh pembilangnya $1$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "cs-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "cauchy-schwarz"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Diketahui $a$ dan $b$ bilangan real dengan $a^2 + b^2 = 25$. Tentukan nilai terbesar dari</p><p>$$3a + 4b$$</p>",
+   "jawaban": "25",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Perhatikan bentuk kendalanya dan bentuk yang ditanya: yang satu jumlah kuadrat, yang lain jumlah hasil kali. Ada ketaksamaan yang menghubungkan keduanya.",
+    "$\\left(\\sum a_ib_i\\right)^2 \\le \\left(\\sum a_i^2\\right)\\left(\\sum b_i^2\\right)$.",
+    "Pasangkan $(3,4)$ dengan $(a,b)$."
+   ],
+   "pembahasan": "<p>Ini bentuk baku Cauchy-Schwarz, bukan bentuk Engel:</p><p>$$\\left(a_1b_1 + a_2b_2\\right)^2 \\ \\le\\ \\left(a_1^2+a_2^2\\right)\\left(b_1^2+b_2^2\\right)$$</p><p>Pasangkan $(a_1, a_2) = (3, 4)$ dengan $(b_1, b_2) = (a, b)$:</p><p>$$(3a + 4b)^2 \\ \\le\\ \\left(3^2+4^2\\right)\\left(a^2+b^2\\right) = 25 \\times 25 = 625$$</p><p>Ambil akarnya:</p><p>$$|3a+4b| \\ \\le\\ 25 \\quad\\Longrightarrow\\quad 3a+4b \\ \\le\\ 25$$</p><p><strong>Periksa kesamaannya tercapai.</strong> Kesamaan pada Cauchy-Schwarz berlaku tepat ketika kedua barisan <strong>sebanding</strong>, yaitu ada $\\lambda$ dengan $a = 3\\lambda$ dan $b = 4\\lambda$. Substitusikan ke kendalanya:</p><p>$$9\\lambda^2 + 16\\lambda^2 = 25 \\quad\\Longrightarrow\\quad \\lambda^2 = 1\n\\quad\\Longrightarrow\\quad \\lambda = \\pm 1$$</p><p>Ambil $\\lambda = 1$, memberi $a = 3$, $b = 4$. Substitusikan: $9 + 16 = 25$. Tercapai.</p><p>Nilai terbesarnya adalah $\\boxed{25}$.</p><p>Perhatikan bahwa $\\lambda = -1$ memberi $a = -3$, $b = -4$ dengan $3a+4b = -25$ — itu nilai <strong>terkecil</strong>nya. Cauchy-Schwarz membatasi nilai mutlaknya, jadi ia memberi kedua ujung sekaligus.</p><p><strong>Bedanya dengan bentuk Engel</strong> layak dicatat. Bentuk baku dipakai ketika kendalanya berupa <strong>jumlah kuadrat</strong>; bentuk Engel dipakai ketika yang ditanya berupa <strong>jumlah pecahan berpembilang kuadrat</strong>. Keduanya ketaksamaan yang sama, hanya disusun berbeda.</p><p>Tafsiran geometrisnya: $(a,b)$ berada pada lingkaran berjari-jari $5$, dan $3a+4b$ adalah hasil kali titik dengan vektor $(3,4)$ yang panjangnya juga $5$. Hasil kali titik paling besar ketika kedua vektor searah — dan $5 \\times 5 = 25$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "cs-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "cauchy-schwarz"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Diketahui $x + y + z = 6$ untuk bilangan real $x$, $y$, $z$. Tentukan nilai terkecil dari</p><p>$$x^2 + y^2 + z^2$$</p>",
+   "jawaban": "12",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kendalanya jumlah biasa; yang ditanya jumlah kuadrat. Pasangkan barisan $(x,y,z)$ dengan barisan yang seluruhnya bernilai $1$.",
+    "Cauchy-Schwarz memberi $(x+y+z)^2 \\le \\left(x^2+y^2+z^2\\right)\\left(1^2+1^2+1^2\\right)$.",
+    "Susun ulang untuk memperoleh batas bawah jumlah kuadratnya."
+   ],
+   "pembahasan": "<p>Terapkan Cauchy-Schwarz dengan barisan kedua seluruhnya $1$:</p><p>$$(x \\cdot 1 + y \\cdot 1 + z \\cdot 1)^2 \\ \\le\\ \\left(x^2+y^2+z^2\\right)\n\\left(1^2+1^2+1^2\\right)$$</p><p>yaitu</p><p>$$(x+y+z)^2 \\ \\le\\ 3\\left(x^2+y^2+z^2\\right)$$</p><p>Substitusikan kendalanya dan susun ulang:</p><p>$$36 \\ \\le\\ 3\\left(x^2+y^2+z^2\\right) \\quad\\Longrightarrow\\quad x^2+y^2+z^2 \\ \\ge\\ 12$$</p><p><strong>Periksa kesamaannya tercapai.</strong> Kesamaan berlaku ketika $(x,y,z)$ sebanding dengan $(1,1,1)$, yaitu $x = y = z$. Digabung dengan $x+y+z=6$ diperoleh $x=y=z=2$. Substitusikan: $4+4+4 = 12$. Tercapai.</p><p>Nilai terkecilnya adalah $\\boxed{12}$.</p><p>Bandingkan: $x=1,y=2,z=3$ memberi $14$; $x=0,y=0,z=6$ memberi $36$. Sebaran yang merata memberi jumlah kuadrat terkecil.</p><p><strong>Memasangkan dengan barisan $(1,1,\\ldots,1)$ adalah gerakan baku</strong> setiap kali kendalanya berupa jumlah biasa dan yang ditanya jumlah kuadrat. Hasil umumnya:</p><p>$$x_1^2 + \\cdots + x_n^2 \\ \\ge\\ \\frac{\\left(x_1+\\cdots+x_n\\right)^2}{n}$$</p><p>Perhatikan bahwa di sini $x$, $y$, $z$ <strong>tidak</strong> dituntut positif — Cauchy-Schwarz berlaku untuk bilangan real apa pun. Itu bedanya dengan AM-GM, yang menuntut semuanya positif, dan salah satu alasan Cauchy-Schwarz sering lebih luwes.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "cs-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "cauchy-schwarz"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Diketahui $a$, $b$, $c$ bilangan real positif dengan $a+b+c = 3$. Tentukan nilai terkecil dari</p><p>$$\\frac{a^2}{b+c} + \\frac{b^2}{a+c} + \\frac{c^2}{a+b}$$</p><p>Tulis jawabanmu sebagai pecahan paling sederhana.</p>",
+   "jawaban": "3/2",
+   "jawaban_alt": [
+    "1,5",
+    "1.5"
+   ],
+   "petunjuk": [
+    "Pembilangnya sudah berupa kuadrat dan ketiga penyebutnya positif. Perhatikan pula bahwa penyebutnya kalau dijumlahkan menghasilkan sesuatu yang dikunci soal.",
+    "Batasnya $\\frac{(a+b+c)^2}{(b+c) + (a+c) + (a+b)}$. Sederhanakan penyebutnya.",
+    "Penyebutnya menjadi $2(a+b+c)$, sehingga seluruhnya menyusut jadi bentuk yang sangat sederhana."
+   ],
+   "pembahasan": "<p>Pembilangnya sudah kuadrat dan ketiga penyebutnya positif, jadi bentuk Engel bisa dipakai apa adanya:</p><p>$$\\frac{a^2}{b+c} + \\frac{b^2}{a+c} + \\frac{c^2}{a+b}\n\\ \\ge\\ \\frac{(a+b+c)^2}{(b+c)+(a+c)+(a+b)}$$</p><p><strong>Sederhanakan penyebutnya.</strong> Tiap peubah muncul dua kali:</p><p>$$(b+c)+(a+c)+(a+b) = 2(a+b+c)$$</p><p>Maka</p><p>$$\\ge\\ \\frac{(a+b+c)^2}{2(a+b+c)} = \\frac{a+b+c}{2} = \\frac{3}{2}$$</p><p><strong>Periksa kesamaannya tercapai.</strong> Kesamaan pada bentuk Engel berlaku ketika seluruh pecahan sebanding, yaitu</p><p>$$\\frac{a}{b+c} = \\frac{b}{a+c} = \\frac{c}{a+b}$$</p><p>yang dipenuhi oleh $a=b=c$. Digabung dengan $a+b+c=3$ diperoleh $a=b=c=1$, ketiganya positif. Substitusikan:</p><p>$$\\frac{1}{2} + \\frac{1}{2} + \\frac{1}{2} = \\frac{3}{2}$$</p><p>Tercapai. Nilai terkecilnya adalah $\\boxed{\\dfrac{3}{2}}$.</p><p>Perhatikan bahwa hasilnya <strong>hanya bergantung pada $a+b+c$</strong>: nilai minimumnya selalu setengah dari jumlah ketiganya. Kalau kendalanya diganti $a+b+c = 10$, jawabannya menjadi $5$.</p><p>Bentuk soal ini — sering disebut ketaksamaan Nesbitt ketika pembilangnya bukan kuadrat — adalah salah satu penerapan bentuk Engel yang paling sering muncul. Kalau pembilangnya $a$ alih-alih $a^2$, tulis ulang lebih dulu:</p><p>$$\\frac{a}{b+c} = \\frac{a^2}{a(b+c)}$$</p><p>lalu Engel dipakai dengan penyebut $a(b+c)$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "cs-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "cauchy-schwarz"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Diketahui $x$, $y$, $z$ bilangan real positif dengan $x+y+z = 1$. Tentukan nilai terkecil dari</p><p>$$\\frac1x + \\frac1y + \\frac1z$$</p>",
+   "jawaban": "9",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tulis tiap suku dengan pembilang berupa kuadrat, yaitu $\\frac{1^2}{x}$. Lalu perhatikan bahwa penyebutnya dijumlahkan menjadi sesuatu yang sudah diketahui.",
+    "Pembilangnya seluruhnya $1$, jadi $(1+1+1)^2 = 9$.",
+    "Penyebutnya dijumlahkan menjadi $x+y+z$, yang sudah diketahui."
+   ],
+   "pembahasan": "<p>Tulis dengan pembilang kuadrat:</p><p>$$\\frac1x+\\frac1y+\\frac1z = \\frac{1^2}{x} + \\frac{1^2}{y} + \\frac{1^2}{z}$$</p><p>Terapkan bentuk Engel untuk tiga suku:</p><p>$$\\ge\\ \\frac{(1+1+1)^2}{x+y+z} = \\frac{9}{1} = 9$$</p><p><strong>Periksa kesamaannya tercapai.</strong> Dibutuhkan $x = y = z$, dan dengan $x+y+z=1$ diperoleh $x=y=z=\\frac13$. Ketiganya positif. Substitusikan: $3+3+3 = 9$. Tercapai.</p><p>Nilai terkecilnya adalah $\\boxed{9}$.</p><p><strong>Hasil ini punya nama lain.</strong> Ia setara dengan ketaksamaan antara rata-rata aritmetika dan rata-rata harmonik:</p><p>$$\\frac{x+y+z}{3} \\ \\ge\\ \\frac{3}{\\frac1x+\\frac1y+\\frac1z}$$</p><p>Menyusun ulangnya memberi $\\left(\\frac1x+\\frac1y+\\frac1z\\right)(x+y+z) \\ge 9$ — bentuk yang sering muncul apa adanya di soal olimpiade.</p><p>Bentuk terakhir itu layak dikenali karena ia <strong>tidak menuntut kendala apa pun</strong>: hasil kali kedua jumlah itu selalu paling sedikit $9$ untuk tiga bilangan positif. Untuk $n$ bilangan, batasnya $n^2$.</p><p>Perhatikan bahwa kendala $x+y+z=1$ hanya dipakai di langkah terakhir. Kalau kendalanya diganti $x+y+z = s$, jawabannya menjadi $\\frac{9}{s}$ — dan struktur pembuktiannya persis sama.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "cs-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "cauchy-schwarz",
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bentuk Engel untuk dua suku: untuk bilangan real $p$, $q$ dan bilangan real positif $x$, $y$,</p><p>$$\\frac{p^2}{x} + \\frac{q^2}{y} \\ \\ge\\ \\frac{(p+q)^2}{x+y}$$</p><p>dan tentukan kapan kesamaannya tercapai.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kalikan silang untuk menghilangkan seluruh penyebut. Perhatikan bahwa $x$, $y$, dan $x+y$ semuanya positif, jadi arahnya tidak berubah.",
+    "Setelah dijabarkan dan disederhanakan, yang tersisa akan berbentuk kuadrat.",
+    "Bentuk yang muncul adalah $(py - qx)^2 \\ge 0$."
+   ],
+   "pembahasan": "<p>Karena $x &gt; 0$, $y &gt; 0$, dan karenanya $x+y &gt; 0$, mengalikan kedua ruas dengan $xy(x+y)$ <strong>tidak mengubah arah</strong> ketaksamaan. Yang perlu dibuktikan menjadi</p><p>$$p^2 y (x+y) + q^2 x (x+y) \\ \\ge\\ (p+q)^2 xy$$</p><p><strong>Jabarkan kedua ruas.</strong></p><p>Ruas kiri:</p><p>$$p^2xy + p^2y^2 + q^2x^2 + q^2xy$$</p><p>Ruas kanan:</p><p>$$\\left(p^2 + 2pq + q^2\\right)xy = p^2xy + 2pqxy + q^2xy$$</p><p><strong>Kurangkan.</strong> Suku $p^2xy$ dan $q^2xy$ muncul di kedua ruas dan saling menghapus, menyisakan</p><p>$$p^2y^2 + q^2x^2 \\ \\ge\\ 2pqxy$$</p><p>yaitu</p><p>$$p^2y^2 - 2pqxy + q^2x^2 \\ \\ge\\ 0$$</p><p><strong>Kenali kuadratnya.</strong> Ruas kiri adalah kuadrat sempurna:</p><p>$$(py - qx)^2 \\ \\ge\\ 0$$</p><p>yang benar untuk bilangan real apa pun. Karena seluruh langkah di atas setara — mengalikan dengan bilangan positif bisa dibalik — ketaksamaan aslinya terbukti. $\\blacksquare$</p><h4>Kapan kesamaannya tercapai</h4><p>Kesamaan berlaku tepat ketika $(py - qx)^2 = 0$, yaitu</p><p>$$py = qx \\quad\\Longleftrightarrow\\quad \\frac{p}{x} = \\frac{q}{y}$$</p><p>Itulah syarat <strong>kesebandingan</strong> yang selalu disebut pada Cauchy-Schwarz.</p><h4>Perluasan</h4><p>Untuk $n$ suku, bentuknya</p><p>$$\\frac{p_1^2}{x_1} + \\cdots + \\frac{p_n^2}{x_n} \\ \\ge\\\n\\frac{\\left(p_1+\\cdots+p_n\\right)^2}{x_1+\\cdots+x_n}$$</p><p>dan ia mengikuti dari kasus dua suku dengan induksi: terapkan pada dua suku pertama untuk menggabungkannya menjadi satu, lalu ulangi.</p><p>Perhatikan bahwa syarat $x, y &gt; 0$ dipakai <strong>dua kali</strong> — sekali untuk memastikan pecahannya terdefinisi, dan sekali untuk memastikan arah ketaksamaan tidak berbalik saat dikalikan. Tanpa syarat itu pernyataannya gugur: untuk $x = 1$, $y = -1$, $p = q = 1$, ruas kiri bernilai $0$ sedangkan ruas kanan tidak terdefinisi.</p>",
+   "rubrik": [
+    "Mengalikan dengan $xy(x+y)$ dan <strong>menyebut</strong> bahwa arahnya tidak berubah karena pengalinya positif",
+    "Menjabarkan kedua ruas dengan benar",
+    "Menghapus suku yang muncul di kedua ruas, menyisakan $p^2y^2 + q^2x^2 \\ge 2pqxy$",
+    "Mengenali sisanya sebagai $(py-qx)^2 \\ge 0$",
+    "Menyatakan bahwa langkah-langkahnya setara, sehingga ketaksamaan aslinya terbukti",
+    "Menentukan syarat kesamaan $\\frac{p}{x} = \\frac{q}{y}$"
+   ]
+  },
+  {
+   "id": "cs-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "cauchy-schwarz"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Diketahui $a$ dan $b$ bilangan real positif dengan $a + b = 1$. Tentukan nilai terkecil dari</p><p>$$\\frac{1}{a} + \\frac{1}{b}$$</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Yang dikunci soal jumlah $a+b$; yang ditanya jumlah pecahan berpenyebut $a$ dan $b$. Cari bentuk yang menghubungkan keduanya.",
+    "Tulis tiap suku dengan pembilang kuadrat: $\\frac1a = \\frac{1^2}{a}$.",
+    "Bentuk Engel: $\\frac{p^2}{x} + \\frac{q^2}{y} \\ge \\frac{(p+q)^2}{x+y}$ untuk $x, y &gt; 0$."
+   ],
+   "pembahasan": "<p><strong>Siapkan bentuknya.</strong> Tulis tiap suku dengan pembilang berupa kuadrat:</p><p>$$\\frac{1}{a} + \\frac{1}{b} = \\frac{1^2}{a} + \\frac{1^2}{b}$$</p><p><strong>Terapkan bentuk Engel</strong> dari ketaksamaan Cauchy-Schwarz:</p><p>$$\\frac{p^2}{x} + \\frac{q^2}{y} \\ \\ge\\ \\frac{(p+q)^2}{x+y}, \\qquad x, y &gt; 0$$</p><p>Dengan $p = q = 1$, $x = a$, $y = b$:</p><p>$$\\frac{1}{a} + \\frac{1}{b} \\ \\ge\\ \\frac{(1+1)^2}{a+b} = \\frac{4}{1} = 4$$</p><p><strong>Periksa kesamaannya tercapai.</strong> Kesamaan pada bentuk Engel berlaku tepat ketika kedua pecahan <strong>sebanding</strong>, yaitu $\\frac{p}{x} = \\frac{q}{y}$ — di sini $\\frac1a = \\frac1b$, yaitu $a = b$. Digabung dengan $a+b=1$ diperoleh $a = b = \\frac12$, keduanya positif. Substitusikan: $2 + 2 = 4$. Tercapai.</p><p>Nilai terkecilnya adalah $\\boxed{4}$.</p><p><strong>Mengapa bukan AM-GM.</strong> Menerapkan AM-GM pada $\\frac1a + \\frac1b$ memberi $\\ge \\frac{2}{\\sqrt{ab}}$ — batas yang masih memuat $ab$, jadi belum menjawab. Ia baru selesai setelah $ab \\le \\frac14$ dipakai, yaitu dua langkah. Bentuk Engel menutupnya dalam satu langkah karena ia langsung memakai <strong>jumlah</strong> penyebut, dan jumlah itulah yang dikunci soal.</p><p><strong>Ciri pengenalnya:</strong> begitu kamu melihat jumlah pecahan yang penyebutnya dijumlahkan pula oleh kendala soal, bentuk Engel adalah gerakan pertama. Kalau pembilangnya bukan kuadrat, tulis ulang lebih dulu — misalnya $a = \\frac{a^2}{a}$.</p>",
    "rubrik": []
   },
   {
@@ -3922,6 +4235,336 @@
    "rubrik": []
   },
   {
+   "id": "pb-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "polinomial-bulat",
+    "keterbagian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Polinomial $P$ berkoefisien bulat memenuhi $P(3) = 10$. Tentukan sisa pembagian $P(6)$ oleh $3$.</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pakai sifat $(a-b) \\mid \\left(P(a)-P(b)\\right)$ dengan memilih $a$ dan $b$ yang selisihnya berkaitan dengan modulusnya.",
+    "Ambil $a = 6$ dan $b = 3$; selisihnya $3$.",
+    "Setelah itu, tinggal menghitung sisa $10$ dibagi $3$."
+   ],
+   "pembahasan": "<p>Terapkan sifat pokoknya dengan $a = 6$ dan $b = 3$:</p><p>$$(6-3) \\ \\big|\\ \\left(P(6) - P(3)\\right) \\quad\\Longrightarrow\\quad\n3 \\ \\big|\\ \\left(P(6) - 10\\right)$$</p><p>Artinya</p><p>$$P(6) \\equiv 10 \\pmod 3$$</p><p>Sisakan ruas kanannya:</p><p>$$10 = 3 \\times 3 + 1 \\quad\\Longrightarrow\\quad 10 \\equiv 1 \\pmod 3$$</p><p>Jadi $P(6) \\equiv 1 \\pmod 3$, dan sisanya adalah $\\boxed{1}$.</p><p>Periksa dengan beberapa polinomial yang memenuhi $P(3) = 10$:</p><ul><li>$P(x) = x + 7$: $P(6) = 13 = 4 \\times 3 + 1$ ✓</li><li>$P(x) = x^2 + 1$: $P(6) = 37 = 12 \\times 3 + 1$ ✓</li><li>$P(x) = 10$: $P(6) = 10 \\equiv 1$ ✓</li></ul><p>Semuanya bersisa $1$.</p><p><strong>Langkah terakhir sering terlewat.</strong> Sifatnya memberi $P(6) \\equiv 10$, tetapi $10$ bukan sisa yang sah untuk pembagian oleh $3$ — sisanya harus berada di antara $0$ dan $2$. Selalu sisakan hasil akhirnya ke rentang yang benar.</p><p>Perhatikan pula bahwa $3$ dipilih sebagai selisih <strong>karena</strong> ia modulus yang ditanya. Kalau yang ditanya sisa pembagian oleh $9$, sifat ini tidak cukup — $6 - 3 = 3$ hanya memberi keterangan modulo $3$, dan diperlukan pasangan lain atau keterangan tambahan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pb-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "polinomial-bulat",
+    "keterbagian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Polinomial $P$ berkoefisien bulat memenuhi $P(5) = 13$. Tentukan sisa pembagian $P(12)$ oleh $7$.</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Periksa selisih kedua titik yang terlibat: $12 - 5$.",
+    "Selisihnya tepat sama dengan modulus yang ditanyakan.",
+    "Setelah $P(12) \\equiv 13$ diperoleh, sisakan ke rentang yang benar."
+   ],
+   "pembahasan": "<p>Selisih kedua titiknya</p><p>$$12 - 5 = 7$$</p><p>tepat sama dengan modulus yang ditanyakan. Terapkan sifat pokoknya:</p><p>$$7 \\ \\big|\\ \\left(P(12) - P(5)\\right) \\quad\\Longrightarrow\\quad P(12) \\equiv 13 \\pmod 7$$</p><p>Sisakan:</p><p>$$13 = 7 + 6 \\quad\\Longrightarrow\\quad 13 \\equiv 6 \\pmod 7$$</p><p>Jadi sisanya adalah $\\boxed{6}$.</p><p>Periksa dengan contoh: untuk $P(x) = x + 8$, diperoleh $P(5) = 13$ ✓ dan $P(12) = 20 =\n2 \\times 7 + 6$ ✓. Untuk $P(x) = x^2 - 12$, diperoleh $P(5) = 13$ ✓ dan $P(12) = 132 = 18 \\times 7 + 6$ ✓.</p><p><strong>Bacaan yang lebih dalam.</strong> Karena $12 \\equiv 5 \\pmod 7$, kedua titik itu berada di kelas sisa yang sama modulo $7$. Sifat polinomial berkoefisien bulat menyatakan nilainya pun berada di kelas sisa yang sama — dan itu berlaku untuk <strong>setiap</strong> bilangan yang kongruen dengan $5$ modulo $7$:</p><p>$$P(5) \\equiv P(12) \\equiv P(19) \\equiv P(-2) \\equiv \\cdots \\pmod 7$$</p><p>Dari sini lahir alat yang sering dipakai: untuk memeriksa apakah $P(n)$ pernah habis dibagi $m$, cukup diuji $n = 0, 1, \\ldots, m-1$. Kalau tidak satu pun berhasil, maka $P(n)$ tidak pernah habis dibagi $m$ untuk bilangan bulat $n$ mana pun.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pb-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "polinomial-bulat"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa bilangan bulat $n$ yang memenuhi</p><p>$$n^3 - n + 1 = 0\\ ?$$</p>",
+   "jawaban": "0",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Andaikan ada $n$ bulat yang memenuhi. Susun ulang persamaannya sehingga $n$ menjadi faktor di salah satu ruas — apa yang tersisa di ruas lain?",
+    "Konstantanya $1$, jadi kandidatnya sangat sedikit.",
+    "Uji seluruh kandidat itu."
+   ],
+   "pembahasan": "<p><strong>Saring kandidatnya.</strong> Untuk polinomial berkoefisien bulat, kalau $n$ akar bulat maka $n$ membagi konstanta. Alasannya: dari</p><p>$$n^3 - n + 1 = 0 \\quad\\Longrightarrow\\quad 1 = n - n^3 = n\\left(1 - n^2\\right)$$</p><p>sehingga $n$ membagi $1$.</p><p>Konstantanya $1$, jadi kandidatnya hanya</p><p>$$n = 1 \\quad \\text{atau} \\quad n = -1$$</p><p><strong>Uji keduanya.</strong></p><p>$$P(1) = 1 - 1 + 1 = 1 \\ne 0$$ $$P(-1) = -1 + 1 + 1 = 1 \\ne 0$$</p><p>Tidak satu pun berhasil, jadi tidak ada akar bulat. Jawabannya $\\boxed{0}$.</p><p><strong>Cara kedua, lewat paritas.</strong> Tinjau kedua kemungkinan tanda $n$:</p><ul><li>Kalau $n$ genap, maka $n^3 - n$ genap, sehingga $n^3-n+1$ <strong>ganjil</strong> — tidak nol.</li><li>Kalau $n$ ganjil, maka $n^3$ dan $n$ keduanya ganjil, sehingga $n^3-n$ genap dan $n^3-n+1$ <strong>ganjil</strong> lagi.</li></ul><p>Jadi $n^3-n+1$ selalu ganjil, dan bilangan ganjil tidak pernah nol.</p><p>Cara kedua ini membuktikan lebih banyak: bukan hanya tidak ada akar bulat, melainkan $n^3-n+1$ <strong>tidak pernah genap</strong> untuk bilangan bulat $n$ mana pun.</p><p><strong>Perhatikan bahwa persamaan ini tetap punya akar real</strong> — ia kubik, jadi paling sedikit satu akar real ada. Akarnya sekitar $-1{,}3247$, bilangan irasional. Yang dibuktikan di sini hanya bahwa akarnya tidak bulat.</p><p>Menyaring kandidat dari tak hingga menjadi dua, lalu mengujinya, adalah pola baku pada soal akar bulat — dan ia bertumpu sepenuhnya pada koefisiennya bulat.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pb-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "polinomial-bulat",
+    "suku-banyak"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Polinomial $P$ berderajat $4$ dengan koefisien utama $1$ memenuhi</p><p>$$P(1) = P(2) = P(3) = P(4) = 5$$</p><p>Tentukan nilai $P(0)$.</p>",
+   "jawaban": "29",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Empat titik bernilai sama. Tinjau polinomial $P(x) - 5$ — apa yang bisa dikatakan tentang akarnya?",
+    "$P(x)-5$ berderajat $4$, monik, dan punya empat akar yang diketahui. Itu menentukannya sepenuhnya.",
+    "Tulis bentuk terfaktornya, lalu substitusikan $x = 0$."
+   ],
+   "pembahasan": "<p><strong>Geser supaya akarnya terlihat.</strong> Tinjau</p><p>$$Q(x) = P(x) - 5$$</p><p>Karena $P(1) = P(2) = P(3) = P(4) = 5$, diperoleh</p><p>$$Q(1) = Q(2) = Q(3) = Q(4) = 0$$</p><p>Jadi $Q$ punya empat akar: $1$, $2$, $3$, $4$.</p><p><strong>Tentukan $Q$ sepenuhnya.</strong> Mengurangkan konstanta tidak mengubah derajat maupun koefisien utama, jadi $Q$ berderajat $4$ dan monik. Polinomial berderajat $4$ punya paling banyak empat akar, dan keempatnya sudah diketahui — sehingga</p><p>$$Q(x) = (x-1)(x-2)(x-3)(x-4)$$</p><p>Tidak ada faktor pengali di depan, sebab koefisien utamanya $1$.</p><p><strong>Kembalikan ke $P$ dan substitusikan.</strong></p><p>$$P(x) = (x-1)(x-2)(x-3)(x-4) + 5$$</p><p>$$P(0) = (-1)(-2)(-3)(-4) + 5 = 24 + 5 = \\boxed{29}$$</p><p>Empat faktor negatif memberi hasil positif — kalau derajatnya ganjil, tandanya akan berbalik.</p><p>Periksa salah satu syaratnya: $P(1) = 0 + 5 = 5$ ✓.</p><p><strong>Gerakan \"geser dulu supaya akarnya terlihat\" itu inti soal ini.</strong> Titik-titik yang bernilai sama bukan akar $P$, tetapi menjadi akar setelah nilai bersama itu dikurangkan. Pola yang sama dipakai kapan pun soal memberi beberapa titik dengan nilai yang sama.</p><p><strong>Kata \"koefisien utama $1$\" juga tidak boleh dilewati.</strong> Tanpa itu, $Q$ bisa berupa kelipatan berapa pun dari hasil kali keempat faktor, dan $P(0)$ tidak tertentu.</p><p>Perhatikan bahwa syarat koefisien bulat tidak dipakai sama sekali di sini — yang bekerja adalah sifat akar polinomial. Namun keduanya sering muncul bersama pada soal yang lebih sulit.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pb-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "polinomial-bulat",
+    "keterbagian"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $P$ polinomial berkoefisien bulat. Buktikan bahwa untuk sembarang bilangan bulat $a$ dan $b$,</p><p>$$(a - b) \\ \\big|\\ \\left(P(a) - P(b)\\right)$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tulis $P$ dalam bentuk umum, lalu susun selisih $P(a) - P(b)$ suku demi suku.",
+    "Tiap suku menyumbang $c_k\\left(a^k - b^k\\right)$. Cari faktor bersama pada bentuk itu.",
+    "Identitas $a^k - b^k = (a-b)\\left(a^{k-1} + a^{k-2}b + \\cdots + b^{k-1}\\right)$."
+   ],
+   "pembahasan": "<p>Tulis $P$ dalam bentuk umum dengan koefisien bulat:</p><p>$$P(x) = c_n x^n + c_{n-1}x^{n-1} + \\cdots + c_1 x + c_0, \\qquad c_k \\in \\mathbb{Z}$$</p><p><strong>Susun selisihnya.</strong> Suku konstantanya saling menghapus:</p><p>$$P(a) - P(b) = \\sum_{k=1}^{n} c_k\\left(a^k - b^k\\right)$$</p><p><strong>Faktorkan tiap suku.</strong> Untuk setiap $k \\ge 1$ berlaku identitas</p><p>$$a^k - b^k = (a-b)\\left(a^{k-1} + a^{k-2}b + \\cdots + ab^{k-2} + b^{k-1}\\right)$$</p><p>Sebut faktor keduanya $S_k$. Karena $a$ dan $b$ bulat, $S_k$ juga <strong>bilangan bulat</strong> — ia jumlah hasil kali bilangan bulat.</p><p><strong>Keluarkan faktor bersamanya.</strong></p><p>$$P(a) - P(b) = \\sum_{k=1}^{n} c_k (a-b) S_k = (a-b)\\sum_{k=1}^{n} c_k S_k$$</p><p>Faktor $(a-b)$ muncul pada <strong>setiap</strong> suku, jadi ia bisa dikeluarkan.</p><p><strong>Simpulkan.</strong> Karena tiap $c_k$ bulat dan tiap $S_k$ bulat, jumlah $\\sum c_k S_k$ juga bulat. Maka $P(a) - P(b)$ adalah $(a-b)$ dikali bilangan bulat, yaitu</p><p>$$(a-b) \\ \\big|\\ \\left(P(a) - P(b)\\right) \\qquad \\blacksquare$$</p><h4>Di mana tiap syarat dipakai</h4><p><strong>Koefisien bulat</strong> dipakai di langkah terakhir — supaya $\\sum c_k S_k$ benar-benar bulat. Tanpa itu, faktorisasinya tetap sah tetapi kesimpulan keterbagiannya gugur: untuk $P(x) = \\frac{x}{2}$ dengan $a=3$, $b=1$, diperoleh $P(3)-P(1) = 1$ sedangkan $a - b = 2$, dan $2 \\nmid 1$.</p><p><strong>$a$ dan $b$ bulat</strong> dipakai supaya $S_k$ bulat.</p><h4>Akibat yang paling sering dipakai</h4><p>Untuk setiap bilangan bulat $m$,</p><p>$$a \\equiv b \\!\\!\\pmod m \\quad\\Longrightarrow\\quad P(a) \\equiv P(b) \\!\\!\\pmod m$$</p><p>sebab $m \\mid (a-b)$ dan $(a-b) \\mid \\left(P(a)-P(b)\\right)$.</p><p>Artinya $P(n) \\bmod m$ hanya bergantung pada $n \\bmod m$ — sehingga memeriksa $m$ nilai sudah menutup seluruh bilangan bulat. Pernyataan tentang tak hingga banyak bilangan berubah menjadi pemeriksaan berhingga.</p>",
+   "rubrik": [
+    "Menulis $P$ dalam bentuk umum dengan koefisien bulat",
+    "Menyusun $P(a)-P(b)$ dan menyatakan suku konstantanya saling menghapus",
+    "Memakai identitas $a^k - b^k = (a-b)S_k$ dengan $S_k$ ditulis eksplisit",
+    "Menyatakan $S_k$ bulat <strong>karena</strong> $a$ dan $b$ bulat",
+    "Mengeluarkan $(a-b)$ sebagai faktor bersama seluruh suku",
+    "Menyatakan $\\sum c_k S_k$ bulat <strong>karena</strong> koefisiennya bulat — di situlah syaratnya terpakai"
+   ]
+  },
+  {
+   "id": "pb-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "polinomial-bulat",
+    "keterbagian",
+    "bilangan-prima"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa tidak ada polinomial tak konstan $P$ berkoefisien bulat sehingga $P(n)$ merupakan bilangan prima untuk <strong>setiap</strong> bilangan asli $n$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Andaikan ada. Ambil satu nilai, misalnya $p = P(1)$, dan pikirkan bilangan mana lagi yang nilainya terkait dengan $p$.",
+    "Pakai sifat $(a-b) \\mid \\left(P(a)-P(b)\\right)$ dengan $a = 1 + kp$ dan $b = 1$.",
+    "Kesimpulannya: $p \\mid P(1+kp)$ untuk setiap $k$. Karena nilainya juga prima, pilihannya sangat sempit."
+   ],
+   "pembahasan": "<p>Andaikan ada polinomial tak konstan $P$ berkoefisien bulat dengan $P(n)$ prima untuk setiap bilangan asli $n$.</p><p><strong>Ambil satu nilai.</strong> Sebut</p><p>$$p = P(1)$$</p><p>Menurut pengandaian, $p$ prima; khususnya $p \\ge 2$.</p><p><strong>Tinjau titik-titik yang kongruen dengan $1$ modulo $p$.</strong> Untuk setiap bilangan asli $k$, ambil $n = 1 + kp$. Menurut sifat polinomial berkoefisien bulat,</p><p>$$\\left(n - 1\\right) \\ \\big|\\ \\left(P(n) - P(1)\\right)$$</p><p>yaitu $kp \\mid \\left(P(1+kp) - p\\right)$. Karena $p \\mid kp$, maka</p><p>$$p \\ \\big|\\ \\left(P(1+kp) - p\\right) \\quad\\Longrightarrow\\quad p \\ \\big|\\ P(1+kp)$$</p><p><strong>Pakai keprimaan.</strong> Menurut pengandaian, $P(1+kp)$ juga prima. Sebuah bilangan prima yang habis dibagi $p$ hanya bisa bernilai $p$ atau $-p$; dan karena prima positif, ia bernilai $p$. Jadi</p><p>$$P(1+kp) = p \\qquad \\text{untuk setiap bilangan asli } k$$</p><p><strong>Kontradiksinya.</strong> Tinjau polinomial</p><p>$$Q(x) = P(x) - p$$</p><p>Ia bernilai nol di seluruh titik $1+p,\\ 1+2p,\\ 1+3p,\\ \\ldots$ — tak hingga banyaknya, dan semuanya berbeda karena $p \\ge 2$.</p><p>Tetapi $Q$ tak konstan, sebab $P$ tak konstan dan mengurangkan konstanta tidak mengubah derajat. Polinomial tak konstan berderajat $d$ punya paling banyak $d$ akar — berhingga.</p><p>Tak hingga banyak akar pada polinomial tak konstan adalah kemustahilan. Jadi pengandaian awalnya salah. $\\blacksquare$</p><h4>Catatan</h4><p><strong>Syarat \"tak konstan\" wajib.</strong> Polinomial konstan $P(x) = 7$ memang bernilai prima untuk setiap $n$ — dan ia dikecualikan justru karena itu.</p><p><strong>Polinomial bisa bernilai prima untuk banyak $n$ berurutan</strong>, hanya tidak untuk semuanya. Contoh yang terkenal, $P(n) = n^2 + n + 41$, bernilai prima untuk $n = 0$ sampai $39$ — tetapi $P(40) = 41^2$ komposit. Pembuktian di atas menjamin kegagalan semacam itu pasti datang, cepat atau lambat.</p><p><strong>Gagasan intinya</strong> layak diingat terpisah: nilai polinomial berkoefisien bulat di titik yang kongruen selalu kongruen. Jadi begitu satu nilainya diketahui, seluruh keluarga titik lain terkunci modulo nilai itu — dan keprimaan terlalu ketat untuk bertahan di bawah kuncian semacam itu.</p>",
+   "rubrik": [
+    "Mengandaikan sebaliknya dan menamai $p = P(1)$, dengan menyebut $p$ prima sehingga $p \\ge 2$",
+    "Menerapkan sifat $(a-b) \\mid \\left(P(a)-P(b)\\right)$ pada $a = 1+kp$ dan $b = 1$",
+    "Menyimpulkan $p \\mid P(1+kp)$",
+    "Memakai keprimaan $P(1+kp)$ untuk memaksa $P(1+kp) = p$",
+    "Membentuk $Q = P - p$ dan menyatakan ia punya tak hingga banyak akar",
+    "Menutup kontradiksinya lewat batas banyaknya akar polinomial tak konstan"
+   ]
+  },
+  {
+   "id": "pb-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "polinomial-bulat",
+    "keterbagian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Polinomial $P$ berkoefisien bulat memenuhi $P(2) = 3$. Tentukan sisa pembagian $P(9)$ oleh $7$.</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kamu tidak tahu $P$ sama sekali, jadi jawabannya harus datang dari sifat umum polinomial berkoefisien bulat.",
+    "Sifat pokoknya: $(a-b)$ selalu membagi $P(a) - P(b)$ untuk $a, b$ bulat.",
+    "Di sini $9 - 2 = 7$ — persis modulus yang ditanyakan."
+   ],
+   "pembahasan": "<p><strong>Sifat pokok jurus ini:</strong> untuk polinomial $P$ berkoefisien bulat dan bilangan bulat $a$, $b$,</p><p>$$(a-b) \\ \\big|\\ \\left(P(a) - P(b)\\right)$$</p><p>Alasannya dari faktorisasi $a^k - b^k = (a-b)\\left(a^{k-1} + \\cdots + b^{k-1}\\right)$ pada tiap suku, lalu dijumlahkan dengan koefisiennya yang bulat.</p><p>Terapkan dengan $a = 9$ dan $b = 2$:</p><p>$$(9 - 2) \\ \\big|\\ \\left(P(9) - P(2)\\right) \\quad\\Longrightarrow\\quad\n7 \\ \\big|\\ \\left(P(9) - 3\\right)$$</p><p>Artinya</p><p>$$P(9) \\equiv 3 \\pmod 7$$</p><p>Sisanya adalah $\\boxed{3}$.</p><p><strong>Perhatikan bahwa $P$ tidak pernah diketahui</strong>, dan memang tidak perlu. Ada tak hingga banyak polinomial berkoefisien bulat dengan $P(2) = 3$ — misalnya $P(x) = x+1$, $P(x) = x^2 - 1$, atau $P(x) = 3$. Periksa ketiganya:</p><p>$$9 + 1 = 10 \\equiv 3, \\qquad 81 - 1 = 80 = 11 \\times 7 + 3, \\qquad 3 \\equiv 3$$</p><p>Semuanya bersisa $3$ modulo $7$ — persis seperti yang dijamin sifatnya.</p><p><strong>Bacaan yang paling berguna:</strong> untuk polinomial berkoefisien bulat, nilai $P(n) \\bmod m$ hanya bergantung pada $n \\bmod m$. Jadi memeriksa $m$ nilai sudah menutup seluruh bilangan bulat — dan itu mengubah pernyataan tentang tak hingga banyak bilangan menjadi pemeriksaan berhingga.</p><p><strong>Syarat koefisien bulat wajib.</strong> Untuk $P(x) = \\frac{x}{2}$, nilai $P(9) - P(2) = 3{,}5$ bahkan bukan bilangan bulat, jadi sifatnya gugur seluruhnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pf-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "persamaan-fungsional"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Fungsi $f$ memenuhi $f(x+y) = f(x) + f(y)$ untuk setiap bilangan real $x$ dan $y$, dan $f(1) = 3$. Tentukan nilai $f(5)$.</p>",
+   "jawaban": "15",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Bangun bertahap dari nilai yang diketahui. Mulai dari $f(2)$.",
+    "Ambil $x = y = 1$ untuk memperoleh $f(2)$, lalu teruskan.",
+    "Polanya akan terlihat setelah dua atau tiga langkah."
+   ],
+   "pembahasan": "<p>Bangun bertahap dari $f(1) = 3$.</p><p><strong>Ambil $x = y = 1$:</strong></p><p>$$f(2) = f(1) + f(1) = 3 + 3 = 6$$</p><p><strong>Ambil $x = 2$, $y = 1$:</strong></p><p>$$f(3) = f(2) + f(1) = 6 + 3 = 9$$</p><p><strong>Teruskan:</strong></p><p>$$f(4) = f(3) + f(1) = 12, \\qquad f(5) = f(4) + f(1) = \\boxed{15}$$</p><p><strong>Polanya jelas:</strong> $f(n) = 3n$ untuk bilangan asli $n$. Dugaan itu dibuktikan dengan induksi — basisnya $f(1) = 3$, dan langkahnya</p><p>$$f(k+1) = f(k) + f(1) = 3k + 3 = 3(k+1)$$</p><p>Jadi $f(5) = 15$.</p><p>Persamaan $f(x+y) = f(x)+f(y)$ disebut <strong>persamaan Cauchy</strong>, dan ia salah satu yang paling sering muncul. Beberapa akibat yang layak dikenali, semuanya diperoleh dengan substitusi tepat:</p><ul><li>$x = y = 0$ memberi $f(0) = 2f(0)$, sehingga $f(0) = 0$.</li><li>$y = -x$ memberi $0 = f(x) + f(-x)$, sehingga $f$ <strong>ganjil</strong>.</li><li>Induksi memberi $f(nx) = nf(x)$ untuk $n$ asli, lalu $f(q) = qf(1)$ untuk $q$ rasional.</li></ul><p><strong>Perhatikan batasnya.</strong> Yang bisa disimpulkan tanpa syarat tambahan hanyalah $f(q) = 3q$ untuk $q$ <strong>rasional</strong>. Untuk merentangkannya ke seluruh bilangan real dibutuhkan syarat seperti kekontinuan atau kemonotonan — dan soal olimpiade hampir selalu menyertakan salah satunya kalau memang menuntut jawaban untuk semua real.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pf-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "persamaan-fungsional"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Fungsi $f$ memenuhi $f(xy) = f(x) + f(y)$ untuk setiap bilangan real positif $x$ dan $y$, dan $f(2) = 1$. Tentukan nilai $f(8)$.</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Bentuknya mengubah hasil kali menjadi jumlah. Tulis $8$ sebagai hasil kali bilangan yang sudah kamu ketahui nilainya.",
+    "$8 = 2 \\times 4$, dan $4 = 2 \\times 2$.",
+    "Bangun bertahap dari $f(2)$."
+   ],
+   "pembahasan": "<p>Persamaannya mengubah <strong>hasil kali menjadi jumlah</strong>, jadi tulis $8$ lewat perkalian berulang oleh $2$.</p><p><strong>Ambil $x = y = 2$:</strong></p><p>$$f(4) = f(2 \\times 2) = f(2) + f(2) = 1 + 1 = 2$$</p><p><strong>Ambil $x = 4$, $y = 2$:</strong></p><p>$$f(8) = f(4 \\times 2) = f(4) + f(2) = 2 + 1 = \\boxed{3}$$</p><p><strong>Polanya:</strong> $f\\left(2^n\\right) = n$ untuk bilangan asli $n$, yang dibuktikan dengan induksi memakai $f\\left(2^{k+1}\\right) = f\\left(2^k\\right) + f(2)$.</p><p>Fungsi dengan sifat ini adalah <strong>logaritma</strong> — di sini $f(x) = \\log_2 x$, sebab $\\log_2 8 = 3$. Persamaan $f(xy) = f(x)+f(y)$ memang persis aturan logaritma untuk hasil kali.</p><p>Beberapa akibat yang bisa diturunkan dengan substitusi:</p><ul><li>$x = y = 1$ memberi $f(1) = 2f(1)$, sehingga $f(1) = 0$.</li><li>$y = \\frac1x$ memberi $f(1) = f(x) + f\\!\\left(\\frac1x\\right)$, sehingga $f\\!\\left(\\frac1x\\right) = -f(x)$.</li><li>Induksi memberi $f\\left(x^n\\right) = nf(x)$.</li></ul><p><strong>Perhatikan hubungannya dengan persamaan Cauchy.</strong> Mensubstitusikan $x = 2^u$ dan $y = 2^v$ mengubah persamaan ini menjadi $g(u+v) = g(u)+g(v)$ dengan $g(t) = f\\left(2^t\\right)$. Jadi keduanya persamaan yang sama, hanya dilihat lewat perubahan peubah — dan itu gerakan yang sering menolong pada soal persamaan fungsional yang tampak baru.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pf-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "persamaan-fungsional"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Fungsi $f$ memenuhi</p><p>$$f(x) - 2f\\!\\left(\\frac{1}{x}\\right) = x$$</p><p>untuk setiap bilangan real $x \\ne 0$. Tentukan nilai $f(2)$.</p>",
+   "jawaban": "-1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Substitusikan $x = 2$ untuk memperoleh persamaan yang memuat $f(2)$ dan $f\\!\\left(\\frac12\\right)$.",
+    "Cari substitusi yang menukar kedua argumen: kalau $x = \\frac12$, argumen keduanya menjadi $2$.",
+    "Selesaikan kedua persamaan itu sebagai sistem dua peubah."
+   ],
+   "pembahasan": "<p><strong>Substitusikan $x = 2$:</strong></p><p>$$f(2) - 2f\\!\\left(\\tfrac12\\right) = 2$$</p><p><strong>Substitusikan $x = \\frac12$.</strong> Argumen keduanya menjadi $\\frac{1}{1/2} = 2$:</p><p>$$f\\!\\left(\\tfrac12\\right) - 2f(2) = \\tfrac12$$</p><p>Substitusi $x \\mapsto \\frac1x$ menukar kedua argumen — itulah yang membuat sistemnya tertutup.</p><p><strong>Selesaikan.</strong> Sebut $A = f(2)$ dan $B = f\\!\\left(\\frac12\\right)$:</p><p>$$A - 2B = 2, \\qquad B - 2A = \\tfrac12$$</p><p>Dari persamaan pertama, $A = 2 + 2B$. Substitusikan ke yang kedua:</p><p>$$B - 2(2+2B) = \\tfrac12 \\quad\\Longrightarrow\\quad B - 4 - 4B = \\tfrac12\n\\quad\\Longrightarrow\\quad -3B = \\tfrac92$$</p><p>sehingga $B = -\\frac32$, dan</p><p>$$A = 2 + 2\\left(-\\tfrac32\\right) = 2 - 3 = \\boxed{-1}$$</p><p>Periksa kedua persamaan: $-1 - 2\\left(-\\frac32\\right) = -1+3 = 2$ ✓ dan $-\\frac32 - 2(-1) = -\\frac32+2 = \\frac12$ ✓.</p><p><strong>Rumus umumnya</strong> diperoleh dengan gerakan yang sama, memakai $x$ sebagai huruf. Substitusikan $x \\to \\frac1x$ pada persamaan aslinya:</p><p>$$f\\!\\left(\\tfrac1x\\right) - 2f(x) = \\tfrac1x$$</p><p>Kalikan persamaan ini dengan $2$ lalu tambahkan ke persamaan asli:</p><p>$$f(x) - 4f(x) = x + \\tfrac2x \\quad\\Longrightarrow\\quad f(x) = -\\frac{x}{3} - \\frac{2}{3x}$$</p><p>Periksa $f(2) = -\\frac23 - \\frac13 = -1$ — cocok. Dan periksa balik: $f(2) - 2f\\!\\left(\\frac12\\right) = -1 - 2\\left(-\\frac32\\right) = 2$ ✓.</p><p><strong>Substitusi yang tepat adalah seluruh isi soal ini.</strong> Yang dicari adalah pemetaan yang membawa argumen kembali ke dirinya setelah dua langkah — di sini $x \\mapsto \\frac1x$, pada soal lain $x \\mapsto 1-x$ atau $x \\mapsto -x$. Kalau substitusinya menghasilkan argumen baru terus-menerus, sistemnya tidak pernah tertutup.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pf-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "persamaan-fungsional",
+    "induksi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Fungsi $f$ memenuhi $f(0) = 0$ dan</p><p>$$f(x+1) = f(x) + 2x + 1$$</p><p>untuk setiap bilangan real $x$. Tentukan nilai $f(5)$.</p>",
+   "jawaban": "25",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hubungannya bertahap: tiap nilai dibangun dari nilai sebelumnya. Hitung berurutan dari $f(0)$.",
+    "$f(1) = f(0) + 2(0) + 1$, lalu teruskan.",
+    "Perhatikan pola yang muncul — hasilnya bilangan yang sangat dikenal."
+   ],
+   "pembahasan": "<p>Hitung berurutan dari $f(0) = 0$:</p><p>$$f(1) = f(0) + 2(0) + 1 = 0 + 1 = 1$$ $$f(2) = f(1) + 2(1) + 1 = 1 + 3 = 4$$ $$f(3) = f(2) + 2(2) + 1 = 4 + 5 = 9$$ $$f(4) = f(3) + 2(3) + 1 = 9 + 7 = 16$$ $$f(5) = f(4) + 2(4) + 1 = 16 + 9 = \\boxed{25}$$</p><p><strong>Polanya:</strong> $1, 4, 9, 16, 25$ — kuadrat sempurna. Dugaannya $f(n) = n^2$.</p><p>Buktikan dengan induksi. Basisnya $f(0) = 0 = 0^2$ ✓. Untuk langkahnya, andaikan $f(k) = k^2$; maka</p><p>$$f(k+1) = f(k) + 2k + 1 = k^2 + 2k + 1 = (k+1)^2$$</p><p>persis bentuk yang diminta. Jadi $f(n) = n^2$ untuk setiap bilangan bulat tak negatif $n$, dan $f(5) = 25$.</p><p><strong>Bacaan yang menjelaskan mengapa.</strong> Selisih dua kuadrat berurutan memang</p><p>$$(x+1)^2 - x^2 = 2x+1$$</p><p>Jadi persamaan di soal tidak lain adalah pernyataan itu, ditulis sebagai aturan rekursif. Yang ditambahkan tiap langkah adalah bilangan ganjil berurutan — dan menumpuknya menghasilkan $1+3+5+\\cdots$, jumlah bilangan ganjil yang memang selalu kuadrat sempurna.</p><p><strong>Perhatikan apa yang belum ditentukan.</strong> Persamaannya hanya menghubungkan $f(x)$ dengan $f(x+1)$, jadi ia menentukan nilai $f$ pada bilangan bulat saja setelah $f(0)$ diketahui. Untuk $x$ bukan bulat, nilainya sama sekali bebas — misalnya $f\\!\\left(\\frac12\\right)$ boleh bernilai apa pun, asalkan seluruh $f\\!\\left(\\frac12 + n\\right)$ menyesuaikan.</p><p>Jadi $f(x) = x^2$ hanyalah <strong>satu</strong> di antara tak hingga banyak fungsi yang memenuhi soalnya. Yang tertentu hanya nilainya di bilangan bulat — dan itu yang ditanya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pf-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "persamaan-fungsional"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Fungsi $f : \\mathbb{R} \\to \\mathbb{R}$ memenuhi</p><p>$$f(x+y) = f(x) + f(y)$$</p><p>untuk setiap bilangan real $x$ dan $y$. Buktikan bahwa $f(0) = 0$ dan bahwa $f$ merupakan fungsi ganjil, yaitu $f(-x) = -f(x)$ untuk setiap $x$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hubungan itu berlaku untuk <strong>setiap</strong> $x$ dan $y$, jadi kamu boleh memasukkan nilai apa pun yang menguntungkan. Mulai dari yang paling sederhana.",
+    "Untuk $f(0)$, coba $x = y = 0$.",
+    "Untuk kesganjilan, cari substitusi yang membuat ruas kirinya menjadi $f(0)$ — yaitu $y = -x$."
+   ],
+   "pembahasan": "<h4>Bagian pertama: $f(0) = 0$</h4><p>Substitusikan $x = y = 0$:</p><p>$$f(0+0) = f(0) + f(0)$$</p><p>yaitu</p><p>$$f(0) = 2f(0)$$</p><p>Kurangkan $f(0)$ dari kedua ruas:</p><p>$$0 = f(0)$$</p><h4>Bagian kedua: $f$ ganjil</h4><p>Substitusikan $y = -x$. Ruas kirinya menjadi $f(0)$, yang sudah diketahui bernilai $0$:</p><p>$$f(x + (-x)) = f(x) + f(-x)$$</p><p>yaitu</p><p>$$0 = f(x) + f(-x)$$</p><p>sehingga</p><p>$$f(-x) = -f(x)$$</p><p>untuk setiap bilangan real $x$. Jadi $f$ ganjil. $\\blacksquare$</p><h4>Catatan atas cara kerjanya</h4><p><strong>Urutan kedua bagian itu tidak boleh ditukar.</strong> Pembuktian kesganjilan memakai $f(0) = 0$, jadi bagian pertama harus selesai lebih dulu. Ini pola yang berulang pada persamaan fungsional: nilai di titik khusus dicari duluan, lalu dipakai sebagai tumpuan.</p><p><strong>Substitusi mana yang dipilih bukan tebakan.</strong> Untuk mendapat keterangan tentang $f(0)$, buat ruas kiri menjadi $f(0)$ — yaitu $x + y = 0$. Untuk menghubungkan $f(x)$ dengan $f(-x)$, pilih $y = -x$ yang memunculkan keduanya sekaligus. <strong>Substitusi dipilih menurut apa yang ingin dimunculkan.</strong></p><h4>Kelanjutannya</h4><p>Dengan induksi, sifat ini merentang ke kelipatan bulat:</p><p>$$f(nx) = n\\,f(x) \\qquad \\text{untuk setiap } n \\text{ bulat}$$</p><p>Basisnya $n = 1$; langkah naiknya $f((k+1)x) = f(kx) + f(x)$; dan untuk $n$ negatif dipakai kesganjilan yang baru dibuktikan.</p><p>Dari situ, dengan menulis $x = \\frac{p}{q}$ diperoleh $f(q) = q\\,f(1)$ dan $f(p) = p\\,f(1)$, sehingga</p><p>$$f(r) = r\\,f(1) \\qquad \\text{untuk setiap } r \\text{ rasional}$$</p><p><strong>Yang tidak bisa disimpulkan</strong> adalah $f(x) = xf(1)$ untuk $x$ real. Tanpa syarat tambahan seperti kekontinuan atau kemonotonan, ada fungsi lain yang memenuhi persamaan Cauchy — meski ia tidak bisa ditulis dengan rumus. Soal olimpiade karena itu hampir selalu menyertakan syarat tambahan kalau menuntut jawaban untuk seluruh bilangan real.</p>",
+   "rubrik": [
+    "Mensubstitusikan $x = y = 0$ dan menurunkan $f(0) = 2f(0)$",
+    "Menyimpulkan $f(0) = 0$",
+    "Mensubstitusikan $y = -x$ dan mengenali ruas kirinya sebagai $f(0)$",
+    "<strong>Memakai</strong> hasil bagian pertama untuk menyimpulkan $f(x) + f(-x) = 0$",
+    "Menyatakan kesimpulannya berlaku untuk setiap bilangan real $x$"
+   ]
+  },
+  {
+   "id": "pf-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "persamaan-fungsional",
+    "induksi"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Fungsi $f : \\mathbb{R} \\to \\mathbb{R}$ memenuhi $f(x+y) = f(x)+f(y)$ untuk setiap $x, y$ real, dan $f(1) = c$. Buktikan bahwa</p><p>$$f(q) = cq \\qquad \\text{untuk setiap bilangan rasional } q$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Bangun bertahap: bilangan asli lebih dulu, lalu bulat, baru rasional.",
+    "Untuk bilangan asli, pakai induksi dengan langkah $f(k+1) = f(k) + f(1)$.",
+    "Untuk rasional $\\frac{p}{q}$, hitung $f\\!\\left(q \\cdot \\frac{p}{q}\\right)$ dengan dua cara."
+   ],
+   "pembahasan": "<p>Pembuktiannya bertingkat: asli, lalu nol dan negatif, baru rasional.</p><h4>Langkah 1: bilangan asli</h4><p>Buktikan $f(n) = cn$ untuk $n$ asli dengan induksi.</p><p><strong>Basis.</strong> $f(1) = c = c \\cdot 1$ ✓.</p><p><strong>Langkah induksi.</strong> Andaikan $f(k) = ck$. Maka</p><p>$$f(k+1) = f(k) + f(1) = ck + c = c(k+1)$$</p><p>Jadi $f(n) = cn$ untuk setiap bilangan asli $n$.</p><h4>Langkah 2: nol dan bilangan bulat negatif</h4><p>Substitusikan $x = y = 0$: diperoleh $f(0) = 2f(0)$, sehingga $f(0) = 0 = c \\cdot 0$ ✓.</p><p>Substitusikan $y = -x$: diperoleh $0 = f(x) + f(-x)$, sehingga $f(-x) = -f(x)$. Maka untuk $n$ asli,</p><p>$$f(-n) = -f(n) = -cn = c(-n)$$</p><p>Jadi $f(m) = cm$ untuk setiap bilangan bulat $m$.</p><h4>Langkah 3: bilangan rasional</h4><p>Ambil $q = \\frac{p}{n}$ dengan $p$ bulat dan $n$ asli.</p><p>Dari langkah induksi yang sama, $f(nx) = n f(x)$ untuk setiap $n$ asli dan $x$ real — buktinya identik dengan langkah 1, hanya $1$ diganti $x$.</p><p>Terapkan dengan $x = \\frac{p}{n}$:</p><p>$$f(p) = f\\!\\left(n \\cdot \\frac{p}{n}\\right) = n\\, f\\!\\left(\\frac{p}{n}\\right)$$</p><p>Ruas kirinya sudah diketahui dari langkah 2, yaitu $f(p) = cp$. Maka</p><p>$$n\\,f\\!\\left(\\frac{p}{n}\\right) = cp \\quad\\Longrightarrow\\quad\nf\\!\\left(\\frac{p}{n}\\right) = \\frac{cp}{n} = c \\cdot \\frac{p}{n}$$</p><p>Jadi $f(q) = cq$ untuk setiap bilangan rasional $q$. $\\blacksquare$</p><h4>Mengapa berhenti di rasional</h4><p>Pembuktian di atas memakai $f(nx) = nf(x)$, yang lahir dari <strong>penjumlahan berulang sebanyak berhingga kali</strong>. Bilangan irasional tidak bisa dicapai dengan cara itu, jadi tidak ada langkah yang merentangkannya.</p><p>Dan memang tidak bisa. Tanpa syarat tambahan, ada fungsi yang memenuhi persamaan Cauchy tetapi tidak berbentuk $cx$ — meski keberadaannya tidak bisa ditunjukkan dengan rumus apa pun.</p><p>Dengan satu syarat tambahan, jarak itu tertutup. Kalau $f$ kontinu, atau monoton, atau terbatas pada suatu selang, maka nilai di bilangan rasional menentukan seluruhnya, dan $f(x) = cx$ untuk setiap $x$ real.</p><p><strong>Pelajaran yang lebih umum:</strong> pada persamaan fungsional, selalu perhatikan <strong>domain mana</strong> yang benar-benar sudah tertutupi oleh argumenmu. Menyimpulkan untuk seluruh bilangan real dari langkah yang hanya menjangkau rasional adalah lompatan yang sering terjadi dan selalu keliru.</p>",
+   "rubrik": [
+    "Membuktikan $f(n) = cn$ untuk $n$ asli dengan induksi, memakai $f(k+1) = f(k)+f(1)$",
+    "Menurunkan $f(0) = 0$ lewat substitusi $x = y = 0$",
+    "Menurunkan kesganjilan lewat $y = -x$, lalu merentangkan ke bilangan bulat negatif",
+    "Menyatakan dan memakai $f(nx) = nf(x)$ untuk $n$ asli",
+    "Menerapkannya pada $x = \\frac{p}{n}$ dan menyelesaikan $f\\!\\left(\\frac{p}{n}\\right)$",
+    "Menyatakan bahwa kesimpulannya terbatas pada bilangan rasional, beserta alasannya"
+   ]
+  },
+  {
+   "id": "pf-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "persamaan-fungsional"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Fungsi $f$ memenuhi</p><p>$$f(x) + 2f(1-x) = 3x$$</p><p>untuk setiap bilangan real $x$. Tentukan nilai $f(2)$.</p>",
+   "jawaban": "-4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Rumus $f$ tidak diketahui dan tidak perlu dicari. Yang diketahui hubungan antara $f(x)$ dan $f(1-x)$.",
+    "Substitusikan $x = 2$ untuk memperoleh persamaan yang memuat $f(2)$ dan $f(-1)$.",
+    "Cari substitusi yang <strong>menukar</strong> kedua argumen itu: dari $1-x = 2$ diperoleh $x = -1$."
+   ],
+   "pembahasan": "<p>Persamaan itu berlaku untuk <strong>setiap</strong> $x$, jadi kita boleh memasukkan nilai apa pun yang menguntungkan.</p><p><strong>Substitusikan $x = 2$.</strong> Argumen keduanya menjadi $1 - 2 = -1$:</p><p>$$f(2) + 2f(-1) = 6$$</p><p><strong>Substitusikan $x = -1$.</strong> Argumen keduanya menjadi $1 - (-1) = 2$ — kembali ke $f(2)$:</p><p>$$f(-1) + 2f(2) = -3$$</p><p>Pemilihan itulah kuncinya: substitusi kedua dipilih supaya kedua argumen <strong>bertukar peran</strong>, sehingga tidak ada nilai baru yang muncul.</p><p><strong>Selesaikan sebagai sistem.</strong> Sebut $A = f(2)$ dan $B = f(-1)$:</p><p>$$A + 2B = 6, \\qquad B + 2A = -3$$</p><p>Kalikan persamaan kedua dengan $2$:</p><p>$$2B + 4A = -6$$</p><p>Kurangkan persamaan pertama:</p><p>$$(2B+4A) - (A+2B) = -6 - 6 \\quad\\Longrightarrow\\quad 3A = -12\n\\quad\\Longrightarrow\\quad A = \\boxed{-4}$$</p><p>Periksa: dari $A = -4$ dan persamaan pertama, $2B = 10$ sehingga $B = 5$. Periksa persamaan kedua: $5 + 2(-4) = -3$. Cocok.</p><p><strong>Kalau ingin rumus umumnya</strong>, gerakan yang sama bekerja dengan $x$ tetap sebagai huruf. Substitusikan $x \\to 1-x$ pada persamaan aslinya:</p><p>$$f(1-x) + 2f(x) = 3(1-x)$$</p><p>Sekarang ada dua persamaan dalam $f(x)$ dan $f(1-x)$. Kalikan yang kedua dengan $2$ dan kurangkan yang pertama:</p><p>$$3f(x) = 6 - 6x - 3x \\quad\\Longrightarrow\\quad f(x) = 2 - 3x$$</p><p>Periksa $f(2) = 2 - 6 = -4$ — cocok. Dan periksa balik ke persamaan aslinya: $(2-3x) + 2\\left(2 - 3(1-x)\\right) = 2-3x + 2(3x-1) = 3x$ ✓.</p><p><strong>Langkah memeriksa balik itu tidak boleh dilewati.</strong> Rangkaian substitusi bisa memperluas himpunan solusi, jadi fungsi yang diperoleh harus diuji ke persamaan aslinya.</p>",
+   "rubrik": []
+  },
+  {
    "id": "pk-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
    "pilar": "aljabar",
@@ -4074,6 +4717,166 @@
     "Akar kembar terjadi tepat ketika $D = 0$."
    ],
    "pembahasan": "<p>Sifat akar persamaan kuadrat ditentukan oleh diskriminan</p><p>$$D = b^2 - 4ac$$</p><ul><li>$D &gt; 0$: dua akar real berbeda</li><li>$D = 0$: akar kembar</li><li>$D &lt; 0$: tidak ada akar real</li></ul><p>Di sini $a = 1$, $b = -6$, $c = m$, jadi</p><p>$$D = (-6)^2 - 4(1)(m) = 36 - 4m$$</p><p>Akar kembar menuntut $D = 0$:</p><p>$$36 - 4m = 0 \\quad\\Longrightarrow\\quad m = \\boxed{9}$$</p><p>Periksa: dengan $m = 9$ persamaannya menjadi $x^2 - 6x + 9 = (x-3)^2 = 0$, yang memang berakar kembar $x = 3$.</p><p><strong>Inilah pemakaian diskriminan yang paling sering muncul di olimpiade</strong> — bukan untuk menghitung akar, melainkan untuk menjawab pertanyaan <strong>tentang</strong> akar. Soal \"tentukan syarat agar punya dua akar berbeda\" atau \"agar tidak punya akar real\" adalah soal tentang $D$, dan akarnya tidak pernah perlu dicari.</p><p>Perhatikan syarat tersembunyi: rumus $D$ hanya berlaku kalau $a \\ne 0$. Kalau koefisien $x^2$ memuat parameter, kasus $a = 0$ harus diperiksa terpisah — di situ persamaannya linear dan tidak punya akar kembar sama sekali.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pu-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "penataan-ulang"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Bilangan $4$, $5$, dan $6$ akan dipasangkan satu-satu dengan bilangan $1$, $2$, dan $3$. Tentukan nilai <strong>terkecil</strong> dari jumlah ketiga hasil kalinya.</p>",
+   "jawaban": "28",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Arahnya kebalikan dari soal sebelumnya. Kalau searah memberi yang terbesar, apa yang memberi yang terkecil?",
+    "Pasangkan bilangan terbesar dengan bilangan terkecil.",
+    "Urutkan satu kelompok menaik dan kelompok lain menurun."
+   ],
+   "pembahasan": "<p>Ketaksamaan penataan ulang memberi kedua ujung sekaligus:</p><p>$$\\underbrace{\\sum a_ib_i}_{\\text{searah, terbesar}} \\ \\ge\\ \\sum a_i b_{\\sigma(i)}\n\\ \\ge\\ \\underbrace{\\sum a_i b_{n+1-i}}_{\\text{berlawanan, terkecil}}$$</p><p>Untuk yang terkecil, urutkan satu kelompok menaik dan yang lain <strong>menurun</strong>:</p><p>$$1, \\ 2, \\ 3 \\qquad \\text{dipasangkan dengan} \\qquad 6, \\ 5, \\ 4$$</p><p>$$1 \\times 6 + 2 \\times 5 + 3 \\times 4 = 6 + 10 + 12 = \\boxed{28}$$</p><p>Cocok dengan daftar lengkap pada soal sebelumnya: nilainya berkisar dari $28$ sampai $32$.</p><p><strong>Cara mengingat arahnya tanpa menghafal.</strong> Bayangkan menukar dua pasangan yang urutannya berlawanan. Perhitungan pada soal sebelumnya menunjukkan penukaran menuju searah selalu <strong>menambah</strong> jumlahnya. Jadi searah adalah ujung atas, dan berlawanan arah ujung bawah.</p><p>Cara lain: pikirkan kasus ekstrem. Memasangkan $1000$ dengan $1000$ memberi sejuta; memasangkan $1000$ dengan $1$ memberi seribu. Menumpuk yang besar bersama-sama jelas memperbesar hasil.</p><p><strong>Penerapannya di olimpiade</strong> jarang sepolos ini. Yang khas: soal memberi bentuk simetris dan kamu mengandaikan $a \\ge b \\ge c$ tanpa mengurangi keumuman, lalu memakai penataan ulang pada dua barisan yang dibentuk dari peubah itu. Kesimetrian soal yang membuat pengandaian urutannya sah.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pu-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "penataan-ulang"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Misalkan $\\left(a_1, a_2, a_3, a_4\\right)$ adalah suatu penataan ulang dari $(1, 2, 3, 4)$. Tentukan nilai terkecil dari</p><p>$$1 \\cdot a_1 + 2 \\cdot a_2 + 3 \\cdot a_3 + 4 \\cdot a_4$$</p>",
+   "jawaban": "20",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kedua barisannya sama, yaitu $(1,2,3,4)$ — hanya urutan salah satunya yang boleh diubah.",
+    "Untuk memperkecil, pasangkan yang besar dengan yang kecil.",
+    "Pasangan yang tepat adalah $(1,2,3,4)$ dengan $(4,3,2,1)$."
+   ],
+   "pembahasan": "<p>Kedua barisannya adalah $(1,2,3,4)$; yang boleh diatur hanya urutan salah satunya.</p><p>Menurut ketaksamaan penataan ulang, jumlahnya paling kecil ketika keduanya <strong>berlawanan arah</strong>:</p><p>$$1 \\times 4 + 2 \\times 3 + 3 \\times 2 + 4 \\times 1 = 4 + 6 + 6 + 4 = \\boxed{20}$$</p><p>Sebagai pembanding, susunan searah memberi yang terbesar:</p><p>$$1 \\times 1 + 2 \\times 2 + 3 \\times 3 + 4 \\times 4 = 1 + 4 + 9 + 16 = 30$$</p><p>Jadi berapa pun penataan ulang yang dipilih, jumlahnya selalu berada di antara $20$ dan $30$.</p><p><strong>Kasus kedua barisan sama layak diperhatikan tersendiri.</strong> Di situ susunan searah berarti tiap bilangan bertemu dirinya sendiri, sehingga jumlahnya menjadi $\\sum a_i^2$. Akibatnya, untuk setiap penataan ulang $\\sigma$,</p><p>$$\\sum a_i^2 \\ \\ge\\ \\sum a_i a_{\\sigma(i)}$$</p><p>Ini pernyataan yang sering dipakai di olimpiade. Kasus khususnya untuk pergeseran satu langkah memberi</p><p>$$a_1^2 + a_2^2 + a_3^2 \\ \\ge\\ a_1a_2 + a_2a_3 + a_3a_1$$</p><p>— ketaksamaan yang sudah pernah dibuktikan lewat jumlah kuadrat, dan kini terlihat sebagai kasus khusus penataan ulang.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pu-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "penataan-ulang"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $\\left(a_1, \\ldots, a_5\\right)$ suatu penataan ulang dari $(1,2,3,4,5)$. Tentukan nilai terbesar dari</p><p>$$\\sum_{i=1}^{5} i \\cdot a_i$$</p>",
+   "jawaban": "55",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Barisan pertamanya $(1,2,3,4,5)$ — indeksnya sendiri — dan barisan kedua boleh diatur.",
+    "Untuk memperbesar, susun searah: indeks besar bertemu nilai besar.",
+    "Susunan searah membuat tiap bilangan bertemu dirinya sendiri."
+   ],
+   "pembahasan": "<p>Barisan pertamanya adalah indeksnya, $1, 2, 3, 4, 5$, yang sudah terurut menaik. Barisan kedua adalah penataan ulang dari bilangan yang sama.</p><p>Menurut ketaksamaan penataan ulang, jumlahnya paling besar ketika keduanya searah — yaitu ketika $a_i = i$:</p><p>$$\\sum_{i=1}^{5} i \\cdot i = 1^2+2^2+3^2+4^2+5^2 = 1+4+9+16+25 = \\boxed{55}$$</p><p>Nilainya persis jumlah kuadrat lima bilangan asli pertama. Periksa lewat rumus:</p><p>$$\\frac{n(n+1)(2n+1)}{6} = \\frac{5 \\times 6 \\times 11}{6} = 55$$</p><p>Cocok.</p><p><strong>Sebagai pembanding</strong>, susunan berlawanan arah memberi yang terkecil:</p><p>$$1 \\times 5 + 2 \\times 4 + 3 \\times 3 + 4 \\times 2 + 5 \\times 1 = 5+8+9+8+5 = 35$$</p><p>Jadi seluruh $120$ penataan ulang yang mungkin memberi nilai antara $35$ dan $55$.</p><p><strong>Perhatikan bahwa mendaftar seluruh kemungkinan tidak lagi masuk akal di sini</strong> — ada $5! = 120$ susunan. Itulah nilai ketaksamaan ini: ia menjawab pertanyaan tentang seluruh penataan ulang tanpa memeriksa satu pun selain dua ujungnya.</p><p>Untuk $n$ bilangan, jumlah terbesarnya selalu $\\sum i^2 = \\frac{n(n+1)(2n+1)}{6}$, dan jumlah terkecilnya $\\sum i(n+1-i)$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pu-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "penataan-ulang"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $\\left(a_1, \\ldots, a_5\\right)$ suatu penataan ulang dari $(1,2,3,4,5)$. Tentukan nilai terkecil dari</p><p>$$\\sum_{i=1}^{5} i \\cdot a_i$$</p>",
+   "jawaban": "35",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Arahnya kebalikan dari soal sebelumnya: untuk memperkecil, susun berlawanan arah.",
+    "Pasangkan indeks terkecil dengan nilai terbesar: $a_i = 6 - i$.",
+    "Hitung kelima hasil kalinya lalu jumlahkan."
+   ],
+   "pembahasan": "<p>Untuk yang terkecil, susun berlawanan arah — indeks menaik dipasangkan dengan nilai menurun:</p><p>$$a_i = 6 - i$$</p><p>sehingga $\\left(a_1,\\ldots,a_5\\right) = (5,4,3,2,1)$.</p><p>$$\\sum_{i=1}^{5} i(6-i) = 1(5) + 2(4) + 3(3) + 4(2) + 5(1) = 5+8+9+8+5 = \\boxed{35}$$</p><p>Perhatikan kesimetrian nilainya — $5, 8, 9, 8, 5$ — yang muncul karena $i(6-i)$ tidak berubah kalau $i$ diganti $6-i$.</p><p><strong>Cara kedua, lewat rumus jumlah.</strong> Jabarkan:</p><p>$$\\sum_{i=1}^{5} i(6-i) = 6\\sum_{i=1}^{5} i - \\sum_{i=1}^{5} i^2\n= 6(15) - 55 = 90 - 55 = 35$$</p><p>Hasil yang sama, dan cara ini menskala ke $n$ berapa pun tanpa mendaftar sukunya:</p><p>$$\\sum_{i=1}^{n} i(n+1-i) = (n+1)\\frac{n(n+1)}{2} - \\frac{n(n+1)(2n+1)}{6}\n= \\frac{n(n+1)(n+2)}{6}$$</p><p>Untuk $n = 5$: $\\frac{5 \\times 6 \\times 7}{6} = 35$. Cocok.</p><p><strong>Bersama soal sebelumnya, kedua ujungnya kini lengkap:</strong> seluruh $120$ penataan ulang memberi nilai antara $35$ dan $55$. Ketaksamaan penataan ulang menjamin tidak ada satu pun yang keluar dari rentang itu — dan tidak ada satu pun yang perlu diperiksa untuk memastikannya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pu-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "penataan-ulang",
+    "ketaksamaan-dasar"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Buktikan bahwa untuk sembarang bilangan real $a$, $b$, $c$,</p><p>$$a^2+b^2+c^2 \\ \\ge\\ ab+bc+ca$$</p><p>dengan memakai ketaksamaan penataan ulang.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kedua ruas berbentuk jumlah hasil kali dari dua barisan yang sama. Tentukan barisannya.",
+    "Ambil barisan $(a,b,c)$ dua kali. Ruas kiri adalah pemasangan searah; ruas kanan pemasangan yang digeser satu langkah.",
+    "Untuk memakai penataan ulang, urutkan dulu — dan jelaskan mengapa pengurutan itu tidak mengurangi keumuman."
+   ],
+   "pembahasan": "<p><strong>Urutkan tanpa mengurangi keumuman.</strong> Kedua ruas ketaksamaan ini <strong>simetris</strong>: menukar peran dua peubah mana pun tidak mengubah nilainya. Ruas kiri jelas simetris; ruas kanan juga, sebab $ab+bc+ca$ memuat semua pasangan.</p><p>Karena itu boleh diandaikan</p><p>$$a \\ \\ge\\ b \\ \\ge\\ c$$</p><p>tanpa mengurangi keumuman — kalau tidak, tinggal ganti nama peubahnya.</p><p><strong>Kenali kedua ruas sebagai pemasangan.</strong> Ambil barisan $(a, b, c)$ dua kali, keduanya terurut menurun. Maka:</p><ul><li>Ruas kiri, $a \\cdot a + b \\cdot b + c \\cdot c$, adalah pemasangan <strong>searah</strong>.</li><li>Ruas kanan, $ab+bc+ca$, adalah pemasangan yang <strong>digeser satu langkah</strong>: $a$ dengan $b$, $b$ dengan $c$, $c$ dengan $a$.</li></ul><p>Pemasangan yang digeser adalah salah satu penataan ulang dari pemasangan searah.</p><p><strong>Terapkan ketaksamaannya.</strong> Penataan ulang menyatakan pemasangan searah memberi jumlah yang tidak kalah dari penataan ulang mana pun:</p><p>$$a \\cdot a + b \\cdot b + c \\cdot c \\ \\ge\\ a \\cdot b + b \\cdot c + c \\cdot a$$</p><p>yaitu</p><p>$$a^2+b^2+c^2 \\ \\ge\\ ab+bc+ca \\qquad \\blacksquare$$</p><h4>Kapan kesamaannya tercapai</h4><p>Pada penataan ulang, kesamaan tercapai ketika penggeserannya tidak mengubah apa pun — yaitu ketika $a = b = c$.</p><p>Bandingkan dengan pembuktian lewat jumlah kuadrat, yang mengalikan dengan $2$ lalu mengelompokkan menjadi $(a-b)^2+(b-c)^2+(c-a)^2$. Keduanya sah, dan keduanya memberi syarat kesamaan yang sama.</p><p><strong>Yang membuat jalur penataan ulang berharga</strong> adalah keluwesannya. Ia langsung menskala: dengan barisan yang sama dan penggeseran sejauh apa pun,</p><p>$$a_1^2 + \\cdots + a_n^2 \\ \\ge\\ a_1a_{\\sigma(1)} + \\cdots + a_na_{\\sigma(n)}$$</p><p>untuk penataan ulang $\\sigma$ apa pun. Jalur jumlah kuadrat harus disusun ulang untuk tiap kasus.</p><p><strong>Langkah \"tanpa mengurangi keumuman\" itu wajib dinyatakan</strong>, bukan dilewati. Ia hanya sah karena soalnya simetris; pada bentuk yang tidak simetris — misalnya $a^2+b^2+c^2 \\ge\na^2b + b^2c + c^2a$ — mengandaikan urutan akan mengubah soalnya.</p>",
+   "rubrik": [
+    "Menyatakan kedua ruas simetris, sehingga pengandaian $a \\ge b \\ge c$ tidak mengurangi keumuman",
+    "Mengenali ruas kiri sebagai pemasangan searah dari barisan $(a,b,c)$ dengan dirinya",
+    "Mengenali ruas kanan sebagai pemasangan yang digeser satu langkah",
+    "Menerapkan ketaksamaan penataan ulang dengan arah yang benar",
+    "Menyatakan syarat kesamaan, yaitu $a = b = c$"
+   ]
+  },
+  {
+   "id": "pu-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "penataan-ulang"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Misalkan $a_1 \\le a_2$ dan $b_1 \\le b_2$ bilangan real. Buktikan ketaksamaan Chebyshev untuk dua suku:</p><p>$$\\frac{a_1b_1 + a_2b_2}{2} \\ \\ge\\ \\left(\\frac{a_1+a_2}{2}\\right)\\left(\\frac{b_1+b_2}{2}\\right)$$</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kalikan kedua ruas dengan $4$ untuk menghilangkan seluruh penyebut, lalu jabarkan.",
+    "Setelah disederhanakan, yang tersisa perbandingan antara $a_1b_1 + a_2b_2$ dan $a_1b_2 + a_2b_1$.",
+    "Selisih keduanya bisa difaktorkan menjadi hasil kali dua selisih."
+   ],
+   "pembahasan": "<p>Kalikan kedua ruas dengan $4$ — sah karena $4 &gt; 0$:</p><p>$$2\\left(a_1b_1 + a_2b_2\\right) \\ \\ge\\ \\left(a_1+a_2\\right)\\left(b_1+b_2\\right)$$</p><p><strong>Jabarkan ruas kanan:</strong></p><p>$$\\left(a_1+a_2\\right)\\left(b_1+b_2\\right) = a_1b_1 + a_1b_2 + a_2b_1 + a_2b_2$$</p><p>Kurangkan dari ruas kiri. Suku $a_1b_1$ dan $a_2b_2$ muncul di kedua ruas dan sebagian saling menghapus, menyisakan</p><p>$$a_1b_1 + a_2b_2 \\ \\ge\\ a_1b_2 + a_2b_1$$</p><p><strong>Kenali bentuknya.</strong> Ini persis pernyataan penataan ulang untuk dua suku: pemasangan searah tidak kalah dari pemasangan silang. Buktikan langsung dengan memindahkan dan memfaktorkan:</p><p>$$\\left(a_1b_1 + a_2b_2\\right) - \\left(a_1b_2 + a_2b_1\\right)\n= a_1\\left(b_1-b_2\\right) - a_2\\left(b_1 - b_2\\right)$$</p><p>$$= \\left(a_1 - a_2\\right)\\left(b_1 - b_2\\right)$$</p><p><strong>Periksa tandanya.</strong> Dari $a_1 \\le a_2$ diperoleh $a_1 - a_2 \\le 0$; dari $b_1 \\le b_2$ diperoleh $b_1 - b_2 \\le 0$. Hasil kali dua bilangan tak positif adalah <strong>tak negatif</strong>:</p><p>$$\\left(a_1-a_2\\right)\\left(b_1-b_2\\right) \\ \\ge\\ 0$$</p><p>Jadi ketaksamaannya benar, dan seluruh langkah di atas setara. $\\blacksquare$</p><h4>Kapan kesamaannya tercapai</h4><p>Kesamaan berlaku tepat ketika $\\left(a_1-a_2\\right)\\left(b_1-b_2\\right) = 0$, yaitu ketika $a_1 = a_2$ <strong>atau</strong> $b_1 = b_2$. Cukup salah satu barisan yang konstan.</p><h4>Cara membacanya</h4><p>Ruas kiri adalah rata-rata hasil kali; ruas kanan hasil kali rata-rata. Chebyshev menyatakan bahwa untuk barisan yang <strong>terurut searah</strong>, rata-rata hasil kali tidak pernah kalah.</p><p>Syarat searah itu penting. Kalau barisannya berlawanan arah — misalnya $a_1 \\le a_2$ tetapi $b_1 \\ge b_2$ — hasil kali kedua selisihnya menjadi tak positif, dan arah ketaksamaannya <strong>berbalik</strong>.</p><p>Bentuk umumnya untuk $n$ suku searah:</p><p>$$\\frac{1}{n}\\sum a_ib_i \\ \\ge\\ \\left(\\frac1n \\sum a_i\\right)\\left(\\frac1n\\sum b_i\\right)$$</p>",
+   "rubrik": [
+    "Mengalikan dengan $4$ dan menyebut arahnya tidak berubah",
+    "Menjabarkan ruas kanan dan menyederhanakan sampai tersisa $a_1b_1+a_2b_2 \\ge a_1b_2+a_2b_1$",
+    "Memfaktorkan selisihnya menjadi $\\left(a_1-a_2\\right)\\left(b_1-b_2\\right)$",
+    "Memeriksa tanda kedua faktor dari syarat keterurutan, dan menyimpulkan hasil kalinya tak negatif",
+    "Menyatakan syarat kesamaan: salah satu barisan konstan"
+   ]
+  },
+  {
+   "id": "pu-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN",
+   "pilar": "aljabar",
+   "tahap": "osn",
+   "jurus": [
+    "penataan-ulang"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Bilangan $4$, $5$, dan $6$ akan dipasangkan satu-satu dengan bilangan $1$, $2$, dan $3$. Tentukan nilai <strong>terbesar</strong> dari jumlah ketiga hasil kalinya.</p>",
+   "jawaban": "32",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ada enam cara memasangkan. Coba beberapa dan perhatikan pola mana yang memberi hasil besar.",
+    "Untuk memperbesar jumlah hasil kali, pasangkan bilangan besar dengan bilangan besar.",
+    "Urutkan kedua kelompok, lalu pasangkan berurutan."
+   ],
+   "pembahasan": "<p><strong>Ketaksamaan penataan ulang</strong> menyatakan: di antara semua cara memasangkan dua kelompok bilangan, jumlah hasil kalinya paling besar ketika keduanya <strong>diurutkan searah</strong> — besar dengan besar, kecil dengan kecil.</p><p>Urutkan kedua kelompok menaik:</p><p>$$1 \\le 2 \\le 3, \\qquad 4 \\le 5 \\le 6$$</p><p>Pasangkan berurutan:</p><p>$$1 \\times 4 + 2 \\times 5 + 3 \\times 6 = 4 + 10 + 18 = \\boxed{32}$$</p><p><strong>Periksa seluruh kemungkinan</strong> — hanya ada enam, jadi bisa didaftar:</p><table><thead><tr><th>Pasangan untuk $1,2,3$</th><th>Jumlah</th></tr></thead><tbody><tr><td>$4, 5, 6$</td><td>$4+10+18 = 32$</td></tr><tr><td>$4, 6, 5$</td><td>$4+12+15 = 31$</td></tr><tr><td>$5, 4, 6$</td><td>$5+8+18 = 31$</td></tr><tr><td>$5, 6, 4$</td><td>$5+12+12 = 29$</td></tr><tr><td>$6, 4, 5$</td><td>$6+8+15 = 29$</td></tr><tr><td>$6, 5, 4$</td><td>$6+10+12 = 28$</td></tr></tbody></table><p>Yang terbesar memang $32$, dari pemasangan searah; yang terkecil $28$, dari pemasangan berlawanan arah. Semua pemasangan lain berada di antaranya — persis yang dinyatakan ketaksamaannya.</p><p><strong>Alasannya bisa dilihat pada satu penukaran.</strong> Misalkan $a \\le b$ dan $x \\le y$. Bandingkan dua cara memasangkan:</p><p>$$(ax + by) - (ay + bx) = a(x-y) + b(y-x) = (b-a)(y-x) \\ \\ge\\ 0$$</p><p>Jadi pemasangan searah selalu tidak kalah. Setiap pemasangan sembarang bisa diubah menjadi pemasangan searah lewat rangkaian penukaran semacam itu, dan tiap penukaran tidak pernah mengurangi jumlahnya.</p>",
    "rubrik": []
   },
   {

@@ -206,11 +206,13 @@ bidang pertama yang sungguhan. Hasil Fase 0 terbukti pada konten nyata: urutan t
 **Teori Bilangan lalu Aljabar** (abjad akan membalikkannya), dan simpulnya membawa
 keterangan lengkap tentang gemboknya.
 
-### 2.2 Soal — belum dikerjakan
+### 2.2 Soal — selesai 9 Agustus 2026
 
-154 soal: 22 jurus × (1 contoh terpandu + 6 latihan). Dikerjakan bertahap seperti Fase 1,
-menurut tahap: OSN-K (10 jurus, 70 soal), lalu OSN-P (7 jurus, 49 soal), lalu OSN
-(5 jurus, 35 soal).
+154 soal: 22 jurus × (1 contoh terpandu + 6 latihan), dikerjakan bertahap menurut tahap —
+OSN-K (10 jurus, 70 soal), OSN-P (7 jurus, 49 soal), OSN (5 jurus, 35 soal).
+
+`polinomial-bulat` akhirnya punya soal, sehingga jalur lintas bidang dari `keterbagian`
+di teori bilangan ke aljabar bisa ditempuh sungguhan — bukan hanya digambar di peta.
 
 **Selesai kalau:** ketiga tahap aljabar tuntas di lantai 6, `build.py` tidak lagi
 mencetak "Belum ada latihan di:", dan simulasi bisa menyusun naskah dua bidang.

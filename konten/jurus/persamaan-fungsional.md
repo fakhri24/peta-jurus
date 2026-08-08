@@ -4,8 +4,8 @@ nama: Persamaan Fungsional
 pilar: aljabar
 tahap: osn
 prasyarat: [fungsi, induksi]
-contoh: []
-latihan: []
+contoh: [pf-contoh-1]
+latihan: [pf-01, pf-02, pf-03, pf-04, pf-05, pf-06]
 ---
 
 ## Kapan dipakai

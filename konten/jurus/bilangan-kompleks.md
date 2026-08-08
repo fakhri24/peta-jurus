@@ -4,8 +4,8 @@ nama: Bilangan Kompleks dan Akar Satuan
 pilar: aljabar
 tahap: osn
 prasyarat: [akar-suku-banyak]
-contoh: []
-latihan: []
+contoh: [bk-contoh-1]
+latihan: [bk-01, bk-02, bk-03, bk-04, bk-05, bk-06]
 ---
 
 ## Kapan dipakai

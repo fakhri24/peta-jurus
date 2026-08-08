@@ -4,8 +4,8 @@ nama: Polinomial Berkoefisien Bulat
 pilar: aljabar
 tahap: osn
 prasyarat: [suku-banyak, keterbagian]
-contoh: []
-latihan: []
+contoh: [pb-contoh-1]
+latihan: [pb-01, pb-02, pb-03, pb-04, pb-05, pb-06]
 ---
 
 ## Kapan dipakai

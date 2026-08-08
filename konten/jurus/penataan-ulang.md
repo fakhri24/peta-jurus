@@ -4,8 +4,8 @@ nama: Ketaksamaan Penataan Ulang
 pilar: aljabar
 tahap: osn
 prasyarat: [am-gm]
-contoh: []
-latihan: []
+contoh: [pu-contoh-1]
+latihan: [pu-01, pu-02, pu-03, pu-04, pu-05, pu-06]
 ---
 
 ## Kapan dipakai

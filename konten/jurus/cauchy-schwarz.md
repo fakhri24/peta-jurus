@@ -4,8 +4,8 @@ nama: Ketaksamaan Cauchy-Schwarz
 pilar: aljabar
 tahap: osn
 prasyarat: [am-gm]
-contoh: []
-latihan: []
+contoh: [cs-contoh-1]
+latihan: [cs-01, cs-02, cs-03, cs-04, cs-05, cs-06]
 ---
 
 ## Kapan dipakai
