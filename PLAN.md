@@ -186,22 +186,38 @@ Dipilih sebagai bidang kedua karena bobotnya besar di semua tahap, tidak butuh g
 dan punya sambungan prasyarat yang nyata ke teori bilangan — jadi sekaligus menguji
 hasil kerja 0.1.
 
-Draf daftar jurus (belum final, susun ulang saat menulis):
+### 2.1 Kerangka bidang — selesai 8 Agustus 2026
 
-- Tingkat awal: manipulasi bentuk aljabar · faktorisasi · persamaan kuadrat ·
-  barisan aritmetika & geometri · nilai mutlak
-- Menengah: suku banyak · teorema sisa & faktor · Vieta · deret teleskopik ·
-  induksi matematika · eksponen & logaritma · sistem persamaan
-- Lanjut: ketaksamaan AM-GM · Cauchy-Schwarz · penataan ulang (rearrangement) ·
-  persamaan fungsional · fungsi dan sifatnya · bilangan kompleks & akar satuan ·
-  substitusi simetri · polinomial berkoefisien bulat
+22 jurus beserta graf prasyaratnya, masing-masing lengkap dengan "Kapan dipakai",
+"Intinya", dan "Jebakan umum". Sebarannya **10 OSN-K, 7 OSN-P, 5 OSN**, kedalaman $t_0$
+sampai $t_5$ — dasarnya lebar, puncaknya sempit, seperti teori bilangan.
 
-`polinomial-berkoefisien-bulat` sengaja diberi prasyarat `keterbagian` dari teori
-bilangan — itu prasyarat lintas bidang pertama yang sungguhan, dan pembuktian bahwa 0.1
-bekerja.
+| Tingkat | Jurus |
+|---|---|
+| $t_0$ | manipulasi-aljabar |
+| $t_1$ | faktorisasi · barisan-deret · nilai-mutlak · eksponen-logaritma · ketaksamaan-dasar · fungsi |
+| $t_2$ | persamaan-kuadrat · sistem-persamaan · deret-teleskopik · induksi · am-gm |
+| $t_3$ | vieta · suku-banyak · cauchy-schwarz · penataan-ulang · persamaan-fungsional |
+| $t_4$ | akar-suku-banyak · teorema-sisa-faktor · substitusi-simetri · polinomial-bulat |
+| $t_5$ | bilangan-kompleks |
 
-**Selesai kalau:** aljabar tuntas untuk OSN-K dan OSN-P (jalur OSN boleh menyusul), dan
-simulasi bisa menyusun naskah dua bidang.
+`polinomial-bulat` berprasyarat `keterbagian` dari teori bilangan — prasyarat lintas
+bidang pertama yang sungguhan. Hasil Fase 0 terbukti pada konten nyata: urutan tab
+**Teori Bilangan lalu Aljabar** (abjad akan membalikkannya), dan simpulnya membawa
+keterangan lengkap tentang gemboknya.
+
+### 2.2 Soal — belum dikerjakan
+
+154 soal: 22 jurus × (1 contoh terpandu + 6 latihan). Dikerjakan bertahap seperti Fase 1,
+menurut tahap: OSN-K (10 jurus, 70 soal), lalu OSN-P (7 jurus, 49 soal), lalu OSN
+(5 jurus, 35 soal).
+
+**Selesai kalau:** ketiga tahap aljabar tuntas di lantai 6, `build.py` tidak lagi
+mencetak "Belum ada latihan di:", dan simulasi bisa menyusun naskah dua bidang.
+
+Catatan: bidang ini tidak berhenti di OSN-P. Draf awal rencana ini membolehkan jalur OSN
+menyusul; itu ditarik, karena membiarkan satu bidang setengah terisi sambil membuka bidang
+berikutnya persis yang dilarang di bagian Risiko.
 
 ---
 
