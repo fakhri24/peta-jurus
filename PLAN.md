@@ -77,40 +77,46 @@ di ujung fase terakhir.
 Semua di fase ini tidak bergantung pada konten dan jauh lebih murah dikerjakan sekarang
 saat baru 22 jurus daripada nanti saat sudah 86.
 
-**0.1 Garis prasyarat lintas bidang.** `assets/peta.js:95` membuang tepi yang pangkalnya
-di pilar lain, jadi jurus tergembok tanpa penyebab yang terlihat. Sekarang tidak
-kelihatan karena bidangnya baru satu; begitu aljabar masuk, `polinomial-bulat` akan
-berprasyarat `keterbagian` dan siswa melihat gembok tanpa penjelasan. Pilihan
-penanganan: gambar penanda "prasyarat dari bidang lain" di sisi simpul, dengan tautan
-ke jurus asalnya — lebih sederhana daripada menggambar garis antar-SVG.
+**0.1 Prasyarat lintas bidang — selesai 8 Agustus 2026.** Garisnya tetap tidak digambar
+(tiap pilar punya SVG sendiri), tapi simpulnya kini diberi penanda `↗` dan
+`<title>`/`aria-label` yang menyebut nama jurus beserta bidang asalnya. Gembok tidak lagi
+muncul tanpa sebab yang bisa dibaca.
 
-**0.2 Urutan bidang eksplisit.** `scripts/build.py:491` mengurutkan `(pilar, tingkat, x)`
-dan `assets/peta.js:157` memakai urutan itu apa adanya, jadi urutannya alfabetis menurut
-slug. Tambah tiga bidang dan teori bilangan — satu-satunya yang isinya lengkap —
-terlempar ke dasar halaman. Perlu daftar urutan pilar yang ditetapkan di `build.py`.
+**0.2 Urutan bidang eksplisit — selesai 8 Agustus 2026.** `URUT_PILAR` di `build.py`
+menetapkan urutannya mengikuti urutan pengerjaan fase, dan sekaligus jadi daftar pilar
+yang sah: pilar di luar daftar itu menggagalkan build, jadi salah ketik pada `pilar`
+tidak lagi diam-diam membuat bidang hantu. `TAHAP_SAH` melakukan hal yang sama untuk
+`tahap`.
 
-**0.3 Navigasi per bidang.** Halaman peta menggambar semua pilar sekaligus. 22 jurus jadi
-~86 berarti empat SVG raksasa dalam satu halaman. Minimal: tab atau bagian yang bisa
-dilipat, dengan bidang terakhir yang dibuka diingat di localStorage.
+**0.3 Navigasi per bidang — selesai 8 Agustus 2026.** Peta digambar satu bidang pada satu
+waktu dengan bilah tab. Tabnya menyembunyikan diri selama bidangnya baru satu, dan muncul
+sendiri begitu bidang kedua masuk. Pilihan terakhir diingat.
 
-**0.4 Saringan tahap.** Siswa yang baru menyiapkan OSN-K sekarang melihat `lte` dan
-`vieta-jumping` di petanya. Beri pemilih tahap yang menyembunyikan jurus di atas
-targetnya. Ini juga membuat peta terasa jauh lebih kecil tanpa menghapus apa pun.
+**0.4 Saringan tahap — selesai 8 Agustus 2026.** Pemilih "Tampilkan sampai tahap"
+menyembunyikan jurus di atas target — OSN-K memangkas teori bilangan dari 22 simpul jadi
+8. Menyaring hanya menyembunyikan; tidak ada koordinat yang dihitung ulang di peramban,
+dan tinggi SVG untuk tiap batas ikut dibangun sebagai `ukuran.tinggi_sampai`.
 
-**0.5 Pisah `soal.json` per bidang.** Sekarang 51 KB untuk 38 soal (~1,35 KB per soal).
-Pada 630 soal angkanya sekitar 850 KB, dan **seluruhnya diambil di setiap halaman**
-serta ikut di-*precache* `sw.js` saat install. Pecah jadi `data/soal-<pilar>.json` dan
-muat sesuai kebutuhan halaman. Batas nyamannya kira-kira di akhir Fase 2 — kalau ditunda
-lewat itu, ongkos ubahnya naik karena `Inti.muatData()` sudah dipakai lima halaman.
+Pilihan bidang dan tahap disimpan di kunci localStorage sendiri,
+`peta-jurus/tampilan/v1` — sengaja terpisah dari kemajuan, supaya preferensi perangkat
+tidak ikut terbawa saat kemajuan diekspor dan dipindah.
 
-**0.6 Koreksi CLAUDE.md.** Catatan "NAMA_PILAR disalin di `peta.js`, `jurus.js`, dan
-`simulasi.js`" tidak akurat: `simulasi.js` tidak punya `NAMA_PILAR` sama sekali, dan
-kedua berkas yang punya sudah memuat keempat bidang. Peringatan "judul tampil sebagai
-slug mentah" karena itu sudah tidak berlaku. Dokumen yang keliru lebih berbahaya
-daripada dokumen yang kosong.
+**0.5 Pisah `soal.json` per bidang — ditunda, sengaja.** Sekarang 51 KB untuk 38 soal
+(~1,35 KB per soal). Pada 630 soal angkanya sekitar 850 KB, dan **seluruhnya diambil di
+setiap halaman** serta ikut di-*precache* `sw.js` saat install. Pecah jadi
+`data/soal-<pilar>.json` dan muat sesuai kebutuhan halaman. Dikerjakan **paling lambat
+akhir Fase 2**: sekarang ia menambah cabang tanpa menyelesaikan masalah yang sudah ada,
+tapi kalau lewat batas itu ongkos ubahnya naik karena `Inti.muatData()` sudah dipakai
+lima halaman.
+
+**0.6 Koreksi CLAUDE.md — selesai 8 Agustus 2026**, lalu diperbarui lagi mengikuti
+0.1–0.4.
 
 **Selesai kalau:** peta bisa dibuka per bidang, prasyarat lintas bidang terlihat
-sebabnya, dan menambah pilar baru tidak menuntut sentuhan JS apa pun.
+sebabnya, dan menambah bidang baru cuma menyentuh `URUT_PILAR` plus `NAMA_PILAR` di dua
+berkas JS — dijaga tes, bukan ingatan.
+
+**Sisa fase ini: 0.5 saja**, dan itu memang ditunda sampai Fase 2.
 
 ---
 

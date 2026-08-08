@@ -2,7 +2,12 @@
  "ukuran": {
   "teori-bilangan": {
    "lebar": 804,
-   "tinggi": 944
+   "tinggi": 944,
+   "tinggi_sampai": {
+    "osn-k": 496,
+    "osn-p": 832,
+    "osn": 944
+   }
   }
  },
  "simpul": [

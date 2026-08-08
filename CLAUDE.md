@@ -16,7 +16,7 @@ Ikuti itu untuk kode baru — pembacanya guru dan siswa, bukan hanya programmer.
 ```sh
 python3 -m http.server 8000       # wajib lewat server; fetch() mati di file://
 python3 scripts/build.py          # konten/*.md → data/*.json  (butuh pyyaml)
-python3 tests/test_build.py       # 38 tes
+python3 tests/test_build.py       # 47 tes
 python3 tests/test_build.py TestRumusSelamat.test_garis_bawah_bukan_huruf_miring   # satu tes
 ```
 
@@ -47,7 +47,8 @@ balik setiap dorongan ke `main` yang menyentuh `konten/` atau `scripts/build.py`
   tidak merusak `$a_1$` atau `\\` di dalam `align`.
 - **Tata letak peta dihitung saat build**, bukan di peramban: `hitung_tingkat()` memberi
   kedalaman graf, `tata_letak()` memberi `x`/`y` (barycenter, 4 sapuan) plus `ukuran`
-  per pilar. Peramban tinggal menggambar SVG — tanpa d3, dagre, atau pustaka graf.
+  per pilar — termasuk `tinggi_sampai`, tinggi SVG untuk tiap batas saringan tahap.
+  Peramban tinggal menggambar SVG — tanpa d3, dagre, atau pustaka graf.
 
 ## Sisi klien
 
@@ -105,10 +106,11 @@ justru intinya.
 
 ## Aturan isi
 
-Ditegakkan `build.py` (build gagal): `id` sama dengan nama berkas · prasyarat dan rujukan
-soal harus ada dan tidak berputar · soal isian punya `jawaban` · soal uraian punya
-`## Rubrik` · **`## Kapan dipakai` tidak boleh kosong** — pemicunya, bukan rumusnya,
-itu bagian yang membuat situs ini ada.
+Ditegakkan `build.py` (build gagal): `id` sama dengan nama berkas · `pilar` ada di
+`URUT_PILAR` dan `tahap` ada di `TAHAP_SAH` · prasyarat dan rujukan soal harus ada dan
+tidak berputar · soal isian punya `jawaban` · soal uraian punya `## Rubrik` ·
+**`## Kapan dipakai` tidak boleh kosong** — pemicunya, bukan rumusnya, itu bagian yang
+membuat situs ini ada.
 
 Tidak bisa ditegakkan mesin, tapi sama mengikatnya:
 
@@ -132,18 +134,28 @@ Format frontmatter lengkap ada di README.md.
 
 ## Jebakan
 
-- `NAMA_PILAR` ada di **dua** berkas, `peta.js` dan `jurus.js` — dan keduanya sudah
-  memuat keempat bidang OSN (`teori-bilangan`, `aljabar`, `geometri`, `kombinatorika`),
-  jadi menambah bidang tidak menuntut sentuhan JS. `simulasi.js` tidak menampilkan nama
-  pilar sama sekali. Yang tersalin di tiga berkas adalah peta tahapnya, dengan dua nama
-  berbeda: `NAMA_TAHAP` di `peta.js` dan `jurus.js`, `TAHAP` di `simulasi.js`.
-- **Urutan bidang di halaman peta alfabetis menurut slug**, bukan pilihan siapa pun:
-  `build.py` mengurutkan simpul `(pilar, tingkat, x)` dan `gambar()` di `peta.js`
-  memakai urutan itu apa adanya lewat `Object.keys`. Menambah `aljabar` akan melempar
-  `teori-bilangan` ke dasar halaman.
-- Prasyarat lintas pilar tetap mengunci jurusnya, tapi garisnya **tidak digambar** —
-  `gambarPilar()` melewati tepi yang pangkalnya di pilar lain. Akibatnya siswa melihat
-  gembok tanpa penyebab yang terlihat begitu ada bidang kedua.
+- **`URUT_PILAR` di `build.py` adalah daftar bidang yang sah**, sekaligus urutan
+  tampilnya di peta. Pilar di luar daftar itu menggagalkan build — itu disengaja, supaya
+  salah ketik pada `pilar` tidak diam-diam membuat bidang hantu. Hal yang sama berlaku
+  untuk `tahap` lewat `TAHAP_SAH`. Menambah bidang berarti menyentuh dua tempat:
+  `URUT_PILAR`, dan `NAMA_PILAR` di `peta.js` + `jurus.js`. Tes
+  `test_semua_pilar_di_nama_pilar_peramban` menjaga keduanya tidak terpisah.
+- `NAMA_PILAR` ada di **dua** berkas, `peta.js` dan `jurus.js`. `simulasi.js` tidak
+  menampilkan nama pilar sama sekali. Yang tersalin di tiga berkas adalah peta tahapnya,
+  dengan dua nama berbeda: `NAMA_TAHAP` di `peta.js` dan `jurus.js`, `TAHAP` di
+  `simulasi.js`.
+- Prasyarat lintas pilar tetap mengunci jurusnya dan garisnya tetap **tidak digambar** —
+  tiap pilar punya SVG sendiri. Yang menutup lubangnya sekarang adalah penanda `↗` pada
+  simpulnya plus `<title>`/`aria-label` yang menyebut nama jurus dan bidang asalnya, jadi
+  gembok tidak pernah muncul tanpa sebab yang bisa dibaca. Kalau menyentuh
+  `gambarSimpul()`, jangan hilangkan itu.
+- **Saringan tahap hanya menyembunyikan simpul, tidak menata ulang apa pun.** Tinggi SVG
+  untuk tiap batas tahap ikut dihitung `build.py` (`ukuran.tinggi_sampai`) justru supaya
+  `peta.js` tidak perlu menyalin `TINGGI_BARIS` dan `TEPI`. Jangan pindahkan hitungan itu
+  ke peramban.
+- **Pilihan tampilan peta ada di kunci localStorage sendiri**, `peta-jurus/tampilan/v1`,
+  bukan di dalam kemajuan. Kalau ikut masuk ke `peta-jurus/kemajuan/v1`, preferensi
+  perangkat akan terbawa saat siswa mengekspor kemajuannya dan memindahkannya.
 - **`![gambar](berkas)` tidak didukung dan gagal diam-diam.** Pola tautan di `_sebaris()`
   menangkap `[alt](url)` lebih dulu dan meninggalkan tanda serunya, jadi keluarannya
   `!<a href="…">alt</a>` — bukan galat, hanya halaman yang salah. Tidak ada aturan `img`

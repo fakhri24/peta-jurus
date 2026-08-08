@@ -197,6 +197,80 @@ class TestTingkatDanTataLetak(unittest.TestCase):
         self.assertIsInstance(j["a"]["x"], int)
 
 
+class TestUrutanPilar(unittest.TestCase):
+    """Urutan bidang di peta ditetapkan URUT_PILAR, bukan abjad slug."""
+
+    def test_teori_bilangan_mendahului_aljabar(self):
+        # Kalau urutannya jatuh ke abjad, 'aljabar' akan menang karena huruf a —
+        # dan teori bilangan, satu-satunya bidang yang isinya lengkap, terlempar
+        # ke dasar halaman.
+        urut = [build.URUT_PILAR.index(p) for p in ("teori-bilangan", "aljabar")]
+        self.assertLess(urut[0], urut[1])
+
+    def test_semua_pilar_di_nama_pilar_peramban(self):
+        # peta.js dan jurus.js memetakan slug jadi judul. Slug yang tidak ada di
+        # sana tampil mentah, jadi keduanya harus memuat seluruh URUT_PILAR.
+        for berkas in ("peta.js", "jurus.js"):
+            isi = (build.AKAR / "assets" / berkas).read_text(encoding="utf-8")
+            for pilar in build.URUT_PILAR:
+                self.assertIn("'%s'" % pilar, isi, "%s belum kenal '%s'" % (berkas, pilar))
+
+
+class TestPilarTahapSah(unittest.TestCase):
+    def test_pilar_salah_ketik_ketahuan(self):
+        galat = []
+        build.periksa_pilar_tahap("x.md", "teori-bilanga", "osn-k", galat)
+        self.assertTrue(any("tidak dikenal" in g for g in galat))
+
+    def test_tahap_salah_ketik_ketahuan(self):
+        galat = []
+        build.periksa_pilar_tahap("x.md", "aljabar", "osnp", galat)
+        self.assertTrue(any("osnp" in g for g in galat))
+
+    def test_yang_sah_lolos(self):
+        galat = []
+        build.periksa_pilar_tahap("x.md", "geometri", "osn", galat)
+        self.assertEqual(galat, [])
+
+
+class TestTinggiPerTahap(unittest.TestCase):
+    """Tinggi SVG untuk tiap batas tahap dihitung saat build, bukan di peramban."""
+
+    @staticmethod
+    def _simpul(*pasangan):
+        return [{"tingkat": t, "tahap": tahap} for t, tahap in pasangan]
+
+    def test_batas_awal_memotong_baris_bawah(self):
+        h = build.tinggi_per_tahap(self._simpul((0, "osn-k"), (3, "osn")))
+        self.assertLess(h["osn-k"], h["osn"])
+        self.assertEqual(h["osn-k"], build.tinggi_untuk(0))
+        self.assertEqual(h["osn"], build.tinggi_untuk(3))
+
+    def test_tahap_menengah_ikut_membawa_yang_lebih_awal(self):
+        # Siswa yang menyiapkan OSN-P tetap perlu melihat jurus OSN-K.
+        h = build.tinggi_per_tahap(self._simpul((0, "osn-k"), (2, "osn-p"), (5, "osn")))
+        self.assertEqual(h["osn-p"], build.tinggi_untuk(2))
+
+    def test_pilar_tanpa_jurus_untuk_tahap_itu_bertinggi_nol(self):
+        h = build.tinggi_per_tahap(self._simpul((4, "osn")))
+        self.assertEqual(h["osn-k"], 0)
+        self.assertEqual(h["osn-p"], 0)
+
+    def test_tata_letak_menyertakan_tinggi_sampai(self):
+        galat = []
+        j = build.hitung_tingkat(
+            {
+                "a": {"id": "a", "nama": "a", "pilar": "aljabar", "tahap": "osn-k", "prasyarat": []},
+                "b": {"id": "b", "nama": "b", "pilar": "aljabar", "tahap": "osn", "prasyarat": ["a"]},
+            },
+            galat,
+        )
+        ukuran = build.tata_letak(j)
+        self.assertEqual(galat, [])
+        self.assertEqual(ukuran["aljabar"]["tinggi_sampai"]["osn-k"], build.tinggi_untuk(0))
+        self.assertEqual(ukuran["aljabar"]["tinggi_sampai"]["osn"], ukuran["aljabar"]["tinggi"])
+
+
 class TestPeriksa(unittest.TestCase):
     def test_prasyarat_hantu_ketahuan(self):
         galat = []

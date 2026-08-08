@@ -8,6 +8,12 @@ var Inti = (function () {
 
   var KUNCI = 'peta-jurus/kemajuan/v1';
 
+  /* Pilihan tampilan peta — bidang yang sedang dibuka dan batas tahap. Sengaja
+     di kunci sendiri, terpisah dari kemajuan: ini preferensi perangkat, bukan
+     hasil belajar, dan tidak boleh ikut terbawa saat kemajuan diekspor lalu
+     dipindah ke perangkat lain. */
+  var KUNCI_TAMPILAN = 'peta-jurus/tampilan/v1';
+
   /* Anak tangga pengulangan, dalam hari. Benar naik satu tangga, salah turun
      ke dasar. Sengaja tanpa faktor kemudahan — cukup, dan bisa dijelaskan ke
      siswa dalam satu kalimat. */
@@ -100,6 +106,26 @@ var Inti = (function () {
             'sedang dalam mode penyamaran.');
       return false;
     }
+  }
+
+  // ---------------------------------------------------------------- tampilan peta
+
+  function tampilan() {
+    try {
+      var t = JSON.parse(localStorage.getItem(KUNCI_TAMPILAN)) || {};
+      return { pilar: t.pilar || '', tahap: t.tahap || 'osn' };
+    } catch (e) {
+      /* 'osn' adalah tahap terjauh, jadi bawaannya tidak menyembunyikan apa pun. */
+      return { pilar: '', tahap: 'osn' };
+    }
+  }
+
+  /* Gagal menyimpan pilihan tampilan tidak layak mengganggu siswa dengan alert —
+     akibat terburuknya petanya kembali ke bidang pertama saat dimuat ulang. */
+  function simpanTampilan(t) {
+    try {
+      localStorage.setItem(KUNCI_TAMPILAN, JSON.stringify(t));
+    } catch (e) {}
   }
 
   // ---------------------------------------------------------------- status jurus
@@ -355,6 +381,8 @@ var Inti = (function () {
     muatData: muatData,
     kemajuan: kemajuan,
     simpanKemajuan: simpanKemajuan,
+    tampilan: tampilan,
+    simpanTampilan: simpanTampilan,
     statusJurus: statusJurus,
     jatuhTempo: jatuhTempo,
     jurusPerluDiulang: jurusPerluDiulang,

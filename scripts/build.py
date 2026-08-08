@@ -28,6 +28,17 @@ JARAK_X = 28
 TINGGI_BARIS = 112
 TEPI = 24
 
+# Urutan bidang di halaman peta, ditetapkan di sini dan bukan diserahkan ke abjad
+# slug. Tanpa daftar ini, menambah 'aljabar' melempar 'teori-bilangan' ke dasar
+# halaman hanya karena huruf a. Urutannya mengikuti urutan pengerjaan di PLAN.md.
+# Daftar ini sekaligus jadi satu-satunya pilar yang sah — salah ketik pada 'pilar'
+# tidak lagi diam-diam membuat bidang hantu yang muncul sebagai peta kosong.
+URUT_PILAR = ("teori-bilangan", "aljabar", "kombinatorika", "geometri")
+
+# Dari yang paling awal ke paling akhir. Urutannya dipakai saringan tahap di peta:
+# siswa yang menyiapkan OSN-P tetap perlu melihat jurus OSN-K.
+TAHAP_SAH = ("osn-k", "osn-p", "osn")
+
 
 class GagalBuild(Exception):
     pass
@@ -272,6 +283,21 @@ WAJIB_SOAL = ("id", "sumber", "pilar", "jurus", "bentuk")
 BENTUK_SAH = ("isian", "uraian")
 
 
+def periksa_pilar_tahap(nama_berkas, pilar, tahap, galat):
+    """Pilar dan tahap harus dari daftar yang sah, bukan teks bebas.
+
+    Keduanya menentukan tempat jurus di peta dan apakah ia lolos saringan tahap.
+    Salah ketik satu huruf akan membuatnya hilang dari kedua-duanya tanpa keluhan
+    apa pun, jadi lebih baik build-nya berhenti di sini.
+    """
+    if pilar not in URUT_PILAR:
+        galat.append("%s: pilar '%s' tidak dikenal — pilih %s"
+                     % (nama_berkas, pilar, ", ".join(URUT_PILAR)))
+    if tahap not in TAHAP_SAH:
+        galat.append("%s: tahap '%s' tidak dikenal — pilih %s"
+                     % (nama_berkas, tahap, ", ".join(TAHAP_SAH)))
+
+
 def muat_jurus(galat):
     hasil = {}
     for jalur in sorted((KONTEN / "jurus").glob("*.md")):
@@ -292,6 +318,8 @@ def muat_jurus(galat):
         if jid in hasil:
             galat.append("%s: id '%s' dipakai dua kali" % (jalur.name, jid))
             continue
+
+        periksa_pilar_tahap(jalur.name, depan["pilar"], depan.get("tahap", "osn-k"), galat)
 
         bagian = belah_bagian(badan)
         hasil[jid] = {
@@ -338,6 +366,8 @@ def muat_soal(galat):
             galat.append("%s: bentuk '%s' tidak dikenal — pilih %s"
                          % (jalur.name, bentuk, " atau ".join(BENTUK_SAH)))
             continue
+
+        periksa_pilar_tahap(jalur.name, depan["pilar"], depan.get("tahap", "osn-k"), galat)
 
         bagian = belah_bagian(badan)
         jawaban = depan.get("jawaban")
@@ -461,9 +491,39 @@ def tata_letak(jurus):
 
         ukuran[pilar] = {
             "lebar": lebar_total + TEPI * 2,
-            "tinggi": (max(baris) + 1) * TINGGI_BARIS + TEPI * 2,
+            "tinggi": tinggi_untuk(max(baris)),
+            # Tinggi SVG kalau saringan tahap dipasang. Dihitung di sini, bukan di
+            # peramban: kalau peta.js menghitungnya sendiri ia harus menyalin
+            # TINGGI_BARIS dan TEPI, dan konstanta tata letak yang tersalin di dua
+            # tempat adalah persis jebakan yang sudah kita punya satu.
+            "tinggi_sampai": tinggi_per_tahap(simpul),
         }
     return ukuran
+
+
+def tinggi_untuk(tingkat_terdalam):
+    return (tingkat_terdalam + 1) * TINGGI_BARIS + TEPI * 2
+
+
+def tinggi_per_tahap(simpul):
+    """Tinggi SVG untuk tiap batas tahap, memakai posisi y yang sudah ditetapkan.
+
+    Menyaring tahap hanya menyembunyikan simpul — koordinat yang lain tidak
+    bergeser sedikit pun. Yang berubah cuma sampai baris ke berapa petanya perlu
+    digambar, dan itu yang dihitung di sini. Pilar yang belum punya jurus sama
+    sekali untuk suatu tahap diberi 0, dan peta.js menampilkan pesan kosong.
+    """
+    hasil = {}
+    for batas in TAHAP_SAH:
+        tampak = [j for j in simpul if urutan_tahap(j.get("tahap")) <= urutan_tahap(batas)]
+        hasil[batas] = tinggi_untuk(max(j["tingkat"] for j in tampak)) if tampak else 0
+    return hasil
+
+
+def urutan_tahap(tahap):
+    """Tahap tak dikenal dianggap paling awal — tata letak tidak boleh meledak
+    karena data uji yang tidak menyertakan tahap."""
+    return TAHAP_SAH.index(tahap) if tahap in TAHAP_SAH else 0
 
 
 # ---------------------------------------------------------------- utama
@@ -488,7 +548,13 @@ def main():
         json.dumps(
             {
                 "ukuran": ukuran,
-                "simpul": sorted(jurus.values(), key=lambda j: (j["pilar"], j["tingkat"], j["x"])),
+                # Urutan simpul di sini yang menentukan urutan bidang di halaman
+                # peta: inti.js menyusun urutJurus dari daftar ini, dan peta.js
+                # mengelompokkannya lewat Object.keys tanpa mengurutkan ulang.
+                "simpul": sorted(
+                    jurus.values(),
+                    key=lambda j: (URUT_PILAR.index(j["pilar"]), j["tingkat"], j["x"]),
+                ),
             },
             ensure_ascii=False,
             indent=1,

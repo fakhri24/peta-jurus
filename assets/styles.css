@@ -160,6 +160,38 @@ label { color: var(--tinta-2); font-size: .9rem; min-width: 8rem; }
 .ajakan.tenang { border-left-color: var(--tinta-3); }
 .ajakan p { margin: 0; }
 
+/* ------------------------------------------------------------------ kendali peta */
+
+.kendali-peta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem 1rem;
+  margin: 1.4rem 0 .9rem;
+}
+
+.tab-pilar { display: flex; flex-wrap: wrap; gap: .3rem; }
+.tab-pilar .tab {
+  font: inherit;
+  font-size: .9rem;
+  color: var(--tinta-2);
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--lengkung);
+  padding: .3rem .7rem;
+  cursor: pointer;
+}
+.tab-pilar .tab:hover { color: var(--tinta); border-color: var(--garis); }
+.tab-pilar .tab.aktif {
+  color: var(--tinta);
+  border-color: var(--tinta-3);
+  background: var(--kertas-kartu);
+}
+
+.kendali-peta .saring { margin: 0; font-size: .85rem; color: var(--tinta-2); }
+.kendali-peta .saring select { font: inherit; margin-left: .2rem; }
+
 /* ------------------------------------------------------------------ peta */
 
 .peta-bungkus {
@@ -198,6 +230,12 @@ label { color: var(--tinta-2); font-size: .9rem; min-width: 8rem; }
 .simpul.perlu-diulang .cincin { fill: none; stroke: var(--merah); stroke-width: 1; opacity: .5; rx: 6; }
 .simpul.perlu-diulang .tanda { fill: var(--merah); }
 
+/* Penanda prasyarat dari bidang lain. Garisnya tidak digambar — tiap pilar punya
+   SVG sendiri — jadi tanda inilah satu-satunya petunjuk di peta bahwa gemboknya
+   berasal dari luar. Sengaja lebih pekat daripada .tanda yang lain. */
+.simpul .tanda.luar { fill: var(--tinta-2); font-size: 11px; }
+.simpul.terkunci .tanda.luar { fill: var(--tinta); }
+
 .kunci-peta { display: flex; gap: 1rem; flex-wrap: wrap; margin: .9rem 0 0; font-size: .8rem; color: var(--tinta-2); }
 .kunci-peta span { display: inline-flex; align-items: center; gap: .35rem; }
 .kunci-peta i { width: 13px; height: 13px; border: 1.5px solid var(--tinta-3); border-radius: 2px; display: inline-block; }
@@ -205,6 +243,7 @@ label { color: var(--tinta-2); font-size: .9rem; min-width: 8rem; }
 .kunci-peta i.k-dipelajari { background: rgba(var(--stabilo), .45); }
 .kunci-peta i.k-dikuasai { border-color: var(--lulus); }
 .kunci-peta i.k-ulang { border-color: var(--merah); }
+.kunci-peta b.k-luar { font-weight: 400; color: var(--tinta); }
 
 /* ------------------------------------------------------------------ halaman jurus */
 
