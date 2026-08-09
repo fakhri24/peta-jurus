@@ -4,8 +4,8 @@ nama: Invarian dan Monovarian
 pilar: kombinatorika
 tahap: osn-p
 prasyarat: [sarang-merpati]
-contoh: []
-latihan: []
+contoh: [inv-contoh-1]
+latihan: [inv-01, inv-02, inv-03, inv-04, inv-05, inv-06]
 ---
 
 ## Kapan dipakai

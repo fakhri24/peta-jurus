@@ -4,8 +4,8 @@ nama: Rekursi dan Relasi Rekurens
 pilar: kombinatorika
 tahap: osn-p
 prasyarat: [kombinasi, induksi]
-contoh: []
-latihan: []
+contoh: [rek-contoh-1]
+latihan: [rek-01, rek-02, rek-03, rek-04, rek-05, rek-06]
 ---
 
 ## Kapan dipakai

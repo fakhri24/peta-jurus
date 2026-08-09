@@ -1370,8 +1370,17 @@
    "prasyarat": [
     "sarang-merpati"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "inv-contoh-1"
+   ],
+   "latihan": [
+    "inv-01",
+    "inv-02",
+    "inv-03",
+    "inv-04",
+    "inv-05",
+    "inv-06"
+   ],
    "kapan_dipakai": "<p>Soal berisi <strong>proses</strong> — satu langkah yang boleh diulang sesukanya — dan menanyakan apakah suatu keadaan bisa dicapai, atau apakah prosesnya pasti berhenti. Pemicunya: \"mungkinkah setelah beberapa langkah…\", \"buktikan tidak mungkin\", \"tunjukkan proses berakhir\".</p><p>Ciri yang menolong: kamu sudah mencoba beberapa kali dan selalu gagal mencapai targetnya. Itu tanda ada sesuatu yang tidak pernah berubah, dan tugasmu menemukannya.</p>",
    "inti": "<p><strong>Invarian</strong> adalah besaran yang nilainya tidak berubah oleh langkah apa pun. Kalau nilainya berbeda antara keadaan awal dan keadaan target, targetnya tidak bisa dicapai — berapa pun banyaknya langkah.</p><p>Yang paling sering menolong: paritas, jumlah atau selisih modulo suatu bilangan, banyaknya objek berjenis tertentu modulo dua, dan warna.</p><p><strong>Monovarian</strong> adalah besaran yang selalu berubah ke satu arah saja. Kalau ia selalu turun dan nilainya bilangan asli, prosesnya tidak bisa berjalan selamanya — karena tidak ada barisan turun tak berhingga di bilangan asli. Itu cara baku membuktikan proses berhenti.</p><p>Cara memakainya selalu tiga langkah: tebak besarannya, <strong>buktikan tiap langkah tidak mengubahnya</strong>, lalu bandingkan awal dengan target. Langkah kedua yang paling sering dilewati, dan ia yang menentukan sah atau tidaknya.</p><p>Invarian membuktikan <strong>tidak mungkin</strong>. Ia tidak pernah membuktikan mungkin.</p>",
    "jebakan": "<ul><li><strong>Menyimpulkan \"bisa dicapai\" karena invariannya cocok.</strong> Cocok itu syarat perlu, bukan cukup. Untuk menunjukkan bisa, tunjukkan urutan langkahnya.</li><li><strong>Ada langkah yang belum diperiksa.</strong> Kalau prosesnya punya beberapa jenis langkah, besaran itu harus tetap pada <strong>semuanya</strong>, termasuk yang jarang dipakai.</li><li><strong>Monovarian yang bisa turun selamanya.</strong> Besaran yang selalu berkurang tapi bernilai real tidak menjamin proses berhenti; yang menjamin adalah nilainya bulat dan terbatas di bawah.</li></ul>",
@@ -1413,8 +1422,17 @@
    "prasyarat": [
     "kombinasi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "pcg-contoh-1"
+   ],
+   "latihan": [
+    "pcg-01",
+    "pcg-02",
+    "pcg-03",
+    "pcg-04",
+    "pcg-05",
+    "pcg-06"
+   ],
    "kapan_dipakai": "<p>Soal meminta membuktikan sebuah <strong>identitas</strong> pencacahan, atau menghitung sesuatu yang sukar didekati langsung tetapi mudah kalau dilihat dari sisi lain. Pemicu yang khas: ada dua kelompok objek dan sebuah hubungan di antara keduanya — siswa dan klub, titik dan garis, orang dan jabat tangan.</p><p>Kalau soal berbentuk \"buktikan $A = B$\" dengan kedua sisi berupa jumlah pencacahan, hampir selalu ada satu himpunan yang dihitung dua kali.</p>",
    "inti": "<p>Hitung anggota <strong>satu himpunan yang sama</strong> dengan dua cara berbeda. Kedua hasilnya wajib sama, dan persamaan itulah yang dicari.</p><p>Bentuk yang paling sering dipakai adalah tabel berisi $0$ dan $1$: jumlah seluruh isinya bisa dihitung baris demi baris atau kolom demi kolom.</p><p>$$\\sum_{i} r_i = \\sum_{j} c_j$$</p><p>Contoh yang paling dikenal adalah lema jabat tangan pada graf: menjumlahkan derajat semua titik berarti menghitung tiap ruas dua kali, sekali dari tiap ujungnya.</p><p>$$\\sum_{v} \\deg(v) = 2|E|$$</p><p><strong>Kuncinya menyebutkan dengan jelas apa yang sedang dicacah</strong> — biasanya berupa pasangan $(a, b)$ yang memenuhi suatu hubungan. Kalau himpunannya sudah dinyatakan tepat, kedua cara menghitungnya biasanya muncul sendiri.</p>",
    "jebakan": "<ul><li><strong>Dua cara yang sebenarnya satu.</strong> Kalau cara kedua cuma menyusun ulang cara pertama, persamaan yang keluar sepele dan tidak membuktikan apa-apa.</li><li><strong>Himpunannya tidak sama persis.</strong> Kedua hitungan harus mencacah objek yang sama, bukan dua himpunan yang mirip.</li><li><strong>Tidak menyatakan apa yang dicacah.</strong> Tanpa itu, bukti jadi rangkaian rumus yang tidak bisa diperiksa — dan biasanya di situlah kekeliruannya bersembunyi.</li></ul>",
@@ -1431,8 +1449,17 @@
     "inklusi-eksklusi",
     "kombinasi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "drg-contoh-1"
+   ],
+   "latihan": [
+    "drg-01",
+    "drg-02",
+    "drg-03",
+    "drg-04",
+    "drg-05",
+    "drg-06"
+   ],
    "kapan_dipakai": "<p>Menyusun ulang $n$ objek sehingga <strong>tidak satu pun</strong> menempati tempat asalnya. Pemicunya hampir selalu berupa cerita: tidak ada orang yang menerima suratnya sendiri, tidak ada tamu yang duduk di kursi semula, tidak ada anak yang mendapat kado miliknya.</p><p>Bentuk yang sedikit berbeda tapi masih jurus ini: \"tepat $m$ orang menerima miliknya sendiri\".</p>",
    "inti": "<p>Banyaknya susunan tanpa satu pun titik tetap, ditulis $D_n$:</p><p>$$D_n = n! \\sum_{k=0}^{n} \\frac{(-1)^{k}}{k!}$$</p><p>Rumus itu bukan hafalan lepas — ia keluar langsung dari inklusi–eksklusi. Ambil $A_i$ sebagai himpunan susunan yang membiarkan objek ke-$i$ di tempatnya. Yang diminta adalah susunan yang tidak masuk satu pun $A_i$, dan irisan sebanyak $k$ di antaranya berukuran $(n-k)!$.</p><p>Bentuk rekursifnya sering lebih cepat dipakai:</p><p>$$D_n = (n-1)\\left(D_{n-1} + D_{n-2}\\right)$$</p><p>Nilai awal yang harus dikenali: $D_1 = 0$, $D_2 = 1$, $D_3 = 2$, $D_4 = 9$, $D_5 = 44$.</p><p>Untuk <strong>tepat</strong> $m$ objek yang tetap di tempatnya: pilih dulu $m$ yang tetap, lalu paksa sisanya berpindah semua.</p><p>$$\\binom{n}{m} D_{n-m}$$</p>",
    "jebakan": "<ul><li><strong>Mengurangkan sekali saja.</strong> \"Tidak ada yang tetap\" bukan $n!$ dikurangi banyaknya susunan dengan satu titik tetap; susunan dengan dua titik tetap akan terhitung kacau.</li><li><strong>Lupa memilih yang tetap.</strong> Untuk tepat $m$ titik tetap, faktor $\\binom{n}{m}$ tidak boleh hilang.</li><li><strong>Menulis $D_1 = 1$.</strong> Satu objek tidak punya tempat lain untuk dituju, jadi nilainya $0$ — dan salah di sini merusak seluruh rekursinya.</li></ul>",
@@ -1475,8 +1502,17 @@
     "kombinasi",
     "induksi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "rek-contoh-1"
+   ],
+   "latihan": [
+    "rek-01",
+    "rek-02",
+    "rek-03",
+    "rek-04",
+    "rek-05",
+    "rek-06"
+   ],
    "kapan_dipakai": "<p>Jawaban untuk $n$ bisa disusun dari jawaban untuk $n$ yang lebih kecil. Pemicunya: soal bergantung pada $n$ dan menanyakan nilainya untuk $n$ yang besar, atau strukturnya berbunyi \"lalu ditambahkan satu lagi\" — satu ubin lagi, satu anak tangga lagi, satu huruf lagi.</p><p>Cara memancingnya selalu sama: hitung tangan untuk $n = 1, 2, 3, 4$, lalu tanyakan apa yang terjadi pada langkah terakhir.</p>",
    "inti": "<p>Sebuah rekurens selalu punya dua bagian, dan keduanya wajib: <strong>kasus dasar</strong> dan <strong>langkah yang menghubungkan</strong>.</p><p>Menyusun langkahnya berarti memutuskan satu hal: keadaan berukuran $n$ dipecah menurut apa yang terjadi di ujungnya. Kasus-kasusnya harus lepas dan menutupi semuanya — syarat yang sama dengan aturan jumlah, karena memang itu yang sedang dipakai.</p><p>$$a_n = a_{n-1} + a_{n-2}$$</p><p>Untuk rekurens linear homogen orde dua</p><p>$$a_n = p\\,a_{n-1} + q\\,a_{n-2}$$</p><p>rumus tertutupnya dicari lewat persamaan karakteristik $x^2 = px + q$. Kalau akarnya $r_1$ dan $r_2$ berbeda,</p><p>$$a_n = A\\,r_1^{\\,n} + B\\,r_2^{\\,n}$$</p><p>dengan $A$ dan $B$ ditentukan dari kasus dasar.</p><p>Kalau rumus tertutupnya ditebak dari beberapa suku pertama, <strong>tebakan itu harus dibuktikan dengan induksi</strong> — kecocokan pada empat suku pertama bukan bukti.</p>",
    "jebakan": "<ul><li><strong>Kasus dasar kurang.</strong> Rekurens orde dua butuh dua nilai awal; satu saja membuat barisannya tidak tertentu.</li><li><strong>Kasus yang tumpang tindih.</strong> Kalau satu keadaan bisa masuk dua cabang, hitungannya kelebihan — dan biasanya baru ketahuan setelah dicocokkan dengan hitungan tangan.</li><li><strong>Langsung mengejar rumus tertutup.</strong> Banyak soal cuma minta nilai untuk $n$ kecil; rekurensnya sendiri sudah jawabannya.</li></ul>",
@@ -1536,8 +1572,17 @@
    "prasyarat": [
     "pencacahan-ganda"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "grd-contoh-1"
+   ],
+   "latihan": [
+    "grd-01",
+    "grd-02",
+    "grd-03",
+    "grd-04",
+    "grd-05",
+    "grd-06"
+   ],
    "kapan_dipakai": "<p>Soal berbicara tentang <strong>hubungan berpasangan</strong>: siapa berjabat tangan dengan siapa, kota mana terhubung jalan, tim mana sudah bertanding melawan tim mana, orang yang saling kenal. Begitu kamu menggambar titik untuk tiap objek dan ruas untuk tiap hubungan, banyak soal berubah menjadi soal tentang derajat.</p><p>Pemicu lain: soal menyebut \"setiap dua di antaranya\" atau memberi data berapa hubungan yang dimiliki tiap objek.</p>",
    "inti": "<p>Sebuah graf adalah himpunan titik beserta ruas yang menghubungkan pasangan titik. Derajat sebuah titik, $\\deg(v)$, adalah banyaknya ruas yang menyentuhnya.</p><p><strong>Lema jabat tangan</strong> — pencacahan ganda yang paling sering dipakai:</p><p>$$\\sum_{v} \\deg(v) = 2|E|$$</p><p>Menjumlahkan derajat berarti menghitung tiap ruas dua kali, sekali dari masing-masing ujungnya. Akibat langsungnya sering jadi kunci soal: <strong>banyaknya titik berderajat ganjil selalu genap.</strong></p><p>Graf lengkap $K_n$, yang tiap dua titiknya terhubung, punya</p><p>$$\\binom{n}{2} = \\frac{n(n-1)}{2}$$</p><p>ruas — itu banyaknya jabat tangan kalau semua orang bersalaman sekali.</p><p><strong>Pohon</strong> adalah graf terhubung tanpa siklus. Pohon dengan $n$ titik selalu punya tepat $n-1$ ruas, dan itu batas yang sering dipakai: graf terhubung tidak mungkin punya ruas lebih sedikit dari itu.</p>",
    "jebakan": "<ul><li><strong>Lupa membagi dua.</strong> Jumlah derajat menghitung tiap ruas dua kali; ia bukan banyaknya ruas.</li><li><strong>Mengira grafnya terhubung.</strong> Soal jarang menjanjikannya, dan graf yang terpecah beberapa bagian sering justru kasus yang menentukan.</li><li><strong>Menganggap gambar sebagai bukti.</strong> Satu gambar hanya menunjukkan satu kemungkinan; yang membuktikan adalah alasan tentang derajat atau banyaknya ruas.</li></ul>",
@@ -1572,8 +1617,17 @@
     "kombinasi",
     "stars-and-bars"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "bij-contoh-1"
+   ],
+   "latihan": [
+    "bij-01",
+    "bij-02",
+    "bij-03",
+    "bij-04",
+    "bij-05",
+    "bij-06"
+   ],
    "kapan_dipakai": "<p>Himpunan yang harus dicacah terasa rumit, tapi kamu menduga jumlahnya sama dengan sesuatu yang sudah kamu tahu cara menghitungnya. Pemicu yang sering: hasil hitungan tangan untuk $n$ kecil ternyata $2^n$, $n!$, atau bilangan yang sudah kamu kenal.</p><p>Juga dipakai ketika soal memang meminta membuktikan dua himpunan <strong>sama banyak</strong>, tanpa menghitung keduanya.</p>",
    "inti": "<p>Buat padanan satu-satu antara himpunan yang ditanya dan himpunan yang sudah diketahui jumlahnya. Kalau padanannya sah, kedua himpunan pasti sama banyak.</p><p>Supaya sah, padanan itu harus <strong>satu-satu</strong> dan <strong>pada</strong>: tidak ada dua anggota yang dipetakan ke tempat yang sama, dan tidak ada anggota tujuan yang terlewat. Cara terpendek membuktikan keduanya sekaligus adalah <strong>menunjukkan cara membalikkannya</strong> — tulis padanannya, tulis kebalikannya, lalu tunjukkan keduanya saling meniadakan.</p><p>Padanan baku yang sering dipakai kembali:</p><ul><li>Himpunan bagian dari $n$ unsur ↔ barisan $0$ dan $1$ sepanjang $n$, memberi $2^{n}$.</li><li>Penyelesaian $x_1 + \\cdots + x_k = n$ ↔ susunan bintang dan sekat.</li><li>Jalur pada kisi dari satu pojok ke pojok lain ↔ pemilihan langkah mana yang ke kanan.</li></ul><p><strong>Bijeksi juga alat pembuktian, bukan cuma alat hitung.</strong> Banyak identitas koefisien binomial paling jelas dibuktikan dengan memasangkan objek kedua sisi.</p>",
    "jebakan": "<ul><li><strong>Memberi padanan tanpa memeriksa kebalikannya.</strong> Aturan yang terdengar wajar bisa saja memetakan dua objek berbeda ke tempat yang sama.</li><li><strong>Padanan yang bocor.</strong> Kalau ada anggota tujuan yang tidak pernah tercapai, yang kamu buktikan cuma \"tidak lebih banyak\", bukan \"sama banyak\".</li><li><strong>Berpindah ke himpunan yang sama sulitnya.</strong> Padanan hanya berguna kalau sisi tujuannya benar-benar sudah bisa dihitung.</li></ul>",

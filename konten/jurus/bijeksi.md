@@ -4,8 +4,8 @@ nama: Bijeksi
 pilar: kombinatorika
 tahap: osn-p
 prasyarat: [kombinasi, stars-and-bars]
-contoh: []
-latihan: []
+contoh: [bij-contoh-1]
+latihan: [bij-01, bij-02, bij-03, bij-04, bij-05, bij-06]
 ---
 
 ## Kapan dipakai

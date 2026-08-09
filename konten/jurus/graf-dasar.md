@@ -4,8 +4,8 @@ nama: Graf Dasar
 pilar: kombinatorika
 tahap: osn-p
 prasyarat: [pencacahan-ganda]
-contoh: []
-latihan: []
+contoh: [grd-contoh-1]
+latihan: [grd-01, grd-02, grd-03, grd-04, grd-05, grd-06]
 ---
 
 ## Kapan dipakai

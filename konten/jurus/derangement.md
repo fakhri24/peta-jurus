@@ -4,8 +4,8 @@ nama: Perpindahan Total
 pilar: kombinatorika
 tahap: osn-p
 prasyarat: [inklusi-eksklusi, kombinasi]
-contoh: []
-latihan: []
+contoh: [drg-contoh-1]
+latihan: [drg-01, drg-02, drg-03, drg-04, drg-05, drg-06]
 ---
 
 ## Kapan dipakai

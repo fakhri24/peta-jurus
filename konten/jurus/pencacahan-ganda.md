@@ -4,8 +4,8 @@ nama: Pencacahan Ganda
 pilar: kombinatorika
 tahap: osn-p
 prasyarat: [kombinasi]
-contoh: []
-latihan: []
+contoh: [pcg-contoh-1]
+latihan: [pcg-01, pcg-02, pcg-03, pcg-04, pcg-05, pcg-06]
 ---
 
 ## Kapan dipakai

@@ -170,6 +170,519 @@
    "rubrik": []
   },
   {
+   "id": "bij-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "bijeksi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Sebuah semut berada di titik $(0,0)$ pada kisi persegi dan hendak menuju $(6,4)$. Ia hanya boleh melangkah satu satuan ke kanan atau satu satuan ke atas.</p><p>Ada berapa jalur yang mungkin?</p>",
+   "jawaban": "210",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ubah jalurnya menjadi barisan. Berapa langkah yang dibutuhkan seluruhnya, dan apakah angka itu sama untuk tiap jalur?",
+    "Catat jalurnya sebagai barisan huruf K dan A, lalu periksa bahwa tiap barisan semacam itu memang memberi jalur yang sah.",
+    "Menentukan barisan sama dengan memilih langkah keberapa saja yang ke atas."
+   ],
+   "pembahasan": "<p><strong>Ubah jalur menjadi barisan.</strong> Untuk sampai dari $(0,0)$ ke $(6,4)$, semut harus melangkah $6$ kali ke kanan dan $4$ kali ke atas, seluruhnya</p><p>$$6 + 4 = 10 \\text{ langkah}$$</p><p>Angka ini sama untuk tiap jalur, sebab semut tidak pernah mundur.</p><p>Catat jalurnya sebagai barisan sepanjang $10$ dari huruf K dan A.</p><p><strong>Periksa padanannya ke dua arah.</strong></p><ul><li>Tiap jalur memberi tepat satu barisan.</li><li>Tiap barisan yang memuat tepat $6$ huruf K dan $4$ huruf A memberi tepat satu jalur — jalankan saja langkahnya berurutan; ia selalu berakhir di $(6,4)$.</li></ul><p>Jadi mencacah jalur sama dengan mencacah barisan.</p><p><strong>Cacah barisannya.</strong> Sebuah barisan ditentukan sepenuhnya begitu diputuskan langkah keberapa saja yang ke atas:</p><p>$$\\binom{10}{4} = \\frac{10 \\times 9 \\times 8 \\times 7}{4 \\times 3 \\times 2 \\times 1} = \\boxed{210}$$</p><p><strong>Boleh juga dari sisi K:</strong> $\\binom{10}{6} = 210$. Hasilnya sama, sesuai $\\binom nk = \\binom n{n-k}$.</p><p><strong>Rumus umumnya</strong> untuk $(0,0) \\to (m,n)$:</p><p>$$\\binom{m+n}{n}$$</p><p><strong>Periksa dengan rekursi.</strong> Banyaknya jalur ke sebuah titik sama dengan jumlah jalur ke titik di kirinya dan di bawahnya. Mengisi kisi $6\\times4$ dengan aturan itu — persis segitiga Pascal yang dimiringkan — memberi $210$ di pojok kanan atas. Dua cara yang sangat berbeda bertemu di angka yang sama.</p><p><strong>Kalau ada titik yang harus dihindari,</strong> cara barisan tidak langsung berlaku, dan yang dipakai adalah pengurangan: hitung seluruh jalur, lalu kurangi jalur yang melewati titik terlarang. Jalur yang melewati sebuah titik dihitung dengan mengalikan jalur menuju titik itu dengan jalur dari titik itu ke tujuan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bij-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "bijeksi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa barisan <strong>tak turun</strong> $\\left(a_1, a_2, a_3, a_4\\right)$ yang seluruh sukunya diambil dari $\\{1,2,3,4,5\\}$?</p><p>(Tak turun berarti $a_1 \\le a_2 \\le a_3 \\le a_4$; suku boleh berulang.)</p>",
+   "jawaban": "70",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Urutan sukunya sudah ditentukan oleh syarat tak turun, jadi yang benar-benar bebas hanyalah <strong>berapa kali</strong> tiap nilai muncul.",
+    "Ubah barisannya menjadi catatan banyaknya kemunculan tiap nilai. Berapa jumlah seluruh catatan itu?",
+    "Persoalannya berubah menjadi membagi $4$ satuan ke dalam $5$ wadah."
+   ],
+   "pembahasan": "<p><strong>Amati apa yang sebenarnya bebas.</strong> Sebuah barisan tak turun ditentukan sepenuhnya oleh <strong>berapa kali</strong> tiap nilai muncul — urutannya tidak menambah kebebasan apa pun, sebab sukunya wajib terurut naik.</p><p><strong>Bangun padanannya.</strong> Untuk tiap barisan, catat</p><p>$$x_j = \\text{banyaknya suku yang bernilai } j, \\qquad j = 1,\\dots,5$$</p><p>Karena barisannya punya $4$ suku,</p><p>$$x_1 + x_2 + x_3 + x_4 + x_5 = 4, \\qquad x_j \\ge 0$$</p><p>Contohnya barisan $(1,3,3,5)$ menjadi $(1,0,2,0,1)$.</p><p><strong>Periksa arah sebaliknya.</strong> Dari sebarang penyelesaian tak negatif, susun barisannya: tulis nilai $1$ sebanyak $x_1$ kali, lalu $2$ sebanyak $x_2$ kali, dan seterusnya. Hasilnya selalu barisan tak turun sepanjang $4$ dengan suku dari $\\{1,\\dots,5\\}$, dan cara menyusunnya hanya satu.</p><p>Kedua arah saling meniadakan, jadi padanannya satu-satu dan pada.</p><p><strong>Cacah penyelesaiannya</strong> dengan $n = 4$ dan $k = 5$:</p><p>$$\\binom{n+k-1}{k-1} = \\binom{8}{4} = \\frac{8 \\times 7 \\times 6 \\times 5}{4 \\times 3 \\times 2 \\times 1} = \\boxed{70}$$</p><p><strong>Yang dilatih di sini adalah mengubah bentuk soalnya.</strong> Soal berbicara tentang barisan; jawabannya datang dari soal membagi objek identik. Padanan itu yang menghubungkan keduanya, dan tanpanya rumus yang tepat tidak akan terlihat.</p><p><strong>Bentuk umumnya</strong> — barisan tak turun sepanjang $r$ dari $n$ nilai:</p><p>$$\\binom{n+r-1}{r}$$</p><p>Ini juga banyaknya cara memilih $r$ benda dari $n$ jenis <strong>dengan pengulangan diperbolehkan</strong> — sebab memilih dengan pengulangan sama saja dengan mencatat berapa kali tiap jenis terambil.</p><p><strong>Periksa pada kasus kecil.</strong> Barisan tak turun sepanjang $2$ dari $\\{1,2,3\\}$: rumusnya memberi $\\binom42 = 6$, dan daftarnya memang $(1,1), (1,2), (1,3), (2,2), (2,3), (3,3)$.</p><p><strong>Bandingkan dengan barisan naik tegas</strong> ($a_1 &lt; a_2 &lt; a_3 &lt; a_4$), yang jawabannya $\\binom54 = 5$ — jauh lebih sedikit, sebab pengulangan dilarang. Satu tanda pada syarat mengubah seluruh rumusnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bij-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "bijeksi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa himpunan bagian dari $\\{1, 2, 3, \\dots, 10\\}$ yang <strong>banyak anggotanya genap</strong>? (Himpunan kosong ikut terhitung.)</p>",
+   "jawaban": "512",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Menjumlahkan $\\binom{10}{0} + \\binom{10}{2} + \\cdots$ bisa, tetapi ada padanan yang menyelesaikannya tanpa menghitung satu koefisien pun.",
+    "Pasangkan tiap himpunan berukuran genap dengan sebuah himpunan berukuran ganjil, lewat aturan yang membalik satu unsur tertentu.",
+    "Kalau padanannya sah, kedua kelompok sama banyaknya — dan jumlah keduanya sudah diketahui."
+   ],
+   "pembahasan": "<p><strong>Bangun padanannya.</strong> Sebut $G$ kumpulan himpunan bagian berukuran genap dan $J$ yang berukuran ganjil. Tetapkan sebuah unsur, misalnya $1$, lalu tentukan aturan:</p><p>$$f(A) = \\begin{cases} A \\cup \\{1\\} &amp; \\text{kalau } 1 \\notin A \\\\ A \\setminus \\{1\\} &amp; \\text{kalau } 1 \\in A\\end{cases}$$</p><p>yaitu <strong>balikkan keanggotaan unsur $1$</strong>.</p><p><strong>Aturan ini selalu mengubah paritas ukuran.</strong> Menambahkan $1$ menaikkan ukurannya satu; membuangnya menurunkannya satu. Jadi $f$ memetakan $G$ ke $J$ dan sebaliknya.</p><p><strong>Periksa padanannya sah.</strong> Menerapkan $f$ dua kali mengembalikan himpunan semula:</p><p>$$f\\bigl(f(A)\\bigr) = A$$</p><p>sebab membalik dua kali sama dengan tidak membalik. Karena $f$ adalah kebalikan dari dirinya sendiri, ia satu-satu dan pada.</p><p><strong>Simpulkan.</strong> Padanan itu menunjukkan</p><p>$$|G| = |J|$$</p><p>Sementara keduanya bersama-sama adalah seluruh himpunan bagian:</p><p>$$|G| + |J| = 2^{10} = 1024$$</p><p>Maka</p><p>$$|G| = \\frac{1024}{2} = \\boxed{512}$$</p><p><strong>Periksa dengan menjumlahkan langsung.</strong></p><p>$$\\binom{10}{0} + \\binom{10}{2} + \\binom{10}{4} + \\binom{10}{6} + \\binom{10}{8} + \\binom{10}{10}$$</p><p>$$= 1 + 45 + 210 + 210 + 45 + 1 = 512$$</p><p>Cocok — tetapi menuntut enam koefisien, sedangkan padanan tadi tidak menuntut satu pun.</p><p><strong>Perhatikan padanan ini tidak peduli pada angka $10$.</strong> Untuk sebarang $n \\ge 1$, aturan yang sama membuktikan himpunan bagian berukuran genap dan ganjil sama banyaknya, yaitu $2^{\\,n-1}$ masing-masing. Ini setara dengan identitas</p><p>$$\\sum_{k} (-1)^k \\binom{n}{k} = 0 \\qquad (n \\ge 1)$$</p><p>yang biasanya dibuktikan dengan mensubstitusi $x = -1$ ke $(1+x)^n$. Padanan tadi membuktikannya tanpa aljabar sama sekali.</p><p><strong>Syarat $n \\ge 1$ tidak boleh dilupakan.</strong> Untuk $n = 0$ hanya ada satu himpunan bagian, yaitu himpunan kosong, dan ukurannya genap — sehingga $|G| = 1$ dan $|J| = 0$. Padanannya gagal karena tidak ada unsur yang bisa dibalik, dan justru di situ terlihat bahwa keberadaan unsur tetap seperti $1$ adalah syarat yang sungguh dipakai.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bij-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "bijeksi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 4,
+   "soal": "<p>Ada berapa barisan sepanjang $10$ yang tiap sukunya $0$ atau $1$, memuat <strong>tepat empat</strong> angka $1$, dan <strong>tidak ada dua angka $1$ yang berdampingan</strong>?</p>",
+   "jawaban": "35",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Susun dulu keenam angka $0$, lalu perhatikan celah-celah yang terbentuk di antara dan di ujungnya.",
+    "Menempatkan tiap angka $1$ pada celah yang berbeda menjamin syaratnya terpenuhi dengan sendirinya.",
+    "Periksa arah sebaliknya: dari sebarang barisan yang sah, celah mana yang ditempati tiap angka $1$?"
+   ],
+   "pembahasan": "<p><strong>Susun angka nolnya dulu.</strong> Ada $10 - 4 = 6$ angka $0$. Jajarkan seluruhnya:</p><p>$$\\_\\ 0\\ \\_\\ 0\\ \\_\\ 0\\ \\_\\ 0\\ \\_\\ 0\\ \\_\\ 0\\ \\_$$</p><p>Enam angka $0$ membentuk $7$ celah, termasuk kedua ujungnya.</p><p><strong>Bangun padanannya.</strong> Tempatkan keempat angka $1$ pada <strong>celah yang berbeda-beda</strong>.</p><ul><li>Kalau tiap celah menampung paling banyak satu angka $1$, maka di antara dua angka $1$ mana pun pasti ada sedikitnya satu angka $0$ — jadi syaratnya terpenuhi.</li><li>Sebaliknya, dari sebarang barisan sah, tiap angka $1$ menempati sebuah celah di antara angka nolnya, dan tidak ada dua angka $1$ pada celah yang sama — sebab kalau ada, keduanya berdampingan.</li></ul><p>Kedua arah saling meniadakan, jadi padanannya satu-satu dan pada.</p><p><strong>Cacah pemilihannya.</strong> Angka $1$ tidak dapat dibedakan satu sama lain, sehingga yang dihitung hanyalah <strong>celah mana</strong> yang terpakai:</p><p>$$\\binom{7}{4} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = \\boxed{35}$$</p><p><strong>Bentuk umumnya</strong> — barisan sepanjang $n$ dengan tepat $k$ angka $1$ tanpa dua yang berdampingan:</p><p>$$\\binom{n-k+1}{k}$$</p><p>Periksa: $n = 10$, $k = 4$ memberi $\\binom74 = 35$.</p><p><strong>Syarat agar ada jawabannya sama sekali.</strong> Rumus di atas bernilai nol kalau $k &gt; n-k+1$, yaitu kalau angka $1$-nya terlalu banyak untuk dipisahkan. Untuk $n = 10$, paling banyak $k = 5$ — barisan $1010101010$. Dengan $k = 6$ jawabannya $0$, dan itu bisa disimpulkan tanpa menghitung.</p><p><strong>Cara celah ini yang menggantikan pengurangan.</strong> Menghitung lewat \"seluruhnya dikurangi yang melanggar\" akan sulit di sini, sebab \"ada dua angka $1$ berdampingan\" bisa terjadi pada beberapa pasangan sekaligus dan kelompoknya saling beririsan. Menyusun langsung supaya syaratnya terpenuhi menghindari seluruh persoalan itu.</p><p><strong>Bandingkan dengan soal yang tidak mematok banyaknya angka $1$.</strong> Kalau syaratnya hanya \"tidak ada dua angka $1$ berdampingan\" tanpa menyebut ada berapa, jawabannya $144$ — dan menjumlahkan rumus di atas atas seluruh $k$ memang memberi angka itu:</p><p>$$\\binom{11}{0}+\\binom{10}{1}+\\binom92+\\binom83+\\binom74+\\binom65 = 1+10+36+56+35+6 = 144$$</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bij-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "bijeksi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 4,
+   "soal": "<p>Dalam sebuah pemungutan suara, calon $A$ dan calon $B$ masing-masing memperoleh tepat $5$ suara. Surat suara dihitung satu per satu.</p><p>Ada berapa urutan penghitungan sehingga <strong>sepanjang penghitungan</strong> perolehan $A$ tidak pernah tertinggal dari $B$?</p>",
+   "jawaban": "42",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Catat urutan penghitungan sebagai barisan huruf A dan B sepanjang sepuluh, lalu nyatakan syaratnya dalam bahasa barisan itu.",
+    "Syaratnya: pada setiap awalan barisan, banyaknya A tidak kurang dari banyaknya B.",
+    "Hitung seluruh barisan lebih dulu, lalu cari cara memasangkan barisan yang melanggar dengan sesuatu yang mudah dihitung."
+   ],
+   "pembahasan": "<p><strong>Ubah menjadi barisan.</strong> Catat penghitungan sebagai barisan sepanjang $10$ yang memuat $5$ huruf A dan $5$ huruf B. Syaratnya menjadi: <strong>pada setiap awalan, banyaknya A tidak kurang dari banyaknya B.</strong></p><p><strong>Seluruh barisan tanpa syarat.</strong></p><p>$$\\binom{10}{5} = 252$$</p><p><strong>Pasangkan barisan yang melanggar.</strong> Sebuah barisan melanggar kalau pada suatu saat B melampaui A. Ambil saat <strong>pertama</strong> hal itu terjadi — pada posisi itu, banyaknya B tepat satu lebih banyak daripada A.</p><p>Sekarang balikkan setiap huruf <strong>sesudah</strong> posisi itu: tiap A menjadi B dan tiap B menjadi A.</p><p>Sebelum pembalikan, barisan itu punya $5$ A dan $5$ B. Misalkan sampai posisi pelanggaran pertama ada $a$ huruf A dan $a+1$ huruf B. Sesudahnya ada $5-a$ huruf A dan $4-a$ huruf B, dan pembalikan menukar keduanya. Barisan barunya memuat</p><p>$$a + (4-a) = 4 \\text{ huruf A}, \\qquad (a+1) + (5-a) = 6 \\text{ huruf B}$$</p><p><strong>Periksa padanannya sah.</strong> Dari sebarang barisan berisi $4$ A dan $6$ B, banyaknya B melebihi A, jadi pasti ada saat pertama B melampaui A. Balikkan sesudah saat itu, dan diperoleh kembali barisan berisi $5$ A dan $5$ B yang melanggar. Kedua arah saling meniadakan, sehingga padanannya satu-satu dan pada.</p><p>Maka banyaknya barisan yang melanggar sama dengan</p><p>$$\\binom{10}{4} = 210$$</p><p><strong>Kurangkan.</strong></p><p>$$252 - 210 = \\boxed{42}$$</p><p><strong>Bentuk umumnya</strong> untuk $n$ suara masing-masing:</p><p>$$\\binom{2n}{n} - \\binom{2n}{n-1} = \\frac{1}{n+1}\\binom{2n}{n}$$</p><p>yaitu <strong>bilangan Catalan</strong> ke-$n$. Untuk $n = 5$:</p><p>$$\\frac{1}{6}\\binom{10}{5} = \\frac{252}{6} = 42$$</p><p>Cocok.</p><p><strong>Yang membuat soal ini berharga</strong> adalah bentuk padanannya. Ia tidak memasangkan objek yang dicari dengan sesuatu yang mudah — melainkan memasangkan objek yang <strong>melanggar</strong> dengan sesuatu yang mudah. Cara pembalikan seperti ini muncul berulang kali di soal jalur dan barisan, dan ia yang melahirkan bilangan Catalan.</p><p>Bilangan Catalan $1, 2, 5, 14, 42, 132, \\dots$ juga mencacah hal-hal yang tampak jauh berbeda: susunan tanda kurung yang sah, cara membagi segi banyak menjadi segitiga, dan jalur kisi yang tidak melewati diagonal. Semuanya berpadanan satu sama lain.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "bij-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "bijeksi"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Buktikan bahwa banyaknya himpunan bagian dari $\\{1,2,\\dots,n\\}$ yang <strong>tidak memuat dua bilangan berurutan</strong> dan <strong>beranggotakan tepat $k$ unsur</strong> adalah</p><p>$$\\binom{n-k+1}{k}$$</p><p>Buktikan dengan membangun padanan satu-satu, dan periksa padanan itu ke <strong>dua arah</strong>.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kalau anggotanya ditulis terurut naik, syarat \"tidak berurutan\" berarti selisih tiap dua anggota bertetangga paling sedikit $2$.",
+    "Cari penggeseran yang mengubah syarat \"selisih paling sedikit $2$\" menjadi \"selisih paling sedikit $1$\", yaitu himpunan biasa.",
+    "Untuk arah sebaliknya, tunjukkan penggeseran itu bisa dibalik dan hasilnya selalu memenuhi syarat asli."
+   ],
+   "pembahasan": "<p><strong>Tuliskan anggotanya terurut.</strong> Ambil sebuah himpunan bagian yang memenuhi syarat, dan tulis anggotanya</p><p>$$a_1 &lt; a_2 &lt; \\cdots &lt; a_k$$</p><p>Syarat \"tidak memuat dua bilangan berurutan\" berarti tidak ada dua anggota yang selisihnya $1$, yaitu</p><p>$$a_{i+1} - a_i \\ \\ge\\ 2 \\qquad \\text{untuk setiap } i$$</p><h4>Padanannya</h4><p>Tetapkan</p><p>$$b_i = a_i - (i-1), \\qquad i = 1,\\dots,k$$</p><p>yaitu geser anggota ke-$i$ ke bawah sebanyak $i-1$.</p><p><strong>Periksa hasilnya himpunan biasa.</strong> Selisih dua anggota bertetangga menjadi</p><p>$$b_{i+1} - b_i = \\left(a_{i+1} - i\\right) - \\left(a_i - (i-1)\\right) = a_{i+1} - a_i - 1 \\ \\ge\\ 1$$</p><p>Jadi $b_1 &lt; b_2 &lt; \\cdots &lt; b_k$ — seluruhnya berbeda dan terurut naik, tanpa syarat tambahan apa pun.</p><p><strong>Periksa jangkauannya.</strong> Anggota terkecil: $b_1 = a_1 \\ge 1$. Anggota terbesar:</p><p>$$b_k = a_k - (k-1) \\le n - k + 1$$</p><p>Jadi $\\left\\{b_1,\\dots,b_k\\right\\}$ adalah himpunan bagian berukuran $k$ dari $\\{1, 2, \\dots, n-k+1\\}$.</p><h4>Arah sebaliknya</h4><p>Ambil sebarang himpunan bagian berukuran $k$ dari $\\{1,\\dots,n-k+1\\}$, tulis anggotanya terurut $b_1 &lt; \\cdots &lt; b_k$, lalu tetapkan</p><p>$$a_i = b_i + (i-1)$$</p><p><strong>Periksa hasilnya memenuhi syarat asli.</strong></p><p>$$a_{i+1} - a_i = \\left(b_{i+1} - b_i\\right) + 1 \\ \\ge\\ 1 + 1 = 2$$</p><p>sehingga tidak ada dua anggota yang berurutan. Anggota terbesarnya</p><p>$$a_k = b_k + (k-1) \\le (n-k+1) + (k-1) = n$$</p><p>sehingga seluruh anggotanya berada di dalam $\\{1,\\dots,n\\}$.</p><p><strong>Kedua arah saling meniadakan,</strong> sebab menggeser turun lalu naik dengan besaran yang sama mengembalikan bilangan semula. Jadi padanannya satu-satu dan pada.</p><h4>Simpulkan</h4><p>Kedua himpunan sama banyaknya, dan sisi kanannya tinggal dicacah:</p><p>$$\\binom{n-k+1}{k} \\qquad \\blacksquare$$</p><h4>Mengapa penggesernya $i-1$ dan bukan bilangan tetap</h4><p>Yang harus dihapus adalah <strong>kelebihan selisih</strong>, dan kelebihan itu menumpuk: anggota kedua membawa satu kelebihan, anggota ketiga membawa dua, dan seterusnya. Penggeser yang bertambah seiring $i$ tepat menghapus tumpukan itu.</p><p>Menggeser dengan bilangan tetap tidak akan mengubah selisih antar-anggota sama sekali, jadi syaratnya tidak berubah dan padanannya tidak menolong.</p><h4>Periksa dengan kasus kecil</h4><p>Untuk $n = 5$, $k = 2$, rumusnya memberi $\\binom42 = 6$. Daftarnya:</p><p>$$\\{1,3\\},\\ \\{1,4\\},\\ \\{1,5\\},\\ \\{2,4\\},\\ \\{2,5\\},\\ \\{3,5\\}$$</p><p>Tepat $6$. Padanannya memetakan $\\{2,5\\}$ menjadi $\\{2,4\\}$, dan seterusnya.</p>",
+   "rubrik": [
+    "Menuliskan anggota himpunan terurut dan menyatakan syaratnya sebagai $a_{i+1}-a_i \\ge 2$",
+    "Menetapkan penggeseran $b_i = a_i - (i-1)$",
+    "Menghitung $b_{i+1}-b_i \\ge 1$, sehingga hasilnya himpunan biasa",
+    "Memeriksa jangkauannya, yaitu $b_k \\le n-k+1$",
+    "Arah sebaliknya: menetapkan $a_i = b_i + (i-1)$ dan memeriksa syarat aslinya terpenuhi",
+    "Menyatakan kedua arah saling meniadakan, sehingga padanannya satu-satu dan pada",
+    "Menyimpulkan jawabannya $\\binom{n-k+1}{k}$"
+   ]
+  },
+  {
+   "id": "bij-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "bijeksi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa himpunan bagian dari $\\{1, 2, 3, \\dots, 8\\}$?</p><p>Kerjakan dengan membangun padanan satu-satu ke sebuah himpunan yang sudah kamu tahu cara menghitungnya.</p>",
+   "jawaban": "256",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Membentuk himpunan bagian sama artinya dengan mengambil keputusan untuk tiap unsur. Bagaimana keputusan itu bisa dicatat?",
+    "Catat keputusannya sebagai barisan $0$ dan $1$ sepanjang delapan — satu tempat untuk tiap unsur.",
+    "Untuk memastikan padanannya sah, tunjukkan cara membacanya kembali dari barisan menjadi himpunan."
+   ],
+   "pembahasan": "<p><strong>Bangun padanannya.</strong> Untuk tiap himpunan bagian $A \\subseteq \\{1,\\dots,8\\}$, tuliskan barisan $\\left(b_1, b_2, \\dots, b_8\\right)$ dengan</p><p>$$b_i = \\begin{cases} 1 &amp; \\text{kalau } i \\in A \\\\ 0 &amp; \\text{kalau } i \\notin A\\end{cases}$$</p><p>Contohnya $A = \\{1,3,8\\}$ menjadi $10100001$, dan $A = \\varnothing$ menjadi $00000000$.</p><p><strong>Periksa arah sebaliknya.</strong> Dari sebarang barisan $0$ dan $1$ sepanjang $8$, bacalah kembali himpunannya: masukkan $i$ ke dalam $A$ tepat ketika $b_i = 1$. Cara ini selalu memberi sebuah himpunan bagian yang sah.</p><p><strong>Kedua arah saling meniadakan.</strong> Menulis himpunan menjadi barisan lalu membacanya kembali mengembalikan himpunan yang sama, dan sebaliknya. Karena itu padanannya <strong>satu-satu dan pada</strong>, sehingga kedua himpunan sama banyaknya.</p><p><strong>Cacah barisannya.</strong> Tiap tempat punya $2$ pilihan, dan ada $8$ tempat:</p><p>$$2^8 = \\boxed{256}$$</p><p><strong>Mengapa arah sebaliknya perlu diperiksa.</strong> Padanan satu arah saja hanya menunjukkan himpunan bagiannya <strong>tidak lebih banyak</strong> daripada barisannya. Untuk menyimpulkan sama banyaknya, harus ditunjukkan tidak ada barisan yang terlewat — dan itu yang dikerjakan oleh cara pembacaan tadi.</p><p>Kelalaian ini bukan kehalusan tanpa akibat. Kalau padanannya diubah menjadi \"tulis unsur $A$ berurutan lalu isi sisanya dengan nol\", maka $\\{1,2\\}$ dan $\\{2,1\\}$ memberi barisan yang sama, sementara sebagian barisan tidak pernah tercapai — dan pencacahannya salah.</p><p><strong>Cara pandang ini terpakai jauh lebih luas.</strong> Begitu sebuah objek berhasil ditulis sebagai <strong>barisan keputusan</strong>, mencacahnya berubah menjadi mengalikan banyaknya pilihan tiap keputusan. Soal jalur pada kisi, susunan bintang dan sekat, serta himpunan bagian tanpa dua unsur berurutan semuanya diselesaikan dengan cara yang sama — yang berbeda hanya barisan apa yang dipilih.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "drg-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "derangement"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Empat surat dimasukkan secara acak ke dalam empat amplop yang sudah bertuliskan alamat, satu surat per amplop.</p><p>Ada berapa cara sehingga <strong>tidak ada</strong> surat yang masuk ke amplop yang benar?</p>",
+   "jawaban": "9",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ini persoalan baku dengan lambang tersendiri. Cari nilainya untuk empat objek.",
+    "Bentuk rekursifnya sering paling cepat: nilai untuk $n$ dapat dihitung dari dua nilai sebelumnya.",
+    "Nilai awalnya adalah $0$ untuk satu objek dan $1$ untuk dua objek."
+   ],
+   "pembahasan": "<p>Yang dicari adalah $D_4$.</p><p><strong>Cara pertama — rekurens.</strong></p><p>$$D_n = (n-1)\\left(D_{n-1} + D_{n-2}\\right)$$</p><p>dengan $D_1 = 0$ dan $D_2 = 1$.</p><p>$$D_3 = 2\\left(D_2 + D_1\\right) = 2(1+0) = 2$$</p><p>$$D_4 = 3\\left(D_3 + D_2\\right) = 3(2+1) = \\boxed{9}$$</p><p><strong>Cara kedua — rumus jumlah.</strong></p><p>$$D_4 = 4!\\left(1 - \\frac{1}{1!} + \\frac{1}{2!} - \\frac{1}{3!} + \\frac{1}{4!}\\right)\n= 24\\left(1 - 1 + \\tfrac12 - \\tfrac16 + \\tfrac1{24}\\right) = 24 \\times \\tfrac{9}{24} = 9$$</p><p><strong>Cara ketiga — daftar seluruhnya.</strong> Untuk $n = 4$ ini masih mungkin dan berguna sebagai pemeriksaan. Tulis surat sebagai $1,2,3,4$ dan amplop pada urutan yang sama; yang dicari adalah susunan yang tiap tempatnya tidak ditempati angka yang sesuai:</p><p>$$2143,\\ 2341,\\ 2413,\\ 3142,\\ 3412,\\ 3421,\\ 4123,\\ 4312,\\ 4321$$</p><p>Tepat $9$ susunan.</p><p><strong>Mengapa mengurangkan sekali saja salah.</strong> Godaan yang wajar adalah menulis $4! - 4 \\times 3! = 24 - 24 = 0$, seolah setiap surat yang benar dibuang sekali. Hasil $0$ jelas keliru — daftar di atas menunjukkan ada sembilan. Sebabnya susunan yang membuat dua surat benar terhitung dua kali di dalam $4 \\times 3!$, sehingga yang dibuang terlalu banyak.</p><p><strong>Barisannya tumbuh cepat:</strong></p><p>$$0,\\ 1,\\ 2,\\ 9,\\ 44,\\ 265,\\ 1854,\\ \\dots$$</p><p>dan sangat dekat dengan $\\frac{n!}{e}$ — nyatanya $D_n$ adalah bilangan bulat terdekat dari $\\frac{n!}{e}$ untuk setiap $n \\ge 1$. Untuk $n = 4$: $\\frac{24}{e} \\approx 8{,}83$, dan bilangan bulat terdekatnya memang $9$. Sifat itu cara tercepat memeriksa jawaban.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "drg-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "derangement"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Enam orang duduk di enam kursi bernomor sesuai nama mereka. Setelah istirahat, mereka duduk kembali secara acak — satu orang per kursi.</p><p>Ada berapa cara duduk sehingga <strong>tidak seorang pun</strong> menempati kursinya semula?</p>",
+   "jawaban": "265",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ini persoalan baku dengan lambang tersendiri; yang dicari nilainya untuk enam objek.",
+    "Rekurensnya menghubungkan nilai untuk $n$ dengan dua nilai sebelumnya, jadi hitung berurutan dari yang kecil.",
+    "Periksa hasilnya dengan pendekatan $\\frac{n!}{e}$."
+   ],
+   "pembahasan": "<p>Yang dicari adalah $D_6$.</p><p><strong>Hitung berurutan dengan rekurens</strong> $D_n = (n-1)\\left(D_{n-1}+D_{n-2}\\right)$, mulai dari $D_1 = 0$ dan $D_2 = 1$:</p><table><thead><tr><th>$n$</th><th>perhitungan</th><th>$D_n$</th></tr></thead><tbody><tr><td>$3$</td><td>$2(1+0)$</td><td>$2$</td></tr><tr><td>$4$</td><td>$3(2+1)$</td><td>$9$</td></tr><tr><td>$5$</td><td>$4(9+2)$</td><td>$44$</td></tr><tr><td>$6$</td><td>$5(44+9)$</td><td>$\\boxed{265}$</td></tr></tbody></table><p><strong>Periksa dengan pendekatan.</strong></p><p>$$\\frac{6!}{e} = \\frac{720}{2{,}71828\\ldots} \\approx 264{,}87$$</p><p>Bilangan bulat terdekatnya $265$. Cocok.</p><p><strong>Periksa juga dengan rumus jumlah.</strong></p><p>$$D_6 = 720\\left(1 - 1 + \\tfrac12 - \\tfrac16 + \\tfrac1{24} - \\tfrac1{120} + \\tfrac1{720}\\right)$$</p><p>Suku-suku di dalam kurung berjumlah $\\frac{265}{720}$, sehingga hasilnya $265$.</p><p><strong>Mengapa rekurens biasanya lebih cepat di ujian.</strong> Rumus jumlah menuntut menghitung tujuh pecahan dengan penyebut berbeda lalu menjumlahkannya — pekerjaan yang mudah keliru. Rekurens hanya menuntut penjumlahan dan perkalian bilangan bulat, dan tiap langkahnya memberi nilai yang bisa dicocokkan dengan daftar yang sudah dihafal.</p><p><strong>Alasan bentuk rekurensnya</strong>, sebagai gambaran singkat. Tinjau ke mana orang pertama duduk: ada $n-1$ pilihan, sebab ia tidak boleh kembali ke kursinya sendiri. Misalkan ia duduk di kursi $k$. Lalu tinjau orang ke-$k$:</p><ul><li>kalau ia duduk di kursi orang pertama, sisanya adalah persoalan yang sama pada $n-2$ orang;</li><li>kalau tidak, kursi orang pertama menjadi \"kursi terlarang\" baginya, dan sisanya adalah persoalan yang sama pada $n-1$ orang.</li></ul><p>Kedua kasus itu memberi $D_{n-2} + D_{n-1}$, dan faktor $n-1$ dari pilihan pertama tadi melengkapinya. Pembuktian penuhnya ada di latihan terakhir jurus ini.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "drg-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "derangement"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Enam kado ditukar secara acak di antara enam orang, satu kado per orang.</p><p>Ada berapa cara pembagian sehingga <strong>tepat $2$ orang</strong> menerima kado miliknya sendiri?</p>",
+   "jawaban": "135",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pecah menjadi dua keputusan: siapa saja yang menerima miliknya sendiri, lalu apa yang terjadi pada sisanya.",
+    "Kata \"tepat\" menuntut sisanya <strong>tidak boleh</strong> ada yang menerima miliknya sendiri.",
+    "Sisa itu adalah persoalan yang sama pada objek yang lebih sedikit."
+   ],
+   "pembahasan": "<p><strong>Pecah menjadi dua keputusan.</strong></p><p><strong>Langkah 1 — pilih siapa yang menerima miliknya sendiri.</strong> Dua orang dari enam, tanpa urutan:</p><p>$$\\binom62 = 15$$</p><p><strong>Langkah 2 — pastikan sisanya tidak ada yang benar.</strong> Empat orang tersisa harus menerima kado yang bukan miliknya — tepat persoalan yang sama pada $4$ objek:</p><p>$$D_4 = 9$$</p><p><strong>Gabungkan.</strong></p><p>$$\\binom62 \\times D_4 = 15 \\times 9 = \\boxed{135}$$</p><p><strong>Mengapa langkah kedua memakai $D_4$ dan bukan $4!$.</strong> Kata <strong>\"tepat\"</strong> pada soal menentukan seluruhnya. Kalau dipakai $4!= 24$, yang terhitung adalah pembagian dengan <strong>paling sedikit</strong> dua orang benar — sebab di antara $24$ susunan itu ada yang membuat orang ketiga atau keempat ikut menerima miliknya sendiri. Hasilnya $15 \\times 24 = 360$, yang menghitung banyak pembagian berkali-kali.</p><p><strong>Bentuk umumnya</strong> untuk tepat $m$ objek yang tetap di tempatnya dari $n$ objek:</p><p>$$\\binom{n}{m} D_{n-m}$$</p><p><strong>Periksa lewat jumlah seluruhnya.</strong> Kalau rumus itu benar, menjumlahkan atas seluruh $m$ harus memberi $6! = 720$:</p><table><thead><tr><th>$m$</th><th>$\\binom6m$</th><th>$D_{6-m}$</th><th>hasil</th></tr></thead><tbody><tr><td>$0$</td><td>$1$</td><td>$265$</td><td>$265$</td></tr><tr><td>$1$</td><td>$6$</td><td>$44$</td><td>$264$</td></tr><tr><td>$2$</td><td>$15$</td><td>$9$</td><td>$135$</td></tr><tr><td>$3$</td><td>$20$</td><td>$2$</td><td>$40$</td></tr><tr><td>$4$</td><td>$15$</td><td>$1$</td><td>$15$</td></tr><tr><td>$5$</td><td>$6$</td><td>$0$</td><td>$0$</td></tr><tr><td>$6$</td><td>$1$</td><td>$1$</td><td>$1$</td></tr></tbody></table><p>$$265+264+135+40+15+0+1 = 720$$</p><p>Cocok. Pemeriksaan semacam ini murah dan langsung menangkap kekeliruan pada rumusnya.</p><p><strong>Perhatikan baris $m = 5$ bernilai nol.</strong> Memang mustahil tepat lima orang menerima miliknya sendiri — orang keenam otomatis juga menerima miliknya. Kenyataan itu terbaca langsung dari $D_1 = 0$, dan itu salah satu alasan mengapa nilai $D_1$ tidak boleh ditulis keliru.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "drg-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "derangement"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Lima surat dimasukkan secara acak ke dalam lima amplop bertuliskan alamat, satu surat per amplop.</p><p>Ada berapa cara sehingga <strong>tepat satu</strong> surat masuk ke amplop yang benar?</p>",
+   "jawaban": "45",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pecah menjadi dua keputusan: surat mana yang benar, lalu apa yang terjadi pada empat sisanya.",
+    "Kata \"tepat satu\" menuntut keempat surat sisanya seluruhnya salah amplop.",
+    "Sisanya adalah persoalan yang sama pada empat objek."
+   ],
+   "pembahasan": "<p><strong>Langkah 1 — pilih surat yang benar.</strong> Satu dari lima:</p><p>$$\\binom51 = 5$$</p><p><strong>Langkah 2 — pastikan empat sisanya seluruhnya salah.</strong> Ini persoalan yang sama pada $4$ objek:</p><p>$$D_4 = 9$$</p><p><strong>Gabungkan.</strong></p><p>$$5 \\times 9 = \\boxed{45}$$</p><p><strong>Bandingkan dengan tiga soal yang bunyinya mirip,</strong> dan perhatikan betapa berbedanya jawabannya:</p><table><thead><tr><th>Pertanyaan</th><th>Hitungan</th><th>Hasil</th></tr></thead><tbody><tr><td>Tidak ada yang benar</td><td>$D_5$</td><td>$44$</td></tr><tr><td>Tepat satu benar</td><td>$\\binom51 D_4$</td><td>$45$</td></tr><tr><td>Paling sedikit satu benar</td><td>$5! - D_5$</td><td>$76$</td></tr></tbody></table><p>Ketiganya dipisahkan oleh beberapa kata saja di soal, dan membaca kata itu dengan benar adalah separuh pekerjaannya.</p><p><strong>Periksa lewat jumlah seluruhnya.</strong> Seluruh kemungkinan banyaknya surat yang benar harus berjumlah $5! = 120$:</p><p>$$\\underbrace{44}_{m=0} + \\underbrace{45}_{m=1} + \\underbrace{\\binom52 D_3 = 10 \\times 2 = 20}_{m=2}\n+ \\underbrace{\\binom53 D_2 = 10 \\times 1 = 10}_{m=3} + \\underbrace{\\binom54 D_1 = 0}_{m=4}\n+ \\underbrace{1}_{m=5}$$</p><p>$$44 + 45 + 20 + 10 + 0 + 1 = 120$$</p><p>Cocok.</p><p><strong>Perhatikan kejanggalan yang menarik:</strong> \"tepat satu benar\" ($45$) ternyata <strong>lebih banyak</strong> daripada \"tidak ada yang benar\" ($44$), meskipun hanya selisih satu. Itu bukan kekeliruan — untuk $n = 5$ kedua angka itu memang hampir sama, dan sifat $D_n \\approx \\frac{n!}{e}$ beserta $\\binom n1 D_{n-1} \\approx \\frac{n!}{e}$ menjelaskan mengapa keduanya selalu berdekatan.</p><p><strong>Kekeliruan yang paling sering</strong> adalah memakai $4!$ untuk langkah kedua, sehingga jawabannya $5 \\times 24 = 120$ — yaitu seluruh susunan yang ada. Angka itu jelas keliru karena tidak semua susunan punya tepat satu surat benar, dan kejanggalan itu langsung terlihat kalau hasilnya dibandingkan dengan $5!$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "drg-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "derangement"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 4,
+   "soal": "<p>Tujuh orang menitipkan payungnya, lalu payung itu dikembalikan secara acak — satu payung per orang.</p><p>Ada berapa cara pengembalian sehingga tidak seorang pun menerima payungnya sendiri?</p>",
+   "jawaban": "1854",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Yang dicari adalah nilai baku untuk tujuh objek. Rekurens jauh lebih cepat daripada rumus jumlah di sini.",
+    "Hitung berurutan dari nilai kecil, dan tuliskan seluruh barisannya supaya bisa diperiksa.",
+    "Periksa hasil akhirnya dengan pendekatan $\\frac{n!}{e}$."
+   ],
+   "pembahasan": "<p>Yang dicari adalah $D_7$.</p><p><strong>Hitung berurutan.</strong> Pakai $D_n = (n-1)\\left(D_{n-1}+D_{n-2}\\right)$ dengan $D_1 = 0$, $D_2 = 1$:</p><table><thead><tr><th>$n$</th><th>perhitungan</th><th>$D_n$</th></tr></thead><tbody><tr><td>$3$</td><td>$2(1+0)$</td><td>$2$</td></tr><tr><td>$4$</td><td>$3(2+1)$</td><td>$9$</td></tr><tr><td>$5$</td><td>$4(9+2)$</td><td>$44$</td></tr><tr><td>$6$</td><td>$5(44+9)$</td><td>$265$</td></tr><tr><td>$7$</td><td>$6(265+44)$</td><td>$6 \\times 309 = \\boxed{1854}$</td></tr></tbody></table><p><strong>Periksa dengan pendekatan.</strong></p><p>$$\\frac{7!}{e} = \\frac{5040}{2{,}71828\\ldots} \\approx 1854{,}11$$</p><p>Bilangan bulat terdekatnya $1854$. Cocok.</p><p><strong>Mengapa rumus jumlah tidak dipakai di sini.</strong> Untuk $n = 7$ ia menuntut</p><p>$$D_7 = 5040\\left(1 - 1 + \\tfrac12 - \\tfrac16 + \\tfrac1{24} - \\tfrac1{120} + \\tfrac1{720} - \\tfrac1{5040}\\right)$$</p><p>yaitu delapan pecahan dengan penyebut berbeda yang harus disamakan lalu dijumlahkan. Rekurens hanya menuntut penjumlahan dan perkalian bilangan bulat, dan tiap barisnya bisa diperiksa terhadap nilai yang sudah dikenal.</p><p><strong>Kewajaran jawabannya.</strong> Nisbah terhadap seluruh susunan:</p><p>$$\\frac{1854}{5040} \\approx 0{,}3679$$</p><p>sangat dekat dengan $\\frac1e \\approx 0{,}3679$. Nisbah ini nyaris tidak berubah seiring $n$ bertambah — bahkan untuk $n$ sebesar apa pun, kira-kira $37\\%$ dari seluruh susunan tidak punya titik tetap. Kenyataan itu sering mengejutkan, sebab dugaan awal orang biasanya nisbahnya mengecil.</p><p><strong>Menuliskan seluruh barisannya berguna sebagai kebiasaan:</strong></p><p>$$0,\\ 1,\\ 2,\\ 9,\\ 44,\\ 265,\\ 1854,\\ 14833,\\ \\dots$$</p><p>Kekeliruan aritmetika di satu baris akan membuat baris berikutnya menyimpang jauh dari $\\frac{n!}{e}$, dan dengan begitu langsung ketahuan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "drg-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "derangement"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Sebut $D_n$ banyaknya susunan ulang $n$ objek yang tidak menempatkan satu pun objek di tempat asalnya.</p><p>Buktikan bahwa untuk $n \\ge 3$ berlaku</p><p>$$D_n = (n-1)\\left(D_{n-1} + D_{n-2}\\right)$$</p><p>dengan alasan pencacahan langsung — bukan dengan menurunkannya dari rumus jumlah.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tinjau ke mana objek pertama pergi. Ada berapa kemungkinan, dan mengapa banyaknya sama untuk tiap kemungkinan?",
+    "Setelah objek pertama menempati tempat $k$, tinjau objek ke-$k$: apakah ia menempati tempat pertama atau tidak. Dua kemungkinan itu memecah semuanya.",
+    "Untuk kasus \"tidak\", tunjukkan sisanya adalah persoalan yang sama pada $n-1$ objek — dengan tempat pertama berlaku sebagai tempat terlarang bagi objek ke-$k$."
+   ],
+   "pembahasan": "<p>Beri nomor objek dan tempat dengan $1$ sampai $n$; susunan yang dicacah adalah yang tidak menempatkan objek $i$ di tempat $i$ untuk setiap $i$.</p><h4>Langkah 1 — ke mana objek $1$ pergi</h4><p>Objek $1$ boleh menempati tempat mana pun kecuali tempat $1$, sehingga ada</p><p>$$n - 1 \\text{ pilihan}$$</p><p>Misalkan ia menempati tempat $k$, dengan $k \\ne 1$.</p><p>Banyaknya susunan yang mungkin setelah itu <strong>sama untuk tiap pilihan $k$</strong> — sebab penomorannya bisa ditukar tanpa mengubah persoalannya. Karena itu cukup menghitung untuk satu $k$, lalu mengalikannya dengan $n-1$.</p><h4>Langkah 2 — pecah menurut nasib objek $k$</h4><p><strong>Kasus A — objek $k$ menempati tempat $1$.</strong> Objek $1$ dan objek $k$ saling bertukar, dan keduanya sudah selesai. Yang tersisa adalah $n-2$ objek yang harus ditempatkan pada $n-2$ tempat, tanpa satu pun berada di tempat asalnya — persoalan yang sama pada $n-2$ objek.</p><p>Menyumbang $D_{n-2}$.</p><p><strong>Kasus B — objek $k$ </strong>tidak<strong> menempati tempat $1$.</strong> Tinjau $n-1$ objek selain objek $1$, dan $n-1$ tempat selain tempat $k$ — sebab tempat $k$ sudah terisi.</p><p>Larangan yang berlaku pada mereka adalah:</p><ul><li>objek $i$ tidak boleh di tempat $i$, untuk tiap $i \\ne 1, k$;</li><li>objek $k$ tidak boleh di tempat $1$, menurut andaian kasus ini.</li></ul><p>Jadi <strong>tiap objek punya tepat satu tempat terlarang, dan tempat terlarang itu berbeda-beda</strong> — tepat bentuk persoalan aslinya pada $n-1$ objek, dengan tempat $1$ berperan sebagai \"tempat asal\" bagi objek $k$.</p><p>Menyumbang $D_{n-1}$.</p><h4>Langkah 3 — rangkai</h4><p>Kedua kasus <strong>lepas</strong> — objek $k$ entah di tempat $1$ entah tidak — dan <strong>menutupi semuanya</strong>. Untuk tiap pilihan $k$, sumbangannya $D_{n-1} + D_{n-2}$. Karena ada $n-1$ pilihan $k$ dan banyaknya sama untuk masing-masing:</p><p>$$D_n = (n-1)\\left(D_{n-1} + D_{n-2}\\right) \\qquad \\blacksquare$$</p><h4>Bagian yang menentukan seluruh bukti</h4><p>Langkah yang paling mudah keliru adalah Kasus B. Godaannya adalah menyimpulkan sisanya \"bebas\", padahal objek $k$ membawa larangan baru — ia tidak boleh di tempat $1$. Justru larangan pengganti itulah yang membuat sisanya tetap berbentuk persoalan semula, dan tanpa menyebutkannya, kemunculan $D_{n-1}$ tidak punya alasan.</p><p>Perhatikan pula bahwa larangannya harus <strong>berbeda-beda</strong>: tiap objek punya satu tempat terlarang, dan tidak ada dua objek yang terlarang di tempat yang sama. Kalau tidak, persoalannya bukan lagi persoalan yang sama.</p><h4>Periksa dengan nilai kecil</h4><p>$$D_3 = 2(D_2 + D_1) = 2(1+0) = 2$$</p><p>Memang hanya ada dua: $231$ dan $312$.</p><p>$$D_4 = 3(D_3 + D_2) = 3(2+1) = 9$$</p><p>Cocok dengan pendaftaran langsung.</p><p><strong>Batas $n \\ge 3$ diperlukan</strong> karena buktinya memakai $D_{n-2}$ dengan $n-2 \\ge 1$. Untuk $n = 2$, Kasus B tidak punya isi — tidak ada objek selain objek $1$ dan objek $k$.</p>",
+   "rubrik": [
+    "Menyatakan objek $1$ punya $n-1$ pilihan tempat",
+    "Menyebut bahwa banyaknya susunan sisa sama untuk tiap pilihan, sebagai alasan sahnya mengalikan dengan $n-1$",
+    "Memecah menurut apakah objek $k$ menempati tempat $1$, dan menyatakan kedua kasus lepas serta lengkap",
+    "Kasus A: menyimpulkan sisanya persoalan yang sama pada $n-2$ objek",
+    "Kasus B: menyatakan larangan baru bagi objek $k$, yaitu tempat $1$",
+    "Kasus B: menunjukkan tiap objek punya tepat satu tempat terlarang yang berbeda-beda, sehingga sisanya persoalan yang sama pada $n-1$ objek",
+    "Merangkai menjadi $D_n = (n-1)(D_{n-1}+D_{n-2})$"
+   ]
+  },
+  {
+   "id": "drg-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "derangement"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Lima orang menitipkan topi mereka, lalu topi itu dikembalikan secara acak — satu topi untuk tiap orang.</p><p>Ada berapa cara pengembalian sehingga <strong>tidak seorang pun</strong> menerima topinya sendiri?</p>",
+   "jawaban": "44",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hitung dulu seluruh pengembalian tanpa syarat, lalu buang yang melanggar.",
+    "\"Melanggar\" berarti ada paling sedikit satu orang yang menerima topinya sendiri — dan kelompok-kelompok pelanggarnya saling beririsan.",
+    "Sebut $A_i$ himpunan pengembalian yang membuat orang ke-$i$ menerima topinya sendiri, lalu hitung ukuran irisannya."
+   ],
+   "pembahasan": "<p><strong>Seluruh pengembalian.</strong> Lima topi dibagikan ke lima orang, satu-satu:</p><p>$$5! = 120$$</p><p><strong>Susun kelompok pelanggarnya.</strong> Sebut $A_i$ himpunan pengembalian yang membuat orang ke-$i$ menerima topinya sendiri. Yang diminta adalah pengembalian yang tidak masuk satu pun $A_i$:</p><p>$$D_5 = 5! - |A_1 \\cup A_2 \\cup \\cdots \\cup A_5|$$</p><p><strong>Hitung ukuran irisannya.</strong> Kalau $k$ orang tertentu dipaksa menerima topinya sendiri, sisanya $5-k$ topi bebas dibagikan:</p><p>$$\\left|A_{i_1} \\cap \\cdots \\cap A_{i_k}\\right| = (5-k)!$$</p><p>Banyaknya cara memilih $k$ orang itu adalah $\\binom5k$.</p><p><strong>Rangkai dengan inklusi–eksklusi.</strong></p><p>$$|A_1 \\cup \\cdots \\cup A_5| = \\sum_{k=1}^{5} (-1)^{k-1}\\binom5k (5-k)!$$</p><p>$$= \\binom51 4! - \\binom52 3! + \\binom53 2! - \\binom54 1! + \\binom55 0!$$</p><p>$$= 120 - 60 + 20 - 5 + 1 = 76$$</p><p>$$D_5 = 120 - 76 = \\boxed{44}$$</p><p><strong>Bentuk umumnya.</strong> Menyusun ulang perhitungan di atas memberi</p><p>$$D_n = n! \\sum_{k=0}^{n} \\frac{(-1)^k}{k!}$$</p><p>Periksa untuk $n = 5$:</p><p>$$120\\left(1 - 1 + \\tfrac12 - \\tfrac16 + \\tfrac1{24} - \\tfrac1{120}\\right)\n= 120 \\times \\tfrac{44}{120} = 44$$</p><p><strong>Nilai yang layak dihafal:</strong></p><p>$$D_1 = 0, \\quad D_2 = 1, \\quad D_3 = 2, \\quad D_4 = 9, \\quad D_5 = 44, \\quad D_6 = 265$$</p><p>Perhatikan $D_1 = 0$ — satu orang tidak punya topi lain untuk diterima. Menulisnya $1$ merusak seluruh rekursinya.</p><p><strong>Kekeliruan yang paling sering</strong> adalah mengurangkan sekali saja: $120 - 5 \\times 4! = 0$. Itu keliru karena pengembalian yang membuat <strong>dua</strong> orang menerima topinya sendiri terhitung dua kali di dalam $5 \\times 4!$, sehingga terlalu banyak yang dibuang. Kelompok pelanggarnya beririsan, dan justru itu yang menuntut inklusi–eksklusi.</p><p><strong>Kewajarannya.</strong> Nisbah $\\frac{44}{120} \\approx 0{,}367$. Untuk $n$ besar, nisbah itu mendekati $\\frac1e \\approx 0{,}368$ — dan sudah sangat dekat bahkan di $n = 5$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "grd-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "graf-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 1,
+   "soal": "<p>Dalam sebuah turnamen, $10$ tim bertanding dengan sistem setengah kompetisi — setiap tim bertanding melawan setiap tim lainnya <strong>tepat sekali</strong>.</p><p>Ada berapa pertandingan seluruhnya?</p>",
+   "jawaban": "45",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Gambarkan sebagai graf: tim menjadi titik, pertandingan menjadi ruas antara dua tim.",
+    "Sebuah pertandingan ditentukan oleh pasangan tim, dan menukar urutan kedua tim tidak menghasilkan pertandingan yang berbeda.",
+    "Boleh juga lewat derajat: tiap tim bermain melawan berapa tim lain?"
+   ],
+   "pembahasan": "<p><strong>Cara pertama — cacah pasangannya.</strong> Sebuah pertandingan ditentukan oleh pasangan tim, dan pasangan $\\{A, B\\}$ sama dengan $\\{B, A\\}$:</p><p>$$\\binom{10}{2} = \\frac{10 \\times 9}{2} = \\boxed{45}$$</p><p><strong>Cara kedua — lewat derajat.</strong> Tiap tim bertanding melawan $9$ tim lainnya, sehingga grafnya punya $10$ titik masing-masing berderajat $9$:</p><p>$$\\sum_v \\deg(v) = 10 \\times 9 = 90 = 2|E| \\quad\\Longrightarrow\\quad |E| = 45$$</p><p>Kedua cara bertemu, sebagaimana seharusnya — graf ini adalah <strong>graf lengkap</strong> $K_{10}$, yaitu graf yang setiap dua titiknya terhubung.</p><p><strong>Rumus umumnya.</strong> Graf lengkap $K_n$ punya</p><p>$$\\binom{n}{2} = \\frac{n(n-1)}{2}$$</p><p>ruas, dan tiap titiknya berderajat $n-1$.</p><p><strong>Perhatikan pembagian $2$ pada kedua cara punya alasan yang sama.</strong> Pada cara pertama ia menghapus urutan pasangan; pada cara kedua ia memperbaiki penghitungan ganda tiap ruas. Itu bukan kebetulan — keduanya kenyataan yang sama, dilihat dari dua sisi.</p><p><strong>Bandingkan dengan kompetisi penuh</strong> (setiap dua tim bertanding <strong>dua</strong> kali, kandang dan tandang). Di situ pasangan terurut yang dihitung, sehingga jawabannya</p><p>$$10 \\times 9 = 90$$</p><p>Satu kata pada soal — \"tepat sekali\" atau \"dua kali\" — melipatgandakan jawabannya.</p><p><strong>Untuk turnamen sistem gugur</strong> hitungannya berbeda sama sekali dan jauh lebih pendek: tiap pertandingan menyingkirkan tepat satu tim, dan pada akhirnya $9$ tim tersingkir, sehingga pertandingannya $9$. Cara pandang \"hitung apa yang dihabiskan tiap langkah\" itu sering memangkas soal turnamen menjadi satu baris.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "grd-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "graf-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Sebuah graf memiliki $6$ titik yang derajatnya berturut-turut</p><p>$$1,\\ 1,\\ 2,\\ 2,\\ 3,\\ 3$$</p><p>Ada berapa ruas pada graf itu?</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jumlahkan seluruh derajatnya lebih dulu.",
+    "Angka itu menghitung tiap ruas dua kali, sekali dari masing-masing ujungnya.",
+    "Periksa hasilnya bilangan bulat — kalau tidak, graf semacam itu tidak ada."
+   ],
+   "pembahasan": "<p><strong>Jumlahkan derajatnya.</strong></p><p>$$1 + 1 + 2 + 2 + 3 + 3 = 12$$</p><p><strong>Terapkan lema jabat tangan.</strong></p><p>$$\\sum_v \\deg(v) = 2|E| \\quad\\Longrightarrow\\quad 12 = 2|E| \\quad\\Longrightarrow\\quad\n|E| = \\boxed{6}$$</p><p><strong>Periksa daftar derajatnya masuk akal.</strong> Ada beberapa pemeriksaan murah yang selalu layak dikerjakan:</p><ul><li><strong>Jumlahnya harus genap.</strong> Di sini $12$, genap. Kalau ganjil, daftar itu mustahil.</li><li><strong>Banyaknya derajat ganjil harus genap.</strong> Di sini ada dua titik berderajat $1$ dan dua berderajat $3$ — seluruhnya empat, genap. Cocok.</li><li><strong>Tiap derajat paling banyak $n-1$.</strong> Di sini $n = 6$, sehingga derajat paling besar yang mungkin adalah $5$. Derajat terbesar pada daftar adalah $3$. Cocok.</li></ul><p><strong>Contoh daftar yang gagal.</strong> Daftar $1, 1, 2, 2, 3, 4$ berjumlah $13$ — ganjil, sehingga tidak ada graf yang derajatnya seperti itu, tanpa perlu mencoba menggambar apa pun.</p><p>Daftar $1, 1, 1, 1, 1, 5$ lolos pemeriksaan jumlah — totalnya $10$, genap — tetapi tetap mustahil karena alasan lain: titik berderajat $5$ harus terhubung ke kelima titik lain, sehingga tiap titik lain berderajat paling sedikit $1$, yang di sini terpenuhi... dan ternyata daftar ini <strong>memang bisa</strong> diwujudkan sebagai bintang. Perbedaan itu menunjukkan bahwa pemeriksaan jumlah adalah syarat <strong>perlu</strong>, bukan syarat cukup.</p><p><strong>Yang tidak ditentukan oleh derajat.</strong> Daftar derajat tidak menentukan bentuk grafnya. Untuk daftar $1,1,2,2,3,3$ ada beberapa graf berbeda yang semuanya cocok, dan seluruhnya punya $6$ ruas. Soal yang menanyakan banyaknya ruas selalu punya jawaban tunggal; soal yang menanyakan bentuk grafnya biasanya tidak.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "grd-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "graf-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Sebuah jaringan komputer terdiri atas $20$ komputer. Jaringan itu <strong>terhubung</strong> — setiap dua komputer dapat saling berkirim pesan, langsung atau lewat komputer lain — dan tidak memuat <strong>siklus</strong>, yaitu tidak ada rangkaian sambungan yang berputar kembali ke titik awal.</p><p>Ada berapa kabel yang menghubungkan komputer-komputer itu?</p>",
+   "jawaban": "19",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Graf yang terhubung dan tidak memuat siklus punya nama sendiri, dan banyaknya ruasnya selalu tertentu.",
+    "Bangun grafnya bertahap: mulai dari satu titik, lalu tambahkan titik satu per satu.",
+    "Tiap titik yang ditambahkan membawa berapa ruas, kalau grafnya harus tetap terhubung dan tetap tanpa siklus?"
+   ],
+   "pembahasan": "<p><strong>Kenali bangunnya.</strong> Graf yang terhubung dan tidak memuat siklus disebut <strong>pohon</strong>.</p><p><strong>Bangun bertahap.</strong> Mulai dari satu titik, tanpa ruas. Tambahkan titik satu per satu, dan perhatikan tiap titik baru:</p><ul><li>Ia harus membawa <strong>paling sedikit satu</strong> ruas, sebab kalau tidak, ia terputus dan grafnya tidak lagi terhubung.</li><li>Ia tidak boleh membawa <strong>dua atau lebih</strong> ruas ke bagian yang sudah ada, sebab dua jalur menuju bagian yang sama akan menutup sebuah siklus.</li></ul><p>Jadi tiap titik baru membawa <strong>tepat satu</strong> ruas. Setelah titik pertama, ada $20 - 1 = 19$ titik yang ditambahkan:</p><p>$$|E| = \\boxed{19}$$</p><p><strong>Rumus umumnya:</strong> pohon dengan $n$ titik punya tepat $n-1$ ruas.</p><p><strong>Periksa dengan lema jabat tangan.</strong> Jumlah derajatnya $2 \\times 19 = 38$, tersebar pada $20$ titik — jadi rata-rata derajatnya $1{,}9$, sedikit di bawah $2$. Masuk akal untuk sebuah pohon, yang memang jaringan paling hemat.</p><p><strong>Mengapa angka $n-1$ begitu sering muncul.</strong> Ia adalah batas dari dua arah sekaligus:</p><ul><li>Graf terhubung dengan $n$ titik punya <strong>paling sedikit</strong> $n-1$ ruas.</li><li>Graf tanpa siklus dengan $n$ titik punya <strong>paling banyak</strong> $n-1$ ruas.</li></ul><p>Pohon adalah graf yang mencapai kedua batas itu sekaligus — dan itu sebabnya ia sering jadi kasus ekstrem pada soal olimpiade. Kalimat seperti \"jaringan paling hemat yang tetap terhubung\" hampir selalu berarti pohon.</p><p><strong>Akibat praktisnya.</strong> Kalau sebuah jaringan berisi $20$ komputer punya $19$ kabel dan tetap terhubung, ia pasti pohon — sehingga <strong>memutus satu kabel mana pun</strong> akan memecahnya menjadi dua bagian yang tidak saling terhubung. Tidak ada kabel cadangan sama sekali, dan itu konsekuensi langsung dari tidak adanya siklus.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "grd-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "graf-dasar"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Dalam sebuah kelompok yang terdiri atas $5$ orang, mungkinkah setiap orang berkenalan dengan <strong>tepat $3$</strong> orang lainnya di dalam kelompok itu?</p><p>(Perkenalan bersifat timbal balik: kalau $A$ kenal $B$, maka $B$ kenal $A$.)</p><p>Buktikan jawabanmu.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Gambarkan sebagai graf: orang menjadi titik, perkenalan menjadi ruas. Syarat soal menjadi syarat tentang derajat.",
+    "Jumlahkan derajat seluruh titik, lalu ingat hubungannya dengan banyaknya ruas.",
+    "Banyaknya ruas wajib bilangan bulat. Periksa apakah syarat itu terpenuhi."
+   ],
+   "pembahasan": "<p><strong>Terjemahkan ke graf.</strong> Buat graf $G$ dengan $5$ titik, satu untuk tiap orang, dan pasang ruas di antara dua titik tepat ketika keduanya saling kenal. Perkenalan yang timbal balik membuat ruasnya tidak berarah — persis graf biasa.</p><p>Syarat soal menjadi: <strong>setiap titik berderajat $3$</strong>.</p><p><strong>Jumlahkan derajatnya.</strong></p><p>$$\\sum_v \\deg(v) = 5 \\times 3 = 15$$</p><p><strong>Terapkan lema jabat tangan.</strong> Menjumlahkan derajat berarti mencacah tiap ruas dua kali, sekali dari masing-masing ujungnya:</p><p>$$\\sum_v \\deg(v) = 2|E|$$</p><p>Maka</p><p>$$2|E| = 15 \\quad\\Longrightarrow\\quad |E| = \\frac{15}{2} = 7{,}5$$</p><p><strong>Simpulkan.</strong> Banyaknya ruas wajib bilangan bulat, sedangkan $7{,}5$ bukan. Karena itu graf semacam itu tidak ada, dan kelompok seperti yang digambarkan soal <strong>tidak mungkin</strong> ada. $\\blacksquare$</p><h4>Bentuk yang lebih langsung</h4><p>Kesimpulan yang sama bisa dinyatakan lewat akibat lema jabat tangan: <strong>banyaknya titik berderajat ganjil selalu genap.</strong></p><p>Di sini seluruh $5$ titik berderajat $3$, yang ganjil — jadi ada $5$ titik berderajat ganjil, dan $5$ bilangan ganjil. Bertentangan.</p><h4>Mengapa mencoba menggambar bukan bukti</h4><p>Mencoba beberapa susunan lalu gagal tidak membuktikan apa pun — mungkin susunan yang benar belum ditemukan. Yang membuktikan adalah satu persamaan yang menutup <strong>seluruh</strong> kemungkinan sekaligus, tanpa memeriksa satu susunan pun.</p><h4>Kapan keadaan semacam ini mungkin</h4><p>Syarat perlunya adalah $n \\times k$ genap, dengan $n$ banyaknya orang dan $k$ banyaknya kenalan tiap orang. Jadi:</p><table><thead><tr><th>$n$</th><th>$k$</th><th>$nk$</th><th>Mungkin?</th></tr></thead><tbody><tr><td>$5$</td><td>$3$</td><td>$15$</td><td>tidak — ganjil</td></tr><tr><td>$6$</td><td>$3$</td><td>$18$</td><td>ya</td></tr><tr><td>$5$</td><td>$4$</td><td>$20$</td><td>ya</td></tr><tr><td>$5$</td><td>$2$</td><td>$10$</td><td>ya</td></tr></tbody></table><p>Untuk $n = 6$ dan $k = 3$, susunannya memang ada — misalnya enam orang duduk melingkar, masing-masing kenal kedua tetangganya dan orang di seberangnya.</p><p><strong>Perhatikan syarat $nk$ genap adalah syarat perlu, bukan syarat cukup.</strong> Ia juga menuntut $k \\le n-1$, sebab tidak ada yang bisa berkenalan dengan lebih banyak orang daripada yang ada. Untuk kedua syarat itu terpenuhi bersamaan, susunannya selalu ada — tetapi menunjukkan hal itu memerlukan konstruksi, bukan sekadar hitungan.</p>",
+   "rubrik": [
+    "Menerjemahkan soal ke graf: orang sebagai titik, perkenalan sebagai ruas",
+    "Menyatakan syarat soal sebagai \"tiap titik berderajat $3$\"",
+    "Menghitung jumlah derajat $5 \\times 3 = 15$",
+    "Menyatakan lema jabat tangan $\\sum \\deg(v) = 2|E|$, dengan alasan tiap ruas terhitung dua kali",
+    "Menyimpulkan $|E| = 7{,}5$ bukan bilangan bulat, sehingga graf itu tidak ada",
+    "Menyatakan dengan jelas bahwa kesimpulannya ketidakmungkinan, bukan sekadar kegagalan mencoba"
+   ]
+  },
+  {
+   "id": "grd-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "graf-dasar"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Buktikan bahwa dalam sebuah kelompok yang beranggotakan paling sedikit dua orang, selalu ada <strong>dua orang yang banyaknya kenalan sama</strong> di dalam kelompok itu.</p><p>(Perkenalan bersifat timbal balik.)</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Gambarkan sebagai graf, lalu nyatakan yang harus dibuktikan sebagai pernyataan tentang derajat.",
+    "Ada berapa nilai derajat yang mungkin untuk graf dengan $n$ titik? Bandingkan dengan banyaknya titik.",
+    "Angkanya ternyata pas — dan pas berarti prinsipnya belum menggigit. Tunjukkan dua nilai ekstrem tidak bisa muncul bersamaan."
+   ],
+   "pembahasan": "<p>Buat graf dengan $n \\ge 2$ titik, satu untuk tiap orang, dan pasang ruas di antara dua titik tepat ketika keduanya saling kenal. Yang harus dibuktikan: <strong>ada dua titik yang derajatnya sama.</strong></p><h4>Langkah 1 — daftar nilai derajat yang mungkin</h4><p>Derajat sebuah titik paling sedikit $0$ — tidak kenal siapa pun — dan paling banyak $n-1$ — kenal semua orang lain. Jadi nilainya berasal dari</p><p>$$\\{0, 1, 2, \\dots, n-1\\}$$</p><p>yaitu $n$ nilai untuk $n$ titik.</p><p><strong>Prinsip sarang merpati belum menggigit di sini.</strong> Merpatinya $n$, sarangnya juga $n$ — sehingga masih mungkin tiap titik menempati nilai yang berbeda. Dibutuhkan satu langkah lagi.</p><h4>Langkah 2 — dua nilai ekstrem tidak bisa muncul bersamaan</h4><p>Andaikan ada titik berderajat $0$ <strong>dan</strong> titik berderajat $n-1$, sebut keduanya $u$ dan $w$.</p><ul><li>$\\deg(w) = n-1$ berarti $w$ terhubung ke <strong>semua</strong> titik lain, termasuk $u$.</li><li>$\\deg(u) = 0$ berarti $u$ tidak terhubung ke titik mana pun, termasuk $w$.</li></ul><p>Kedua pernyataan itu bertentangan. Maka <strong>paling banyak satu</strong> di antara nilai $0$ dan $n-1$ benar-benar muncul.</p><h4>Langkah 3 — terapkan prinsip sarang merpati</h4><p>Karena salah satu dari kedua nilai ekstrem itu pasti tidak terpakai, nilai derajat yang benar-benar mungkin paling banyak</p><p>$$n - 1$$</p><p>Sementara titiknya ada $n$. Karena $n &gt; n-1$, ada dua titik yang derajatnya sama. $\\blacksquare$</p><h4>Mengapa langkah 2 adalah inti seluruh bukti</h4><p>Tanpa langkah itu, sarangnya sebanyak merpatinya dan tidak ada yang bisa disimpulkan. Yang dikerjakan langkah 2 adalah <strong>memperkecil sarangnya</strong> — dan itulah pola yang berulang di banyak soal sarang merpati: prinsipnya sendiri satu baris, sedangkan pekerjaan sesungguhnya adalah menunjukkan sarangnya lebih sedikit daripada yang terlihat.</p><h4>Periksa pada kasus kecil</h4><p>Untuk $n = 2$: derajat yang mungkin $\\{0,1\\}$, tetapi keduanya tidak bisa muncul bersamaan. Jadi kedua orang berderajat $0$ (tidak saling kenal) atau keduanya berderajat $1$ (saling kenal). Bagaimanapun, keduanya sama.</p><p>Untuk $n = 3$: kalau seseorang kenal kedua orang lain, tidak ada yang berderajat $0$, sehingga derajat yang mungkin tinggal $\\{1,2\\}$ untuk tiga orang — pasti ada yang sama.</p><h4>Syarat $n \\ge 2$</h4><p>Untuk $n = 1$ pernyataannya tidak berlaku, sebab tidak ada dua orang untuk dibandingkan. Menyebutkan syarat ini bagian dari menuliskan buktinya dengan lengkap.</p>",
+   "rubrik": [
+    "Menerjemahkan ke graf dan menyatakan yang dibuktikan sebagai \"ada dua titik berderajat sama\"",
+    "Menyatakan derajat yang mungkin adalah $0$ sampai $n-1$, yaitu $n$ nilai",
+    "Menyadari prinsip sarang merpati belum menggigit karena sarangnya sebanyak merpatinya",
+    "Mengandaikan derajat $0$ dan $n-1$ muncul bersamaan, lalu menurunkan pertentangannya",
+    "Menyimpulkan nilai derajat yang terpakai paling banyak $n-1$",
+    "Menerapkan prinsip sarang merpati dengan $n$ titik pada paling banyak $n-1$ nilai"
+   ]
+  },
+  {
+   "id": "grd-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "graf-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Sebuah graf memiliki $9$ titik dan setiap titiknya berderajat $3$ atau $4$. Diketahui ada tepat $5$ titik yang berderajat $4$.</p><p>Ada berapa ruas pada graf itu?</p>",
+   "jawaban": "16",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hitung dulu ada berapa titik berderajat $3$, lalu jumlahkan seluruh derajatnya.",
+    "Jumlah derajat sama dengan dua kali banyaknya ruas.",
+    "Periksa hasilnya bilangan bulat, dan periksa juga banyaknya titik berderajat ganjil."
+   ],
+   "pembahasan": "<p><strong>Bagi titiknya.</strong> Ada $5$ titik berderajat $4$, sehingga sisanya</p><p>$$9 - 5 = 4 \\text{ titik berderajat } 3$$</p><p><strong>Jumlahkan derajatnya.</strong></p><p>$$\\sum_v \\deg(v) = 5 \\times 4 + 4 \\times 3 = 20 + 12 = 32$$</p><p><strong>Terapkan lema jabat tangan.</strong></p><p>$$2|E| = 32 \\quad\\Longrightarrow\\quad |E| = \\boxed{16}$$</p><p><strong>Periksa dengan akibat lema itu.</strong> Titik berderajat ganjil adalah yang berderajat $3$, dan ada $4$ di antaranya — bilangan genap, sesuai keharusan. Kalau soalnya menyebut $5$ titik berderajat $3$ dan $4$ titik berderajat $4$, jumlah derajatnya</p><p>$$5 \\times 3 + 4 \\times 4 = 31$$</p><p>ganjil, sehingga graf semacam itu <strong>mustahil</strong> — dan itu langsung terbaca dari banyaknya titik berderajat ganjil yang tidak genap.</p><p><strong>Periksa juga batas atasnya.</strong> Dengan $9$ titik, ruas paling banyak $\\binom92 = 36$. Karena $16 \\le 36$, tidak ada yang bertentangan. Derajat terbesar pada soal adalah $4$, dan itu tidak melebihi $9 - 1 = 8$. Cocok.</p><p><strong>Tiga pemeriksaan yang layak jadi kebiasaan</strong> setiap kali soal memberi daftar derajat:</p><ol><li>Jumlah derajatnya genap.</li><li>Banyaknya titik berderajat ganjil genap. (Sebenarnya setara dengan yang pertama, tetapi sering lebih cepat dilihat.)</li><li>Tiap derajat tidak melebihi $n-1$.</li></ol><p>Ketiganya syarat <strong>perlu</strong>. Kalau salah satunya gagal, susunannya mustahil dan soal selesai tanpa menggambar apa pun. Kalau seluruhnya lolos, graf semacam itu biasanya ada — tetapi menunjukkannya menuntut konstruksi.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "grd-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "graf-dasar"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Dalam sebuah jaringan terdapat $15$ kota. Setiap kota terhubung jalan langsung dengan tepat $4$ kota lainnya.</p><p>Ada berapa ruas jalan dalam jaringan itu?</p>",
+   "jawaban": "30",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Gambarkan sebagai graf: kota menjadi titik, jalan menjadi ruas. Derajat sebuah titik adalah banyaknya ruas yang menyentuhnya.",
+    "Jumlahkan derajat seluruh titik, lalu tanyakan apa yang sebenarnya dihitung angka itu.",
+    "Tiap ruas punya dua ujung, sehingga ia terhitung dua kali di dalam jumlah tadi."
+   ],
+   "pembahasan": "<p><strong>Terjemahkan ke graf.</strong> Kota menjadi titik, jalan menjadi ruas. Tiap titik berderajat $4$, dan ada $15$ titik.</p><p><strong>Jumlahkan derajatnya.</strong></p><p>$$\\sum_v \\deg(v) = 15 \\times 4 = 60$$</p><p><strong>Baca angka itu dengan benar.</strong> Angka $60$ bukan banyaknya ruas. Menjumlahkan derajat berarti mencacah pasangan (titik, ruas yang menyentuhnya) — dan <strong>tiap ruas menyumbang dua pasangan</strong>, sekali dari masing-masing ujungnya.</p><p><strong>Lema jabat tangan.</strong></p><p>$$\\sum_v \\deg(v) = 2|E| \\quad\\Longrightarrow\\quad 60 = 2|E| \\quad\\Longrightarrow\\quad\n|E| = \\boxed{30}$$</p><p><strong>Periksa keadaannya memang mungkin.</strong> Jumlah derajat $60$ genap, sehingga tidak ada yang bertentangan. Kalau soalnya menyebut $15$ kota yang masing-masing terhubung ke tepat $3$ kota, jumlah derajatnya $45$ — ganjil — sehingga $|E| = 22{,}5$ dan jaringan seperti itu <strong>mustahil</strong>.</p><p>Pemeriksaan itu murah dan sering menjadi seluruh isi soal olimpiade: yang ditanyakan bukan berapa banyak, melainkan apakah susunannya bisa ada.</p><p><strong>Akibat yang selalu ikut.</strong> Karena $\\sum_v \\deg(v)$ selalu genap, banyaknya titik yang <strong>berderajat ganjil</strong> selalu genap. Bukti singkatnya: pisahkan penjumlahan menjadi suku genap dan suku ganjil; yang pertama genap, sehingga yang kedua juga harus genap — dan jumlah beberapa bilangan ganjil genap tepat ketika banyaknya suku genap.</p><p><strong>Periksa juga apakah jumlahnya masuk akal.</strong> Dengan $15$ titik, ruas paling banyak adalah $\\binom{15}{2} = 105$. Karena $30 \\le 105$, tidak ada yang bertentangan. Kalau hitungannya menuntut lebih banyak ruas daripada yang mungkin, susunannya juga mustahil — kecuali ruas ganda diizinkan.</p>",
+   "rubrik": []
+  },
+  {
    "id": "ie-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-K",
    "arsip": "",
@@ -337,6 +850,190 @@
    ],
    "pembahasan": "<p><strong>Hitung tiap kelompok.</strong> Banyaknya bilangan dari $1$ sampai $100$ yang habis dibagi $d$ adalah $\\left\\lfloor \\frac{100}{d} \\right\\rfloor$.</p><p>$$|A| = \\left\\lfloor \\frac{100}{3} \\right\\rfloor = 33, \\qquad\n|B| = \\left\\lfloor \\frac{100}{5} \\right\\rfloor = 20$$</p><p>dengan $A$ himpunan kelipatan $3$ dan $B$ himpunan kelipatan $5$.</p><p><strong>Cari yang terhitung dua kali.</strong> Bilangan yang habis dibagi $3$ <strong>dan</strong> $5$ adalah yang habis dibagi kelipatan persekutuan terkecilnya:</p><p>$$\\operatorname{lcm}(3,5) = 15, \\qquad\n|A \\cap B| = \\left\\lfloor \\frac{100}{15} \\right\\rfloor = 6$$</p><p><strong>Terapkan inklusi–eksklusi.</strong></p><p>$$|A \\cup B| = |A| + |B| - |A \\cap B| = 33 + 20 - 6 = \\boxed{47}$$</p><p><strong>Mengapa harus dikurangi.</strong> Bilangan seperti $15$, $30$, $45$ terhitung sekali di $|A|$ dan sekali lagi di $|B|$ — dua kali seluruhnya, padahal ia satu bilangan. Mengurangi $|A\\cap B|$ mengembalikan hitungannya menjadi tepat satu kali.</p><p>Perhatikan <strong>tiap anggota gabungan berakhir terhitung tepat sekali</strong>, dan itulah ukuran kebenaran rumus ini:</p><ul><li>Bilangan yang hanya kelipatan $3$: terhitung $1$ kali di $|A|$, tidak di yang lain. Total $1$.</li><li>Bilangan yang hanya kelipatan $5$: sama, total $1$.</li><li>Bilangan yang kelipatan keduanya: $1 + 1 - 1 = 1$.</li></ul><p><strong>Kekeliruan yang sering:</strong> memakai $|A \\cap B| = \\left\\lfloor \\frac{100}{3\\cdot5}\n\\right\\rfloor$ tanpa berpikir. Di sini kebetulan benar karena $3$ dan $5$ tidak punya faktor bersama. Kalau soalnya \"habis dibagi $4$ atau $6$\", yang dipakai adalah $\\operatorname{lcm}(4,6) = 12$, <strong>bukan</strong> $24$ — dan memakai $24$ memberi jawaban yang salah.</p>",
    "rubrik": []
+  },
+  {
+   "id": "inv-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "invarian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Di sebuah papan tertulis bilangan $1, 2, 3, \\dots, 20$. Sebuah langkah terdiri atas menghapus dua bilangan $a$ dan $b$, lalu menuliskan $|a-b|$.</p><p>Setelah $19$ langkah tersisa satu bilangan. Berapa nilai <strong>terkecil</strong> yang mungkin untuk bilangan itu?</p>",
+   "jawaban": "0",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Cari lebih dulu besaran yang tidak berubah oleh langkah apa pun. Jumlah seluruh bilangan berubah, tetapi ada sifatnya yang tidak.",
+    "Sifat itu membatasi nilai akhir yang mungkin. Tentukan batas itu sebelum mencari nilai terkecilnya.",
+    "Setelah batasnya diketahui, tunjukkan nilai terkecil itu memang bisa dicapai dengan memberi urutan langkahnya."
+   ],
+   "pembahasan": "<p><strong>Cari invariannya.</strong> Satu langkah mengubah jumlah seluruh bilangan dari $S$ menjadi</p><p>$$S' = S - a - b + |a-b|$$</p><p>Dengan memisalkan $a \\ge b$, selisihnya</p><p>$$S - S' = a + b - (a - b) = 2b$$</p><p>yang selalu genap. Jadi <strong>paritas jumlah tidak pernah berubah</strong>.</p><p><strong>Hitung paritas awalnya.</strong></p><p>$$S_0 = 1 + 2 + \\cdots + 20 = \\frac{20 \\times 21}{2} = 210$$</p><p>yang <strong>genap</strong>.</p><p><strong>Batasi nilai akhirnya.</strong> Karena paritasnya kekal, bilangan terakhir harus genap. Nilai mutlak tidak pernah negatif, sehingga nilai terkecil yang mungkin <strong>secara paritas</strong> adalah $0$.</p><p><strong>Tunjukkan $0$ benar-benar tercapai.</strong> Batas saja belum menjawab — harus ada urutan langkah yang mencapainya.</p><p>Pasangkan bilangan berurutan:</p><p>$$(1,2) \\to 1, \\quad (3,4) \\to 1, \\quad (5,6) \\to 1, \\quad \\dots, \\quad (19,20) \\to 1$$</p><p>Sepuluh pasangan menghasilkan sepuluh angka $1$. Sekarang pasangkan angka-angka $1$ itu:</p><p>$$(1,1) \\to 0$$</p><p>lima kali, menghasilkan lima angka $0$. Terakhir, gabungkan kelima nol:</p><p>$$(0,0) \\to 0, \\quad (0,0) \\to 0, \\quad (0,0) \\to 0, \\quad (0,0) \\to 0$$</p><p>Tersisa $\\boxed{0}$.</p><p><strong>Dua bagian itu keduanya perlu.</strong> Invarian memberi batas — hasilnya tidak mungkin ganjil, jadi tidak mungkin $1$. Konstruksi menunjukkan batas itu tercapai. Menjawab $0$ hanya dengan invarian belum lengkap; menjawab dengan konstruksi saja tidak membuktikan tidak ada yang lebih kecil.</p><p><strong>Bandingkan dengan soal $1$ sampai $10$.</strong> Di sana jumlahnya $55$ yang ganjil, sehingga $0$ <strong>mustahil</strong> dan nilai terkecilnya $1$. Satu angka pada soal mengubah seluruh jawabannya — dan itu ditentukan sepenuhnya oleh paritas $\\frac{n(n+1)}{2}$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "inv-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "invarian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Di sebuah papan tertulis $10$ tanda $+$ dan $15$ tanda $-$. Sebuah langkah terdiri atas menghapus <strong>dua</strong> tanda sembarang, lalu menuliskan satu tanda baru menurut aturan:</p><ul><li>kalau kedua tanda yang dihapus <strong>sama</strong>, tulis $+$;</li><li>kalau <strong>berbeda</strong>, tulis $-$.</li></ul><p>Setelah $24$ langkah tersisa satu tanda. Ada berapa tanda $-$ yang tersisa?</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Perhatikan hanya banyaknya tanda $-$, dan periksa bagaimana angka itu berubah pada tiap jenis langkah.",
+    "Ada tiga jenis langkah: dua $+$, dua $-$, atau satu masing-masing. Periksa ketiganya satu per satu.",
+    "Banyaknya tanda $-$ memang berubah, tetapi ada sifatnya yang tidak pernah berubah."
+   ],
+   "pembahasan": "<p><strong>Periksa tiap jenis langkah.</strong> Sebut $m$ banyaknya tanda $-$ di papan.</p><table><thead><tr><th>Yang dihapus</th><th>Yang ditulis</th><th>Perubahan $m$</th></tr></thead><tbody><tr><td>$+$ dan $+$</td><td>$+$</td><td>$0$</td></tr><tr><td>$-$ dan $-$</td><td>$+$</td><td>$-2$</td></tr><tr><td>$+$ dan $-$</td><td>$-$</td><td>$0$</td></tr></tbody></table><p>Baris kedua: dua tanda $-$ hilang dan yang ditulis $+$, sehingga $m$ berkurang $2$. Baris ketiga: satu $-$ hilang tetapi satu $-$ ditulis, sehingga $m$ tidak berubah.</p><p><strong>Simpulkan invariannya.</strong> Pada ketiga jenis langkah, $m$ berubah sebesar $0$ atau $-2$ — selalu bilangan <strong>genap</strong>. Maka</p><p>$$m \\bmod 2 \\text{ tidak pernah berubah}$$</p><p><strong>Hitung nilai awalnya.</strong> Mula-mula $m = 15$, yang <strong>ganjil</strong>.</p><p><strong>Simpulkan.</strong> Paritas $m$ tetap ganjil sampai akhir. Di akhir hanya tersisa satu tanda, sehingga $m$ bernilai $0$ atau $1$. Karena harus ganjil, satu-satunya kemungkinan</p><p>$$m = \\boxed{1}$$</p><p>Jadi tanda yang tersisa adalah $-$.</p><p><strong>Banyaknya tanda $+$ sama sekali tidak berpengaruh.</strong> Angka $10$ pada soal boleh diganti berapa pun — jawabannya tetap ditentukan oleh paritas banyaknya tanda $-$. Mengenali data mana yang tidak menentukan adalah bagian dari mengerjakan soal invarian.</p><p><strong>Cara memandang yang lebih ringkas.</strong> Ganti $+$ dengan $1$ dan $-$ dengan $-1$. Aturannya persis aturan perkalian:</p><p>$$(+1)(+1) = +1, \\qquad (-1)(-1) = +1, \\qquad (+1)(-1) = -1$$</p><p>Jadi tiap langkah mengganti dua bilangan dengan hasil kalinya, sehingga <strong>hasil kali seluruh bilangan di papan</strong> tidak pernah berubah. Nilai awalnya</p><p>$$1^{10} \\times (-1)^{15} = -1$$</p><p>Di akhir tersisa satu bilangan, dan ia harus sama dengan $-1$. Cara ini mengubah invarian paritas menjadi invarian hasil kali — bentuk yang sering lebih mudah diperiksa.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "inv-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "invarian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Sebuah kotak berisi $15$ bola putih dan $12$ bola hitam. Sebuah langkah terdiri atas mengambil <strong>dua</strong> bola dari kotak, lalu memasukkan satu bola baru menurut aturan:</p><ul><li>kalau kedua bola yang diambil <strong>sewarna</strong>, masukkan satu bola <strong>putih</strong>;</li><li>kalau <strong>berbeda warna</strong>, masukkan satu bola <strong>hitam</strong>.</li></ul><p>Langkah diulang sampai tersisa satu bola. Ada berapa bola hitam yang tersisa?</p>",
+   "jawaban": "0",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Perhatikan hanya banyaknya bola hitam, dan periksa bagaimana angka itu berubah pada tiap jenis pengambilan.",
+    "Ada tiga jenis: dua putih, dua hitam, atau satu masing-masing. Periksa ketiganya.",
+    "Angkanya berubah, tetapi selalu dengan bilangan genap."
+   ],
+   "pembahasan": "<p><strong>Periksa tiap jenis langkah.</strong> Sebut $h$ banyaknya bola hitam.</p><table><thead><tr><th>Yang diambil</th><th>Yang dimasukkan</th><th>Perubahan $h$</th></tr></thead><tbody><tr><td>putih, putih</td><td>putih</td><td>$0$</td></tr><tr><td>hitam, hitam</td><td>putih</td><td>$-2$</td></tr><tr><td>putih, hitam</td><td>hitam</td><td>$0$</td></tr></tbody></table><p>Baris ketiga perlu diperiksa dengan hati-hati: satu bola hitam keluar, dan satu bola hitam masuk. Perubahannya $-1 + 1 = 0$.</p><p><strong>Simpulkan invariannya.</strong> Ketiga langkah mengubah $h$ sebesar $0$ atau $-2$, yaitu selalu genap. Maka</p><p>$$h \\bmod 2 \\text{ kekal}$$</p><p><strong>Nilai awalnya.</strong> Mula-mula $h = 12$, yang <strong>genap</strong>.</p><p><strong>Simpulkan.</strong> Paritas $h$ tetap genap sampai akhir. Di akhir tersisa satu bola, sehingga $h$ bernilai $0$ atau $1$. Karena harus genap,</p><p>$$h = \\boxed{0}$$</p><p>Jadi bola terakhir berwarna putih.</p><p><strong>Perhatikan proses ini memang berakhir.</strong> Tiap langkah mengambil dua bola dan memasukkan satu, sehingga isi kotak berkurang tepat satu setiap kali. Dari $27$ bola, setelah $26$ langkah tersisa tepat satu. Banyaknya bola adalah <strong>monovarian</strong> — besaran yang selalu menurun — dan karena ia bilangan asli, prosesnya tidak bisa berjalan selamanya.</p><p>Memeriksa hal ini bukan kelengkapan yang bisa dilewati. Kalau prosesnya tidak dijamin berakhir, pertanyaan \"bola terakhir apa\" belum tentu punya jawaban.</p><p><strong>Bandingkan dengan soal sebelumnya.</strong> Aturan tanda $+/-$ dan aturan bola putih/hitam adalah <strong>aturan yang sama persis</strong>, hanya berganti nama: putih berlaku seperti $+$, hitam seperti $-$. Yang berbeda cuma bilangan awalnya — $15$ tanda $-$ yang ganjil di sana, $12$ bola hitam yang genap di sini — dan justru itu yang membalik jawabannya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "inv-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "invarian"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 4,
+   "soal": "<p>Di sebuah papan tertulis bilangan $1, 2, 3, \\dots, 10$. Sebuah langkah terdiri atas menghapus dua bilangan $a$ dan $b$, lalu menuliskan</p><p>$$ab + a + b$$</p><p>Setelah $9$ langkah tersisa satu bilangan. Tentukan bilangan itu.</p>",
+   "jawaban": "39916799",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Soal menanyakan nilai yang <strong>tunggal</strong>, bukan sifatnya. Berarti ada besaran yang benar-benar kekal, bukan sekadar paritasnya.",
+    "Bentuk $ab+a+b$ hampir merupakan hasil kali. Coba tambahkan $1$ padanya dan perhatikan apa yang terjadi.",
+    "Kalau $(x+1)$ untuk tiap bilangan $x$ di papan dikalikan seluruhnya, apakah hasilnya berubah oleh sebuah langkah?"
+   ],
+   "pembahasan": "<p><strong>Temukan invariannya.</strong> Bentuk $ab + a + b$ menyerupai hasil kali yang kurang satu suku. Tambahkan $1$:</p><p>$$ab + a + b + 1 = (a+1)(b+1)$$</p><p>Inilah petunjuknya. Tinjau besaran</p><p>$$P = \\prod_{x \\text{ di papan}} (x+1)$$</p><p>yaitu hasil kali dari $(x+1)$ untuk seluruh bilangan $x$ yang ada di papan.</p><p><strong>Buktikan $P$ tidak berubah.</strong> Sebuah langkah membuang $a$ dan $b$, lalu menulis $c = ab+a+b$. Faktor yang hilang dari $P$ adalah $(a+1)(b+1)$, dan faktor yang masuk adalah</p><p>$$c + 1 = ab + a + b + 1 = (a+1)(b+1)$$</p><p>Persis sama. Jadi $P$ <strong>benar-benar kekal</strong> — bukan hanya paritasnya, melainkan nilainya.</p><p><strong>Hitung nilai awalnya.</strong> Bilangan di papan adalah $1$ sampai $10$, sehingga faktornya adalah $2$ sampai $11$:</p><p>$$P_0 = 2 \\times 3 \\times 4 \\times \\cdots \\times 11 = \\frac{11!}{1!} = 39\\,916\\,800$$</p><p><strong>Simpulkan.</strong> Di akhir tersisa satu bilangan, sebut $N$. Saat itu $P$ hanya terdiri atas satu faktor:</p><p>$$N + 1 = P = P_0 = 39\\,916\\,800$$</p><p>$$N = 39\\,916\\,800 - 1 = \\boxed{39916799}$$</p><p><strong>Perhatikan jawabannya tidak bergantung pada urutan langkah sama sekali.</strong> Ini berbeda dari soal $|a-b|$, yang hasil akhirnya bisa bermacam-macam asalkan ganjil. Sebabnya di sini invariannya adalah <strong>nilai</strong> $P$, bukan sekadar sifatnya — dan nilai yang kekal menentukan jawaban secara tunggal.</p><p>Membedakan kedua jenis itu berguna sebagai penunjuk arah:</p><ul><li>Soal menanyakan <strong>sifat</strong> (\"buktikan ganjil\", \"mungkinkah\") → cari invarian berupa sifat, biasanya paritas atau sisa pembagian.</li><li>Soal menanyakan <strong>nilai tunggal</strong> → cari besaran yang nilainya benar-benar kekal.</li></ul><p><strong>Cara menemukan bentuk $(x+1)$.</strong> Kerjakan kasus terkecil. Dengan dua bilangan $1$ dan $2$, hasilnya $1\\cdot2+1+2 = 5$; perhatikan $5+1 = 6 = 2 \\times 3$. Dengan $2$ dan $3$: hasilnya $11$, dan $11+1 = 12 = 3 \\times 4$. Pola $+1$ langsung terlihat, dan dari situ tebakannya tinggal dibuktikan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "inv-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "invarian"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Sebuah bidak berada di titik $(0,0)$ pada bidang koordinat. Sekali melangkah, bidak itu boleh berpindah ke salah satu dari empat titik berikut:</p><p>$$(x+1,\\, y+1), \\quad (x+1,\\, y-1), \\quad (x-1,\\, y+1), \\quad (x-1,\\, y-1)$$</p><p>Buktikan bahwa bidak itu <strong>tidak pernah</strong> dapat mencapai titik $(2,3)$, berapa pun banyaknya langkah.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Soal meminta membuktikan sesuatu <strong>tidak mungkin</strong>. Cari besaran yang tidak pernah berubah, lalu bandingkan nilainya di titik awal dan titik tujuan.",
+    "Perhatikan bagaimana $x+y$ berubah pada tiap jenis langkah. Ia berubah, tetapi tidak sembarangan.",
+    "Kalau setiap langkah mengubah $x+y$ dengan bilangan genap, apa yang kekal?"
+   ],
+   "pembahasan": "<p><strong>Tebak besarannya.</strong> Keempat langkah mengubah $x$ dan $y$ masing-masing sebesar $\\pm 1$, jadi jumlah $x+y$ adalah calon yang wajar.</p><p><strong>Periksa tiap langkah.</strong> Sebut $s = x + y$.</p><table><thead><tr><th>Langkah</th><th>Perubahan $x$</th><th>Perubahan $y$</th><th>Perubahan $s$</th></tr></thead><tbody><tr><td>$(x+1, y+1)$</td><td>$+1$</td><td>$+1$</td><td>$+2$</td></tr><tr><td>$(x+1, y-1)$</td><td>$+1$</td><td>$-1$</td><td>$0$</td></tr><tr><td>$(x-1, y+1)$</td><td>$-1$</td><td>$+1$</td><td>$0$</td></tr><tr><td>$(x-1, y-1)$</td><td>$-1$</td><td>$-1$</td><td>$-2$</td></tr></tbody></table><p>Pada keempat langkah, perubahan $s$ selalu $+2$, $0$, atau $-2$ — seluruhnya <strong>genap</strong>. Karena itu</p><p>$$s \\bmod 2 \\text{ tidak pernah berubah}$$</p><p>Perhatikan keempat langkah diperiksa, bukan sebagian. Kalau ada satu langkah yang belum diperiksa, buktinya tidak sah — dan langkah yang terlewat biasanya justru yang merusak invariannya.</p><p><strong>Bandingkan awal dan tujuan.</strong></p><p>$$s_{\\text{awal}} = 0 + 0 = 0 \\quad (\\text{genap})$$</p><p>$$s_{\\text{tujuan}} = 2 + 3 = 5 \\quad (\\text{ganjil})$$</p><p>Paritasnya berbeda. Karena paritas $s$ tidak pernah berubah, titik $(2,3)$ tidak akan pernah tercapai. $\\blacksquare$</p><h4>Bacaan lain: pewarnaan papan catur</h4><p>Warnai tiap titik $(x,y)$ menurut paritas $x+y$ — hitam kalau genap, putih kalau ganjil. Keempat langkah selalu memindahkan bidak dari titik hitam ke titik hitam. Bidak berangkat dari titik hitam $(0,0)$, sedangkan $(2,3)$ berwarna putih.</p><p>Ini invarian yang sama, hanya dinyatakan sebagai warna. Cara pandang itu yang akan dikembangkan menjadi jurus tersendiri di tahap berikutnya.</p><h4>Batas yang tidak dibuktikan bukti ini</h4><p>Bukti ini menunjukkan titik dengan $x+y$ ganjil tidak bisa dicapai. Ia <strong>tidak</strong> membuktikan bahwa seluruh titik dengan $x+y$ genap bisa dicapai — untuk itu dibutuhkan konstruksi.</p><p>Kebetulan di sini semuanya memang bisa: dari $(0,0)$, langkah $(x+1,y+1)$ dan $(x+1,y-1)$ bersama-sama menggeser $x$ sebesar $2$ tanpa mengubah $y$, dan pasangan langkah lain menggeser $y$ sebesar $2$ tanpa mengubah $x$. Dengan itu setiap titik berjumlah genap dapat dicapai.</p><p>Kelengkapan seperti ini yang membedakan \"syarat perlu\" dari \"syarat perlu dan cukup\", dan invarian sendiri hanya pernah memberi yang pertama.</p>",
+   "rubrik": [
+    "Memilih besaran $x+y$ sebagai calon invarian",
+    "Memeriksa <strong>keempat</strong> langkah, bukan sebagian, dan mencatat perubahan $x+y$ pada masing-masing",
+    "Menyimpulkan perubahannya selalu genap, sehingga paritas $x+y$ kekal",
+    "Menghitung paritas di titik awal ($0$, genap) dan titik tujuan ($5$, ganjil)",
+    "Menyimpulkan $(2,3)$ tidak dapat dicapai karena paritasnya berbeda",
+    "Menyatakan bahwa yang dibuktikan adalah ketidakmungkinan, dan invarian tidak membuktikan sebaliknya"
+   ]
+  },
+  {
+   "id": "inv-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "invarian"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Beberapa bilangan asli ditulis di papan. Sebuah langkah terdiri atas: memilih dua bilangan $a$ dan $b$ dengan $a &gt; b$, lalu <strong>mengganti</strong> $a$ dengan $a - b$. Bilangan $b$ dibiarkan.</p><p>Buktikan bahwa proses ini <strong>pasti berhenti</strong> — yaitu setelah sejumlah berhingga langkah, tidak ada lagi dua bilangan yang bisa dipilih.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Yang diminta bukan invarian, melainkan besaran yang selalu berubah ke satu arah saja.",
+    "Perhatikan jumlah seluruh bilangan di papan. Apakah ia bisa naik?",
+    "Sebuah besaran yang selalu turun belum cukup untuk menjamin berhenti. Sifat apa lagi yang dibutuhkan?"
+   ],
+   "pembahasan": "<p><strong>Yang dicari adalah monovarian, bukan invarian.</strong> Invarian membuktikan sesuatu tidak mungkin; untuk membuktikan sebuah proses berakhir, yang dibutuhkan adalah besaran yang selalu bergerak ke satu arah dan tidak bisa bergerak selamanya.</p><p><strong>Pilih besarannya.</strong> Ambil jumlah seluruh bilangan di papan:</p><p>$$S = \\sum_{x \\text{ di papan}} x$$</p><p><strong>Buktikan $S$ selalu turun.</strong> Sebuah langkah mengganti $a$ dengan $a-b$, sedangkan bilangan lain tidak disentuh. Maka</p><p>$$S' = S - a + (a - b) = S - b$$</p><p>Karena $b$ bilangan asli, $b \\ge 1$, sehingga</p><p>$$S' \\le S - 1$$</p><p>Jadi tiap langkah menurunkan $S$ sedikitnya satu. <strong>$S$ tidak pernah naik dan tidak pernah tetap.</strong></p><p><strong>Buktikan $S$ tidak bisa turun selamanya.</strong> Di sinilah bagian yang paling sering dilewati. Besaran yang selalu turun belum menjamin apa-apa — bilangan real bisa turun tanpa henti, misalnya $1, \\frac12, \\frac14, \\dots$.</p><p>Yang menutup celah itu adalah dua hal:</p><ol><li><strong>$S$ selalu bilangan bulat.</strong> Setiap bilangan di papan tetap bilangan asli: kalau $a &gt; b$ dan keduanya asli, maka $a - b$ juga asli.</li><li><strong>$S$ terbatas di bawah.</strong> Karena seluruh bilangan di papan paling sedikit $1$, dan banyaknya bilangan tidak pernah berubah — langkah itu mengganti, bukan menghapus — maka $S \\ge n$ dengan $n$ banyaknya bilangan di papan.</li></ol><p>Sebuah barisan bilangan bulat yang turun dan terbatas di bawah pasti berhingga. Kalau prosesnya berjalan $k$ langkah, maka $S$ turun sedikitnya $k$, sehingga</p><p>$$S_0 - k \\ \\ge\\ n \\quad\\Longrightarrow\\quad k \\ \\le\\ S_0 - n$$</p><p>Jadi banyaknya langkah tidak mungkin melebihi $S_0 - n$, yang berhingga. Prosesnya pasti berhenti. $\\blacksquare$</p><h4>Keadaan saat berhenti</h4><p>Proses berhenti tepat ketika tidak ada dua bilangan dengan $a &gt; b$ — yaitu ketika seluruh bilangan di papan <strong>sama besar</strong>. Bilangan itu adalah faktor persekutuan terbesar dari bilangan-bilangan awalnya, dan alasannya juga sebuah invarian: langkah $a \\mapsto a-b$ tidak mengubah FPB seluruh bilangan di papan.</p><p>Jadi soal ini sebenarnya memuat keduanya sekaligus — monovarian yang menjamin berhenti, dan invarian yang menentukan berhenti di mana. Prosesnya sendiri tidak lain algoritma Euklid yang dijalankan pada banyak bilangan.</p><h4>Mengapa syarat \"bilangan bulat\" tidak boleh dilewati</h4><p>Kalau bilangan di papan boleh bernilai real positif, prosesnya bisa berjalan selamanya. Ambil $a = \\sqrt2$ dan $b = 1$: langkah demi langkah menghasilkan $\\sqrt2 - 1$, lalu $\\sqrt2 - 1$ dan $1$ berganti peran, dan seterusnya tanpa pernah bertemu dua bilangan yang sama.</p><p>Perbedaan itu bukan kehalusan teknis — ia justru seluruh alasan mengapa monovarian bekerja.</p>",
+   "rubrik": [
+    "Menyatakan bahwa yang dicari besaran yang selalu berubah satu arah, bukan yang kekal",
+    "Memilih jumlah seluruh bilangan sebagai monovarian",
+    "Menghitung $S' = S - b$ dan menyimpulkan penurunannya sedikitnya $1$",
+    "Menyatakan $S$ selalu bilangan bulat, dengan alasan $a-b$ tetap bilangan asli",
+    "Menyatakan $S$ terbatas di bawah, dengan alasan tiap bilangan paling sedikit $1$ dan banyaknya bilangan tetap",
+    "Menyimpulkan barisan bulat yang turun dan terbatas di bawah pasti berhingga, sehingga proses berhenti",
+    "Menyebut bahwa besaran yang turun saja belum cukup, misalnya lewat contoh bilangan real"
+   ]
+  },
+  {
+   "id": "inv-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "invarian"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Di sebuah papan tertulis bilangan $1, 2, 3, \\dots, 10$. Sebuah langkah terdiri atas: menghapus dua bilangan $a$ dan $b$, lalu menuliskan $|a-b|$ sebagai gantinya.</p><p>Setelah $9$ langkah hanya tersisa satu bilangan. Buktikan bilangan itu pasti <strong>ganjil</strong>.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Soal tidak menanyakan bilangan mana yang tersisa, melainkan sifat yang selalu berlaku. Cari besaran yang tidak pernah berubah oleh langkah apa pun.",
+    "Coba jumlah seluruh bilangan di papan. Ia jelas berubah — tetapi periksa apakah <strong>sifat ganjil-genapnya</strong> ikut berubah.",
+    "Hitung selisih jumlah sebelum dan sesudah satu langkah, lalu tunjukkan selisih itu selalu genap."
+   ],
+   "pembahasan": "<p><strong>Tebak besarannya.</strong> Jumlah seluruh bilangan di papan adalah calon yang wajar, sebab langkahnya menyentuh dua bilangan sekaligus. Jumlah itu memang berubah — jadi ia bukan invarian. Tetapi <strong>paritasnya</strong> mungkin kekal, dan itu yang diperiksa.</p><p><strong>Buktikan paritasnya tidak berubah.</strong> Misalkan sebelum sebuah langkah jumlah seluruh bilangan adalah $S$. Langkah itu membuang $a$ dan $b$, lalu menambahkan $|a-b|$. Jumlah yang baru:</p><p>$$S' = S - a - b + |a-b|$$</p><p>Selisihnya:</p><p>$$S - S' = a + b - |a-b|$$</p><p>Andaikan $a \\ge b$ — kalau tidak, tukar namanya, sebab $|a-b|$ tidak peduli urutannya. Maka $|a-b| = a-b$ dan</p><p>$$S - S' = a + b - (a-b) = 2b$$</p><p>Bilangan $2b$ selalu <strong>genap</strong>. Jadi tiap langkah mengubah jumlahnya sebesar bilangan genap, sehingga</p><p>$$S' \\equiv S \\pmod 2$$</p><p><strong>Paritas jumlah adalah invariannya.</strong></p><p><strong>Hitung nilai awalnya.</strong></p><p>$$S_0 = 1 + 2 + \\cdots + 10 = \\frac{10 \\times 11}{2} = 55$$</p><p>yang <strong>ganjil</strong>.</p><p><strong>Simpulkan.</strong> Karena paritasnya tidak pernah berubah, jumlah seluruh bilangan di papan selalu ganjil — pada setiap tahap, termasuk di akhir. Di akhir hanya tersisa satu bilangan, sehingga jumlahnya adalah bilangan itu sendiri.</p><p>Maka bilangan terakhir ganjil. $\\blacksquare$</p><h4>Yang dibuktikan dan yang tidak</h4><p>Bukti ini menunjukkan bilangan terakhir <strong>pasti ganjil</strong>. Ia tidak menyebut bilangan mana — dan memang tidak bisa, sebab hasilnya bergantung pada urutan langkah. Dengan mencoba berbagai urutan, hasil yang bisa muncul adalah $1, 3, 5, 7, 9$; seluruhnya ganjil, sebagaimana dijamin.</p><p>Perhatikan juga arah kesimpulannya. Invarian membuktikan sesuatu <strong>tidak mungkin</strong> — di sini, tidak mungkin berakhir genap. Ia tidak pernah membuktikan sesuatu mungkin. Untuk menunjukkan bahwa $7$ benar-benar dapat dicapai, satu-satunya cara adalah memberikan urutan langkahnya.</p><h4>Langkah yang paling sering dilewati</h4><p>Bagian tersulit bukan menebak besarannya, melainkan <strong>membuktikan tiap langkah tidak mengubahnya</strong>. Banyak jawaban berhenti pada \"jumlahnya ganjil, jadi hasilnya ganjil\" tanpa menghitung $S - S' = 2b$ — dan tanpa perhitungan itu, tidak ada alasan apa pun bahwa paritasnya kekal.</p><p>Kalau langkahnya diganti menjadi \"tulis $a+b$\", paritas jumlahnya juga kekal, tetapi kalau diganti menjadi \"tulis $ab$\", ia <strong>tidak</strong> kekal. Perbedaannya hanya terlihat lewat perhitungan.</p>",
+   "rubrik": [
+    "Menyatakan bahwa yang dicari adalah besaran yang tidak berubah oleh langkah apa pun",
+    "Memilih jumlah seluruh bilangan, dan menyadari yang kekal adalah paritasnya, bukan jumlahnya",
+    "Menghitung $S - S' = a + b - |a-b|$",
+    "Menangani nilai mutlaknya, misalnya dengan memisalkan $a \\ge b$, lalu menyimpulkan selisihnya $2b$",
+    "Menyimpulkan selisih itu genap, sehingga paritas jumlah kekal pada setiap langkah",
+    "Menghitung jumlah awal $55$ dan menyebutnya ganjil",
+    "Menyimpulkan bilangan terakhir sama dengan jumlah akhir, sehingga ganjil"
+   ]
   },
   {
    "id": "kb-01",
@@ -842,6 +1539,182 @@
    ],
    "pembahasan": "<p><strong>Daftar hurufnya lebih dulu.</strong> Ini langkah yang tidak boleh dikerjakan tergesa-gesa:</p><table><thead><tr><th>Huruf</th><th>M</th><th>A</th><th>T</th><th>E</th><th>I</th><th>K</th></tr></thead><tbody><tr><td>Banyaknya</td><td>$2$</td><td>$3$</td><td>$2$</td><td>$1$</td><td>$1$</td><td>$1$</td></tr></tbody></table><p>Jumlahkan untuk memeriksa: $2+3+2+1+1+1 = 10$. Kata MATEMATIKA memang terdiri atas $10$ huruf. <strong>Selalu lakukan pemeriksaan ini</strong> — salah menghitung berapa kali sebuah huruf muncul adalah kekeliruan yang paling sering di soal jenis ini.</p><p><strong>Anggap dulu semua huruf berbeda.</strong> Kalau kedua M dibedakan menjadi $M_1, M_2$ dan seterusnya, susunannya ada</p><p>$$10! = 3\\,628\\,800$$</p><p><strong>Perbaiki kelebihannya.</strong> Sebuah susunan sungguhan, misalnya MATEMATIKA itu sendiri, terhitung berkali-kali di angka tadi — tepat sebanyak cara menukar-nukar huruf yang sama di antara mereka sendiri:</p><p>$$2! \\text{ untuk M}, \\qquad 3! \\text{ untuk A}, \\qquad 2! \\text{ untuk T}$$</p><p>Huruf yang muncul sekali menyumbang $1! = 1$, jadi tidak berpengaruh.</p><p>$$\\frac{10!}{2!\\,3!\\,2!} = \\frac{3\\,628\\,800}{2 \\times 6 \\times 2}\n= \\frac{3\\,628\\,800}{24} = \\boxed{151200}$$</p><p><strong>Mengapa pembaginya dikalikan, bukan dijumlahkan.</strong> Penukaran huruf M dan penukaran huruf A dapat dilakukan <strong>bersamaan</strong> — tiap susunan kedua M dapat dipadankan dengan tiap susunan ketiga A. Jadi banyaknya salinan tiap susunan adalah $2! \\times 3! \\times 2!$, bukan $2!+3!+2!$.</p><p><strong>Periksa pada kata yang cukup kecil untuk didaftar.</strong> Kata BUKU punya $4$ huruf dengan U sebanyak dua, jadi rumusnya memberi $\\frac{4!}{2!} = 12$. Mendaftar seluruhnya memang memberi $12$ susunan — bukan $24$, sebab menukar kedua U tidak mengubah apa pun.</p>",
    "rubrik": []
+  },
+  {
+   "id": "pcg-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "pencacahan-ganda"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Dalam sebuah pertemuan yang dihadiri $10$ orang, setiap orang berjabat tangan dengan tepat $3$ orang lainnya.</p><p>Ada berapa jabat tangan yang terjadi?</p>",
+   "jawaban": "15",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan mencoba mendaftar siapa berjabat tangan dengan siapa. Hitung sesuatu yang lebih mudah lebih dulu.",
+    "Jumlahkan, untuk tiap orang, banyaknya jabat tangan yang ia ikuti. Apa yang sebenarnya dihitung angka itu?",
+    "Tiap jabat tangan melibatkan dua orang, jadi ia terhitung dua kali di dalam jumlah tadi."
+   ],
+   "pembahasan": "<p><strong>Hitung dari sisi orang.</strong> Tiap orang mengikuti $3$ jabat tangan, dan ada $10$ orang:</p><p>$$10 \\times 3 = 30$$</p><p><strong>Baca angka itu dengan benar.</strong> Angka $30$ <strong>bukan</strong> banyaknya jabat tangan. Ia menghitung pasangan (orang, jabat tangan yang ia ikuti) — dan tiap jabat tangan menyumbang <strong>dua</strong> pasangan semacam itu, sekali untuk masing-masing pihak.</p><p><strong>Hitung dari sisi jabat tangan.</strong> Kalau banyaknya jabat tangan adalah $J$, maka banyaknya pasangan itu juga $2J$. Kedua hitungan mencacah himpunan yang sama:</p><p>$$2J = 30 \\quad\\Longrightarrow\\quad J = \\boxed{15}$$</p><p><strong>Kekeliruan yang paling sering</strong> adalah menjawab $30$. Ia muncul dari menghitung dengan benar tetapi salah membaca apa yang dihitung — dan itulah sebabnya kebiasaan menyebutkan <strong>apa yang sedang dicacah</strong> sebelum menjumlahkan begitu berharga.</p><p><strong>Periksa kewajarannya.</strong> Kalau semua orang berjabat tangan dengan semua orang, jabat tangannya $\\binom{10}{2} = 45$, yaitu tiap orang mengikuti $9$ jabat tangan. Di sini tiap orang hanya mengikuti $3$, yaitu sepertiganya, sehingga $45 \\times \\frac13 = 15$. Cocok.</p><p><strong>Periksa juga apakah keadaannya mungkin.</strong> Jumlah derajat $30$ genap, sehingga tidak ada yang bertentangan. Kalau soalnya menyebut $5$ orang yang masing-masing berjabat tangan dengan tepat $3$ orang, jumlahnya $15$ — ganjil, sehingga $J = 7{,}5$ dan keadaan itu <strong>mustahil</strong>. Memeriksa hal ini sebelum menjawab mencegah menuliskan bilangan pecahan pada soal yang jawabannya wajib bulat.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pcg-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "pencacahan-ganda"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Di sebuah sekolah terdapat $30$ siswa dan beberapa klub. Setiap siswa mengikuti <strong>tepat $2$</strong> klub, dan setiap klub beranggotakan <strong>tepat $5$</strong> siswa.</p><p>Ada berapa klub di sekolah itu?</p>",
+   "jawaban": "12",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Cacah pasangan (siswa, klub yang ia ikuti). Himpunan itu bisa dihitung dari dua sisi.",
+    "Dari sisi siswa: tiap siswa menyumbang dua pasangan.",
+    "Dari sisi klub: tiap klub menyumbang sebanyak anggotanya."
+   ],
+   "pembahasan": "<p><strong>Nyatakan apa yang dicacah.</strong></p><p>$$T = \\{(s, k) : \\text{siswa } s \\text{ mengikuti klub } k\\}$$</p><p><strong>Cara A — dari sisi siswa.</strong> Tiap siswa mengikuti tepat $2$ klub, dan ada $30$ siswa:</p><p>$$|T| = 30 \\times 2 = 60$$</p><p><strong>Cara B — dari sisi klub.</strong> Tiap klub beranggotakan tepat $5$ siswa. Kalau banyaknya klub adalah $K$:</p><p>$$|T| = 5K$$</p><p><strong>Samakan.</strong></p><p>$$5K = 60 \\quad\\Longrightarrow\\quad K = \\boxed{12}$$</p><p><strong>Bentuk yang layak dikenali.</strong> Kalau ada dua kelompok objek dan sebuah hubungan di antaranya, lalu diketahui berapa hubungan yang dimiliki tiap anggota di kedua sisi, maka</p><p>$$(\\text{banyak sisi kiri}) \\times (\\text{hubungan per objek kiri}) = (\\text{banyak sisi kanan}) \\times (\\text{hubungan per objek kanan})$$</p><p>Persamaan itu langsung memberi besaran yang belum diketahui. Soal yang bunyinya bermacam- macam — siswa dan klub, titik dan garis, buku dan rak, pemain dan pertandingan — semuanya persoalan yang sama.</p><p><strong>Periksa kesahihannya.</strong> Hasilnya harus bilangan bulat, dan di sini $60 / 5 = 12$ memang bulat. Kalau tidak bulat, keadaan yang digambarkan soal mustahil. Misalnya kalau tiap klub beranggotakan $7$ siswa, maka $K = \\frac{60}{7}$ bukan bilangan bulat, sehingga tidak ada susunan yang memenuhi.</p><p>Pemeriksaan itu murah dan sering menjadi seluruh isi soal olimpiade jenis ini: yang ditanyakan bukan berapa banyak, melainkan <strong>apakah mungkin</strong>.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pcg-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "pencacahan-ganda"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Hitunglah</p><p>$$\\sum_{k=0}^{10} k \\binom{10}{k}\n= 0\\binom{10}{0} + 1\\binom{10}{1} + 2\\binom{10}{2} + \\cdots + 10\\binom{10}{10}$$</p>",
+   "jawaban": "5120",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Menghitung sebelas suku satu per satu bisa, tetapi ada bacaan pencacahan yang membuatnya selesai dalam satu baris.",
+    "Bayangkan memilih sebuah tim dari $10$ orang, lalu menunjuk seorang ketua dari dalam tim itu. Berapa cara seluruhnya?",
+    "Hitung hal yang sama dengan menunjuk ketuanya lebih dulu, baru memilih anggota lainnya."
+   ],
+   "pembahasan": "<p><strong>Nyatakan apa yang dicacah.</strong> Tinjau himpunan</p><p>$$T = \\{(\\text{tim},\\ \\text{ketua}) : \\text{tim} \\subseteq \\{1,\\dots,10\\},\\ \\text{ketua} \\in \\text{tim}\\}$$</p><p>yaitu pasangan berupa sebuah tim beserta seorang ketua yang diambil dari dalam tim itu. Timnya boleh berukuran berapa pun, asalkan tidak kosong — sebab tim kosong tidak punya ketua.</p><p><strong>Cara A — pilih tim dulu, baru ketuanya.</strong> Pecah menurut ukuran tim. Tim berukuran $k$ ada $\\binom{10}{k}$, dan tiap tim semacam itu punya $k$ pilihan ketua:</p><p>$$|T| = \\sum_{k=0}^{10} k \\binom{10}{k}$$</p><p>Suku $k = 0$ menyumbang nol, sesuai kenyataan bahwa tim kosong tidak menyumbang pasangan apa pun.</p><p><strong>Cara B — pilih ketua dulu, baru anggota lainnya.</strong> Tunjuk ketuanya lebih dulu: ada $10$ pilihan. Setelah itu, masing-masing dari $9$ orang sisanya bebas ikut atau tidak ikut ke dalam tim:</p><p>$$|T| = 10 \\times 2^{9}$$</p><p><strong>Samakan.</strong></p><p>$$\\sum_{k=0}^{10} k\\binom{10}{k} = 10 \\times 2^{9} = 10 \\times 512 = \\boxed{5120}$$</p><p><strong>Periksa dengan menjumlahkan langsung.</strong> Baris ke-$10$ segitiga Pascal adalah $1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1$, sehingga</p><p>$$0 + 10 + 90 + 360 + 840 + 1260 + 1260 + 840 + 360 + 90 + 10 = 5120$$</p><p>Cocok.</p><p><strong>Bentuk umumnya:</strong></p><p>$$\\sum_{k=0}^{n} k\\binom{n}{k} = n\\,2^{\\,n-1}$$</p><p><strong>Yang membuat cara B berhasil</strong> adalah pembalikan urutan keputusannya. Cara A memaksa menjumlahkan atas seluruh ukuran tim, sebab pilihan ketua bergantung pada ukuran itu. Cara B menunjuk ketua lebih dulu — dan begitu ketuanya tetap, sisa keputusannya menjadi seragam, sehingga penjumlahannya lenyap.</p><p>Mencari urutan keputusan yang membuat penjumlahan lenyap adalah keterampilan inti pada pencacahan ganda, dan ia terpakai jauh melampaui identitas ini.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pcg-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "pencacahan-ganda"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Di sebuah perkemahan terdapat $9$ siswa yang dibagi ke dalam beberapa kelompok kerja. Setiap siswa masuk ke <strong>tepat $4$</strong> kelompok, dan setiap kelompok beranggotakan <strong>tepat $3$</strong> siswa.</p><p>Ada berapa kelompok kerja?</p>",
+   "jawaban": "12",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Cacah pasangan (siswa, kelompok yang ia masuki), lalu hitung dari kedua sisi.",
+    "Dari sisi siswa, tiap siswa menyumbang empat pasangan.",
+    "Dari sisi kelompok, tiap kelompok menyumbang tiga pasangan."
+   ],
+   "pembahasan": "<p><strong>Nyatakan apa yang dicacah.</strong></p><p>$$T = \\{(s, g) : \\text{siswa } s \\text{ masuk kelompok } g\\}$$</p><p><strong>Dari sisi siswa.</strong></p><p>$$|T| = 9 \\times 4 = 36$$</p><p><strong>Dari sisi kelompok.</strong> Sebut $G$ banyaknya kelompok:</p><p>$$|T| = 3G$$</p><p><strong>Samakan.</strong></p><p>$$3G = 36 \\quad\\Longrightarrow\\quad G = \\boxed{12}$$</p><p><strong>Perhatikan yang tidak dijawab hitungan ini.</strong> Persamaan di atas menunjukkan bahwa <strong>kalau</strong> susunan semacam itu ada, banyaknya kelompok pasti $12$. Ia tidak membuktikan susunan itu benar-benar bisa dibuat.</p><p>Syarat bilangan bulat adalah <strong>syarat perlu</strong>, bukan syarat cukup. Untuk soal olimpiade yang menanyakan \"mungkinkah\", biasanya dibutuhkan dua bagian: hitungan seperti ini untuk menutup kemungkinan yang salah, dan sebuah susunan nyata untuk menunjukkan sisanya bisa.</p><p><strong>Contoh kegagalan syarat itu.</strong> Kalau soalnya menyebut $9$ siswa yang masing-masing masuk $4$ kelompok, tetapi tiap kelompok beranggotakan $5$ siswa, maka</p><p>$$5G = 36 \\quad\\Longrightarrow\\quad G = 7{,}2$$</p><p>bukan bilangan bulat — sehingga susunan seperti itu <strong>mustahil</strong>, tanpa perlu mencoba apa pun.</p><p><strong>Satu pemeriksaan lagi yang murah.</strong> Tiap kelompok berisi $3$ dari $9$ siswa, dan seluruhnya ada $\\binom93 = 84$ kelompok berbeda yang mungkin. Karena $12 \\le 84$, tidak ada yang bertentangan di situ. Kalau hitungannya menuntut lebih banyak kelompok daripada yang mungkin ada, susunannya juga mustahil — kecuali kelompok yang isinya sama boleh muncul dua kali.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pcg-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "pencacahan-ganda"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Sebuah tabel berukuran $8 \\times 8$ diisi angka $0$ dan $1$. Setiap <strong>baris</strong> berisi tepat $3$ angka $1$, dan setiap <strong>kolom</strong> berisi angka $1$ sebanyak yang sama.</p><p>Berapa banyak angka $1$ pada setiap kolom?</p>",
+   "jawaban": "3",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hitung seluruh angka $1$ di dalam tabel, baris demi baris.",
+    "Hitung angka yang sama sekali lagi, kali ini kolom demi kolom.",
+    "Kedua hitungan wajib memberi hasil sama, dan dari situ jawabannya keluar."
+   ],
+   "pembahasan": "<p><strong>Nyatakan apa yang dicacah.</strong> Yang dicacah adalah <strong>seluruh angka $1$ di dalam tabel</strong> — satu himpunan yang sama, dihitung dari dua arah.</p><p><strong>Cara A — baris demi baris.</strong> Ada $8$ baris dan tiap baris berisi $3$ angka $1$:</p><p>$$N = 8 \\times 3 = 24$$</p><p><strong>Cara B — kolom demi kolom.</strong> Ada $8$ kolom, masing-masing berisi $c$ angka $1$:</p><p>$$N = 8c$$</p><p><strong>Samakan.</strong></p><p>$$8c = 24 \\quad\\Longrightarrow\\quad c = \\boxed{3}$$</p><p><strong>Inilah bentuk paling murni dari pencacahan ganda:</strong> jumlah seluruh isi tabel dapat dihitung baris demi baris atau kolom demi kolom, dan keduanya wajib sama.</p><p>$$\\sum_{i} r_i = \\sum_{j} c_j$$</p><p>dengan $r_i$ jumlah baris ke-$i$ dan $c_j$ jumlah kolom ke-$j$. Bentuk ini yang berulang kali muncul di soal olimpiade, sering dengan tabel yang tidak disebut sebagai tabel — ia bisa berupa daftar keanggotaan, jadwal pertandingan, atau papan permainan.</p><p><strong>Perhatikan syarat \"sebanyak yang sama\" pada soal itu penting.</strong> Tanpa syarat itu, yang bisa disimpulkan hanyalah <strong>jumlah</strong> seluruh kolomnya $24$ — sedangkan sebarannya bisa bermacam-macam, misalnya satu kolom berisi $8$ dan yang lain lebih sedikit.</p><p>Yang selalu berlaku tanpa syarat tambahan adalah nilai rata-ratanya:</p><p>$$\\bar c = \\frac{24}{8} = 3$$</p><p>Dari situ langsung ikut satu kesimpulan yang sering berguna: pasti ada kolom yang berisi paling sedikit $3$ angka $1$, dan pasti ada kolom yang berisi paling banyak $3$. Menarik kesimpulan dari rata-rata semacam ini adalah cara prinsip sarang merpati bekerja sama dengan pencacahan ganda.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pcg-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "pencacahan-ganda"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Buktikan bahwa untuk setiap bilangan bulat $n \\ge 1$ berlaku</p><p>$$\\sum_{k=1}^{n} k \\binom{n}{k} = n \\cdot 2^{\\,n-1}$$</p><p>dengan <strong>pencacahan ganda</strong> — yaitu dengan menghitung satu himpunan yang sama lewat dua cara, bukan dengan manipulasi aljabar.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Nyatakan lebih dulu himpunan yang akan dicacah. Ruas kirinya menjumlahkan atas ukuran, jadi himpunan itu pasti memuat sesuatu yang berukuran.",
+    "Bayangkan memilih sebuah tim tak kosong dari $n$ orang, lalu menunjuk seorang ketua dari dalam tim itu.",
+    "Untuk cara kedua, balik urutan keputusannya: tunjuk ketua lebih dulu, baru tentukan siapa lagi yang ikut."
+   ],
+   "pembahasan": "<p><strong>Nyatakan himpunannya.</strong> Tinjau</p><p>$$T = \\bigl\\{(A, x) : A \\subseteq \\{1,2,\\dots,n\\},\\ x \\in A \\bigr\\}$$</p><p>yaitu pasangan berupa sebuah himpunan bagian $A$ beserta satu unsur terpilih $x$ dari dalam $A$. Bacaan sehari-harinya: sebuah tim beserta ketuanya.</p><p>Perhatikan $A$ tidak mungkin kosong, sebab $x$ harus berada di dalamnya.</p><h4>Cara A — pilih himpunannya dulu</h4><p>Pecah $T$ menurut ukuran $A$. Kelompok-kelompok ini lepas dan menutupi seluruh $T$, sebab tiap pasangan punya tepat satu ukuran $|A|$.</p><p>Untuk ukuran $k$ tertentu:</p><ul><li>himpunan bagian berukuran $k$ ada $\\dbinom{n}{k}$;</li><li>tiap himpunan semacam itu punya $k$ pilihan unsur terpilih.</li></ul><p>Menurut aturan kali, kelompok berukuran $k$ menyumbang $k\\binom{n}{k}$ pasangan. Menurut aturan jumlah,</p><p>$$|T| = \\sum_{k=1}^{n} k \\binom{n}{k}$$</p><h4>Cara B — pilih unsur terpilihnya dulu</h4><p>Tentukan $x$ lebih dulu. Ia boleh unsur mana pun:</p><p>$$n \\text{ pilihan}$$</p><p>Setelah $x$ tetap, himpunan $A$ tinggal ditentukan oleh $n-1$ unsur sisanya, dan masing-masing bebas ikut atau tidak ikut — tanpa syarat apa pun, sebab $A$ dijamin tak kosong oleh keberadaan $x$:</p><p>$$2^{\\,n-1}$$</p><p>Banyaknya pilihan ini sama untuk tiap $x$, sehingga aturan kali sah:</p><p>$$|T| = n \\cdot 2^{\\,n-1}$$</p><h4>Simpulkan</h4><p>Kedua cara mencacah himpunan $T$ yang sama, sehingga hasilnya wajib sama:</p><p>$$\\sum_{k=1}^{n} k \\binom{n}{k} = n \\cdot 2^{\\,n-1} \\qquad \\blacksquare$$</p><h4>Mengapa penjumlahannya lenyap pada cara kedua</h4><p>Pada cara A, pilihan unsur terpilih bergantung pada ukuran $A$ — itulah yang memaksa penjumlahan atas $k$. Pada cara B, urutan keputusannya dibalik: begitu $x$ ditetapkan lebih dulu, sisa keputusannya seragam untuk setiap $x$, dan tidak ada lagi yang perlu dijumlahkan.</p><p><strong>Mencari urutan keputusan yang membuat penjumlahan lenyap</strong> adalah keterampilan inti jurus ini, dan ia terpakai jauh melampaui identitas ini.</p><h4>Periksa untuk $n = 3$</h4><p>Ruas kiri: $1\\binom31 + 2\\binom32 + 3\\binom33 = 3 + 6 + 3 = 12$.</p><p>Ruas kanan: $3 \\cdot 2^{2} = 12$. Cocok.</p><p>Daftar pasangannya memang $12$: tiga tim berukuran satu (masing-masing satu pilihan ketua), tiga tim berukuran dua (masing-masing dua pilihan), dan satu tim berukuran tiga (tiga pilihan) — yaitu $3 + 6 + 3$.</p>",
+   "rubrik": [
+    "Menyatakan dengan jelas himpunan yang dicacah, yaitu pasangan himpunan bagian dan unsur terpilih di dalamnya",
+    "Menyebut bahwa himpunan bagiannya tidak mungkin kosong",
+    "Cara A: memecah menurut ukuran, dan menyatakan kelompoknya lepas serta lengkap",
+    "Cara A: menghitung sumbangan tiap ukuran sebagai $k\\binom{n}{k}$",
+    "Cara B: menghitung $n$ pilihan unsur terpilih, lalu $2^{n-1}$ untuk sisanya",
+    "Cara B: menyebut bahwa banyaknya pilihan sisa itu sama untuk tiap unsur terpilih",
+    "Menyimpulkan kedua ruas sama karena mencacah himpunan yang sama"
+   ]
+  },
+  {
+   "id": "pcg-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "pencacahan-ganda"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Dalam sebuah pertemuan, beberapa orang saling berjabat tangan. Sebut $d_i$ banyaknya orang yang dijabat tangan oleh orang ke-$i$.</p><p>Buktikan bahwa</p><p>$$\\sum_{i} d_i = 2J$$</p><p>dengan $J$ banyaknya jabat tangan yang terjadi. Simpulkan bahwa banyaknya orang yang berjabat tangan dengan <strong>ganjil</strong> banyak orang selalu genap.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Nyatakan lebih dulu apa yang akan dicacah. Bukan orang, dan bukan jabat tangan — melainkan sesuatu yang memuat keduanya.",
+    "Tinjau pasangan $(\\text{orang},\\ \\text{jabat tangan yang ia ikuti})$, lalu hitung banyaknya pasangan itu dengan dua cara.",
+    "Untuk kesimpulan terakhir, pisahkan penjumlahan menjadi suku ganjil dan suku genap."
+   ],
+   "pembahasan": "<p><strong>Nyatakan apa yang dicacah.</strong> Tinjau himpunan</p><p>$$T = \\{(p, j) : p \\text{ seorang peserta},\\ j \\text{ sebuah jabat tangan yang diikuti } p\\}$$</p><p>Menyatakan $T$ dengan jelas adalah langkah yang menentukan; setelah itu kedua cara menghitungnya muncul sendiri.</p><p><strong>Cara A — hitung per orang.</strong> Untuk tiap orang $i$, banyaknya jabat tangan yang ia ikuti adalah $d_i$. Menjumlahkan atas semua orang:</p><p>$$|T| = \\sum_i d_i$$</p><p><strong>Cara B — hitung per jabat tangan.</strong> Tiap jabat tangan melibatkan tepat <strong>dua</strong> orang, sehingga ia menyumbang tepat dua pasangan ke $T$. Menjumlahkan atas semua jabat tangan:</p><p>$$|T| = 2J$$</p><p><strong>Kedua cara mencacah himpunan yang sama.</strong> Karena itu</p><p>$$\\sum_i d_i = 2J \\qquad \\blacksquare$$</p><h4>Akibatnya</h4><p>Ruas kanan adalah bilangan <strong>genap</strong>, jadi $\\sum_i d_i$ genap. Pisahkan penjumlahannya:</p><p>$$\\sum_{d_i \\text{ genap}} d_i \\ + \\ \\sum_{d_i \\text{ ganjil}} d_i \\ = \\ 2J$$</p><p>Jumlah pertama genap, sebab tiap sukunya genap. Karena seluruhnya genap, jumlah kedua juga harus genap.</p><p>Jumlah kedua terdiri atas suku-suku ganjil. Jumlah beberapa bilangan ganjil bernilai genap tepat ketika <strong>banyaknya suku genap</strong>. Maka banyaknya orang dengan $d_i$ ganjil adalah bilangan genap. $\\blacksquare$</p><h4>Mengapa cara ini disebut pencacahan ganda</h4><p>Tidak ada rumus yang dihafal dan tidak ada yang dijabarkan. Yang dikerjakan hanya: pilih satu himpunan, hitung dari dua sudut, lalu samakan hasilnya. Persamaan yang keluar itulah jawabannya.</p><p>Yang menentukan berhasil tidaknya adalah <strong>pemilihan himpunannya</strong>. Kalau yang dicacah cuma \"orang\" atau cuma \"jabat tangan\", tidak ada dua cara yang berbeda. Himpunan pasangan $(p, j)$ memuat keduanya sekaligus, dan itu yang membuat dua sudut pandang mungkin.</p><p>Bentuk ini akan muncul terus: himpunan yang berguna hampir selalu berupa <strong>pasangan</strong> yang memenuhi suatu hubungan — siswa dan klub yang diikutinya, titik dan garis yang melewatinya, baris dan kolom pada sebuah tabel.</p><h4>Akibat praktisnya</h4><p>Karena $\\sum_i d_i$ selalu genap, mustahil ada pertemuan lima orang yang setiap orangnya berjabat tangan dengan tepat tiga orang lain — sebab jumlah derajatnya $15$, ganjil. Satu persamaan sederhana menutup seluruh kemungkinan tanpa perlu mencoba satu pun susunan.</p>",
+   "rubrik": [
+    "Menyatakan dengan jelas himpunan yang dicacah, yaitu pasangan orang dan jabat tangan yang diikutinya",
+    "Cara A: menghitung $|T| = \\sum_i d_i$ dengan alasan tiap orang menyumbang $d_i$ pasangan",
+    "Cara B: menghitung $|T| = 2J$ dengan alasan tiap jabat tangan melibatkan tepat dua orang",
+    "Menyimpulkan kedua hitungan sama karena mencacah himpunan yang sama",
+    "Memisahkan penjumlahan menjadi suku genap dan suku ganjil",
+    "Menyimpulkan jumlah suku ganjilnya genap, sehingga banyaknya suku ganjil genap"
+   ]
   },
   {
    "id": "pm-01",
@@ -1362,6 +2235,175 @@
     "Setelah satu orang dipatok, berapa orang yang tersisa untuk disusun, dan apakah susunannya masih melingkar?"
    ],
    "pembahasan": "<p><strong>Mengapa $6!$ salah.</strong> Kalau keenam orang disusun seolah-olah berjajar, tiap susunan melingkar akan terhitung berkali-kali — sebab memutar meja tidak menghasilkan susunan baru, padahal ia menghasilkan urutan tulisan yang berbeda.</p><p><strong>Patok satu orang.</strong> Pilih satu orang, sebut saja Ani, dan tetapkan dia di satu tempat. Ini boleh dilakukan <strong>tanpa kehilangan apa pun</strong>: setiap susunan melingkar dapat diputar sehingga Ani berada di tempat itu, dan hanya ada satu cara memutarnya ke sana.</p><p><strong>Susun sisanya.</strong> Setelah Ani dipatok, lingkaran itu punya arah dan titik awal yang jelas. Kelima orang lain tinggal disusun searah jarum jam mulai dari sebelah Ani — dan itu susunan berjajar biasa:</p><p>$$5! = \\boxed{120}$$</p><p><strong>Cara kedua — bagi dengan banyaknya pemutaran.</strong> Susun keenam orang berjajar: $6! = 720$ cara. Tiap susunan melingkar bersesuaian dengan tepat $6$ susunan berjajar, sekali untuk tiap kemungkinan pemutaran:</p><p>$$\\frac{6!}{6} = \\frac{720}{6} = 120$$</p><p>Cocok, dan secara umum</p><p>$$\\frac{n!}{n} = (n-1)!$$</p><p><strong>Periksa pada kasus terkecil yang bisa didaftar.</strong> Untuk $3$ orang $A$, $B$, $C$ melingkar, rumusnya memberi $2! = 2$. Memang hanya ada dua: searah jarum jam $A \\to B \\to\nC$, dan $A \\to C \\to B$. Susunan $BCA$ dan $CAB$ sama dengan yang pertama — cukup diputar.</p><p><strong>Satu hal yang harus diperiksa di tiap soal meja bundar:</strong> apakah kursinya bernomor. Kalau bernomor, memutar menghasilkan susunan yang berbeda, lingkarannya cuma gambar, dan jawabannya kembali $6! = 720$. Satu kata di soal memisahkan $120$ dari $720$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "rek-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "rekursi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Sebuah tangga memiliki $8$ anak tangga. Sekali melangkah, seseorang dapat menaiki satu atau dua anak tangga.</p><p>Ada berapa cara menaiki tangga itu?</p>",
+   "jawaban": "34",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Beri nama untuk jawaban tangga berisi $n$ anak tangga, lalu hubungkan dengan tangga yang lebih pendek.",
+    "Pecah menurut langkah terakhirnya: satu anak tangga, atau dua.",
+    "Kerjakan dari tangga terpendek ke atas, dan periksa dua nilai awalnya dengan mendaftar."
+   ],
+   "pembahasan": "<p>Sebut $a_n$ banyaknya cara menaiki tangga berisi $n$ anak tangga.</p><p><strong>Rekurensnya.</strong> Pecah menurut langkah terakhir — satu anak tangga dari posisi $n-1$, atau dua anak tangga dari posisi $n-2$. Kedua kelompok lepas dan menutupi semuanya:</p><p>$$a_n = a_{n-1} + a_{n-2}$$</p><p><strong>Kasus dasarnya</strong>, diperiksa dengan mendaftar:</p><p>$$a_1 = 1, \\qquad a_2 = 2$$</p><p><strong>Hitung.</strong></p><p>$$a_3 = 3, \\quad a_4 = 5, \\quad a_5 = 8, \\quad a_6 = 13, \\quad a_7 = 21, \\quad a_8 = \\boxed{34}$$</p><p><strong>Cara memeriksa tanpa mengulang seluruh hitungan.</strong> Jumlahkan dua suku sebelumnya lagi: $a_7 + a_6 = 21 + 13 = 34$. Kesalahan penjumlahan di tengah tabel akan terbawa sampai akhir tanpa tanda apa pun, jadi menuliskan seluruh barisannya — bukan hanya nilai terakhir — adalah kebiasaan yang menolong.</p><p><strong>Bacaan lain dari soal yang sama.</strong> Menaiki tangga $8$ anak tangga sama artinya dengan menuliskan $8$ sebagai jumlah terurut dari angka $1$ dan $2$. Misalnya $2+1+2+1+2$ adalah satu cara. Soal yang bunyinya \"ada berapa cara menuliskan $8$ sebagai jumlah terurut dari $1$ dan $2$\" karena itu adalah soal yang sama persis.</p><p><strong>Kalau langkahnya boleh sampai tiga anak tangga,</strong> rekurensnya berubah menjadi</p><p>$$a_n = a_{n-1} + a_{n-2} + a_{n-3}$$</p><p>dan membutuhkan <strong>tiga</strong> kasus dasar: $a_1 = 1$, $a_2 = 2$, $a_3 = 4$. Perhatikan $a_3$ sekarang $4$, bukan $3$, sebab langkah tunggal sejauh tiga anak tangga kini diizinkan. Banyaknya kasus dasar selalu sama dengan orde rekurensnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "rek-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "rekursi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa barisan sepanjang $10$ yang tiap sukunya $0$ atau $1$, dengan syarat <strong>tidak ada dua angka $1$ yang berdampingan</strong>?</p>",
+   "jawaban": "144",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Beri nama untuk jawaban panjang $n$, lalu pecah menurut suku terakhirnya.",
+    "Kalau suku terakhirnya $0$, tidak ada syarat tambahan pada sisanya. Kalau $1$, suku sebelumnya sudah dipaksa.",
+    "Kerjakan panjang $1$ dan $2$ dengan mendaftar, supaya kasus dasarnya pasti benar."
+   ],
+   "pembahasan": "<p>Sebut $b_n$ banyaknya barisan panjang $n$ yang memenuhi syarat.</p><p><strong>Pecah menurut suku terakhir.</strong></p><ul><li><strong>Berakhir $0$.</strong> Sisa barisannya adalah barisan sah sepanjang $n-1$, tanpa syarat tambahan — sebab $0$ di ujung tidak pernah melanggar apa pun. Banyaknya $b_{n-1}$.</li><li><strong>Berakhir $1$.</strong> Suku sebelumnya <strong>harus</strong> $0$, kalau tidak ada dua angka $1$ berdampingan. Jadi barisannya berakhir dengan $\\dots 0\\,1$, dan bagian di depannya adalah barisan sah sepanjang $n-2$. Banyaknya $b_{n-2}$.</li></ul><p>Kedua kelompok lepas — suku terakhir tidak mungkin $0$ sekaligus $1$ — dan menutupi semuanya. Maka</p><p>$$b_n = b_{n-1} + b_{n-2}$$</p><p><strong>Kasus dasarnya</strong>, dengan mendaftar:</p><p>$$b_1 = 2 \\quad (0,\\ 1)$$</p><p>$$b_2 = 3 \\quad (00,\\ 01,\\ 10) \\ \\text{--- barisan } 11 \\text{ dibuang}$$</p><p><strong>Hitung.</strong></p><table><thead><tr><th>$n$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th><th>$6$</th><th>$7$</th><th>$8$</th><th>$9$</th><th>$10$</th></tr></thead><tbody><tr><td>$b_n$</td><td>$2$</td><td>$3$</td><td>$5$</td><td>$8$</td><td>$13$</td><td>$21$</td><td>$34$</td><td>$55$</td><td>$89$</td><td>$\\boxed{144}$</td></tr></tbody></table><p><strong>Periksa $b_3 = 5$ dengan mendaftar:</strong> $000, 001, 010, 100, 101$. Tepat $5$ — barisan $011$, $110$, dan $111$ dibuang.</p><p><strong>Rekurensnya sama dengan soal tangga, kasus dasarnya berbeda.</strong> Di soal tangga barisannya $1, 2, 3, 5, 8, \\dots$; di sini $2, 3, 5, 8, \\dots$ — bergeser satu suku. Karena itu menyalin jawaban dari soal yang \"polanya sama\" tanpa memeriksa kasus dasarnya adalah cara tercepat mendapat jawaban yang salah.</p><p><strong>Yang menentukan pemecahan kasusnya</strong> adalah pertanyaan: bagian mana dari barisan yang <strong>membatasi</strong> apa yang boleh ditulis berikutnya? Di sini hanya suku terakhir yang penting — syaratnya cuma menyangkut tetangga langsung. Kalau syaratnya \"tidak ada <strong>tiga</strong> angka $1$ berturut-turut\", yang harus diingat adalah dua suku terakhir, dan rekurensnya menjadi orde tiga.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "rek-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "rekursi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Sebuah papan berukuran $2 \\times 9$ akan ditutup seluruhnya dengan domino berukuran $1 \\times 2$. Domino boleh diletakkan mendatar maupun tegak, dan tidak boleh bertumpuk atau melewati tepi papan.</p><p>Ada berapa cara penutupan yang berbeda?</p>",
+   "jawaban": "55",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Beri nama untuk jawaban papan $2 \\times n$, lalu perhatikan bagaimana <strong>kolom paling kanan</strong> ditutup.",
+    "Kolom paling kanan bisa ditutup oleh satu domino tegak, atau oleh dua domino mendatar yang memakan dua kolom sekaligus.",
+    "Tidak ada kemungkinan ketiga — dan menunjukkan hal itu adalah bagian dari menyusun rekurensnya."
+   ],
+   "pembahasan": "<p>Sebut $t_n$ banyaknya penutupan papan $2 \\times n$.</p><p><strong>Pecah menurut kolom paling kanan.</strong> Petak kanan atas harus ditutup oleh sebuah domino, dan hanya ada dua kemungkinan bentuknya:</p><ul><li><strong>Domino tegak</strong> menutupi seluruh kolom terakhir. Sisanya papan $2 \\times (n-1)$, sehingga menyumbang $t_{n-1}$.</li><li><strong>Domino mendatar</strong> menutupi petak kanan atas dan tetangga kirinya. Petak kanan bawah lalu <strong>terpaksa</strong> ditutup domino mendatar juga — sebab domino tegak di situ akan menabrak domino pertama, dan tidak ada tempat lain. Kedua domino itu memakan dua kolom penuh, sehingga sisanya papan $2 \\times (n-2)$ dan menyumbang $t_{n-2}$.</li></ul><p>Kedua kemungkinan lepas dan menutupi semuanya, jadi</p><p>$$t_n = t_{n-1} + t_{n-2}$$</p><p><strong>Perhatikan bagian \"terpaksa\" di atas.</strong> Ia yang mencegah hitungan ganda: kalau kedua domino mendatar dianggap dua keputusan bebas, satu penutupan akan terhitung dua kali. Menunjukkan bahwa domino kedua tidak punya pilihan adalah langkah yang tidak boleh dilewati.</p><p><strong>Kasus dasarnya.</strong></p><p>$$t_1 = 1 \\quad (\\text{satu domino tegak})$$</p><p>$$t_2 = 2 \\quad (\\text{dua tegak, atau dua mendatar bertumpuk})$$</p><p><strong>Hitung.</strong></p><table><thead><tr><th>$n$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th><th>$6$</th><th>$7$</th><th>$8$</th><th>$9$</th></tr></thead><tbody><tr><td>$t_n$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$5$</td><td>$8$</td><td>$13$</td><td>$21$</td><td>$34$</td><td>$\\boxed{55}$</td></tr></tbody></table><p><strong>Periksa $t_3 = 3$ dengan menggambar.</strong> Papan $2\\times3$ dapat ditutup dengan: tiga domino tegak; satu tegak di kiri lalu dua mendatar; dua mendatar lalu satu tegak di kanan. Tepat tiga.</p><p><strong>Soal ini, soal tangga, dan soal barisan biner adalah satu soal yang sama.</strong> Ketiganya punya rekurens $a_n = a_{n-1} + a_{n-2}$, dan yang membedakan hanya kasus dasarnya. Padanan antara ketiganya bisa dibuat langsung: domino tegak berlaku seperti langkah satu anak tangga, dan sepasang domino mendatar seperti langkah dua anak tangga.</p><p>Mengenali soal yang berpakaian berbeda sebagai soal yang sama adalah keuntungan terbesar dari melatih rekursi — dan itu sebabnya kasus dasarnya yang harus selalu diperiksa ulang, sebab hanya itu yang benar-benar berubah.</p><p><strong>Kalau papannya $3 \\times n$,</strong> cara ini tidak lagi berlaku apa adanya: kolom terakhirnya punya lebih banyak kemungkinan bentuk dan sisanya tidak selalu berupa papan persegi panjang utuh. Soal itu menuntut rekurens dengan lebih dari satu barisan sekaligus.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "rek-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "rekursi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 4,
+   "soal": "<p>Barisan $a_0, a_1, a_2, \\dots$ memenuhi</p><p>$$a_0 = 1, \\qquad a_1 = 1, \\qquad a_n = 2a_{n-1} + 3a_{n-2} \\quad (n \\ge 2)$$</p><p>Tentukan $a_8$.</p>",
+   "jawaban": "3281",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Menghitung suku demi suku sudah cukup untuk menjawab, tetapi rumus tertutupnya membuat pemeriksaan jauh lebih mudah.",
+    "Untuk rekurens berbentuk $a_n = p\\,a_{n-1} + q\\,a_{n-2}$, susun persamaan karakteristik $x^2 = px + q$.",
+    "Setelah akar-akarnya diperoleh, tentukan kedua tetapannya dari $a_0$ dan $a_1$ — dan periksa rumusnya pada suku yang sudah kamu hitung."
+   ],
+   "pembahasan": "<p><strong>Cara pertama — hitung suku demi suku.</strong></p><p>$$a_2 = 2(1) + 3(1) = 5$$ $$a_3 = 2(5) + 3(1) = 13$$ $$a_4 = 2(13) + 3(5) = 41$$ $$a_5 = 2(41) + 3(13) = 121$$ $$a_6 = 2(121) + 3(41) = 365$$ $$a_7 = 2(365) + 3(121) = 1093$$ $$a_8 = 2(1093) + 3(365) = 2186 + 1095 = \\boxed{3281}$$</p><p><strong>Cara kedua — rumus tertutup.</strong> Susun persamaan karakteristiknya:</p><p>$$x^2 = 2x + 3 \\quad\\Longrightarrow\\quad x^2 - 2x - 3 = 0 \\quad\\Longrightarrow\\quad (x-3)(x+1) = 0$$</p><p>Akarnya $r_1 = 3$ dan $r_2 = -1$, keduanya berbeda, sehingga</p><p>$$a_n = A \\cdot 3^{\\,n} + B \\cdot (-1)^{\\,n}$$</p><p><strong>Tentukan $A$ dan $B$ dari kasus dasarnya.</strong></p><p>$$n = 0: \\quad A + B = 1$$ $$n = 1: \\quad 3A - B = 1$$</p><p>Jumlahkan kedua persamaan: $4A = 2$, sehingga $A = \\frac12$ dan $B = \\frac12$.</p><p>$$a_n = \\frac{3^{\\,n} + (-1)^{\\,n}}{2}$$</p><p><strong>Periksa rumusnya sebelum dipakai.</strong> Untuk $n = 2$: $\\frac{9+1}{2} = 5$ ✓. Untuk $n = 3$: $\\frac{27-1}{2} = 13$ ✓. Untuk $n = 4$: $\\frac{81+1}{2} = 41$ ✓.</p><p><strong>Hitung $a_8$.</strong></p><p>$$a_8 = \\frac{3^8 + (-1)^8}{2} = \\frac{6561 + 1}{2} = \\frac{6562}{2} = 3281$$</p><p>Cocok dengan cara pertama.</p><p><strong>Memeriksa rumus tertutup pada suku yang sudah diketahui bukan kelengkapan yang bisa dilewati.</strong> Kekeliruan tanda saat menyelesaikan $A$ dan $B$ tidak akan terlihat di langkah mana pun berikutnya; ia baru muncul sebagai jawaban akhir yang salah. Mencocokkan dengan dua atau tiga suku pertama menangkapnya dengan segera.</p><p><strong>Bentuk rumusnya juga bisa dibaca.</strong> Suku $(-1)^n$ berayun antara $+1$ dan $-1$, sehingga</p><p>$$a_n = \\frac{3^n \\pm 1}{2}$$</p><p>dengan tanda $+$ untuk $n$ genap dan $-$ untuk $n$ ganjil. Periksa daftarnya: $1, 1, 5, 13,\n41, 121, 365, 1093, 3281$ — memang selalu bilangan bulat, sebab $3^n$ selalu ganjil sehingga $3^n \\pm 1$ selalu genap.</p><p><strong>Kalau akar karakteristiknya kembar,</strong> bentuk $A r^n + B r^n$ tidak lagi cukup — ia hanya punya satu tetapan yang berdiri sendiri, sedangkan dua kasus dasar menuntut dua. Bentuk yang benar di situ adalah $(A + Bn)r^n$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "rek-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "rekursi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa himpunan bagian dari $\\{1, 2, 3, \\dots, 12\\}$ yang <strong>tidak memuat dua bilangan berurutan</strong>? (Himpunan kosong ikut terhitung.)</p>",
+   "jawaban": "377",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Beri nama untuk jawaban pada himpunan $\\{1,\\dots,n\\}$, lalu pecah menurut apakah unsur terbesar ikut terpilih.",
+    "Kalau $n$ tidak ikut, sisanya adalah persoalan yang sama pada $\\{1,\\dots,n-1\\}$.",
+    "Kalau $n$ ikut, unsur $n-1$ sudah pasti tidak boleh ikut — jadi yang bebas tinggal $\\{1,\\dots,n-2\\}$."
+   ],
+   "pembahasan": "<p>Sebut $c_n$ banyaknya himpunan bagian dari $\\{1,\\dots,n\\}$ tanpa dua unsur berurutan.</p><p><strong>Pecah menurut unsur terbesar.</strong></p><ul><li><strong>$n$ tidak terpilih.</strong> Yang tersisa adalah himpunan bagian sah dari $\\{1,\\dots,n-1\\}$, tanpa syarat tambahan. Banyaknya $c_{n-1}$.</li><li><strong>$n$ terpilih.</strong> Maka $n-1$ <strong>tidak boleh</strong> terpilih, sebab keduanya berurutan. Unsur $1$ sampai $n-2$ masih bebas asalkan memenuhi syarat di antara mereka sendiri. Banyaknya $c_{n-2}$.</li></ul><p>Kedua kelompok lepas dan menutupi semuanya, sehingga</p><p>$$c_n = c_{n-1} + c_{n-2}$$</p><p><strong>Kasus dasarnya</strong>, dengan mendaftar:</p><p>$$c_1 = 2 \\quad \\bigl(\\varnothing,\\ \\{1\\}\\bigr)$$</p><p>$$c_2 = 3 \\quad \\bigl(\\varnothing,\\ \\{1\\},\\ \\{2\\}\\bigr) \\ \\text{--- } \\{1,2\\} \\text{ dibuang}$$</p><p><strong>Hitung.</strong></p><table><thead><tr><th>$n$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th><th>$6$</th><th>$7$</th><th>$8$</th><th>$9$</th><th>$10$</th><th>$11$</th><th>$12$</th></tr></thead><tbody><tr><td>$c_n$</td><td>$2$</td><td>$3$</td><td>$5$</td><td>$8$</td><td>$13$</td><td>$21$</td><td>$34$</td><td>$55$</td><td>$89$</td><td>$144$</td><td>$233$</td><td>$\\boxed{377}$</td></tr></tbody></table><p><strong>Periksa $c_3 = 5$:</strong> $\\varnothing$, $\\{1\\}$, $\\{2\\}$, $\\{3\\}$, $\\{1,3\\}$. Tepat $5$ — $\\{1,2\\}$, $\\{2,3\\}$, dan $\\{1,2,3\\}$ dibuang.</p><p><strong>Perhatikan himpunan kosong ikut terhitung,</strong> dan itu menentukan kasus dasarnya. Kalau soal menuntut himpunan bagian <strong>tak kosong</strong>, seluruh jawabannya berkurang satu menjadi $376$ — sebab himpunan kosong terhitung tepat sekali, berapa pun $n$.</p><p><strong>Soal ini dan soal barisan biner tanpa dua angka $1$ berdampingan adalah soal yang sama.</strong> Padanannya langsung: sebuah himpunan bagian dapat ditulis sebagai barisan $0$ dan $1$ sepanjang $n$, dengan angka $1$ di tempat ke-$i$ berarti unsur $i$ terpilih. Syarat \"tidak ada dua unsur berurutan\" persis menjadi \"tidak ada dua angka $1$ berdampingan\".</p><p>Karena itu kedua barisan jawabannya sama persis, termasuk kasus dasarnya — tidak seperti soal tangga, yang bergeser satu suku.</p><p><strong>Mengapa pemecahannya memakai unsur terbesar,</strong> bukan terkecil. Keduanya sah dan memberi rekurens yang sama; yang penting adalah memilih satu ujung dan tetap konsisten. Memecah dari tengah akan menghasilkan dua bagian yang saling memengaruhi, dan rekurensnya tidak lagi sederhana.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "rek-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "rekursi"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Sebut $t_n$ banyaknya cara menutup papan $2 \\times n$ dengan domino $1 \\times 2$.</p><ol><li>Buktikan bahwa $t_n = t_{n-1} + t_{n-2}$ untuk $n \\ge 3$, dengan memeriksa bahwa pemecahan kasusnya <strong>lepas</strong> dan <strong>lengkap</strong>.</li><li>Tebak rumus untuk $t_1 + t_2 + \\cdots + t_n$ dari beberapa suku pertama, lalu buktikan tebakan itu dengan induksi.</li></ol>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Untuk bagian 1, perhatikan petak kanan atas: ia harus ditutup, dan bentuk dominonya hanya punya dua kemungkinan.",
+    "Kalau dominonya mendatar, tunjukkan petak kanan bawah <strong>tidak punya pilihan</strong> — di situlah letak \"lepas\"-nya.",
+    "Untuk bagian 2, hitung $t_1, t_1+t_2, t_1+t_2+t_3, \\dots$ dan bandingkan tiap hasilnya dengan suku barisan yang sudah kamu punya."
+   ],
+   "pembahasan": "<h4>Bagian 1 — rekurensnya</h4><p>Tinjau petak di <strong>pojok kanan atas</strong>. Ia harus ditutup oleh sebuah domino, dan domino itu hanya bisa tegak atau mendatar — tidak ada bentuk lain.</p><p><strong>Kasus A — dominonya tegak.</strong> Ia menutupi kedua petak pada kolom terakhir. Sisa papan adalah $2 \\times (n-1)$ yang utuh, dan penutupannya bebas sepenuhnya. Menyumbang $t_{n-1}$.</p><p><strong>Kasus B — dominonya mendatar.</strong> Ia menutupi petak kanan atas beserta tetangga kirinya. Sekarang tinjau petak kanan bawah:</p><ul><li>Ia tidak bisa ditutup domino tegak, sebab petak di atasnya sudah terpakai.</li><li>Ia tidak bisa ditutup domino mendatar yang menjulur ke kanan, sebab sudah di tepi papan.</li></ul><p>Maka ia <strong>terpaksa</strong> ditutup domino mendatar yang menjulur ke kiri. Kedua domino itu bersama-sama menutupi dua kolom terakhir seluruhnya, dan sisanya papan $2 \\times (n-2)$ yang utuh. Menyumbang $t_{n-2}$.</p><p><strong>Lepas.</strong> Sebuah penutupan tidak mungkin masuk kedua kasus, sebab domino yang menutupi petak kanan atas hanya satu, dan ia entah tegak entah mendatar.</p><p><strong>Lengkap.</strong> Setiap penutupan pasti menutupi petak kanan atas, sehingga pasti masuk salah satu kasus.</p><p>Karena lepas dan lengkap, aturan jumlah berlaku:</p><p>$$t_n = t_{n-1} + t_{n-2} \\qquad \\blacksquare$$</p><p>Perhatikan langkah \"terpaksa\" pada Kasus B. Tanpanya, penutupan yang sama akan terhitung lebih dari sekali, dan rekurensnya salah.</p><h4>Bagian 2 — jumlah parsialnya</h4><p>Dengan $t_1 = 1$ dan $t_2 = 2$:</p><p>$$t_1, t_2, t_3, \\dots = 1,\\ 2,\\ 3,\\ 5,\\ 8,\\ 13,\\ 21,\\ \\dots$$</p><p>Hitung jumlah parsialnya dan bandingkan dengan barisan aslinya:</p><table><thead><tr><th>$n$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th></tr></thead><tbody><tr><td>$S_n = t_1 + \\cdots + t_n$</td><td>$1$</td><td>$3$</td><td>$6$</td><td>$11$</td><td>$19$</td></tr><tr><td>$t_{n+2}$</td><td>$3$</td><td>$5$</td><td>$8$</td><td>$13$</td><td>$21$</td></tr></tbody></table><p>Selisihnya selalu $2$. Tebakan:</p><p>$$S_n = t_{n+2} - 2$$</p><p><strong>Buktikan dengan induksi.</strong></p><p><em>Basis.</em> Untuk $n = 1$: $S_1 = 1$ dan $t_3 - 2 = 3 - 2 = 1$. Cocok.</p><p><em>Langkah.</em> Andaikan $S_k = t_{k+2} - 2$ untuk suatu $k \\ge 1$. Maka</p><p>$$S_{k+1} = S_k + t_{k+1} = \\left(t_{k+2} - 2\\right) + t_{k+1}$$</p><p>Menurut rekurensnya, $t_{k+1} + t_{k+2} = t_{k+3}$, sehingga</p><p>$$S_{k+1} = t_{k+3} - 2$$</p><p>yaitu pernyataan yang sama untuk $k+1$.</p><p>Menurut induksi, $S_n = t_{n+2} - 2$ berlaku untuk setiap $n \\ge 1$. $\\blacksquare$</p><h4>Mengapa tebakannya harus dibuktikan</h4><p>Kecocokan pada lima suku pertama bukan bukti. Barisan yang sepakat di sepuluh suku pertama lalu berpisah mudah dibuat, dan pada soal olimpiade pola yang menipu memang sengaja dipasang.</p><p>Yang mengubah tebakan menjadi bukti adalah induksi — dan langkah induksinya di sini bekerja justru karena rekurens dari bagian 1 sudah tersedia untuk dipakai.</p>",
+   "rubrik": [
+    "Menyatakan petak kanan atas harus ditutup, dan dominonya hanya bisa tegak atau mendatar",
+    "Kasus tegak: menyimpulkan sisanya papan $2\\times(n-1)$ utuh",
+    "Kasus mendatar: menunjukkan petak kanan bawah <strong>terpaksa</strong> ditutup domino mendatar, dengan alasan kedua kemungkinan lain tertutup",
+    "Menyatakan kedua kasus lepas, dengan alasan domino penutup petak kanan atas hanya satu",
+    "Menyatakan kedua kasus lengkap, dengan alasan tiap penutupan pasti menutupi petak itu",
+    "Bagian 2: menghitung beberapa jumlah parsial dan menuliskan tebakan $S_n = t_{n+2} - 2$",
+    "Bagian 2: membuktikan tebakan dengan induksi, memakai rekurens pada langkah induksinya"
+   ]
+  },
+  {
+   "id": "rek-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN-P",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "jurus": [
+    "rekursi"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Sebuah tangga memiliki $10$ anak tangga. Sekali melangkah, seseorang dapat menaiki <strong>satu</strong> atau <strong>dua</strong> anak tangga.</p><p>Ada berapa cara menaiki tangga itu dari bawah sampai ke atas?</p>",
+   "jawaban": "89",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Jangan mencacah langsung. Kerjakan dulu untuk tangga yang sangat pendek — satu, dua, tiga anak tangga — dan catat hasilnya.",
+    "Tanyakan apa yang terjadi pada <strong>langkah terakhir</strong>: ia satu anak tangga, atau dua. Kedua keadaan itu memecah semua cara menjadi dua kelompok.",
+    "Kalau langkah terakhirnya satu, sebelumnya ia berada di anak tangga ke-$9$; kalau dua, di anak tangga ke-$8$."
+   ],
+   "pembahasan": "<p><strong>Beri nama.</strong> Sebut $a_n$ banyaknya cara menaiki tangga berisi $n$ anak tangga.</p><p><strong>Susun rekurensnya lewat langkah terakhir.</strong> Setiap cara berakhir dengan salah satu dari dua hal:</p><ul><li><strong>Langkah terakhirnya satu anak tangga.</strong> Sebelum langkah itu ia berada di anak tangga ke-$(n-1)$, dan cara mencapainya ada $a_{n-1}$.</li><li><strong>Langkah terakhirnya dua anak tangga.</strong> Sebelum langkah itu ia berada di anak tangga ke-$(n-2)$, dan cara mencapainya ada $a_{n-2}$.</li></ul><p>Kedua kelompok ini <strong>lepas</strong> — satu cara tidak mungkin berakhir dengan langkah satu sekaligus dua — dan <strong>menutupi semuanya</strong>, sebab tiap langkah pasti salah satu di antara keduanya. Maka aturan jumlah berlaku:</p><p>$$a_n = a_{n-1} + a_{n-2}$$</p><p><strong>Tetapkan kasus dasarnya.</strong> Rekurens orde dua membutuhkan dua nilai awal:</p><p>$$a_1 = 1 \\qquad (\\text{satu langkah kecil})$$</p><p>$$a_2 = 2 \\qquad (1+1 \\text{ atau } 2)$$</p><p><strong>Hitung sampai $n = 10$.</strong></p><table><thead><tr><th>$n$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th><th>$6$</th><th>$7$</th><th>$8$</th><th>$9$</th><th>$10$</th></tr></thead><tbody><tr><td>$a_n$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$5$</td><td>$8$</td><td>$13$</td><td>$21$</td><td>$34$</td><td>$55$</td><td>$\\boxed{89}$</td></tr></tbody></table><p><strong>Periksa kasus dasarnya dengan mendaftar.</strong> Untuk $n = 3$ rumusnya memberi $3$, dan memang hanya ada $1{+}1{+}1$, $1{+}2$, dan $2{+}1$. Untuk $n = 4$ rumusnya memberi $5$, dan daftarnya $1{+}1{+}1{+}1$, $1{+}1{+}2$, $1{+}2{+}1$, $2{+}1{+}1$, $2{+}2$ — tepat $5$.</p><p><strong>Kasus dasar yang salah merusak seluruh barisan,</strong> dan ia tidak pernah ketahuan di langkah berikutnya. Kalau $a_2$ ditulis $1$, seluruh tabelnya bergeser dan jawabannya menjadi $55$. Karena itu kasus dasar selalu diperiksa dengan mendaftar, bukan diduga.</p><p><strong>Barisan ini adalah barisan Fibonacci,</strong> dan ia muncul di banyak soal yang sekilas tidak berhubungan — barisan biner tanpa dua angka $1$ berdampingan, penutupan papan $2\\times n$ dengan domino, himpunan bagian tanpa dua unsur berurutan. Semuanya punya rekurens yang sama, dan mengenalinya menghemat seluruh pekerjaan menurunkan ulang.</p><p>Yang berbeda antar soal itu hanyalah <strong>kasus dasarnya</strong>, dan justru di situ kekeliruan biasanya masuk.</p>",
    "rubrik": []
   },
   {
