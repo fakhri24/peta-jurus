@@ -27,6 +27,43 @@
     return a;
   }
 
+  /* Naskah dibagi rata antar bidang, bukan diacak dari satu kolam.
+
+     Mengacak satu kolam terdengar adil, tapi hasilnya ditentukan oleh bidang mana
+     yang kebetulan punya soal paling banyak: naskah 10 soal bisa keluar 8 teori
+     bilangan dan 2 aljabar, dan siswa yang mengerjakannya tidak sedang berlatih
+     ujian campuran. Begitu bidangnya jadi empat, keadaannya makin timpang.
+
+     Caranya sengaja bergiliran satu-satu, bukan menghitung kuota per bidang:
+     bidang yang kehabisan soal berhenti ikut dan jatahnya jatuh ke bidang lain,
+     jadi naskahnya tetap penuh meski satu bidang masih tipis — yang pasti terjadi
+     setiap kali bidang baru dibuka. Tidak ada kuota yang perlu dijaga tetap
+     berjumlah 100%. */
+  function susunNaskah(kolam, jumlah) {
+    var perPilar = {};
+    kolam.forEach(function (s) {
+      (perPilar[s.pilar] = perPilar[s.pilar] || []).push(s);
+    });
+
+    /* Urutan bidang ikut diacak. Tanpa itu sisa pembagian selalu jatuh ke bidang
+       yang sama — 8 soal untuk 3 bidang berarti satu bidang selalu dapat lebih. */
+    var antre = acak(Object.keys(perPilar)).map(function (p) { return acak(perPilar[p]); });
+
+    var terpilih = [];
+    while (terpilih.length < jumlah) {
+      var adaYangKeluar = false;
+      for (var i = 0; i < antre.length && terpilih.length < jumlah; i++) {
+        if (antre[i].length) {
+          terpilih.push(antre[i].pop());
+          adaYangKeluar = true;
+        }
+      }
+      if (!adaYangKeluar) break;  // seluruh kolam habis sebelum jumlahnya terpenuhi
+    }
+
+    return terpilih.sort(function (a, b) { return a.kesulitan - b.kesulitan; });
+  }
+
   function jamTeks(sisa) {
     var m = Math.floor(Math.abs(sisa) / 60);
     var d = Math.abs(sisa) % 60;
@@ -37,10 +74,13 @@
 
   function tampilkanPersiapan() {
     var tersedia = {};
+    var bidang = {};
     Object.keys(Inti.data.soal).forEach(function (sid) {
-      var t = Inti.data.soal[sid].tahap;
-      tersedia[t] = (tersedia[t] || 0) + 1;
+      var s = Inti.data.soal[sid];
+      tersedia[s.tahap] = (tersedia[s.tahap] || 0) + 1;
+      bidang[s.pilar] = true;
     });
+    var jumlahBidang = Object.keys(bidang).length;
 
     var pilihanTahap = ['semua'].concat(Object.keys(TAHAP)).map(function (t) {
       var n = t === 'semua' ? Object.keys(Inti.data.soal).length : (tersedia[t] || 0);
@@ -67,7 +107,13 @@
       '</div>' +
 
       '<p class="sangat-samar">Jumlah soal dan lama waktunya kamu atur sendiri. ' +
-      'Samakan dengan naskah tahun yang sedang kamu latih.</p>';
+      'Samakan dengan naskah tahun yang sedang kamu latih.' +
+      (jumlahBidang > 1
+        ? ' Naskahnya dibagi rata antar ' + jumlahBidang + ' bidang yang sudah terisi, ' +
+          'bukan diacak dari satu tumpukan — jadi kamu tidak akan dapat naskah yang ' +
+          'isinya nyaris satu bidang saja.'
+        : '') +
+      '</p>';
 
     el('mulai').addEventListener('click', mulaiSimulasi);
   }
@@ -88,8 +134,7 @@
       return;
     }
 
-    antrean = acak(kolam).slice(0, jumlah)
-      .sort(function (a, b) { return a.kesulitan - b.kesulitan; });
+    antrean = susunNaskah(kolam, jumlah);
 
     mulai = Date.now();
     selesai = false;

@@ -107,7 +107,7 @@ menyebutkan jurus mana saja yang masih kosong di akhir jalannya.
 ```markdown
 ---
 id: fkl-01
-sumber: OSN-P 2019, soal 7   # dari mana soalnya — wajib
+sumber: Latihan 1 — susunan sendiri, gaya OSN-P   # dari mana soalnya — wajib
 pilar: teori-bilangan
 tahap: osn-p
 jurus: [fermat-kecil]        # boleh lebih dari satu
@@ -143,27 +143,53 @@ angka dibandingkan sebagai angka (jadi `08` sama dengan `8`). Selain itu, varian
 
 ## Tentang sumber soal
 
-Soal yang ada sekarang **disusun sendiri dengan gaya OSN**, dan `sumber`-nya ditulis apa
-adanya begitu. Tidak ada satu pun yang diberi atribusi tahun dan nomor palsu.
+Seluruh soal yang ada sekarang **disusun sendiri dengan gaya OSN**, dan `sumber`-nya
+ditulis apa adanya begitu. Tidak ada satu pun yang diberi atribusi tahun dan nomor palsu.
 
-Kalau kamu memasukkan soal dari arsip sungguhan, tulis sumbernya persis — `OSN-K 2019,
-soal 5`. Naskah OSN itu dokumen publik, tapi asalnya tetap harus terbaca.
+Atribusi ke naskah asli — `OSN 2025 nomor 3` — punya syarat, dan syaratnya dijaga mesin:
+naskahnya harus **kamu unduh sendiri dari situs resmi** penyelenggara dan terdaftar di
+`konten/arsip.yml`, lalu soalnya memuat `arsip:` yang merujuk entri itu.
+
+```yaml
+sumber: OSN 2025 nomor 3
+arsip: osn-2025
+nomor: 3
+```
+
+`build.py` menolak setiap `sumber` yang berbunyi seperti atribusi tahun+lomba tapi tidak
+punya `arsip` yang sah. Alasannya: begitu ada satu naskah asli di dalam situs, soal
+karangan berlabel `OSN 2015 nomor 3` terbaca sebagai naskah asli — karena naskah asli
+memang ada.
+
+Dua hal yang sering dikira sama:
+
+- **"Gratis diunduh" bukan "bebas disebarkan ulang."** Karena itu tidak ada PDF naskah di
+  repo ini; `arsip.yml` menyimpan metadata dan tautan ke berkas resminya saja.
+- **Naskah dari simpanan orang lain tidak boleh diberi atribusi tahun dan nomor.**
+  Asal-usulnya tidak bisa diverifikasi, dan salinan tak resmi sering memuat salah ketik —
+  pada soal olimpiade, salah ketik biasanya mengubah soalnya jadi soal lain. Kalau soalnya
+  bagus, tulis ulang sebagai soal susunan sendiri dan beri label begitu.
 
 ---
 
 ## Yang sudah dan belum
 
-22 jurus Teori Bilangan sudah punya pelajaran lengkap. 38 soal sudah ditulis, menutupi
-**10 jurus pertama** — cukup untuk berbulan-bulan belajar dari simpul paling awal.
+**44 jurus, 309 soal**, di dua bidang yang keduanya sudah tuntas:
 
-Belum ada soal di dua belas jurus lanjut: Bézout, Diophantine linear, Diophantine
-taklinear, fungsi Euler, kongruensi linear, Legendre, LTE, orde elemen, Teorema Sisa Cina,
-turun tak hingga, Vieta jumping, dan Wilson. Halaman jurusnya sudah bisa dibaca; hanya
-latihannya yang kosong, dan halamannya mengatakan itu dengan jujur.
+| Bidang | OSN-K | OSN-P | OSN | |
+|---|---|---|---|---|
+| Teori bilangan | 8 | 10 | 4 | tuntas |
+| Aljabar | 10 | 7 | 5 | tuntas |
 
-Tiga pilar lain — Aljabar, Geometri, Kombinatorika — belum disentuh. Strukturnya sudah
-siap menerimanya: cukup tambahkan berkas dengan `pilar` yang berbeda, dan peta terpisah
-akan muncul sendiri.
+Tuntas artinya tiap jurus punya minimal satu contoh terpandu dan enam latihan — enam,
+karena tangga ulangnya lima langkah, dan jurus dengan tiga soal berarti siswa bertemu soal
+yang sama untuk ketiga kalinya pada ulangan hari ke-21.
+
+Ketiga tahap bisa ditempuh utuh di kedua bidang, termasuk jalur lintas bidang dari
+`keterbagian` di teori bilangan ke `polinomial-bulat` di aljabar.
+
+Dua bidang lain — **Kombinatorika** dan **Geometri** — belum ada. Strukturnya sudah siap
+menerimanya, dan geometri masih menunggu dukungan gambar. Rencananya di `PLAN.md`.
 
 ---
 

@@ -59,7 +59,7 @@ var SoalUI = (function () {
     });
 
     kotakBahas.innerHTML = '<h3>Pembahasan</h3>' + (soal.pembahasan || '<p>—</p>') +
-      '<p class="sangat-samar">' + Inti.lolos(soal.sumber) + '</p>';
+      '<p class="sangat-samar">' + Inti.tulisSumber(soal) + '</p>';
 
     baris.appendChild(tombolPetunjuk);
     baris.appendChild(tombolBahas);

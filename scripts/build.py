@@ -39,6 +39,23 @@ URUT_PILAR = ("teori-bilangan", "aljabar", "kombinatorika", "geometri")
 # siswa yang menyiapkan OSN-P tetap perlu melihat jurus OSN-K.
 TAHAP_SAH = ("osn-k", "osn-p", "osn")
 
+# Naskah asli yang boleh dijadikan atribusi. Isinya metadata dan tautan saja —
+# tidak ada PDF naskah di repo ini, karena "gratis diunduh" dan "bebas disebarkan
+# ulang" adalah dua izin yang berbeda. Lihat PLAN.md Fase 5.
+ARSIP = KONTEN / "arsip.yml"
+WAJIB_ARSIP = ("judul", "penyelenggara", "tahun", "tahap", "tautan", "diakses")
+
+# Atribusi ke naskah asli: 'OSN' atau 'KSN' berdampingan dengan tahun empat angka.
+# 'susunan sendiri, gaya OSN-K' sengaja tidak tertangkap — yang dijaga adalah klaim
+# tahunnya, bukan penyebutan nama lombanya. Jarak antar-keduanya dibatasi supaya
+# 'Latihan 3 — susunan sendiri, gaya OSN' yang kebetulan bertetangga dengan angka
+# lain tidak ikut kena.
+ATRIBUSI_NYATA = re.compile(
+    r"\b(?:OSN|KSN)\b[-\w\s]{0,15}?\b(?:19|20)\d{2}\b"
+    r"|\b(?:19|20)\d{2}\b[-\w\s]{0,15}?\b(?:OSN|KSN)\b",
+    re.IGNORECASE,
+)
+
 
 class GagalBuild(Exception):
     pass
@@ -298,6 +315,48 @@ def periksa_pilar_tahap(nama_berkas, pilar, tahap, galat):
                      % (nama_berkas, tahap, ", ".join(TAHAP_SAH)))
 
 
+def muat_arsip(galat):
+    """Baca daftar naskah asli dari konten/arsip.yml.
+
+    Daftar kosong adalah keadaan yang sah — selama belum ada naskah resmi yang
+    diunduh sendiri, memang tidak ada yang boleh diberi atribusi tahun dan nomor.
+    Yang tidak sah adalah entri setengah terisi: tautan tanpa tahun, atau tahun
+    tanpa penyelenggara, membuat naskahnya tidak bisa dikenali lagi begitu
+    tautannya mati — dan tautan mati adalah satu-satunya risiko yang tersisa dari
+    keputusan tidak menyimpan PDF.
+    """
+    if not ARSIP.exists():
+        return {}
+    try:
+        isi = yaml.safe_load(ARSIP.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError as e:
+        galat.append("arsip.yml: tidak terbaca — %s" % e)
+        return {}
+    if not isinstance(isi, dict):
+        galat.append("arsip.yml: isinya harus pasangan kunci-nilai")
+        return {}
+
+    hasil = {}
+    for kunci, entri in sorted(isi.items()):
+        if not isinstance(entri, dict):
+            galat.append("arsip.yml: entri '%s' harus pasangan kunci-nilai" % kunci)
+            continue
+        hilang = [k for k in WAJIB_ARSIP if not entri.get(k)]
+        if hilang:
+            galat.append("arsip.yml: entri '%s' kurang %s" % (kunci, ", ".join(hilang)))
+        if entri.get("tahap") and entri["tahap"] not in TAHAP_SAH:
+            galat.append("arsip.yml: entri '%s' bertahap '%s' — pilih %s"
+                         % (kunci, entri["tahap"], ", ".join(TAHAP_SAH)))
+        tautan = str(entri.get("tautan") or "")
+        if tautan and not tautan.startswith(("http://", "https://")):
+            galat.append("arsip.yml: entri '%s' tautannya bukan alamat web — "
+                         "tulis halaman resmi tempat naskahnya diunduh" % kunci)
+        # Distringkan setelah diperiksa: 'diakses' terbaca YAML sebagai date, dan
+        # json.dumps tidak bisa menuliskannya.
+        hasil[kunci] = {k: str(v) for k, v in entri.items()}
+    return hasil
+
+
 def muat_jurus(galat):
     hasil = {}
     for jalur in sorted((KONTEN / "jurus").glob("*.md")):
@@ -387,6 +446,11 @@ def muat_soal(galat):
         hasil[sid] = {
             "id": sid,
             "sumber": depan["sumber"],
+            # Kosong untuk soal susunan sendiri, yaitu hampir semuanya. Ikut ditulis
+            # apa adanya seperti 'jawaban' dan 'rubrik' supaya bentuk datanya sama
+            # untuk tiap soal.
+            "arsip": str(depan.get("arsip") or ""),
+            "nomor": str(depan.get("nomor") or ""),
             "pilar": depan["pilar"],
             "tahap": depan.get("tahap", "osn-k"),
             "jurus": list(depan.get("jurus") or []),
@@ -418,6 +482,31 @@ def periksa(jurus, soal, galat):
         for j in s["jurus"]:
             if j not in jurus:
                 galat.append("soal/%s.md: jurus '%s' tidak ada" % (s["id"], j))
+
+
+def periksa_arsip(soal, arsip, galat):
+    """Atribusi ke naskah asli wajib punya entri arsip yang sah.
+
+    Begitu ada satu naskah asli di dalam situs, soal asli dan soal susunan sendiri
+    duduk berdampingan — dan siswa tidak lagi bisa menganggap semuanya susunan
+    sendiri. Justru di situ labelnya jadi genting: soal karangan berlabel
+    'OSN 2015 nomor 3' sekarang terbaca sebagai naskah asli, karena naskah asli
+    memang ada. Sebelum ada arsip.yml, aturan ini cuma bisa dititipkan ke ingatan;
+    sekarang ada daftar untuk dicocokkan, jadi jadikan galat.
+    """
+    for s in sorted(soal.values(), key=lambda s: s["id"]):
+        kunci = s.get("arsip", "")
+        if kunci and kunci not in arsip:
+            galat.append("soal/%s.md: arsip '%s' tidak terdaftar di konten/arsip.yml"
+                         % (s["id"], kunci))
+            continue
+        if ATRIBUSI_NYATA.search(s["sumber"]) and not kunci:
+            galat.append(
+                "soal/%s.md: sumber '%s' berbunyi seperti atribusi ke naskah asli, "
+                "tapi soalnya tidak punya 'arsip'. Kalau ini susunan sendiri, tulis "
+                "begitu tanpa tahun; kalau naskahnya memang kamu unduh sendiri dari "
+                "situs resmi, daftarkan dulu di konten/arsip.yml."
+                % (s["id"], s["sumber"]))
 
 
 def hitung_tingkat(jurus, galat):
@@ -530,9 +619,11 @@ def urutan_tahap(tahap):
 
 def main():
     galat = []
+    arsip = muat_arsip(galat)
     jurus = muat_jurus(galat)
     soal = muat_soal(galat)
     periksa(jurus, soal, galat)
+    periksa_arsip(soal, arsip, galat)
     hitung_tingkat(jurus, galat)
 
     if galat:
@@ -548,6 +639,10 @@ def main():
         json.dumps(
             {
                 "ukuran": ukuran,
+                # Ikut di jurus.json, bukan berkas sendiri: daftarnya beberapa ratus
+                # bita dan selalu dibutuhkan bersama soal mana pun yang menyebutnya,
+                # jadi berkas terpisah cuma menambah satu permintaan jaringan.
+                "arsip": arsip,
                 # Urutan simpul di sini yang menentukan urutan bidang di halaman
                 # peta: inti.js menyusun urutJurus dari daftar ini, dan peta.js
                 # mengelompokkannya lewat Object.keys tanpa mengurutkan ulang.

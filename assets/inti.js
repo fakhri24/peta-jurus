@@ -30,7 +30,7 @@ var Inti = (function () {
     'kehabisan-waktu': 'Kehabisan waktu'
   };
 
-  var data = { jurus: {}, soal: {}, ukuran: {}, urutJurus: [], pilarSoal: {} };
+  var data = { jurus: {}, soal: {}, ukuran: {}, urutJurus: [], pilarSoal: {}, arsip: {} };
 
   // ---------------------------------------------------------------- tanggal
 
@@ -78,6 +78,7 @@ var Inti = (function () {
     return fetch('data/jurus.json').then(function (r) { return r.json(); })
       .then(function (hasil) {
         data.ukuran = hasil.ukuran || {};
+        data.arsip = hasil.arsip || {};
         data.urutJurus = [];
         hasil.simpul.forEach(function (j) {
           data.jurus[j.id] = j;
@@ -404,6 +405,20 @@ var Inti = (function () {
     return '●'.repeat(n) + '○'.repeat(Math.max(0, 5 - n));
   }
 
+  /* Sumber soal, ditambah tautan ke naskah aslinya kalau soal itu memang berasal
+     dari naskah yang terdaftar di konten/arsip.yml. Naskahnya tidak disimpan di
+     sini — yang diberikan tautan ke halaman resmi tempat siswa bisa mengunduhnya
+     sendiri. Hampir semua soal susunan sendiri dan tidak punya arsip, jadi
+     bagian keduanya biasanya tidak muncul sama sekali. */
+  function tulisSumber(soal) {
+    var teks = lolos(soal.sumber);
+    var a = soal.arsip && data.arsip[soal.arsip];
+    if (!a) return teks;
+    return teks + ' · <a href="' + lolos(a.tautan) + '" rel="noopener" ' +
+      'target="_blank">' + lolos(a.judul) + '</a>' +
+      ' <span class="sangat-samar">(naskah resmi, diakses ' + lolos(a.diakses) + ')</span>';
+  }
+
   function galat(pesan) {
     var el = document.getElementById('isi');
     if (el) el.innerHTML = '<div class="kartu"><p>' + lolos(pesan) + '</p></div>';
@@ -465,6 +480,7 @@ var Inti = (function () {
     pasangKepala: pasangKepala,
     lolos: lolos,
     bintangKesulitan: bintangKesulitan,
+    tulisSumber: tulisSumber,
     galat: galat,
     ekspor: ekspor,
     impor: impor,

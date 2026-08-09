@@ -326,5 +326,120 @@ class TestPeriksa(unittest.TestCase):
         self.assertTrue(any("'x' tidak ada" in g for g in galat))
 
 
+class TestArsip(unittest.TestCase):
+    """Atribusi ke naskah asli harus bisa dicocokkan ke entri yang nyata.
+
+    Aturan ini tadinya cuma ada di CLAUDE.md, artinya cuma dijaga ingatan. Yang
+    dijaga di sini justru kasus yang paling mudah lolos: soal karangan yang diberi
+    label tahun dan nomor, yang terbaca sebagai naskah asli begitu naskah asli
+    memang ada di situs.
+    """
+
+    SATU_ENTRI = {"osn-2025": {"judul": "OSN Matematika SMA 2025"}}
+
+    @staticmethod
+    def _soal(sumber, arsip=""):
+        return {"s1": {"id": "s1", "sumber": sumber, "arsip": arsip}}
+
+    def test_atribusi_tahun_tanpa_arsip_ditolak(self):
+        galat = []
+        build.periksa_arsip(self._soal("OSN 2025 nomor 3"), {}, galat)
+        self.assertTrue(any("arsip" in g for g in galat), galat)
+
+    def test_atribusi_tahun_dengan_arsip_sah_lolos(self):
+        galat = []
+        build.periksa_arsip(self._soal("OSN 2025 nomor 3", "osn-2025"), self.SATU_ENTRI, galat)
+        self.assertEqual(galat, [])
+
+    def test_arsip_yang_tidak_terdaftar_ketahuan(self):
+        galat = []
+        build.periksa_arsip(self._soal("OSN 2025 nomor 3", "osn-1998"), self.SATU_ENTRI, galat)
+        self.assertTrue(any("osn-1998" in g for g in galat), galat)
+
+    def test_susunan_sendiri_tidak_ikut_tertangkap(self):
+        # Menyebut nama lombanya boleh; yang dijaga adalah klaim tahunnya.
+        galat = []
+        build.periksa_arsip(self._soal("Latihan 1 — susunan sendiri, gaya OSN-K"), {}, galat)
+        self.assertEqual(galat, [])
+
+    def test_tahun_jauh_dari_nama_lomba_bukan_atribusi(self):
+        galat = []
+        build.periksa_arsip(self._soal("Latihan 2024 — susunan sendiri, gaya OSN"), {}, galat)
+        self.assertEqual(galat, [])
+
+    def test_soal_sungguhan_tidak_ada_yang_mengaku_naskah_asli(self):
+        # Penjaga atas isi nyata, bukan atas data uji: kalau suatu saat ada soal
+        # berlabel tahun+nomor tanpa entri arsip, tes ini yang lebih dulu berbunyi.
+        galat = []
+        arsip = build.muat_arsip(galat)
+        soal = {}
+        for berkas in build.DATA.glob("soal-*.json"):
+            for s in json.loads(berkas.read_text(encoding="utf-8"))["soal"]:
+                soal[s["id"]] = s
+        build.periksa_arsip(soal, arsip, galat)
+        self.assertEqual(galat, [])
+
+
+class TestMuatArsip(unittest.TestCase):
+    """Entri setengah terisi ditolak: tautan mati adalah satu-satunya risiko yang
+    tersisa dari tidak menyimpan PDF, dan metadata lengkap yang menutupnya."""
+
+    def _muat(self, teks):
+        import tempfile
+        galat = []
+        with tempfile.NamedTemporaryFile("w", suffix=".yml", delete=False,
+                                         encoding="utf-8") as f:
+            f.write(teks)
+            sementara = Path(f.name)
+        asli = build.ARSIP
+        build.ARSIP = sementara
+        try:
+            hasil = build.muat_arsip(galat)
+        finally:
+            build.ARSIP = asli
+            sementara.unlink()
+        return hasil, galat
+
+    LENGKAP = (
+        "osn-2025:\n"
+        "  judul: OSN Matematika SMA 2025\n"
+        "  penyelenggara: Puspresnas/BPTI\n"
+        "  tahun: 2025\n"
+        "  tahap: osn\n"
+        "  tautan: https://contoh.id/naskah\n"
+        "  diakses: 2026-08-09\n"
+    )
+
+    def test_entri_lengkap_lolos(self):
+        hasil, galat = self._muat(self.LENGKAP)
+        self.assertEqual(galat, [])
+        self.assertEqual(hasil["osn-2025"]["tahun"], "2025")
+
+    def test_tanggal_jadi_teks_agar_bisa_ditulis_json(self):
+        # YAML membaca 'diakses' sebagai date, dan json.dumps tidak bisa menuliskannya.
+        hasil, _ = self._muat(self.LENGKAP)
+        json.dumps(hasil)
+        self.assertEqual(hasil["osn-2025"]["diakses"], "2026-08-09")
+
+    def test_kunci_yang_kurang_ketahuan(self):
+        _, galat = self._muat("osn-2025:\n  judul: OSN 2025\n")
+        self.assertTrue(any("kurang" in g for g in galat), galat)
+        for k in ("penyelenggara", "tahun", "tahap", "tautan", "diakses"):
+            self.assertIn(k, galat[0])
+
+    def test_tahap_salah_ketik_ketahuan(self):
+        _, galat = self._muat(self.LENGKAP.replace("tahap: osn", "tahap: nasional"))
+        self.assertTrue(any("nasional" in g for g in galat), galat)
+
+    def test_tautan_bukan_alamat_web_ketahuan(self):
+        _, galat = self._muat(self.LENGKAP.replace("https://contoh.id/naskah", "naskah.pdf"))
+        self.assertTrue(any("alamat web" in g for g in galat), galat)
+
+    def test_berkas_kosong_sah(self):
+        # Selama belum ada naskah resmi yang diunduh sendiri, kosong itu benar.
+        hasil, galat = self._muat("# cuma komentar\n")
+        self.assertEqual((hasil, galat), ({}, []))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

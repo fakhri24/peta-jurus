@@ -1,0 +1,53 @@
+# Daftar naskah asli yang boleh dijadikan atribusi.
+#
+# Berkas ini menyimpan METADATA dan TAUTAN saja. Tidak ada PDF naskah di repo ini,
+# dan itu keputusan, bukan kelalaian: "gratis diunduh" dan "bebas disebarkan ulang"
+# adalah dua izin yang berbeda, dan yang kedua tidak otomatis ikut. Rinciannya di
+# PLAN.md Fase 5.
+#
+# Satu naskah menaungi banyak soal, jadi tautannya ditulis sekali di sini — bukan
+# ditempel di tiap berkas soal, yang akan terduplikasi dan tidak bisa dijaga tetap
+# sama.
+#
+#
+# SYARAT MASUK DAFTAR INI
+#
+# Naskahnya kamu unduh sendiri dari situs resmi penyelenggara. Naskah dari simpanan
+# orang lain tidak boleh, dan posisinya lebih lemah bukan lebih kuat: asal-usulnya
+# tidak bisa diverifikasi, dan salinan tak resmi sering memuat salah ketik — salah
+# ketik pada soal olimpiade biasanya mengubah soalnya jadi soal lain, kadang jadi
+# soal yang tidak punya jawaban.
+#
+# Kalau soal dari sumber tak resmi ternyata bagus, tulis ulang sebagai soal susunan
+# sendiri dan beri label begitu. Itu jujur, dan hasilnya sering lebih berguna karena
+# bisa diarahkan ke satu jurus tertentu.
+#
+#
+# BENTUK TIAP ENTRI
+#
+#   osn-2025:
+#     judul: OSN Matematika SMA 2025
+#     penyelenggara: Puspresnas/BPTI, Kemendikbudristek
+#     tahun: 2025
+#     tahap: osn                 # osn-k / osn-p / osn
+#     tautan: https://…          # halaman resmi tempat naskahnya diunduh
+#     diakses: 2026-08-09        # kapan tautan itu terakhir terbukti hidup
+#
+# Keenam kunci itu wajib. Risiko yang tersisa dari tidak menyimpan PDF adalah
+# tautan mati, dan metadata selengkap ini yang menutupnya: naskahnya tetap bisa
+# dikenali meski tautannya suatu saat pindah.
+#
+# Soal lalu merujuknya lewat frontmatter:
+#
+#   sumber: OSN 2025 nomor 3
+#   arsip: osn-2025
+#   nomor: 3
+#
+#
+# SELAMA DAFTAR INI KOSONG
+#
+# Belum ada naskah resmi yang diunduh sendiri, jadi belum ada entri — dan itu
+# keadaan yang benar, bukan pekerjaan yang tertinggal. Selama kosong, build.py
+# menolak setiap 'sumber' yang berbunyi seperti atribusi tahun+lomba
+# ("OSN 2025 nomor 3"), karena tidak ada satu pun naskah yang bisa dicocokkan.
+# Seluruh 309 soal yang ada sekarang susunan sendiri dan berlabel begitu.

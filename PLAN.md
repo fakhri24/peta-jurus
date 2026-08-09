@@ -34,7 +34,7 @@ Poin 2 dan 4 yang paling mahal. Selebihnya pekerjaan kode yang terukur.
 ## 2. Keadaan sekarang
 
 **44 jurus, 309 soal** (264 latihan + 45 contoh) di dua bidang: teori bilangan dan
-aljabar. `data/soal.json` sudah 602 KB — lihat catatan pada 0.5.
+aljabar.
 
 | Bidang | OSN-K | OSN-P | OSN | Status |
 |---|---|---|---|---|
@@ -48,6 +48,9 @@ Jalur lintas bidang sudah bisa ditempuh sungguhan: `polinomial-bulat` di aljabar
 berprasyarat `keterbagian` di teori bilangan, dan keduanya kini berisi.
 
 Yang belum ada sama sekali: **kombinatorika** dan **geometri**.
+
+Fase 0, 1, dan 2 selesai seluruhnya, begitu juga 5.1. Yang berikutnya dikerjakan adalah
+**Fase 3 — kombinatorika**.
 
 ### Perkiraan cakupan penuh
 
@@ -132,11 +135,28 @@ Ukur ulang kapan saja dengan `node scripts/periksa-muatan.js`.
 **0.6 Koreksi CLAUDE.md — selesai 8 Agustus 2026**, lalu diperbarui lagi mengikuti
 0.1–0.4.
 
+**0.7 Komposisi naskah simulasi — selesai 9 Agustus 2026.** Definisi "siap" poin 5
+menuntut naskah campuran "dengan komposisi yang masuk akal, bukan acak dari satu kolam",
+tetapi `simulasi.js` justru melakukan persis yang dilarang itu: `acak(kolam).slice(0, n)`.
+Terdengar adil, hasilnya tidak — yang menentukan isi naskah adalah bidang mana yang
+kebetulan punya soal terbanyak, jadi naskah 10 soal bisa keluar 8 teori bilangan dan 2
+aljabar.
+
+Sekarang naskahnya dibagi rata antar bidang lewat `susunNaskah()`: tiap bidang diacak
+sendiri, lalu diambil bergiliran satu-satu. Cara bergiliran dipilih daripada menghitung
+kuota per bidang karena bidang yang kehabisan soal berhenti ikut dengan sendirinya dan
+jatahnya jatuh ke bidang lain — jadi naskahnya tetap penuh saat bidang baru masih tipis,
+yang pasti terjadi tiap kali bidang dibuka. Urutan bidangnya ikut diacak supaya sisa
+pembagian tidak selalu jatuh ke bidang yang sama.
+
+Dikerjakan sekarang, bukan nanti: pekerjaannya sama saja saat empat bidang, bedanya
+simulasinya sudah setahun menghasilkan naskah timpang.
+
 **Selesai kalau:** peta bisa dibuka per bidang, prasyarat lintas bidang terlihat
 sebabnya, dan menambah bidang baru cuma menyentuh `URUT_PILAR` plus `NAMA_PILAR` di dua
 berkas JS — dijaga tes, bukan ingatan.
 
-**Sisa fase ini: 0.5 saja**, dan itu memang ditunda sampai Fase 2.
+**Fase ini tuntas.**
 
 ---
 
@@ -298,7 +318,13 @@ terancam gagal install karena satu berkas besar meleset.
 Risiko yang tersisa adalah tautan mati. Ditangani dengan mencatat metadata cukup lengkap
 supaya naskahnya tetap teridentifikasi meski tautannya suatu saat pindah.
 
-### 5.1 Daftar arsip
+### 5.1 Daftar arsip — selesai 9 Agustus 2026
+
+Skemanya dibangun lebih dulu, **daftarnya masih kosong**, dan itu keadaan yang benar:
+belum ada naskah resmi yang diunduh sendiri, jadi belum ada yang boleh diberi atribusi.
+Yang penting sudah berdiri adalah penegakannya, dan itu yang selama ini cuma dititipkan
+ke ingatan — CLAUDE.md sudah menulis aturan `konten/arsip.yml` sejak lama padahal
+berkasnya belum ada dan tidak ada apa pun yang memeriksanya.
 
 Satu naskah menaungi banyak soal, jadi jangan tempelkan tautan di tiap berkas soal —
 akan terduplikasi dan tidak bisa dijaga konsisten. Sebagai gantinya `konten/arsip.yml`:
@@ -321,12 +347,27 @@ arsip: osn-2025
 nomor: 3
 ```
 
-`build.py` memeriksa `arsip` yang dirujuk memang ada di `arsip.yml` — pola yang sama
-dengan prasyarat dan rujukan soal. Dengan itu, atribusi ke naskah asli kembali jadi
-sesuatu yang **diperiksa mesin**, bukan teks bebas.
+`build.py` sekarang memeriksa tiga hal, semuanya lewat `galat` yang dikumpulkan seperti
+pemeriksaan lain:
 
-Mengutip satu soal untuk dibahas bukan hal yang sama dengan menyebarkan ulang seluruh
-naskah, dan pembahasan itulah inti situs ini.
+1. tiap entri `arsip.yml` lengkap keenam kuncinya, tahapnya sah, dan tautannya benar-benar
+   alamat web — entri setengah terisi membuat naskahnya tidak bisa dikenali lagi begitu
+   tautannya mati, dan tautan mati satu-satunya risiko yang tersisa dari tidak menyimpan
+   PDF;
+2. `arsip` yang dirujuk soal memang ada di daftar — pola yang sama dengan prasyarat dan
+   rujukan soal;
+3. `sumber` yang berbunyi seperti atribusi tahun+lomba (`OSN 2025 nomor 3`) **wajib**
+   punya `arsip` yang sah.
+
+Yang ketiga itu penegakan atas "Atribusi merayap" di bagian Risiko. Polanya sengaja
+tidak menangkap `susunan sendiri, gaya OSN-K` — yang dijaga klaim tahunnya, bukan
+penyebutan nama lombanya — dan seluruh 309 soal yang ada lolos tanpa satu pun perlu
+disunting. Contoh di README yang tadinya berbunyi `sumber: OSN-P 2019, soal 7` ikut
+diperbaiki, karena dokumentasi itu justru mengajarkan pola yang kini ditolak.
+
+Dengan itu, atribusi ke naskah asli jadi sesuatu yang **diperiksa mesin**, bukan teks
+bebas. Mengutip satu soal untuk dibahas bukan hal yang sama dengan menyebarkan ulang
+seluruh naskah, dan pembahasan itulah inti situs ini.
 
 ### 5.2 Aturan naskah dari simpanan orang lain
 
@@ -403,11 +444,10 @@ susunan sendiri duduk berdampingan — dan siswa tidak lagi bisa menganggap semu
 susunan sendiri. Justru di situ labelnya jadi genting: soal karangan yang diberi label
 `OSN-K 2015 nomor 3` sekarang terbaca sebagai naskah asli, karena naskah asli memang ada.
 
-Bedanya dengan sebelumnya, ini sekarang **bisa ditegakkan mesin**: `build.py` menolak
-`sumber` yang berpola atribusi nyata (tahun empat angka berdampingan "OSN"/"KSN") kalau
-soal itu tidak punya `arsip` yang merujuk entri sah. Tidak lagi sekadar peringatan —
-ada daftar arsip untuk dicocokkan, jadi jadikan galat. Tambahkan pemeriksaan ini
-bersamaan dengan 5.1, jangan ditunda.
+Bedanya dengan sebelumnya, ini sekarang **ditegakkan mesin** — dikerjakan bersama 5.1
+pada 9 Agustus 2026: `build.py` menolak `sumber` yang berpola atribusi nyata (tahun empat
+angka berdampingan "OSN"/"KSN") kalau soal itu tidak punya `arsip` yang merujuk entri sah.
+Bukan peringatan, tapi galat, karena sekarang ada daftar arsip untuk dicocokkan.
 
 **Petunjuk 1 bocor.** Aturan "petunjuk 1 tidak boleh menyebut nama jurus" tidak bisa
 ditegakkan mesin, dan paling mudah dilanggar saat menulis banyak soal sekaligus. Kalau

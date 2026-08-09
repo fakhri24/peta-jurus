@@ -34,8 +34,12 @@ kotak merah di layar siswa. Alur GitHub Actions menjalankannya sebelum mengomit 
 
 ## Alur data
 
-`konten/jurus/*.md` + `konten/soal/*.md` → `scripts/build.py` → `data/jurus.json` +
-`data/soal-<pilar>.json` → halaman statis mengambilnya dengan `fetch()`.
+`konten/jurus/*.md` + `konten/soal/*.md` + `konten/arsip.yml` → `scripts/build.py` →
+`data/jurus.json` + `data/soal-<pilar>.json` → halaman statis mengambilnya dengan
+`fetch()`.
+
+Daftar arsip ikut di `data/jurus.json`, bukan berkas sendiri: isinya beberapa ratus bita
+dan selalu dibutuhkan bersama soal mana pun yang menyebutnya.
 
 `data/*.json` adalah **hasil build yang ikut dikomit**, jangan pernah diedit tangan —
 `.github/workflows/build-konten.yml` menjalankan tes, membangun ulang, dan mengomit
@@ -65,7 +69,8 @@ Semua skrip adalah IIFE tanpa modul ES, tanpa dependensi selain KaTeX (dipasang 
 di `assets/katex/`, bukan CDN, supaya offline jalan).
 
 - `assets/inti.js` mengekspor global `Inti`: data, localStorage, penjadwalan, render
-  rumus, `lolos()` untuk escape HTML.
+  rumus, `lolos()` untuk escape HTML, `tulisSumber()` untuk sumber soal beserta tautan
+  arsipnya kalau ada.
 - **Halaman menyatakan bidang apa yang soalnya dipakai** lewat
   `Inti.muatData({ soal: … })` — `false`, daftar pilar, atau fungsi yang memutuskan
   setelah `jurus.json` termuat. Bawaannya semua bidang, jadi halaman yang lupa
@@ -121,7 +126,7 @@ justru intinya.
   hari itu. Ia diambil di latar setelah install, lewat `berkasSoal()` yang menurunkan
   daftarnya dari `jurus.json` — jadi bidang baru tidak pernah terlupa, dan latihan offline
   tetap utuh begitu pengambilan latarnya selesai.
-- **Naikkan `CACHE`** (sekarang `peta-jurus-v5`) setiap kali aset berubah, kalau tidak
+- **Naikkan `CACHE`** (sekarang `peta-jurus-v6`) setiap kali aset berubah, kalau tidak
   siswa memegang versi lama.
 - Kunci cache membuang query, karena `jurus.html?id=…` dan `latihan.html?soal=…` memakai
   kerangka HTML yang sama.
@@ -136,21 +141,29 @@ tidak berputar · soal isian punya `jawaban` · soal uraian punya `## Rubrik` ·
 **`## Kapan dipakai` tidak boleh kosong** — pemicunya, bukan rumusnya, itu bagian yang
 membuat situs ini ada.
 
+**Atribusi juga ditegakkan mesin** lewat `periksa_arsip()`. `sumber` yang berbunyi seperti
+atribusi tahun+lomba (`OSN 2025 nomor 3` — pola `ATRIBUSI_NYATA`) wajib punya `arsip:`
+yang merujuk entri sah di `konten/arsip.yml`, dan tiap entri wajib lengkap keenam kuncinya.
+Polanya sengaja **tidak** menangkap `susunan sendiri, gaya OSN-K`: yang dijaga klaim
+tahunnya, bukan penyebutan nama lombanya. Kalau menyentuh polanya, uji dulu terhadap
+seluruh `sumber` yang sudah ada — semuanya harus tetap lolos.
+
+Konsekuensinya untuk penulisan soal:
+
+- Sebagian besar soal disusun sendiri dengan gaya OSN dan ditulis begitu apa adanya
+  (`Latihan 1 — susunan sendiri, gaya OSN-K`). Itu jalur biasa; `arsip` dibiarkan kosong.
+- Jangan pernah mengarang atribusi, dan jangan pernah memberi atribusi tahun+nomor pada
+  soal dari salinan tak resmi: asal-usulnya tidak bisa diverifikasi, dan salah ketik pada
+  soal olimpiade biasanya mengubahnya jadi soal lain. Kalau soalnya bagus tapi sumbernya
+  tak resmi, tulis ulang sebagai soal susunan sendiri dan beri label begitu.
+- **Tidak ada PDF naskah di repo ini** — arsip menyimpan metadata dan tautan ke sumber
+  resminya saja. Mengunduh dan menyebarkan ulang adalah dua izin yang berbeda; rinciannya
+  di `PLAN.md` Fase 5.
+
 Tidak bisa ditegakkan mesin, tapi sama mengikatnya:
 
 - **Petunjuk 1 tidak boleh menyebut nama jurusnya.** Kalau disebut, gerbangnya kehilangan
   gunanya. Urutan petunjuk berjenjang dari dorongan halus → sebut jurus → langkah pertama.
-- **`sumber` ditulis apa adanya.** Sebagian besar soal disusun sendiri dengan gaya OSN dan
-  ditulis begitu apa adanya (`Latihan 1 — susunan sendiri, gaya OSN-K`). Atribusi ke
-  naskah asli — `OSN 2025 nomor 3` — **hanya boleh untuk naskah yang benar-benar diunduh
-  dari situs resmi dan terdaftar di `konten/arsip.yml`**, dan soalnya wajib memuat
-  `arsip:` yang merujuk entri itu. Jangan pernah mengarang atribusi, dan jangan pernah
-  memberi atribusi tahun+nomor pada soal dari salinan tak resmi: asal-usulnya tidak bisa
-  diverifikasi. Kalau soalnya bagus tapi sumbernya tak resmi, tulis ulang sebagai soal
-  susunan sendiri dan beri label begitu.
-- **Tidak ada PDF naskah di repo ini** — arsip menyimpan metadata dan tautan ke sumber
-  resminya saja. Mengunduh dan menyebarkan ulang adalah dua izin yang berbeda; rinciannya
-  di `PLAN.md` Fase 5.
 - **Varian jawaban ditulis eksplisit di `jawaban_alt`**, bukan ditebak kode.
   `periksaJawaban()` sengaja lugu: rapikan spasi, samakan huruf, bandingkan sebagai angka.
 
@@ -164,10 +177,16 @@ Format frontmatter lengkap ada di README.md.
   untuk `tahap` lewat `TAHAP_SAH`. Menambah bidang berarti menyentuh dua tempat:
   `URUT_PILAR`, dan `NAMA_PILAR` di `peta.js` + `jurus.js`. Tes
   `test_semua_pilar_di_nama_pilar_peramban` menjaga keduanya tidak terpisah.
-- `NAMA_PILAR` ada di **dua** berkas, `peta.js` dan `jurus.js`. `simulasi.js` tidak
-  menampilkan nama pilar sama sekali. Yang tersalin di tiga berkas adalah peta tahapnya,
-  dengan dua nama berbeda: `NAMA_TAHAP` di `peta.js` dan `jurus.js`, `TAHAP` di
-  `simulasi.js`.
+- `NAMA_PILAR` ada di **dua** berkas, `peta.js` dan `jurus.js`. `simulasi.js` memakai
+  `pilar` untuk mengelompokkan soal di `susunNaskah()`, tapi tidak pernah menampilkan
+  namanya — jadi jangan tergoda menyalin `NAMA_PILAR` ke sana hanya untuk satu kalimat.
+  Yang tersalin di tiga berkas adalah peta tahapnya, dengan dua nama berbeda: `NAMA_TAHAP`
+  di `peta.js` dan `jurus.js`, `TAHAP` di `simulasi.js`.
+- **Naskah simulasi dibagi rata antar bidang, bukan diacak dari satu kolam.**
+  `susunNaskah()` mengambil bergiliran satu per bidang; bidang yang kehabisan soal
+  berhenti ikut dan jatahnya jatuh ke bidang lain, jadi naskahnya tetap penuh saat bidang
+  baru masih tipis. Jangan menggantinya dengan kuota per bidang — kuota harus dijaga
+  berjumlah pas, dan tidak menangani bidang tipis dengan sendirinya.
 - Prasyarat lintas pilar tetap mengunci jurusnya dan garisnya tetap **tidak digambar** —
   tiap pilar punya SVG sendiri. Yang menutup lubangnya sekarang adalah penanda `↗` pada
   simpulnya plus `<title>`/`aria-label` yang menyebut nama jurus dan bidang asalnya, jadi
