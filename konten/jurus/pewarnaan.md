@@ -4,8 +4,8 @@ nama: Pewarnaan
 pilar: kombinatorika
 tahap: osn
 prasyarat: [invarian]
-contoh: []
-latihan: []
+contoh: [pwn-contoh-1]
+latihan: [pwn-01, pwn-02, pwn-03, pwn-04, pwn-05, pwn-06]
 ---
 
 ## Kapan dipakai

@@ -4,8 +4,8 @@ nama: Prinsip Ekstremal
 pilar: kombinatorika
 tahap: osn
 prasyarat: [sarang-merpati, graf-dasar]
-contoh: []
-latihan: []
+contoh: [eks-contoh-1]
+latihan: [eks-01, eks-02, eks-03, eks-04, eks-05, eks-06]
 ---
 
 ## Kapan dipakai

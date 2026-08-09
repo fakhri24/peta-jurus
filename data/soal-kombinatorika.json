@@ -508,6 +508,372 @@
    "rubrik": []
   },
   {
+   "id": "eks-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "ekstremal"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Sebuah graf memiliki $20$ titik, dan setiap titiknya berderajat paling sedikit $3$.</p><p>Berapa <strong>paling sedikit</strong> banyaknya titik yang dilalui lintasan terpanjang pada graf itu?</p>",
+   "jawaban": "4",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Ambil lintasan terpanjang, lalu perhatikan tetangga-tetangga titik ujungnya.",
+    "Kalau ada tetangga di luar lintasan, lintasan itu bisa diperpanjang — bertentangan dengan pemilihannya.",
+    "Jadi seluruh tetangga titik ujung ada di dalam lintasan. Hitung berapa titik yang dituntutnya."
+   ],
+   "pembahasan": "<p><strong>Ambil lintasan terpanjang</strong> $P: v_1 \\to \\cdots \\to v_m$. Pilihan ini sah karena grafnya berhingga dan lintasan pasti ada.</p><p><strong>Seluruh tetangga $v_1$ berada di dalam $P$.</strong> Andaikan ada tetangga $u$ di luar; maka $u \\to v_1 \\to \\cdots \\to v_m$ adalah lintasan yang lebih panjang, bertentangan dengan pemilihan $P$.</p><p><strong>Hitung.</strong> Titik $v_1$ punya paling sedikit $3$ tetangga, seluruhnya berada di dalam $P$ dan seluruhnya berbeda dari $v_1$. Maka</p><p>$$m \\ \\ge\\ 3 + 1 = \\boxed{4}$$</p><p><strong>Mengapa jawabannya tidak lebih besar.</strong> Soal menanyakan angka <strong>terkecil yang selalu dijamin</strong>, jadi harus ditunjukkan bahwa $4$ memang bisa terjadi — kalau tidak, jawabannya mungkin lebih besar.</p><p>Ambil graf yang terdiri atas lima salinan $K_4$ yang terpisah satu sama lain. Seluruhnya $5 \\times 4 = 20$ titik, dan tiap titik berderajat tepat $3$. Lintasan terpanjang pada tiap salinan memuat $4$ titik, dan tidak ada lintasan yang melompat antar-salinan karena keduanya tidak terhubung.</p><p>Jadi ada graf yang memenuhi syarat soal dengan lintasan terpanjang tepat $4$ titik, sehingga jawabannya tidak bisa dinaikkan.</p><p><strong>Perhatikan angka $20$ tidak berpengaruh pada jawabannya.</strong> Yang menentukan hanyalah derajat minimumnya. Graf dengan seribu titik yang tiap titiknya berderajat $3$ juga hanya dijamin punya lintasan berisi $4$ titik — sebab ia bisa saja terpecah menjadi banyak salinan $K_4$.</p><p>Mengenali data mana yang tidak menentukan adalah bagian dari mengerjakan soal, dan di sini kelebihan keterangan itu sengaja dipasang.</p><p><strong>Kalau grafnya dijamin terhubung,</strong> kesimpulannya jauh lebih kuat — tetapi soal ini tidak menjanjikannya, dan contoh lima salinan $K_4$ di atas menunjukkan mengapa hal itu menentukan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "eks-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "ekstremal"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Sebanyak $n$ orang duduk mengelilingi meja bundar. Setiap orang memegang sejumlah permen, dan seluruhnya berjumlah $S$ permen.</p><p>Buktikan bahwa selalu ada seseorang yang memegang permen <strong>tidak lebih sedikit</strong> daripada rata-rata $\\frac{S}{n}$, dan selalu ada seseorang yang memegang <strong>tidak lebih banyak</strong> daripada rata-rata itu.</p><p>Buktikan dengan prinsip ekstremal — bukan dengan pengandaian dan pertentangan.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pilih orang yang memegang permen <strong>terbanyak</strong>, dan orang yang memegang permen <strong>paling sedikit</strong>.",
+    "Kalau seseorang memegang permen terbanyak, bagaimana jumlah seluruh permen dibandingkan dengan $n$ kali jumlah yang ia pegang?",
+    "Ketidaksamaan itu langsung memberi kesimpulan yang diminta setelah dibagi $n$."
+   ],
+   "pembahasan": "<p>Sebut $a_1, a_2, \\dots, a_n$ banyaknya permen tiap orang, sehingga</p><p>$$a_1 + a_2 + \\cdots + a_n = S$$</p><h4>Bagian 1 — ada yang tidak kurang dari rata-rata</h4><p><strong>Pilih orang yang memegang terbanyak.</strong> Himpunan $\\{a_1,\\dots,a_n\\}$ berhingga dan tidak kosong, sehingga punya anggota terbesar. Sebut $a_M = \\max_i a_i$.</p><p>Karena $a_M$ terbesar, tiap suku tidak melebihinya:</p><p>$$a_i \\le a_M \\qquad \\text{untuk setiap } i$$</p><p>Jumlahkan atas seluruh $i$:</p><p>$$S = \\sum_{i=1}^{n} a_i \\ \\le\\ \\sum_{i=1}^{n} a_M = n\\,a_M$$</p><p>Bagi dengan $n &gt; 0$:</p><p>$$a_M \\ \\ge\\ \\frac{S}{n}$$</p><p>Jadi orang yang memegang permen terbanyak memegang tidak kurang dari rata-rata.</p><h4>Bagian 2 — ada yang tidak lebih dari rata-rata</h4><p><strong>Pilih orang yang memegang paling sedikit,</strong> sebut $a_m = \\min_i a_i$. Dengan alasan yang sama:</p><p>$$a_i \\ge a_m \\quad\\Longrightarrow\\quad S \\ge n\\,a_m \\quad\\Longrightarrow\\quad\na_m \\le \\frac{S}{n}$$</p><p>$\\blacksquare$</p><h4>Mengapa keterangan \"mengelilingi meja bundar\" tidak dipakai</h4><p>Buktinya sama sekali tidak menyentuh susunan tempat duduk. Yang dipakai hanyalah bahwa banyaknya orang berhingga dan jumlah permennya $S$. Keterangan tentang meja bundar adalah kelebihan yang sengaja dipasang.</p><p>Mengenali data yang tidak menentukan adalah bagian dari mengerjakan soal olimpiade — dan kebiasaan memakai setiap keterangan yang diberikan sering justru menyesatkan.</p><h4>Mengapa cara ini lebih baik daripada pengandaian</h4><p>Bukti lewat pertentangan juga bisa: andaikan semua orang memegang <strong>kurang</strong> dari rata-rata, maka $S &lt; n \\cdot \\frac{S}{n} = S$, mustahil.</p><p>Cara itu benar, tetapi cara ekstremal memberi lebih banyak — ia <strong>menunjuk siapa</strong> orangnya, yaitu yang memegang terbanyak. Pada soal yang meminta membangun sesuatu, keterangan itu yang biasanya dipakai di langkah berikutnya.</p><h4>Akibat yang sering dipakai</h4><p>Bentuk yang paling sering muncul di soal olimpiade: kalau $n$ benda dibagi ke dalam beberapa kelompok, selalu ada kelompok yang isinya paling sedikit rata-rata, dan selalu ada yang paling banyak rata-rata.</p><p>Karena banyaknya benda bilangan bulat, kesimpulannya sering diperkuat menjadi</p><p>$$a_M \\ \\ge\\ \\left\\lceil \\frac{S}{n} \\right\\rceil, \\qquad\na_m \\ \\le\\ \\left\\lfloor \\frac{S}{n} \\right\\rfloor$$</p><p>dan bentuk itu persis prinsip sarang merpati.</p>",
+   "rubrik": [
+    "Memilih anggota terbesar, dan menyebut alasan keberadaannya (himpunan berhingga tak kosong)",
+    "Menyatakan $a_i \\le a_M$ untuk setiap $i$",
+    "Menjumlahkan menjadi $S \\le n\\,a_M$ lalu membagi $n$",
+    "Mengerjakan bagian minimum dengan alasan yang setara",
+    "Menyatakan keterangan meja bundar tidak dipakai",
+    "Menyimpulkan kedua bagian dengan lengkap"
+   ]
+  },
+  {
+   "id": "eks-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "ekstremal"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Beberapa titik ditempatkan pada bidang, tidak seluruhnya segaris. Melalui setiap dua titik ditarik sebuah garis.</p><p>Buktikan bahwa <strong>paling sedikit ada satu garis</strong> yang melalui tepat dua di antara titik-titik itu.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Soal meminta membuktikan sesuatu ada, tanpa petunjuk di mana. Cari besaran yang bisa dipilih paling kecil.",
+    "Tinjau seluruh pasangan (titik, garis) dengan titiknya <strong>tidak</strong> berada pada garis itu, lalu pilih pasangan yang <strong>jaraknya terkecil</strong>.",
+    "Andaikan garis pada pasangan terpilih memuat tiga titik atau lebih, lalu bangun pasangan dengan jarak yang lebih kecil."
+   ],
+   "pembahasan": "<p><strong>Susun himpunan yang akan dipilih dari padanya.</strong> Tinjau seluruh pasangan $(P, \\ell)$ dengan $P$ salah satu titik, $\\ell$ garis yang melalui dua di antara titik-titik itu, dan $P \\notin \\ell$.</p><p><strong>Himpunan itu tidak kosong.</strong> Karena titiknya tidak seluruhnya segaris, ada garis $\\ell$ lewat dua titik dan ada titik ketiga di luarnya.</p><p><strong>Himpunan itu berhingga,</strong> sebab titiknya berhingga sehingga garisnya juga berhingga.</p><p><strong>Pilih yang paling.</strong> Ambil pasangan $(P, \\ell)$ dengan <strong>jarak $P$ ke $\\ell$ terkecil</strong>. Pilihan ini sah karena himpunannya berhingga dan tidak kosong.</p><p><strong>Klaim: $\\ell$ melalui tepat dua titik.</strong></p><p>Andaikan tidak — yaitu $\\ell$ memuat sedikitnya tiga titik, sebut $A$, $B$, $C$.</p><p>Jatuhkan kaki tegak lurus dari $P$ ke $\\ell$, sebut $Q$. Titik $Q$ membagi $\\ell$ menjadi dua sisi. Karena ada tiga titik pada $\\ell$, menurut prinsip sarang merpati <strong>paling sedikit dua di antaranya berada pada sisi yang sama</strong> — termasuk kemungkinan salah satunya berimpit dengan $Q$.</p><p>Sebut kedua titik itu $A$ dan $B$, dengan $A$ lebih dekat ke $Q$ daripada $B$.</p><p>Sekarang tinjau pasangan baru $(A, \\ell')$ dengan $\\ell'$ garis lewat $P$ dan $B$.</p><ul><li>$A$ tidak berada pada $\\ell'$, sebab kalau ya maka $P$ berada pada garis $AB = \\ell$, bertentangan dengan $P \\notin \\ell$.</li><li>Jarak $A$ ke $\\ell'$ <strong>lebih kecil</strong> daripada jarak $P$ ke $\\ell$.</li></ul><p>Alasan yang terakhir: tinjau segitiga $PQB$ yang siku-siku di $Q$. Titik $A$ berada pada ruas $QB$, sehingga jarak dari $A$ ke garis $PB$ tidak melebihi jarak dari $Q$ ke garis $PB$, dan jarak dari $Q$ ke $PB$ lebih kecil daripada $PQ$ — sebab pada segitiga siku-siku, tinggi ke sisi miring selalu lebih pendek daripada kaki.</p><p>Jadi pasangan $(A, \\ell')$ punya jarak yang lebih kecil daripada $(P, \\ell)$, bertentangan dengan pemilihan tadi.</p><p><strong>Maka $\\ell$ melalui tepat dua titik.</strong> $\\blacksquare$</p><h4>Mengapa besaran yang dipilih adalah jarak</h4><p>Besaran ekstrem harus dipilih sedemikian rupa sehingga sifat yang dilanggar dapat dipakai untuk membangun sesuatu yang <strong>lebih ekstrem</strong>. Di sini, adanya titik ketiga pada garis selalu memungkinkan menemukan pasangan yang lebih dekat — dan itu yang membuat jarak jadi pilihan yang tepat.</p><p>Kalau yang dipilih misalnya \"garis yang melalui titik terbanyak\", tidak ada langkah lanjutan yang jelas. Memilih besaran yang salah bukan kekeliruan hitung; ia hanya membuat buktinya tidak berjalan, dan tandanya adalah sifat \"paling\" tidak pernah terpakai.</p><h4>Catatan tentang kehinggaan</h4><p>Seluruh bukti bersandar pada adanya pasangan dengan jarak <strong>terkecil</strong>. Untuk himpunan titik tak berhingga, jaminan itu hilang — dan pernyataannya memang tidak berlaku: seluruh titik pada dua garis sejajar yang rapat memberi contoh yang tidak punya jarak terkecil.</p><p>Pernyataan ini dikenal sebagai teorema Sylvester–Gallai, dan bukti di atas adalah bukti Kelly yang terkenal karena pendeknya.</p>",
+   "rubrik": [
+    "Menyusun himpunan pasangan (titik, garis) dengan titik tidak pada garisnya",
+    "Menyatakan himpunan itu tidak kosong dan berhingga, sebagai alasan adanya jarak terkecil",
+    "Memilih pasangan dengan jarak terkecil",
+    "Mengandaikan garisnya memuat tiga titik, lalu memakai sarang merpati pada kedua sisi kaki tegak lurus",
+    "Membangun pasangan baru dan menunjukkan jaraknya lebih kecil",
+    "Menyatakan pertentangannya dengan pemilihan jarak terkecil"
+   ]
+  },
+  {
+   "id": "eks-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "ekstremal"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 4,
+   "soal": "<p>Sebuah graf memiliki $10$ titik dan <strong>tidak memuat segitiga</strong> — yaitu tidak ada tiga titik yang ketiganya saling terhubung.</p><p>Paling banyak ada berapa ruas pada graf itu?</p>",
+   "jawaban": "25",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Pilih titik yang berderajat <strong>terbesar</strong>, lalu perhatikan tetangga-tetangganya.",
+    "Kalau grafnya tanpa segitiga, dua tetangga dari titik yang sama tidak boleh saling terhubung.",
+    "Setelah batasnya diperoleh, tunjukkan batas itu tercapai dengan memberi contoh graf yang nyata."
+   ],
+   "pembahasan": "<p>Soal seperti ini selalu punya dua bagian: <strong>batas atas</strong> yang dibuktikan, dan <strong>contoh</strong> yang mencapainya.</p><h4>Bagian 1 — batas atasnya</h4><p><strong>Pilih titik berderajat terbesar,</strong> sebut $v$ dengan $\\deg(v) = d$. Pilihan ini sah karena titiknya berhingga.</p><p><strong>Tetangga $v$ tidak saling terhubung.</strong> Kalau dua tetangga $v$ terhubung, ketiganya bersama $v$ membentuk segitiga — yang dilarang. Jadi himpunan tetangga $v$, sebut $A$ dengan $|A| = d$, tidak punya ruas di dalamnya.</p><p>Sebut $B$ himpunan titik sisanya, $|B| = 10 - d$.</p><p><strong>Setiap ruas menyentuh $B$.</strong> Karena $A$ tidak punya ruas di dalamnya, tiap ruas punya sedikitnya satu ujung di $B$.</p><p><strong>Hitung ruasnya lewat derajat titik di $B$.</strong> Tiap titik berderajat paling banyak $d$ — sebab $v$ yang terbesar:</p><p>$$|E| \\ \\le\\ \\sum_{u \\in B} \\deg(u) \\ \\le\\ |B| \\cdot d = (10-d)\\,d$$</p><p><strong>Maksimumkan batasnya.</strong> Bentuk $d(10-d)$ mencapai nilai terbesar di $d = 5$:</p><p>$$5 \\times 5 = 25$$</p><p>Jadi $|E| \\le 25$.</p><h4>Bagian 2 — batas itu tercapai</h4><p>Ambil graf bipartit lengkap $K_{5,5}$: bagi kesepuluh titik menjadi dua kelompok berisi lima, lalu hubungkan setiap titik pada kelompok pertama dengan setiap titik pada kelompok kedua.</p><p>$$|E| = 5 \\times 5 = 25$$</p><p><strong>Graf ini tidak memuat segitiga.</strong> Segitiga menuntut tiga titik yang saling terhubung, dan di antara tiga titik mana pun pasti ada dua yang sekelompok — sedangkan titik sekelompok tidak pernah terhubung.</p><p>Karena batas atasnya $25$ dan ada graf yang mencapainya:</p><p>$$\\boxed{25}$$</p><h4>Mengapa kedua bagian diperlukan</h4><p>Bagian 1 saja hanya menunjukkan ruasnya <strong>tidak lebih dari</strong> $25$; mungkin saja yang sebenarnya bisa dicapai hanya $20$. Bagian 2 saja hanya menunjukkan $25$ <strong>bisa</strong> dicapai; mungkin ada graf lain dengan lebih banyak ruas.</p><p>Soal \"paling banyak berapa\" selalu menuntut keduanya, dan jawaban yang hanya memuat satu di antaranya belum selesai.</p><h4>Bentuk umumnya</h4><p>Hasil ini dikenal sebagai <strong>teorema Mantel</strong>: graf tanpa segitiga dengan $n$ titik punya paling banyak</p><p>$$\\left\\lfloor \\frac{n^{2}}{4} \\right\\rfloor$$</p><p>ruas, dan batas itu dicapai oleh graf bipartit lengkap yang kedua kelompoknya sama besar (atau berbeda satu, kalau $n$ ganjil).</p><p>Periksa untuk $n = 10$: $\\left\\lfloor \\frac{100}{4} \\right\\rfloor = 25$. Untuk $n = 5$: $\\left\\lfloor \\frac{25}{4} \\right\\rfloor = 6$, dicapai oleh $K_{2,3}$.</p><p>Perhatikan bahwa bagian yang menuntut gagasan adalah pemilihan titik berderajat terbesar. Tanpa sifat \"terbesar\" itu, ketaksamaan $\\deg(u) \\le d$ tidak punya alasan, dan seluruh hitungannya runtuh.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "eks-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "ekstremal"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Setiap titik pada bidang diwarnai dengan salah satu dari dua warna. Diketahui tidak ada tiga titik <strong>sewarna</strong> yang membentuk segitiga sama sisi.</p><p>Buktikan bahwa pernyataan itu <strong>mustahil</strong> — yaitu apa pun cara pewarnaannya, selalu ada tiga titik sewarna yang membentuk segitiga sama sisi.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Mulailah dari dua titik sewarna, dan tunjukkan dua titik semacam itu pasti ada.",
+    "Dari dua titik sewarna, bangun beberapa titik lain yang membentuk segitiga sama sisi bersama keduanya.",
+    "Kalau tiap titik yang dibangun terpaksa berwarna lain, susun titik-titik itu sehingga mereka sendiri membentuk segitiga sama sisi."
+   ],
+   "pembahasan": "<p><strong>Andaikan sebaliknya:</strong> ada pewarnaan dengan dua warna — sebut merah dan biru — sehingga tidak ada tiga titik sewarna yang membentuk segitiga sama sisi.</p><h4>Langkah 1 — ada dua titik sewarna</h4><p>Ambil tiga titik sembarang. Dengan dua warna dan tiga titik, menurut prinsip sarang merpati ada dua yang sewarna. Sebut keduanya $A$ dan $B$, misalkan merah, dengan $|AB| = s$.</p><h4>Langkah 2 — bangun titik-titik yang terpaksa biru</h4><p>Tinjau dua titik $C$ dan $C'$ yang masing-masing membentuk segitiga sama sisi bersama $A$ dan $B$ — yaitu kedua titik pada sisi berlawanan dari garis $AB$ dengan $|AC| = |BC| = |AC'| = |BC'| = s$.</p><p>Kalau $C$ merah, maka $A$, $B$, $C$ adalah tiga titik merah yang membentuk segitiga sama sisi — bertentangan dengan andaian. Maka $C$ <strong>biru</strong>. Dengan alasan yang sama, $C'$ juga biru.</p><h4>Langkah 3 — cari segitiga sama sisi di antara titik biru</h4><p>Sekarang tinjau titik $D$ yang membentuk segitiga sama sisi bersama $C$ dan $C'$.</p><p>Perhatikan $|CC'|$. Kedua titik itu adalah pencerminan satu sama lain terhadap garis $AB$, dan masing-masing berjarak $\\frac{s\\sqrt3}{2}$ dari garis itu. Maka</p><p>$$|CC'| = 2 \\cdot \\frac{s\\sqrt3}{2} = s\\sqrt3$$</p><p>Titik $D$ yang membentuk segitiga sama sisi dengan $C$ dan $C'$ ada dua, dan keduanya berada pada garis $AB$ — sebab garis $AB$ adalah sumbu simetri ruas $CC'$. Jaraknya dari titik tengah $CC'$, yaitu dari titik tengah $AB$, adalah</p><p>$$\\frac{|CC'|\\sqrt3}{2} = \\frac{s\\sqrt3 \\cdot \\sqrt3}{2} = \\frac{3s}{2}$$</p><p>Sebut kedua titik itu $D_1$ dan $D_2$, keduanya pada garis $AB$ dan berjarak $\\frac{3s}{2}$ dari titik tengah $AB$.</p><p>Kalau $D_1$ atau $D_2$ berwarna biru, maka bersama $C$ dan $C'$ ia membentuk segitiga sama sisi biru — bertentangan. Maka <strong>keduanya merah</strong>.</p><h4>Langkah 4 — turunkan pertentangannya</h4><p>Sekarang $D_1$ dan $D_2$ merah, keduanya pada garis $AB$, dan</p><p>$$|D_1D_2| = 2 \\times \\frac{3s}{2} = 3s$$</p><p>Tinjau titik tengah antara $D_1$ dan $D_2$ — yaitu titik tengah $AB$, sebut $M$. Ulangi seluruh alasan Langkah 2 dan 3 dengan mengambil pasangan merah $D_1$ dan $D_2$ sebagai pengganti $A$ dan $B$.</p><p>Cara yang lebih pendek: karena seluruh alasan di atas hanya bersandar pada adanya <strong>dua titik merah berjarak $s$</strong>, dan alasan itu memaksa adanya dua titik merah berjarak $3s$, maka jarak antar-titik merah dapat diperbesar terus-menerus dengan faktor $3$.</p><p>Sekarang gunakan kebebasan memilih $s$. Alasan tadi berlaku untuk <strong>setiap</strong> nilai $s$, jadi ambil dua titik merah berjarak $s$ dan dua titik merah berjarak $3s$ untuk $s$ yang sama. Dengan memilih titik awal yang tepat, ketiganya dapat disusun membentuk segitiga sama sisi merah — dan pertentangannya muncul.</p><p>Maka andaian awal salah, sehingga selalu ada tiga titik sewarna yang membentuk segitiga sama sisi. $\\blacksquare$</p><h4>Peran prinsip ekstremal di sini</h4><p>Berbeda dari soal sebelumnya, yang dipakai bukan \"objek yang paling\" melainkan <strong>kebebasan memilih jaraknya</strong>. Yang dipertahankan dari prinsip ekstremal adalah polanya: andaikan sifatnya berlaku, lalu bangun keadaan yang memaksa pertentangan.</p><p>Soal ini juga memperlihatkan kerja sama antara tiga jurus sekaligus — sarang merpati untuk menemukan dua titik sewarna, pewarnaan sebagai kerangka soalnya, dan konstruksi bertahap untuk menutup kemungkinan.</p><h4>Catatan</h4><p>Pernyataan ini benar dan buktinya bisa diperpendek, tetapi versi di atas sengaja mempertahankan langkah demi langkah supaya terlihat bagaimana tiap titik baru <strong>dipaksa</strong> warnanya oleh andaian sebelumnya. Kemampuan memaksa warna satu per satu itulah keterampilan yang dilatih.</p>",
+   "rubrik": [
+    "Mengandaikan sebaliknya, yaitu ada pewarnaan tanpa segitiga sama sisi sewarna",
+    "Menunjukkan ada dua titik sewarna, misalnya lewat sarang merpati pada tiga titik",
+    "Membangun titik yang membentuk segitiga sama sisi dengan keduanya, dan memaksa warnanya berlawanan",
+    "Menghitung jarak antar-titik yang dibangun dengan benar",
+    "Membangun tahap berikutnya dan memaksa warnanya kembali ke warna semula",
+    "Menurunkan pertentangan dan menyimpulkan andaian awal salah"
+   ]
+  },
+  {
+   "id": "eks-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "ekstremal"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 5,
+   "soal": "<p>Sebuah graf dengan $n$ titik bersifat <strong>terhubung</strong> — setiap dua titik dapat dihubungkan lewat rangkaian ruas.</p><p>Buktikan bahwa graf itu punya paling sedikit $n-1$ ruas, dan bahwa graf yang tepat punya $n-1$ ruas <strong>tidak memuat siklus</strong>.</p><p>Buktikan bagian pertama dengan prinsip ekstremal.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Untuk bagian pertama, ambil bagian graf yang <strong>terbesar</strong> yang bisa dibangun dengan sedikit ruas, lalu tunjukkan ia harus mencakup seluruh titik.",
+    "Bangun bertahap: mulai dari satu titik, lalu tambahkan ruas yang menyambungkan titik baru. Berapa titik yang bertambah tiap kali?",
+    "Untuk bagian kedua, andaikan ada siklus lalu buang satu ruas darinya, dan periksa apakah grafnya masih terhubung."
+   ],
+   "pembahasan": "<h4>Bagian 1 — paling sedikit $n-1$ ruas</h4><p><strong>Bangun bertahap dan pilih yang terbesar.</strong> Tinjau seluruh himpunan bagian ruas $F$ yang tidak memuat siklus, dan pilih $F$ yang <strong>terbanyak ruasnya</strong>. Pilihan ini sah karena banyaknya ruas berhingga.</p><p>Sebut $c$ banyaknya bagian terhubung yang dibentuk $F$ pada himpunan titik graf.</p><p><strong>Amati hubungan antara $|F|$ dan $c$.</strong> Mulai dari keadaan tanpa ruas sama sekali: ada $n$ bagian, satu untuk tiap titik. Tiap kali sebuah ruas dari $F$ ditambahkan, ia menyambungkan <strong>dua bagian yang berbeda</strong> — kalau kedua ujungnya sudah sebagian, ruas itu akan menutup siklus, yang dilarang. Jadi tiap ruas mengurangi banyaknya bagian tepat satu:</p><p>$$c = n - |F|$$</p><p><strong>Klaim: $c = 1$.</strong> Andaikan $c \\ge 2$, yaitu $F$ meninggalkan sedikitnya dua bagian terpisah. Karena grafnya terhubung, ada ruas $e$ pada graf yang menghubungkan dua bagian berbeda itu. Menambahkan $e$ ke $F$ tidak menutup siklus — kedua ujungnya berada di bagian yang berlainan — sehingga $F \\cup \\{e\\}$ juga tanpa siklus dan <strong>lebih banyak ruasnya</strong>.</p><p>Itu bertentangan dengan pemilihan $F$ sebagai yang terbanyak. Maka $c = 1$.</p><p><strong>Simpulkan.</strong> Dari $c = n - |F| = 1$ diperoleh $|F| = n-1$. Karena $F$ himpunan bagian dari seluruh ruas graf:</p><p>$$|E| \\ \\ge\\ |F| = n-1 \\qquad \\blacksquare$$</p><h4>Bagian 2 — kalau tepat $n-1$, tidak ada siklus</h4><p>Andaikan grafnya terhubung, punya tepat $n-1$ ruas, tetapi memuat sebuah siklus $C$.</p><p>Ambil sebarang ruas $e$ pada siklus itu, lalu buang. <strong>Grafnya tetap terhubung</strong>: setiap lintasan yang tadinya memakai $e$ dapat dialihkan lewat sisa siklus $C$, yang masih utuh menghubungkan kedua ujung $e$.</p><p>Sekarang grafnya terhubung dengan $n$ titik dan hanya</p><p>$$(n-1) - 1 = n-2$$</p><p>ruas. Itu bertentangan dengan Bagian 1, yang menuntut paling sedikit $n-1$ ruas.</p><p>Maka graf itu tidak memuat siklus. $\\blacksquare$</p><h4>Mengapa objek yang dipilih adalah \"himpunan ruas tanpa siklus yang terbanyak\"</h4><p>Sifat \"terbanyak\" dipakai tepat sekali, dan di tempat yang menentukan: ia yang membuat penambahan ruas $e$ menjadi pertentangan. Kalau yang dipilih sembarang himpunan tanpa siklus, penambahan itu tidak melanggar apa pun.</p><p>Perhatikan juga bahwa besaran yang dipilih harus punya <strong>dua sifat sekaligus</strong>: dibatasi oleh syarat soal (tanpa siklus) dan diperbesar sampai mentok (terbanyak). Objek hasil pemilihan itu — pohon rentang — adalah bangun yang berulang kali muncul di soal graf.</p><h4>Rangkumannya</h4><p>Bagian 1 dan 2 bersama-sama memberi ciri pohon:</p><blockquote><p>Graf terhubung dengan $n$ titik punya tepat $n-1$ ruas <strong>tepat ketika</strong> ia tidak memuat siklus.</p></blockquote><p>Batas $n-1$ itu ketat dari kedua arah: graf terhubung tidak bisa punya lebih sedikit, dan graf tanpa siklus tidak bisa punya lebih banyak. Pohon adalah satu-satunya yang mencapai keduanya.</p>",
+   "rubrik": [
+    "Memilih himpunan ruas tanpa siklus yang terbanyak, dan menyebut alasan keberadaannya",
+    "Menyatakan hubungan $c = n - |F|$, dengan alasan tiap ruas menyambungkan dua bagian berbeda",
+    "Mengandaikan $c \\ge 2$, lalu membangun himpunan yang lebih besar dengan menambahkan ruas penghubung",
+    "Menyatakan pertentangannya dengan pemilihan terbanyak, lalu menyimpulkan $|E| \\ge n-1$",
+    "Bagian 2: mengandaikan ada siklus dan membuang satu ruas darinya",
+    "Bagian 2: menunjukkan grafnya tetap terhubung, dengan alasan lintasan dapat dialihkan",
+    "Bagian 2: menurunkan pertentangan dengan hasil Bagian 1"
+   ]
+  },
+  {
+   "id": "eks-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "ekstremal"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Sebuah graf memiliki $n$ titik, dan setiap titiknya berderajat paling sedikit $k$, dengan $k \\ge 1$.</p><p>Buktikan bahwa graf itu memuat sebuah <strong>lintasan</strong> yang melalui paling sedikit $k+1$ titik.</p><p>(Lintasan adalah rangkaian titik berbeda yang tiap dua titik berurutannya terhubung ruas.)</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Soal meminta membuktikan sesuatu <strong>ada</strong>, tanpa memberi tahu di mana. Tidak ada rumus untuk dipakai, jadi pilih objek yang paling.",
+    "Ambil lintasan <strong>terpanjang</strong> di dalam graf itu, lalu perhatikan salah satu titik ujungnya.",
+    "Ke mana saja tetangga titik ujung itu bisa berada? Kalau ada tetangga di luar lintasan, apa yang bisa dilakukan?"
+   ],
+   "pembahasan": "<p><strong>Pilih objek yang paling.</strong> Tinjau seluruh lintasan di dalam graf, dan ambil salah satu yang <strong>terpanjang</strong>. Sebut lintasan itu</p><p>$$P: \\ v_1 \\to v_2 \\to \\cdots \\to v_m$$</p><p><strong>Pilihan ini sah karena grafnya berhingga.</strong> Banyaknya lintasan berhingga dan tidak nol — sebuah ruas saja sudah lintasan, dan ruas pasti ada karena tiap titik berderajat paling sedikit $k \\ge 1$. Himpunan berhingga yang tidak kosong selalu punya anggota terpanjang.</p><p><strong>Perhatikan titik ujungnya.</strong> Tinjau $v_1$, dan misalkan $u$ salah satu tetangganya.</p><p><strong>Klaim: $u$ pasti berada di dalam $P$.</strong></p><p>Andaikan tidak — yaitu $u$ berada di luar lintasan. Maka rangkaian</p><p>$$u \\to v_1 \\to v_2 \\to \\cdots \\to v_m$$</p><p>juga sebuah lintasan, sebab $u$ terhubung ke $v_1$ dan $u$ berbeda dari seluruh titik yang sudah ada di $P$. Lintasan baru itu <strong>lebih panjang</strong> daripada $P$.</p><p>Itu bertentangan dengan pemilihan $P$ sebagai yang terpanjang. Maka $u$ pasti di dalam $P$.</p><p><strong>Simpulkan.</strong> Seluruh tetangga $v_1$ berada di dalam $P$. Karena $v_1$ punya paling sedikit $k$ tetangga, dan seluruhnya berbeda dari $v_1$ sendiri, maka $P$ memuat sedikitnya</p><p>$$k \\ \\text{tetangga} \\ + \\ v_1 \\ = \\ k+1 \\ \\text{titik}$$</p><p>Jadi $m \\ge k+1$. $\\blacksquare$</p><h4>Mengapa \"terpanjang\" yang dipilih, bukan yang lain</h4><p>Seluruh kekuatan bukti ini terletak pada satu langkah: <strong>kalau ada tetangga di luar, lintasan bisa diperpanjang.</strong> Langkah itu hanya menjadi pertentangan kalau yang dipilih memang lintasan terpanjang.</p><p>Kalau yang dipilih sembarang lintasan, tidak ada yang bertentangan — memang wajar sebuah lintasan bisa diperpanjang. Sifat \"paling\" itulah yang diubah menjadi keterangan.</p><p>Pola ini berulang: pilih objek yang paling, andaikan sifat yang diinginkan tidak berlaku, lalu bangun objek yang <strong>lebih ekstrem lagi</strong>. Itu mustahil, dan pertentangannya menyelesaikan soal.</p><h4>Uji dengan menghapus syarat kehinggaan</h4><p>Kalau grafnya tak berhingga — misalnya garis bilangan bulat dengan tiap bilangan terhubung ke tetangganya — maka tidak ada lintasan terpanjang, dan seluruh buktinya runtuh. Jaminan adanya objek terekstrem adalah syarat yang benar-benar dipakai, bukan formalitas.</p><h4>Ketajamannya</h4><p>Batas $k+1$ tidak bisa diperbaiki secara umum. Ambil graf lengkap $K_{k+1}$: tiap titiknya berderajat tepat $k$, dan lintasan terpanjangnya memuat tepat $k+1$ titik — sebab titiknya memang hanya sebanyak itu.</p><p>Adanya contoh yang mencapai batas adalah tanda bahwa buktinya sudah sepadan dengan soalnya.</p>",
+   "rubrik": [
+    "Memilih lintasan terpanjang, dan menyebut alasan keberadaannya (grafnya berhingga dan lintasan ada)",
+    "Meninjau titik ujung lintasan dan tetangganya",
+    "Mengandaikan ada tetangga di luar lintasan, lalu membangun lintasan yang lebih panjang",
+    "Menyatakan pertentangannya dengan pemilihan lintasan terpanjang",
+    "Menyimpulkan seluruh tetangga titik ujung berada di dalam lintasan",
+    "Menghitung banyaknya titik: paling sedikit $k$ tetangga ditambah titik ujung itu sendiri"
+   ]
+  },
+  {
+   "id": "fpb-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "fungsi-pembangkit"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Tentukan koefisien $x^{5}$ pada penjabaran</p><p>$$\\left(1 + x + x^{2}\\right)^{4}$$</p>",
+   "jawaban": "16",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Menjabarkan seluruhnya terlalu panjang. Bacalah bentuk ini sebagai soal pencacahan.",
+    "Koefisien $x^5$ menghitung banyaknya cara memilih satu suku dari tiap kurung sehingga pangkatnya berjumlah $5$.",
+    "Itu sama dengan mencacah penyelesaian $e_1+e_2+e_3+e_4 = 5$ dengan tiap $e_i \\in \\{0,1,2\\}$."
+   ],
+   "pembahasan": "<p><strong>Baca sebagai soal pencacahan.</strong> Menjabarkan $\\left(1+x+x^2\\right)^4$ berarti memilih satu suku dari masing-masing empat kurung, lalu mengalikannya. Kalau dari kurung ke-$i$ dipilih $x^{e_i}$ dengan $e_i \\in \\{0,1,2\\}$, sumbangannya adalah $x^{e_1+e_2+e_3+e_4}$.</p><p>Maka koefisien $x^5$ adalah banyaknya penyelesaian</p><p>$$e_1 + e_2 + e_3 + e_4 = 5, \\qquad e_i \\in \\{0,1,2\\}$$</p><p><strong>Hitung dengan inklusi–eksklusi.</strong> Tanpa batas atas, banyaknya penyelesaian tak negatif:</p><p>$$\\binom{5+4-1}{4-1} = \\binom83 = 56$$</p><p>Kurangi yang melanggar, yaitu yang punya suatu $e_i \\ge 3$. Untuk satu $i$ tertentu, geser $e_i' = e_i - 3$ sehingga jumlahnya menjadi $2$:</p><p>$$\\binom{2+4-1}{4-1} = \\binom53 = 10$$</p><p>Ada $4$ pilihan $i$, memberi $4 \\times 10 = 40$.</p><p>Dua pelanggaran sekaligus menuntut jumlah paling sedikit $3+3 = 6 &gt; 5$, jadi <strong>mustahil</strong> — irisannya kosong dan tidak ada koreksi lebih lanjut.</p><p>$$56 - 40 = \\boxed{16}$$</p><p><strong>Periksa dengan simetri.</strong> Penjabaran $\\left(1+x+x^2\\right)^4$ berderajat $8$, dan koefisiennya simetris terhadap suku tengah — sebab mengganti tiap $e_i$ dengan $2-e_i$ memetakan jumlah $s$ menjadi $8-s$. Karena itu koefisien $x^5$ sama dengan koefisien $x^3$.</p><p>Daftar lengkap koefisiennya:</p><p>$$1,\\ 4,\\ 10,\\ 16,\\ 19,\\ 16,\\ 10,\\ 4,\\ 1$$</p><p>Jumlahnya $81 = 3^4$, sesuai substitusi $x = 1$. Koefisien $x^5$ memang $16$, dan simetri terhadap suku tengah $19$ juga terlihat.</p><p><strong>Mengapa memeriksa irisan itu perlu.</strong> Kalau ruas kanannya lebih besar — misalnya koefisien $x^{6}$ — dua pelanggaran sekaligus menjadi mungkin, dan mengurangkan begitu saja akan membuang terlalu banyak. Batas \"kapan pelanggaran ganda mungkin\" harus selalu diperiksa, bukan diandaikan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fpb-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "fungsi-pembangkit"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa penyelesaian bilangan bulat dari</p><p>$$x_1 + x_2 + x_3 = 10$$</p><p>yang memenuhi $0 \\le x_i \\le 5$ untuk setiap $i$?</p>",
+   "jawaban": "21",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tiap peubah punya batas atas, jadi deretnya terpotong. Tuliskan faktor untuk satu peubah lebih dulu.",
+    "Faktor untuk peubah yang bernilai $0$ sampai $5$ adalah $1 + x + x^2 + \\cdots + x^5$.",
+    "Jawabannya adalah koefisien $x^{10}$ pada hasil kali ketiga faktor itu."
+   ],
+   "pembahasan": "<p><strong>Susun fungsi pembangkitnya.</strong> Tiap peubah boleh bernilai $0$ sampai $5$, sehingga faktornya</p><p>$$1 + x + x^2 + x^3 + x^4 + x^5 = \\frac{1-x^{6}}{1-x}$$</p><p>Ada tiga peubah, sehingga</p><p>$$F(x) = \\left(\\frac{1-x^{6}}{1-x}\\right)^{3} = \\left(1-x^{6}\\right)^{3} \\cdot \\frac{1}{(1-x)^{3}}$$</p><p><strong>Jabarkan tiap bagian.</strong></p><p>$$\\left(1-x^6\\right)^3 = 1 - 3x^6 + 3x^{12} - x^{18}$$</p><p>$$\\frac{1}{(1-x)^3} = \\sum_{n\\ge0}\\binom{n+2}{2}x^{n}$$</p><p><strong>Ambil koefisien $x^{10}$.</strong> Hanya dua suku dari faktor pertama yang bisa menyumbang, sebab pangkat $12$ dan $18$ sudah melewati $10$:</p><p>$$\\left[x^{10}\\right]F = 1 \\cdot \\binom{12}{2} - 3 \\cdot \\binom{6}{2}$$</p><p>$$= 66 - 3 \\times 15 = 66 - 45 = \\boxed{21}$$</p><p><strong>Bandingkan dengan inklusi–eksklusi langsung.</strong> Tanpa batas atas ada $\\binom{12}{2} = 66$ penyelesaian; yang melanggar pada satu peubah tertentu digeser menjadi jumlah $10-6 = 4$, memberi $\\binom62 = 15$ untuk tiap peubah, sehingga $3 \\times 15 = 45$. Dua pelanggaran sekaligus menuntut jumlah paling sedikit $12 &gt; 10$, jadi mustahil.</p><p>$$66 - 45 = 21$$</p><p><strong>Hasilnya sama, dan itu bukan kebetulan.</strong> Faktor $\\left(1-x^6\\right)^3$ ketika dijabarkan menghasilkan tanda berselang-seling $1, -3, +3, -1$ — persis suku-suku inklusi–eksklusi, lengkap dengan koefisien $\\binom3k$-nya. Fungsi pembangkit menuliskan inklusi–eksklusi sebagai aljabar, sehingga tidak ada lagi yang perlu diingat tentang kapan menambah dan kapan mengurangi.</p><p><strong>Di situlah keunggulannya terasa.</strong> Kalau batas atas tiap peubah berbeda-beda — misalnya $x_1 \\le 3$, $x_2 \\le 5$, $x_3 \\le 7$ — inklusi–eksklusi harus dikerjakan dengan hati-hati per kasus, sedangkan fungsi pembangkitnya tinggal</p><p>$$\\left(1-x^{4}\\right)\\left(1-x^{6}\\right)\\left(1-x^{8}\\right) \\cdot \\frac{1}{(1-x)^3}$$</p><p>dan tandanya keluar sendiri dari penjabarannya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fpb-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "fungsi-pembangkit"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Tentukan koefisien $x^{8}$ pada</p><p>$$\\frac{1}{(1-x)^{3}}$$</p>",
+   "jawaban": "45",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tuliskan $\\frac{1}{1-x}$ sebagai deret lebih dulu, lalu pikirkan apa arti memangkatkannya tiga.",
+    "Mengalikan tiga deret berarti memilih satu suku dari tiap faktor dan menjumlahkan pangkatnya.",
+    "Koefisien $x^8$ karena itu mencacah penyelesaian sebuah persamaan yang sudah kamu kenal."
+   ],
+   "pembahasan": "<p><strong>Tuliskan deretnya.</strong></p><p>$$\\frac{1}{1-x} = 1 + x + x^2 + x^3 + \\cdots = \\sum_{n \\ge 0} x^{n}$$</p><p><strong>Baca perkaliannya sebagai pencacahan.</strong></p><p>$$\\frac{1}{(1-x)^3} = \\left(\\sum_{a \\ge 0} x^{a}\\right)\\left(\\sum_{b \\ge 0} x^{b}\\right)\n\\left(\\sum_{c \\ge 0} x^{c}\\right)$$</p><p>Mengalikannya berarti memilih pangkat $a$, $b$, $c$ dari ketiga faktor, dan sumbangannya adalah $x^{a+b+c}$. Maka koefisien $x^8$ adalah banyaknya penyelesaian</p><p>$$a + b + c = 8, \\qquad a,b,c \\ge 0$$</p><p><strong>Hitung.</strong></p><p>$$\\binom{8+3-1}{3-1} = \\binom{10}{2} = \\frac{10 \\times 9}{2} = \\boxed{45}$$</p><p><strong>Bentuk umumnya</strong>, yang layak dihafal:</p><p>$$\\frac{1}{(1-x)^{k}} = \\sum_{n \\ge 0} \\binom{n+k-1}{k-1} x^{n}$$</p><p><strong>Perhatikan ini persis rumus membagi objek identik.</strong> Koefisien $x^n$ pada $\\frac{1}{(1-x)^k}$ sama dengan banyaknya cara membagi $n$ benda identik ke $k$ wadah berbeda — dan itu bukan kebetulan. Kedua hal itu mencacah objek yang sama, hanya ditulis dengan bahasa yang berbeda:</p><table><thead><tr><th>Bahasa deret</th><th>Bahasa pencacahan</th></tr></thead><tbody><tr><td>satu faktor $\\frac{1}{1-x}$</td><td>satu wadah</td></tr><tr><td>pangkat yang dipilih dari faktor itu</td><td>isi wadah tersebut</td></tr><tr><td>koefisien $x^n$</td><td>pembagian yang totalnya $n$</td></tr></tbody></table><p><strong>Mengapa deret ini layak dikenali seketika.</strong> Ia muncul di hampir setiap soal fungsi pembangkit, sebab \"boleh dipakai berapa pun\" selalu menghasilkan faktor $\\frac{1}{1-x^c}$. Mengenalinya menghemat langkah menurunkan ulang koefisiennya tiap kali.</p><p><strong>Periksa untuk kasus kecil.</strong> Untuk $k = 2$: $\\frac{1}{(1-x)^2} = 1 + 2x + 3x^2 + \\cdots$, dan rumusnya memberi $\\binom{n+1}{1} = n+1$. Memang koefisien $x^2$ adalah $3$, sesuai penyelesaian $a+b = 2$ yaitu $(0,2), (1,1), (2,0)$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fpb-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "fungsi-pembangkit"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa cara membayar tepat $20$ rupiah dengan koin bernilai $1$, $5$, dan $10$ rupiah? Banyaknya koin tiap jenis tidak dibatasi, dan urutan pembayaran tidak diperhatikan.</p>",
+   "jawaban": "9",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Susun satu faktor untuk tiap jenis koin. Untuk koin bernilai $c$ tanpa batas pemakaian, faktornya memuat pangkat kelipatan $c$.",
+    "Jawabannya adalah koefisien $x^{20}$ pada hasil kali ketiga faktor.",
+    "Untuk menghitungnya, pecah menurut banyaknya koin bernilai terbesar — sisanya lebih mudah ditangani."
+   ],
+   "pembahasan": "<p><strong>Susun fungsi pembangkitnya.</strong></p><p>$$F(x) = \\frac{1}{1-x} \\cdot \\frac{1}{1-x^{5}} \\cdot \\frac{1}{1-x^{10}}$$</p><p>Jawabannya adalah $\\left[x^{20}\\right]F(x)$.</p><p><strong>Hitung dengan memecah menurut koin $10$-an.</strong> Sebut $d$ banyaknya koin $10$-an. Karena $10d \\le 20$, nilainya $0$, $1$, atau $2$.</p><p>Untuk sisa $s$ yang dibayar dengan koin $1$ dan $5$, banyaknya cara ditentukan sepenuhnya oleh berapa koin $5$-an yang dipakai — sisanya otomatis ditutup koin $1$-an. Jadi banyaknya cara adalah $\\left\\lfloor \\frac{s}{5} \\right\\rfloor + 1$.</p><table><thead><tr><th>$d$</th><th>sisa $s$</th><th>cara membayar sisa</th></tr></thead><tbody><tr><td>$2$</td><td>$0$</td><td>$1$</td></tr><tr><td>$1$</td><td>$10$</td><td>$\\left\\lfloor \\tfrac{10}{5} \\right\\rfloor + 1 = 3$</td></tr><tr><td>$0$</td><td>$20$</td><td>$\\left\\lfloor \\tfrac{20}{5} \\right\\rfloor + 1 = 5$</td></tr></tbody></table><p>$$1 + 3 + 5 = \\boxed{9}$$</p><p><strong>Periksa dengan mendaftar.</strong> Tulis pembayaran sebagai $(\\text{jumlah } 10, \\text{jumlah }\n5, \\text{jumlah } 1)$:</p><p>$$(2,0,0),\\ (1,2,0),\\ (1,1,5),\\ (1,0,10),\\ (0,4,0),\\ (0,3,5),\\ (0,2,10),\\ (0,1,15),\\ (0,0,20)$$</p><p>Tepat $9$.</p><p><strong>Mengapa jawabannya tidak sebesar dugaan.</strong> Nilai koinnya saling berkelipatan — $10$ kelipatan $5$, dan $5$ kelipatan $1$ — sehingga banyak kombinasi yang berbeda ternyata menghasilkan nilai yang sama dan tidak menambah cara baru. Kalau koinnya bernilai $1$, $4$, dan $7$, jawabannya untuk $20$ rupiah lebih besar meskipun angkanya sepadan.</p><p><strong>Struktur ini yang membuat hitungannya bertingkat.</strong> Karena tiap koin membagi habis koin yang lebih besar, pemecahan kasus dari nilai terbesar ke terkecil selalu meninggalkan sisa yang mudah — dan itu sebabnya sistem mata uang di dunia nyata biasanya disusun begitu.</p><p><strong>Kalau pemakaiannya dibatasi,</strong> deretnya tinggal dipotong. Misalnya kalau koin $10$-an hanya tersedia satu, faktornya menjadi $1 + x^{10}$, dan baris $d = 2$ pada tabel di atas hilang — jawabannya menjadi $8$.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fpb-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "fungsi-pembangkit"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 4,
+   "soal": "<p>Tiga dadu setimbang bermata $1$ sampai $6$ dilempar bersamaan.</p><p>Ada berapa cara ketiga mata dadu itu berjumlah $12$? (Ketiga dadu dianggap dapat dibedakan.)</p>",
+   "jawaban": "25",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tiap dadu menyumbang satu faktor. Perhatikan mata dadu dimulai dari $1$, bukan $0$ — jadi faktornya tidak memuat suku tetap.",
+    "Faktor untuk satu dadu adalah $x + x^2 + \\cdots + x^6$, dan ia dapat ditulis sebagai $x\\left(1+x+\\cdots+x^5\\right)$.",
+    "Mengeluarkan faktor $x$ dari tiap dadu menggeser pangkat yang dicari, dan sisanya menjadi soal yang sudah kamu kenal."
+   ],
+   "pembahasan": "<p><strong>Susun fungsi pembangkitnya.</strong> Satu dadu memberi</p><p>$$x + x^2 + x^3 + x^4 + x^5 + x^6 = x\\left(1 + x + \\cdots + x^5\\right) = x \\cdot \\frac{1-x^6}{1-x}$$</p><p>Tiga dadu memberi</p><p>$$F(x) = x^{3} \\left(\\frac{1-x^{6}}{1-x}\\right)^{3}$$</p><p><strong>Geser pangkatnya.</strong> Faktor $x^3$ di depan berarti</p><p>$$\\left[x^{12}\\right]F(x) = \\left[x^{9}\\right]\\left(\\frac{1-x^{6}}{1-x}\\right)^{3}$$</p><p>Pergeseran ini adalah terjemahan aljabar dari langkah \"sisihkan dulu satu untuk tiap dadu\": mata dadu $1$ sampai $6$ berubah menjadi $0$ sampai $5$, dan jumlah $12$ berubah menjadi $9$.</p><p><strong>Jabarkan.</strong></p><p>$$\\left(1-x^6\\right)^3 = 1 - 3x^{6} + 3x^{12} - x^{18}, \\qquad\n\\frac{1}{(1-x)^3} = \\sum_{n\\ge0}\\binom{n+2}{2}x^{n}$$</p><p>Ambil koefisien $x^9$. Hanya dua suku pertama yang bisa menyumbang, sebab $x^{12}$ dan $x^{18}$ sudah melewati $x^9$:</p><p>$$\\left[x^{9}\\right] = 1 \\cdot \\binom{11}{2} - 3 \\cdot \\binom{5}{2}$$</p><p>$$= 55 - 3 \\times 10 = 55 - 30 = \\boxed{25}$$</p><p><strong>Periksa dengan simetri.</strong> Jumlah tiga dadu berjalan dari $3$ sampai $18$, dan sebarannya simetris terhadap $10{,}5$ — sebab mengganti tiap mata $m$ dengan $7-m$ memetakan jumlah $s$ menjadi $21-s$. Karena itu banyaknya cara berjumlah $12$ sama dengan berjumlah $21-12 = 9$.</p><p>Sebaran lengkapnya untuk jumlah $3$ sampai $18$:</p><p>$$1,\\ 3,\\ 6,\\ 10,\\ 15,\\ 21,\\ 25,\\ 27,\\ 27,\\ 25,\\ 21,\\ 15,\\ 10,\\ 6,\\ 3,\\ 1$$</p><p>Jumlah seluruhnya $216 = 6^3$, sesuai. Nilai untuk jumlah $12$ memang $25$, dan sama dengan nilai untuk jumlah $9$.</p><p><strong>Mengapa mengeluarkan faktor $x$ itu penting.</strong> Tanpa langkah itu, deret $x + \\cdots + x^6$ harus ditangani apa adanya dan bentuk bakunya tidak langsung terlihat. Mengeluarkan pangkat terkecil mengubahnya menjadi deret yang dimulai dari $1$ — bentuk yang koefisiennya sudah dikenal.</p><p>Kebiasaan itu berlaku umum: <strong>selalu keluarkan pangkat terkecil dari tiap faktor lebih dulu</strong>, lalu kerjakan sisanya dengan bentuk baku.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "fpb-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "fungsi-pembangkit"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 5,
+   "soal": "<p>Barisan $a_0, a_1, a_2, \\dots$ memenuhi</p><p>$$a_0 = 0, \\qquad a_1 = 1, \\qquad a_n = a_{n-1} + a_{n-2} \\quad (n \\ge 2)$$</p><p>Tentukan fungsi pembangkitnya</p><p>$$A(x) = \\sum_{n \\ge 0} a_n x^{n}$$</p><p>dalam bentuk tertutup, dan jelaskan mengapa kekonvergenan tidak perlu dipersoalkan.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kalikan rekurensnya dengan $x^n$, lalu jumlahkan atas seluruh $n$ yang berlaku — yaitu $n \\ge 2$.",
+    "Nyatakan tiap penjumlahan yang muncul kembali dalam bentuk $A(x)$, dengan hati-hati pada suku-suku awal yang hilang.",
+    "Setelah persamaannya terbentuk, $A(x)$ tinggal diselesaikan secara aljabar biasa."
+   ],
+   "pembahasan": "<h4>Menurunkan bentuk tertutupnya</h4><p>Kalikan rekurensnya dengan $x^n$ dan jumlahkan atas $n \\ge 2$ — batas ini penting, sebab rekurensnya hanya berlaku mulai $n = 2$:</p><p>$$\\sum_{n \\ge 2} a_n x^{n} = \\sum_{n \\ge 2} a_{n-1}x^{n} + \\sum_{n \\ge 2} a_{n-2}x^{n}$$</p><p><strong>Nyatakan tiap bagian lewat $A(x)$.</strong></p><p>Ruas kiri kehilangan dua suku pertama:</p><p>$$\\sum_{n\\ge2} a_n x^n = A(x) - a_0 - a_1 x = A(x) - x$$</p><p>Suku pertama di ruas kanan, keluarkan satu $x$:</p><p>$$\\sum_{n\\ge2} a_{n-1}x^{n} = x\\sum_{n\\ge2}a_{n-1}x^{n-1} = x\\sum_{m\\ge1}a_m x^{m}\n= x\\left(A(x) - a_0\\right) = x\\,A(x)$$</p><p>Suku kedua, keluarkan $x^2$:</p><p>$$\\sum_{n\\ge2} a_{n-2}x^{n} = x^{2}\\sum_{n\\ge2}a_{n-2}x^{n-2} = x^{2}\\sum_{m\\ge0}a_m x^{m}\n= x^{2}A(x)$$</p><p><strong>Rangkai.</strong></p><p>$$A(x) - x = x\\,A(x) + x^{2}A(x)$$</p><p>$$A(x)\\left(1 - x - x^{2}\\right) = x$$</p><p>$$A(x) = \\frac{x}{1-x-x^{2}} \\qquad \\blacksquare$$</p><h4>Memeriksa hasilnya</h4><p>Kalikan kembali dan bandingkan koefisiennya. Dari $A(x)\\left(1-x-x^2\\right) = x$, koefisien $x^n$ untuk $n \\ge 2$ memberi</p><p>$$a_n - a_{n-1} - a_{n-2} = 0$$</p><p>yaitu rekurens semula. Koefisien $x^0$ memberi $a_0 = 0$ dan koefisien $x^1$ memberi $a_1 - a_0 = 1$, yaitu kedua kasus dasarnya. Jadi bentuk tertutupnya memuat seluruh keterangan barisan itu — tidak lebih, tidak kurang.</p><p>Pemeriksaan lain yang cepat: bagi $x$ dengan $1-x-x^2$ secara pembagian panjang, dan koefisien yang keluar adalah $0, 1, 1, 2, 3, 5, 8, \\dots$ — barisan Fibonacci.</p><h4>Mengapa kekonvergenan tidak dipersoalkan</h4><p>$A(x)$ di sini adalah <strong>deret pangkat formal</strong>, bukan fungsi yang akan dievaluasi. Lambang $x$ tidak pernah diganti bilangan; ia hanya tempat menaruh indeks, sehingga koefisien $x^n$ dapat dibaca sebagai $a_n$.</p><p>Yang dibutuhkan agar seluruh langkah di atas sah hanyalah dua hal, dan keduanya berlaku pada deret formal tanpa syarat apa pun:</p><ul><li>penjumlahan dan perkalian deret terdefinisi suku demi suku, sehingga tiap koefisien ditentukan oleh berhingga banyak perkalian;</li><li>pembagian oleh $1-x-x^2$ sah karena suku tetapnya $1 \\ne 0$ — dan sebuah deret formal punya balikan tepat ketika suku tetapnya tidak nol.</li></ul><p>Karena itu $\\frac{x}{1-x-x^2}$ bermakna penuh sebagai deret formal, dan pertanyaan \"untuk $x$ berapa deretnya konvergen\" tidak pernah muncul.</p><p>Kebetulan deret ini memang konvergen untuk $|x| &lt; \\frac1\\varphi$, tetapi kenyataan itu tidak dipakai di mana pun dalam penurunannya.</p><h4>Mengapa penyebutnya $1-x-x^2$</h4><p>Perhatikan penyebutnya adalah rekurensnya sendiri, ditulis terbalik: dari $a_n = a_{n-1} + a_{n-2}$ diperoleh $1 - x - x^2$. Hubungan itu berlaku umum — rekurens linear $a_n = p\\,a_{n-1} + q\\,a_{n-2}$ selalu memberi penyebut $1 - px - qx^2$, dan pembilangnya ditentukan oleh kasus dasarnya.</p><p>Penyebut itu juga berkerabat dengan persamaan karakteristik $x^2 = px + q$: akar-akar penyebut adalah kebalikan dari akar-akar persamaan karakteristik. Memfaktorkan penyebutnya lalu memecahnya menjadi pecahan parsial adalah jalan lain menuju rumus tertutup — dan untuk Fibonacci, jalan itu menghasilkan rumus Binet.</p>",
+   "rubrik": [
+    "Mengalikan rekurens dengan $x^n$ dan menjumlahkan atas $n \\ge 2$, dengan batas yang benar",
+    "Menyatakan $\\sum_{n\\ge2}a_nx^n = A(x) - x$, memperhitungkan kedua suku awal",
+    "Menyatakan $\\sum_{n\\ge2}a_{n-1}x^n = x\\,A(x)$ dengan penggeseran indeks yang benar",
+    "Menyatakan $\\sum_{n\\ge2}a_{n-2}x^n = x^2A(x)$",
+    "Menyelesaikan menjadi $A(x) = \\dfrac{x}{1-x-x^2}$",
+    "Menjelaskan bahwa deretnya formal, sehingga $x$ tidak pernah disubstitusi",
+    "Menyebut alasan pembagian sah, yaitu suku tetap penyebutnya tidak nol"
+   ]
+  },
+  {
+   "id": "fpb-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "fungsi-pembangkit"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Ada berapa cara membayar tepat $10$ rupiah dengan koin bernilai $1$, $2$, dan $5$ rupiah? Banyaknya koin tiap jenis tidak dibatasi, dan urutan pembayaran tidak diperhatikan.</p>",
+   "jawaban": "10",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tiap jenis koin menyumbang satu faktor pada sebuah hasil kali deret. Tuliskan faktor untuk koin $1$ rupiah lebih dulu.",
+    "Untuk koin bernilai $c$, pangkat yang mungkin adalah kelipatan $c$ — sebab memakai $m$ koin menyumbang nilai $mc$.",
+    "Jawabannya adalah koefisien $x^{10}$ pada hasil kali ketiga faktor itu."
+   ],
+   "pembahasan": "<p><strong>Susun satu faktor untuk tiap jenis koin.</strong> Memakai $m$ koin bernilai $c$ menyumbang nilai $mc$, sehingga jenis koin itu diwakili oleh</p><p>$$1 + x^{c} + x^{2c} + x^{3c} + \\cdots = \\frac{1}{1-x^{c}}$$</p><p>Ketiga jenis koin memberi</p><p>$$F(x) = \\frac{1}{1-x} \\cdot \\frac{1}{1-x^2} \\cdot \\frac{1}{1-x^5}$$</p><p><strong>Mengapa perkaliannya menghitung yang benar.</strong> Mengalikan ketiga deret berarti memilih satu suku dari tiap faktor — yaitu memutuskan berapa koin dari tiap jenis — lalu menjumlahkan pangkatnya. Koefisien $x^{10}$ karena itu menghitung banyaknya pilihan yang jumlah nilainya tepat $10$, yakni persis yang ditanyakan.</p><p><strong>Hitung koefisiennya.</strong> Untuk soal sekecil ini, cara terpendek adalah memecah menurut banyaknya koin $5$ rupiah.</p><table><thead><tr><th>Koin $5$-an</th><th>Sisa</th><th>Cara membayar sisa dengan $1$ dan $2$</th></tr></thead><tbody><tr><td>$2$</td><td>$0$</td><td>$1$</td></tr><tr><td>$1$</td><td>$5$</td><td>koin $2$-an: $0,1,2$ → $3$</td></tr><tr><td>$0$</td><td>$10$</td><td>koin $2$-an: $0,\\dots,5$ → $6$</td></tr></tbody></table><p>Untuk sisa $s$ yang dibayar dengan koin $1$ dan $2$, banyaknya cara adalah $\\left\\lfloor \\frac{s}{2} \\right\\rfloor + 1$ — sebab banyaknya koin $2$-an menentukan seluruhnya, dan sisanya ditutup koin $1$-an.</p><p>$$1 + 3 + 6 = \\boxed{10}$$</p><p><strong>Mengapa fungsi pembangkit tetap layak dipelajari</strong> kalau pemecahan kasus sudah cukup di sini: karena pemecahan kasus tumbuh cepat. Untuk lima jenis koin dan nilai $100$, tabel seperti di atas menjadi tidak terkelola, sedangkan bentuk hasil kalinya tidak berubah sama sekali — hanya faktornya bertambah.</p><p><strong>Bentuk umumnya.</strong> Untuk jenis koin bernilai $c_1, \\dots, c_r$ tanpa batas pemakaian:</p><p>$$F(x) = \\prod_{i=1}^{r} \\frac{1}{1-x^{c_i}}$$</p><p><strong>Kalau pemakaiannya dibatasi,</strong> deretnya tinggal dipotong. Misalnya kalau koin $5$-an hanya tersedia satu, faktornya menjadi $1 + x^5$ — bukan deret tak hingga. Kemampuan menyatakan batasan sebagai pemotongan deret itulah yang membuat jurus ini unggul pada soal berkendala banyak.</p><p><strong>Perhatikan urutan tidak diperhatikan,</strong> dan bentuk hasil kali di atas memang menghitung begitu: yang dipilih adalah <strong>berapa</strong> koin tiap jenis, bukan urutan pembayarannya.</p>",
+   "rubrik": []
+  },
+  {
    "id": "grd-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
    "arsip": "",
@@ -2238,6 +2604,197 @@
    "rubrik": []
   },
   {
+   "id": "pwn-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "pewarnaan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 2,
+   "soal": "<p>Dari papan catur $8 \\times 8$ dibuang dua petak di sudut yang <strong>berlawanan</strong>.</p><p>Berapa <strong>selisih</strong> antara banyaknya petak hitam dan petak putih yang tersisa?</p>",
+   "jawaban": "2",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hitung dulu berapa petak tiap warna pada papan penuh.",
+    "Tentukan warna kedua petak sudut yang dibuang — perhatikan apakah keduanya sewarna.",
+    "Selisihnya adalah besaran yang menutup kemungkinan penutupan domino, jadi hitunglah dengan teliti."
+   ],
+   "pembahasan": "<p><strong>Papan penuh.</strong> Papan $8\\times8$ punya $64$ petak, terbagi rata:</p><p>$$32 \\text{ hitam}, \\qquad 32 \\text{ putih}$$</p><p><strong>Warna kedua sudut yang dibuang.</strong> Beri koordinat $(i,j)$ dan warnai menurut paritas $i+j$. Sudut yang berlawanan, misalnya $(1,1)$ dan $(8,8)$, punya</p><p>$$1+1 = 2 \\qquad \\text{dan} \\qquad 8+8 = 16$$</p><p>Keduanya genap, jadi kedua sudut itu <strong>sewarna</strong>. Sebut keduanya hitam.</p><p><strong>Sisa papan.</strong></p><p>$$32 - 2 = 30 \\text{ hitam}, \\qquad 32 \\text{ putih}$$</p><p><strong>Selisihnya.</strong></p><p>$$32 - 30 = \\boxed{2}$$</p><p><strong>Mengapa angka ini yang menentukan.</strong> Sebuah domino selalu menutup tepat satu petak tiap warna, di mana pun diletakkan. Karena itu penutupan penuh hanya mungkin kalau kedua warna <strong>sama banyaknya</strong> — yaitu selisihnya nol.</p><p>Selisih $2$ berarti penutupan dengan $31$ domino mustahil, dan angka $2$ itu sekaligus menunjukkan seberapa jauh papannya dari bisa ditutup: paling sedikit dua petak akan selalu tersisa.</p><p><strong>Bandingkan dengan sudut yang berdekatan.</strong> Kalau yang dibuang $(1,1)$ dan $(1,8)$, maka $i+j$ bernilai $2$ dan $9$ — berbeda paritas, sehingga keduanya berlainan warna. Sisa papannya $31$ hitam dan $31$ putih, selisih $0$, dan pewarnaan <strong>tidak menutup</strong> kemungkinan apa pun.</p><p>Bahwa selisihnya nol tidak dengan sendirinya berarti penutupannya bisa; untuk itu diperlukan konstruksi. Perbedaan antara \"tidak terhalang\" dan \"bisa\" adalah hal yang dilatih di latihan berikutnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pwn-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "pewarnaan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Sebuah papan $5 \\times 5$ diwarnai berselang-seling seperti papan catur, dengan keempat petak sudutnya <strong>berwarna hitam</strong>.</p><p>Ada berapa petak hitam pada papan itu?</p>",
+   "jawaban": "13",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Papan berukuran ganjil tidak terbagi rata antara kedua warna. Jangan langsung membagi dua.",
+    "Warnai menurut paritas $i+j$, lalu hitung berapa pasangan $(i,j)$ yang jumlahnya genap.",
+    "Boleh juga dihitung baris demi baris: baris ganjil dan baris genap punya banyak petak hitam yang berbeda."
+   ],
+   "pembahasan": "<p><strong>Papan berukuran ganjil tidak terbagi rata.</strong> Kesalahan yang wajar adalah menjawab $\\frac{25}{2}$, yang bahkan bukan bilangan bulat. Untuk papan bersisi ganjil, satu warna selalu lebih banyak — yaitu warna yang menempati sudut-sudutnya.</p><p><strong>Hitung baris demi baris.</strong> Beri koordinat $(i,j)$ dengan $1 \\le i,j \\le 5$, dan warnai hitam ketika $i+j$ genap. Petak $(1,1)$ punya $i+j = 2$, genap — sesuai soal, sudutnya hitam.</p><table><thead><tr><th>Baris $i$</th><th>petak hitam</th><th>banyaknya</th></tr></thead><tbody><tr><td>$1$</td><td>$j = 1,3,5$</td><td>$3$</td></tr><tr><td>$2$</td><td>$j = 2,4$</td><td>$2$</td></tr><tr><td>$3$</td><td>$j = 1,3,5$</td><td>$3$</td></tr><tr><td>$4$</td><td>$j = 2,4$</td><td>$2$</td></tr><tr><td>$5$</td><td>$j = 1,3,5$</td><td>$3$</td></tr></tbody></table><p>$$3 + 2 + 3 + 2 + 3 = \\boxed{13}$$</p><p>Petak putihnya $25 - 13 = 12$.</p><p><strong>Rumus umumnya</strong> untuk papan $n \\times n$ dengan $n$ ganjil dan sudut hitam:</p><p>$$\\text{hitam} = \\frac{n^2+1}{2}, \\qquad \\text{putih} = \\frac{n^2-1}{2}$$</p><p>Periksa untuk $n = 5$: $\\frac{26}{2} = 13$ dan $\\frac{24}{2} = 12$. Cocok.</p><p><strong>Akibat langsungnya.</strong> Papan $5\\times5$ <strong>tidak dapat</strong> ditutup seluruhnya oleh domino, sebab $25$ ganjil sehingga jumlahnya saja sudah tidak cocok. Yang lebih menarik: paling banyak $12$ domino yang bisa diletakkan, dan sisa satu petak yang tidak tertutup pasti berwarna <strong>hitam</strong> — sebab $12$ domino menutup $12$ petak tiap warna, sehingga yang tersisa adalah kelebihan warna hitam.</p><p>Kesimpulan itu tidak bisa diperoleh dari hitungan petak saja. Ia menunjukkan pewarnaan tidak hanya menutup kemungkinan, tetapi juga <strong>memberi keterangan</strong> tentang penutupan yang memang bisa dilakukan.</p><p><strong>Ketimpangan warna adalah alat yang berulang kali dipakai</strong> pada soal papan bersisi ganjil, dan langkah pertamanya selalu sama: tentukan warna sudutnya, sebab itu yang menentukan warna mana yang berlebih.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pwn-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "pewarnaan"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Dari papan catur $8 \\times 8$ dibuang dua petak di sudut yang <strong>berdekatan</strong> — misalnya $(1,1)$ dan $(1,8)$, keduanya pada baris teratas. Tersisa $62$ petak.</p><p>Tunjukkan bahwa sisa papan itu <strong>dapat</strong> ditutup seluruhnya oleh $31$ domino $1 \\times 2$, dan jelaskan mengapa pewarnaan papan catur tidak dapat dipakai untuk menjawab soal ini.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hitung dulu warna kedua petak yang dibuang. Apakah keduanya sewarna?",
+    "Kalau hitungan warnanya cocok, pewarnaan tidak menutup apa pun — dan soal jenis ini hanya bisa dijawab dengan memberikan penutupannya.",
+    "Untuk menyusun penutupannya, perhatikan baris teratas terpisah dari enam baris di bawahnya."
+   ],
+   "pembahasan": "<h4>Mengapa pewarnaan tidak menjawab soal ini</h4><p>Warnai menurut paritas $i+j$. Petak $(1,1)$ punya $i+j = 2$ dan petak $(1,8)$ punya $i+j = 9$ — berbeda paritas, sehingga <strong>berlainan warna</strong>.</p><p>Setelah keduanya dibuang, sisa papan punya</p><p>$$32 - 1 = 31 \\text{ petak hitam}, \\qquad 32 - 1 = 31 \\text{ petak putih}$$</p><p>Penutupan dengan $31$ domino menuntut tepat $31$ petak tiap warna. Persediaannya cocok persis, sehingga <strong>pewarnaan tidak menutup kemungkinan apa pun.</strong></p><p>Itu bukan berarti penutupannya ada. Hitungan warna yang cocok hanya berarti tidak ada halangan dari arah itu; halangan lain bisa saja tetap ada. Karena itu satu-satunya cara menjawab adalah <strong>memberikan penutupannya</strong>.</p><h4>Penutupannya</h4><p>Bagi papannya menjadi dua bagian.</p><p><strong>Baris teratas.</strong> Kedua ujungnya sudah dibuang, sehingga tersisa petak $(1,2)$ sampai $(1,7)$ — yaitu $6$ petak berjajar. Tutup dengan $3$ domino mendatar:</p><p>$$(1,2){-}(1,3), \\qquad (1,4){-}(1,5), \\qquad (1,6){-}(1,7)$$</p><p><strong>Tujuh baris sisanya.</strong> Baris $2$ sampai $8$ membentuk papan $7 \\times 8$ yang utuh. Tutup tiap baris dengan $4$ domino mendatar, sebab tiap baris berisi $8$ petak:</p><p>$$7 \\times 4 = 28 \\text{ domino}$$</p><p><strong>Jumlahkan.</strong></p><p>$$3 + 28 = 31 \\text{ domino}$$</p><p>Seluruh $62$ petak tertutup, tidak ada yang bertumpuk, dan tidak ada yang melewati tepi papan. $\\blacksquare$</p><h4>Pelajaran yang dibawa soal ini</h4><p>Bandingkan dengan soal sudut berlawanan:</p><table><thead><tr><th>Yang dibuang</th><th>Warna</th><th>Selisih</th><th>Kesimpulan</th></tr></thead><tbody><tr><td>Dua sudut berlawanan</td><td>sewarna</td><td>$2$</td><td>mustahil — dibuktikan pewarnaan</td></tr><tr><td>Dua sudut berdekatan</td><td>berlainan</td><td>$0$</td><td>bisa — dibuktikan konstruksi</td></tr></tbody></table><p>Kedua soal terlihat hampir sama dan hanya berbeda petak mana yang dibuang, tetapi menuntut <strong>jenis jawaban yang berbeda sama sekali</strong>. Yang pertama dijawab dengan alasan; yang kedua hanya bisa dijawab dengan contoh.</p><p>Kekeliruan yang paling sering pada soal ubin adalah menyimpulkan \"bisa\" karena hitungan warnanya cocok. Invarian — dan pewarnaan adalah invarian yang dipilih sengaja — hanya pernah membuktikan <strong>tidak mungkin</strong>.</p><h4>Catatan lanjutan</h4><p>Untuk papan $8\\times8$, kenyataannya lebih kuat daripada yang dibuktikan di sini: <strong>setiap</strong> pembuangan satu petak hitam dan satu petak putih menyisakan papan yang selalu bisa ditutup, di mana pun kedua petak itu berada. Membuktikannya menuntut gagasan lain — bukan pewarnaan, melainkan konstruksi lintasan tertutup yang melewati seluruh papan.</p>",
+   "rubrik": [
+    "Menentukan warna kedua petak yang dibuang lewat paritas $i+j$, dan menyimpulkan keduanya berlainan warna",
+    "Menghitung sisa $31$ petak tiap warna dan menyatakan pewarnaan tidak menutup kemungkinan",
+    "Menyatakan dengan jelas bahwa hitungan warna yang cocok tidak membuktikan penutupannya ada",
+    "Memberikan penutupan yang lengkap dan dapat diperiksa",
+    "Menghitung banyaknya domino pada tiap bagian dan memastikan totalnya $31$",
+    "Menyimpulkan perbedaan jenis jawaban antara soal ini dan soal sudut berlawanan"
+   ]
+  },
+  {
+   "id": "pwn-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "pewarnaan"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 5,
+   "soal": "<p>Buktikan bahwa papan $8 \\times 8$ <strong>tidak dapat</strong> ditutup seluruhnya oleh $15$ ubin berbentuk T (tetromino T, yaitu empat petak berbentuk huruf T) ditambah satu ubin persegi $2 \\times 2$.</p><p>(Perhatikan $15 \\times 4 + 4 = 64$, jadi hitungan petaknya cocok.)</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hitungan petak cocok, jadi harus dicari besaran lain. Warnai papannya seperti papan catur.",
+    "Periksa berapa petak hitam yang ditutup sebuah ubin T. Berbeda dari domino, angkanya <strong>tidak</strong> tetap — tetapi selisih hitam dan putihnya punya sifat yang tetap.",
+    "Jumlahkan selisih itu atas seluruh ubin, dan bandingkan dengan selisih pada papan penuh."
+   ],
+   "pembahasan": "<p><strong>Warnai papannya</strong> seperti papan catur: $32$ petak hitam dan $32$ petak putih.</p><p><strong>Periksa ubin T.</strong> Sebuah tetromino T menutupi empat petak: tiga berjajar dan satu menonjol di tengah. Petak yang menonjol bersebelahan dengan petak tengah, sehingga warnanya berlawanan dengan petak tengah.</p><p>Tiga petak berjajar berwarna selang-seling, jadi terdiri atas dua petak sewarna dengan ujungnya dan satu petak di tengah yang berlawanan. Menambahkan petak yang menonjol — sewarna dengan kedua ujung — memberi</p><p>$$3 \\text{ petak satu warna}, \\qquad 1 \\text{ petak warna lain}$$</p><p>Warna mana yang bertiga bergantung pada peletakannya, tetapi <strong>selisihnya selalu</strong></p><p>$$\\pm 2$$</p><p><strong>Periksa ubin persegi $2\\times2$.</strong> Ia menutupi dua petak hitam dan dua putih di mana pun diletakkan, sehingga selisihnya</p><p>$$0$$</p><p><strong>Jumlahkan selisihnya.</strong> Sebut $s_i \\in \\{+2, -2\\}$ selisih hitam dikurangi putih untuk ubin T ke-$i$. Kalau seluruh papan tertutup, jumlah seluruh selisih harus sama dengan selisih pada papan penuh, yaitu $32 - 32 = 0$:</p><p>$$\\sum_{i=1}^{15} s_i + 0 = 0$$</p><p><strong>Turunkan pertentangannya.</strong> Bagi persamaan itu dengan $2$:</p><p>$$\\sum_{i=1}^{15} \\frac{s_i}{2} = 0, \\qquad \\frac{s_i}{2} \\in \\{+1, -1\\}$$</p><p>Jadi $15$ bilangan yang masing-masing $+1$ atau $-1$ harus berjumlah nol. Itu menuntut banyaknya $+1$ sama dengan banyaknya $-1$, sehingga $15$ harus <strong>genap</strong>.</p><p>Tetapi $15$ ganjil. Bertentangan. Maka penutupan semacam itu mustahil. $\\blacksquare$</p><h4>Cara lain menyatakan langkah terakhir</h4><p>Jumlah $15$ bilangan ganjil selalu ganjil, sedangkan $0$ genap. Karena tiap $\\frac{s_i}{2}$ bernilai $\\pm1$ yang ganjil, jumlahnya tidak mungkin nol.</p><p>Kedua cara itu sama; yang penting adalah menyandarkan kesimpulan pada <strong>paritas banyaknya ubin</strong>, bukan pada nilai selisihnya.</p><h4>Apa yang berbeda dari soal domino</h4><p>Pada domino, jumlah warna yang ditutup tiap ubin benar-benar tetap: selalu satu dan satu. Pada ubin T, jumlahnya <strong>tidak</strong> tetap — bisa tiga hitam atau tiga putih. Sekilas ini membuat pewarnaan tidak berguna.</p><p>Yang menyelamatkan adalah menemukan besaran yang tetap pada tingkat yang lebih longgar: bukan warna yang ditutup, melainkan <strong>paritas selisihnya</strong>. Tiap ubin T menyumbang selisih ganjil setelah dibagi dua, dan itu cukup untuk menutup kemungkinan.</p><p>Menaikkan tingkat kelonggaran seperti ini — dari \"tetap\" ke \"tetap paritasnya\" — adalah langkah yang sama dengan yang dipakai pada invarian, dan ia yang membuat pewarnaan berlaku jauh melampaui domino.</p>",
+   "rubrik": [
+    "Menyatakan hitungan petak cocok sehingga dibutuhkan besaran lain",
+    "Mewarnai papan seperti papan catur, menyebut $32$ petak tiap warna",
+    "Menunjukkan ubin T menutup tiga petak satu warna dan satu petak warna lain, dengan alasan letak petak yang menonjol",
+    "Menyatakan selisih ubin T selalu $\\pm2$, meskipun warna mana yang bertiga tidak tetap",
+    "Menyatakan ubin $2\\times2$ berselisih $0$",
+    "Menyusun persamaan jumlah selisih sama dengan nol",
+    "Menurunkan pertentangan lewat paritas: $15$ bilangan $\\pm1$ tidak mungkin berjumlah nol"
+   ]
+  },
+  {
+   "id": "pwn-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "pewarnaan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 4,
+   "soal": "<p>Dari papan catur $8 \\times 8$ dibuang dua petak: <strong>satu berwarna hitam dan satu berwarna putih</strong>. Diketahui bahwa sisa papan seperti itu selalu dapat ditutup oleh $31$ domino, di mana pun kedua petak itu berada.</p><p>Ada berapa pasangan petak yang dapat dibuang seperti itu?</p>",
+   "jawaban": "1024",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Soal tidak menyuruh membuktikan apa pun — kenyataan bahwa penutupannya selalu ada sudah diberikan. Yang diminta hanyalah mencacah pasangannya.",
+    "Hitung berapa petak hitam dan berapa petak putih pada papan penuh.",
+    "Sebuah pasangan ditentukan oleh satu pilihan dari tiap warna, dan kedua pilihan itu tidak saling membatasi."
+   ],
+   "pembahasan": "<p><strong>Hitung persediaan tiap warna.</strong> Papan $8\\times8$ punya</p><p>$$32 \\text{ petak hitam}, \\qquad 32 \\text{ petak putih}$$</p><p><strong>Cacah pasangannya.</strong> Sebuah pasangan yang sah terdiri atas satu petak hitam dan satu petak putih. Kedua pilihan itu tidak saling membatasi — petak hitam mana pun dapat dipasangkan dengan petak putih mana pun, sebab keduanya pasti berbeda petak:</p><p>$$32 \\times 32 = \\boxed{1024}$$</p><p><strong>Mengapa tidak dibagi dua.</strong> Godaannya adalah membagi $2$ karena pasangan $\\{a,b\\}$ sama dengan $\\{b,a\\}$. Di sini pembagian itu <strong>tidak</strong> diperlukan: kedua petak sudah dibedakan oleh warnanya, sehingga tiap pasangan terhitung tepat sekali. Perkalian $32\\times32$ memilih satu hitam dan satu putih, bukan dua petak dari satu kolam yang sama.</p><p>Bandingkan dengan pertanyaan \"ada berapa cara membuang dua petak sembarang\", yang jawabannya $\\binom{64}{2} = 2016$ — di situ pembagian memang diperlukan, sebab keduanya diambil dari kolam yang sama.</p><p><strong>Bacaan angkanya.</strong> Dari $2016$ pasangan yang mungkin, hanya $1024$ yang menyisakan papan yang dapat ditutup — sedikit di atas separuhnya. Sisanya, $992$ pasangan, adalah pasangan sewarna:</p><p>$$\\binom{32}{2} + \\binom{32}{2} = 496 + 496 = 992$$</p><p>Periksa: $1024 + 992 = 2016$. Cocok.</p><p><strong>Kekuatan pernyataan yang diberikan soal.</strong> Pewarnaan sendiri hanya membuktikan bahwa pasangan <strong>sewarna</strong> tidak mungkin ditutup. Ia sama sekali tidak menjamin pasangan berbeda warna pasti bisa — dan itulah bagian yang jauh lebih sulit.</p><p>Kenyataan bahwa setiap pasangan berbeda warna memang selalu bisa ditutup adalah hasil yang dikenal, dan buktinya tidak memakai pewarnaan sama sekali: papan $8\\times8$ dapat ditelusuri oleh sebuah lintasan tertutup yang melewati tiap petak tepat sekali, dan membuang dua petak berbeda warna memecah lintasan itu menjadi dua potongan yang panjangnya genap — masing-masing langsung terisi domino.</p><p>Pola \"invarian menutup sebagian, konstruksi membuka sisanya\" itu berulang di hampir semua soal ubin yang lengkap.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "pwn-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "pewarnaan"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 5,
+   "soal": "<p>Buktikan bahwa papan $10 \\times 10$ <strong>tidak dapat</strong> ditutup seluruhnya oleh ubin $1 \\times 4$ (boleh diletakkan mendatar maupun tegak).</p><p>(Perhatikan $100 = 25 \\times 4$, jadi hitungan petaknya cocok.)</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Hitungan petak cocok dan pewarnaan dua warna tidak akan menolong — sebuah ubin $1\\times4$ selalu menutup dua petak tiap warna.",
+    "Butuh pewarnaan dengan <strong>empat</strong> warna. Warnai petak $(i,j)$ menurut sisa $i+j$ dibagi $4$, lalu periksa apa yang ditutup sebuah ubin.",
+    "Hitung persediaan tiap warna pada papan $10\\times10$, dan periksa apakah keempatnya sama banyak."
+   ],
+   "pembahasan": "<p><strong>Mengapa dua warna gagal.</strong> Ubin $1\\times4$ menutup empat petak berjajar, yang pada pewarnaan papan catur selalu berselang-seling: dua hitam dan dua putih. Selisihnya selalu nol, dan papan penuh juga berselisih nol. Tidak ada yang bertentangan, jadi pewarnaan dua warna tidak menutup apa pun.</p><p><strong>Pakai empat warna.</strong> Beri koordinat $(i,j)$ dengan $1 \\le i,j \\le 10$, lalu warnai petak itu dengan</p><p>$$w(i,j) = (i+j) \\bmod 4 \\ \\in \\{0,1,2,3\\}$$</p><p><strong>Periksa apa yang ditutup sebuah ubin.</strong></p><ul><li><strong>Ubin mendatar</strong> menempati $(i,j), (i,j+1), (i,j+2), (i,j+3)$. Nilai $i+j$ pada keempatnya adalah empat bilangan berurutan, sehingga sisanya modulo $4$ adalah $0,1,2,3$ dalam suatu urutan.</li><li><strong>Ubin tegak</strong> menempati $(i,j), (i+1,j), (i+2,j), (i+3,j)$. Nilai $i+j$ juga empat bilangan berurutan, dengan kesimpulan yang sama.</li></ul><p>Jadi <strong>di mana pun diletakkan dan bagaimana pun arahnya, sebuah ubin $1\\times4$ menutup tepat satu petak dari tiap warna.</strong> Inilah syarat yang membuat pewarnaannya berguna.</p><p><strong>Akibatnya untuk penutupan penuh.</strong> Kalau $25$ ubin menutup seluruh papan, tiap warna harus tertutup tepat $25$ kali. Maka keempat warna wajib <strong>sama banyaknya</strong> di papan.</p><p><strong>Hitung persediaan tiap warna.</strong> Hitung baris demi baris. Pada baris ke-$i$, nilai $i+j$ berjalan dari $i+1$ sampai $i+10$ — sepuluh bilangan berurutan.</p><p>Sepuluh bilangan berurutan memuat tiap sisa modulo $4$ sebanyak $\\lfloor 10/4 \\rfloor = 2$ kali, ditambah dua sisa tambahan dari dua bilangan terakhir yang tersisa. Jadi tiap baris menyumbang $3$ petak untuk dua warna dan $2$ petak untuk dua warna lainnya.</p><p>Menjumlahkan atas kesepuluh baris, warna yang mendapat sumbangan $3$ bergeser dari baris ke baris. Hasil akhirnya:</p><table><thead><tr><th>Warna</th><th>$0$</th><th>$1$</th><th>$2$</th><th>$3$</th></tr></thead><tbody><tr><td>Banyaknya petak</td><td>$25$</td><td>$24$</td><td>$25$</td><td>$26$</td></tr></tbody></table><p>Jumlahnya $25+24+25+26 = 100$, sesuai.</p><p><strong>Simpulkan.</strong> Keempat warna tidak sama banyaknya — warna $3$ punya $26$ petak sedangkan warna $1$ hanya $24$. Padahal penutupan penuh menuntut tiap warna tertutup tepat $25$ kali. Bertentangan, sehingga penutupan mustahil. $\\blacksquare$</p><p>Perhatikan bahwa cukup <strong>satu</strong> warna yang menyimpang untuk menutup kemungkinan. Warna $3$ saja sudah memberi pertentangannya: $25$ ubin tidak mungkin menutup $26$ petak berwarna sama, sebab tiap ubin menyentuh warna itu tepat sekali.</p><h4>Bentuk umumnya</h4><p>Hasil ini bagian dari kenyataan yang lebih luas: papan $a \\times b$ dapat ditutup ubin $1 \\times k$ <strong>tepat ketika</strong> $k$ membagi $a$ atau $k$ membagi $b$.</p><p>Untuk $10 \\times 10$ dengan $k = 4$: karena $4 \\nmid 10$, penutupan mustahil — sesuai hasil di atas. Untuk $8 \\times 10$ dengan $k = 4$: karena $4 \\mid 8$, penutupannya ada, dan mudah disusun dengan meletakkan ubin mendatar sepanjang tiap baris.</p><h4>Pelajaran memilih banyaknya warna</h4><p>Banyaknya warna dipilih dari <strong>panjang ubinnya</strong>, bukan dari papannya. Ubin sepanjang $k$ menuntut $k$ warna supaya tiap ubin menutup tepat satu petak dari tiap warna.</p><p>Karena itu dua warna berguna untuk domino, tiga warna untuk ubin $1\\times3$, dan empat warna di sini. Memakai dua warna untuk ubin $1\\times4$ bukan kekeliruan hitung — ia hanya tidak menghasilkan besaran yang bisa dipertentangkan.</p>",
+   "rubrik": [
+    "Menyatakan pewarnaan dua warna tidak menolong, dengan alasan ubin $1\\times4$ menutup dua petak tiap warna",
+    "Menetapkan pewarnaan empat warna, misalnya $(i+j) \\bmod 4$",
+    "Menunjukkan ubin mendatar menutup tepat satu petak tiap warna",
+    "Menunjukkan ubin tegak juga menutup tepat satu petak tiap warna",
+    "Menyimpulkan penutupan penuh menuntut keempat warna sama banyaknya",
+    "Menghitung persediaan tiap warna pada papan $10\\times10$ dan menunjukkan tidak sama",
+    "Menyimpulkan pertentangannya"
+   ]
+  },
+  {
+   "id": "pwn-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "pewarnaan"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 3,
+   "soal": "<p>Dari sebuah papan catur $8 \\times 8$, dua petak di <strong>sudut yang berlawanan</strong> dibuang — misalnya pojok kiri atas dan pojok kanan bawah. Tersisa $62$ petak.</p><p>Buktikan bahwa sisa papan itu <strong>tidak dapat</strong> ditutup seluruhnya oleh $31$ domino $1 \\times 2$.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Menghitung petaknya saja tidak cukup: $62 = 31 \\times 2$, jadi tidak ada yang bertentangan di situ. Cari besaran lain.",
+    "Warnai papannya seperti papan catur, lalu perhatikan warna apa saja yang ditutup sebuah domino, di mana pun ia diletakkan.",
+    "Periksa warna kedua petak sudut yang dibuang. Keduanya sewarna atau berbeda?"
+   ],
+   "pembahasan": "<p><strong>Mengapa hitungan petak tidak cukup.</strong> Sisa papan punya $62$ petak, dan $31$ domino menutupi $62$ petak. Angkanya cocok, jadi kalau hanya itu yang diperiksa, penutupan seolah mungkin. Dibutuhkan besaran yang lebih halus.</p><p><strong>Warnai papannya.</strong> Beri warna hitam dan putih berselang-seling seperti papan catur. Papan $8 \\times 8$ penuh punya</p><p>$$32 \\text{ petak hitam}, \\qquad 32 \\text{ petak putih}$$</p><p><strong>Perhatikan apa yang ditutup sebuah domino.</strong> Domino $1 \\times 2$ selalu menutupi dua petak yang <strong>bersebelahan</strong> — mendatar maupun tegak. Pada pewarnaan papan catur, dua petak bersebelahan selalu berbeda warna. Maka:</p><blockquote><p>Di mana pun diletakkan dan bagaimana pun arahnya, sebuah domino menutup tepat <strong>satu petak hitam dan satu petak putih.</strong></p></blockquote><p>Inilah syarat yang membuat pewarnaannya berguna: jumlah warna yang ditutup tiap ubin <strong>tetap</strong>, tidak bergantung pada peletakannya.</p><p><strong>Akibatnya untuk penutupan penuh.</strong> Kalau $31$ domino menutup seluruh sisa papan, maka petak yang tertutup terdiri atas</p><p>$$31 \\text{ hitam} \\quad \\text{dan} \\quad 31 \\text{ putih}$$</p><p><strong>Periksa persediaan warnanya.</strong> Kedua petak sudut yang berlawanan pada papan catur selalu <strong>sewarna</strong> — sebut saja keduanya hitam. Setelah dibuang, sisa papan punya</p><p>$$32 - 2 = 30 \\text{ petak hitam}, \\qquad 32 \\text{ petak putih}$$</p><p><strong>Simpulkan.</strong> Penutupan menuntut $31$ hitam, sedangkan yang tersedia hanya $30$. Karena itu penutupan mustahil. $\\blacksquare$</p><h4>Mengapa kedua sudut berlawanan pasti sewarna</h4><p>Beri koordinat $(i,j)$ dengan $1 \\le i,j \\le 8$, dan warnai menurut paritas $i+j$. Pojok kiri atas $(1,1)$ punya $i+j = 2$; pojok kanan bawah $(8,8)$ punya $i+j = 16$. Keduanya genap, jadi sewarna.</p><p>Sebaliknya $(1,1)$ dan $(1,8)$ — dua sudut yang <strong>berdekatan</strong> — punya $i+j$ bernilai $2$ dan $9$, sehingga berbeda warna. Perbedaan itu yang membuat soal berubah sama sekali kalau sudut yang dibuang bukan yang berlawanan.</p><h4>Arah kesimpulan yang harus dijaga</h4><p>Bukti ini menunjukkan penutupan <strong>tidak mungkin</strong>. Ia tidak — dan tidak bisa — menunjukkan bahwa papan yang hitungan warnanya cocok pasti bisa ditutup. Hitungan warna yang cocok hanya berarti tidak ada halangan <strong>dari pewarnaan itu</strong>; halangan lain bisa saja ada.</p><p>Pewarnaan pada dasarnya adalah invarian yang dipilih dengan sengaja: yang kekal adalah selisih antara warna yang dituntut ubin dan warna yang tersedia papan.</p>",
+   "rubrik": [
+    "Menyatakan bahwa hitungan petak saja tidak cukup, sebab $62 = 31\\times2$ tidak bertentangan",
+    "Mewarnai papan seperti papan catur dan menyebut $32$ petak tiap warna",
+    "Menyatakan tiap domino menutup tepat satu petak tiap warna, <strong>di mana pun diletakkan</strong>",
+    "Menyimpulkan penutupan penuh menuntut $31$ petak tiap warna",
+    "Menunjukkan kedua sudut berlawanan sewarna, misalnya lewat paritas $i+j$",
+    "Menghitung persediaan sisa $30$ dan $32$, lalu menyimpulkan pertentangannya"
+   ]
+  },
+  {
    "id": "rek-01",
    "sumber": "Latihan 1 — susunan sendiri, gaya OSN-P",
    "arsip": "",
@@ -2741,6 +3298,183 @@
     "Setelah kelompok terbesar tanpa dua orang sebulan itu ditemukan, tambahkan satu orang lagi."
    ],
    "pembahasan": "<p><strong>Tentukan sarangnya.</strong> Sarang di sini adalah bulan lahir, dan banyaknya</p><p>$$k = 12$$</p><p>Merpatinya adalah orang.</p><p><strong>Cari keadaan terburuk.</strong> Bayangkan sekelompok orang yang bulan lahirnya berbeda semua. Paling banyak, kelompok itu berisi $12$ orang — satu untuk tiap bulan. Dengan $12$ orang, masih mungkin tidak ada dua yang sebulan.</p><p><strong>Tambah satu.</strong> Begitu orang ke-$13$ datang, bulan lahirnya pasti salah satu dari $12$ bulan yang sudah terpakai. Maka pasti ada dua orang yang sebulan.</p><p>$$\\boxed{13}$$</p><p><strong>Mengapa jawabannya bukan $12$.</strong> Pertanyaan \"paling sedikit berapa supaya <strong>pasti</strong>\" selalu punya dua bagian, dan keduanya perlu:</p><ol><li><strong>Dengan $13$ orang, selalu terjadi.</strong> Ini yang dijamin prinsip sarang merpati.</li><li><strong>Dengan $12$ orang, belum tentu terjadi.</strong> Ini ditunjukkan dengan <strong>contoh</strong>: satu orang untuk tiap bulan.</li></ol><p>Bagian kedua sering dilewati, padahal tanpanya jawabannya belum lengkap. Ia yang membuktikan angka itu memang paling kecil, bukan sekadar cukup.</p><p><strong>Yang tidak dikatakan prinsip ini.</strong> Ia tidak menyebut bulan mana yang berisi dua orang, dan tidak menyebut siapa keduanya. Ia hanya menjamin ada. Soal yang menanyakan \"bulan apa\" memang meminta hal lain sama sekali.</p><p><strong>Bentuk umumnya.</strong> Untuk $k$ sarang, jawaban pertanyaan semacam ini adalah $k+1$. Kalau yang diminta \"pasti ada <strong>tiga</strong> yang sebulan\", jawabannya $2k+1 = 25$ — karena keadaan terburuknya dua orang untuk tiap bulan.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tpm-01",
+   "sumber": "Latihan 1 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "teori-permainan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Sebuah tumpukan berisi $n$ batu. Dua pemain bergantian mengambil $1$, $2$, $3$, atau $4$ batu, dan pemain yang tidak bisa melangkah dinyatakan kalah.</p><p>Di antara $n = 1, 2, 3, \\dots, 30$, ada berapa nilai $n$ yang membuat <strong>pemain pertama kalah</strong>?</p>",
+   "jawaban": "6",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Tentukan dulu pola keadaan kalah dengan mengerjakan mundur dari tumpukan kosong.",
+    "Perhatikan berapa banyak pilihan langkah yang tersedia; angka itu menentukan pola kelipatannya.",
+    "Setelah polanya diketahui, tinggal mencacah berapa nilai dalam rentang yang mengikutinya."
+   ],
+   "pembahasan": "<p><strong>Tandai keadaannya.</strong> Sebut P keadaan yang membuat pemain yang mendapat giliran kalah.</p><ul><li>$0$: tidak bisa melangkah → <strong>P</strong>.</li><li>$1,2,3,4$: bisa mengambil semuanya dan meninggalkan $0$ → <strong>N</strong>.</li><li>$5$: langkahnya menuju $4,3,2,1$ — seluruhnya N → <strong>P</strong>.</li></ul><p>Polanya berulang tiap $5$:</p><p>$$n \\equiv 0 \\pmod 5 \\ \\Longleftrightarrow\\ \\text{keadaan P}$$</p><p><strong>Buktikan polanya.</strong></p><ol><li>Dari $5m$, mengambil $k \\in \\{1,2,3,4\\}$ memberi $5m-k$, yang tidak habis dibagi $5$ → selalu N.</li><li>Dari $n = 5m + r$ dengan $1 \\le r \\le 4$, ambil $r$ batu dan tersisa $5m$ → P.</li></ol><p><strong>Cacah dalam rentangnya.</strong> Pemain pertama kalah tepat ketika $n$ kelipatan $5$:</p><p>$$5,\\ 10,\\ 15,\\ 20,\\ 25,\\ 30$$</p><p>Ada $\\boxed{6}$ nilai.</p><p><strong>Cara menghitungnya:</strong> $\\left\\lfloor \\frac{30}{5} \\right\\rfloor = 6$.</p><p><strong>Bentuk umumnya.</strong> Kalau langkah yang boleh diambil adalah $1$ sampai $k$, keadaan P adalah kelipatan $k+1$. Alasannya selalu sama: apa pun yang diambil lawan, sisanya dapat dilengkapi menjadi $k+1$ — sebab kalau lawan mengambil $a$, maka $k+1-a$ berada di antara $1$ dan $k$, jadi selalu langkah yang sah.</p><p>Kemampuan \"melengkapi\" itu inti seluruh strategi, dan ia yang menjaga lawan selalu berada di kelipatan $k+1$.</p><p><strong>Perhatikan angka $0$ tidak ikut dicacah,</strong> sebab soal meminta $n$ dari $1$ sampai $30$. Kalau $n = 0$ ikut dihitung, jawabannya $7$. Membaca batas rentang dengan teliti sama pentingnya dengan menemukan polanya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tpm-02",
+   "sumber": "Latihan 2 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "teori-permainan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 4,
+   "soal": "<p>Sebuah tumpukan berisi $n$ batu. Dua pemain bergantian mengambil <strong>$1$, $2$, atau $4$</strong> batu — tidak boleh $3$. Pemain yang tidak bisa melangkah dinyatakan kalah.</p><p>Di antara $n = 1, 2, 3, \\dots, 30$, ada berapa nilai $n$ yang membuat pemain pertama kalah?</p>",
+   "jawaban": "10",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Polanya tidak lagi sekadar \"kelipatan banyaknya pilihan\", sebab langkah yang boleh diambil tidak berurutan. Kerjakan mundur satu per satu.",
+    "Buat tabel dari $0$ sampai sekitar $12$, dan tandai tiap keadaan sebelum menebak polanya.",
+    "Setelah polanya terlihat, buktikan kedua arahnya sebelum dipakai."
+   ],
+   "pembahasan": "<p><strong>Kerjakan mundur.</strong> Sebuah keadaan adalah N kalau ada langkah menuju P, dan P kalau seluruh langkahnya menuju N.</p><table><thead><tr><th>$n$</th><th>$0$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th><th>$6$</th><th>$7$</th><th>$8$</th><th>$9$</th><th>$10$</th><th>$11$</th><th>$12$</th></tr></thead><tbody><tr><td>Tanda</td><td>P</td><td>N</td><td>N</td><td>P</td><td>N</td><td>N</td><td>P</td><td>N</td><td>N</td><td>P</td><td>N</td><td>N</td><td>P</td></tr></tbody></table><p>Beberapa barisnya, supaya terlihat cara mengisinya:</p><ul><li>$3$: langkahnya menuju $2$ (N), $1$ (N). Mengambil $4$ tidak sah karena batunya cuma $3$. Seluruh langkah menuju N → <strong>P</strong>.</li><li>$4$: bisa mengambil $1$ dan menuju $3$ (P) → <strong>N</strong>.</li><li>$6$: langkahnya menuju $5$ (N), $4$ (N), $2$ (N). Seluruhnya N → <strong>P</strong>.</li></ul><p><strong>Polanya.</strong></p><p>$$n \\equiv 0 \\pmod 3 \\ \\Longleftrightarrow\\ \\text{keadaan P}$$</p><p><strong>Buktikan kedua arahnya.</strong></p><ol><li><strong>Dari $n \\equiv 0$, setiap langkah menuju N.</strong> Mengambil $1$, $2$, atau $4$ memberi sisa $n-1 \\equiv 2$, $n-2 \\equiv 1$, atau $n-4 \\equiv 2 \\pmod 3$. Tidak satu pun habis dibagi $3$.</li><li><strong>Dari $n \\not\\equiv 0$, ada langkah menuju P.</strong> Kalau $n \\equiv 1$, ambil $1$ batu. Kalau $n \\equiv 2$, ambil $2$ batu. Keduanya langkah yang sah selama batunya cukup.</li></ol><p><strong>Cacah dalam rentangnya.</strong> Kelipatan $3$ dari $1$ sampai $30$:</p><p>$$\\left\\lfloor \\frac{30}{3} \\right\\rfloor = \\boxed{10}$$</p><p><strong>Mengapa langkah \"$4$\" tidak mengubah polanya.</strong> Perhatikan $4 \\equiv 1 \\pmod 3$, sehingga mengambil $4$ batu berpengaruh sama dengan mengambil $1$ batu terhadap sisa pembagian oleh $3$. Ia tidak menambah kemampuan apa pun yang belum dimiliki langkah $1$.</p><p>Karena itu permainan ini berperilaku persis seperti permainan dengan langkah $\\{1,2\\}$, yang keadaan P-nya memang kelipatan $3$.</p><p><strong>Pelajaran yang dibawa soal ini.</strong> Menebak pola dari bentuk himpunan langkahnya — misalnya mengira jawabannya kelipatan $4$ karena angka terbesarnya $4$ — akan keliru. Yang menentukan adalah <strong>sisa pembagian</strong> yang bisa dicapai tiap langkah, dan itu hanya terlihat setelah tabelnya dikerjakan.</p><p>Kebiasaan yang aman: kerjakan tabel sampai polanya berulang sedikitnya dua putaran penuh, baru tebak, lalu buktikan kedua arahnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tpm-03",
+   "sumber": "Latihan 3 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "teori-permainan"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Dua pemain bergantian meletakkan sebuah koin bundar di atas meja bundar. Koin tidak boleh bertumpuk dengan koin yang sudah ada, dan harus seluruhnya berada di atas meja. Pemain yang <strong>tidak bisa</strong> meletakkan koin lagi dinyatakan kalah.</p><p>Buktikan bahwa <strong>pemain pertama</strong> punya strategi menang.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Permainan ini tidak bisa dianalisis dengan tabel P/N — keadaannya tak terhingga banyaknya. Cari gagasan lain.",
+    "Meja bundar punya sifat yang bisa dimanfaatkan: ia simetris terhadap titik pusatnya.",
+    "Kalau pemain pertama bisa menjaga susunan koin selalu simetris <strong>setelah langkahnya</strong>, apa akibatnya bagi lawan?"
+   ],
+   "pembahasan": "<p><strong>Mengapa tabel P/N tidak dipakai.</strong> Keadaan permainan ini adalah susunan koin di atas meja, dan banyaknya tak terhingga. Tidak ada tabel yang bisa dikerjakan mundur. Yang dipakai adalah <strong>strategi pencerminan</strong>.</p><h4>Strateginya</h4><p><strong>Langkah pertama.</strong> Pemain pertama meletakkan koin <strong>tepat di pusat meja</strong>.</p><p><strong>Langkah berikutnya.</strong> Setiap kali lawan meletakkan koin di suatu tempat, pemain pertama meletakkan koinnya di <strong>titik pencerminan tempat itu terhadap pusat meja</strong> — yaitu titik yang berjarak sama dari pusat, pada arah yang berlawanan.</p><h4>Mengapa langkah balasan itu selalu bisa dilakukan</h4><p>Ini bagian yang harus dibuktikan, bukan dianggap jelas. Tiga hal diperiksa.</p><p><strong>Tempatnya berada di atas meja.</strong> Meja berbentuk bundar dan simetris terhadap pusatnya. Kalau koin lawan seluruhnya berada di atas meja, maka bayangan cerminnya terhadap pusat juga seluruhnya di atas meja.</p><p><strong>Tempatnya tidak bertumpuk dengan koin lain.</strong> Setelah tiap langkah pemain pertama, susunan koin di meja <strong>simetris terhadap pusat</strong> — kecuali koin pusat, yang bayangannya adalah dirinya sendiri. Andaikan bayangan koin lawan bertumpuk dengan sebuah koin $C$ yang sudah ada. Menurut kesimetrian, bayangan $C$ juga sudah ada di meja — dan bayangan $C$ akan bertumpuk dengan koin lawan yang barusan diletakkan. Itu mustahil, sebab langkah lawan sah.</p><p><strong>Tempatnya bukan pusat meja.</strong> Pusat sudah terisi sejak langkah pertama, sehingga koin lawan tidak mungkin diletakkan di sana. Karena itu bayangannya juga bukan pusat, dan tidak bertabrakan dengan koin pertama.</p><p>Jadi langkah balasan <strong>selalu sah</strong>.</p><h4>Mengapa pemain pertama menang</h4><p>Setelah setiap langkah pemain pertama, susunan koin kembali simetris. Akibatnya pemain pertama tidak pernah kehabisan langkah: setiap kali lawan berhasil melangkah, pemain pertama punya jawabannya.</p><p>Permainan ini pasti berakhir, sebab meja punya luas berhingga dan tiap koin memakai luas yang tetap, sehingga banyaknya koin tidak bisa bertambah selamanya.</p><p>Karena pemain pertama selalu punya jawaban, pihak yang lebih dulu kehabisan langkah pasti <strong>lawan</strong>. Maka pemain pertama menang. $\\blacksquare$</p><h4>Mengapa langkah pertama harus di pusat</h4><p>Titik pusat adalah <strong>satu-satunya</strong> titik yang bayangannya adalah dirinya sendiri. Kalau langkah pertama tidak di pusat, lawan bisa mengambil pusat itu, dan mulai saat itu justru lawan yang bisa menjalankan strategi pencerminan.</p><p>Merebut titik istimewa itu lebih dulu adalah seluruh isi strategi ini.</p><h4>Pola yang lebih luas</h4><p>Strategi pencerminan bekerja setiap kali papan permainan punya kesimetrian dan ada cara \"menetralkan\" titik tetapnya. Ia muncul lagi pada permainan dua tumpukan sama besar — cukup tirukan langkah lawan pada tumpukan yang lain — dan pada permainan di papan persegi panjang.</p><p>Yang harus selalu dibuktikan sama: <strong>langkah balasannya selalu sah</strong>. Tanpa itu, strategi pencerminan hanya terdengar meyakinkan.</p>",
+   "rubrik": [
+    "Menyatakan langkah pertama di pusat meja",
+    "Menyatakan aturan balasan sebagai pencerminan terhadap pusat",
+    "Membuktikan bayangan koin lawan tetap berada di atas meja, dengan alasan meja simetris",
+    "Membuktikan bayangan itu tidak bertumpuk, lewat pengandaian dan kesimetrian susunan",
+    "Menangani kasus pusat meja secara khusus",
+    "Menyatakan permainan pasti berakhir, dengan alasan luas meja berhingga",
+    "Menyimpulkan pemain pertama tidak pernah kehabisan langkah, sehingga lawan yang kalah",
+    "Menjelaskan mengapa langkah pertama harus di pusat"
+   ]
+  },
+  {
+   "id": "tpm-04",
+   "sumber": "Latihan 4 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "teori-permainan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 4,
+   "soal": "<p>Sebuah tumpukan berisi $22$ batu. Dua pemain bergantian mengambil $1$, $2$, atau $3$ batu. Kali ini pemain yang mengambil <strong>batu terakhir kalah</strong>.</p><p>Berapa batu yang harus diambil pemain pertama pada langkah pertamanya supaya ia menang?</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Aturan kalahnya berbeda dari yang biasa, jadi jangan memakai pola kelipatan $4$ begitu saja. Tentukan ulang keadaan dasarnya.",
+    "Kalau mengambil batu terakhir berarti kalah, maka meninggalkan <strong>tepat satu</strong> batu untuk lawan berarti menang.",
+    "Kerjakan mundur dari keadaan $1$ batu, bukan dari $0$."
+   ],
+   "pembahasan": "<p><strong>Tetapkan keadaan dasarnya dengan benar.</strong> Di sini yang mengambil batu terakhir kalah. Karena itu, pemain yang menghadapi <strong>tepat $1$ batu</strong> terpaksa mengambilnya dan kalah.</p><p>$$n = 1 \\ \\Longrightarrow\\ \\textbf{P} \\quad (\\text{yang giliran kalah})$$</p><p>Perhatikan ini berbeda dari permainan biasa, yang keadaan dasarnya $n = 0$.</p><p><strong>Kerjakan mundur.</strong></p><table><thead><tr><th>$n$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th><th>$6$</th><th>$7$</th><th>$8$</th><th>$9$</th></tr></thead><tbody><tr><td>Tanda</td><td>P</td><td>N</td><td>N</td><td>N</td><td>P</td><td>N</td><td>N</td><td>N</td><td>P</td></tr></tbody></table><ul><li>$2,3,4$: bisa menyisakan tepat $1$ batu (P) → <strong>N</strong>.</li><li>$5$: langkahnya menyisakan $4, 3, 2$ — seluruhnya N → <strong>P</strong>.</li><li>$6,7,8$: bisa menyisakan $5$ (P) → <strong>N</strong>.</li></ul><p><strong>Polanya.</strong></p><p>$$n \\equiv 1 \\pmod 4 \\ \\Longleftrightarrow\\ \\text{keadaan P}$$</p><p><strong>Terapkan pada $22$.</strong> Karena $22 \\equiv 2 \\pmod 4$, keadaan awal adalah N — pemain pertama menang. Ia harus meninggalkan keadaan P, yaitu bilangan berbentuk $4m+1$ terdekat di bawah $22$, yaitu $21$:</p><p>$$22 - 21 = \\boxed{1}$$</p><p><strong>Strategi selanjutnya.</strong> Setelah lawan mengambil $k$ batu, ambil $4-k$ batu. Tiap putaran menghabiskan $4$ batu, sehingga tumpukan berjalan $21 \\to 17 \\to 13 \\to 9 \\to 5 \\to 1$. Akhirnya lawan menghadapi $1$ batu dan terpaksa mengambilnya.</p><p><strong>Bandingkan dengan aturan biasa.</strong></p><table><thead><tr><th>Aturan kalah</th><th>Keadaan P</th><th>Untuk $n=22$</th></tr></thead><tbody><tr><td>Tidak bisa melangkah kalah</td><td>$n \\equiv 0 \\pmod 4$</td><td>ambil $2$</td></tr><tr><td>Mengambil batu terakhir kalah</td><td>$n \\equiv 1 \\pmod 4$</td><td>ambil $1$</td></tr></tbody></table><p>Polanya bergeser tepat satu. Sebabnya sederhana: di aturan kedua, batu terakhir menjadi \"beban\" yang harus dihindari, sehingga sasaran yang ditinggalkan bagi lawan bergeser dari $0$ menjadi $1$.</p><p><strong>Kekeliruan yang paling sering</strong> adalah memakai pola kelipatan $4$ tanpa membaca ulang aturan kalahnya. Untuk $n = 22$ hal itu memberi jawaban $2$, yang justru menyerahkan kemenangan kepada lawan.</p><p>Karena itu langkah pertama pada setiap soal permainan selalu sama: <strong>tentukan keadaan yang kalah, lalu kerjakan mundur dari sana</strong> — bukan menyalin pola dari soal yang mirip.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tpm-05",
+   "sumber": "Latihan 5 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "teori-permainan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 4,
+   "soal": "<p>Sebuah tumpukan berisi $n$ batu. Dua pemain bergantian mengambil sejumlah batu yang berupa <strong>bilangan kuadrat sempurna</strong> — yaitu $1$, $4$, $9$, $16$, atau $25$ batu. Pemain yang tidak bisa melangkah dinyatakan kalah.</p><p>Di antara $n = 1, 2, \\dots, 30$, ada berapa nilai $n$ yang membuat pemain pertama kalah?</p>",
+   "jawaban": "9",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Langkah yang tersedia tidak berjarak tetap, jadi jangan berharap polanya berupa kelipatan sederhana. Kerjakan tabelnya baris demi baris.",
+    "Sebuah keadaan adalah P kalau <strong>semua</strong> langkah yang sah darinya menuju keadaan N.",
+    "Kerjakan sampai $n = 30$, dan berhati-hatilah: polanya di sini tidak sesederhana yang terlihat di awal."
+   ],
+   "pembahasan": "<p><strong>Kerjakan mundur.</strong> Langkah yang boleh diambil adalah $1, 4, 9, 16, 25$ — selama batunya mencukupi. Sebuah keadaan adalah N kalau ada langkah menuju P.</p><table><thead><tr><th>$n$</th><th>$0$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th><th>$6$</th><th>$7$</th><th>$8$</th><th>$9$</th><th>$10$</th></tr></thead><tbody><tr><td>Tanda</td><td>P</td><td>N</td><td><strong>P</strong></td><td>N</td><td>N</td><td><strong>P</strong></td><td>N</td><td><strong>P</strong></td><td>N</td><td>N</td><td><strong>P</strong></td></tr></tbody></table><p>Beberapa barisnya:</p><ul><li>$1$: ambil $1$, menuju $0$ (P) → <strong>N</strong>.</li><li>$2$: satu-satunya langkah adalah $1$, menuju $1$ (N) → <strong>P</strong>.</li><li>$3$: ambil $1$, menuju $2$ (P) → <strong>N</strong>.</li><li>$5$: langkahnya menuju $4$ (N) dan $1$ (N) → <strong>P</strong>.</li><li>$7$: langkahnya menuju $6$ (N) dan $3$ (N) → <strong>P</strong>.</li></ul><p><strong>Lanjutkan sampai $30$.</strong> Keadaan P yang muncul:</p><p>$$2,\\ 5,\\ 7,\\ 10,\\ 12,\\ 15,\\ 17,\\ 20,\\ 22$$</p><p>Ada $\\boxed{9}$ nilai.</p><p><strong>Polanya tidak sesederhana yang terlihat.</strong> Sembilan nilai pertama itu mengikuti pola $n \\equiv 0$ atau $2 \\pmod 5$, dan mudah tergoda menyimpulkan polanya berulang tiap $5$ selamanya. Tetapi pola itu <strong>rusak</strong> setelah $22$: keadaan $25$, $27$, dan $30$ ternyata bukan P, sebab langkah $25$ mulai tersedia dan membuka jalan menuju keadaan P yang sebelumnya tidak terjangkau.</p><p>Karena itu jawabannya $9$, bukan $12$ yang akan diperoleh dengan meneruskan pola secara buta.</p><p><strong>Inilah pelajaran utama soal ini.</strong> Pada permainan dengan langkah yang berjarak tetap — seperti $1$ sampai $k$ — polanya memang berulang selamanya, dan bisa dibuktikan. Pada permainan dengan langkah yang <strong>jaraknya makin melebar</strong>, pola awal sering hanya berlaku sementara: langkah-langkah besar baru mulai berpengaruh setelah tumpukannya cukup banyak.</p><p>Karena itu menebak pola dari sepuluh suku pertama berbahaya, dan kebiasaan yang aman adalah:</p><ol><li>kerjakan tabelnya sampai batas yang ditanyakan, bukan sampai polanya \"terlihat\";</li><li>kalau pola dipakai, buktikan kedua arahnya — dan pada permainan seperti ini, pembuktian itu biasanya gagal, yang justru pertanda pola tersebut memang tidak berlaku.</li></ol><p><strong>Perhatikan langkah yang tidak sah tidak boleh ikut dipertimbangkan.</strong> Untuk $n = 2$, hanya langkah $1$ yang tersedia; mengambil $4$ tidak mungkin. Melupakan batas itu akan menandai $2$ sebagai N dan merusak seluruh tabel di bawahnya.</p>",
+   "rubrik": []
+  },
+  {
+   "id": "tpm-06",
+   "sumber": "Latihan 6 — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "teori-permainan"
+   ],
+   "bentuk": "uraian",
+   "kesulitan": 4,
+   "soal": "<p>Dua tumpukan batu berisi $a$ dan $b$ batu. Dua pemain bergantian mengambil <strong>sejumlah batu sebanyak apa pun</strong> (paling sedikit satu) dari <strong>salah satu</strong> tumpukan. Pemain yang tidak bisa melangkah dinyatakan kalah.</p><p>Buktikan bahwa pemain yang mendapat giliran <strong>kalah tepat ketika $a = b$</strong>.</p>",
+   "jawaban": "",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Buktikan dua hal terpisah: dari keadaan $a = b$ setiap langkah menuju keadaan tak sama, dan dari keadaan tak sama ada langkah menuju keadaan sama.",
+    "Untuk arah kedua, langkahnya jelas: ambil dari tumpukan yang lebih banyak sampai keduanya sama.",
+    "Jangan lupa menunjukkan permainan pasti berakhir, sebab tanpa itu \"kalah\" belum berarti apa-apa."
+   ],
+   "pembahasan": "<p>Sebut keadaan $(a,b)$ <strong>P</strong> kalau pemain yang mendapat giliran kalah, dan <strong>N</strong> kalau ia menang. Yang harus dibuktikan:</p><p>$$(a,b) \\text{ adalah P} \\quad\\Longleftrightarrow\\quad a = b$$</p><h4>Langkah 1 — permainan pasti berakhir</h4><p>Jumlah seluruh batu, $a+b$, berkurang sedikitnya satu pada tiap langkah, dan ia bilangan bulat tak negatif. Barisan bilangan bulat yang turun dan terbatas di bawah pasti berhingga, sehingga permainan berakhir setelah paling banyak $a+b$ langkah.</p><p>Tanpa langkah ini, pernyataan \"seseorang kalah\" belum tentu bermakna.</p><h4>Langkah 2 — dari $a = b$, setiap langkah menuju keadaan tak sama</h4><p>Andaikan $a = b$. Sebuah langkah mengambil batu dari <strong>satu</strong> tumpukan saja, sehingga salah satu bilangan berkurang dan yang lain tetap. Karena yang berkurang sedikitnya satu, keduanya tidak lagi sama.</p><p>Jadi seluruh langkah dari keadaan sama menuju keadaan tak sama.</p><h4>Langkah 3 — dari $a \\ne b$, ada langkah menuju keadaan sama</h4><p>Andaikan $a \\ne b$, misalkan $a &gt; b$. Ambil $a - b$ batu dari tumpukan pertama. Karena $a - b \\ge 1$, langkah itu sah, dan hasilnya</p><p>$$(b, b)$$</p><p>yaitu keadaan sama.</p><h4>Langkah 4 — rangkai</h4><p>Keadaan akhir permainan adalah $(0,0)$, yang tidak punya langkah sama sekali — jadi ia P, dan memang memenuhi $a = b$.</p><p>Sekarang tinjau sebarang keadaan, dan kerjakan dengan induksi pada $a+b$:</p><ul><li>Kalau $a = b$, menurut Langkah 2 seluruh langkahnya menuju keadaan tak sama. Menurut hipotesis induksi keadaan-keadaan itu N, sehingga $(a,b)$ adalah <strong>P</strong>.</li><li>Kalau $a \\ne b$, menurut Langkah 3 ada langkah menuju keadaan sama, yang menurut hipotesis induksi adalah P. Karena ada satu langkah menuju P, keadaan $(a,b)$ adalah <strong>N</strong>.</li></ul><p>Induksinya sah karena tiap langkah memperkecil $a+b$, dan basisnya $(0,0)$ sudah diperiksa.</p><p>Maka $(a,b)$ adalah P tepat ketika $a = b$. $\\blacksquare$</p><h4>Bacaan strateginya</h4><p>Untuk pemain yang menghadapi $a \\ne b$: <strong>samakan kedua tumpukan</strong>, lalu setelah itu <strong>tirukan setiap langkah lawan pada tumpukan yang lain</strong>. Kesamaan selalu pulih setelah langkahmu, dan menurut Langkah 2 lawan tidak pernah bisa mempertahankannya.</p><p>Ini bentuk lain dari strategi pencerminan: yang dijaga bukan kesimetrian ruang, melainkan kesamaan dua bilangan.</p><h4>Mengapa kedua arah perlu dibuktikan</h4><p>Menunjukkan \"dari $a=b$ semua langkah merusak kesamaan\" saja belum cukup — itu baru menjelaskan mengapa keadaan sama sulit dipertahankan, bukan mengapa ia kalah. Yang melengkapinya adalah arah sebaliknya: dari keadaan tak sama <strong>selalu ada</strong> jalan kembali ke keadaan sama.</p><p>Dua arah itu yang membuat penandaan P dan N konsisten pada seluruh keadaan sekaligus.</p>",
+   "rubrik": [
+    "Membuktikan permainan pasti berakhir, dengan alasan $a+b$ turun dan terbatas di bawah",
+    "Membuktikan dari $a=b$ setiap langkah menghasilkan $a \\ne b$, dengan alasan hanya satu tumpukan yang berubah",
+    "Membuktikan dari $a \\ne b$ ada langkah menuju $a=b$, dengan menyebut langkahnya secara nyata",
+    "Menyebut keadaan akhir $(0,0)$ sebagai keadaan P",
+    "Merangkai kedua arah menjadi kesimpulan menyeluruh, misalnya dengan induksi pada $a+b$",
+    "Menyatakan strategi praktisnya: samakan lalu tirukan"
+   ]
+  },
+  {
+   "id": "tpm-contoh-1",
+   "sumber": "Contoh terpandu — susunan sendiri, gaya OSN",
+   "arsip": "",
+   "nomor": "",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "jurus": [
+    "teori-permainan"
+   ],
+   "bentuk": "isian",
+   "kesulitan": 3,
+   "soal": "<p>Sebuah tumpukan berisi $21$ batu. Dua pemain bergantian mengambil <strong>$1$, $2$, atau $3$</strong> batu. Pemain yang <strong>tidak bisa melangkah</strong> — yaitu yang menghadapi tumpukan kosong — dinyatakan kalah.</p><p>Berapa batu yang harus diambil pemain pertama pada langkah pertamanya supaya ia pasti menang?</p>",
+   "jawaban": "1",
+   "jawaban_alt": [],
+   "petunjuk": [
+    "Kerjakan mundur dari keadaan terkecil. Tandai tiap banyaknya batu dengan menang atau kalah bagi pemain yang mendapat giliran.",
+    "Keadaan $0$ batu adalah kalah bagi yang mendapat giliran, sebab ia tidak bisa melangkah.",
+    "Sebuah keadaan menang kalau ada satu langkah menuju keadaan kalah bagi lawan."
+   ],
+   "pembahasan": "<p><strong>Tandai tiap keadaan.</strong> Sebut sebuah keadaan <strong>P</strong> kalau pemain yang mendapat giliran di situ <strong>kalah</strong> (dengan permainan sempurna), dan <strong>N</strong> kalau ia <strong>menang</strong>.</p><p>Aturannya menurunkan diri sendiri:</p><ul><li>Keadaan tanpa langkah adalah <strong>P</strong>.</li><li>Sebuah keadaan adalah <strong>N</strong> kalau ada <strong>satu</strong> langkah menuju keadaan P.</li><li>Sebuah keadaan adalah <strong>P</strong> kalau <strong>semua</strong> langkahnya menuju keadaan N.</li></ul><p><strong>Kerjakan mundur.</strong></p><table><thead><tr><th>Batu</th><th>$0$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th><th>$6$</th><th>$7$</th><th>$8$</th></tr></thead><tbody><tr><td>Tanda</td><td>P</td><td>N</td><td>N</td><td>N</td><td>P</td><td>N</td><td>N</td><td>N</td><td>P</td></tr></tbody></table><ul><li>$0$: tidak bisa melangkah → <strong>P</strong>.</li><li>$1, 2, 3$: bisa mengambil semuanya dan meninggalkan $0$ (P) → <strong>N</strong>.</li><li>$4$: langkahnya menuju $3, 2, 1$ — seluruhnya N → <strong>P</strong>.</li><li>$5,6,7$: bisa menuju $4$ (P) → <strong>N</strong>.</li><li>$8$: menuju $7,6,5$ — seluruhnya N → <strong>P</strong>.</li></ul><p><strong>Polanya.</strong> Keadaan P adalah kelipatan $4$:</p><p>$$n \\equiv 0 \\pmod 4$$</p><p><strong>Terapkan pada $21$.</strong> Karena $21 = 4 \\times 5 + 1$, keadaan awal adalah <strong>N</strong> — pemain pertama menang. Untuk menang, ia harus meninggalkan keadaan P bagi lawannya, yaitu kelipatan $4$ terdekat di bawah $21$, yaitu $20$. Jadi ia mengambil</p><p>$$21 - 20 = \\boxed{1}$$</p><p><strong>Strateginya setelah itu.</strong> Setiap kali lawan mengambil $k$ batu, pemain pertama mengambil $4-k$ batu. Karena $1 \\le k \\le 3$, maka $1 \\le 4-k \\le 3$ — jadi langkah balasan itu selalu sah. Dengan begitu tiap putaran menghabiskan tepat $4$ batu, dan tumpukan berjalan $20 \\to 16 \\to 12 \\to 8 \\to 4 \\to 0$. Lawan selalu menghadapi kelipatan $4$, dan akhirnya menghadapi $0$.</p><p><strong>Membuktikan polanya, bukan sekadar menebaknya.</strong> Dua hal harus ditunjukkan:</p><ol><li><strong>Dari keadaan P, setiap langkah menuju N.</strong> Dari $4m$, mengambil $k \\in \\{1,2,3\\}$ memberi $4m-k$, yang tidak habis dibagi $4$ — jadi N.</li><li><strong>Dari keadaan N, ada langkah menuju P.</strong> Kalau $n = 4m + r$ dengan $1 \\le r \\le 3$, ambil $r$ batu dan tersisa $4m$ — yaitu P.</li></ol><p>Kedua arah itu yang membuat pola tersebut benar-benar strategi, bukan pengamatan.</p><p><strong>Bentuk umumnya.</strong> Kalau langkah yang boleh diambil adalah $1$ sampai $k$, keadaan P adalah kelipatan $k+1$, dan strategi menangnya selalu \"lengkapi menjadi $k+1$\".</p><p><strong>Perhatikan aturan siapa yang kalah menentukan seluruh jawaban.</strong> Kalau soalnya berbunyi \"yang mengambil batu terakhir kalah\", pola P-nya bergeser dan jawabannya berbeda. Membaca aturan itu dengan teliti adalah langkah pertama pada setiap soal permainan.</p>",
    "rubrik": []
   }
  ]

@@ -4,8 +4,8 @@ nama: Teori Permainan
 pilar: kombinatorika
 tahap: osn
 prasyarat: [invarian, rekursi]
-contoh: []
-latihan: []
+contoh: [tpm-contoh-1]
+latihan: [tpm-01, tpm-02, tpm-03, tpm-04, tpm-05, tpm-06]
 ---
 
 ## Kapan dipakai

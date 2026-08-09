@@ -174,24 +174,27 @@ Dua hal yang sering dikira sama:
 
 ## Yang sudah dan belum
 
-**64 jurus, 309 soal**, di tiga bidang:
+**64 jurus, 449 soal**, di tiga bidang yang **ketiganya tuntas**:
 
-| Bidang | OSN-K | OSN-P | OSN | |
+| Bidang | OSN-K | OSN-P | OSN | Soal |
 |---|---|---|---|---|
-| Teori bilangan | 8 | 10 | 4 | tuntas |
-| Aljabar | 10 | 7 | 5 | tuntas |
-| Kombinatorika | 10 | 6 | 4 | halaman jurus siap, soalnya belum ditulis |
+| Teori bilangan | 8 | 10 | 4 | 155 |
+| Aljabar | 10 | 7 | 5 | 154 |
+| Kombinatorika | 10 | 6 | 4 | 140 |
 
 Tuntas artinya tiap jurus punya minimal satu contoh terpandu dan enam latihan — enam,
 karena tangga ulangnya lima langkah, dan jurus dengan tiga soal berarti siswa bertemu soal
 yang sama untuk ketiga kalinya pada ulangan hari ke-21.
 
-Teori bilangan dan aljabar bisa ditempuh utuh di ketiga tahap. Kombinatorika sudah bisa
-**dibaca** — tiap jurusnya menjelaskan kapan dipakai, intinya, dan jebakannya — tapi
-latihannya belum ada, dan halamannya mengatakan itu apa adanya.
+Ketiga tahap dapat ditempuh utuh di ketiga bidang, dan simulasi menyusun naskah campuran
+yang dibagi rata antar bidang.
 
-Dua jalur lintas bidang sudah bisa ditempuh: `keterbagian` (teori bilangan) →
+Dua jalur lintas bidang bisa ditempuh sungguhan: `keterbagian` (teori bilangan) →
 `polinomial-bulat` (aljabar), dan `induksi` (aljabar) → `rekursi` (kombinatorika).
+
+Dari 449 soal, **96 berbentuk uraian** yang dinilai sendiri dengan rubrik. Porsinya paling
+besar di kombinatorika tingkat lanjut, karena invarian, pewarnaan, dan prinsip ekstremal
+memang teknik pembuktian — soal isian akan menguji hal yang berbeda dari yang dilatih.
 
 **Geometri** belum ada, dan masih menunggu dukungan gambar. Rencananya di `PLAN.md`.
 

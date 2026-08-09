@@ -33,27 +33,25 @@ Poin 2 dan 4 yang paling mahal. Selebihnya pekerjaan kode yang terukur.
 
 ## 2. Keadaan sekarang
 
-**64 jurus, 309 soal** (264 latihan + 45 contoh) di tiga bidang.
+**64 jurus, 449 soal** (385 latihan + 64 contoh) di tiga bidang, **ketiganya tuntas**.
 
-| Bidang | OSN-K | OSN-P | OSN | Status |
-|---|---|---|---|---|
-| Teori bilangan | 8 | 10 | 4 | **tuntas** |
-| Aljabar | 10 | 7 | 5 | **tuntas** |
-| Kombinatorika | 10 | 6 | 4 | kerangka saja — **belum ada satu soal pun** |
+| Bidang | OSN-K | OSN-P | OSN | Soal | Status |
+|---|---|---|---|---|---|
+| Teori bilangan | 8 | 10 | 4 | 155 | **tuntas** |
+| Aljabar | 10 | 7 | 5 | 154 | **tuntas** |
+| Kombinatorika | 10 | 6 | 4 | 140 | **tuntas** |
 
-Teori bilangan dan aljabar tuntas di ketiga tahap: 44 dari 44 jurusnya punya minimal satu
-contoh terpandu dan enam latihan. Kombinatorika baru punya halaman jurus; `build.py`
-mencetak kedua puluh namanya di baris "Belum ada latihan di:", dan itu memang keadaan yang
-diharapkan di ujung 3.1.
+Ke-64 jurus punya minimal satu contoh terpandu dan enam latihan; `build.py` tidak lagi
+mencetak baris "Belum ada latihan di:" sama sekali.
 
-Jalur lintas bidang sudah ada dua dan keduanya nyata: `polinomial-bulat` (aljabar)
-berprasyarat `keterbagian` (teori bilangan), dan `rekursi` (kombinatorika) berprasyarat
-`induksi` (aljabar).
+Jalur lintas bidang ada dua dan keduanya nyata: `polinomial-bulat` (aljabar) berprasyarat
+`keterbagian` (teori bilangan), dan `rekursi` (kombinatorika) berprasyarat `induksi`
+(aljabar).
 
 Yang belum ada sama sekali: **geometri**.
 
-Fase 0, 1, 2, dan 5.1 selesai seluruhnya, begitu juga 3.1. Yang berikutnya dikerjakan
-adalah **Fase 3.2 — 140 soal kombinatorika**.
+Fase 0, 1, 2, 3, dan 5.1 selesai seluruhnya. Yang berikutnya dikerjakan adalah **Fase 4 —
+geometri**, dan itu terhalang dukungan gambar (4.1).
 
 ### Perkiraan cakupan penuh
 
@@ -287,22 +285,43 @@ Fase ini juga menutup dua celah yang baru terlihat sekarang:
   keduanya diperiksa: 10.305 rumus, naik dari 9.288, dan 1.017 selisihnya itu rumus
   halaman jurus yang selama ini tidak pernah diuji. Semuanya lolos.
 
-### 3.2 Soal — belum dikerjakan
+### 3.2 Soal — selesai 9 Agustus 2026
 
-Sasarannya sama dengan bidang lain: tiap jurus minimal satu contoh terpandu dan enam
-latihan, yaitu **140 soal**.
+140 soal: 20 jurus × (1 contoh terpandu + 6 latihan), dikerjakan bertahap menurut tahap —
+OSN-K (10 jurus, 70 soal), OSN-P (6 jurus, 42 soal), OSN (4 jurus, 28 soal).
 
-Sebagian besar soal kombinatorika berbentuk uraian, jadi **rubriknya yang menentukan
-mutu** — `build.py` sudah mewajibkan `## Rubrik` untuk soal uraian, tapi mewajibkan ada
-bukan menjamin berguna. Rubrik yang cuma menulis "jawaban benar: 7 poin" tidak menolong
-siswa menilai dirinya sendiri.
+Sebarannya **108 isian, 32 uraian**, dan porsi uraiannya naik tajam menurut tahap:
 
-Porsi uraian di sini akan lebih besar daripada di aljabar. `invarian`, `pewarnaan`,
-`ekstremal`, `pencacahan-ganda`, dan `teori-permainan` semuanya teknik **pembuktian**;
-mengubahnya jadi soal isian akan menguji hal yang berbeda dari yang dilatih.
+| Tahap | Soal | Uraian | Porsi |
+|---|---|---|---|
+| OSN-K | 70 | 10 | 14% |
+| OSN-P | 42 | 12 | 29% |
+| OSN | 28 | 10 | 36% |
+
+Kenaikan itu mengikuti isinya, bukan target. Jurus OSN-K kombinatorika sebagian besar
+soal hitung; `invarian`, `pencacahan-ganda`, `bijeksi`, `pewarnaan`, `ekstremal`, dan
+`teori-permainan` semuanya teknik **pembuktian**, dan mengubahnya jadi soal isian akan
+menguji hal yang berbeda dari yang dilatih.
+
+Yang paling jelas pada `invarian`: menebak besaran yang kekal itu mudah, dan yang
+sesungguhnya menentukan adalah **membuktikan tiap langkah tidak mengubahnya**. Bagian itu
+tidak punya tempat di soal isian. Rubriknya karena itu memikul beban paling berat di bidang
+ini — dan tiap rubrik menyebut langkah yang harus terlihat di lembar jawaban, bukan sekadar
+"jawaban benar".
+
+**Verifikasi menangkap satu kekeliruan** sebelum soalnya ditulis: rumus tertutup untuk
+$a_n = 2a_{n-1}+3a_{n-2}$ yang semula diturunkan sebagai $\frac{3^n+3(-1)^n}{4}$ tidak
+cocok dengan rekurensnya; yang benar $\frac{3^n+(-1)^n}{2}$. Soal `rek-04` sekarang
+menekankan mencocokkan rumus tertutup dengan beberapa suku pertama sebelum dipakai —
+persis langkah yang menangkapnya. Tabel sebaran empat warna pada `pwn-06` juga dikoreksi
+setelah dihitung ulang.
+
+Fase ini juga menutup dua celah kerangka: `periksa-rumus.js` ternyata tidak pernah
+memeriksa halaman jurus (lihat 3.1), dan aturan tahap prasyarat kini dijaga tes.
 
 **Selesai kalau:** ketiga tahap kombinatorika tuntas di lantai 6, `build.py` tidak lagi
-mencetak "Belum ada latihan di:", dan simulasi bisa menyusun naskah tiga bidang.
+mencetak "Belum ada latihan di:", dan simulasi bisa menyusun naskah tiga bidang. **Ketiganya
+terpenuhi**, dan naskah tiga bidang sudah diperiksa di peramban.
 
 ---
 

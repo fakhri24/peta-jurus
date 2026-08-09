@@ -1555,8 +1555,17 @@
    "prasyarat": [
     "invarian"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "pwn-contoh-1"
+   ],
+   "latihan": [
+    "pwn-01",
+    "pwn-02",
+    "pwn-03",
+    "pwn-04",
+    "pwn-05",
+    "pwn-06"
+   ],
    "kapan_dipakai": "<p>Sebuah papan atau bidang harus ditutup ubin, dan soal menanyakan <strong>mungkin atau tidak</strong> — bukan berapa banyak caranya. Pemicu paling khas: papan catur yang beberapa petaknya dibuang, penutupan dengan domino atau trimino, dan bidak yang bergerak menurut aturan tetap.</p><p>Kalau kamu sudah mencoba menutup papannya berkali-kali dan selalu tersisa dua petak yang tidak bertetangga, itu tandanya.</p>",
    "inti": "<p>Warnai petaknya sedemikian rupa sehingga tiap ubin — di mana pun diletakkan dan bagaimana pun diputar — menutup <strong>sejumlah warna yang tetap</strong>. Setelah itu hitung persediaan warna di papan. Kalau angkanya tidak cocok, penutupannya mustahil.</p><p>Pewarnaan adalah invarian yang dipilih dengan sengaja: yang tidak berubah adalah selisih antara warna yang tertutup dan warna yang tersedia.</p><p>Beberapa pewarnaan baku:</p><ul><li><strong>Dua warna papan catur.</strong> Domino selalu menutup tepat satu petak hitam dan satu putih, jadi papan yang jumlah hitam dan putihnya tidak sama tidak bisa ditutup domino.</li><li><strong>Pewarnaan bergaris</strong>, mewarnai kolom berselang-seling atau bergantian tiga warna, dipakai untuk ubin yang panjangnya tiga.</li><li><strong>Pewarnaan modulo</strong>, memberi petak $(i,j)$ warna menurut $i + j$ atau $i - j$ modulo suatu bilangan.</li></ul><p>Kalau satu pewarnaan tidak memberi kesimpulan, biasanya bukan jurusnya yang salah — melainkan warnanya yang perlu diganti.</p>",
    "jebakan": "<ul><li><strong>Pewarnaan yang tidak memberi jumlah tetap.</strong> Kalau sebuah ubin bisa menutup dua hitam pada satu peletakan dan satu hitam pada peletakan lain, hitungan warnanya tidak menyimpulkan apa-apa.</li><li><strong>Menyimpulkan \"mungkin\" karena warnanya cocok.</strong> Cocok cuma berarti belum tertutup kemungkinannya; untuk menunjukkan bisa, gambarkan penutupannya.</li><li><strong>Berhenti pada dua warna.</strong> Banyak soal ubin tiga petak baru terpecahkan dengan tiga warna atau dengan pewarnaan diagonal.</li></ul>",
@@ -1599,8 +1608,17 @@
     "koefisien-binomial",
     "rekursi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "fpb-contoh-1"
+   ],
+   "latihan": [
+    "fpb-01",
+    "fpb-02",
+    "fpb-03",
+    "fpb-04",
+    "fpb-05",
+    "fpb-06"
+   ],
    "kapan_dipakai": "<p>Pencacahan dengan <strong>kendala berlapis</strong> pada tiap jenis objek, atau rekurens yang rumus tertutupnya dicari. Pemicu yang khas: \"berapa cara membayar $n$ rupiah dengan pecahan tertentu, tiap pecahan boleh dipakai paling banyak sekian kali\".</p><p>Kalau kendalanya cuma satu jenis, biasanya ada jalan yang lebih pendek. Fungsi pembangkit baru sepadan ongkosnya ketika kendalanya bermacam-macam sekaligus.</p>",
    "inti": "<p>Simpan seluruh barisan $a_0, a_1, a_2, \\dots$ sebagai satu benda:</p><p>$$A(x) = \\sum_{n \\ge 0} a_n x^{n}$$</p><p>$x$ di sini bukan bilangan yang akan disubstitusi — ia cuma tempat menaruh indeks. Karena itu kekonvergenan tidak jadi soal; yang dipakai deret formal.</p><p><strong>Yang membuatnya berguna adalah perkaliannya.</strong> Mengalikan dua deret berarti memasangkan pilihan dari keduanya, dan koefisien $x^n$ pada hasilnya menghitung pasangan yang jumlahnya $n$. Jadi satu faktor untuk tiap jenis objek, dan pangkat di dalam faktor itu menyatakan pilihan yang diperbolehkan untuk jenis tersebut.</p><p>Deret yang harus dikenali seketika:</p><p>$$\\frac{1}{1-x} = \\sum_{n \\ge 0} x^{n}, \\qquad \\frac{1-x^{m+1}}{1-x} = \\sum_{n=0}^{m} x^{n}$$</p><p>$$\\frac{1}{(1-x)^{k}} = \\sum_{n \\ge 0} \\binom{n+k-1}{k-1} x^{n}, \\qquad (1+x)^{n} = \\sum_{k} \\binom{n}{k} x^{k}$$</p><p>Yang ketiga persis rumus membagi objek identik, dan itu bukan kebetulan: keduanya menghitung hal yang sama dengan bahasa yang berbeda.</p>",
    "jebakan": "<ul><li><strong>Mencemaskan kekonvergenan.</strong> Deretnya formal; tidak ada nilai $x$ yang dimasukkan.</li><li><strong>Salah menyusun faktornya.</strong> Satu faktor untuk tiap <strong>jenis</strong> objek. Batas pemakaian diwujudkan dengan memotong deretnya, bukan dengan menambah faktor baru.</li><li><strong>Berhenti setelah dapat fungsinya.</strong> Jawabannya adalah koefisien $x^n$, dan menariknya keluar sering bagian yang paling banyak kerjanya.</li></ul>",
@@ -1644,8 +1662,17 @@
     "invarian",
     "rekursi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "tpm-contoh-1"
+   ],
+   "latihan": [
+    "tpm-01",
+    "tpm-02",
+    "tpm-03",
+    "tpm-04",
+    "tpm-05",
+    "tpm-06"
+   ],
    "kapan_dipakai": "<p>Dua pemain bergantian melangkah, keduanya melihat seluruh keadaan, tidak ada unsur peluang, dan permainannya pasti berakhir. Soal menanyakan <strong>siapa yang punya strategi menang</strong> — bukan bagaimana bermain baik, melainkan siapa yang pasti menang kalau keduanya bermain sempurna.</p><p>Pemicunya: mengambil batu dari tumpukan bergantian, menulis bilangan bergantian, mewarnai petak bergantian, dan yang tidak bisa melangkah dinyatakan kalah.</p>",
    "inti": "<p>Tandai tiap keadaan dengan salah satu dari dua huruf:</p><ul><li><strong>N</strong> — pemain yang mendapat giliran di keadaan itu menang.</li><li><strong>P</strong> — pemain sebelumnya yang menang, artinya yang mendapat giliran kalah.</li></ul><p>Aturannya menurunkan diri sendiri, dan di situlah rekursinya:</p><ul><li>Keadaan yang tidak punya langkah sama sekali adalah <strong>P</strong>.</li><li>Sebuah keadaan adalah <strong>N</strong> kalau ada <strong>satu</strong> langkah menuju keadaan P.</li><li>Sebuah keadaan adalah <strong>P</strong> kalau <strong>semua</strong> langkahnya menuju keadaan N.</li></ul><p>Kerjakan mundur dari keadaan terkecil. Pola keadaan P biasanya muncul setelah beberapa suku, dan bentuknya sering berupa keterbagian — misalnya sisa tertentu modulo suatu bilangan.</p><p><strong>Strategi pencerminan.</strong> Kalau kamu bisa selalu mengembalikan permainan ke keadaan simetris setelah langkah lawan, kamu tidak pernah kehabisan langkah lebih dulu. Ini cara tercepat menyelesaikan banyak soal permainan.</p><p>Menemukan pola P bukan akhir pekerjaan: <strong>buktikan</strong> bahwa dari keadaan P setiap langkah menuju N, dan dari N ada langkah menuju P.</p>",
    "jebakan": "<ul><li><strong>Menemukan satu langkah bagus lalu berhenti.</strong> Strategi menang harus punya jawaban untuk <strong>setiap</strong> langkah lawan, bukan untuk satu langkah yang kamu bayangkan.</li><li><strong>Salah menetapkan siapa yang kalah.</strong> \"Yang tidak bisa melangkah kalah\" dan \"yang mengambil batu terakhir kalah\" menghasilkan pola P yang berbeda.</li><li><strong>Menebak pola dari terlalu sedikit keadaan.</strong> Empat suku pertama sering menyesatkan; hitung sampai polanya berulang meyakinkan, lalu buktikan.</li></ul>",
@@ -1662,8 +1689,17 @@
     "sarang-merpati",
     "graf-dasar"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "eks-contoh-1"
+   ],
+   "latihan": [
+    "eks-01",
+    "eks-02",
+    "eks-03",
+    "eks-04",
+    "eks-05",
+    "eks-06"
+   ],
    "kapan_dipakai": "<p>Soal meminta membuktikan sesuatu <strong>ada</strong> atau <strong>tidak mungkin</strong> pada susunan berhingga, dan tidak ada titik masuk yang jelas — tidak ada rumus untuk dipakai, tidak ada yang bisa dihitung langsung. Pemicunya justru ketiadaan itu: soal memberi konfigurasi tanpa struktur apa pun, lalu meminta kesimpulan.</p><p>Kalau kamu terjebak pada soal semacam itu, pertanyaan yang hampir selalu membuka jalan adalah: objek mana yang paling?</p>",
    "inti": "<p>Pilih objek yang <strong>paling</strong> — terbesar, terkecil, terpanjang, berderajat tertinggi, paling kiri. Lalu tunjukkan bahwa objek terpilih itu harus punya sifat tertentu, biasanya dengan mengandaikan sebaliknya dan membangun objek yang <strong>lebih ekstrem lagi</strong>. Itu mustahil, karena objek yang paling sudah dipilih.</p><p>Yang membuat langkah itu sah adalah <strong>kehinggaan</strong>: himpunan berhingga yang tidak kosong selalu punya anggota terbesar dan terkecil. Pada himpunan tak berhingga, jaminan itu hilang.</p><p>Penerapan bakunya pada graf: ambil lintasan <strong>terpanjang</strong>, lalu perhatikan titik ujungnya. Semua tetangga titik itu harus berada di dalam lintasan — sebab kalau ada tetangga di luar, lintasannya bisa diperpanjang, dan itu bertentangan dengan pemilihan tadi. Dari satu pengamatan itu banyak soal langsung selesai.</p><p>Kembarannya di teori bilangan adalah turun tak hingga: keduanya bersandar pada kenyataan bahwa tidak ada barisan bilangan asli yang turun selamanya.</p>",
    "jebakan": "<ul><li><strong>Memakainya pada himpunan tak berhingga.</strong> Tanpa alasan bahwa maksimumnya benar-benar ada, seluruh buktinya runtuh.</li><li><strong>Memilih besaran ekstrem yang tidak dipakai lagi.</strong> Kalau setelah memilih \"yang terbesar\" sifat itu tidak pernah dipakai untuk menyimpulkan apa pun, pilihannya keliru — ganti besarannya.</li><li><strong>Mengira objek terekstrem itu tunggal.</strong> Boleh ada beberapa yang sama-sama terbesar; buktinya harus tetap jalan untuk salah satu di antaranya.</li></ul>",

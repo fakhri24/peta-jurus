@@ -4,8 +4,8 @@ nama: Fungsi Pembangkit
 pilar: kombinatorika
 tahap: osn
 prasyarat: [koefisien-binomial, rekursi]
-contoh: []
-latihan: []
+contoh: [fpb-contoh-1]
+latihan: [fpb-01, fpb-02, fpb-03, fpb-04, fpb-05, fpb-06]
 ---
 
 ## Kapan dipakai
