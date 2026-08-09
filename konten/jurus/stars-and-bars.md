@@ -4,8 +4,8 @@ nama: Membagi Objek Identik
 pilar: kombinatorika
 tahap: osn-k
 prasyarat: [kombinasi, permutasi-berulang]
-contoh: []
-latihan: []
+contoh: [sbr-contoh-1]
+latihan: [sbr-01, sbr-02, sbr-03, sbr-04, sbr-05, sbr-06]
 ---
 
 ## Kapan dipakai

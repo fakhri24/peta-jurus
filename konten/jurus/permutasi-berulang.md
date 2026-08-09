@@ -4,8 +4,8 @@ nama: Permutasi dengan Unsur Sama
 pilar: kombinatorika
 tahap: osn-k
 prasyarat: [permutasi]
-contoh: []
-latihan: []
+contoh: [pbr-contoh-1]
+latihan: [pbr-01, pbr-02, pbr-03, pbr-04, pbr-05, pbr-06]
 ---
 
 ## Kapan dipakai

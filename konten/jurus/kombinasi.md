@@ -4,8 +4,8 @@ nama: Kombinasi
 pilar: kombinatorika
 tahap: osn-k
 prasyarat: [permutasi]
-contoh: []
-latihan: []
+contoh: [kb-contoh-1]
+latihan: [kb-01, kb-02, kb-03, kb-04, kb-05, kb-06]
 ---
 
 ## Kapan dipakai

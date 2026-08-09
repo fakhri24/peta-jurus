@@ -130,7 +130,7 @@ justru intinya.
   hari itu. Ia diambil di latar setelah install, lewat `berkasSoal()` yang menurunkan
   daftarnya dari `jurus.json` — jadi bidang baru tidak pernah terlupa, dan latihan offline
   tetap utuh begitu pengambilan latarnya selesai.
-- **Naikkan `CACHE`** (sekarang `peta-jurus-v7`) setiap kali aset berubah, kalau tidak
+- **Naikkan `CACHE`** (sekarang `peta-jurus-v8`) setiap kali aset berubah, kalau tidak
   siswa memegang versi lama.
 - Kunci cache membuang query, karena `jurus.html?id=…` dan `latihan.html?soal=…` memakai
   kerangka HTML yang sama.

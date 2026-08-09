@@ -1188,8 +1188,17 @@
    "pilar": "kombinatorika",
    "tahap": "osn-k",
    "prasyarat": [],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "ajk-contoh-1"
+   ],
+   "latihan": [
+    "ajk-01",
+    "ajk-02",
+    "ajk-03",
+    "ajk-04",
+    "ajk-05",
+    "ajk-06"
+   ],
    "kapan_dipakai": "<p>Setiap soal pencacahan dimulai di sini, dan pertanyaan pembukanya selalu sama: pilihannya disusun <strong>bertahap</strong> atau dipecah menjadi <strong>kasus</strong>? \"Ini lalu itu\" berarti kali; \"ini atau itu\" berarti jumlah.</p><p>Kalau yang diminta memuat \"paling sedikit satu\", biasanya lebih pendek menghitung kebalikannya lalu mengurangkannya dari seluruhnya.</p>",
    "inti": "<p><strong>Aturan kali.</strong> Kalau langkah pertama bisa dikerjakan $m$ cara dan — untuk setiap hasil langkah pertama — langkah kedua bisa dikerjakan $n$ cara, maka seluruhnya</p><p>$$m \\times n$$</p><p>Syarat yang paling sering dilupakan ada di kata \"untuk setiap\": banyaknya pilihan langkah kedua harus <strong>sama</strong> apa pun hasil langkah pertama. Kalau tidak sama, pecah dulu jadi kasus.</p><p><strong>Aturan jumlah.</strong> Kalau kejadian $A$ bisa terjadi $m$ cara, $B$ bisa $n$ cara, dan tidak ada satu cara pun yang termasuk keduanya, maka</p><p>$$|A \\cup B| = |A| + |B| \\qquad (A \\cap B = \\varnothing)$$</p><p>Syaratnya juga sering dilupakan: kasusnya harus <strong>lepas</strong>. Kalau beririsan, jumlahnya kelebihan — dan memperbaikinya adalah jurus tersendiri.</p><p><strong>Aturan komplemen.</strong> Kalau yang diminta susah dihitung langsung tapi kebalikannya mudah:</p><p>$$|A| = |S| - |A^{c}|$$</p>",
    "jebakan": "<ul><li><strong>Menjumlahkan kasus yang beririsan.</strong> Anggota yang masuk dua kasus terhitung dua kali.</li><li><strong>Mengalikan padahal banyak pilihannya berubah.</strong> Kalau langkah kedua punya 5 pilihan untuk sebagian hasil langkah pertama dan 4 untuk sisanya, aturan kali belum bisa dipakai apa adanya.</li><li><strong>Kasus yang tidak menutupi semuanya.</strong> Setelah memecah jadi kasus, periksa dua hal sekaligus: tidak ada yang tumpang tindih, dan tidak ada yang terlewat.</li></ul>",
@@ -1205,8 +1214,17 @@
    "prasyarat": [
     "aturan-pencacahan"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "ie-contoh-1"
+   ],
+   "latihan": [
+    "ie-01",
+    "ie-02",
+    "ie-03",
+    "ie-04",
+    "ie-05",
+    "ie-06"
+   ],
    "kapan_dipakai": "<p>Kamu menjumlahkan beberapa kelompok, tapi kelompoknya <strong>beririsan</strong> — ada anggota yang kena hitung lebih dari sekali. Pemicu paling terang: kata \"atau\", \"habis dibagi 3 atau 5\", \"paling sedikit satu di antaranya\", dan soal yang memberi data \"yang ikut keduanya sebanyak …\".</p>",
    "inti": "<p>Ini aturan jumlah yang diperbaiki. Aturan jumlah hanya sah kalau kelompoknya lepas; kalau tidak, kelebihannya dikurangi — lalu yang terlanjur terlalu banyak dikurangi dikembalikan.</p><p>$$|A \\cup B| = |A| + |B| - |A \\cap B|$$</p><p>$$|A \\cup B \\cup C| = |A|+|B|+|C| - |A\\cap B| - |A\\cap C| - |B\\cap C| + |A\\cap B\\cap C|$$</p><p>Polanya berselang-seling, dan bentuk umumnya:</p><p>$$\\left|\\bigcup_{i=1}^{n} A_i\\right| = \\sum_{k=1}^{n} (-1)^{k-1} \\sum_{|S|=k} \\left|\\bigcap_{i \\in S} A_i\\right|$$</p><p>Bacaannya sederhana: irisan berjumlah ganjil ditambah, berjumlah genap dikurangi. Dengan begitu setiap anggota gabungan terhitung tepat sekali, berapa pun kelompok yang memuatnya.</p><p>Sering lebih pendek dipakai lewat komplemen: \"tidak memenuhi satu pun syarat\" adalah seluruhnya dikurangi gabungannya.</p>",
    "jebakan": "<ul><li><strong>Berhenti di pengurangan pertama.</strong> Untuk tiga himpunan, mengurangi ketiga irisan berpasangan membuat anggota yang ada di ketiganya hilang sama sekali — ia harus dikembalikan.</li><li><strong>Salah tanda di suku terakhir.</strong> Untuk $n$ himpunan, tandanya $(-1)^{n-1}$, jadi bergantung pada ganjil-genapnya $n$.</li><li><strong>Mengarang $|A \\cap B|$.</strong> Ukuran irisan adalah data atau hasil hitungan, bukan $|A|\\cdot|B|$ — itu keliru kecuali ada alasan tersendiri.</li></ul>",
@@ -1222,8 +1240,17 @@
    "prasyarat": [
     "aturan-pencacahan"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "pm-contoh-1"
+   ],
+   "latihan": [
+    "pm-01",
+    "pm-02",
+    "pm-03",
+    "pm-04",
+    "pm-05",
+    "pm-06"
+   ],
    "kapan_dipakai": "<p>Objeknya <strong>berbeda semua</strong>, <strong>urutan penting</strong>, dan kamu menyusun sebagian atau seluruhnya berjajar. Uji cepatnya: kalau menukar dua objek terpilih menghasilkan susunan yang dihitung <strong>berbeda</strong>, ini permutasi.</p><p>Kata yang biasa muncul: disusun, dijajar, diurutkan, juara 1–2–3, sandi yang urutannya berarti.</p>",
    "inti": "<p>Menyusun $k$ objek dari $n$ objek berbeda:</p><p>$$P(n,k) = n(n-1)(n-2)\\cdots(n-k+1) = \\frac{n!}{(n-k)!}$$</p><p>Menyusun seluruhnya, $k = n$, memberi $n!$.</p><p>Rumus itu tidak perlu dihafal terpisah — ia hanya aturan kali dengan pilihan yang menyusut: tempat pertama punya $n$ calon, tempat kedua $n-1$ karena satu sudah terpakai, dan seterusnya sampai $k$ tempat terisi.</p><p>Dua nilai yang harus otomatis: $0! = 1$ dan $P(n,0) = 1$. Keduanya masuk akal karena ada tepat satu cara memilih tidak satu pun.</p><p><strong>Susunan dengan pembatasan</strong> dikerjakan dengan mendahulukan yang paling terkekang. Kalau dua objek harus berdampingan, ikat keduanya jadi satu blok lalu kalikan dengan susunan di dalam blok itu.</p>",
    "jebakan": "<ul><li><strong>Memakai permutasi padahal urutannya tidak berarti.</strong> Kalau yang diminta \"pilih 3 orang jadi anggota tim\", menukar dua nama tidak menghasilkan tim baru.</li><li><strong>Mengira $0! = 0$.</strong> Nilainya $1$, dan itu bukan kesepakatan kosong — dengan itu rumusnya tetap benar di ujung.</li><li><strong>Menghitung objek yang identik sebagai berbeda.</strong> Dua huruf A pada satu kata tidak bisa dibedakan, jadi $n!$ akan kelebihan.</li></ul>",
@@ -1239,8 +1266,17 @@
    "prasyarat": [
     "aturan-pencacahan"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "smp-contoh-1"
+   ],
+   "latihan": [
+    "smp-01",
+    "smp-02",
+    "smp-03",
+    "smp-04",
+    "smp-05",
+    "smp-06"
+   ],
    "kapan_dipakai": "<p>Soal meminta <strong>membuktikan ada</strong> sesuatu, tanpa menyuruh menemukannya: \"tunjukkan pasti ada dua orang yang…\", \"buktikan di antara bilangan itu ada yang…\". Kalau soal menanyakan <em>berapa banyak</em>, ini bukan jurusnya.</p><p>Pemicu lain yang sering: ada bilangan yang terasa aneh besarnya — \"di antara 13 orang\", \"dari 101 bilangan\". Angka seperti itu biasanya satu lebih banyak dari sesuatu, dan tugasmu menemukan sesuatu itu.</p>",
    "inti": "<p>Kalau $n$ objek dimasukkan ke $k$ kotak dan $n &gt; k$, ada kotak yang berisi paling sedikit dua objek.</p><p>Bentuk yang lebih berguna di olimpiade:</p><p>$$\\left\\lceil \\frac{n}{k} \\right\\rceil$$</p><p>yaitu ada kotak yang berisi paling sedikit sebanyak itu.</p><p><strong>Menerapkan prinsipnya cuma satu baris; pekerjaan sesungguhnya memilih kotaknya.</strong> Soal hampir tidak pernah memberi tahu apa yang jadi merpati dan apa yang jadi sarang — itu yang harus kamu karang. Sarang yang sering menolong: sisa pembagian, selang bilangan, pasangan yang jumlahnya tetap, dan petak papan.</p><p>Prinsip ini menjamin <strong>ada</strong>; ia tidak pernah menunjukkan yang mana.</p>",
    "jebakan": "<ul><li><strong>Terbalik arah.</strong> Merpatinya yang harus lebih banyak dari sarangnya, bukan sebaliknya.</li><li><strong>Sarang terlalu banyak.</strong> Kalau kotaknya sebanyak objeknya, kesimpulannya kosong. Sarang harus dibuat cukup sedikit supaya ada yang terpaksa berbagi.</li><li><strong>Menuntut prinsipnya menunjuk.</strong> Kesimpulannya \"ada\", dan soal yang bertanya \"yang mana\" memang meminta jurus lain.</li></ul>",
@@ -1256,8 +1292,17 @@
    "prasyarat": [
     "permutasi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "kb-contoh-1"
+   ],
+   "latihan": [
+    "kb-01",
+    "kb-02",
+    "kb-03",
+    "kb-04",
+    "kb-05",
+    "kb-06"
+   ],
    "kapan_dipakai": "<p>Memilih $k$ objek dari $n$ objek berbeda, <strong>urutan tidak penting</strong>. Uji cepatnya kebalikan dari permutasi: kalau menukar dua objek terpilih menghasilkan pilihan yang dianggap <strong>sama</strong>, ini kombinasi.</p><p>Kata yang biasa muncul: dipilih, diambil, dibentuk tim, dibentuk himpunan bagian, ditarik dari kotak sekaligus.</p>",
    "inti": "<p>$$\\binom{n}{k} = \\frac{n!}{k!\\,(n-k)!} = \\frac{P(n,k)}{k!}$$</p><p>Bentuk kedua yang menjelaskan asalnya: hitung dulu susunannya seolah urutan penting, lalu bagi $k!$ — karena tiap kumpulan yang sama terhitung $k!$ kali, sekali untuk tiap cara mengurutkannya. Membagi seperti ini adalah cara berpikir yang dipakai lagi di banyak jurus lain.</p><p>Sifat yang paling sering memendekkan hitungan:</p><p>$$\\binom{n}{k} = \\binom{n}{n-k}$$</p><p>Memilih $k$ yang masuk sama saja dengan memilih $n-k$ yang keluar. Kalau $k$ besar, hitung lewat sisi satunya.</p><p>Nilai tepinya $\\binom{n}{0} = \\binom{n}{n} = 1$.</p><p><strong>Memilih sekaligus versus berurutan.</strong> \"Diambil 3 bola sekaligus\" adalah kombinasi; \"diambil satu per satu tanpa dikembalikan lalu dicatat urutannya\" adalah permutasi. Soal biasanya menyatakan ini dengan satu kata saja, dan kata itu menentukan seluruh jawabannya.</p>",
    "jebakan": "<ul><li><strong>Urutan ternyata berarti.</strong> Jabatan ketua–sekretaris–bendahara bukan sekadar memilih tiga orang; ketiganya bisa ditukar dan hasilnya berbeda.</li><li><strong>Objek yang boleh diambil berulang.</strong> Rumus ini menganggap tiap objek terpilih paling banyak sekali.</li><li><strong>Objeknya ternyata tidak berbeda.</strong> Kalau bolanya sewarna dan tidak bisa dibedakan, yang dicacah bukan lagi pilihan objek melainkan pembagian jumlah.</li></ul>",
@@ -1273,8 +1318,17 @@
    "prasyarat": [
     "permutasi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "psk-contoh-1"
+   ],
+   "latihan": [
+    "psk-01",
+    "psk-02",
+    "psk-03",
+    "psk-04",
+    "psk-05",
+    "psk-06"
+   ],
    "kapan_dipakai": "<p>Menyusun objek <strong>melingkar</strong>: duduk mengelilingi meja bundar, manik pada gelang, orang membentuk lingkaran. Yang membedakannya dari permutasi biasa adalah tidak adanya posisi pertama — susunan yang bisa diputar menjadi satu sama lain dianggap <strong>sama</strong>.</p><p>Bacalah soalnya sekali lagi untuk satu hal: apakah kursinya bernomor? Kalau bernomor, lingkarannya cuma gambar, dan yang berlaku permutasi biasa.</p>",
    "inti": "<p>Menyusun $n$ objek berbeda melingkar:</p><p>$$(n-1)!$$</p><p>Alasannya bukan hafalan: patok satu objek di satu tempat — boleh, karena memutar tidak membuat susunan baru — lalu susun $n-1$ sisanya berjajar searah jarum jam.</p><p>Cara lain sampai ke sana: ada $n!$ susunan berjajar, dan tiap susunan melingkar bersesuaian dengan tepat $n$ di antaranya, sekali untuk tiap kemungkinan pemutaran. Jadi $n!/n = (n-1)!$.</p><p><strong>Kalau pantulan juga tidak membedakan</strong> — kalung yang boleh dibalik, atau lingkaran yang dilihat dari dua sisi — bagi dua lagi:</p><p>$$\\frac{(n-1)!}{2} \\qquad (n \\ge 3)$$</p><p>Untuk $n = 1$ dan $n = 2$ pembagian itu tidak berlaku, karena membalik tidak menghasilkan apa pun yang baru untuk dihilangkan.</p>",
    "jebakan": "<ul><li><strong>Memakai $n!$ untuk susunan melingkar,</strong> sehingga tiap susunan terhitung $n$ kali.</li><li><strong>Membagi dua padahal soal tidak menyamakan pantulan.</strong> Orang yang duduk mengelilingi meja punya kiri dan kanan; kalung yang tergeletak boleh dibalik. Keduanya berbeda.</li><li><strong>Meja bernomor dianggap melingkar.</strong> Begitu tempatnya bisa dibedakan, memutar menghasilkan susunan yang lain, dan jawabannya kembali $n!$.</li></ul>",
@@ -1290,8 +1344,17 @@
    "prasyarat": [
     "permutasi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "pbr-contoh-1"
+   ],
+   "latihan": [
+    "pbr-01",
+    "pbr-02",
+    "pbr-03",
+    "pbr-04",
+    "pbr-05",
+    "pbr-06"
+   ],
    "kapan_dipakai": "<p>Menyusun objek berjajar seperti permutasi biasa, tapi <strong>sebagian objeknya tidak bisa dibedakan</strong>. Pemicu paling khas: menyusun huruf sebuah kata yang punya huruf kembar, atau menjajar bola yang sewarna.</p><p>Kalau kamu sudah menulis $n!$ lalu merasa hasilnya kelebihan, biasanya ini jurusnya.</p>",
    "inti": "<p>Kalau dari $n$ objek ada $n_1$ yang sejenis, $n_2$ sejenis lain, sampai $n_r$, banyaknya susunan berbeda adalah</p><p>$$\\frac{n!}{n_1!\\, n_2! \\cdots n_r!} \\qquad \\text{dengan } n_1 + n_2 + \\cdots + n_r = n$$</p><p>Alasan pembaginya sama dengan alasan pada kombinasi. Anggap dulu semua objek berbeda — ada $n!$ susunan. Tiap susunan sungguhan lalu terhitung berkali-kali, tepat sebanyak cara menukar-nukar objek sejenis di antara mereka sendiri, yaitu $n_1! \\cdots n_r!$. Membaginya mengembalikan hitungan ke satu kali per susunan.</p><p>Kata <strong>BUKU</strong> punya $\\frac{4!}{2!} = 12$ susunan, bukan $24$: dua huruf U tidak bisa dibedakan.</p><p>Cara lain memandangnya: pilih dulu tempat untuk jenis pertama, lalu jenis kedua dari sisa, dan seterusnya. Hasilnya sama, dan kadang lebih mudah diikuti:</p><p>$$\\binom{n}{n_1}\\binom{n-n_1}{n_2}\\cdots$$</p>",
    "jebakan": "<ul><li><strong>Lupa membagi sama sekali,</strong> sehingga tiap susunan terhitung berkali-kali.</li><li><strong>Menjumlahkan pembaginya.</strong> Yang benar $n_1!\\cdot n_2!$, bukan $(n_1 + n_2)!$ dan bukan $n_1! + n_2!$.</li><li><strong>Menganggap sama objek yang sebenarnya berbeda.</strong> Dua bola merah yang bernomor tetap bisa dibedakan, dan di situ pembaginya tidak berlaku.</li></ul>",
@@ -1324,8 +1387,17 @@
    "prasyarat": [
     "kombinasi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "kbn-contoh-1"
+   ],
+   "latihan": [
+    "kbn-01",
+    "kbn-02",
+    "kbn-03",
+    "kbn-04",
+    "kbn-05",
+    "kbn-06"
+   ],
    "kapan_dipakai": "<p>Bentuk $(x+y)^n$ perlu dijabarkan atau satu sukunya dicari, atau soal memuat jumlah $\\binom{n}{k}$ yang polanya harus dikenali. Pemicu lain: soal meminta koefisien suku tertentu, atau suku yang tidak memuat peubah sama sekali.</p>",
    "inti": "<p>$$(x+y)^n = \\sum_{k=0}^{n} \\binom{n}{k} x^{n-k} y^{k}$$</p><p>Alasannya pencacahan: menjabarkan berarti memilih $x$ atau $y$ dari tiap-tiap $n$ kurung, dan $\\binom{n}{k}$ menghitung berapa cara memilih $y$ sebanyak $k$ kali.</p><p><strong>Aturan Pascal</strong>, yang membangun segitiganya:</p><p>$$\\binom{n}{k} = \\binom{n-1}{k-1} + \\binom{n-1}{k}$$</p><p>Bacanya: satu objek tertentu ikut terpilih, atau tidak.</p><p>Dua jumlah yang harus langsung dikenali:</p><p>$$\\sum_{k=0}^{n} \\binom{n}{k} = 2^{n}, \\qquad \\sum_{k=0}^{n} (-1)^{k} \\binom{n}{k} = 0 \\quad (n \\ge 1)$$</p><p>Yang pertama menghitung seluruh himpunan bagian; yang kedua mengatakan himpunan bagian berukuran genap dan ganjil sama banyak.</p><p><strong>Identitas Vandermonde</strong>, untuk jumlah hasil kali dua koefisien:</p><p>$$\\sum_{k} \\binom{m}{k}\\binom{n}{r-k} = \\binom{m+n}{r}$$</p><p>Tiap identitas di atas punya bacaan pencacahan, dan bacaan itulah yang membuatnya bisa diingat tanpa dihafal.</p>",
    "jebakan": "<ul><li><strong>Tertukar pangkat $x$ dan $y$.</strong> Pada suku dengan $\\binom{n}{k}$, pangkat $y$ yang $k$.</li><li><strong>Salah menomori suku.</strong> \"Suku ke-$r$\" berarti $k = r-1$, karena penjumlahannya mulai dari $k = 0$.</li><li><strong>Lupa tanda pada $(x-y)^n$.</strong> Sukunya membawa $(-1)^k$, jadi berselang-seling.</li></ul>",
@@ -1376,8 +1448,17 @@
    "prasyarat": [
     "kombinasi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "prd-contoh-1"
+   ],
+   "latihan": [
+    "prd-01",
+    "prd-02",
+    "prd-03",
+    "prd-04",
+    "prd-05",
+    "prd-06"
+   ],
    "kapan_dipakai": "<p>Ruang sampelnya berhingga dan tiap hasil dasar <strong>sama mungkin</strong>. Begitu kedua syarat itu terpenuhi, soal peluang berubah jadi dua soal pencacahan: hitung yang diinginkan, hitung seluruhnya.</p><p>Kalau hasilnya tidak sama mungkin — jumlah dua dadu, misalnya — turunkan dulu ke tingkat yang sama mungkin, yaitu pasangan mata dadunya.</p>",
    "inti": "<p>$$P(A) = \\frac{|A|}{|S|}$$</p><p>dengan $S$ ruang sampel yang tiap anggotanya sama mungkin.</p><p>$$P(A^{c}) = 1 - P(A)$$</p><p>Bentuk komplemen ini sering jauh lebih pendek, terutama untuk \"paling sedikit satu\".</p><p>$$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$$</p><p>Peluang bersyarat:</p><p>$$P(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}, \\qquad P(B) &gt; 0$$</p><p>Dua kejadian <strong>saling bebas</strong> kalau $P(A \\cap B) = P(A)P(B)$. Ini sesuatu yang harus diperiksa atau dinyatakan soal, <strong>bukan</strong> dianggap begitu saja karena kedua kejadiannya terasa tak berhubungan.</p><p><strong>Satu disiplin yang menyelamatkan banyak soal:</strong> pembilang dan penyebut harus dihitung dengan cara pandang yang sama. Kalau penyebutnya memperhatikan urutan pengambilan, pembilangnya juga harus.</p>",
    "jebakan": "<ul><li><strong>Ruang sampel yang tidak sama mungkin.</strong> Jumlah dua dadu punya 11 nilai, tapi ke-11 nilai itu tidak sama peluangnya.</li><li><strong>Mengalikan peluang untuk kejadian yang tidak bebas.</strong> Pengambilan tanpa pengembalian mengubah peluang berikutnya.</li><li><strong>Pembilang dan penyebut beda cara hitung.</strong> Yang satu menganggap bola sewarna bisa dibedakan, yang lain tidak — hasilnya salah walau kedua hitungannya benar sendiri-sendiri.</li></ul>",
@@ -1412,8 +1493,17 @@
     "kombinasi",
     "permutasi-berulang"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "sbr-contoh-1"
+   ],
+   "latihan": [
+    "sbr-01",
+    "sbr-02",
+    "sbr-03",
+    "sbr-04",
+    "sbr-05",
+    "sbr-06"
+   ],
    "kapan_dipakai": "<p>Membagi objek yang <strong>identik</strong> ke dalam wadah yang <strong>berbeda</strong>. Bentuk bakunya: banyaknya penyelesaian bilangan bulat dari</p><p>$$x_1 + x_2 + \\cdots + x_k = n$$</p><p>Pemicu di soal cerita: membagikan permen sejenis kepada beberapa anak, menaruh bola sewarna ke kotak bernomor, atau memilih $n$ benda dari $k$ jenis dengan pengulangan diperbolehkan.</p><p>Perhatikan arahnya — objek identik, wadah berbeda. Kalau terbalik, ini bukan jurusnya.</p>",
    "inti": "<p>Bayangkan $n$ bintang berjajar dan $k-1$ sekat yang membaginya jadi $k$ kelompok. Tiap susunan bintang dan sekat memberi tepat satu penyelesaian, dan sebaliknya. Yang dicacah tinggal susunan dari $n + k - 1$ benda dengan dua jenis:</p><p>Untuk $x_i \\ge 0$:</p><p>$$\\binom{n+k-1}{k-1}$$</p><p>Untuk $x_i \\ge 1$, sisihkan dulu satu untuk tiap wadah lalu bagikan sisanya:</p><p>$$\\binom{n-1}{k-1}$$</p><p><strong>Batas bawah lain diselesaikan dengan menggeser.</strong> Kalau disyaratkan $x_i \\ge 2$, tulis $y_i = x_i - 2$; syaratnya kembali menjadi $y_i \\ge 0$ dengan jumlah yang berkurang.</p><p><strong>Batas atas tidak bisa ditangani langsung.</strong> Syarat seperti $x_i \\le 5$ menuntut inklusi– eksklusi: hitung tanpa batas, lalu kurangi yang melanggar.</p>",
    "jebakan": "<ul><li><strong>Arahnya terbalik.</strong> Objek berbeda ke wadah identik adalah persoalan lain sama sekali, dan rumus ini tidak berlaku di sana.</li><li><strong>Tertukar antara $\\ge 0$ dan $\\ge 1$.</strong> Bedanya cuma satu kata di soal, tapi rumusnya berbeda.</li><li><strong>Memaksakan batas atas.</strong> Tidak ada penyesuaian sederhana untuk $x_i \\le c$; yang ada hanya membuang kasus yang melanggar.</li></ul>",

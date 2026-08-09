@@ -4,8 +4,8 @@ nama: Prinsip Sarang Merpati
 pilar: kombinatorika
 tahap: osn-k
 prasyarat: [aturan-pencacahan]
-contoh: []
-latihan: []
+contoh: [smp-contoh-1]
+latihan: [smp-01, smp-02, smp-03, smp-04, smp-05, smp-06]
 ---
 
 ## Kapan dipakai

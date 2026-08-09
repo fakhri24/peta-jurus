@@ -4,8 +4,8 @@ nama: Inklusi–Eksklusi
 pilar: kombinatorika
 tahap: osn-k
 prasyarat: [aturan-pencacahan]
-contoh: []
-latihan: []
+contoh: [ie-contoh-1]
+latihan: [ie-01, ie-02, ie-03, ie-04, ie-05, ie-06]
 ---
 
 ## Kapan dipakai

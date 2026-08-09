@@ -4,8 +4,8 @@ nama: Koefisien Binomial dan Identitasnya
 pilar: kombinatorika
 tahap: osn-k
 prasyarat: [kombinasi]
-contoh: []
-latihan: []
+contoh: [kbn-contoh-1]
+latihan: [kbn-01, kbn-02, kbn-03, kbn-04, kbn-05, kbn-06]
 ---
 
 ## Kapan dipakai

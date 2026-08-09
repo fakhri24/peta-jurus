@@ -4,8 +4,8 @@ nama: Aturan Jumlah dan Aturan Kali
 pilar: kombinatorika
 tahap: osn-k
 prasyarat: []
-contoh: []
-latihan: []
+contoh: [ajk-contoh-1]
+latihan: [ajk-01, ajk-02, ajk-03, ajk-04, ajk-05, ajk-06]
 ---
 
 ## Kapan dipakai

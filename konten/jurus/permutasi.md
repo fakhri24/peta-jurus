@@ -4,8 +4,8 @@ nama: Permutasi
 pilar: kombinatorika
 tahap: osn-k
 prasyarat: [aturan-pencacahan]
-contoh: []
-latihan: []
+contoh: [pm-contoh-1]
+latihan: [pm-01, pm-02, pm-03, pm-04, pm-05, pm-06]
 ---
 
 ## Kapan dipakai

@@ -4,8 +4,8 @@ nama: Permutasi Siklik
 pilar: kombinatorika
 tahap: osn-k
 prasyarat: [permutasi]
-contoh: []
-latihan: []
+contoh: [psk-contoh-1]
+latihan: [psk-01, psk-02, psk-03, psk-04, psk-05, psk-06]
 ---
 
 ## Kapan dipakai

@@ -4,8 +4,8 @@ nama: Probabilitas Diskret
 pilar: kombinatorika
 tahap: osn-k
 prasyarat: [kombinasi]
-contoh: []
-latihan: []
+contoh: [prd-contoh-1]
+latihan: [prd-01, prd-02, prd-03, prd-04, prd-05, prd-06]
 ---
 
 ## Kapan dipakai
