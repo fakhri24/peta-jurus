@@ -33,24 +33,27 @@ Poin 2 dan 4 yang paling mahal. Selebihnya pekerjaan kode yang terukur.
 
 ## 2. Keadaan sekarang
 
-**44 jurus, 309 soal** (264 latihan + 45 contoh) di dua bidang: teori bilangan dan
-aljabar.
+**64 jurus, 309 soal** (264 latihan + 45 contoh) di tiga bidang.
 
 | Bidang | OSN-K | OSN-P | OSN | Status |
 |---|---|---|---|---|
 | Teori bilangan | 8 | 10 | 4 | **tuntas** |
 | Aljabar | 10 | 7 | 5 | **tuntas** |
+| Kombinatorika | 10 | 6 | 4 | kerangka saja — **belum ada satu soal pun** |
 
-**Kedua bidang tuntas di ketiga tahap** — 44 dari 44 jurus punya minimal satu contoh
-terpandu dan enam latihan. `build.py` tidak lagi mencetak baris "Belum ada latihan di:".
+Teori bilangan dan aljabar tuntas di ketiga tahap: 44 dari 44 jurusnya punya minimal satu
+contoh terpandu dan enam latihan. Kombinatorika baru punya halaman jurus; `build.py`
+mencetak kedua puluh namanya di baris "Belum ada latihan di:", dan itu memang keadaan yang
+diharapkan di ujung 3.1.
 
-Jalur lintas bidang sudah bisa ditempuh sungguhan: `polinomial-bulat` di aljabar
-berprasyarat `keterbagian` di teori bilangan, dan keduanya kini berisi.
+Jalur lintas bidang sudah ada dua dan keduanya nyata: `polinomial-bulat` (aljabar)
+berprasyarat `keterbagian` (teori bilangan), dan `rekursi` (kombinatorika) berprasyarat
+`induksi` (aljabar).
 
-Yang belum ada sama sekali: **kombinatorika** dan **geometri**.
+Yang belum ada sama sekali: **geometri**.
 
-Fase 0, 1, dan 2 selesai seluruhnya, begitu juga 5.1. Yang berikutnya dikerjakan adalah
-**Fase 3 — kombinatorika**.
+Fase 0, 1, 2, dan 5.1 selesai seluruhnya, begitu juga 3.1. Yang berikutnya dikerjakan
+adalah **Fase 3.2 — 140 soal kombinatorika**.
 
 ### Perkiraan cakupan penuh
 
@@ -244,19 +247,62 @@ berikutnya persis yang dilarang di bagian Risiko.
 
 ## Fase 3 — Kombinatorika
 
-Draf daftar jurus:
+### 3.1 Kerangka bidang — selesai 9 Agustus 2026
 
-- Tingkat awal: aturan jumlah & kali · permutasi · kombinasi · permutasi dengan
-  pengulangan
-- Menengah: koefisien binomial & identitasnya · inklusi-eksklusi · sarang merpati ·
-  pencacahan ganda · bijeksi · stars and bars · probabilitas diskret
-- Lanjut: rekursi · invarian & monovarian · pewarnaan · ekstremal · graf dasar ·
-  teori permainan · fungsi pembangkit
+20 jurus beserta graf prasyaratnya, masing-masing lengkap dengan "Kapan dipakai",
+"Intinya", dan "Jebakan umum". Sebarannya **10 OSN-K, 6 OSN-P, 4 OSN**, kedalaman $t_0$
+sampai $t_5$ — dasarnya lebar, puncaknya sempit, seperti dua bidang sebelumnya.
+
+| Tingkat | Jurus |
+|---|---|
+| $t_0$ | aturan-pencacahan |
+| $t_1$ | inklusi-eksklusi · permutasi · sarang-merpati |
+| $t_2$ | kombinasi · permutasi-berulang · permutasi-siklik · invarian |
+| $t_3$ | koefisien-binomial · probabilitas-diskret · stars-and-bars · pencacahan-ganda · rekursi · pewarnaan · derangement |
+| $t_4$ | bijeksi · graf-dasar · teori-permainan · fungsi-pembangkit |
+| $t_5$ | ekstremal |
+
+Dua penempatan yang perlu dicatat karena tidak mengikuti draf awal. **`inklusi-eksklusi`
+diletakkan di $t_1$**, sebelum kombinasi, karena ia sebenarnya aturan jumlah yang
+diperbaiki untuk kelompok beririsan — $|A \cup B| = |A| + |B| - |A \cap B|$ tidak
+memerlukan $\binom{n}{k}$ sama sekali. **`ekstremal` berprasyarat `graf-dasar`**, bukan
+berdiri sendiri, karena penerapan bakunya memang pada graf: ambil lintasan terpanjang,
+lalu perhatikan tetangga titik ujungnya.
+
+`rekursi` berprasyarat `induksi` dari aljabar — **prasyarat lintas bidang kedua**, dan
+alasannya nyata: rumus tertutup yang ditebak dari beberapa suku pertama harus dibuktikan
+dengan induksi. Gemboknya terbaca lengkap di peta ("Prasyarat dari bidang lain: Induksi
+Matematika (Aljabar)").
+
+Fase ini juga menutup dua celah yang baru terlihat sekarang:
+
+- **Aturan tahap prasyarat kini dijaga tes.** Jurus OSN-K tidak boleh berprasyarat jurus
+  OSN-P atau OSN — kalau melanggar, siswa yang menyaring peta ke OSN-K melihat gembok
+  yang penyebabnya tidak ada di layar, dan tidak bisa membukanya tanpa keluar dari tahap
+  yang sedang ia siapkan. Kedua bidang lama ternyata sudah memenuhinya; sekarang aturan
+  itu tidak lagi bergantung pada ingatan.
+- **`periksa-rumus.js` ternyata tidak pernah memeriksa halaman jurus** — ia hanya membaca
+  `data/soal-*.json`. Padahal "Intinya" justru bagian paling padat rumus di seluruh situs,
+  dan halaman jurus dibuka jauh lebih sering daripada satu soal tertentu. Sekarang
+  keduanya diperiksa: 10.305 rumus, naik dari 9.288, dan 1.017 selisihnya itu rumus
+  halaman jurus yang selama ini tidak pernah diuji. Semuanya lolos.
+
+### 3.2 Soal — belum dikerjakan
+
+Sasarannya sama dengan bidang lain: tiap jurus minimal satu contoh terpandu dan enam
+latihan, yaitu **140 soal**.
 
 Sebagian besar soal kombinatorika berbentuk uraian, jadi **rubriknya yang menentukan
 mutu** — `build.py` sudah mewajibkan `## Rubrik` untuk soal uraian, tapi mewajibkan ada
 bukan menjamin berguna. Rubrik yang cuma menulis "jawaban benar: 7 poin" tidak menolong
 siswa menilai dirinya sendiri.
+
+Porsi uraian di sini akan lebih besar daripada di aljabar. `invarian`, `pewarnaan`,
+`ekstremal`, `pencacahan-ganda`, dan `teori-permainan` semuanya teknik **pembuktian**;
+mengubahnya jadi soal isian akan menguji hal yang berbeda dari yang dilatih.
+
+**Selesai kalau:** ketiga tahap kombinatorika tuntas di lantai 6, `build.py` tidak lagi
+mencetak "Belum ada latihan di:", dan simulasi bisa menyusun naskah tiga bidang.
 
 ---
 

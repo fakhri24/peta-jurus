@@ -17,6 +17,15 @@
     "osn-p": 832,
     "osn": 944
    }
+  },
+  "kombinatorika": {
+   "lebar": 1392,
+   "tinggi": 720,
+   "tinggi_sampai": {
+    "osn-k": 496,
+    "osn-p": 608,
+    "osn": 720
+   }
   }
  },
  "arsip": {},
@@ -1171,6 +1180,351 @@
    "jebakan": "<ul><li><strong>Mengira $\\sqrt{ab} = \\sqrt{a}\\sqrt{b}$ berlaku untuk bilangan negatif.</strong> Dari sana lahir \"bukti\" bahwa $1 = -1$.</li><li><strong>Lupa akar kompleks berpasangan sekawan</strong> pada polinomial berkoefisien real.</li><li><strong>Salah menghitung banyak akar.</strong> Persamaan $z^n = c$ dengan $c \\ne 0$ selalu punya tepat $n$ akar berbeda, bukan satu.</li></ul>",
    "tingkat": 5,
    "x": 514,
+   "y": 584
+  },
+  {
+   "id": "aturan-pencacahan",
+   "nama": "Aturan Jumlah dan Aturan Kali",
+   "pilar": "kombinatorika",
+   "tahap": "osn-k",
+   "prasyarat": [],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Setiap soal pencacahan dimulai di sini, dan pertanyaan pembukanya selalu sama: pilihannya disusun <strong>bertahap</strong> atau dipecah menjadi <strong>kasus</strong>? \"Ini lalu itu\" berarti kali; \"ini atau itu\" berarti jumlah.</p><p>Kalau yang diminta memuat \"paling sedikit satu\", biasanya lebih pendek menghitung kebalikannya lalu mengurangkannya dari seluruhnya.</p>",
+   "inti": "<p><strong>Aturan kali.</strong> Kalau langkah pertama bisa dikerjakan $m$ cara dan — untuk setiap hasil langkah pertama — langkah kedua bisa dikerjakan $n$ cara, maka seluruhnya</p><p>$$m \\times n$$</p><p>Syarat yang paling sering dilupakan ada di kata \"untuk setiap\": banyaknya pilihan langkah kedua harus <strong>sama</strong> apa pun hasil langkah pertama. Kalau tidak sama, pecah dulu jadi kasus.</p><p><strong>Aturan jumlah.</strong> Kalau kejadian $A$ bisa terjadi $m$ cara, $B$ bisa $n$ cara, dan tidak ada satu cara pun yang termasuk keduanya, maka</p><p>$$|A \\cup B| = |A| + |B| \\qquad (A \\cap B = \\varnothing)$$</p><p>Syaratnya juga sering dilupakan: kasusnya harus <strong>lepas</strong>. Kalau beririsan, jumlahnya kelebihan — dan memperbaikinya adalah jurus tersendiri.</p><p><strong>Aturan komplemen.</strong> Kalau yang diminta susah dihitung langsung tapi kebalikannya mudah:</p><p>$$|A| = |S| - |A^{c}|$$</p>",
+   "jebakan": "<ul><li><strong>Menjumlahkan kasus yang beririsan.</strong> Anggota yang masuk dua kasus terhitung dua kali.</li><li><strong>Mengalikan padahal banyak pilihannya berubah.</strong> Kalau langkah kedua punya 5 pilihan untuk sebagian hasil langkah pertama dan 4 untuk sisanya, aturan kali belum bisa dipakai apa adanya.</li><li><strong>Kasus yang tidak menutupi semuanya.</strong> Setelah memecah jadi kasus, periksa dua hal sekaligus: tidak ada yang tumpang tindih, dan tidak ada yang terlewat.</li></ul>",
+   "tingkat": 0,
+   "x": 612,
+   "y": 24
+  },
+  {
+   "id": "inklusi-eksklusi",
+   "nama": "Inklusi–Eksklusi",
+   "pilar": "kombinatorika",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "aturan-pencacahan"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Kamu menjumlahkan beberapa kelompok, tapi kelompoknya <strong>beririsan</strong> — ada anggota yang kena hitung lebih dari sekali. Pemicu paling terang: kata \"atau\", \"habis dibagi 3 atau 5\", \"paling sedikit satu di antaranya\", dan soal yang memberi data \"yang ikut keduanya sebanyak …\".</p>",
+   "inti": "<p>Ini aturan jumlah yang diperbaiki. Aturan jumlah hanya sah kalau kelompoknya lepas; kalau tidak, kelebihannya dikurangi — lalu yang terlanjur terlalu banyak dikurangi dikembalikan.</p><p>$$|A \\cup B| = |A| + |B| - |A \\cap B|$$</p><p>$$|A \\cup B \\cup C| = |A|+|B|+|C| - |A\\cap B| - |A\\cap C| - |B\\cap C| + |A\\cap B\\cap C|$$</p><p>Polanya berselang-seling, dan bentuk umumnya:</p><p>$$\\left|\\bigcup_{i=1}^{n} A_i\\right| = \\sum_{k=1}^{n} (-1)^{k-1} \\sum_{|S|=k} \\left|\\bigcap_{i \\in S} A_i\\right|$$</p><p>Bacaannya sederhana: irisan berjumlah ganjil ditambah, berjumlah genap dikurangi. Dengan begitu setiap anggota gabungan terhitung tepat sekali, berapa pun kelompok yang memuatnya.</p><p>Sering lebih pendek dipakai lewat komplemen: \"tidak memenuhi satu pun syarat\" adalah seluruhnya dikurangi gabungannya.</p>",
+   "jebakan": "<ul><li><strong>Berhenti di pengurangan pertama.</strong> Untuk tiga himpunan, mengurangi ketiga irisan berpasangan membuat anggota yang ada di ketiganya hilang sama sekali — ia harus dikembalikan.</li><li><strong>Salah tanda di suku terakhir.</strong> Untuk $n$ himpunan, tandanya $(-1)^{n-1}$, jadi bergantung pada ganjil-genapnya $n$.</li><li><strong>Mengarang $|A \\cap B|$.</strong> Ukuran irisan adalah data atau hasil hitungan, bukan $|A|\\cdot|B|$ — itu keliru kecuali ada alasan tersendiri.</li></ul>",
+   "tingkat": 1,
+   "x": 416,
+   "y": 136
+  },
+  {
+   "id": "permutasi",
+   "nama": "Permutasi",
+   "pilar": "kombinatorika",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "aturan-pencacahan"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Objeknya <strong>berbeda semua</strong>, <strong>urutan penting</strong>, dan kamu menyusun sebagian atau seluruhnya berjajar. Uji cepatnya: kalau menukar dua objek terpilih menghasilkan susunan yang dihitung <strong>berbeda</strong>, ini permutasi.</p><p>Kata yang biasa muncul: disusun, dijajar, diurutkan, juara 1–2–3, sandi yang urutannya berarti.</p>",
+   "inti": "<p>Menyusun $k$ objek dari $n$ objek berbeda:</p><p>$$P(n,k) = n(n-1)(n-2)\\cdots(n-k+1) = \\frac{n!}{(n-k)!}$$</p><p>Menyusun seluruhnya, $k = n$, memberi $n!$.</p><p>Rumus itu tidak perlu dihafal terpisah — ia hanya aturan kali dengan pilihan yang menyusut: tempat pertama punya $n$ calon, tempat kedua $n-1$ karena satu sudah terpakai, dan seterusnya sampai $k$ tempat terisi.</p><p>Dua nilai yang harus otomatis: $0! = 1$ dan $P(n,0) = 1$. Keduanya masuk akal karena ada tepat satu cara memilih tidak satu pun.</p><p><strong>Susunan dengan pembatasan</strong> dikerjakan dengan mendahulukan yang paling terkekang. Kalau dua objek harus berdampingan, ikat keduanya jadi satu blok lalu kalikan dengan susunan di dalam blok itu.</p>",
+   "jebakan": "<ul><li><strong>Memakai permutasi padahal urutannya tidak berarti.</strong> Kalau yang diminta \"pilih 3 orang jadi anggota tim\", menukar dua nama tidak menghasilkan tim baru.</li><li><strong>Mengira $0! = 0$.</strong> Nilainya $1$, dan itu bukan kesepakatan kosong — dengan itu rumusnya tetap benar di ujung.</li><li><strong>Menghitung objek yang identik sebagai berbeda.</strong> Dua huruf A pada satu kata tidak bisa dibedakan, jadi $n!$ akan kelebihan.</li></ul>",
+   "tingkat": 1,
+   "x": 612,
+   "y": 136
+  },
+  {
+   "id": "sarang-merpati",
+   "nama": "Prinsip Sarang Merpati",
+   "pilar": "kombinatorika",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "aturan-pencacahan"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal meminta <strong>membuktikan ada</strong> sesuatu, tanpa menyuruh menemukannya: \"tunjukkan pasti ada dua orang yang…\", \"buktikan di antara bilangan itu ada yang…\". Kalau soal menanyakan <em>berapa banyak</em>, ini bukan jurusnya.</p><p>Pemicu lain yang sering: ada bilangan yang terasa aneh besarnya — \"di antara 13 orang\", \"dari 101 bilangan\". Angka seperti itu biasanya satu lebih banyak dari sesuatu, dan tugasmu menemukan sesuatu itu.</p>",
+   "inti": "<p>Kalau $n$ objek dimasukkan ke $k$ kotak dan $n &gt; k$, ada kotak yang berisi paling sedikit dua objek.</p><p>Bentuk yang lebih berguna di olimpiade:</p><p>$$\\left\\lceil \\frac{n}{k} \\right\\rceil$$</p><p>yaitu ada kotak yang berisi paling sedikit sebanyak itu.</p><p><strong>Menerapkan prinsipnya cuma satu baris; pekerjaan sesungguhnya memilih kotaknya.</strong> Soal hampir tidak pernah memberi tahu apa yang jadi merpati dan apa yang jadi sarang — itu yang harus kamu karang. Sarang yang sering menolong: sisa pembagian, selang bilangan, pasangan yang jumlahnya tetap, dan petak papan.</p><p>Prinsip ini menjamin <strong>ada</strong>; ia tidak pernah menunjukkan yang mana.</p>",
+   "jebakan": "<ul><li><strong>Terbalik arah.</strong> Merpatinya yang harus lebih banyak dari sarangnya, bukan sebaliknya.</li><li><strong>Sarang terlalu banyak.</strong> Kalau kotaknya sebanyak objeknya, kesimpulannya kosong. Sarang harus dibuat cukup sedikit supaya ada yang terpaksa berbagi.</li><li><strong>Menuntut prinsipnya menunjuk.</strong> Kesimpulannya \"ada\", dan soal yang bertanya \"yang mana\" memang meminta jurus lain.</li></ul>",
+   "tingkat": 1,
+   "x": 808,
+   "y": 136
+  },
+  {
+   "id": "kombinasi",
+   "nama": "Kombinasi",
+   "pilar": "kombinatorika",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "permutasi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Memilih $k$ objek dari $n$ objek berbeda, <strong>urutan tidak penting</strong>. Uji cepatnya kebalikan dari permutasi: kalau menukar dua objek terpilih menghasilkan pilihan yang dianggap <strong>sama</strong>, ini kombinasi.</p><p>Kata yang biasa muncul: dipilih, diambil, dibentuk tim, dibentuk himpunan bagian, ditarik dari kotak sekaligus.</p>",
+   "inti": "<p>$$\\binom{n}{k} = \\frac{n!}{k!\\,(n-k)!} = \\frac{P(n,k)}{k!}$$</p><p>Bentuk kedua yang menjelaskan asalnya: hitung dulu susunannya seolah urutan penting, lalu bagi $k!$ — karena tiap kumpulan yang sama terhitung $k!$ kali, sekali untuk tiap cara mengurutkannya. Membagi seperti ini adalah cara berpikir yang dipakai lagi di banyak jurus lain.</p><p>Sifat yang paling sering memendekkan hitungan:</p><p>$$\\binom{n}{k} = \\binom{n}{n-k}$$</p><p>Memilih $k$ yang masuk sama saja dengan memilih $n-k$ yang keluar. Kalau $k$ besar, hitung lewat sisi satunya.</p><p>Nilai tepinya $\\binom{n}{0} = \\binom{n}{n} = 1$.</p><p><strong>Memilih sekaligus versus berurutan.</strong> \"Diambil 3 bola sekaligus\" adalah kombinasi; \"diambil satu per satu tanpa dikembalikan lalu dicatat urutannya\" adalah permutasi. Soal biasanya menyatakan ini dengan satu kata saja, dan kata itu menentukan seluruh jawabannya.</p>",
+   "jebakan": "<ul><li><strong>Urutan ternyata berarti.</strong> Jabatan ketua–sekretaris–bendahara bukan sekadar memilih tiga orang; ketiganya bisa ditukar dan hasilnya berbeda.</li><li><strong>Objek yang boleh diambil berulang.</strong> Rumus ini menganggap tiap objek terpilih paling banyak sekali.</li><li><strong>Objeknya ternyata tidak berbeda.</strong> Kalau bolanya sewarna dan tidak bisa dibedakan, yang dicacah bukan lagi pilihan objek melainkan pembagian jumlah.</li></ul>",
+   "tingkat": 2,
+   "x": 318,
+   "y": 248
+  },
+  {
+   "id": "permutasi-siklik",
+   "nama": "Permutasi Siklik",
+   "pilar": "kombinatorika",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "permutasi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Menyusun objek <strong>melingkar</strong>: duduk mengelilingi meja bundar, manik pada gelang, orang membentuk lingkaran. Yang membedakannya dari permutasi biasa adalah tidak adanya posisi pertama — susunan yang bisa diputar menjadi satu sama lain dianggap <strong>sama</strong>.</p><p>Bacalah soalnya sekali lagi untuk satu hal: apakah kursinya bernomor? Kalau bernomor, lingkarannya cuma gambar, dan yang berlaku permutasi biasa.</p>",
+   "inti": "<p>Menyusun $n$ objek berbeda melingkar:</p><p>$$(n-1)!$$</p><p>Alasannya bukan hafalan: patok satu objek di satu tempat — boleh, karena memutar tidak membuat susunan baru — lalu susun $n-1$ sisanya berjajar searah jarum jam.</p><p>Cara lain sampai ke sana: ada $n!$ susunan berjajar, dan tiap susunan melingkar bersesuaian dengan tepat $n$ di antaranya, sekali untuk tiap kemungkinan pemutaran. Jadi $n!/n = (n-1)!$.</p><p><strong>Kalau pantulan juga tidak membedakan</strong> — kalung yang boleh dibalik, atau lingkaran yang dilihat dari dua sisi — bagi dua lagi:</p><p>$$\\frac{(n-1)!}{2} \\qquad (n \\ge 3)$$</p><p>Untuk $n = 1$ dan $n = 2$ pembagian itu tidak berlaku, karena membalik tidak menghasilkan apa pun yang baru untuk dihilangkan.</p>",
+   "jebakan": "<ul><li><strong>Memakai $n!$ untuk susunan melingkar,</strong> sehingga tiap susunan terhitung $n$ kali.</li><li><strong>Membagi dua padahal soal tidak menyamakan pantulan.</strong> Orang yang duduk mengelilingi meja punya kiri dan kanan; kalung yang tergeletak boleh dibalik. Keduanya berbeda.</li><li><strong>Meja bernomor dianggap melingkar.</strong> Begitu tempatnya bisa dibedakan, memutar menghasilkan susunan yang lain, dan jawabannya kembali $n!$.</li></ul>",
+   "tingkat": 2,
+   "x": 514,
+   "y": 248
+  },
+  {
+   "id": "permutasi-berulang",
+   "nama": "Permutasi dengan Unsur Sama",
+   "pilar": "kombinatorika",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "permutasi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Menyusun objek berjajar seperti permutasi biasa, tapi <strong>sebagian objeknya tidak bisa dibedakan</strong>. Pemicu paling khas: menyusun huruf sebuah kata yang punya huruf kembar, atau menjajar bola yang sewarna.</p><p>Kalau kamu sudah menulis $n!$ lalu merasa hasilnya kelebihan, biasanya ini jurusnya.</p>",
+   "inti": "<p>Kalau dari $n$ objek ada $n_1$ yang sejenis, $n_2$ sejenis lain, sampai $n_r$, banyaknya susunan berbeda adalah</p><p>$$\\frac{n!}{n_1!\\, n_2! \\cdots n_r!} \\qquad \\text{dengan } n_1 + n_2 + \\cdots + n_r = n$$</p><p>Alasan pembaginya sama dengan alasan pada kombinasi. Anggap dulu semua objek berbeda — ada $n!$ susunan. Tiap susunan sungguhan lalu terhitung berkali-kali, tepat sebanyak cara menukar-nukar objek sejenis di antara mereka sendiri, yaitu $n_1! \\cdots n_r!$. Membaginya mengembalikan hitungan ke satu kali per susunan.</p><p>Kata <strong>BUKU</strong> punya $\\frac{4!}{2!} = 12$ susunan, bukan $24$: dua huruf U tidak bisa dibedakan.</p><p>Cara lain memandangnya: pilih dulu tempat untuk jenis pertama, lalu jenis kedua dari sisa, dan seterusnya. Hasilnya sama, dan kadang lebih mudah diikuti:</p><p>$$\\binom{n}{n_1}\\binom{n-n_1}{n_2}\\cdots$$</p>",
+   "jebakan": "<ul><li><strong>Lupa membagi sama sekali,</strong> sehingga tiap susunan terhitung berkali-kali.</li><li><strong>Menjumlahkan pembaginya.</strong> Yang benar $n_1!\\cdot n_2!$, bukan $(n_1 + n_2)!$ dan bukan $n_1! + n_2!$.</li><li><strong>Menganggap sama objek yang sebenarnya berbeda.</strong> Dua bola merah yang bernomor tetap bisa dibedakan, dan di situ pembaginya tidak berlaku.</li></ul>",
+   "tingkat": 2,
+   "x": 710,
+   "y": 248
+  },
+  {
+   "id": "invarian",
+   "nama": "Invarian dan Monovarian",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "sarang-merpati"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal berisi <strong>proses</strong> — satu langkah yang boleh diulang sesukanya — dan menanyakan apakah suatu keadaan bisa dicapai, atau apakah prosesnya pasti berhenti. Pemicunya: \"mungkinkah setelah beberapa langkah…\", \"buktikan tidak mungkin\", \"tunjukkan proses berakhir\".</p><p>Ciri yang menolong: kamu sudah mencoba beberapa kali dan selalu gagal mencapai targetnya. Itu tanda ada sesuatu yang tidak pernah berubah, dan tugasmu menemukannya.</p>",
+   "inti": "<p><strong>Invarian</strong> adalah besaran yang nilainya tidak berubah oleh langkah apa pun. Kalau nilainya berbeda antara keadaan awal dan keadaan target, targetnya tidak bisa dicapai — berapa pun banyaknya langkah.</p><p>Yang paling sering menolong: paritas, jumlah atau selisih modulo suatu bilangan, banyaknya objek berjenis tertentu modulo dua, dan warna.</p><p><strong>Monovarian</strong> adalah besaran yang selalu berubah ke satu arah saja. Kalau ia selalu turun dan nilainya bilangan asli, prosesnya tidak bisa berjalan selamanya — karena tidak ada barisan turun tak berhingga di bilangan asli. Itu cara baku membuktikan proses berhenti.</p><p>Cara memakainya selalu tiga langkah: tebak besarannya, <strong>buktikan tiap langkah tidak mengubahnya</strong>, lalu bandingkan awal dengan target. Langkah kedua yang paling sering dilewati, dan ia yang menentukan sah atau tidaknya.</p><p>Invarian membuktikan <strong>tidak mungkin</strong>. Ia tidak pernah membuktikan mungkin.</p>",
+   "jebakan": "<ul><li><strong>Menyimpulkan \"bisa dicapai\" karena invariannya cocok.</strong> Cocok itu syarat perlu, bukan cukup. Untuk menunjukkan bisa, tunjukkan urutan langkahnya.</li><li><strong>Ada langkah yang belum diperiksa.</strong> Kalau prosesnya punya beberapa jenis langkah, besaran itu harus tetap pada <strong>semuanya</strong>, termasuk yang jarang dipakai.</li><li><strong>Monovarian yang bisa turun selamanya.</strong> Besaran yang selalu berkurang tapi bernilai real tidak menjamin proses berhenti; yang menjamin adalah nilainya bulat dan terbatas di bawah.</li></ul>",
+   "tingkat": 2,
+   "x": 906,
+   "y": 248
+  },
+  {
+   "id": "koefisien-binomial",
+   "nama": "Koefisien Binomial dan Identitasnya",
+   "pilar": "kombinatorika",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "kombinasi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Bentuk $(x+y)^n$ perlu dijabarkan atau satu sukunya dicari, atau soal memuat jumlah $\\binom{n}{k}$ yang polanya harus dikenali. Pemicu lain: soal meminta koefisien suku tertentu, atau suku yang tidak memuat peubah sama sekali.</p>",
+   "inti": "<p>$$(x+y)^n = \\sum_{k=0}^{n} \\binom{n}{k} x^{n-k} y^{k}$$</p><p>Alasannya pencacahan: menjabarkan berarti memilih $x$ atau $y$ dari tiap-tiap $n$ kurung, dan $\\binom{n}{k}$ menghitung berapa cara memilih $y$ sebanyak $k$ kali.</p><p><strong>Aturan Pascal</strong>, yang membangun segitiganya:</p><p>$$\\binom{n}{k} = \\binom{n-1}{k-1} + \\binom{n-1}{k}$$</p><p>Bacanya: satu objek tertentu ikut terpilih, atau tidak.</p><p>Dua jumlah yang harus langsung dikenali:</p><p>$$\\sum_{k=0}^{n} \\binom{n}{k} = 2^{n}, \\qquad \\sum_{k=0}^{n} (-1)^{k} \\binom{n}{k} = 0 \\quad (n \\ge 1)$$</p><p>Yang pertama menghitung seluruh himpunan bagian; yang kedua mengatakan himpunan bagian berukuran genap dan ganjil sama banyak.</p><p><strong>Identitas Vandermonde</strong>, untuk jumlah hasil kali dua koefisien:</p><p>$$\\sum_{k} \\binom{m}{k}\\binom{n}{r-k} = \\binom{m+n}{r}$$</p><p>Tiap identitas di atas punya bacaan pencacahan, dan bacaan itulah yang membuatnya bisa diingat tanpa dihafal.</p>",
+   "jebakan": "<ul><li><strong>Tertukar pangkat $x$ dan $y$.</strong> Pada suku dengan $\\binom{n}{k}$, pangkat $y$ yang $k$.</li><li><strong>Salah menomori suku.</strong> \"Suku ke-$r$\" berarti $k = r-1$, karena penjumlahannya mulai dari $k = 0$.</li><li><strong>Lupa tanda pada $(x-y)^n$.</strong> Sukunya membawa $(-1)^k$, jadi berselang-seling.</li></ul>",
+   "tingkat": 3,
+   "x": 24,
+   "y": 360
+  },
+  {
+   "id": "pencacahan-ganda",
+   "nama": "Pencacahan Ganda",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "kombinasi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal meminta membuktikan sebuah <strong>identitas</strong> pencacahan, atau menghitung sesuatu yang sukar didekati langsung tetapi mudah kalau dilihat dari sisi lain. Pemicu yang khas: ada dua kelompok objek dan sebuah hubungan di antara keduanya — siswa dan klub, titik dan garis, orang dan jabat tangan.</p><p>Kalau soal berbentuk \"buktikan $A = B$\" dengan kedua sisi berupa jumlah pencacahan, hampir selalu ada satu himpunan yang dihitung dua kali.</p>",
+   "inti": "<p>Hitung anggota <strong>satu himpunan yang sama</strong> dengan dua cara berbeda. Kedua hasilnya wajib sama, dan persamaan itulah yang dicari.</p><p>Bentuk yang paling sering dipakai adalah tabel berisi $0$ dan $1$: jumlah seluruh isinya bisa dihitung baris demi baris atau kolom demi kolom.</p><p>$$\\sum_{i} r_i = \\sum_{j} c_j$$</p><p>Contoh yang paling dikenal adalah lema jabat tangan pada graf: menjumlahkan derajat semua titik berarti menghitung tiap ruas dua kali, sekali dari tiap ujungnya.</p><p>$$\\sum_{v} \\deg(v) = 2|E|$$</p><p><strong>Kuncinya menyebutkan dengan jelas apa yang sedang dicacah</strong> — biasanya berupa pasangan $(a, b)$ yang memenuhi suatu hubungan. Kalau himpunannya sudah dinyatakan tepat, kedua cara menghitungnya biasanya muncul sendiri.</p>",
+   "jebakan": "<ul><li><strong>Dua cara yang sebenarnya satu.</strong> Kalau cara kedua cuma menyusun ulang cara pertama, persamaan yang keluar sepele dan tidak membuktikan apa-apa.</li><li><strong>Himpunannya tidak sama persis.</strong> Kedua hitungan harus mencacah objek yang sama, bukan dua himpunan yang mirip.</li><li><strong>Tidak menyatakan apa yang dicacah.</strong> Tanpa itu, bukti jadi rangkaian rumus yang tidak bisa diperiksa — dan biasanya di situlah kekeliruannya bersembunyi.</li></ul>",
+   "tingkat": 3,
+   "x": 220,
+   "y": 360
+  },
+  {
+   "id": "derangement",
+   "nama": "Perpindahan Total",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "inklusi-eksklusi",
+    "kombinasi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Menyusun ulang $n$ objek sehingga <strong>tidak satu pun</strong> menempati tempat asalnya. Pemicunya hampir selalu berupa cerita: tidak ada orang yang menerima suratnya sendiri, tidak ada tamu yang duduk di kursi semula, tidak ada anak yang mendapat kado miliknya.</p><p>Bentuk yang sedikit berbeda tapi masih jurus ini: \"tepat $m$ orang menerima miliknya sendiri\".</p>",
+   "inti": "<p>Banyaknya susunan tanpa satu pun titik tetap, ditulis $D_n$:</p><p>$$D_n = n! \\sum_{k=0}^{n} \\frac{(-1)^{k}}{k!}$$</p><p>Rumus itu bukan hafalan lepas — ia keluar langsung dari inklusi–eksklusi. Ambil $A_i$ sebagai himpunan susunan yang membiarkan objek ke-$i$ di tempatnya. Yang diminta adalah susunan yang tidak masuk satu pun $A_i$, dan irisan sebanyak $k$ di antaranya berukuran $(n-k)!$.</p><p>Bentuk rekursifnya sering lebih cepat dipakai:</p><p>$$D_n = (n-1)\\left(D_{n-1} + D_{n-2}\\right)$$</p><p>Nilai awal yang harus dikenali: $D_1 = 0$, $D_2 = 1$, $D_3 = 2$, $D_4 = 9$, $D_5 = 44$.</p><p>Untuk <strong>tepat</strong> $m$ objek yang tetap di tempatnya: pilih dulu $m$ yang tetap, lalu paksa sisanya berpindah semua.</p><p>$$\\binom{n}{m} D_{n-m}$$</p>",
+   "jebakan": "<ul><li><strong>Mengurangkan sekali saja.</strong> \"Tidak ada yang tetap\" bukan $n!$ dikurangi banyaknya susunan dengan satu titik tetap; susunan dengan dua titik tetap akan terhitung kacau.</li><li><strong>Lupa memilih yang tetap.</strong> Untuk tepat $m$ titik tetap, faktor $\\binom{n}{m}$ tidak boleh hilang.</li><li><strong>Menulis $D_1 = 1$.</strong> Satu objek tidak punya tempat lain untuk dituju, jadi nilainya $0$ — dan salah di sini merusak seluruh rekursinya.</li></ul>",
+   "tingkat": 3,
+   "x": 416,
+   "y": 360
+  },
+  {
+   "id": "probabilitas-diskret",
+   "nama": "Probabilitas Diskret",
+   "pilar": "kombinatorika",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "kombinasi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Ruang sampelnya berhingga dan tiap hasil dasar <strong>sama mungkin</strong>. Begitu kedua syarat itu terpenuhi, soal peluang berubah jadi dua soal pencacahan: hitung yang diinginkan, hitung seluruhnya.</p><p>Kalau hasilnya tidak sama mungkin — jumlah dua dadu, misalnya — turunkan dulu ke tingkat yang sama mungkin, yaitu pasangan mata dadunya.</p>",
+   "inti": "<p>$$P(A) = \\frac{|A|}{|S|}$$</p><p>dengan $S$ ruang sampel yang tiap anggotanya sama mungkin.</p><p>$$P(A^{c}) = 1 - P(A)$$</p><p>Bentuk komplemen ini sering jauh lebih pendek, terutama untuk \"paling sedikit satu\".</p><p>$$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$$</p><p>Peluang bersyarat:</p><p>$$P(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}, \\qquad P(B) &gt; 0$$</p><p>Dua kejadian <strong>saling bebas</strong> kalau $P(A \\cap B) = P(A)P(B)$. Ini sesuatu yang harus diperiksa atau dinyatakan soal, <strong>bukan</strong> dianggap begitu saja karena kedua kejadiannya terasa tak berhubungan.</p><p><strong>Satu disiplin yang menyelamatkan banyak soal:</strong> pembilang dan penyebut harus dihitung dengan cara pandang yang sama. Kalau penyebutnya memperhatikan urutan pengambilan, pembilangnya juga harus.</p>",
+   "jebakan": "<ul><li><strong>Ruang sampel yang tidak sama mungkin.</strong> Jumlah dua dadu punya 11 nilai, tapi ke-11 nilai itu tidak sama peluangnya.</li><li><strong>Mengalikan peluang untuk kejadian yang tidak bebas.</strong> Pengambilan tanpa pengembalian mengubah peluang berikutnya.</li><li><strong>Pembilang dan penyebut beda cara hitung.</strong> Yang satu menganggap bola sewarna bisa dibedakan, yang lain tidak — hasilnya salah walau kedua hitungannya benar sendiri-sendiri.</li></ul>",
+   "tingkat": 3,
+   "x": 612,
+   "y": 360
+  },
+  {
+   "id": "rekursi",
+   "nama": "Rekursi dan Relasi Rekurens",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "kombinasi",
+    "induksi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Jawaban untuk $n$ bisa disusun dari jawaban untuk $n$ yang lebih kecil. Pemicunya: soal bergantung pada $n$ dan menanyakan nilainya untuk $n$ yang besar, atau strukturnya berbunyi \"lalu ditambahkan satu lagi\" — satu ubin lagi, satu anak tangga lagi, satu huruf lagi.</p><p>Cara memancingnya selalu sama: hitung tangan untuk $n = 1, 2, 3, 4$, lalu tanyakan apa yang terjadi pada langkah terakhir.</p>",
+   "inti": "<p>Sebuah rekurens selalu punya dua bagian, dan keduanya wajib: <strong>kasus dasar</strong> dan <strong>langkah yang menghubungkan</strong>.</p><p>Menyusun langkahnya berarti memutuskan satu hal: keadaan berukuran $n$ dipecah menurut apa yang terjadi di ujungnya. Kasus-kasusnya harus lepas dan menutupi semuanya — syarat yang sama dengan aturan jumlah, karena memang itu yang sedang dipakai.</p><p>$$a_n = a_{n-1} + a_{n-2}$$</p><p>Untuk rekurens linear homogen orde dua</p><p>$$a_n = p\\,a_{n-1} + q\\,a_{n-2}$$</p><p>rumus tertutupnya dicari lewat persamaan karakteristik $x^2 = px + q$. Kalau akarnya $r_1$ dan $r_2$ berbeda,</p><p>$$a_n = A\\,r_1^{\\,n} + B\\,r_2^{\\,n}$$</p><p>dengan $A$ dan $B$ ditentukan dari kasus dasar.</p><p>Kalau rumus tertutupnya ditebak dari beberapa suku pertama, <strong>tebakan itu harus dibuktikan dengan induksi</strong> — kecocokan pada empat suku pertama bukan bukti.</p>",
+   "jebakan": "<ul><li><strong>Kasus dasar kurang.</strong> Rekurens orde dua butuh dua nilai awal; satu saja membuat barisannya tidak tertentu.</li><li><strong>Kasus yang tumpang tindih.</strong> Kalau satu keadaan bisa masuk dua cabang, hitungannya kelebihan — dan biasanya baru ketahuan setelah dicocokkan dengan hitungan tangan.</li><li><strong>Langsung mengejar rumus tertutup.</strong> Banyak soal cuma minta nilai untuk $n$ kecil; rekurensnya sendiri sudah jawabannya.</li></ul>",
+   "tingkat": 3,
+   "x": 808,
+   "y": 360
+  },
+  {
+   "id": "stars-and-bars",
+   "nama": "Membagi Objek Identik",
+   "pilar": "kombinatorika",
+   "tahap": "osn-k",
+   "prasyarat": [
+    "kombinasi",
+    "permutasi-berulang"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Membagi objek yang <strong>identik</strong> ke dalam wadah yang <strong>berbeda</strong>. Bentuk bakunya: banyaknya penyelesaian bilangan bulat dari</p><p>$$x_1 + x_2 + \\cdots + x_k = n$$</p><p>Pemicu di soal cerita: membagikan permen sejenis kepada beberapa anak, menaruh bola sewarna ke kotak bernomor, atau memilih $n$ benda dari $k$ jenis dengan pengulangan diperbolehkan.</p><p>Perhatikan arahnya — objek identik, wadah berbeda. Kalau terbalik, ini bukan jurusnya.</p>",
+   "inti": "<p>Bayangkan $n$ bintang berjajar dan $k-1$ sekat yang membaginya jadi $k$ kelompok. Tiap susunan bintang dan sekat memberi tepat satu penyelesaian, dan sebaliknya. Yang dicacah tinggal susunan dari $n + k - 1$ benda dengan dua jenis:</p><p>Untuk $x_i \\ge 0$:</p><p>$$\\binom{n+k-1}{k-1}$$</p><p>Untuk $x_i \\ge 1$, sisihkan dulu satu untuk tiap wadah lalu bagikan sisanya:</p><p>$$\\binom{n-1}{k-1}$$</p><p><strong>Batas bawah lain diselesaikan dengan menggeser.</strong> Kalau disyaratkan $x_i \\ge 2$, tulis $y_i = x_i - 2$; syaratnya kembali menjadi $y_i \\ge 0$ dengan jumlah yang berkurang.</p><p><strong>Batas atas tidak bisa ditangani langsung.</strong> Syarat seperti $x_i \\le 5$ menuntut inklusi– eksklusi: hitung tanpa batas, lalu kurangi yang melanggar.</p>",
+   "jebakan": "<ul><li><strong>Arahnya terbalik.</strong> Objek berbeda ke wadah identik adalah persoalan lain sama sekali, dan rumus ini tidak berlaku di sana.</li><li><strong>Tertukar antara $\\ge 0$ dan $\\ge 1$.</strong> Bedanya cuma satu kata di soal, tapi rumusnya berbeda.</li><li><strong>Memaksakan batas atas.</strong> Tidak ada penyesuaian sederhana untuk $x_i \\le c$; yang ada hanya membuang kasus yang melanggar.</li></ul>",
+   "tingkat": 3,
+   "x": 1004,
+   "y": 360
+  },
+  {
+   "id": "pewarnaan",
+   "nama": "Pewarnaan",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "prasyarat": [
+    "invarian"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Sebuah papan atau bidang harus ditutup ubin, dan soal menanyakan <strong>mungkin atau tidak</strong> — bukan berapa banyak caranya. Pemicu paling khas: papan catur yang beberapa petaknya dibuang, penutupan dengan domino atau trimino, dan bidak yang bergerak menurut aturan tetap.</p><p>Kalau kamu sudah mencoba menutup papannya berkali-kali dan selalu tersisa dua petak yang tidak bertetangga, itu tandanya.</p>",
+   "inti": "<p>Warnai petaknya sedemikian rupa sehingga tiap ubin — di mana pun diletakkan dan bagaimana pun diputar — menutup <strong>sejumlah warna yang tetap</strong>. Setelah itu hitung persediaan warna di papan. Kalau angkanya tidak cocok, penutupannya mustahil.</p><p>Pewarnaan adalah invarian yang dipilih dengan sengaja: yang tidak berubah adalah selisih antara warna yang tertutup dan warna yang tersedia.</p><p>Beberapa pewarnaan baku:</p><ul><li><strong>Dua warna papan catur.</strong> Domino selalu menutup tepat satu petak hitam dan satu putih, jadi papan yang jumlah hitam dan putihnya tidak sama tidak bisa ditutup domino.</li><li><strong>Pewarnaan bergaris</strong>, mewarnai kolom berselang-seling atau bergantian tiga warna, dipakai untuk ubin yang panjangnya tiga.</li><li><strong>Pewarnaan modulo</strong>, memberi petak $(i,j)$ warna menurut $i + j$ atau $i - j$ modulo suatu bilangan.</li></ul><p>Kalau satu pewarnaan tidak memberi kesimpulan, biasanya bukan jurusnya yang salah — melainkan warnanya yang perlu diganti.</p>",
+   "jebakan": "<ul><li><strong>Pewarnaan yang tidak memberi jumlah tetap.</strong> Kalau sebuah ubin bisa menutup dua hitam pada satu peletakan dan satu hitam pada peletakan lain, hitungan warnanya tidak menyimpulkan apa-apa.</li><li><strong>Menyimpulkan \"mungkin\" karena warnanya cocok.</strong> Cocok cuma berarti belum tertutup kemungkinannya; untuk menunjukkan bisa, gambarkan penutupannya.</li><li><strong>Berhenti pada dua warna.</strong> Banyak soal ubin tiga petak baru terpecahkan dengan tiga warna atau dengan pewarnaan diagonal.</li></ul>",
+   "tingkat": 3,
+   "x": 1200,
+   "y": 360
+  },
+  {
+   "id": "graf-dasar",
+   "nama": "Graf Dasar",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "pencacahan-ganda"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal berbicara tentang <strong>hubungan berpasangan</strong>: siapa berjabat tangan dengan siapa, kota mana terhubung jalan, tim mana sudah bertanding melawan tim mana, orang yang saling kenal. Begitu kamu menggambar titik untuk tiap objek dan ruas untuk tiap hubungan, banyak soal berubah menjadi soal tentang derajat.</p><p>Pemicu lain: soal menyebut \"setiap dua di antaranya\" atau memberi data berapa hubungan yang dimiliki tiap objek.</p>",
+   "inti": "<p>Sebuah graf adalah himpunan titik beserta ruas yang menghubungkan pasangan titik. Derajat sebuah titik, $\\deg(v)$, adalah banyaknya ruas yang menyentuhnya.</p><p><strong>Lema jabat tangan</strong> — pencacahan ganda yang paling sering dipakai:</p><p>$$\\sum_{v} \\deg(v) = 2|E|$$</p><p>Menjumlahkan derajat berarti menghitung tiap ruas dua kali, sekali dari masing-masing ujungnya. Akibat langsungnya sering jadi kunci soal: <strong>banyaknya titik berderajat ganjil selalu genap.</strong></p><p>Graf lengkap $K_n$, yang tiap dua titiknya terhubung, punya</p><p>$$\\binom{n}{2} = \\frac{n(n-1)}{2}$$</p><p>ruas — itu banyaknya jabat tangan kalau semua orang bersalaman sekali.</p><p><strong>Pohon</strong> adalah graf terhubung tanpa siklus. Pohon dengan $n$ titik selalu punya tepat $n-1$ ruas, dan itu batas yang sering dipakai: graf terhubung tidak mungkin punya ruas lebih sedikit dari itu.</p>",
+   "jebakan": "<ul><li><strong>Lupa membagi dua.</strong> Jumlah derajat menghitung tiap ruas dua kali; ia bukan banyaknya ruas.</li><li><strong>Mengira grafnya terhubung.</strong> Soal jarang menjanjikannya, dan graf yang terpecah beberapa bagian sering justru kasus yang menentukan.</li><li><strong>Menganggap gambar sebagai bukti.</strong> Satu gambar hanya menunjukkan satu kemungkinan; yang membuktikan adalah alasan tentang derajat atau banyaknya ruas.</li></ul>",
+   "tingkat": 4,
+   "x": 318,
+   "y": 472
+  },
+  {
+   "id": "fungsi-pembangkit",
+   "nama": "Fungsi Pembangkit",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "prasyarat": [
+    "koefisien-binomial",
+    "rekursi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Pencacahan dengan <strong>kendala berlapis</strong> pada tiap jenis objek, atau rekurens yang rumus tertutupnya dicari. Pemicu yang khas: \"berapa cara membayar $n$ rupiah dengan pecahan tertentu, tiap pecahan boleh dipakai paling banyak sekian kali\".</p><p>Kalau kendalanya cuma satu jenis, biasanya ada jalan yang lebih pendek. Fungsi pembangkit baru sepadan ongkosnya ketika kendalanya bermacam-macam sekaligus.</p>",
+   "inti": "<p>Simpan seluruh barisan $a_0, a_1, a_2, \\dots$ sebagai satu benda:</p><p>$$A(x) = \\sum_{n \\ge 0} a_n x^{n}$$</p><p>$x$ di sini bukan bilangan yang akan disubstitusi — ia cuma tempat menaruh indeks. Karena itu kekonvergenan tidak jadi soal; yang dipakai deret formal.</p><p><strong>Yang membuatnya berguna adalah perkaliannya.</strong> Mengalikan dua deret berarti memasangkan pilihan dari keduanya, dan koefisien $x^n$ pada hasilnya menghitung pasangan yang jumlahnya $n$. Jadi satu faktor untuk tiap jenis objek, dan pangkat di dalam faktor itu menyatakan pilihan yang diperbolehkan untuk jenis tersebut.</p><p>Deret yang harus dikenali seketika:</p><p>$$\\frac{1}{1-x} = \\sum_{n \\ge 0} x^{n}, \\qquad \\frac{1-x^{m+1}}{1-x} = \\sum_{n=0}^{m} x^{n}$$</p><p>$$\\frac{1}{(1-x)^{k}} = \\sum_{n \\ge 0} \\binom{n+k-1}{k-1} x^{n}, \\qquad (1+x)^{n} = \\sum_{k} \\binom{n}{k} x^{k}$$</p><p>Yang ketiga persis rumus membagi objek identik, dan itu bukan kebetulan: keduanya menghitung hal yang sama dengan bahasa yang berbeda.</p>",
+   "jebakan": "<ul><li><strong>Mencemaskan kekonvergenan.</strong> Deretnya formal; tidak ada nilai $x$ yang dimasukkan.</li><li><strong>Salah menyusun faktornya.</strong> Satu faktor untuk tiap <strong>jenis</strong> objek. Batas pemakaian diwujudkan dengan memotong deretnya, bukan dengan menambah faktor baru.</li><li><strong>Berhenti setelah dapat fungsinya.</strong> Jawabannya adalah koefisien $x^n$, dan menariknya keluar sering bagian yang paling banyak kerjanya.</li></ul>",
+   "tingkat": 4,
+   "x": 514,
+   "y": 472
+  },
+  {
+   "id": "bijeksi",
+   "nama": "Bijeksi",
+   "pilar": "kombinatorika",
+   "tahap": "osn-p",
+   "prasyarat": [
+    "kombinasi",
+    "stars-and-bars"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Himpunan yang harus dicacah terasa rumit, tapi kamu menduga jumlahnya sama dengan sesuatu yang sudah kamu tahu cara menghitungnya. Pemicu yang sering: hasil hitungan tangan untuk $n$ kecil ternyata $2^n$, $n!$, atau bilangan yang sudah kamu kenal.</p><p>Juga dipakai ketika soal memang meminta membuktikan dua himpunan <strong>sama banyak</strong>, tanpa menghitung keduanya.</p>",
+   "inti": "<p>Buat padanan satu-satu antara himpunan yang ditanya dan himpunan yang sudah diketahui jumlahnya. Kalau padanannya sah, kedua himpunan pasti sama banyak.</p><p>Supaya sah, padanan itu harus <strong>satu-satu</strong> dan <strong>pada</strong>: tidak ada dua anggota yang dipetakan ke tempat yang sama, dan tidak ada anggota tujuan yang terlewat. Cara terpendek membuktikan keduanya sekaligus adalah <strong>menunjukkan cara membalikkannya</strong> — tulis padanannya, tulis kebalikannya, lalu tunjukkan keduanya saling meniadakan.</p><p>Padanan baku yang sering dipakai kembali:</p><ul><li>Himpunan bagian dari $n$ unsur ↔ barisan $0$ dan $1$ sepanjang $n$, memberi $2^{n}$.</li><li>Penyelesaian $x_1 + \\cdots + x_k = n$ ↔ susunan bintang dan sekat.</li><li>Jalur pada kisi dari satu pojok ke pojok lain ↔ pemilihan langkah mana yang ke kanan.</li></ul><p><strong>Bijeksi juga alat pembuktian, bukan cuma alat hitung.</strong> Banyak identitas koefisien binomial paling jelas dibuktikan dengan memasangkan objek kedua sisi.</p>",
+   "jebakan": "<ul><li><strong>Memberi padanan tanpa memeriksa kebalikannya.</strong> Aturan yang terdengar wajar bisa saja memetakan dua objek berbeda ke tempat yang sama.</li><li><strong>Padanan yang bocor.</strong> Kalau ada anggota tujuan yang tidak pernah tercapai, yang kamu buktikan cuma \"tidak lebih banyak\", bukan \"sama banyak\".</li><li><strong>Berpindah ke himpunan yang sama sulitnya.</strong> Padanan hanya berguna kalau sisi tujuannya benar-benar sudah bisa dihitung.</li></ul>",
+   "tingkat": 4,
+   "x": 710,
+   "y": 472
+  },
+  {
+   "id": "teori-permainan",
+   "nama": "Teori Permainan",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "prasyarat": [
+    "invarian",
+    "rekursi"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Dua pemain bergantian melangkah, keduanya melihat seluruh keadaan, tidak ada unsur peluang, dan permainannya pasti berakhir. Soal menanyakan <strong>siapa yang punya strategi menang</strong> — bukan bagaimana bermain baik, melainkan siapa yang pasti menang kalau keduanya bermain sempurna.</p><p>Pemicunya: mengambil batu dari tumpukan bergantian, menulis bilangan bergantian, mewarnai petak bergantian, dan yang tidak bisa melangkah dinyatakan kalah.</p>",
+   "inti": "<p>Tandai tiap keadaan dengan salah satu dari dua huruf:</p><ul><li><strong>N</strong> — pemain yang mendapat giliran di keadaan itu menang.</li><li><strong>P</strong> — pemain sebelumnya yang menang, artinya yang mendapat giliran kalah.</li></ul><p>Aturannya menurunkan diri sendiri, dan di situlah rekursinya:</p><ul><li>Keadaan yang tidak punya langkah sama sekali adalah <strong>P</strong>.</li><li>Sebuah keadaan adalah <strong>N</strong> kalau ada <strong>satu</strong> langkah menuju keadaan P.</li><li>Sebuah keadaan adalah <strong>P</strong> kalau <strong>semua</strong> langkahnya menuju keadaan N.</li></ul><p>Kerjakan mundur dari keadaan terkecil. Pola keadaan P biasanya muncul setelah beberapa suku, dan bentuknya sering berupa keterbagian — misalnya sisa tertentu modulo suatu bilangan.</p><p><strong>Strategi pencerminan.</strong> Kalau kamu bisa selalu mengembalikan permainan ke keadaan simetris setelah langkah lawan, kamu tidak pernah kehabisan langkah lebih dulu. Ini cara tercepat menyelesaikan banyak soal permainan.</p><p>Menemukan pola P bukan akhir pekerjaan: <strong>buktikan</strong> bahwa dari keadaan P setiap langkah menuju N, dan dari N ada langkah menuju P.</p>",
+   "jebakan": "<ul><li><strong>Menemukan satu langkah bagus lalu berhenti.</strong> Strategi menang harus punya jawaban untuk <strong>setiap</strong> langkah lawan, bukan untuk satu langkah yang kamu bayangkan.</li><li><strong>Salah menetapkan siapa yang kalah.</strong> \"Yang tidak bisa melangkah kalah\" dan \"yang mengambil batu terakhir kalah\" menghasilkan pola P yang berbeda.</li><li><strong>Menebak pola dari terlalu sedikit keadaan.</strong> Empat suku pertama sering menyesatkan; hitung sampai polanya berulang meyakinkan, lalu buktikan.</li></ul>",
+   "tingkat": 4,
+   "x": 906,
+   "y": 472
+  },
+  {
+   "id": "ekstremal",
+   "nama": "Prinsip Ekstremal",
+   "pilar": "kombinatorika",
+   "tahap": "osn",
+   "prasyarat": [
+    "sarang-merpati",
+    "graf-dasar"
+   ],
+   "contoh": [],
+   "latihan": [],
+   "kapan_dipakai": "<p>Soal meminta membuktikan sesuatu <strong>ada</strong> atau <strong>tidak mungkin</strong> pada susunan berhingga, dan tidak ada titik masuk yang jelas — tidak ada rumus untuk dipakai, tidak ada yang bisa dihitung langsung. Pemicunya justru ketiadaan itu: soal memberi konfigurasi tanpa struktur apa pun, lalu meminta kesimpulan.</p><p>Kalau kamu terjebak pada soal semacam itu, pertanyaan yang hampir selalu membuka jalan adalah: objek mana yang paling?</p>",
+   "inti": "<p>Pilih objek yang <strong>paling</strong> — terbesar, terkecil, terpanjang, berderajat tertinggi, paling kiri. Lalu tunjukkan bahwa objek terpilih itu harus punya sifat tertentu, biasanya dengan mengandaikan sebaliknya dan membangun objek yang <strong>lebih ekstrem lagi</strong>. Itu mustahil, karena objek yang paling sudah dipilih.</p><p>Yang membuat langkah itu sah adalah <strong>kehinggaan</strong>: himpunan berhingga yang tidak kosong selalu punya anggota terbesar dan terkecil. Pada himpunan tak berhingga, jaminan itu hilang.</p><p>Penerapan bakunya pada graf: ambil lintasan <strong>terpanjang</strong>, lalu perhatikan titik ujungnya. Semua tetangga titik itu harus berada di dalam lintasan — sebab kalau ada tetangga di luar, lintasannya bisa diperpanjang, dan itu bertentangan dengan pemilihan tadi. Dari satu pengamatan itu banyak soal langsung selesai.</p><p>Kembarannya di teori bilangan adalah turun tak hingga: keduanya bersandar pada kenyataan bahwa tidak ada barisan bilangan asli yang turun selamanya.</p>",
+   "jebakan": "<ul><li><strong>Memakainya pada himpunan tak berhingga.</strong> Tanpa alasan bahwa maksimumnya benar-benar ada, seluruh buktinya runtuh.</li><li><strong>Memilih besaran ekstrem yang tidak dipakai lagi.</strong> Kalau setelah memilih \"yang terbesar\" sifat itu tidak pernah dipakai untuk menyimpulkan apa pun, pilihannya keliru — ganti besarannya.</li><li><strong>Mengira objek terekstrem itu tunggal.</strong> Boleh ada beberapa yang sama-sama terbesar; buktinya harus tetap jalan untuk salah satu di antaranya.</li></ul>",
+   "tingkat": 5,
+   "x": 612,
    "y": 584
   }
  ]

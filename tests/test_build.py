@@ -326,6 +326,26 @@ class TestPeriksa(unittest.TestCase):
         self.assertTrue(any("'x' tidak ada" in g for g in galat))
 
 
+class TestTahapPrasyarat(unittest.TestCase):
+    def test_prasyarat_tidak_boleh_dari_tahap_yang_lebih_akhir(self):
+        """Jurus OSN-K tidak boleh berprasyarat jurus OSN-P atau OSN.
+
+        Saringan tahap hanya menyembunyikan simpul. Kalau jurus OSN-K
+        berprasyarat jurus OSN-P, siswa yang menyaring petanya ke OSN-K melihat
+        gembok yang penyebabnya tidak ada di layar — dan tidak ada cara membukanya
+        tanpa keluar dari tahap yang sedang ia siapkan. Artinya jurus itu memang
+        bukan OSN-K, apa pun label yang diberikan padanya.
+        """
+        jurus = json.loads((build.DATA / "jurus.json").read_text(encoding="utf-8"))
+        tahap = {j["id"]: j["tahap"] for j in jurus["simpul"]}
+        for j in jurus["simpul"]:
+            for p in j["prasyarat"]:
+                self.assertLessEqual(
+                    build.TAHAP_SAH.index(tahap[p]), build.TAHAP_SAH.index(j["tahap"]),
+                    "%s (%s) berprasyarat %s yang bertahap lebih akhir (%s)"
+                    % (j["id"], j["tahap"], p, tahap[p]))
+
+
 class TestArsip(unittest.TestCase):
     """Atribusi ke naskah asli harus bisa dicocokkan ke entri yang nyata.
 

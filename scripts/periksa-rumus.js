@@ -55,28 +55,50 @@ function pisah(teks) {
 }
 
 /* Soal dipecah per bidang; kumpulkan seluruhnya supaya tidak ada yang lolos periksa. */
-const data = { soal: [] };
+const soal = [];
 for (const f of fs.readdirSync(path.join(AKAR, 'data')).sort()) {
   if (!/^soal-.*\.json$/.test(f)) continue;
-  data.soal.push(...JSON.parse(fs.readFileSync(path.join(AKAR, 'data', f), 'utf8')).soal);
+  soal.push(...JSON.parse(fs.readFileSync(path.join(AKAR, 'data', f), 'utf8')).soal);
 }
-const hanya = process.argv[3] ? new Set(process.argv[3].split(',')) : null;
 
-let jumlah = 0; const gagal = [];
-for (const s of data.soal) {
-  if (hanya && !hanya.has(s.id)) continue;
-  const teks = [s.soal, s.pembahasan, ...(s.petunjuk || []), ...(s.rubrik || [])].join('\n');
-  for (const [isi, potongan, blok] of pisah(teks)) {
-    if (isi === 'GANTUNG') { gagal.push(`${s.id}: delimiter tidak tertutup <<${potongan}>>`); continue; }
+/* Halaman jurus ikut diperiksa. 'Intinya' justru bagian yang paling padat rumus di
+   seluruh situs — di situ identitasnya ditulis — dan halaman jurus dibuka jauh lebih
+   sering daripada satu soal tertentu. Memeriksa soal saja meninggalkan kotak merah
+   pada halaman yang paling banyak dibaca. */
+const jurus = JSON.parse(
+  fs.readFileSync(path.join(AKAR, 'data', 'jurus.json'), 'utf8')).simpul;
+
+const hanya = process.argv[3] ? new Set(process.argv[3].split(',')) : null;
+const gagal = [];
+let jumlah = 0;
+
+function periksa(id, potongan) {
+  for (const [isi, cuplikan, blok] of pisah(potongan.filter(Boolean).join('\n'))) {
+    if (isi === 'GANTUNG') {
+      gagal.push(`${id}: delimiter tidak tertutup <<${cuplikan}>>`);
+      continue;
+    }
     jumlah++;
     try {
       katex.renderToString(lolosBalik(isi), { displayMode: blok, throwOnError: true, strict: 'error' });
     } catch (e) {
-      gagal.push(`${s.id}: ${e.message.split('\n')[0]}  <<${isi.slice(0, 60)}>>`);
+      gagal.push(`${id}: ${e.message.split('\n')[0]}  <<${isi.slice(0, 60)}>>`);
     }
   }
 }
-console.log(`soal diperiksa : ${hanya ? hanya.size : data.soal.length}`);
+
+const soalDipakai = soal.filter((s) => !hanya || hanya.has(s.id));
+const jurusDipakai = jurus.filter((j) => !hanya || hanya.has(j.id));
+
+for (const s of soalDipakai) {
+  periksa(s.id, [s.soal, s.pembahasan, ...(s.petunjuk || []), ...(s.rubrik || [])]);
+}
+for (const j of jurusDipakai) {
+  periksa(j.id, [j.kapan_dipakai, j.inti, j.jebakan]);
+}
+
+console.log(`soal diperiksa : ${soalDipakai.length}`);
+console.log(`jurus diperiksa: ${jurusDipakai.length}`);
 console.log(`rumus dirender : ${jumlah}`);
 console.log(`gagal          : ${gagal.length}`);
 gagal.slice(0, 25).forEach((g) => console.log('  ' + g));

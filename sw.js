@@ -5,7 +5,7 @@
    — cache dulu, perbarui diam-diam di latar — karena isinya jarang berubah dan
    latihan saat offline justru intinya. */
 
-var CACHE = 'peta-jurus-v6';
+var CACHE = 'peta-jurus-v7';
 
 /* Wajib ada. Kalau salah satu gagal, install ikut gagal — lebih baik ketahuan
    daripada situsnya setengah jalan saat offline. */

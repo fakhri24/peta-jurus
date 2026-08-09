@@ -174,22 +174,26 @@ Dua hal yang sering dikira sama:
 
 ## Yang sudah dan belum
 
-**44 jurus, 309 soal**, di dua bidang yang keduanya sudah tuntas:
+**64 jurus, 309 soal**, di tiga bidang:
 
 | Bidang | OSN-K | OSN-P | OSN | |
 |---|---|---|---|---|
 | Teori bilangan | 8 | 10 | 4 | tuntas |
 | Aljabar | 10 | 7 | 5 | tuntas |
+| Kombinatorika | 10 | 6 | 4 | halaman jurus siap, soalnya belum ditulis |
 
 Tuntas artinya tiap jurus punya minimal satu contoh terpandu dan enam latihan — enam,
 karena tangga ulangnya lima langkah, dan jurus dengan tiga soal berarti siswa bertemu soal
 yang sama untuk ketiga kalinya pada ulangan hari ke-21.
 
-Ketiga tahap bisa ditempuh utuh di kedua bidang, termasuk jalur lintas bidang dari
-`keterbagian` di teori bilangan ke `polinomial-bulat` di aljabar.
+Teori bilangan dan aljabar bisa ditempuh utuh di ketiga tahap. Kombinatorika sudah bisa
+**dibaca** — tiap jurusnya menjelaskan kapan dipakai, intinya, dan jebakannya — tapi
+latihannya belum ada, dan halamannya mengatakan itu apa adanya.
 
-Dua bidang lain — **Kombinatorika** dan **Geometri** — belum ada. Strukturnya sudah siap
-menerimanya, dan geometri masih menunggu dukungan gambar. Rencananya di `PLAN.md`.
+Dua jalur lintas bidang sudah bisa ditempuh: `keterbagian` (teori bilangan) →
+`polinomial-bulat` (aljabar), dan `induksi` (aljabar) → `rekursi` (kombinatorika).
+
+**Geometri** belum ada, dan masih menunggu dukungan gambar. Rencananya di `PLAN.md`.
 
 ---
 

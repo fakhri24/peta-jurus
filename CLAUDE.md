@@ -32,6 +32,10 @@ KaTeX yang sudah ada di `assets/katex/`, tanpa mengunduh apa pun. Jalankan setel
 menurut KaTeX. Rumus salah ketik lolos build tanpa keluhan dan baru terlihat sebagai
 kotak merah di layar siswa. Alur GitHub Actions menjalankannya sebelum mengomit balik.
 
+Ia memeriksa **soal dan jurus** — `data/soal-*.json` beserta `kapan_dipakai`, `inti`, dan
+`jebakan` di `data/jurus.json`. Bagian "Intinya" justru yang paling padat rumus di seluruh
+situs, dan halaman jurus dibuka jauh lebih sering daripada satu soal tertentu.
+
 ## Alur data
 
 `konten/jurus/*.md` + `konten/soal/*.md` + `konten/arsip.yml` → `scripts/build.py` →
@@ -126,7 +130,7 @@ justru intinya.
   hari itu. Ia diambil di latar setelah install, lewat `berkasSoal()` yang menurunkan
   daftarnya dari `jurus.json` — jadi bidang baru tidak pernah terlupa, dan latihan offline
   tetap utuh begitu pengambilan latarnya selesai.
-- **Naikkan `CACHE`** (sekarang `peta-jurus-v6`) setiap kali aset berubah, kalau tidak
+- **Naikkan `CACHE`** (sekarang `peta-jurus-v7`) setiap kali aset berubah, kalau tidak
   siswa memegang versi lama.
 - Kunci cache membuang query, karena `jurus.html?id=…` dan `latihan.html?soal=…` memakai
   kerangka HTML yang sama.
@@ -177,6 +181,11 @@ Format frontmatter lengkap ada di README.md.
   untuk `tahap` lewat `TAHAP_SAH`. Menambah bidang berarti menyentuh dua tempat:
   `URUT_PILAR`, dan `NAMA_PILAR` di `peta.js` + `jurus.js`. Tes
   `test_semua_pilar_di_nama_pilar_peramban` menjaga keduanya tidak terpisah.
+- **Prasyarat tidak boleh dari tahap yang lebih akhir** — jurus OSN-K tidak boleh
+  berprasyarat jurus OSN-P. Saringan tahap hanya menyembunyikan simpul, jadi pelanggaran
+  itu memberi siswa gembok yang penyebabnya tidak ada di layar dan tidak bisa dibuka tanpa
+  keluar dari tahap yang sedang ia siapkan. Dijaga
+  `test_prasyarat_tidak_boleh_dari_tahap_yang_lebih_akhir`.
 - `NAMA_PILAR` ada di **dua** berkas, `peta.js` dan `jurus.js`. `simulasi.js` memakai
   `pilar` untuk mengelompokkan soal di `susunNaskah()`, tapi tidak pernah menampilkan
   namanya — jadi jangan tergoda menyalin `NAMA_PILAR` ke sana hanya untuk satu kalimat.
