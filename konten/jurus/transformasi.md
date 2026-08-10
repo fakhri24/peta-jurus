@@ -4,8 +4,8 @@ nama: Transformasi Geometri
 pilar: geometri
 tahap: osn-p
 prasyarat: [kekongruenan, kesebangunan]
-contoh: []
-latihan: []
+contoh: [tfm-contoh-1]
+latihan: [tfm-01, tfm-02, tfm-03, tfm-04, tfm-05, tfm-06]
 ---
 
 ## Kapan dipakai

@@ -33,18 +33,18 @@ Poin 2 dan 4 yang paling mahal. Selebihnya pekerjaan kode yang terukur.
 
 ## 2. Keadaan sekarang
 
-**85 jurus, 519 soal** (444 latihan + 75 contoh) di empat bidang, **tiga di antaranya
-tuntas** dan yang keempat tuntas di tahap pertamanya.
+**85 jurus, 568 soal** (486 latihan + 82 contoh) di empat bidang, **tiga di antaranya
+tuntas** dan yang keempat tuntas di dua tahap pertamanya.
 
 | Bidang | OSN-K | OSN-P | OSN | Soal | Status |
 |---|---|---|---|---|---|
 | Teori bilangan | 8 | 10 | 4 | 155 | **tuntas** |
 | Aljabar | 10 | 7 | 5 | 154 | **tuntas** |
 | Kombinatorika | 10 | 6 | 4 | 140 | **tuntas** |
-| Geometri | 10 | 7 | 4 | 70 | tahap OSN-K tuntas, 11 jurus sisanya kosong |
+| Geometri | 10 | 7 | 4 | 119 | tahap OSN-K dan OSN-P tuntas, 4 jurus sisanya kosong |
 
-Ke-74 jurus yang terisi punya minimal satu contoh terpandu dan enam latihan. Yang tersisa
-di baris "Belum ada latihan di:" tinggal 11 jurus geometri tahap OSN-P dan OSN.
+Ke-81 jurus yang terisi punya minimal satu contoh terpandu dan enam latihan. Yang tersisa
+di baris "Belum ada latihan di:" tinggal 4 jurus geometri tahap OSN.
 
 Jalur lintas bidang ada **empat** dan semuanya nyata: `polinomial-bulat` (aljabar)
 berprasyarat `keterbagian` (teori bilangan), `rekursi` (kombinatorika) berprasyarat
@@ -52,8 +52,8 @@ berprasyarat `keterbagian` (teori bilangan), `rekursi` (kombinatorika) berprasya
 `ketaksamaan-geometri` berprasyarat `am-gm` (aljabar). Tiga yang pertama kini bisa
 **ditempuh sungguhan**; yang keempat menunggu soal `ketaksamaan-geometri`.
 
-Fase 0, 1, 2, 3, 5.1, **4.1**, **4.2**, dan **4.3 tahap OSN-K** selesai. Yang berikutnya
-dikerjakan adalah sisa **4.3** — 11 jurus geometri tahap OSN-P dan OSN, 77 soal.
+Fase 0, 1, 2, 3, 5.1, **4.1**, **4.2**, serta **4.3 tahap OSN-K dan OSN-P** selesai. Yang
+berikutnya dikerjakan adalah sisa **4.3** — 4 jurus geometri tahap OSN, 28 soal.
 
 ### Perkiraan cakupan penuh
 
@@ -438,6 +438,37 @@ enak dilihat — bukan memastikan gambarnya benar.
 
 **Tahap OSN-K — selesai 10 Agustus 2026.** 10 jurus, 70 soal (58 isian, 12 uraian), dengan
 26 rajah.
+
+**Tahap OSN-P — selesai 10 Agustus 2026.** 7 jurus, 49 soal (36 isian, 13 uraian), dengan
+11 rajah baru sehingga seluruhnya menjadi 37. Porsi uraiannya **27%**, naik dari 17% di
+OSN-K dan sejajar dengan OSN-P di dua bidang sebelumnya — dan seperti di sana, kenaikannya
+mengikuti isinya. `ceva-menelaus` dan `ptolemy` teoremanya sendiri yang perlu dibuktikan;
+`transformasi` hanya sah di lembar jawaban kalau peta tiap titik disebut; `titik-istimewa`
+separuhnya perkara alasan, bukan hitungan.
+
+Verifikasi menangkap satu kekeliruan sebelum soalnya ditulis, seperti di 3.2. Draf `tis-04`
+menyatakan bahwa pada segitiga tumpul $\angle AHB$ berubah menjadi $\angle C$; perhitungan
+ulang menunjukkan yang menentukan bukan tumpul atau tidaknya segitiga, melainkan **sudut
+mana** yang tumpul. Kalau $\angle A$ dan $\angle B$ keduanya lancip — termasuk saat
+$\angle C$ sendiri tumpul — hubungan $180^\circ - \angle C$ tetap berlaku. Pembahasannya
+sekarang memuat percabangan itu beserta alasannya.
+
+Yang perlu dicatat untuk tahap terakhir, karena baru terlihat saat menulis:
+
+- **`ukuran()` menaruh label lewat "menjauhi pusat", dan pusat itu rata-rata semua titik
+  acuan** — termasuk titik bantu di luar bangunnya. Pada bangun pipih (segitiga tumpul
+  4-13-15), pada titik yang nyaris menempel sisi (P di segitiga sama sisi), dan pada sisi
+  yang titik tengahnya justru dipakai titik lain (O di titik tengah sisi miring), arah
+  bawaannya meleset dan angkanya jatuh di tempat yang salah baca. Tiga rajah di tahap ini
+  karena itu memakai `label(..., arah=…, gaya="ukur")` dengan arah yang ditentukan tangan
+  beserta alasannya di komentar.
+- **Rajah yang menjawab soalnya sendiri tidak berguna.** Titik hasil putaran pada
+  `sama-sisi-titik-dalam` dan cerminan A pada `cermin-lintasan-terpendek` sengaja tidak
+  digambar: menemukannya seluruh isi soalnya. Yang digambar hanya apa yang disebut soal.
+- **Rajah kuasa titik wajib dihitung mundur dari panjang yang diminta.** Siswa mengukur di
+  gambar, jadi gambar yang meleset mengajarkan hasil kali yang salah.
+  `talibusur-berpotongan` menolak berkasnya sendiri kalau hasil kali kedua ujungnya tidak
+  sama dengan kuasa titiknya.
 
 **Selesai kalau:** ketiga tahap geometri tuntas di lantai 6, `build.py` tidak lagi
 mencetak "Belum ada latihan di:", dan simulasi bisa menyusun naskah empat bidang.

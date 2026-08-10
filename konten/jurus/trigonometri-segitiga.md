@@ -4,8 +4,8 @@ nama: Aturan Sinus dan Kosinus
 pilar: geometri
 tahap: osn-p
 prasyarat: [pythagoras, luas-bidang]
-contoh: []
-latihan: []
+contoh: [trg-contoh-1]
+latihan: [trg-01, trg-02, trg-03, trg-04, trg-05, trg-06]
 ---
 
 ## Kapan dipakai

@@ -4,8 +4,8 @@ nama: Kuasa Titik
 pilar: geometri
 tahap: osn-p
 prasyarat: [segiempat-talibusur, garis-singgung]
-contoh: []
-latihan: []
+contoh: [kut-contoh-1]
+latihan: [kut-01, kut-02, kut-03, kut-04, kut-05, kut-06]
 ---
 
 ## Kapan dipakai

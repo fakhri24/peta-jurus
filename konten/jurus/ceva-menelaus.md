@@ -4,8 +4,8 @@ nama: Ceva dan Menelaus
 pilar: geometri
 tahap: osn-p
 prasyarat: [kesebangunan, luas-bidang]
-contoh: []
-latihan: []
+contoh: [cvm-contoh-1]
+latihan: [cvm-01, cvm-02, cvm-03, cvm-04, cvm-05, cvm-06]
 ---
 
 ## Kapan dipakai

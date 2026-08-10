@@ -4,8 +4,8 @@ nama: Titik-titik Istimewa Segitiga
 pilar: geometri
 tahap: osn-p
 prasyarat: [garis-istimewa]
-contoh: []
-latihan: []
+contoh: [tis-contoh-1]
+latihan: [tis-01, tis-02, tis-03, tis-04, tis-05, tis-06]
 ---
 
 ## Kapan dipakai

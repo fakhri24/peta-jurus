@@ -4,8 +4,8 @@ nama: Teorema Ptolemy
 pilar: geometri
 tahap: osn-p
 prasyarat: [segiempat-talibusur, trigonometri-segitiga]
-contoh: []
-latihan: []
+contoh: [ptl-contoh-1]
+latihan: [ptl-01, ptl-02, ptl-03, ptl-04, ptl-05, ptl-06]
 ---
 
 ## Kapan dipakai

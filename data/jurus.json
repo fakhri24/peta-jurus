@@ -39,6 +39,7 @@
  },
  "rajah": [
   "bintang-lima.svg",
+  "cermin-lintasan-terpendek.svg",
   "dua-lingkaran-singgung.svg",
   "dua-singgung-titik-luar.svg",
   "garis-berat-diperpanjang.svg",
@@ -51,18 +52,28 @@
   "persegi-panjang-dua-segitiga.svg",
   "persegi-panjang-titik-dalam.svg",
   "sama-kaki-titik-dalam.svg",
+  "sama-sisi-titik-busur.svg",
+  "sama-sisi-titik-dalam.svg",
   "segiempat-sisi-sejajar.svg",
   "segiempat-talibusur-diagonal.svg",
   "segiempat-talibusur-luar.svg",
   "segitiga-dua-bagi.svg",
   "segitiga-dua-garis-tinggi.svg",
+  "segitiga-dua-tinggi-bertemu.svg",
+  "segitiga-garis-menelaus.svg",
   "segitiga-garis-sejajar.svg",
   "segitiga-garis-tinggi.svg",
+  "segitiga-lancip-kaki-tinggi.svg",
   "segitiga-lingkaran-dalam.svg",
   "segitiga-sudut-sama.svg",
+  "segitiga-tiga-ceva.svg",
+  "segitiga-tumpul-kaki-luar.svg",
   "sejajar-zigzag.svg",
+  "siku-siku-dalam-luar.svg",
   "siku-siku-garis-tinggi.svg",
+  "singgung-garis-potong.svg",
   "singgung-talibusur.svg",
+  "talibusur-berpotongan.svg",
   "trapesium-diagonal.svg"
  ],
  "arsip": {},
@@ -1958,8 +1969,17 @@
    "prasyarat": [
     "kesebangunan"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "gis-contoh-1"
+   ],
+   "latihan": [
+    "gis-01",
+    "gis-02",
+    "gis-03",
+    "gis-04",
+    "gis-05",
+    "gis-06"
+   ],
    "kapan_dipakai": "<p>Soal menyebut <strong>garis tinggi</strong>, <strong>garis berat</strong>, <strong>garis bagi</strong>, atau <strong>garis sumbu</strong> — dan yang ditanyakan panjang salah satunya, atau perbandingan yang dihasilkannya. Pemicunya gamblang; yang menentukan adalah mengenali sifat mana dari garis itu yang sedang dipakai.</p><p>Pemicu yang lebih halus: soal menyebut <strong>titik tengah sisi</strong>. Itu garis berat yang belum digambar, dan menariknya sering langsung membuka soalnya.</p><p>Pemicu ketiga: soal memberi perbandingan pada satu sisi dan menyebut garis dari titik sudut seberangnya. Kalau perbandingannya $1:1$ itu garis berat; kalau sebanding dengan kedua sisi yang mengapit, itu garis bagi.</p>",
    "inti": "<p>Empat garis istimewa, masing-masing dengan sifat yang berbeda:</p><ul><li><strong>Garis tinggi</strong> — dari titik sudut, tegak lurus sisi seberangnya. Ketiganya bertemu di titik tinggi.</li><li><strong>Garis berat</strong> — dari titik sudut ke <strong>titik tengah</strong> sisi seberangnya. Ia membagi segitiga menjadi dua bagian yang <strong>luasnya sama</strong>.</li><li><strong>Garis bagi</strong> — membagi sudut jadi dua sama besar, dan membagi sisi seberangnya menurut perbandingan kedua sisi yang mengapitnya.</li><li><strong>Garis sumbu</strong> — tegak lurus di titik tengah sisi. Setiap titik padanya berjarak sama ke kedua ujung sisi itu.</li></ul><p><strong>Panjang garis berat</strong> dari $A$ ke titik tengah $BC$:</p><p>$$m_a^2 = \\frac{2b^2 + 2c^2 - a^2}{4}$$</p><p><strong>Panjang garis bagi</strong> dari $A$, memotong $BC$ di $D$:</p><p>$$AD^2 = bc - BD \\cdot DC$$</p><p><strong>Teorema Stewart</strong> menaungi keduanya. Untuk sembarang titik $D$ pada $BC$ dengan $BD = m$, $DC = n$, dan $AD = d$:</p><p>$$b^2 m + c^2 n = a(d^2 + mn)$$</p><p>Kalau $m = n$ ia memberi rumus garis berat; kalau $m : n = c : b$ ia memberi rumus garis bagi. Menghafal satu ini lebih hemat daripada menghafal keduanya.</p>",
    "jebakan": "<ul><li><strong>Menukar garis berat dengan garis tinggi.</strong> Keduanya hanya berimpit pada segitiga sama kaki, dari titik puncaknya — dan soal sering memakai gambar yang hampir sama kaki supaya keliru terlihat benar.</li><li><strong>Mengira garis bagi membagi sisi seberang jadi dua sama panjang.</strong> Yang dibaginya sama besar adalah <strong>sudutnya</strong>; sisinya terbagi menurut perbandingan $AB : AC$.</li><li><strong>Memakai rumus garis bagi dalam untuk garis bagi luar.</strong> Keduanya berbeda, dan garis bagi luar memotong perpanjangan sisi, bukan sisinya.</li><li><strong>Kaki garis tinggi dianggap selalu di dalam sisi.</strong> Pada segitiga tumpul ia jatuh di perpanjangan, dan perhitungan panjangnya berubah tanda.</li></ul>",
@@ -1976,8 +1996,17 @@
     "kekongruenan",
     "kesebangunan"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "tfm-contoh-1"
+   ],
+   "latihan": [
+    "tfm-01",
+    "tfm-02",
+    "tfm-03",
+    "tfm-04",
+    "tfm-05",
+    "tfm-06"
+   ],
    "kapan_dipakai": "<p>Gambar punya <strong>kesetangkupan</strong> — bangun sama sisi, persegi, atau susunan yang berulang dengan sudut tetap. Memutar atau mencerminkan bagian gambar sering memindahkan ruas yang berjauhan menjadi bersebelahan, dan di situ soalnya selesai.</p><p>Pemicu kedua, dan ini yang paling khas: soal meminta <strong>menjumlahkan panjang</strong> beberapa ruas yang tersebar. Memutar salah satunya sampai ujungnya bertemu ujung yang lain mengubah jumlah itu jadi satu lintasan — dan lintasan terpendek antara dua titik adalah garis lurus.</p><p>Pemicu ketiga: soal mencari titik yang <strong>meminimumkan jumlah jarak</strong> ke beberapa titik tetap. Pencerminan mengubahnya jadi soal garis lurus.</p>",
    "inti": "<p>Tiga transformasi yang mempertahankan panjang dan sudut (<strong>isometri</strong>):</p><ul><li><strong>Translasi</strong> — menggeser semua titik dengan vektor yang sama. Berguna untuk merapatkan dua ruas sejajar yang sama panjang.</li><li><strong>Rotasi</strong> — memutar terhadap satu titik dengan sudut tetap. Alat utama pada bangun sama sisi dan persegi, di mana sudut putarnya $60^\\circ$ atau $90^\\circ$.</li><li><strong>Refleksi</strong> — mencerminkan terhadap sebuah garis. Alat utama pada soal jarak terpendek dan lintasan pantul.</li></ul><p>Yang tidak mempertahankan panjang tetapi mempertahankan bentuk adalah <strong>homoteti</strong>, dan itu jurus tersendiri.</p><p><strong>Yang dijaga dan yang tidak.</strong> Isometri menjaga panjang, sudut, luas, dan kesejajaran. Yang berubah hanya letak — dan refleksi membalik arah putaran, sedangkan translasi dan rotasi tidak.</p><p><strong>Pola rotasi $60^\\circ$.</strong> Kalau ada segitiga sama sisi pada gambar, memutar $60^\\circ$ terhadap salah satu titik sudutnya memetakan sisi ke sisi. Titik yang sebelumnya tersebar sering jatuh menjadi segaris, dan tiga panjang berbeda menjadi satu ruas.</p><p><strong>Pencerminan untuk jarak terpendek.</strong> Untuk mencari titik $P$ pada garis $\\ell$ yang membuat $AP + PB$ terkecil, cerminkan $B$ terhadap $\\ell$ menjadi $B'$; jawabannya titik potong $AB'$ dengan $\\ell$, karena $AP + PB = AP + PB'$ dan garis lurus terpendek.</p>",
    "jebakan": "<ul><li><strong>Memutar sebagian gambar dan lupa memutar yang lain.</strong> Transformasi harus dikenakan pada objek yang utuh; separuh diputar separuh tidak menghasilkan gambar yang tidak berarti apa-apa.</li><li><strong>Salah arah putaran.</strong> Memutar $60^\\circ$ searah dan berlawanan jarum jam memberi hasil yang berbeda, dan biasanya hanya satu yang menyelesaikan soal — coba keduanya.</li><li><strong>Mengira refleksi menjaga arah putaran.</strong> Ia membaliknya, sehingga segitiga yang terurut berlawanan jarum jam menjadi searah.</li><li><strong>Memakai transformasi tanpa menyebut apa yang dipetakan ke apa.</strong> Di lembar jawaban, bukti dengan transformasi hanya sah kalau peta tiap titik disebut jelas.</li></ul>",
@@ -1994,8 +2023,17 @@
     "kesebangunan",
     "luas-bidang"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "cvm-contoh-1"
+   ],
+   "latihan": [
+    "cvm-01",
+    "cvm-02",
+    "cvm-03",
+    "cvm-04",
+    "cvm-05",
+    "cvm-06"
+   ],
    "kapan_dipakai": "<p>Soal meminta membuktikan <strong>tiga garis berpotongan di satu titik</strong> (konkuren), atau <strong>tiga titik terletak pada satu garis</strong> (segaris). Kedua pertanyaan itu pemicu langsung: yang pertama Ceva, yang kedua Menelaus.</p><p>Pemicu kedua: gambar memuat tiga ruas dari ketiga titik sudut segitiga ke sisi seberangnya, dan soal memberi <strong>perbandingan</strong> pada sisi-sisinya. Bentuk hasil kali tiga perbandingan itu sidik jari kedua teorema ini.</p><p>Cara cepat membedakan mana yang dipakai: kalau garis pemotongnya <strong>melintasi</strong> segitiga dari luar, itu Menelaus; kalau ketiga ruasnya berangkat dari titik sudut, itu Ceva.</p>",
    "inti": "<p><strong>Teorema Ceva.</strong> Kalau $AD$, $BE$, $CF$ dengan $D$ pada $BC$, $E$ pada $CA$, $F$ pada $AB$ berpotongan di satu titik, maka</p><p>$$\\frac{BD}{DC} \\cdot \\frac{CE}{EA} \\cdot \\frac{AF}{FB} = 1$$</p><p><strong>Kebalikannya juga berlaku</strong>, dan justru itu yang dipakai untuk membuktikan konkuren.</p><p><strong>Teorema Menelaus.</strong> Kalau $D$, $E$, $F$ segaris (dengan garis itu memotong ketiga sisi atau perpanjangannya), maka</p><p>$$\\frac{BD}{DC} \\cdot \\frac{CE}{EA} \\cdot \\frac{AF}{FB} = -1$$</p><p>Hasil kalinya <strong>sama persis</strong>, hanya tandanya berbeda — dan itulah satu-satunya yang membedakan keduanya kalau panjangnya dihitung bertanda. Kalau dipakai tanpa tanda, keduanya sama-sama bernilai $1$, dan yang membedakan tinggal gambarnya.</p><p><strong>Bentuk trigonometri Ceva</strong>, dipakai kalau yang diketahui sudut, bukan panjang:</p><p>$$\\frac{\\sin \\angle BAD}{\\sin \\angle DAC} \\cdot \\frac{\\sin \\angle CBE}{\\sin \\angle EBA}\n\\cdot \\frac{\\sin \\angle ACF}{\\sin \\angle FCB} = 1$$</p><p>Bentuk ini yang membuktikan garis bagi dan garis tinggi konkuren tanpa perhitungan panjang sama sekali.</p><p><strong>Kaitan dengan luas.</strong> Ceva bisa diturunkan seluruhnya dari perbandingan luas: tiap perbandingan pada sisi sama dengan perbandingan luas dua segitiga bertinggi sama. Kalau lupa rumusnya, jalan itu selalu bisa ditempuh ulang.</p>",
    "jebakan": "<ul><li><strong>Menyusun perbandingan tidak berputar.</strong> Urutannya harus mengelilingi segitiga: $B \\to D \\to C$, lalu $C \\to E \\to A$, lalu $A \\to F \\to B$. Satu suku dibalik, hasilnya jadi kebalikannya.</li><li><strong>Memakai Ceva padahal titiknya di perpanjangan sisi.</strong> Masih berlaku, tetapi hanya dengan panjang bertanda — dan tandanya harus konsisten untuk ketiga sukunya.</li><li><strong>Menukar Ceva dengan Menelaus.</strong> Keduanya berbentuk sama; yang membedakan konkuren lawan segaris. Salah pilih menghasilkan bukti yang rapi tetapi membuktikan hal lain.</li><li><strong>Mengira kebalikan Ceva tidak perlu dibuktikan berlaku.</strong> Untuk soal pembuktian konkuren, arah yang dipakai justru kebalikannya, dan itu perlu disebut eksplisit di lembar jawaban.</li></ul>",
@@ -2012,8 +2050,17 @@
     "segiempat-talibusur",
     "garis-singgung"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "kut-contoh-1"
+   ],
+   "latihan": [
+    "kut-01",
+    "kut-02",
+    "kut-03",
+    "kut-04",
+    "kut-05",
+    "kut-06"
+   ],
    "kapan_dipakai": "<p>Ada satu titik yang dilalui <strong>dua garis</strong>, dan masing-masing garis memotong sebuah lingkaran. Pemicunya bentuk: dua talibusur berpotongan, dua garis potong dari titik luar, atau satu garis potong bersama satu garis singgung.</p><p>Pemicu kedua, dan ini yang membuat jurus ini sering jadi kunci: soal memberi <strong>hasil kali dua panjang</strong>, atau menanyakannya. Hasil kali panjang pada gambar berlingkaran hampir selalu kuasa titik.</p><p>Pemicu ketiga, arah sebaliknya: kalau $PA \\cdot PB = PC \\cdot PD$ terbukti, keempat titik $A, B, C, D$ terletak pada satu lingkaran. Jadi jurus ini juga alat <strong>membuktikan</strong> segiempat talibusur.</p>",
    "inti": "<p>Untuk titik $P$ dan lingkaran berpusat $O$ berjari-jari $r$, <strong>kuasa</strong> $P$ adalah</p><p>$$k(P) = OP^2 - r^2$$</p><p>Nilainya positif kalau $P$ di luar, nol kalau di lingkaran, dan negatif kalau di dalam. Ketiga bentuk di bawah semuanya pernyataan ulang dari satu kenyataan itu.</p><p><strong>Dua talibusur berpotongan di dalam.</strong> Kalau $AB$ dan $CD$ berpotongan di $P$:</p><p>$$PA \\cdot PB = PC \\cdot PD$$</p><p><strong>Dua garis potong dari titik luar.</strong> Kalau dari $P$ di luar lingkaran ditarik garis yang memotong di $A, B$ dan garis lain yang memotong di $C, D$, hubungannya sama persis — dengan panjang diukur dari $P$ ke kedua titik potong pada garis yang sama.</p><p><strong>Garis singgung.</strong> Kalau $PT$ menyinggung lingkaran di $T$ dan $PAB$ garis potong:</p><p>$$PT^2 = PA \\cdot PB$$</p><p>Bentuk ini yang paling sering dipakai, dan sekaligus penjelasan mengapa dua garis singgung dari satu titik sama panjang.</p><p><strong>Garis kuasa.</strong> Tempat kedudukan titik yang kuasanya sama terhadap dua lingkaran adalah sebuah <strong>garis</strong>, tegak lurus garis penghubung kedua pusatnya. Untuk dua lingkaran yang berpotongan, garis itu tidak lain talibusur persekutuannya.</p>",
    "jebakan": "<ul><li><strong>Memasangkan panjang dari garis yang berbeda.</strong> Kedua panjang pada satu ruas hasil kali harus berasal dari <strong>satu garis</strong> yang sama, keduanya diukur dari $P$.</li><li><strong>Memakai $PT^2 = PA \\cdot PB$ padahal $PT$ bukan garis singgung.</strong> Tanpa singgung, hubungannya tidak berlaku.</li><li><strong>Lupa memeriksa letak titiknya.</strong> Untuk titik di dalam lingkaran, kuasanya negatif; kalau soal memintanya sebagai bilangan bertanda, tandanya bagian dari jawaban.</li><li><strong>Menyimpulkan segiempat talibusur dari hasil kali yang arahnya salah.</strong> Kebalikannya hanya berlaku kalau $P$ titik potong $AB$ dan $CD$ — bukan sembarang empat titik yang hasil kalinya kebetulan sama.</li></ul>",
@@ -2057,8 +2104,17 @@
     "pythagoras",
     "luas-bidang"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "trg-contoh-1"
+   ],
+   "latihan": [
+    "trg-01",
+    "trg-02",
+    "trg-03",
+    "trg-04",
+    "trg-05",
+    "trg-06"
+   ],
    "kapan_dipakai": "<p>Soal mencampur <strong>panjang dan sudut</strong> pada segitiga yang tidak siku-siku. Pythagoras tidak bisa dipakai, kesebangunan tidak ada, tetapi cukup unsur diketahui untuk menghitung — biasanya tiga unsur.</p><p>Aturan mana yang dipakai ditentukan oleh unsur yang diketahui:</p><ul><li>diketahui <strong>dua sisi dan sudut apitnya</strong>, atau <strong>ketiga sisi</strong> → aturan kosinus;</li><li>diketahui <strong>dua sudut dan satu sisi</strong>, atau <strong>dua sisi dan sudut di hadapan salah satunya</strong> → aturan sinus.</li></ul><p>Pemicu ketiga yang khas olimpiade: soal menyebut jari-jari lingkaran <strong>luar</strong>. Bentuk lengkap aturan sinus memuat $2R$, jadi ia jembatan langsung antara sudut dan lingkaran luar.</p>",
    "inti": "<p><strong>Aturan kosinus</strong>, perluasan Pythagoras ke sudut sembarang:</p><p>$$c^2 = a^2 + b^2 - 2ab\\cos C$$</p><p>Kalau $C = 90^\\circ$ suku terakhirnya hilang dan ia kembali menjadi Pythagoras. Bentuk yang dibalik dipakai kalau ketiga sisinya diketahui:</p><p>$$\\cos C = \\frac{a^2+b^2-c^2}{2ab}$$</p><p><strong>Aturan sinus</strong>, lengkap dengan jari-jari lingkaran luar:</p><p>$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2R$$</p><p>Bagian $2R$ itu yang sering menyelesaikan soal olimpiade, dan justru yang paling sering tidak diajarkan.</p><p><strong>Luas dengan sudut:</strong></p><p>$$L = \\tfrac{1}{2} ab \\sin C$$</p><p><strong>Hubungan yang berlaku pada setiap segitiga</strong>, karena $A+B+C = 180^\\circ$:</p><p>$$\\sin(A+B) = \\sin C, \\qquad \\cos(A+B) = -\\cos C$$</p><p>Keduanya sering memangkas ekspresi trigonometri yang terlihat buntu.</p>",
    "jebakan": "<ul><li><strong>Kasus mendua pada aturan sinus.</strong> Kalau yang diketahui dua sisi dan sudut yang <strong>tidak</strong> diapitnya, bisa ada dua segitiga yang memenuhi — satu lancip, satu tumpul. Periksa keduanya, jangan langsung ambil hasil kalkulator.</li><li><strong>Salah pasangan pada aturan kosinus.</strong> Sudut $C$ harus yang <strong>berhadapan</strong> dengan sisi $c$; tertukar sekali, seluruh perhitungannya salah tanpa terlihat aneh.</li><li><strong>Lupa tanda kosinus pada sudut tumpul.</strong> Untuk $C &gt; 90^\\circ$ nilai $\\cos C$ negatif, jadi $c^2$ justru lebih besar dari $a^2+b^2$ — dan tanda minus di rumus tetap ditulis minus.</li><li><strong>Memakai $\\sin$ pada sudut yang bukan sudut segitiga.</strong> Sudut apit harus benar-benar sudut di antara kedua sisi yang dipakai pada rumus luas.</li></ul>",
@@ -2101,8 +2157,17 @@
    "prasyarat": [
     "garis-istimewa"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "tis-contoh-1"
+   ],
+   "latihan": [
+    "tis-01",
+    "tis-02",
+    "tis-03",
+    "tis-04",
+    "tis-05",
+    "tis-06"
+   ],
    "kapan_dipakai": "<p>Soal menyebut <strong>titik berat</strong>, <strong>titik tinggi</strong>, <strong>pusat lingkaran dalam</strong>, atau <strong>pusat lingkaran luar</strong> — atau menyebutnya tanpa nama: \"titik potong ketiga garis berat\", \"titik yang berjarak sama ke ketiga sisi\".</p><p>Pemicu yang paling sering luput: soal menyebut satu titik berjarak sama ke ketiga <strong>titik sudut</strong> dan kamu memperlakukannya sebagai pusat lingkaran dalam. Berjarak sama ke titik sudut adalah pusat lingkaran <strong>luar</strong>; berjarak sama ke <strong>sisi</strong> barulah lingkaran dalam.</p><p>Pemicu ketiga: soal memberi dua titik istimewa sekaligus. Itu hampir selalu isyarat memakai hubungan di antara keduanya, dan pada tahap berikutnya menjadi garis Euler.</p>",
    "inti": "<p>Empat titik yang wajib dikenali beserta ciri penentunya:</p><table><thead><tr><th>Titik</th><th>Perpotongan</th><th>Cirinya</th></tr></thead><tbody><tr><td>Titik berat $G$</td><td>ketiga garis berat</td><td>membagi tiap garis berat $2 : 1$ dari titik sudut</td></tr><tr><td>Titik tinggi $H$</td><td>ketiga garis tinggi</td><td>bisa di luar segitiga kalau tumpul</td></tr><tr><td>Pusat dalam $I$</td><td>ketiga garis bagi</td><td>berjarak sama ke ketiga <strong>sisi</strong>; selalu di dalam</td></tr><tr><td>Pusat luar $O$</td><td>ketiga garis sumbu</td><td>berjarak sama ke ketiga <strong>titik sudut</strong></td></tr></tbody></table><p><strong>Titik berat</strong> membagi tiap garis berat dengan perbandingan $2 : 1$ diukur dari titik sudut. Koordinatnya rata-rata ketiga titik sudut:</p><p>$$G = \\left( \\frac{x_A + x_B + x_C}{3}, \\frac{y_A + y_B + y_C}{3} \\right)$$</p><p><strong>Pusat dalam</strong> dan jari-jari lingkaran dalam:</p><p>$$r = \\frac{L}{s}$$</p><p>dengan $L$ luas dan $s$ setengah keliling. Panjang dari titik sudut ke titik singgung terdekat adalah $s-a$, $s-b$, $s-c$.</p><p><strong>Pusat luar</strong> dan jari-jarinya:</p><p>$$R = \\frac{abc}{4L}$$</p><p>Letaknya bergantung jenis segitiga: di dalam kalau lancip, <strong>pada titik tengah sisi miring</strong> kalau siku-siku, dan di luar kalau tumpul.</p><p><strong>Sudut pada pusat dalam</strong> yang sering menyelesaikan soal dalam satu langkah:</p><p>$$\\angle BIC = 90^\\circ + \\tfrac{1}{2}\\angle A$$</p>",
    "jebakan": "<ul><li><strong>Menukar pusat dalam dengan pusat luar.</strong> Ciri pembedanya jarak sama ke <strong>sisi</strong> lawan jarak sama ke <strong>titik sudut</strong>. Ini kekeliruan paling sering di seluruh jurus ini.</li><li><strong>Mengira semua titik istimewa ada di dalam segitiga.</strong> Hanya $I$ dan $G$ yang selalu di dalam; $H$ dan $O$ keluar pada segitiga tumpul.</li><li><strong>Perbandingan titik berat dipakai terbalik.</strong> Dari titik sudut ke $G$ dua bagian, dari $G$ ke titik tengah sisi satu bagian — bukan sebaliknya.</li><li><strong>Mengira garis bagi bertemu di titik yang sama dengan garis sumbu.</strong> Keduanya hanya berimpit pada segitiga sama sisi, di mana keempat titik itu menyatu jadi satu.</li></ul>",
@@ -2156,8 +2221,17 @@
     "segiempat-talibusur",
     "trigonometri-segitiga"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "ptl-contoh-1"
+   ],
+   "latihan": [
+    "ptl-01",
+    "ptl-02",
+    "ptl-03",
+    "ptl-04",
+    "ptl-05",
+    "ptl-06"
+   ],
    "kapan_dipakai": "<p>Gambar memuat <strong>segiempat talibusur</strong>, dan soal berbicara tentang <strong>hasil kali panjang</strong> atau tentang <strong>diagonalnya</strong>. Begitu keempat titik terletak pada satu lingkaran dan yang ditanyakan menyangkut diagonal, Ptolemy calon pertama.</p><p>Pemicu kedua yang sering luput: gambar hanya memuat <strong>segitiga sama sisi dengan satu titik di lingkaran luarnya</strong>. Ptolemy pada segiempat yang terbentuk langsung memberi hubungan $PA = PB + PC$ — hasil yang terlihat ajaib kalau dikerjakan dengan cara lain.</p><p>Pemicu ketiga: soal meminta membuktikan <strong>ketaksamaan</strong> yang memuat hasil kali panjang pada empat titik sembarang. Itu bentuk ketaksamaan Ptolemy, dan kesamaannya tercapai tepat saat keempatnya setalibusur.</p>",
    "inti": "<p><strong>Teorema Ptolemy.</strong> Untuk segiempat talibusur $ABCD$ dengan diagonal $AC$ dan $BD$:</p><p>$$AC \\cdot BD = AB \\cdot CD + BC \\cdot AD$$</p><p>Dibaca dengan kata: hasil kali diagonal sama dengan jumlah hasil kali kedua pasang sisi berhadapan.</p><p><strong>Ketaksamaan Ptolemy.</strong> Untuk <strong>empat titik sembarang</strong> pada bidang:</p><p>$$AC \\cdot BD \\le AB \\cdot CD + BC \\cdot AD$$</p><p>dan kesamaannya berlaku tepat ketika $ABCD$ segiempat talibusur dengan urutan titik yang benar. Bentuk ini yang membuat Ptolemy berguna di soal ketaksamaan, bukan hanya di soal panjang.</p><p><strong>Ptolemy kedua</strong>, untuk perbandingan diagonalnya:</p><p>$$\\frac{AC}{BD} = \\frac{AB \\cdot AD + CB \\cdot CD}{BA \\cdot BC + DA \\cdot DC}$$</p><p>Dipakai jauh lebih jarang, tetapi menyelesaikan soal yang menanyakan perbandingan diagonal tanpa memberi panjang diagonalnya.</p><p><strong>Kegunaan tak terduga.</strong> Ptolemy pada segiempat talibusur di dalam lingkaran satuan menurunkan rumus $\\sin(x+y)$ — itu asal-usul teorema ini pada tabel busur Ptolemaios.</p>",
    "jebakan": "<ul><li><strong>Urutan titik tidak berkeliling.</strong> $ABCD$ harus terurut mengelilingi lingkaran. Kalau urutannya diacak, yang disebut \"diagonal\" bukan diagonal lagi dan kesamaannya gagal.</li><li><strong>Memakai kesamaan pada segiempat yang belum terbukti talibusur.</strong> Untuk yang bukan talibusur hanya berlaku ketaksamaannya, dengan tanda kurang dari.</li><li><strong>Menukar pasangan sisi berhadapan.</strong> Yang dikalikan $AB$ dengan $CD$, dan $BC$ dengan $AD$ — bukan $AB$ dengan $BC$.</li><li><strong>Mengira Ptolemy hanya untuk mencari panjang.</strong> Kegunaan terbesarnya di olimpiade justru pada soal ketaksamaan dan pada segitiga sama sisi.</li></ul>",

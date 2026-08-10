@@ -4,8 +4,8 @@ nama: Garis-garis Istimewa Segitiga
 pilar: geometri
 tahap: osn-p
 prasyarat: [kesebangunan]
-contoh: []
-latihan: []
+contoh: [gis-contoh-1]
+latihan: [gis-01, gis-02, gis-03, gis-04, gis-05, gis-06]
 ---
 
 ## Kapan dipakai
