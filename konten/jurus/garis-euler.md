@@ -4,8 +4,8 @@ nama: Garis Euler dan Lingkaran Sembilan Titik
 pilar: geometri
 tahap: osn
 prasyarat: [titik-istimewa, homoteti]
-contoh: []
-latihan: []
+contoh: [eul-contoh-1]
+latihan: [eul-01, eul-02, eul-03, eul-04, eul-05, eul-06]
 ---
 
 ## Kapan dipakai

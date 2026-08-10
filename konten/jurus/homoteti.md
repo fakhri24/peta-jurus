@@ -4,8 +4,8 @@ nama: Homoteti
 pilar: geometri
 tahap: osn
 prasyarat: [kesebangunan, transformasi]
-contoh: []
-latihan: []
+contoh: [hmt-contoh-1]
+latihan: [hmt-01, hmt-02, hmt-03, hmt-04, hmt-05, hmt-06]
 ---
 
 ## Kapan dipakai

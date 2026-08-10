@@ -40,6 +40,7 @@
  "rajah": [
   "bintang-lima.svg",
   "cermin-lintasan-terpendek.svg",
+  "dua-lingkaran-dalam-garis.svg",
   "dua-lingkaran-singgung.svg",
   "dua-singgung-titik-luar.svg",
   "garis-berat-diperpanjang.svg",
@@ -48,6 +49,7 @@
   "limas-segiempat.svg",
   "lingkaran-diameter-sudut.svg",
   "lingkaran-dua-sisi-diameter.svg",
+  "lingkaran-sembilan-titik.svg",
   "lingkaran-tiga-jari-jari.svg",
   "persegi-panjang-dua-segitiga.svg",
   "persegi-panjang-titik-dalam.svg",
@@ -60,11 +62,13 @@
   "segitiga-dua-bagi.svg",
   "segitiga-dua-garis-tinggi.svg",
   "segitiga-dua-tinggi-bertemu.svg",
+  "segitiga-garis-euler.svg",
   "segitiga-garis-menelaus.svg",
   "segitiga-garis-sejajar.svg",
   "segitiga-garis-tinggi.svg",
   "segitiga-lancip-kaki-tinggi.svg",
   "segitiga-lingkaran-dalam.svg",
+  "segitiga-persegi-dalam.svg",
   "segitiga-sudut-sama.svg",
   "segitiga-tiga-ceva.svg",
   "segitiga-tumpul-kaki-luar.svg",
@@ -74,7 +78,8 @@
   "singgung-garis-potong.svg",
   "singgung-talibusur.svg",
   "talibusur-berpotongan.svg",
-  "trapesium-diagonal.svg"
+  "trapesium-diagonal.svg",
+  "trapesium-ruas-lewat-potong.svg"
  ],
  "arsip": {},
  "simpul": [
@@ -2184,8 +2189,17 @@
     "kesebangunan",
     "transformasi"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "hmt-contoh-1"
+   ],
+   "latihan": [
+    "hmt-01",
+    "hmt-02",
+    "hmt-03",
+    "hmt-04",
+    "hmt-05",
+    "hmt-06"
+   ],
    "kapan_dipakai": "<p>Gambar memuat dua bangun <strong>sebangun dan sejajar</strong> — sisi-sisi bersesuaiannya sejajar, bukan sekadar sebanding. Begitu ciri itu terlihat, ada satu titik yang memetakan bangun pertama ke bangun kedua, dan menemukannya sering menyelesaikan seluruh soal.</p><p>Pemicu paling produktif: <strong>dua lingkaran yang bersinggungan</strong>. Titik singgungnya adalah pusat homoteti yang memetakan satu lingkaran ke lingkaran lain, dan setiap garis lewat titik itu memotong keduanya di pasangan titik yang bersesuaian.</p><p>Pemicu ketiga: soal meminta membuktikan <strong>tiga titik segaris</strong>, dan dua di antaranya adalah pusat dua lingkaran. Pusat homoteti selalu segaris dengan titik yang bersesuaian dan petanya.</p>",
    "inti": "<p><strong>Homoteti</strong> berpusat $O$ dengan faktor $k \\ne 0$ memetakan tiap titik $P$ ke $P'$ dengan</p><p>$$\\overrightarrow{OP'} = k \\cdot \\overrightarrow{OP}$$</p><p>Yang dijaga: bentuk, sudut, dan <strong>kesejajaran</strong> — setiap garis dipetakan ke garis yang sejajar dengannya. Yang berubah: panjang menjadi $|k|$ kali, luas menjadi $k^2$ kali.</p><p>Tanda $k$ menentukan letaknya: kalau $k &gt; 0$ bangun petanya sepihak dengan aslinya terhadap $O$; kalau $k &lt; 0$ ia di seberang, terbalik.</p><p><strong>Dua lingkaran punya dua pusat homoteti</strong> — satu dalam dan satu luar. Pusat luar terletak pada perpanjangan garis pusat dan memetakan dengan $k = r_2/r_1$; pusat dalam terletak di antara kedua pusat dan memetakan dengan $k = -r_2/r_1$. Untuk lingkaran yang bersinggungan, salah satunya tepat titik singgungnya.</p><p><strong>Gabungan dua homoteti adalah homoteti lagi</strong> (atau translasi kalau hasil kali faktornya $1$), dan pusatnya segaris dengan kedua pusat semula. Kenyataan itu — <strong>teorema Monge</strong> — yang menjadikan homoteti alat pembuktian kesegarisan, bukan sekadar alat menghitung.</p><p><strong>Contoh baku.</strong> Homoteti berpusat titik berat $G$ dengan faktor $-\\tfrac{1}{2}$ memetakan tiap titik sudut ke titik tengah sisi seberangnya. Dari situ lingkaran luar terpetakan ke lingkaran sembilan titik, dan seluruh garis Euler mengalir keluar.</p>",
    "jebakan": "<ul><li><strong>Mengira sebangun berarti homotetik.</strong> Homoteti menuntut sisi bersesuaian <strong>sejajar</strong>. Dua segitiga sebangun yang saling terputar tidak dihubungkan homoteti saja, melainkan homoteti digabung rotasi.</li><li><strong>Melupakan pusat homoteti yang satu lagi.</strong> Dua lingkaran punya dua; memakai yang salah memberi kesimpulan yang benar bentuknya tetapi salah titiknya.</li><li><strong>Salah tanda $k$.</strong> Faktor negatif membalik letak; menuliskannya positif membuat titik petanya jatuh di sisi yang keliru.</li><li><strong>Memakai $k$ untuk perbandingan luas.</strong> Luas berbanding $k^2$, dan tandanya hilang karena dikuadratkan.</li></ul>",
@@ -2266,8 +2280,17 @@
     "titik-istimewa",
     "homoteti"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "eul-contoh-1"
+   ],
+   "latihan": [
+    "eul-01",
+    "eul-02",
+    "eul-03",
+    "eul-04",
+    "eul-05",
+    "eul-06"
+   ],
    "kapan_dipakai": "<p>Soal memuat <strong>dua atau lebih titik istimewa sekaligus</strong> — misalnya titik tinggi bersama pusat lingkaran luar — dan menanyakan jarak, perbandingan, atau kesegarisan di antaranya. Itu pemicunya: begitu $H$, $G$, dan $O$ muncul bersama, hubungannya sudah tetap dan tidak perlu dicari lagi.</p><p>Pemicu kedua: soal menyebut beberapa dari sembilan titik ini — titik tengah sisi, kaki garis tinggi, atau titik tengah antara titik tinggi dan titik sudut — dan meminta membuktikan keempatnya <strong>setalibusur</strong>. Semuanya sudah pada satu lingkaran sejak awal.</p><p>Pemicu ketiga: muncul panjang $R/2$, atau jari-jari yang setengah jari-jari lingkaran luar. Itu sidik jari lingkaran sembilan titik.</p>",
    "inti": "<p><strong>Garis Euler.</strong> Pada setiap segitiga yang bukan sama sisi, titik tinggi $H$, titik berat $G$, dan pusat lingkaran luar $O$ <strong>segaris</strong>, dengan</p><p>$$HG : GO = 2 : 1$$</p><p>Ditulis sebagai vektor dari $O$, hubungannya bahkan lebih ringkas:</p><p>$$\\overrightarrow{OH} = 3\\,\\overrightarrow{OG} = \\overrightarrow{OA} + \\overrightarrow{OB} + \\overrightarrow{OC}$$</p><p>Pada segitiga sama sisi keempat titik istimewa menyatu, dan garisnya tidak terdefinisi — itu satu-satunya kekecualian.</p><p><strong>Lingkaran sembilan titik.</strong> Kesembilan titik berikut terletak pada <strong>satu</strong> lingkaran:</p><ul><li>ketiga titik tengah sisi;</li><li>ketiga kaki garis tinggi;</li><li>ketiga titik tengah antara $H$ dan tiap titik sudut.</li></ul><p>Pusatnya, $N$, adalah <strong>titik tengah $OH$</strong> — jadi ia ikut terletak pada garis Euler — dan jari-jarinya tepat setengah jari-jari lingkaran luar:</p><p>$$N = \\text{titik tengah } OH, \\qquad r_N = \\frac{R}{2}$$</p><p><strong>Dari mana asalnya.</strong> Homoteti berpusat $H$ dengan faktor $\\tfrac{1}{2}$ memetakan lingkaran luar ke lingkaran sembilan titik. Itu sekaligus penjelasan mengapa jari-jarinya separuh dan mengapa pusatnya jatuh di tengah $OH$ — bukan kebetulan yang perlu dihafal terpisah.</p><p><strong>Teorema Feuerbach</strong>, sebagai perluasan: lingkaran sembilan titik menyinggung lingkaran dalam dan ketiga lingkaran singgung luarnya.</p>",
    "jebakan": "<ul><li><strong>Memakai perbandingan $2:1$ dengan urutan terbalik.</strong> Yang dua bagian $HG$, diukur dari titik tinggi; yang satu bagian $GO$. Menukarnya menempatkan $G$ di sisi yang salah.</li><li><strong>Memakainya pada segitiga sama sisi.</strong> Di sana $H = G = O = I$, dan garis Euler tidak ada. Soal yang memberi segitiga sama sisi sedang meminta hal lain.</li><li><strong>Mengira kaki garis tinggi selalu di dalam sisi.</strong> Pada segitiga tumpul kakinya jatuh di perpanjangan, tetapi ia tetap salah satu dari sembilan titiknya.</li><li><strong>Menghitung $N$ sebagai titik tengah $OG$.</strong> Ia titik tengah $OH$; $G$ kebetulan juga di garis itu, dan itu yang membuat keliru ini terlihat masuk akal.</li></ul>",
