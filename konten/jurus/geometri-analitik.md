@@ -4,8 +4,8 @@ nama: Geometri Analitik
 pilar: geometri
 tahap: osn-k
 prasyarat: [pythagoras, persamaan-kuadrat]
-contoh: []
-latihan: []
+contoh: [gan-contoh-1]
+latihan: [gan-01, gan-02, gan-03, gan-04, gan-05, gan-06]
 ---
 
 ## Kapan dipakai

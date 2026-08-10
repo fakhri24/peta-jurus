@@ -4,8 +4,8 @@ nama: Geometri Ruang
 pilar: geometri
 tahap: osn-k
 prasyarat: [pythagoras, luas-bidang]
-contoh: []
-latihan: []
+contoh: [gru-contoh-1]
+latihan: [gru-01, gru-02, gru-03, gru-04, gru-05, gru-06]
 ---
 
 ## Kapan dipakai

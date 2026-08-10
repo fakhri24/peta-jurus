@@ -4,8 +4,8 @@ nama: Kekongruenan Segitiga
 pilar: geometri
 tahap: osn-k
 prasyarat: [sudut-garis]
-contoh: []
-latihan: []
+contoh: [kkr-contoh-1]
+latihan: [kkr-01, kkr-02, kkr-03, kkr-04, kkr-05, kkr-06]
 ---
 
 ## Kapan dipakai

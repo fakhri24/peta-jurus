@@ -4,8 +4,8 @@ nama: Sudut Pusat dan Sudut Keliling
 pilar: geometri
 tahap: osn-k
 prasyarat: [sudut-garis]
-contoh: []
-latihan: []
+contoh: [sdl-contoh-1]
+latihan: [sdl-01, sdl-02, sdl-03, sdl-04, sdl-05, sdl-06]
 ---
 
 ## Kapan dipakai

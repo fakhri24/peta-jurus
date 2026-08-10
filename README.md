@@ -61,7 +61,7 @@ build**, dan akan tertimpa.
 
 ```sh
 python3 scripts/build.py     # konten/ → data/ + assets/rajah/
-python3 tests/test_build.py  # 89 tes, terutama menjaga rumus tidak dirusak Markdown
+python3 tests/test_build.py  # 91 tes, terutama menjaga rumus tidak dirusak Markdown
 ```
 
 Build sengaja **gagal keras**, bukan diam-diam melewatkan yang keliru. Ia berhenti kalau:
@@ -218,29 +218,32 @@ Dua hal yang sering dikira sama:
 
 ## Yang sudah dan belum
 
-**64 jurus, 449 soal**, di tiga bidang yang **ketiganya tuntas**:
+**74 dari 85 jurus terisi, 519 soal**, di empat bidang:
 
-| Bidang | OSN-K | OSN-P | OSN | Soal |
-|---|---|---|---|---|
-| Teori bilangan | 8 | 10 | 4 | 155 |
-| Aljabar | 10 | 7 | 5 | 154 |
-| Kombinatorika | 10 | 6 | 4 | 140 |
+| Bidang | OSN-K | OSN-P | OSN | Soal | Status |
+|---|---|---|---|---|---|
+| Teori bilangan | 8 | 10 | 4 | 155 | tuntas |
+| Aljabar | 10 | 7 | 5 | 154 | tuntas |
+| Kombinatorika | 10 | 6 | 4 | 140 | tuntas |
+| Geometri | 10 | 7 | 4 | 70 | tahap OSN-K tuntas |
 
 Tuntas artinya tiap jurus punya minimal satu contoh terpandu dan enam latihan — enam,
 karena tangga ulangnya lima langkah, dan jurus dengan tiga soal berarti siswa bertemu soal
 yang sama untuk ketiga kalinya pada ulangan hari ke-21.
 
-Ketiga tahap dapat ditempuh utuh di ketiga bidang, dan simulasi menyusun naskah campuran
+Ketiga tahap dapat ditempuh utuh di tiga bidang pertama; di geometri, **seluruh jalur
+OSN-K** sudah bisa ditempuh tanpa menabrak jurus kosong. Simulasi menyusun naskah campuran
 yang dibagi rata antar bidang.
 
-Dua jalur lintas bidang bisa ditempuh sungguhan: `keterbagian` (teori bilangan) →
-`polinomial-bulat` (aljabar), dan `induksi` (aljabar) → `rekursi` (kombinatorika).
+Tiga jalur lintas bidang bisa ditempuh sungguhan: `keterbagian` (teori bilangan) →
+`polinomial-bulat` (aljabar), `induksi` (aljabar) → `rekursi` (kombinatorika), dan
+`persamaan-kuadrat` (aljabar) → `geometri-analitik` (geometri).
 
-Dari 449 soal, **96 berbentuk uraian** yang dinilai sendiri dengan rubrik. Porsinya paling
+Dari 519 soal, **108 berbentuk uraian** yang dinilai sendiri dengan rubrik. Porsinya paling
 besar di kombinatorika tingkat lanjut, karena invarian, pewarnaan, dan prinsip ekstremal
 memang teknik pembuktian — soal isian akan menguji hal yang berbeda dari yang dilatih.
 
-**Geometri** belum ada, dan masih menunggu dukungan gambar. Rencananya di `PLAN.md`.
+Yang belum: **11 jurus geometri tahap OSN-P dan OSN**. Rencananya di `PLAN.md`.
 
 ---
 

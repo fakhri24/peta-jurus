@@ -33,28 +33,27 @@ Poin 2 dan 4 yang paling mahal. Selebihnya pekerjaan kode yang terukur.
 
 ## 2. Keadaan sekarang
 
-**85 jurus, 449 soal** (385 latihan + 64 contoh) di empat bidang, **tiga di antaranya
-tuntas**.
+**85 jurus, 519 soal** (444 latihan + 75 contoh) di empat bidang, **tiga di antaranya
+tuntas** dan yang keempat tuntas di tahap pertamanya.
 
 | Bidang | OSN-K | OSN-P | OSN | Soal | Status |
 |---|---|---|---|---|---|
 | Teori bilangan | 8 | 10 | 4 | 155 | **tuntas** |
 | Aljabar | 10 | 7 | 5 | 154 | **tuntas** |
 | Kombinatorika | 10 | 6 | 4 | 140 | **tuntas** |
-| Geometri | 10 | 7 | 4 | 0 | kerangka berdiri, soal kosong |
+| Geometri | 10 | 7 | 4 | 70 | tahap OSN-K tuntas, 11 jurus sisanya kosong |
 
-Ke-64 jurus di tiga bidang pertama punya minimal satu contoh terpandu dan enam latihan.
-Ke-21 jurus geometri belum punya satu soal pun — `build.py` mencetak keduapuluhsatunya di
-baris "Belum ada latihan di:", dan itu keadaan yang benar di ujung 4.2.
+Ke-74 jurus yang terisi punya minimal satu contoh terpandu dan enam latihan. Yang tersisa
+di baris "Belum ada latihan di:" tinggal 11 jurus geometri tahap OSN-P dan OSN.
 
-Jalur lintas bidang kini ada **empat** dan semuanya nyata: `polinomial-bulat` (aljabar)
+Jalur lintas bidang ada **empat** dan semuanya nyata: `polinomial-bulat` (aljabar)
 berprasyarat `keterbagian` (teori bilangan), `rekursi` (kombinatorika) berprasyarat
 `induksi` (aljabar), `geometri-analitik` berprasyarat `persamaan-kuadrat` (aljabar), dan
-`ketaksamaan-geometri` berprasyarat `am-gm` (aljabar).
+`ketaksamaan-geometri` berprasyarat `am-gm` (aljabar). Tiga yang pertama kini bisa
+**ditempuh sungguhan**; yang keempat menunggu soal `ketaksamaan-geometri`.
 
-Fase 0, 1, 2, 3, 5.1, **4.1**, dan **4.2** selesai. Yang berikutnya dikerjakan adalah
-**4.3 — soal geometri**, 21 jurus × (1 contoh + 6 latihan) = 147 soal, dikerjakan bertahap
-menurut tahap seperti Fase 2.2 dan 3.2.
+Fase 0, 1, 2, 3, 5.1, **4.1**, **4.2**, dan **4.3 tahap OSN-K** selesai. Yang berikutnya
+dikerjakan adalah sisa **4.3** — 11 jurus geometri tahap OSN-P dan OSN, 77 soal.
 
 ### Perkiraan cakupan penuh
 
@@ -436,6 +435,9 @@ Geometri paling lambat ditulis karena sebagian besar soal butuh bangun, dan tiap
 adalah satu berkas di `konten/rajah/`. Jadwalkan waktunya kira-kira dua kali lipat bidang
 lain. Yang meringankan: rajahnya dihitung, jadi ongkos terbesarnya memilih koordinat yang
 enak dilihat — bukan memastikan gambarnya benar.
+
+**Tahap OSN-K — selesai 10 Agustus 2026.** 10 jurus, 70 soal (58 isian, 12 uraian), dengan
+26 rajah.
 
 **Selesai kalau:** ketiga tahap geometri tuntas di lantai 6, `build.py` tidak lagi
 mencetak "Belum ada latihan di:", dan simulasi bisa menyusun naskah empat bidang.

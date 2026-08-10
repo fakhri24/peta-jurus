@@ -4,8 +4,8 @@ nama: Kesebangunan Segitiga
 pilar: geometri
 tahap: osn-k
 prasyarat: [kekongruenan]
-contoh: []
-latihan: []
+contoh: [ksb-contoh-1]
+latihan: [ksb-01, ksb-02, ksb-03, ksb-04, ksb-05, ksb-06]
 ---
 
 ## Kapan dipakai

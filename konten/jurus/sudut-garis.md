@@ -4,8 +4,8 @@ nama: Sudut dan Garis Sejajar
 pilar: geometri
 tahap: osn-k
 prasyarat: []
-contoh: []
-latihan: []
+contoh: [sg-contoh-1]
+latihan: [sg-01, sg-02, sg-03, sg-04, sg-05, sg-06]
 ---
 
 ## Kapan dipakai

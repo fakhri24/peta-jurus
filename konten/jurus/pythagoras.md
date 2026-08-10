@@ -4,8 +4,8 @@ nama: Teorema Pythagoras dan Perluasannya
 pilar: geometri
 tahap: osn-k
 prasyarat: [sudut-garis]
-contoh: []
-latihan: []
+contoh: [pyt-contoh-1]
+latihan: [pyt-01, pyt-02, pyt-03, pyt-04, pyt-05, pyt-06]
 ---
 
 ## Kapan dipakai

@@ -4,8 +4,8 @@ nama: Garis Singgung Lingkaran
 pilar: geometri
 tahap: osn-k
 prasyarat: [sudut-lingkaran]
-contoh: []
-latihan: []
+contoh: [gsg-contoh-1]
+latihan: [gsg-01, gsg-02, gsg-03, gsg-04, gsg-05, gsg-06]
 ---
 
 ## Kapan dipakai

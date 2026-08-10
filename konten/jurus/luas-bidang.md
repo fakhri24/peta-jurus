@@ -4,8 +4,8 @@ nama: Luas dan Perbandingan Luas
 pilar: geometri
 tahap: osn-k
 prasyarat: [pythagoras]
-contoh: []
-latihan: []
+contoh: [lb-contoh-1]
+latihan: [lb-01, lb-02, lb-03, lb-04, lb-05, lb-06]
 ---
 
 ## Kapan dipakai

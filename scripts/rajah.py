@@ -218,6 +218,32 @@ def garis_bagi(a, b, c):
     return Garis(b, (a - b).satuan() + (c - b).satuan())
 
 
+# ---------------------------------------------------------------- ruang
+
+# Proyeksi miring (kabinet) untuk bangun ruang: sumbu y ruang — yang "masuk ke
+# dalam" layar — digambar menyerong dan diperpendek separuh.
+#
+# Bukan perspektif, dan itu disengaja. Pada proyeksi ini rusuk yang sejajar tetap
+# sejajar dan panjang di bidang xz tetap sejati, jadi siswa boleh membaca panjang
+# di gambar untuk arah itu. Perspektif justru mengajarkan hal yang salah: ia
+# memperkecil yang jauh, padahal jebakan baku soal ruang adalah mengukur di
+# gambar. Penyusutan separuh pada arah y sudah cukup memberi kesan ruang tanpa
+# menjanjikan apa pun tentang panjangnya.
+#
+# Serongnya 30°, bukan 45°. Pada 45° arah kedalaman menjadi (0,354; 0,354) —
+# kemiringan yang sama persis dengan diagonal ruang kubus, sehingga diagonal AG
+# tergambar melewati titik sudut F. Kebetulan proyeksi semacam itu tidak
+# menggagalkan apa pun, ia hanya menyarankan kesegarisan yang tidak ada.
+SERONG = 30
+SUSUT = 0.5
+
+
+def ruang(x, y, z):
+    """Titik ruang (x, y, z) jadi titik gambar. Sumbu z naik, y masuk ke dalam."""
+    r = math.radians(SERONG)
+    return Titik(x + y * SUSUT * math.cos(r), z + y * SUSUT * math.sin(r))
+
+
 # ---------------------------------------------------------------- titik istimewa
 
 def titik_berat(a, b, c):
@@ -435,8 +461,14 @@ class Rajah:
         )
         return self
 
-    def tanda_sudut(self, a, b, c, rangkap=1, teks=None, gaya=None):
-        """Busur kecil di titik sudut B, menandai sudut ABC."""
+    def tanda_sudut(self, a, b, c, rangkap=1, teks=None, gaya=None, jauh=None):
+        """Busur kecil di titik sudut B, menandai sudut ABC.
+
+        `jauh` menggeser keterangannya menjauhi titik sudut. Bawaannya pas untuk
+        sudut yang lebar, tetapi pada sudut sempit busurnya berdesakan dengan kaki
+        sudutnya sendiri dan tulisannya tertimpa garis — di situ jauh perlu
+        dinaikkan tangan.
+        """
         if sudut(a, b, c) > 179.5:
             raise GagalRajah("sudut ABC nyaris lurus, penandanya tidak terbaca")
         self._catat(b)
@@ -456,7 +488,7 @@ class Rajah:
             r = math.radians(tengah_sudut)
             self._bentuk.append(
                 _Label(b, teks, (math.cos(r), math.sin(r)),
-                       JARI_SUDUT + 6 + (rangkap - 1) * 4,
+                       JARI_SUDUT + 6 + (rangkap - 1) * 4 if jauh is None else jauh,
                        _kelas("t", gaya) + " ukur")
             )
         return self

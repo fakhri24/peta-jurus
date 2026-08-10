@@ -8,6 +8,7 @@ dibuktikan tidak merusak rumus.
 
 import sys
 import json
+import math
 import unittest
 from pathlib import Path
 
@@ -650,6 +651,45 @@ class TestRajah(unittest.TestCase):
         y1 = float(_re.search(r'y1="(-?[\d.]+)"', svg).group(1))
         y2 = float(_re.search(r'y2="(-?[\d.]+)"', svg).group(1))
         self.assertLess(y2, y1)
+
+    def test_proyeksi_ruang_menjaga_sejajar_dan_panjang_di_bidang_layar(self):
+        # Yang dijanjikan proyeksi kabinet: rusuk sejajar tetap sejajar dan sama
+        # panjang, dan panjang pada bidang xz tetap sejati. Kalau ini rusak, siswa
+        # yang membaca panjang di gambar ruang dihukum karena mempercayai rajahnya.
+        r = self.r
+        rusuk = 4.0
+        for y in (0, rusuk):
+            p, q = r.ruang(0, y, 0), r.ruang(rusuk, y, 0)
+            self.assertAlmostEqual(r.jarak(p, q), rusuk, places=9)
+            p, q = r.ruang(0, y, 0), r.ruang(0, y, rusuk)
+            self.assertAlmostEqual(r.jarak(p, q), rusuk, places=9)
+
+        # Keempat rusuk yang searah sumbu y harus tergambar sebagai vektor yang sama.
+        arah = {
+            (r.ruang(x, rusuk, z) - r.ruang(x, 0, z)).__repr__()
+            for x in (0, rusuk) for z in (0, rusuk)
+        }
+        self.assertEqual(len(arah), 1)
+
+        # Dan arah itu memang diperpendek, bukan digambar sepanjang aslinya.
+        dalam = r.jarak(r.ruang(0, 0, 0), r.ruang(0, rusuk, 0))
+        self.assertAlmostEqual(dalam, rusuk * r.SUSUT, places=9)
+
+    def test_keterangan_sudut_bisa_digeser_menjauhi_titik_sudutnya(self):
+        # Pada sudut sempit, keterangan di jarak bawaan tertimpa kaki sudutnya
+        # sendiri. Yang digeser hanya tulisannya; busurnya tetap di tempatnya,
+        # sebab busur itulah yang menyatakan sudut mana yang dimaksud.
+        import re as _re
+        B, A, C = self.r.titik(0, 0), self.r.titik(3, 0), self.r.titik(0, 3)
+
+        def jarak_teks(**tambahan):
+            svg = (self.r.rajah("Sudut ABC")
+                   .tanda_sudut(A, B, C, teks="40°", **tambahan)).svg()
+            teks = _re.search(r'<text class="t ukur" x="(-?[\d.]+)" y="(-?[\d.]+)"', svg)
+            return math.hypot(float(teks.group(1)), float(teks.group(2)))
+
+        self.assertAlmostEqual(jarak_teks(jauh=44), 44, places=1)
+        self.assertLess(jarak_teks(), 44)
 
     def test_svg_membawa_alt_dan_kedua_tema(self):
         svg = (self.r.rajah("Segitiga ABC").poligon(self.A, self.B, self.C)).svg()

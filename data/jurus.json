@@ -37,7 +37,34 @@
    }
   }
  },
- "rajah": [],
+ "rajah": [
+  "bintang-lima.svg",
+  "dua-lingkaran-singgung.svg",
+  "dua-singgung-titik-luar.svg",
+  "garis-berat-diperpanjang.svg",
+  "kubus-diagonal-ruang.svg",
+  "kubus-limas-sudut.svg",
+  "limas-segiempat.svg",
+  "lingkaran-diameter-sudut.svg",
+  "lingkaran-dua-sisi-diameter.svg",
+  "lingkaran-tiga-jari-jari.svg",
+  "persegi-panjang-dua-segitiga.svg",
+  "persegi-panjang-titik-dalam.svg",
+  "sama-kaki-titik-dalam.svg",
+  "segiempat-sisi-sejajar.svg",
+  "segiempat-talibusur-diagonal.svg",
+  "segiempat-talibusur-luar.svg",
+  "segitiga-dua-bagi.svg",
+  "segitiga-dua-garis-tinggi.svg",
+  "segitiga-garis-sejajar.svg",
+  "segitiga-garis-tinggi.svg",
+  "segitiga-lingkaran-dalam.svg",
+  "segitiga-sudut-sama.svg",
+  "sejajar-zigzag.svg",
+  "siku-siku-garis-tinggi.svg",
+  "singgung-talibusur.svg",
+  "trapesium-diagonal.svg"
+ ],
  "arsip": {},
  "simpul": [
   {
@@ -1723,8 +1750,17 @@
    "pilar": "geometri",
    "tahap": "osn-k",
    "prasyarat": [],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "sg-contoh-1"
+   ],
+   "latihan": [
+    "sg-01",
+    "sg-02",
+    "sg-03",
+    "sg-04",
+    "sg-05",
+    "sg-06"
+   ],
    "kapan_dipakai": "<p>Setiap soal geometri bidang dimulai di sini. Pemicunya: gambar memuat <strong>garis sejajar</strong>, atau memuat sudut yang belum diketahui padahal beberapa sudut lain sudah diketahui. Langkah pertamanya selalu sama — beri nama besar sudut yang dicari, lalu telusuri hubungannya ke sudut yang sudah diketahui.</p><p>Pemicu kedua yang lebih halus: soal memberi <strong>jumlah</strong> dua sudut, bukan masing-masingnya. Itu hampir selalu isyarat memakai jumlah sudut segitiga atau segi banyak, bukan mencari tiap sudut satu per satu.</p><p>Kalau soal menyebut segitiga sama kaki, jangan berhenti pada \"dua sisinya sama\" — yang biasanya dipakai justru akibatnya pada sudut.</p>",
    "inti": "<p><strong>Sudut pada dua garis sejajar dipotong garis lain.</strong> Sudut sehadap sama besar, sudut dalam berseberangan sama besar, dan sudut dalam sepihak berjumlah $180^\\circ$. Ketiganya satu kenyataan yang sama dilihat dari tiga arah.</p><p>Kebalikannya juga berlaku, dan justru itu yang sering dipakai untuk <strong>membuktikan</strong> dua garis sejajar: kalau sudut dalam berseberangannya sama besar, kedua garis itu sejajar.</p><p><strong>Jumlah sudut.</strong> Pada segitiga,</p><p>$$\\angle A + \\angle B + \\angle C = 180^\\circ$$</p><p>Pada segi-$n$ cembung, jumlah sudut dalamnya</p><p>$$(n-2) \\times 180^\\circ$$</p><p>sedangkan jumlah sudut luarnya selalu $360^\\circ$, berapa pun $n$.</p><p><strong>Sudut luar segitiga.</strong> Sudut luar pada satu titik sudut sama dengan jumlah dua sudut dalam yang tidak bersisian dengannya. Ini jalan pintas yang menghemat satu langkah dibanding menghitung lewat $180^\\circ$ dua kali.</p><p><strong>Segitiga sama kaki.</strong> Sisi yang sama panjang berhadapan dengan sudut yang sama besar — dan sebaliknya. Sifat \"sebaliknya\" itu yang sering jadi kunci: dua sudut sama besar memberi dua sisi sama panjang secara gratis.</p>",
    "jebakan": "<ul><li><strong>Menganggap gambar sebagai bukti.</strong> Dua garis yang <em>terlihat</em> sejajar di gambar belum tentu sejajar. Yang boleh dipakai hanya yang diberikan soal atau yang sudah dibuktikan.</li><li><strong>Memakai jumlah sudut segi banyak pada bangun tak cembung.</strong> Rumus $(n-2)\\cdot 180^\\circ$ masih benar untuk segi banyak sederhana, tetapi cara membaginya jadi segitiga tidak sesederhana pada yang cembung — periksa dulu.</li><li><strong>Lupa bahwa segitiga sama kaki punya dua kemungkinan.</strong> Kalau soal hanya menyebut \"dua sisinya sama panjang\" tanpa memberi tahu yang mana, biasanya ada lebih dari satu kasus, dan keduanya harus diperiksa.</li><li><strong>Menghitung sudut luar sebagai $180^\\circ$ dikurangi sudut yang salah.</strong> Sudut luar berpasangan dengan sudut dalam di titik yang sama, bukan di titik sebelahnya.</li></ul>",
@@ -1740,8 +1776,17 @@
    "prasyarat": [
     "sudut-garis"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "kkr-contoh-1"
+   ],
+   "latihan": [
+    "kkr-01",
+    "kkr-02",
+    "kkr-03",
+    "kkr-04",
+    "kkr-05",
+    "kkr-06"
+   ],
    "kapan_dipakai": "<p>Soal meminta membuktikan dua ruas <strong>sama panjang</strong> atau dua sudut <strong>sama besar</strong>, dan keduanya tidak berada pada satu segitiga yang sama. Itu pemicunya: begitu yang diminta adalah kesamaan antara dua bagian gambar yang terpisah, carilah dua segitiga yang memuat keduanya.</p><p>Pemicu kedua: gambar memuat <strong>titik tengah</strong>, <strong>garis bagi</strong>, atau bangun yang setangkup. Ketiganya memberi bahan kekongruenan hampir cuma-cuma.</p><p>Bedanya dengan kesebangunan: pakai kekongruenan kalau yang dicari <strong>sama persis</strong>, pakai kesebangunan kalau yang dicari <strong>perbandingan</strong>.</p>",
    "inti": "<p>Dua segitiga kongruen kalau salah satu terpenuhi:</p><ul><li><strong>S-S-S</strong> — ketiga sisinya sama panjang.</li><li><strong>S-Sd-S</strong> — dua sisi dan sudut <strong>di antara</strong> keduanya.</li><li><strong>Sd-S-Sd</strong> — dua sudut dan sisi di antara keduanya.</li><li><strong>Sd-Sd-S</strong> — dua sudut dan sisi yang bukan di antaranya, asalkan urutannya bersesuaian.</li></ul><p>Setelah kongruen, <strong>semua</strong> unsur yang bersesuaian ikut sama — dan biasanya yang dipakai justru unsur yang belum disebut saat membuktikannya.</p><p>Cara menulis yang menyelamatkan banyak kekeliruan: sebut titik sudutnya <strong>berurutan sesuai pasangannya</strong>. Menulis $\\triangle ABC \\cong \\triangle DEF$ berarti $A$ berpasangan dengan $D$, $B$ dengan $E$, $C$ dengan $F$ — jadi $AB = DE$ terbaca langsung tanpa perlu melihat gambar lagi.</p><p><strong>S-S-Sd bukan syarat kekongruenan.</strong> Dua sisi dan sudut yang tidak diapitnya bisa menghasilkan dua segitiga berbeda. Itu satu-satunya susunan tiga unsur yang gagal, dan karena itu yang paling sering dipakai soal untuk menjebak.</p>",
    "jebakan": "<ul><li><strong>Memakai S-S-Sd seolah sah.</strong> Kalau sudut yang diketahui tidak diapit kedua sisi itu, segitiganya belum tentu tunggal — kecuali sudut itu siku-siku atau tumpul.</li><li><strong>Sd-Sd-Sd.</strong> Tiga sudut sama besar hanya memberi <strong>sebangun</strong>, bukan kongruen. Ini kekeliruan paling sering di soal pembuktian.</li><li><strong>Salah memasangkan titik sudut.</strong> Menulis $\\triangle ABC \\cong \\triangle DEF$ padahal yang bersesuaian $A \\leftrightarrow E$ membuat seluruh kesimpulan sesudahnya salah, meski segitiganya memang kongruen.</li><li><strong>Mengira sisi berimpit tidak boleh dihitung.</strong> Sisi yang dipakai bersama dua segitiga adalah pasangan sisi sama panjang yang sah, dan sering justru itu unsur ketiga yang dicari.</li></ul>",
@@ -1757,8 +1802,17 @@
    "prasyarat": [
     "sudut-garis"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "sdl-contoh-1"
+   ],
+   "latihan": [
+    "sdl-01",
+    "sdl-02",
+    "sdl-03",
+    "sdl-04",
+    "sdl-05",
+    "sdl-06"
+   ],
    "kapan_dipakai": "<p>Gambar memuat lingkaran dengan <strong>beberapa titik di kelilingnya</strong>, dan yang ditanyakan sudut. Begitu ada dua sudut yang menghadap busur yang sama, jurus ini hampir pasti langkah pertamanya.</p><p>Pemicu yang paling sering luput: soal menyebut salah satu talibusur adalah <strong>diameter</strong>. Itu sama saja dengan memberikan sudut siku-siku secara cuma-cuma di setiap titik keliling.</p><p>Pemicu ketiga: soal meminta membuktikan empat titik <strong>terletak pada satu lingkaran</strong>. Arahnya dibalik — bukan memakai lingkaran untuk mencari sudut, melainkan memakai sudut untuk membuktikan lingkarannya ada.</p>",
    "inti": "<p><strong>Sudut keliling setengah sudut pusat.</strong> Kalau keduanya menghadap busur yang sama,</p><p>$$\\angle \\text{keliling} = \\tfrac{1}{2} \\angle \\text{pusat}$$</p><p>Dari situ mengalir hampir semua yang lain.</p><p><strong>Sudut keliling yang menghadap busur sama, sama besar.</strong> Ini bentuk yang paling sering dipakai, dan biasanya tidak perlu menyebut titik pusatnya sama sekali.</p><p><strong>Sudut pada setengah lingkaran siku-siku.</strong> Sudut keliling yang menghadap diameter selalu $90^\\circ$ — kasus khusus dari yang di atas, karena sudut pusatnya $180^\\circ$.</p><p><strong>Sudut antara talibusur dan garis singgung</strong> sama dengan sudut keliling yang menghadap talibusur itu dari busur seberangnya. Sifat ini yang menyambungkan jurus ini ke garis singgung, dan sering jadi langkah yang tidak terlihat.</p><p><strong>Panjang busur dan luas juring</strong> sebanding dengan sudut pusatnya:</p><p>$$\\text{busur} = \\frac{\\theta}{360^\\circ} \\cdot 2\\pi r, \\qquad\n\\text{juring} = \\frac{\\theta}{360^\\circ} \\cdot \\pi r^2$$</p>",
    "jebakan": "<ul><li><strong>Menghadap busur yang berbeda.</strong> Dua sudut keliling sama besar hanya kalau menghadap busur yang <strong>sama</strong>, bukan sekadar talibusur yang sama — dua sudut di sisi berlawanan talibusur justru berjumlah $180^\\circ$.</li><li><strong>Memakai sudut pusat refleks tanpa menyadarinya.</strong> Untuk titik keliling di busur pendek, sudut pusat yang bersesuaian adalah yang lebih dari $180^\\circ$, dan setengahnya tetap benar — asalkan yang dipakai memang sudut refleksnya.</li><li><strong>Mengira setiap sudut $90^\\circ$ pada lingkaran berasal dari diameter.</strong> Berlaku sebaliknya juga, tetapi hanya untuk sudut <strong>keliling</strong>; sudut antara dua talibusur yang berpotongan di dalam lingkaran bukan sudut keliling.</li><li><strong>Memakai satuan derajat dan radian bercampur.</strong> Rumus busur dan juring di atas memakai derajat; bentuk radiannya berbeda pembagi.</li></ul>",
@@ -1774,8 +1828,17 @@
    "prasyarat": [
     "sudut-garis"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "pyt-contoh-1"
+   ],
+   "latihan": [
+    "pyt-01",
+    "pyt-02",
+    "pyt-03",
+    "pyt-04",
+    "pyt-05",
+    "pyt-06"
+   ],
    "kapan_dipakai": "<p>Gambar memuat <strong>sudut siku-siku</strong> — diberikan, atau bisa dibuat dengan menarik satu garis tinggi. Pemicu paling sering di soal olimpiade bukan segitiga siku-siku yang sudah ada, melainkan segitiga sembarang yang <strong>dipotong garis tinggi</strong> menjadi dua segitiga siku-siku.</p><p>Pemicu kedua: soal menyebut panjang tiga sisi dan menanyakan <strong>jenis</strong> segitiganya. Kebalikan Pythagoras menjawabnya tanpa mengukur sudut sama sekali.</p><p>Kalau soalnya memuat jarak antara dua titik pada bidang berkoordinat, itu Pythagoras juga — hanya ditulis dengan lambang yang berbeda.</p>",
    "inti": "<p>Pada segitiga siku-siku dengan sisi miring $c$,</p><p>$$a^2 + b^2 = c^2$$</p><p><strong>Kebalikannya juga berlaku</strong> dan sama pentingnya: kalau $a^2 + b^2 = c^2$ maka sudut di hadapan $c$ siku-siku. Lebih jauh lagi, perbandingannya menentukan jenis sudutnya — $a^2 + b^2 &gt; c^2$ berarti lancip, $a^2 + b^2 &lt; c^2$ berarti tumpul.</p><p><strong>Tripel Pythagoras</strong> yang layak dihafal karena sering muncul: $(3,4,5)$, $(5,12,13)$, $(8,15,17)$, $(7,24,25)$, $(20,21,29)$ beserta semua kelipatannya.</p><p><strong>Perluasan pada segitiga siku-siku dengan garis tinggi ke sisi miring.</strong> Kalau garis tinggi dari titik siku-siku membagi sisi miring menjadi $p$ dan $q$, maka</p><p>$$h^2 = pq, \\qquad a^2 = c \\cdot p, \\qquad b^2 = c \\cdot q$$</p><p>Ketiganya akibat kesebangunan, tetapi cukup sering dipakai sehingga layak dikenali langsung.</p><p><strong>Segitiga istimewa.</strong> Perbandingan sisi pada $30^\\circ$–$60^\\circ$–$90^\\circ$ adalah $1 : \\sqrt{3} : 2$, dan pada $45^\\circ$–$45^\\circ$–$90^\\circ$ adalah $1 : 1 : \\sqrt{2}$. Keduanya menghapus kebutuhan menghitung akar berulang kali.</p>",
    "jebakan": "<ul><li><strong>Salah menetapkan sisi miring.</strong> Sisi miring selalu yang berhadapan dengan sudut siku-siku, dan selalu yang terpanjang — bukan yang kebetulan digambar mendatar.</li><li><strong>Memakai Pythagoras pada segitiga yang tidak siku-siku.</strong> Untuk segitiga sembarang, yang berlaku aturan kosinus, dan $a^2 + b^2 = c^2$ hanya kasus khususnya saat $\\cos C = 0$.</li><li><strong>Menarik garis tinggi ke luar segitiga tanpa menyadarinya.</strong> Pada segitiga tumpul, kaki garis tinggi bisa jatuh di perpanjangan sisi — dan tanda pada perhitungan panjangnya berubah.</li><li><strong>Berhenti pada bentuk berakar.</strong> Jawaban seperti $\\sqrt{50}$ hampir selalu masih bisa disederhanakan menjadi $5\\sqrt{2}$, dan soal isian biasanya menuntut bentuk yang sudah sederhana.</li></ul>",
@@ -1791,8 +1854,17 @@
    "prasyarat": [
     "kekongruenan"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "ksb-contoh-1"
+   ],
+   "latihan": [
+    "ksb-01",
+    "ksb-02",
+    "ksb-03",
+    "ksb-04",
+    "ksb-05",
+    "ksb-06"
+   ],
    "kapan_dipakai": "<p>Yang diminta <strong>perbandingan panjang</strong>, bukan panjangnya sendiri — atau panjang satu ruas yang tidak bisa dihitung langsung tetapi bisa dibandingkan dengan ruas lain yang diketahui. Begitu muncul kata \"perbandingan\", jurus ini calon pertama.</p><p>Pemicu bentuk gambar yang paling khas ada dua: <strong>garis sejajar memotong dua sisi segitiga</strong>, dan <strong>dua segitiga yang berbagi satu sudut</strong>. Keduanya memberi kesebangunan tanpa perlu mencari-cari.</p><p>Pemicu ketiga yang sering luput: gambar memuat sudut siku-siku beserta garis tingginya. Di situ ada tiga segitiga sebangun sekaligus, dan yang paling besar sebangun dengan kedua bagiannya.</p>",
    "inti": "<p>Dua segitiga sebangun kalau salah satu terpenuhi:</p><ul><li><strong>Sd-Sd</strong> — dua pasang sudut sama besar. Ini yang paling sering dipakai, karena sudut ketiganya otomatis ikut.</li><li><strong>S-S-S</strong> — ketiga pasang sisinya sebanding.</li><li><strong>S-Sd-S</strong> — dua pasang sisi sebanding dan sudut di antaranya sama besar.</li></ul><p>Akibatnya: seluruh pasangan sisi bersesuaian punya perbandingan yang sama, dan sudut bersesuaian sama besar.</p><p><strong>Teorema garis sejajar (Thales).</strong> Kalau garis sejajar $BC$ memotong $AB$ di $D$ dan $AC$ di $E$, maka</p><p>$$\\frac{AD}{DB} = \\frac{AE}{EC}$$</p><p>Kebalikannya dipakai untuk <strong>membuktikan</strong> dua garis sejajar dari perbandingan.</p><p><strong>Perbandingan yang ikut berubah.</strong> Kalau perbandingan sisi dua segitiga sebangun adalah $k$, maka perbandingan kelilingnya juga $k$, tetapi perbandingan <strong>luasnya</strong> $k^2$. Untuk bangun ruang yang sebangun, perbandingan volumenya $k^3$.</p><p><strong>Garis bagi sudut.</strong> Garis bagi dari $A$ memotong $BC$ di $D$ dengan</p><p>$$\\frac{BD}{DC} = \\frac{AB}{AC}$$</p>",
    "jebakan": "<ul><li><strong>Menyusun perbandingan dengan urutan terbalik.</strong> $\\frac{AB}{DE} = \\frac{BC}{EF}$ benar; $\\frac{AB}{DE} = \\frac{EF}{BC}$ salah meski angkanya kadang kebetulan cocok. Tuliskan pasangan titiknya dulu.</li><li><strong>Mengalikan perbandingan luas dengan $k$, bukan $k^2$.</strong> Ini kekeliruan paling mahal di jurus ini, karena hasilnya tetap terlihat masuk akal.</li><li><strong>Mengira sebangun berarti kongruen.</strong> Sd-Sd-Sd cukup untuk sebangun dan tidak pernah cukup untuk kongruen.</li><li><strong>Memakai Thales pada garis yang tidak sejajar.</strong> Perbandingannya hanya berlaku kalau kesejajarannya diberikan atau sudah dibuktikan — bukan karena terlihat sejajar.</li></ul>",
@@ -1808,8 +1880,17 @@
    "prasyarat": [
     "sudut-lingkaran"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "gsg-contoh-1"
+   ],
+   "latihan": [
+    "gsg-01",
+    "gsg-02",
+    "gsg-03",
+    "gsg-04",
+    "gsg-05",
+    "gsg-06"
+   ],
    "kapan_dipakai": "<p>Gambar memuat garis yang <strong>menyentuh lingkaran di satu titik</strong>, atau dua lingkaran yang bersinggungan. Langkah pertamanya hampir selalu sama dan sering dilupakan: <strong>tarik jari-jari ke titik singgungnya</strong>, karena di situlah sudut siku-sikunya muncul.</p><p>Pemicu kedua: soal menyebut lingkaran <strong>dalam</strong> segitiga, atau lingkaran yang menyinggung ketiga sisinya. Itu tiga titik singgung sekaligus, dan panjang-panjang dari tiap titik sudut segera berpasangan.</p><p>Pemicu ketiga: dua lingkaran bersinggungan. Titik singgungnya selalu segaris dengan kedua pusatnya — kenyataan sederhana yang mengubah soal lingkaran jadi soal jarak antar-pusat.</p>",
    "inti": "<p><strong>Jari-jari tegak lurus garis singgung</strong> di titik singgungnya. Ini satu-satunya sifat yang perlu diingat; sisanya akibat.</p><p><strong>Dua garis singgung dari satu titik luar sama panjang.</strong> Kalau dari $P$ ditarik garis singgung menyentuh lingkaran di $X$ dan $Y$, maka $PX = PY$, dan $PO$ membagi sudut $XPY$ sama besar.</p><p><strong>Panjang singgung dari titik sudut segitiga.</strong> Kalau lingkaran dalam menyinggung sisi-sisi $\\triangle ABC$, panjang dari tiap titik sudut ke kedua titik singgung terdekatnya adalah</p><p>$$s-a, \\quad s-b, \\quad s-c$$</p><p>dengan $s$ setengah keliling. Hubungan ini menyelesaikan sangat banyak soal lingkaran dalam, dan menurunkannya tidak lebih dari menyelesaikan sistem tiga persamaan.</p><p><strong>Sudut antara talibusur dan garis singgung</strong> sama dengan sudut keliling yang menghadap talibusur itu dari busur seberangnya. Ini jembatan ke jurus sudut keliling, dan sering jadi langkah yang tidak terlihat pada soal sulit.</p><p><strong>Dua lingkaran bersinggungan.</strong> Jarak pusatnya $d = r_1 + r_2$ kalau bersinggungan luar, dan $d = |r_1 - r_2|$ kalau bersinggungan dalam.</p>",
    "jebakan": "<ul><li><strong>Lupa menarik jari-jari ke titik singgung.</strong> Tanpa itu sudut siku-sikunya tidak pernah muncul, dan soalnya terlihat jauh lebih sulit daripada seharusnya.</li><li><strong>Menganggap garis yang memotong lingkaran di satu titik pada gambar sebagai singgung.</strong> Garis singgung menyentuh tepat satu titik; garis yang hampir menyinggung memotong di dua titik yang berdekatan.</li><li><strong>Memakai $d = r_1 + r_2$ untuk singgung dalam.</strong> Keduanya kasus yang berbeda, dan gambar sering tidak langsung menunjukkan yang mana.</li><li><strong>Mengira panjang singgung $s-a$ berlaku untuk lingkaran luar segitiga.</strong> Hubungan itu khusus lingkaran <strong>dalam</strong>; untuk lingkaran singgung luar bentuknya berbeda.</li></ul>",
@@ -1825,8 +1906,17 @@
    "prasyarat": [
     "sudut-lingkaran"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "stb-contoh-1"
+   ],
+   "latihan": [
+    "stb-01",
+    "stb-02",
+    "stb-03",
+    "stb-04",
+    "stb-05",
+    "stb-06"
+   ],
    "kapan_dipakai": "<p>Soal menyebut empat titik <strong>terletak pada satu lingkaran</strong> — atau, jauh lebih sering, tidak menyebutnya sama sekali dan justru memintamu membuktikannya. Pemicunya: ada dua sudut yang berjumlah $180^\\circ$, atau dua sudut sama besar yang menghadap ruas yang sama dari sisi yang sama.</p><p>Pemicu yang paling produktif di soal olimpiade: gambar memuat <strong>dua sudut siku-siku yang menghadap ruas yang sama</strong>. Keempat titiknya langsung terletak pada satu lingkaran berdiameter ruas itu, dan biasanya seluruh soal terbuka dari sana.</p><p>Kalau soal memberi banyak sudut yang tampaknya tidak berhubungan, cari empat titik setalibusur. Menemukannya mengubah sudut di satu sudut gambar menjadi sudut di sudut yang lain.</p>",
    "inti": "<p><strong>Sifat.</strong> Kalau $ABCD$ segiempat talibusur, maka sudut yang berhadapan berjumlah lurus:</p><p>$$\\angle A + \\angle C = \\angle B + \\angle D = 180^\\circ$$</p><p>dan sudut luar pada satu titik sudut sama dengan sudut dalam di titik seberangnya.</p><p><strong>Kebalikannya berlaku, dan itu yang paling banyak dipakai.</strong> Keempat titik terletak pada satu lingkaran kalau salah satu terpenuhi:</p><ul><li>sepasang sudut berhadapan berjumlah $180^\\circ$;</li><li>$\\angle ACB = \\angle ADB$, yakni dua titik melihat ruas $AB$ dengan sudut sama besar dari <strong>sisi yang sama</strong>;</li><li>hasil kali potongan diagonalnya memenuhi hubungan kuasa titik.</li></ul><p><strong>Luas.</strong> Untuk segiempat talibusur dengan sisi $a,b,c,d$ dan setengah keliling $s$,</p><p>$$L = \\sqrt{(s-a)(s-b)(s-c)(s-d)}$$</p><p>Bentuk ini (Brahmagupta) adalah perluasan Heron; kalau $d = 0$ ia kembali menjadi Heron.</p>",
    "jebakan": "<ul><li><strong>Dua sudut sama besar dari sisi berlawanan.</strong> Kalau kedua titik berada di sisi berlawanan terhadap ruas itu, yang berlaku bukan \"sama besar\" melainkan \"berjumlah $180^\\circ$\". Salah sisi berarti salah kesimpulan.</li><li><strong>Mengira setiap segiempat punya lingkaran luar.</strong> Hanya yang sudut berhadapannya berjumlah lurus. Persegi panjang dan segitiga sama kaki terpancung punya; jajaran genjang miring tidak.</li><li><strong>Memakai Brahmagupta pada segiempat sembarang.</strong> Rumus itu khusus segiempat talibusur; untuk yang lain hasilnya terlalu besar.</li><li><strong>Berhenti setelah menemukan lingkarannya.</strong> Menemukan empat titik setalibusur bukan jawaban — ia alat untuk memindahkan sudut. Kalau setelah itu tidak ada sudut yang dipindahkan, lingkarannya belum dipakai.</li></ul>",
@@ -1842,8 +1932,17 @@
    "prasyarat": [
     "pythagoras"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "lb-contoh-1"
+   ],
+   "latihan": [
+    "lb-01",
+    "lb-02",
+    "lb-03",
+    "lb-04",
+    "lb-05",
+    "lb-06"
+   ],
    "kapan_dipakai": "<p>Yang ditanyakan luas suatu daerah yang <strong>bukan bangun baku</strong> — daerah beririsan, daerah sisa, atau bagian yang dipotong beberapa garis. Jalannya jarang menghitung langsung; biasanya memecah jadi bangun yang dikenal, atau mengurangkan dari yang lebih besar.</p><p>Pemicu kedua, dan ini yang khas olimpiade: soal memberi <strong>perbandingan</strong> pada suatu sisi lalu menanyakan perbandingan luas. Di situ luas dipakai sebagai alat, bukan sebagai jawaban.</p><p>Pemicu ketiga yang paling sering luput: soal menanyakan <strong>panjang</strong> — misalnya jarak dari satu titik ke suatu garis. Menghitung luas segitiga yang sama dengan dua cara berbeda sering menyelesaikannya dalam satu baris.</p>",
    "inti": "<p><strong>Luas segitiga</strong>, dipilih menurut yang diketahui:</p><p>$$L = \\tfrac{1}{2} a t = \\tfrac{1}{2} ab \\sin C = \\sqrt{s(s-a)(s-b)(s-c)}$$</p><p>dengan $s$ setengah keliling. Bentuk terakhir (Heron) dipakai kalau yang diketahui hanya ketiga sisinya.</p><p>Dua bentuk lain yang menyambung ke jurus lingkaran:</p><p>$$L = rs, \\qquad L = \\frac{abc}{4R}$$</p><p>dengan $r$ jari-jari lingkaran dalam dan $R$ jari-jari lingkaran luar. Keduanya sering jadi jembatan antara soal panjang dan soal lingkaran.</p><p><strong>Dua perbandingan yang menyelesaikan sebagian besar soal:</strong></p><ul><li>Dua segitiga dengan <strong>tinggi sama</strong> punya perbandingan luas sama dengan perbandingan alasnya. Karena itu garis dari titik sudut membagi luas menurut perbandingan pada sisi seberangnya.</li><li>Dua segitiga dengan <strong>satu sudut sama besar</strong> punya perbandingan luas $\\dfrac{L_1}{L_2} = \\dfrac{ab}{a'b'}$, dengan $a,b$ dan $a',b'$ sisi-sisi yang mengapit sudut itu.</li></ul><p><strong>Luas sebagai persamaan.</strong> Menghitung satu luas dengan dua cara berbeda menghasilkan persamaan — itu inti banyak soal, termasuk cara termurah membuktikan Heron dipakai dengan benar.</p>",
    "jebakan": "<ul><li><strong>Memakai sisi sebagai tinggi.</strong> Tinggi harus tegak lurus alas yang dipilih; pada segitiga tumpul kakinya bisa jatuh di luar segitiga.</li><li><strong>Perbandingan luas dianggap sama dengan perbandingan sisi.</strong> Kalau bangunnya sebangun dengan perbandingan $k$, luasnya berbanding $k^2$.</li><li><strong>Heron dipakai tanpa memeriksa segitiganya ada.</strong> Kalau ketiga panjangnya tidak memenuhi ketaksamaan segitiga, akarnya menjadi bilangan khayal — dan itu tanda soalnya dibaca keliru, bukan tanda jawabannya rumit.</li><li><strong>Menjumlahkan luas daerah yang beririsan.</strong> Bagian yang termasuk dua daerah terhitung dua kali; ini inklusi-eksklusi dalam bentuk geometri.</li></ul>",
@@ -1931,8 +2030,17 @@
     "pythagoras",
     "persamaan-kuadrat"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "gan-contoh-1"
+   ],
+   "latihan": [
+    "gan-01",
+    "gan-02",
+    "gan-03",
+    "gan-04",
+    "gan-05",
+    "gan-06"
+   ],
    "kapan_dipakai": "<p>Soal geometri yang <strong>sarat perhitungan panjang dan tegak lurus</strong> tetapi miskin sudut, dan tidak ada kesebangunan yang jelas. Memberi koordinat mengubahnya jadi soal aljabar yang pasti selesai, meski kadang panjang.</p><p>Pemicu paling terang: gambar memuat <strong>persegi, persegi panjang, atau sudut siku-siku</strong> yang bisa dijadikan sumbu. Menaruh titik asal di tempat yang tepat menghapus separuh perhitungannya.</p><p>Pemicu kedua: yang ditanyakan <strong>tempat kedudukan</strong> atau titik potong beberapa garis sekaligus. Menyelesaikan sistem persamaan lebih dapat diandalkan daripada mengejar sudut.</p><p>Sebaliknya, jangan pakai kalau soalnya penuh lingkaran dan sudut — di situ jurus sintetik biasanya jauh lebih pendek.</p>",
    "inti": "<p><strong>Jarak dan titik tengah.</strong> Untuk $A(x_1,y_1)$ dan $B(x_2,y_2)$:</p><p>$$AB = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}, \\qquad\nM = \\left( \\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2} \\right)$$</p><p>Yang pertama Pythagoras, hanya ditulis lain.</p><p><strong>Titik yang membagi ruas</strong> dengan perbandingan $AP : PB = m : n$:</p><p>$$P = \\left( \\frac{n x_1 + m x_2}{m+n}, \\frac{n y_1 + m y_2}{m+n} \\right)$$</p><p><strong>Garis.</strong> Gradien $m = \\dfrac{y_2-y_1}{x_2-x_1}$; dua garis sejajar kalau gradiennya sama dan tegak lurus kalau $m_1 m_2 = -1$. Jarak titik $(x_0,y_0)$ ke garis $ax+by+c=0$:</p><p>$$d = \\frac{|ax_0 + by_0 + c|}{\\sqrt{a^2+b^2}}$$</p><p><strong>Lingkaran</strong> berpusat $(a,b)$ berjari-jari $r$:</p><p>$$(x-a)^2 + (y-b)^2 = r^2$$</p><p>Memotongkannya dengan garis menghasilkan persamaan kuadrat, dan <strong>diskriminannya</strong> menjawab langsung: dua titik potong, menyinggung, atau tidak memotong sama sekali.</p><p><strong>Luas segitiga dari koordinat:</strong></p><p>$$L = \\tfrac{1}{2} \\left| x_1(y_2-y_3) + x_2(y_3-y_1) + x_3(y_1-y_2) \\right|$$</p><p>Bentuk ini juga menguji kesegarisan: hasilnya nol tepat ketika ketiga titiknya segaris.</p>",
    "jebakan": "<ul><li><strong>Menaruh sumbu di tempat yang menyulitkan.</strong> Titik asal dan sumbu boleh dipilih bebas; memilihnya di titik sudut siku-siku atau di titik tengah bangun sering memangkas perhitungan sampai separuh.</li><li><strong>Memberi koordinat pada terlalu banyak titik bebas.</strong> Bangun sembarang cukup diberi beberapa peubah; menaruh enam huruf di tempat yang bisa tiga membuat aljabarnya tak terkendali.</li><li><strong>Lupa nilai mutlak pada rumus jarak ke garis dan luas.</strong> Tanpa itu jawabannya bisa negatif, dan panjang negatif berarti langkahnya salah, bukan jawabannya unik.</li><li><strong>Gradien tak terdefinisi diabaikan.</strong> Garis tegak tidak punya gradien; syarat $m_1 m_2 = -1$ tidak bisa dipakai kalau salah satunya tegak.</li><li><strong>Mengira koordinat selalu jalan tercepat.</strong> Untuk soal yang penuh sudut keliling, koordinat justru bentuk terpanjang dari jawaban yang sama.</li></ul>",
@@ -1967,8 +2075,17 @@
     "pythagoras",
     "luas-bidang"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "gru-contoh-1"
+   ],
+   "latihan": [
+    "gru-01",
+    "gru-02",
+    "gru-03",
+    "gru-04",
+    "gru-05",
+    "gru-06"
+   ],
    "kapan_dipakai": "<p>Soal berbicara tentang kubus, balok, limas, prisma, tabung, kerucut, atau bola — dan menanyakan <strong>jarak</strong>, <strong>sudut</strong>, <strong>luas permukaan</strong>, atau <strong>volume</strong>. Pemicunya jelas; yang menentukan justru langkah pertamanya.</p><p>Langkah pertama itu hampir selalu sama: <strong>temukan bidang datar yang memuat semua yang ditanyakan, lalu gambar ulang bidang itu sendirian.</strong> Soal ruang yang terlihat rumit biasanya soal bidang yang biasa saja, begitu bidangnya dipisahkan dari gambarnya.</p><p>Pemicu kedua: soal menanyakan jarak titik ke bidang. Menghitung volume benda yang sama dengan dua alas berbeda menyelesaikannya tanpa perlu melihat bangunnya sama sekali.</p>",
    "inti": "<p><strong>Volume dan luas permukaan</strong> yang perlu dikenali langsung:</p><p>$$V_{\\text{prisma}} = L_{\\text{alas}} \\cdot t, \\qquad\nV_{\\text{limas}} = \\tfrac{1}{3} L_{\\text{alas}} \\cdot t$$</p><p>$$V_{\\text{bola}} = \\tfrac{4}{3}\\pi r^3, \\qquad L_{\\text{bola}} = 4\\pi r^2, \\qquad\nV_{\\text{kerucut}} = \\tfrac{1}{3}\\pi r^2 t$$</p><p><strong>Diagonal ruang balok</strong> berukuran $p \\times l \\times t$:</p><p>$$d = \\sqrt{p^2 + l^2 + t^2}$$</p><p>yakni Pythagoras dipakai dua kali berturut-turut.</p><p><strong>Jarak dan sudut selalu diukur lewat tegak lurus.</strong> Jarak titik ke bidang adalah panjang ruas tegak lurus dari titik ke bidang itu. Sudut antara garis dan bidang adalah sudut antara garis itu dan <strong>proyeksinya</strong> pada bidang. Sudut antara dua bidang diukur pada bidang ketiga yang tegak lurus garis potong keduanya.</p><p><strong>Volume sebagai persamaan.</strong> Untuk mencari jarak titik $P$ ke bidang alas sebuah limas, hitung volumenya dengan dua alas berbeda dan samakan. Cara ini menghindari seluruh pekerjaan menggambar tegak lurus.</p><p><strong>Perbandingan pada bangun sebangun.</strong> Kalau perbandingan panjangnya $k$, luasnya $k^2$ dan volumenya $k^3$. Ini yang dipakai pada limas terpancung.</p>",
    "jebakan": "<ul><li><strong>Mengukur sudut antara dua bidang di tempat yang salah.</strong> Sudutnya harus diukur pada arah yang tegak lurus garis potong kedua bidang; diukur miring, hasilnya selalu lebih kecil.</li><li><strong>Memakai rusuk sebagai tinggi limas.</strong> Tinggi limas ruas tegak lurus dari puncak ke bidang alas — pada limas miring, kakinya bahkan tidak jatuh di dalam alasnya.</li><li><strong>Menggambar ruang dalam perspektif lalu mengukur di gambarnya.</strong> Panjang dan sudut pada gambar ruang tidak mempertahankan ukuran aslinya; hitung, jangan lihat.</li><li><strong>Lupa faktor $\\tfrac{1}{3}$ pada limas dan kerucut</strong>, atau memakainya pada prisma dan tabung.</li><li><strong>Menganggap proyeksi titik selalu di tengah alas.</strong> Hanya benar untuk limas beraturan atau kalau soalnya menyebutkan begitu.</li></ul>",

@@ -4,8 +4,8 @@ nama: Segiempat Talibusur
 pilar: geometri
 tahap: osn-k
 prasyarat: [sudut-lingkaran]
-contoh: []
-latihan: []
+contoh: [stb-contoh-1]
+latihan: [stb-01, stb-02, stb-03, stb-04, stb-05, stb-06]
 ---
 
 ## Kapan dipakai
