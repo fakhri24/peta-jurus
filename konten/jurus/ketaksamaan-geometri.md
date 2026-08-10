@@ -4,8 +4,8 @@ nama: Ketaksamaan Geometri
 pilar: geometri
 tahap: osn
 prasyarat: [trigonometri-segitiga, am-gm]
-contoh: []
-latihan: []
+contoh: [ktg-contoh-1]
+latihan: [ktg-01, ktg-02, ktg-03, ktg-04, ktg-05, ktg-06]
 ---
 
 ## Kapan dipakai

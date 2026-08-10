@@ -691,6 +691,35 @@ class TestRajah(unittest.TestCase):
         self.assertAlmostEqual(jarak_teks(jauh=44), 44, places=1)
         self.assertLess(jarak_teks(), 44)
 
+    def test_busur_tidak_melebarkan_kotak_ke_seluruh_lingkarannya(self):
+        # Busur pendek dari lingkaran berjari-jari besar — persis bentuk "dua busur
+        # bercermin pada AB" di jurus tempat kedudukan, yang pusatnya jauh dari
+        # bangunnya. Kalau kotak pembatasnya diambil dari lingkaran penuh, viewBox
+        # melar berkali-kali lipat dan bangunnya menyusut sampai tidak terbaca.
+        import re as _re
+        r = self.r
+        pusat, jari = r.titik(0, -6), 7.0
+        svg = (r.rajah("Busur pendek di atas ruas AB")
+               .ruas(r.titik(-3.5, 0), r.titik(3.5, 0))
+               .busur(pusat, jari, 60, 120)).svg()
+        kotak = [float(v) for v in
+                 _re.search(r'viewBox="([^"]+)"', svg).group(1).split()]
+        # Busurnya memuncak di y = 1 dan turun sampai y = 0; tingginya sekitar satu
+        # satuan, bukan dua kali jari-jari.
+        self.assertLess(kotak[3], (1 + 2 * r.TEPI / r.SKALA) * r.SKALA)
+
+    def test_busur_yang_melewati_mata_angin_tetap_termuat_utuh(self):
+        # Kebalikannya: kotak yang dihitung dari kedua ujung saja memotong busur
+        # yang melengkung melewati puncaknya. Busur 0..180 memuncak di y = jari,
+        # dan puncak itu harus ikut terhitung meski bukan salah satu ujungnya.
+        import re as _re
+        r = self.r
+        svg = (r.rajah("Setengah lingkaran")
+               .busur(r.titik(0, 0), 3.0, 0, 180)).svg()
+        kotak = [float(v) for v in
+                 _re.search(r'viewBox="([^"]+)"', svg).group(1).split()]
+        self.assertAlmostEqual(kotak[3], 3 * r.SKALA + 2 * r.TEPI, places=1)
+
     def test_svg_membawa_alt_dan_kedua_tema(self):
         svg = (self.r.rajah("Segitiga ABC").poligon(self.A, self.B, self.C)).svg()
         self.assertIn('aria-label="Segitiga ABC"', svg)

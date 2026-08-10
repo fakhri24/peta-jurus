@@ -4,8 +4,8 @@ nama: Tempat Kedudukan
 pilar: geometri
 tahap: osn
 prasyarat: [sudut-lingkaran, geometri-analitik, kuasa-titik]
-contoh: []
-latihan: []
+contoh: [tkd-contoh-1]
+latihan: [tkd-01, tkd-02, tkd-03, tkd-04, tkd-05, tkd-06]
 ---
 
 ## Kapan dipakai

@@ -38,7 +38,9 @@
   }
  },
  "rajah": [
+  "alas-tetap-puncak-bergerak.svg",
   "bintang-lima.svg",
+  "busur-sudut-tetap.svg",
   "cermin-lintasan-terpendek.svg",
   "dua-lingkaran-dalam-garis.svg",
   "dua-lingkaran-singgung.svg",
@@ -68,16 +70,21 @@
   "segitiga-garis-tinggi.svg",
   "segitiga-lancip-kaki-tinggi.svg",
   "segitiga-lingkaran-dalam.svg",
+  "segitiga-panjang-singgung.svg",
   "segitiga-persegi-dalam.svg",
   "segitiga-sudut-sama.svg",
   "segitiga-tiga-ceva.svg",
+  "segitiga-titik-dalam-tiga-ruas.svg",
   "segitiga-tumpul-kaki-luar.svg",
   "sejajar-zigzag.svg",
   "siku-siku-dalam-luar.svg",
   "siku-siku-garis-tinggi.svg",
+  "singgung-dari-titik-pada-garis.svg",
   "singgung-garis-potong.svg",
   "singgung-talibusur.svg",
   "talibusur-berpotongan.svg",
+  "talibusur-lewat-titik-tetap.svg",
+  "titik-dalam-sudut-dua-sinar.svg",
   "trapesium-diagonal.svg",
   "trapesium-ruas-lewat-potong.svg"
  ],
@@ -2217,8 +2224,17 @@
     "geometri-analitik",
     "kuasa-titik"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "tkd-contoh-1"
+   ],
+   "latihan": [
+    "tkd-01",
+    "tkd-02",
+    "tkd-03",
+    "tkd-04",
+    "tkd-05",
+    "tkd-06"
+   ],
    "kapan_dipakai": "<p>Soal berbicara tentang titik yang <strong>bergerak</strong> sementara yang lain tetap, lalu menanyakan jalur yang dilaluinya — atau menanyakan sesuatu yang ternyata tetap meski titiknya berpindah. Kata pemicunya: \"tentukan tempat kedudukan\", \"buktikan selalu melalui satu titik tetap\", \"tunjukkan panjangnya tidak bergantung pada\".</p><p>Pemicu kedua yang lebih halus: soal punya <strong>satu derajat kebebasan</strong> yang tidak dibatasi. Kalau sebuah titik bebas bergerak pada suatu garis atau lingkaran dan pertanyaannya tidak menyebut posisinya, jawabannya pasti tidak bergantung pada posisi itu — dan itu sendiri petunjuk.</p><p>Pemicu ketiga: soal menanyakan <strong>berapa banyak</strong> titik yang memenuhi beberapa syarat sekaligus. Jawabannya banyaknya titik potong beberapa tempat kedudukan.</p>",
    "inti": "<p>Menentukan tempat kedudukan berarti membuktikan <strong>dua arah</strong>: setiap titik yang memenuhi syarat ada pada bangun itu, dan setiap titik pada bangun itu memenuhi syaratnya. Melewatkan arah kedua adalah kekeliruan paling sering, dan biasanya membuat jawabannya kelebihan bagian.</p><p><strong>Tempat kedudukan baku yang wajib dikenali:</strong></p><table><thead><tr><th>Syarat</th><th>Tempat kedudukannya</th></tr></thead><tbody><tr><td>berjarak tetap dari satu titik</td><td>lingkaran</td></tr><tr><td>berjarak sama dari dua titik</td><td>sumbu ruas penghubungnya</td></tr><tr><td>berjarak sama dari dua garis berpotongan</td><td>sepasang garis bagi sudutnya</td></tr><tr><td>berjarak tetap dari sebuah garis</td><td>dua garis sejajar</td></tr><tr><td>melihat ruas $AB$ dengan sudut tetap</td><td>dua busur bercermin pada $AB$</td></tr><tr><td>berkuasa sama terhadap dua lingkaran</td><td>garis kuasa</td></tr><tr><td>perbandingan jarak ke dua titik tetap $\\ne 1$</td><td>lingkaran Apollonius</td></tr></tbody></table><p>Dua baris terakhir yang paling sering muncul di soal olimpiade, dan keduanya paling jarang diajarkan.</p><p><strong>Lingkaran Apollonius.</strong> Tempat kedudukan titik $P$ dengan $\\dfrac{PA}{PB} = k$ tetap dan $k \\ne 1$ adalah lingkaran yang diameternya menghubungkan kedua titik pembagi $AB$ — yang membagi dalam dan yang membagi luar dengan perbandingan $k$. Untuk $k = 1$ ia merosot menjadi sumbu ruas.</p><p><strong>Dua cara mengerjakannya.</strong> Cara sintetik: kenali syaratnya sebagai salah satu baris di tabel. Cara analitik: beri koordinat, tulis syaratnya sebagai persamaan, lalu kenali bentuk persamaannya. Cara kedua selalu berhasil dan sering lebih panjang; cara pertama lebih pendek kalau polanya terlihat.</p>",
    "jebakan": "<ul><li><strong>Hanya membuktikan satu arah.</strong> Menunjukkan setiap titik yang memenuhi syarat ada pada lingkaran itu belum menjawab; harus ditunjukkan juga tidak ada titik lingkaran itu yang tidak memenuhi.</li><li><strong>Lupa membuang titik yang tidak sah.</strong> Tempat kedudukannya sering berupa bangun baku <strong>dikurangi beberapa titik</strong> — misalnya titik yang membuat segitiganya merosot jadi garis.</li><li><strong>Mengira perbandingan jarak tetap memberi garis.</strong> Hanya kalau perbandingannya $1$; selain itu lingkaran Apollonius.</li><li><strong>Menganggap kasus merosot tidak perlu disebut.</strong> Nilai $k = 1$ dan sudut $90^\\circ$ sering mengubah bentuk jawabannya, dan pemeriksa mencari keduanya.</li></ul>",
@@ -2262,8 +2278,17 @@
     "trigonometri-segitiga",
     "am-gm"
    ],
-   "contoh": [],
-   "latihan": [],
+   "contoh": [
+    "ktg-contoh-1"
+   ],
+   "latihan": [
+    "ktg-01",
+    "ktg-02",
+    "ktg-03",
+    "ktg-04",
+    "ktg-05",
+    "ktg-06"
+   ],
    "kapan_dipakai": "<p>Soal meminta membuktikan sebuah <strong>ketaksamaan</strong> yang peubahnya panjang sisi, sudut, luas, atau jari-jari — bukan bilangan bebas. Bedanya dengan ketaksamaan aljabar terletak pada satu hal: peubahnya <strong>tidak bebas</strong>, karena ketiga sisi harus membentuk segitiga.</p><p>Pemicu kedua: soal meminta nilai <strong>maksimum atau minimum</strong> suatu besaran geometri, dan tidak ada turunan yang wajar dipakai. Ketaksamaan baku beserta syarat kesamaannya menjawab sekaligus nilainya dan kapan tercapai.</p><p>Pemicu ketiga: soal mencari <strong>lintasan terpendek</strong> atau jumlah jarak terkecil. Di situ yang bekerja ketaksamaan segitiga, biasanya bersama pencerminan.</p>",
    "inti": "<p><strong>Ketaksamaan segitiga.</strong> Untuk ketiga sisi segitiga,</p><p>$$|b - c| &lt; a &lt; b + c$$</p><p>Bentuk sebagai jarak, yang lebih sering berguna: $AB + BC \\ge AC$, dengan kesamaan tepat ketika $B$ terletak pada ruas $AC$.</p><p><strong>Substitusi Ravi.</strong> Ini teknik terpenting di jurus ini. Setiap segitiga bersisi $a,b,c$ bisa ditulis</p><p>$$a = y+z, \\qquad b = z+x, \\qquad c = x+y$$</p><p>dengan $x,y,z &gt; 0$. Substitusi itu <strong>menghapus</strong> kendala ketaksamaan segitiga: setelah diganti, $x,y,z$ menjadi peubah positif yang bebas, dan seluruh senjata ketaksamaan aljabar — AM-GM, Cauchy-Schwarz — bisa dipakai apa adanya.</p><p><strong>Ketaksamaan baku yang layak dikenali:</strong></p><p>$$R \\ge 2r \\quad \\text{(Euler)}, \\qquad L \\le \\frac{\\sqrt{3}}{4}\\left(\\frac{a+b+c}{3}\\right)^2 \\cdot 3$$</p><p>Kesamaan pada keduanya tercapai tepat ketika segitiganya <strong>sama sisi</strong> — dan itu pola umumnya: di antara semua segitiga dengan keliling tetap, yang sama sisi punya luas terbesar.</p><p><strong>Ketaksamaan Erdős–Mordell.</strong> Untuk titik $P$ di dalam segitiga, jumlah jarak ke ketiga titik sudut paling sedikit dua kali jumlah jarak ke ketiga sisinya.</p><p><strong>Titik Fermat.</strong> Titik yang meminimumkan $PA + PB + PC$ melihat ketiga sisi dengan sudut $120^\\circ$ — asalkan semua sudut segitiganya kurang dari $120^\\circ$.</p>",
    "jebakan": "<ul><li><strong>Memperlakukan $a, b, c$ sebagai peubah bebas.</strong> Tanpa Ravi, ketaksamaan aljabar yang dipakai bisa memberi hasil yang benar untuk bilangan positif sembarang tetapi tidak memakai syarat segitiganya — dan soal biasanya justru bergantung pada syarat itu.</li><li><strong>Lupa memeriksa syarat kesamaan.</strong> Soal maksimum-minimum belum selesai sebelum ditunjukkan nilainya <strong>tercapai</strong>; ketaksamaan saja hanya memberi batas.</li><li><strong>Membalik arah saat mengalikan dengan besaran negatif</strong>, atau saat mengambil kebalikannya. Pada besaran geometri semuanya positif, jadi kekeliruan ini biasanya masuk lewat langkah aljabar di tengah.</li><li><strong>Memakai titik Fermat pada segitiga bersudut $\\ge 120^\\circ$.</strong> Di situ titik minimumnya justru titik sudut yang tumpul itu sendiri.</li></ul>",

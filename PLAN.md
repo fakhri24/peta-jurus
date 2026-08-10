@@ -33,27 +33,28 @@ Poin 2 dan 4 yang paling mahal. Selebihnya pekerjaan kode yang terukur.
 
 ## 2. Keadaan sekarang
 
-**85 jurus, 568 soal** (486 latihan + 82 contoh) di empat bidang, **tiga di antaranya
-tuntas** dan yang keempat tuntas di dua tahap pertamanya.
+**85 jurus, 596 soal** (510 latihan + 86 contoh) di empat bidang, dan **keempatnya
+tuntas**.
 
 | Bidang | OSN-K | OSN-P | OSN | Soal | Status |
 |---|---|---|---|---|---|
 | Teori bilangan | 8 | 10 | 4 | 155 | **tuntas** |
 | Aljabar | 10 | 7 | 5 | 154 | **tuntas** |
 | Kombinatorika | 10 | 6 | 4 | 140 | **tuntas** |
-| Geometri | 10 | 7 | 4 | 119 | tahap OSN-K dan OSN-P tuntas, 4 jurus sisanya kosong |
+| Geometri | 10 | 7 | 4 | 147 | **tuntas** |
 
-Ke-81 jurus yang terisi punya minimal satu contoh terpandu dan enam latihan. Yang tersisa
-di baris "Belum ada latihan di:" tinggal 4 jurus geometri tahap OSN.
+Ke-85 jurus punya minimal satu contoh terpandu dan enam latihan; `build.py` tidak lagi
+mencetak baris "Belum ada latihan di:" sama sekali.
 
 Jalur lintas bidang ada **empat** dan semuanya nyata: `polinomial-bulat` (aljabar)
 berprasyarat `keterbagian` (teori bilangan), `rekursi` (kombinatorika) berprasyarat
 `induksi` (aljabar), `geometri-analitik` berprasyarat `persamaan-kuadrat` (aljabar), dan
-`ketaksamaan-geometri` berprasyarat `am-gm` (aljabar). Tiga yang pertama kini bisa
-**ditempuh sungguhan**; yang keempat menunggu soal `ketaksamaan-geometri`.
+`ketaksamaan-geometri` berprasyarat `am-gm` (aljabar). **Keempatnya kini bisa ditempuh
+sungguhan** — yang terakhir sejak `ketaksamaan-geometri` punya soal.
 
-Fase 0, 1, 2, 3, 5.1, **4.1**, **4.2**, serta **4.3 tahap OSN-K dan OSN-P** selesai. Yang
-berikutnya dikerjakan adalah sisa **4.3** — 4 jurus geometri tahap OSN, 28 soal.
+Fase 0, 1, 2, 3, 4, dan 5.1 selesai. **Definisi "siap" di bagian 1 sudah terpenuhi
+seluruhnya**; yang tersisa di rencana ini tinggal Fase 5.2 dan 5.3, yang menunggu naskah
+resmi diunduh sendiri dan bukan pekerjaan yang bisa dijadwalkan sendirian.
 
 ### Perkiraan cakupan penuh
 
@@ -470,8 +471,54 @@ Yang perlu dicatat untuk tahap terakhir, karena baru terlihat saat menulis:
   `talibusur-berpotongan` menolak berkasnya sendiri kalau hasil kali kedua ujungnya tidak
   sama dengan kuasa titiknya.
 
+**Tahap OSN — selesai 11 Agustus 2026.** 4 jurus, 28 soal (17 isian, 11 uraian), dengan
+12 rajah baru sehingga seluruhnya menjadi 49. Porsi uraiannya **39%**, melanjutkan
+17% → 27% → 39% yang mengikuti isinya, bukan target: `ketaksamaan-geometri` seluruhnya
+teknik pembuktian, dan `tempat-kedudukan` menuntut bukti **dua arah** sehingga tidak
+punya bentuk isian yang jujur.
+
+| Jurus | Contoh + latihan | Yang menjadi tulang punggungnya |
+|---|---|---|
+| `homoteti` | 7 | pusat homoteti pada dua lingkaran bersinggungan |
+| `garis-euler` | 7 | $OH^2 = 9R^2 - (a^2+b^2+c^2)$, lingkaran sembilan titik |
+| `ketaksamaan-geometri` | 7 | substitusi Ravi, pencerminan, putaran $60^\circ$ |
+| `tempat-kedudukan` | 7 | bukti dua arah, garis kuasa, garis kutub |
+
+Empat hal yang perlu dicatat, karena baru terlihat saat menulis tahap ini:
+
+- **`busur()` di `rajah.py` melebarkan viewBox ke seluruh lingkarannya.** Ia mencatat
+  kotak pembatas lingkaran penuh, bukan busurnya. Selama 43 rajah pertama tidak ada yang
+  memakainya, jadi tidak ada yang tahu. Rajah "dua busur bercermin pada AB" langsung
+  menabraknya: pusatnya jauh di seberang $AB$, dan viewBox-nya melar dari 277×118 menjadi
+  sekitar 462×862 — bangunnya menyusut sampai tidak terbaca di halaman yang mengecilkannya
+  agar muat. Sekarang batasnya dihitung dari kedua ujung busur plus arah mata angin yang
+  dilewatinya, dijaga dua tes: satu menuntut kotaknya tidak melar, satu lagi menuntut
+  busur yang melengkung melewati puncaknya tetap termuat utuh. Tes kedua itu yang mencegah
+  perbaikannya jadi terlalu bersemangat.
+- **Jawaban isian tidak boleh berbentuk akar atau pecahan yang tidak persis.**
+  `periksaJawaban()` membandingkan sebagai angka lewat `Number()`, dan `Number("3/2")`
+  adalah `NaN` — jadi pecahan hanya cocok kalau siswa mengetiknya persis sama. Draf
+  `ktg-03` semula menanyakan nilai terbesar $\cos A + \cos B + \cos C$, yang jawabannya
+  $\tfrac32$. Soalnya ditulis ulang menjadi mencari $r$ dari $R = 10$ dan jumlah kosinus
+  $\tfrac75$ — jawabannya $4$, dan versi barunya justru lebih baik karena menuntut
+  memeriksa dulu bahwa segitiganya ada, lewat $R \ge 2r$.
+- **Verifikasi menangkap satu kekeliruan lagi**, seperti di 3.2 dan 4.3 OSN-P. Draf
+  `ktg-04` menyebut segitiga merosot sama kaki ($a=b=1$, $c \to 2$) sebagai keluarga yang
+  mendekatkan $\sum \tfrac{a}{b+c}$ ke batas $2$. Hitungan menunjukkan keluarga itu
+  berhenti di $\tfrac53$; yang benar-benar mendekati $2$ adalah yang merosot **dan
+  timpang**, $1 : t : t+\tfrac12$ dengan $t$ besar. Soalnya sekarang menjadikan perbedaan
+  itu bagian yang dinilai, sebab persis di situ kekeliruannya.
+- **Tempat kedudukan menuntut rajah yang menahan diri lebih keras daripada biasanya.**
+  Pada `talibusur-lewat-titik-tetap`, menggambar lingkaran berdiameter $OA$ berarti
+  menuliskan jawabannya; menggambar $OM$ berarti menuliskan buktinya. Lebih halus lagi:
+  arah tali busurnya tidak boleh sembarangan — yang searah $OA$ menjatuhkan titik tengah
+  tepat di $O$, yang tegak lurus $OA$ menjatuhkannya tepat di $A$, dan dua-duanya
+  terbaca sebagai kebetulan. Draf pertama kena yang pertama, dan berkasnya sekarang
+  menolak arah yang terlalu dekat ke keduanya.
+
 **Selesai kalau:** ketiga tahap geometri tuntas di lantai 6, `build.py` tidak lagi
 mencetak "Belum ada latihan di:", dan simulasi bisa menyusun naskah empat bidang.
+**Ketiganya terpenuhi.**
 
 ---
 

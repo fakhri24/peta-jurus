@@ -16,7 +16,7 @@ Ikuti itu untuk kode baru — pembacanya guru dan siswa, bukan hanya programmer.
 ```sh
 python3 -m http.server 8000       # wajib lewat server; fetch() mati di file://
 python3 scripts/build.py          # konten/ → data/*.json + assets/rajah/*.svg  (butuh pyyaml)
-python3 tests/test_build.py       # 89 tes
+python3 tests/test_build.py       # 93 tes
 python3 tests/test_build.py TestRumusSelamat.test_garis_bawah_bukan_huruf_miring   # satu tes
 node scripts/periksa-rumus.js     # tiap rumus di data/*.json benar-benar dirender KaTeX
 node scripts/periksa-muatan.js    # berkas data apa yang benar-benar diminta tiap halaman
@@ -140,7 +140,7 @@ justru intinya.
   simpul, rajah dari kunci `rajah` yang ditulis `build.py`. Jadi bidang baru dan rajah baru
   tidak pernah terlupa. Untuk rajah itu bukan kemewahan: soal geometri tanpa bangunnya
   bukan soal yang lebih sulit, melainkan soal yang tidak bisa dikerjakan sama sekali.
-- **Naikkan `CACHE`** (sekarang `peta-jurus-v11`) setiap kali aset berubah, kalau tidak
+- **Naikkan `CACHE`** (sekarang `peta-jurus-v13`) setiap kali aset berubah, kalau tidak
   siswa memegang versi lama.
 - Kunci cache membuang query, karena `jurus.html?id=…` dan `latihan.html?soal=…` memakai
   kerangka HTML yang sama.
@@ -190,6 +190,12 @@ Tidak bisa ditegakkan mesin, tapi sama mengikatnya:
   gunanya. Urutan petunjuk berjenjang dari dorongan halus → sebut jurus → langkah pertama.
 - **Varian jawaban ditulis eksplisit di `jawaban_alt`**, bukan ditebak kode.
   `periksaJawaban()` sengaja lugu: rapikan spasi, samakan huruf, bandingkan sebagai angka.
+  Konsekuensinya untuk penulisan soal isian: perbandingan angkanya lewat `Number()`, dan
+  `Number("3/2")` adalah `NaN` — jadi pecahan dan akar **hanya** cocok kalau siswa
+  mengetiknya persis sama seperti yang tertulis di `jawaban`. Susun soal isian supaya
+  jawabannya bilangan bulat; kalau tidak bisa, daftarkan tiap ejaan yang sah di
+  `jawaban_alt` (`"3/2"`, `"1,5"`, `"1.5"`). Jangan menaruh $\sqrt{\ }$ di `jawaban` —
+  ubah pertanyaannya, misalnya menanyakan besaran lain pada bangun yang sama.
 
 Format frontmatter lengkap ada di README.md.
 

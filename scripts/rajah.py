@@ -328,6 +328,26 @@ def _bil(v):
     return s if s not in ("", "-0") else "0"
 
 
+def _batas_busur(pusat, jari, dari, sampai):
+    """Titik yang benar-benar menentukan kotak pembatas sebuah busur.
+
+    Bukan kotak pembatas lingkaran penuhnya. Busur 60 derajat dari lingkaran
+    berjari-jari besar hanya menempati sepotong kecil bidang, dan memakai kotak
+    lingkarannya membuat viewBox melar berkali-kali lipat — gambarnya jadi
+    sebagian besar ruang kosong, dan di halaman yang menyusutkannya agar muat,
+    bangun yang sebenarnya menyusut ikut serta sampai tidak terbaca.
+
+    Yang menentukan cuma kedua ujung busurnya, ditambah arah mata angin yang
+    kebetulan dilewatinya — di situlah busur menyentuh batas terjauhnya.
+    """
+    span = (sampai - dari) % 360
+    sudut_sudut = [dari, dari + span]
+    for arah in (0, 90, 180, 270):
+        if (arah - dari) % 360 <= span:
+            sudut_sudut.append(arah)
+    return [pusat + _putar_vektor(Titik(jari, 0), s) for s in sudut_sudut]
+
+
 def _kelas(dasar, gaya, putus=False):
     bagian = [dasar]
     if gaya:
@@ -404,7 +424,7 @@ class Rajah:
 
     def busur(self, pusat, jari, dari, sampai, gaya=None, putus=False):
         """Busur dari sudut `dari` ke `sampai`, derajat, berlawanan jarum jam."""
-        self._catat(pusat + Titik(jari, jari), pusat - Titik(jari, jari))
+        self._catat(*_batas_busur(pusat, jari, dari, sampai))
         self._bentuk.append(
             '<path class="%s" d="%s"/>'
             % (_kelas("g", gaya, putus),
