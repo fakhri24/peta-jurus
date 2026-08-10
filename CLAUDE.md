@@ -15,8 +15,8 @@ Ikuti itu untuk kode baru — pembacanya guru dan siswa, bukan hanya programmer.
 
 ```sh
 python3 -m http.server 8000       # wajib lewat server; fetch() mati di file://
-python3 scripts/build.py          # konten/*.md → data/*.json  (butuh pyyaml)
-python3 tests/test_build.py       # 50 tes
+python3 scripts/build.py          # konten/ → data/*.json + assets/rajah/*.svg  (butuh pyyaml)
+python3 tests/test_build.py       # 89 tes
 python3 tests/test_build.py TestRumusSelamat.test_garis_bawah_bukan_huruf_miring   # satu tes
 node scripts/periksa-rumus.js     # tiap rumus di data/*.json benar-benar dirender KaTeX
 node scripts/periksa-muatan.js    # berkas data apa yang benar-benar diminta tiap halaman
@@ -41,6 +41,14 @@ situs, dan halaman jurus dibuka jauh lebih sering daripada satu soal tertentu.
 `konten/jurus/*.md` + `konten/soal/*.md` + `konten/arsip.yml` → `scripts/build.py` →
 `data/jurus.json` + `data/soal-<pilar>.json` → halaman statis mengambilnya dengan
 `fetch()`.
+
+Rajah geometri ikut alur yang sama: `konten/rajah/*.py` → `scripts/build.py` →
+`assets/rajah/*.svg`. Sumbernya berkas Python karena rajah **dihitung, bukan digambar
+tangan** — `pusat_dalam()`, `kaki()`, `singgung()` di `scripts/rajah.py` memberi koordinat
+yang benar, dan rajah yang meleset sedikit tidak menggagalkan apa pun, ia hanya
+mengajarkan hal yang salah. Pola yang sama dengan `tata_letak()`: hitungannya di Python,
+peramban tinggal menggambar. Dibangkitkan `build.py` sendiri, bukan skrip terpisah, supaya
+alur GitHub Actions yang sudah mengomit balik hasil build ikut membangkitkannya.
 
 Daftar arsip ikut di `data/jurus.json`, bukan berkas sendiri: isinya beberapa ratus bita
 dan selalu dibutuhkan bersama soal mana pun yang menyebutnya.
@@ -125,12 +133,14 @@ sudah mencoba. Konsekuensinya di kode: **rekam `tangga.dibuka()` sebelum memangg
 justru intinya.
 
 - Berkas tingkat atas yang baru **wajib ditambahkan ke `KERANGKA`** — kalau tidak,
-  situsnya patah saat offline. **Kecuali `data/soal-<pilar>.json`**, yang sengaja di luar
-  `KERANGKA`: menunggunya memanjangkan install oleh ratusan KB yang belum tentu dipakai
-  hari itu. Ia diambil di latar setelah install, lewat `berkasSoal()` yang menurunkan
-  daftarnya dari `jurus.json` — jadi bidang baru tidak pernah terlupa, dan latihan offline
-  tetap utuh begitu pengambilan latarnya selesai.
-- **Naikkan `CACHE`** (sekarang `peta-jurus-v10`) setiap kali aset berubah, kalau tidak
+  situsnya patah saat offline. **Kecuali `data/soal-<pilar>.json` dan `assets/rajah/*.svg`**,
+  yang sengaja di luar `KERANGKA`: menunggunya memanjangkan install oleh ratusan KB yang
+  belum tentu dipakai hari itu. Keduanya diambil di latar setelah install, lewat
+  `berkasLatar()` yang menurunkan daftarnya dari `jurus.json` — soal dari `pilar` tiap
+  simpul, rajah dari kunci `rajah` yang ditulis `build.py`. Jadi bidang baru dan rajah baru
+  tidak pernah terlupa. Untuk rajah itu bukan kemewahan: soal geometri tanpa bangunnya
+  bukan soal yang lebih sulit, melainkan soal yang tidak bisa dikerjakan sama sekali.
+- **Naikkan `CACHE`** (sekarang `peta-jurus-v11`) setiap kali aset berubah, kalau tidak
   siswa memegang versi lama.
 - Kunci cache membuang query, karena `jurus.html?id=…` dan `latihan.html?soal=…` memakai
   kerangka HTML yang sama.
@@ -144,6 +154,16 @@ Ditegakkan `build.py` (build gagal): `id` sama dengan nama berkas · `pilar` ada
 tidak berputar · soal isian punya `jawaban` · soal uraian punya `## Rubrik` ·
 **`## Kapan dipakai` tidak boleh kosong** — pemicunya, bukan rumusnya, itu bagian yang
 membuat situs ini ada.
+
+**Gambar juga ditegakkan mesin** lewat `periksa_gambar()`, yang membaca berkas mentahnya —
+bukan hasil `markdown_ke_html` — justru karena yang diperiksa hilang setelah dirender.
+Rujukannya wajib berupa **nama berkas telanjang** yang ada di `konten/rajah/` (jalur dan
+alamat web ditolak: gambar luar mematahkan latihan offline, dan menyalinnya ke sini urusan
+izin yang berbeda), dan `alt` wajib benar-benar menggantikan gambarnya — kosong ditolak,
+`![gambar](…)` dan sejenisnya ditolak lewat `ALT_MALAS`, dan `$…$` di dalam alt ditolak
+karena KaTeX tidak merender di dalam atribut sehingga pembaca layar mengejanya sebagai
+"dolar". Rajah yang tidak dirujuk konten mana pun cuma **peringatan**, bukan galat: saat
+menulis geometri, wajar rajahnya jadi lebih dulu daripada soal yang memakainya.
 
 **Atribusi juga ditegakkan mesin** lewat `periksa_arsip()`. `sumber` yang berbunyi seperti
 atribusi tahun+lomba (`OSN 2025 nomor 3` — pola `ATRIBUSI_NYATA`) wajib punya `arsip:`
@@ -208,10 +228,16 @@ Format frontmatter lengkap ada di README.md.
 - **Pilihan tampilan peta ada di kunci localStorage sendiri**, `peta-jurus/tampilan/v1`,
   bukan di dalam kemajuan. Kalau ikut masuk ke `peta-jurus/kemajuan/v1`, preferensi
   perangkat akan terbawa saat siswa mengekspor kemajuannya dan memindahkannya.
-- **`![gambar](berkas)` tidak didukung dan gagal diam-diam.** Pola tautan di `_sebaris()`
-  menangkap `[alt](url)` lebih dulu dan meninggalkan tanda serunya, jadi keluarannya
-  `!<a href="…">alt</a>` — bukan galat, hanya halaman yang salah. Tidak ada aturan `img`
-  di `styles.css`. Geometri terhalang ini.
+- **Aturan gambar di `_sebaris()` dipasang sebelum pola tautan**, supaya tanda serunya
+  ikut termakan; kalau dibalik, `[alt](url)` tertangkap lebih dulu dan keluarannya
+  `!<a href="…">alt</a>` — bukan galat, hanya halaman yang salah. Dan `<img>` yang sudah
+  dirakit **dicabut jadi penanda NUL**, sama seperti rumus: tanpa itu aturan penekanan di
+  bawahnya menggigit ke dalam atributnya dan alt berisi `<em>`. Alt bukan HTML.
+- **SVG yang dimuat lewat `<img>` tidak melihat CSS halaman.** Ia dokumen terpisah:
+  `var(--tinta)` dan `currentColor` mati di sana. Karena itu tiap rajah membawa paletnya
+  sendiri beserta `@media (prefers-color-scheme: dark)`, dicap `scripts/rajah.py`. Kalau
+  palet di `styles.css` berubah, `GAYA` di `rajah.py` harus diubah juga — tidak ada cara
+  bagi SVG lepas untuk ikut sendiri.
 - Semua HTML dirakit lewat `innerHTML`; teks dari data harus lewat `Inti.lolos()`, tapi
   bidang hasil build (`soal`, `pembahasan`, `petunjuk`, `inti`) sudah berupa HTML dan
   memang dipasang mentah.

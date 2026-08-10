@@ -1,8 +1,8 @@
 name: Bangun konten
 
-# Setiap dorongan yang menyentuh tulisan di konten/ dibangun ulang jadi data/*.json,
-# lalu hasilnya dikomit balik. Jadi tidak ada yang perlu ingat menjalankan
-# scripts/build.py sebelum push.
+# Setiap dorongan yang menyentuh tulisan di konten/ dibangun ulang jadi data/*.json
+# beserta assets/rajah/*.svg, lalu hasilnya dikomit balik. Jadi tidak ada yang perlu
+# ingat menjalankan scripts/build.py sebelum push.
 
 on:
   push:
@@ -10,6 +10,9 @@ on:
     paths:
       - 'konten/**'
       - 'scripts/build.py'
+      # Pustaka rajah ikut, karena mengubahnya mengubah keluaran SVG setiap rajah —
+      # tanpa baris ini, memperbaiki satu penanda sudut tidak pernah sampai ke situs.
+      - 'scripts/rajah.py'
       - 'scripts/periksa-rumus.js'
       - '.github/workflows/build-konten.yml'
   workflow_dispatch:
@@ -41,14 +44,18 @@ jobs:
       - name: Periksa seluruh rumus bisa dirender KaTeX
         run: node scripts/periksa-rumus.js
 
+      # assets/rajah/ ikut diperiksa dan dikomit, bukan hanya data/. Rajah dibangkitkan
+      # build.py juga, jadi kalau hanya data/ yang dikomit, soal geometri akan merujuk
+      # berkas SVG yang tidak pernah ada di repo — dan soal geometri tanpa bangunnya
+      # bukan soal yang lebih sulit, melainkan soal yang tidak bisa dikerjakan.
       - name: Komit kalau ada yang berubah
         run: |
-          if [ -n "$(git status --porcelain data/)" ]; then
+          if [ -n "$(git status --porcelain data/ assets/rajah/)" ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/
-            git commit -m "Bangun ulang data dari konten/"
+            git add data/ assets/rajah/
+            git commit -m "Bangun ulang data dan rajah dari konten/"
             git push
           else
-            echo "data/ sudah sesuai — tidak ada yang dikomit."
+            echo "data/ dan assets/rajah/ sudah sesuai — tidak ada yang dikomit."
           fi

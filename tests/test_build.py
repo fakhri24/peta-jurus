@@ -461,5 +461,211 @@ class TestMuatArsip(unittest.TestCase):
         self.assertEqual((hasil, galat), ({}, []))
 
 
+class TestGambarMarkdown(unittest.TestCase):
+    """Gambar dan rumus memperebutkan berkas yang sama seperti Markdown dan LaTeX.
+
+    Yang dijaga di sini terutama satu hal: alt bukan HTML. Aturan penekanan dan
+    tautan berjalan setelah <img> dirakit, jadi tanpa perlindungan mereka menggigit
+    ke dalam atributnya — dan pembaca layar mengeja apa pun yang ada di sana apa
+    adanya.
+    """
+
+    def test_gambar_jadi_img_bukan_tautan_bertanda_seru(self):
+        # Inti Fase 4.1: pola tautan menangkap [alt](url) lebih dulu dan
+        # meninggalkan '!' nyasar. Bukan galat, hanya halaman yang salah.
+        h = build.markdown_ke_html("![Segitiga ABC](abc.svg)")
+        self.assertIn('<img src="assets/rajah/abc.svg" alt="Segitiga ABC">', h)
+        self.assertNotIn("!<a", h)
+        self.assertNotIn("<a href", h)
+
+    def test_tautan_biasa_tidak_ikut_berubah(self):
+        h = build.markdown_ke_html("[arsip](https://contoh.id)")
+        self.assertIn('<a href="https://contoh.id">arsip</a>', h)
+        self.assertNotIn("<img", h)
+
+    def test_penekanan_tidak_masuk_ke_dalam_alt(self):
+        h = build.markdown_ke_html("![Bangun *miring* dan _garis_](a.svg)")
+        self.assertIn('alt="Bangun *miring* dan _garis_"', h)
+        self.assertNotIn("<em>", h)
+
+    def test_penekanan_di_luar_gambar_tetap_bekerja(self):
+        h = build.markdown_ke_html("**tebal** lalu ![Lingkaran O](o.svg) lalu *miring*")
+        self.assertIn("<strong>tebal</strong>", h)
+        self.assertIn("<em>miring</em>", h)
+        self.assertIn('alt="Lingkaran O"', h)
+
+    def test_kutip_ganda_di_alt_tidak_menjebol_atribut(self):
+        # html.escape dipanggil dengan quote=False, jadi " sampai ke sini utuh.
+        h = build.markdown_ke_html('![Titik "istimewa" ABC](a.svg)')
+        self.assertIn('alt="Titik &quot;istimewa&quot; ABC"', h)
+
+    def test_rumus_di_sebelah_gambar_selamat(self):
+        h = build.markdown_ke_html(r"![Segitiga ABC](a.svg) dengan $\angle A = 90^\circ$")
+        self.assertIn('<img src="assets/rajah/a.svg" alt="Segitiga ABC">', h)
+        self.assertIn(r"$\angle A = 90^\circ$", h)
+
+    def test_gambar_di_dalam_daftar_dan_tabel(self):
+        h = build.markdown_ke_html("- ![Lingkaran O](o.svg) berjari-jari $r$")
+        self.assertIn("<li><img src=", h)
+        self.assertIn("$r$", h)
+        h = build.markdown_ke_html("| Rajah |\n|---|\n| ![Segitiga ABC](a.svg) |")
+        self.assertIn("<td><img src=", h)
+
+    def test_nama_berkas_diberi_awalan_di_satu_tempat(self):
+        # Penulis soal menulis nama berkas telanjang; letaknya urusan build.
+        self.assertTrue(build.AWALAN_RAJAH.endswith("/"))
+        h = build.markdown_ke_html("![Segitiga ABC](a.svg)")
+        self.assertIn('src="%sa.svg"' % build.AWALAN_RAJAH, h)
+
+
+class TestPeriksaGambar(unittest.TestCase):
+    """Rujukan gambar diperiksa mesin, seperti prasyarat dan rujukan soal."""
+
+    def _periksa(self, badan, rajah=("abc.svg",)):
+        import shutil
+        import tempfile
+        sementara = Path(tempfile.mkdtemp())
+        (sementara / "jurus").mkdir()
+        (sementara / "soal").mkdir()
+        (sementara / "soal" / "uji.md").write_text(
+            "---\nid: uji\n---\n## Soal\n" + badan + "\n", encoding="utf-8")
+        asli = build.KONTEN
+        build.KONTEN = sementara
+        galat = []
+        try:
+            dipakai = build.periksa_gambar({n: "<svg/>" for n in rajah}, galat)
+        finally:
+            build.KONTEN = asli
+            shutil.rmtree(sementara)
+        return dipakai, galat
+
+    def test_rujukan_sah_lolos_dan_tercatat_terpakai(self):
+        dipakai, galat = self._periksa("![Segitiga ABC siku-siku di B](abc.svg)")
+        self.assertEqual(galat, [])
+        self.assertEqual(dipakai, {"abc.svg"})
+
+    def test_rajah_tak_ada_ketahuan(self):
+        _, galat = self._periksa("![Segitiga ABC](belum-ada.svg)")
+        self.assertTrue(any("belum-ada" in g for g in galat), galat)
+
+    def test_alt_kosong_ditolak(self):
+        _, galat = self._periksa("![](abc.svg)")
+        self.assertTrue(any("tanpa alt" in g for g in galat), galat)
+
+    def test_alt_malas_ditolak(self):
+        for malas in ("gambar", "Gambar", "ilustrasi", "lihat gambar", "Diagram."):
+            _, galat = self._periksa("![%s](abc.svg)" % malas)
+            self.assertTrue(any("tidak menggantikan" in g for g in galat),
+                            "%r lolos padahal tidak menggantikan gambarnya" % malas)
+
+    def test_rumus_di_alt_ditolak(self):
+        # KaTeX tidak merender di dalam atribut; pembaca layar mengeja 'dolar'.
+        _, galat = self._periksa("![Sudut $ABC$ siku-siku](abc.svg)")
+        self.assertTrue(any("memuat rumus" in g for g in galat), galat)
+
+    def test_gambar_luar_ditolak(self):
+        # Mematahkan latihan offline, dan menyalinnya ke sini izin yang berbeda.
+        _, galat = self._periksa("![Segitiga ABC](https://situs.lain/a.svg)")
+        self.assertTrue(any("alamat web" in g for g in galat), galat)
+
+    def test_bukan_svg_ditolak(self):
+        _, galat = self._periksa("![Segitiga ABC](foto.png)", rajah=("foto.png",))
+        self.assertTrue(any("bukan .svg" in g for g in galat), galat)
+
+    def test_konten_tanpa_gambar_tidak_mengeluh(self):
+        dipakai, galat = self._periksa("Segitiga $ABC$ siku-siku di $B$.")
+        self.assertEqual((dipakai, galat), (set(), []))
+
+
+class TestRajah(unittest.TestCase):
+    """Rajah dibaca dengan mata, jadi yang diuji bukan keluarannya melainkan
+    geometrinya. Lingkaran dalam yang meleset seperseribu tidak menggagalkan apa
+    pun — ia hanya mengajarkan hal yang salah."""
+
+    def setUp(self):
+        import rajah
+        self.r = rajah
+        self.A = rajah.titik(0, 0)
+        self.B = rajah.titik(6, 0)
+        self.C = rajah.titik(1.6, 4.2)
+
+    def test_lingkaran_dalam_menyinggung_ketiga_sisi(self):
+        r = self.r
+        A, B, C = self.A, self.B, self.C
+        I, jari = r.pusat_dalam(A, B, C), r.jari_dalam(A, B, C)
+        for P, Q in ((A, B), (B, C), (C, A)):
+            jarak_ke_sisi = r.jarak(I, r.kaki(I, r.garis(P, Q)))
+            self.assertAlmostEqual(jarak_ke_sisi, jari, places=9)
+
+    def test_lingkaran_luar_lewat_ketiga_titik_sudut(self):
+        r = self.r
+        O, jari = r.pusat_luar(self.A, self.B, self.C), r.jari_luar(self.A, self.B, self.C)
+        for P in (self.A, self.B, self.C):
+            self.assertAlmostEqual(r.jarak(O, P), jari, places=9)
+
+    def test_garis_euler_segaris_dengan_perbandingan_dua_banding_satu(self):
+        # Uji silang yang murah dan tajam: kalau salah satu dari ketiga titik
+        # istimewa salah rumus, ketiganya berhenti segaris.
+        r = self.r
+        H = r.titik_tinggi(self.A, self.B, self.C)
+        G = r.titik_berat(self.A, self.B, self.C)
+        O = r.pusat_luar(self.A, self.B, self.C)
+        silang = (G - H).x * (O - H).y - (G - H).y * (O - H).x
+        self.assertAlmostEqual(silang, 0, places=9)
+        self.assertAlmostEqual(r.jarak(H, G) / r.jarak(G, O), 2.0, places=9)
+
+    def test_garis_bagi_memenuhi_teorema_garis_bagi(self):
+        r = self.r
+        A, B, C = self.A, self.B, self.C
+        D = r.potong(r.garis_bagi(B, A, C), r.garis(B, C))
+        self.assertAlmostEqual(r.jarak(B, D) / r.jarak(D, C),
+                               r.jarak(A, B) / r.jarak(A, C), places=9)
+
+    def test_titik_singgung_tegak_lurus_jari_jari(self):
+        r = self.r
+        P, pusat, jari = r.titik(9, 3), r.titik(2, 1), 1.5
+        for T in r.singgung(P, pusat, jari):
+            self.assertAlmostEqual(r.jarak(pusat, T), jari, places=9)
+            self.assertAlmostEqual((T - pusat).x * (P - T).x
+                                   + (T - pusat).y * (P - T).y, 0, places=9)
+
+    def test_bangun_mustahil_dilempar_bukan_digambar_diam_diam(self):
+        r = self.r
+        with self.assertRaises(r.GagalRajah):
+            r.potong(r.garis(r.titik(0, 0), r.titik(1, 0)),
+                     r.garis(r.titik(0, 1), r.titik(1, 1)))   # sejajar
+        with self.assertRaises(r.GagalRajah):
+            r.singgung(r.titik(0, 0), r.titik(0, 0), 2)       # titik di dalam
+
+    def test_rajah_wajib_punya_alt(self):
+        with self.assertRaises(self.r.GagalRajah):
+            self.r.rajah("")
+
+    def test_sumbu_y_dibalik_sekali_saat_render(self):
+        # Penulis rajah berpikir dengan sumbu matematis; pembalikannya urusan
+        # _layar(). Titik di atas harus keluar dengan y yang lebih kecil.
+        svg = (self.r.rajah("Ruas dari A di bawah ke B di atas")
+               .ruas(self.r.titik(0, 0), self.r.titik(0, 3))).svg()
+        import re as _re
+        y1 = float(_re.search(r'y1="(-?[\d.]+)"', svg).group(1))
+        y2 = float(_re.search(r'y2="(-?[\d.]+)"', svg).group(1))
+        self.assertLess(y2, y1)
+
+    def test_svg_membawa_alt_dan_kedua_tema(self):
+        svg = (self.r.rajah("Segitiga ABC").poligon(self.A, self.B, self.C)).svg()
+        self.assertIn('aria-label="Segitiga ABC"', svg)
+        self.assertIn("<title>Segitiga ABC</title>", svg)
+        # SVG lewat <img> tidak melihat CSS halaman, jadi paletnya harus ikut
+        # di dalam berkasnya — termasuk tema gelapnya.
+        self.assertIn("prefers-color-scheme:dark", svg)
+
+    def test_alt_berkutip_dan_bertanda_lebih_kecil_di_lolos(self):
+        svg = (self.r.rajah('Sudut A < B & titik "P"')
+               .ruas(self.A, self.B)).svg()
+        self.assertIn("&lt;", svg)
+        self.assertIn("&amp;", svg)
+        self.assertIn('aria-label="Sudut A &lt; B &amp; titik &quot;P&quot;"', svg)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

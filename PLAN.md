@@ -33,25 +33,28 @@ Poin 2 dan 4 yang paling mahal. Selebihnya pekerjaan kode yang terukur.
 
 ## 2. Keadaan sekarang
 
-**64 jurus, 449 soal** (385 latihan + 64 contoh) di tiga bidang, **ketiganya tuntas**.
+**85 jurus, 449 soal** (385 latihan + 64 contoh) di empat bidang, **tiga di antaranya
+tuntas**.
 
 | Bidang | OSN-K | OSN-P | OSN | Soal | Status |
 |---|---|---|---|---|---|
 | Teori bilangan | 8 | 10 | 4 | 155 | **tuntas** |
 | Aljabar | 10 | 7 | 5 | 154 | **tuntas** |
 | Kombinatorika | 10 | 6 | 4 | 140 | **tuntas** |
+| Geometri | 10 | 7 | 4 | 0 | kerangka berdiri, soal kosong |
 
-Ke-64 jurus punya minimal satu contoh terpandu dan enam latihan; `build.py` tidak lagi
-mencetak baris "Belum ada latihan di:" sama sekali.
+Ke-64 jurus di tiga bidang pertama punya minimal satu contoh terpandu dan enam latihan.
+Ke-21 jurus geometri belum punya satu soal pun — `build.py` mencetak keduapuluhsatunya di
+baris "Belum ada latihan di:", dan itu keadaan yang benar di ujung 4.2.
 
-Jalur lintas bidang ada dua dan keduanya nyata: `polinomial-bulat` (aljabar) berprasyarat
-`keterbagian` (teori bilangan), dan `rekursi` (kombinatorika) berprasyarat `induksi`
-(aljabar).
+Jalur lintas bidang kini ada **empat** dan semuanya nyata: `polinomial-bulat` (aljabar)
+berprasyarat `keterbagian` (teori bilangan), `rekursi` (kombinatorika) berprasyarat
+`induksi` (aljabar), `geometri-analitik` berprasyarat `persamaan-kuadrat` (aljabar), dan
+`ketaksamaan-geometri` berprasyarat `am-gm` (aljabar).
 
-Yang belum ada sama sekali: **geometri**.
-
-Fase 0, 1, 2, 3, dan 5.1 selesai seluruhnya. Yang berikutnya dikerjakan adalah **Fase 4 —
-geometri**, dan itu terhalang dukungan gambar (4.1).
+Fase 0, 1, 2, 3, 5.1, **4.1**, dan **4.2** selesai. Yang berikutnya dikerjakan adalah
+**4.3 — soal geometri**, 21 jurus × (1 contoh + 6 latihan) = 147 soal, dikerjakan bertahap
+menurut tahap seperti Fase 2.2 dan 3.2.
 
 ### Perkiraan cakupan penuh
 
@@ -327,35 +330,115 @@ terpenuhi**, dan naskah tiga bidang sudah diperiksa di peramban.
 
 ## Fase 4 — Geometri
 
-**Terhalang dukungan gambar.** `markdown_ke_html` tidak mengenal `![alt](url)`: pola
-tautan di `scripts/build.py:76` menangkap `[alt](url)` dan meninggalkan tanda seru
-nyasar, sehingga keluarannya `!<a href="…">alt</a>`. Tidak ada aturan `img` di
-`assets/styles.css`, dan tidak ada tes yang menjaganya.
+### 4.1 Dukungan gambar — selesai 10 Agustus 2026
 
-**4.1 Dukungan gambar** sebelum satu jurus geometri pun ditulis:
+Dikerjakan sebelum satu jurus geometri pun ditulis. Yang terpasang:
 
 - aturan `![alt](berkas)` → `<img>` di `_sebaris()`, dipasang **sebelum** pola tautan
   supaya tanda serunya ikut termakan
-- `build.py` memeriksa berkas gambarnya benar-benar ada — pola yang sama dengan
+- `build.py` memeriksa rujukan gambarnya lewat `periksa_gambar()` — pola yang sama dengan
   pemeriksaan prasyarat dan rujukan soal
 - `alt` wajib diisi dan tidak boleh sekadar "gambar"; bagi siswa yang memakai pembaca
   layar, itu satu-satunya isi soalnya
-- gambar berformat **SVG**, bukan PNG: tajam di segala ukuran, kecil, dan ikut berubah
-  warna mengikuti tema
-- aturan CSS supaya gambar tidak tumpah di layar ponsel
-- tes di `tests/test_build.py` yang menjaga gambar dan rumus tidak saling merusak
-- `sw.js`: gambar geometri masuk cache — tanpa itu, latihan offline menampilkan soal
-  tanpa bangunnya, yang artinya tanpa soal
+- gambar berformat **SVG**, bukan PNG: tajam di segala ukuran, kecil, dan ikut tema
+- aturan `img` di `styles.css` supaya gambar tidak tumpah di layar ponsel
+- 26 tes baru di `tests/test_build.py` (63 → 89)
+- `sw.js`: rajah masuk cache lewat `berkasLatar()`, `CACHE` naik ke v11
 
-**4.2 Daftar jurus** (draf): sudut & garis · kekongruenan · kesebangunan · Pythagoras dan
-perluasannya · luas dan perbandingan luas · garis-garis istimewa segitiga · titik-titik
-istimewa · sudut pusat & sudut keliling · segiempat talibusur · Ptolemy · kuasa titik ·
-garis singgung · Ceva & Menelaus · aturan sinus & kosinus · garis Euler & lingkaran
-sembilan titik · transformasi · homoteti · geometri analitik · geometri ruang ·
-ketaksamaan geometri · tempat kedudukan
+**Rajah dihitung, bukan digambar tangan.** Ini keputusan terbesar fase ini dan tidak ada
+di draf rencana. `scripts/rajah.py` menyediakan primitif (ruas, poligon, lingkaran, busur,
+tanda sudut/sama/siku) plus konstruksi terhitung — `pusat_dalam`, `pusat_luar`,
+`titik_tinggi`, `kaki`, `potong`, `singgung`, `garis_bagi`. Sumbernya `konten/rajah/*.py`,
+keluarannya `assets/rajah/*.svg`, dibangkitkan `build.py` sendiri supaya alur GitHub
+Actions yang sudah mengomit balik hasil build ikut membangkitkannya.
 
-Geometri paling lambat ditulis karena setiap soal butuh bangun. Jadwalkan waktunya
-kira-kira dua kali lipat bidang lain.
+Alasannya sama dengan alasan situs ini memakai verifikasi Python untuk jawaban: rajah
+dibaca dengan mata, dan lingkaran dalam yang meleset sedikit tidak menggagalkan apa pun —
+ia hanya mengajarkan hal yang salah, diam-diam. Yang diuji karena itu bukan keluaran
+SVG-nya melainkan geometrinya: lingkaran dalam benar-benar menyinggung ketiga sisi,
+lingkaran luar lewat ketiga titik sudut, dan $H$, $G$, $O$ segaris dengan $HG : GO = 2 : 1$.
+Uji garis Euler itu yang paling murah dan paling tajam — kalau salah satu dari ketiga titik
+istimewa salah rumus, ketiganya berhenti segaris.
+
+**Satu janji di rencana ini ternyata salah dan sudah dikoreksi.** Draf 4.1 menjanjikan
+gambar "ikut berubah warna mengikuti tema". Dengan `<img src="rajah.svg">` itu **tidak
+terjadi**: SVG yang dimuat lewat `<img>` adalah dokumen terpisah yang tidak melihat CSS
+halaman sama sekali, jadi `var(--tinta)` dan `currentColor` mati di sana. Yang berlaku
+adalah media query milik SVG-nya sendiri, jadi tiap rajah kini membawa paletnya sendiri
+beserta `@media (prefers-color-scheme: dark)`, dicap `rajah.py`. Kebetulan situs ini
+memang hanya mengikuti tema OS tanpa tombol tema manual, jadi cara itu cukup — tapi harus
+disengaja. Sudah diperiksa di peramban sungguhan: WebKit dan Blink dua-duanya
+menghormatinya, dan rajah 700 px di wadah 289 px menyusut dengan nisbah terjaga tanpa
+membuat halaman menggulung mendatar.
+
+Konsekuensinya untuk perawatan: **palet tersalin di dua tempat**, `styles.css` dan
+`GAYA` di `rajah.py`. Tidak ada cara bagi SVG lepas untuk ikut sendiri; yang bisa
+dilakukan cuma mencatatnya, dan itu sudah ada di CLAUDE.md.
+
+### 4.2 Kerangka bidang — selesai 10 Agustus 2026
+
+21 jurus beserta graf prasyaratnya, masing-masing lengkap dengan "Kapan dipakai",
+"Intinya", dan "Jebakan umum". Sebarannya **10 OSN-K, 7 OSN-P, 4 OSN**, kedalaman $t_0$
+sampai $t_5$ — dasarnya lebar, puncaknya sempit, seperti tiga bidang sebelumnya.
+
+| Tingkat | Jurus |
+|---|---|
+| $t_0$ | sudut-garis |
+| $t_1$ | kekongruenan · pythagoras · sudut-lingkaran |
+| $t_2$ | kesebangunan · luas-bidang · segiempat-talibusur · garis-singgung |
+| $t_3$ | geometri-analitik · geometri-ruang · garis-istimewa · trigonometri-segitiga · kuasa-titik · ceva-menelaus · transformasi |
+| $t_4$ | titik-istimewa · ptolemy · homoteti · ketaksamaan-geometri · tempat-kedudukan |
+| $t_5$ | garis-euler |
+
+Saringan tahap memberi 10 → 17 → 21 simpul, sudah diperiksa di peramban bersama tinggi
+SVG-nya (496 → 608 → 720).
+
+Tiga penempatan yang perlu dicatat karena tidak mengikuti daftar draf.
+
+**`geometri-ruang` diletakkan di OSN-K**, bukan di tahap yang lebih tinggi seperti kesan
+namanya. Bangun ruang materi SMA baku dan muncul di tingkat kabupaten; yang membuatnya
+terasa sulit bukan tahapnya melainkan langkah pertamanya, dan langkah itu — pisahkan satu
+bidang datar dari gambarnya, lalu kerjakan sebagai soal bidang — ditulis eksplisit di
+"Kapan dipakai".
+
+**`transformasi` tidak berprasyarat `geometri-analitik`.** Draf awal menghubungkan
+keduanya, dan itu ditarik: transformasi di olimpiade dipakai secara sintetik — rotasi
+$60^\circ$ pada bangun sama sisi, pencerminan untuk lintasan terpendek — dan koordinat
+hanya salah satu cara menuliskannya, bukan prasyaratnya. Selain lebih jujur, penarikan itu
+sekaligus menjaga kedalaman bidang ini tetap $t_5$ seperti tiga bidang lain, bukan $t_6$.
+
+**`ekstremal`-nya geometri adalah `ketaksamaan-geometri`**, dan ia berprasyarat `am-gm`
+dari aljabar — **prasyarat lintas bidang ketiga**. Alasannya nyata dan spesifik:
+substitusi Ravi mengubah ketiga sisi segitiga menjadi tiga peubah positif yang bebas,
+dan begitu kendalanya hilang, yang mengerjakan sisanya memang AM-GM. Prasyarat lintas
+bidang keempat, `geometri-analitik` ← `persamaan-kuadrat`, juga nyata: memotongkan garis
+dengan lingkaran menghasilkan persamaan kuadrat, dan diskriminannya yang menjawab
+menyinggung atau memotong.
+
+Verifikasi ikut dijalankan sebelum menulis, mengikuti kebiasaan fase-fase sebelumnya:
+klaim lingkaran sembilan titik dihitung ulang pada tiga segitiga berbeda — kesembilan
+titiknya jatuh pada lingkaran berpusat titik tengah $OH$ berjari-jari $R/2$ dengan
+simpangan $10^{-16}$, dan $HG : GO$ keluar tepat $2$. Angka-angka itu baru ditulis ke
+`garis-euler.md` setelah cocok.
+
+Ongkos yang perlu diketahui: `data/jurus.json` naik dari 126 KB ke **189 KB**, dan ia ada
+di `KERANGKA` — jadi muatan install ikut naik sekitar 63 KB. Masih jauh di bawah 1052 KB
+sebelum Fase 0.5, tetapi ini bidang keempat dari empat, jadi angkanya tidak akan naik lagi
+karena bidang baru.
+
+### 4.3 Soal geometri
+
+21 jurus × (1 contoh terpandu + 6 latihan) = **147 soal**, dikerjakan bertahap menurut
+tahap seperti Fase 2.2 dan 3.2: OSN-K (10 jurus, 70 soal), OSN-P (7 jurus, 49 soal), OSN
+(4 jurus, 28 soal).
+
+Geometri paling lambat ditulis karena sebagian besar soal butuh bangun, dan tiap bangun
+adalah satu berkas di `konten/rajah/`. Jadwalkan waktunya kira-kira dua kali lipat bidang
+lain. Yang meringankan: rajahnya dihitung, jadi ongkos terbesarnya memilih koordinat yang
+enak dilihat — bukan memastikan gambarnya benar.
+
+**Selesai kalau:** ketiga tahap geometri tuntas di lantai 6, `build.py` tidak lagi
+mencetak "Belum ada latihan di:", dan simulasi bisa menyusun naskah empat bidang.
 
 ---
 

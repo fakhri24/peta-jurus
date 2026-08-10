@@ -11,6 +11,7 @@ $a_1$ jadi huruf miring dan menelan garis miring ganda di dalam align.
 """
 
 import html
+import importlib.util
 import json
 import re
 import sys
@@ -21,6 +22,16 @@ import yaml
 AKAR = Path(__file__).resolve().parent.parent
 KONTEN = AKAR / "konten"
 DATA = AKAR / "data"
+
+# Rajah geometri: sumbernya berkas Python yang menghitung bangunnya, keluarannya
+# SVG. Lihat scripts/rajah.py untuk alasannya dihitung, bukan digambar tangan.
+RAJAH_SUMBER = KONTEN / "rajah"
+RAJAH_KELUAR = AKAR / "assets" / "rajah"
+
+# Ditulis di markdown sebagai nama berkas telanjang — 'segitiga-abc.svg', bukan
+# jalur atau alamat web. Awalannya dipasang di sini supaya letak berkasnya bisa
+# pindah tanpa menyunting ratusan soal.
+AWALAN_RAJAH = "assets/rajah/"
 
 # Tata letak peta: tingkat jadi baris, dari atas ke bawah.
 LEBAR_SIMPUL = 168
@@ -98,14 +109,39 @@ def kembalikan_rumus(html_teks, simpanan):
     return re.sub(r"\x00M(\d+)\x00", pasang, html_teks)
 
 
+# Sengaja membiarkan alt kosong tertangkap: yang kosong harus **ditolak** dengan
+# pesan yang jelas, bukan lolos diam-diam sebagai tautan bertanda seru nyasar.
+GAMBAR = re.compile(r"!\[([^\]]*)\]\(([^)\s]*)\)")
+
+
 def _sebaris(teks):
     """Aturan Markdown dalam satu baris. Teks masuk sudah di-escape."""
     teks = re.sub(r"`([^`]+)`", r"<code>\1</code>", teks)
+
+    # Gambar dicabut jadi penanda, bukan langsung ditulis sebagai <img>. Kalau
+    # ditulis langsung, aturan di bawahnya menggigit ke dalam atribut yang baru
+    # saja dibuat: alt 'Bangun *miring*' keluar sebagai alt="Bangun <em>miring</em>",
+    # dan alt bukan HTML — pembaca layar mengejanya apa adanya. Penandanya memakai
+    # NUL dengan alasan yang sama dengan lindungi_rumus().
+    simpanan = []
+
+    def cabut(m):
+        # html.escape dipanggil dengan quote=False, jadi kutip ganda di alt masih
+        # utuh sampai di sini — dan di dalam atribut ia menutup atributnya lebih awal.
+        simpanan.append('<img src="%s%s" alt="%s">'
+                        % (AWALAN_RAJAH, m.group(2), m.group(1).replace('"', "&quot;")))
+        return "\x00G%d\x00" % (len(simpanan) - 1)
+
+    # Sebelum pola tautan, supaya tanda serunya ikut termakan. Kalau dibalik,
+    # '[alt](url)' tertangkap lebih dulu dan menyisakan '!' di depan <a>.
+    teks = GAMBAR.sub(cabut, teks)
+
     teks = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r'<a href="\2">\1</a>', teks)
     teks = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", teks)
     teks = re.sub(r"(?<!\w)\*([^*\n]+)\*(?!\w)", r"<em>\1</em>", teks)
     teks = re.sub(r"(?<!\w)_([^_\n]+)_(?!\w)", r"<em>\1</em>", teks)
-    return teks
+
+    return re.sub(r"\x00G(\d+)\x00", lambda m: simpanan[int(m.group(1))], teks)
 
 
 AWAL_BLOK_LAIN = re.compile(r"^\s*(#{2,4}\s|&gt;)")
@@ -355,6 +391,104 @@ def muat_arsip(galat):
         # json.dumps tidak bisa menuliskannya.
         hasil[kunci] = {k: str(v) for k, v in entri.items()}
     return hasil
+
+
+def bangun_rajah(galat):
+    """Jalankan tiap konten/rajah/*.py, kumpulkan SVG-nya — belum ditulis ke disk.
+
+    Ditahan di memori dulu supaya mengikuti aturan main(): keluaran baru ditulis
+    kalau seluruh pemeriksaan lolos. Kalau tidak, satu soal yang salah rujukan
+    meninggalkan berkas SVG setengah jadi di pohon kerja.
+    """
+    if not RAJAH_SUMBER.exists():
+        return {}
+
+    hasil = {}
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        for jalur in sorted(RAJAH_SUMBER.glob("*.py")):
+            try:
+                spec = importlib.util.spec_from_file_location(
+                    "rajah_" + jalur.stem, jalur)
+                modul = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(modul)
+            except Exception as e:
+                galat.append("rajah/%s: gagal dijalankan — %s: %s"
+                             % (jalur.name, type(e).__name__, e))
+                continue
+            if not hasattr(modul, "RAJAH"):
+                galat.append("rajah/%s: tidak menetapkan RAJAH" % jalur.name)
+                continue
+            try:
+                hasil[jalur.stem + ".svg"] = modul.RAJAH.svg()
+            except Exception as e:
+                galat.append("rajah/%s: gagal dirender — %s: %s"
+                             % (jalur.name, type(e).__name__, e))
+    finally:
+        sys.path.pop(0)
+    return hasil
+
+
+# Alt yang tidak menggantikan apa pun. Bagi siswa yang memakai pembaca layar,
+# alt adalah satu-satunya isi soalnya — "gambar" memberitahunya bahwa ia sedang
+# melewatkan sesuatu, tanpa memberitahu apa.
+ALT_MALAS = frozenset((
+    "gambar", "rajah", "ilustrasi", "diagram", "sketsa", "bangun", "gambarnya",
+    "gambar geometri", "gambar soal", "lihat gambar",
+))
+
+
+def periksa_gambar(rajah, galat):
+    """Periksa tiap ![alt](berkas) di seluruh konten; kembalikan yang terpakai.
+
+    Dibaca ulang dari berkas mentahnya, bukan dari hasil markdown_ke_html: yang
+    diperiksa justru hal-hal yang hilang setelah dirender — alt kosong sudah
+    telanjur jadi atribut kosong, dan $ di dalam alt sudah telanjur diselamatkan
+    lindungi_rumus() sebagai rumus yang tak akan pernah dirender KaTeX.
+    """
+    dipakai = set()
+    for sub in ("jurus", "soal"):
+        for jalur in sorted((KONTEN / sub).glob("*.md")):
+            nama = "%s/%s" % (sub, jalur.name)
+            for m in GAMBAR.finditer(jalur.read_text(encoding="utf-8")):
+                alt, berkas = m.group(1).strip(), m.group(2).strip()
+
+                if not berkas:
+                    galat.append("%s: gambar tanpa nama berkas" % nama)
+                elif "/" in berkas or "//" in berkas or ":" in berkas:
+                    galat.append(
+                        "%s: rujukan gambar '%s' memuat jalur atau alamat web — "
+                        "tulis nama berkasnya saja. Gambar luar mematahkan latihan "
+                        "offline, dan menyalinnya ke sini soal izin yang berbeda."
+                        % (nama, berkas))
+                elif not berkas.endswith(".svg"):
+                    galat.append(
+                        "%s: gambar '%s' bukan .svg — rajah geometri dibangkitkan "
+                        "dari konten/rajah/*.py, lihat scripts/rajah.py"
+                        % (nama, berkas))
+                elif berkas not in rajah:
+                    galat.append(
+                        "%s: gambar '%s' tidak ada — buat dulu konten/rajah/%s.py"
+                        % (nama, berkas, berkas[:-4]))
+                else:
+                    dipakai.add(berkas)
+
+                if not alt:
+                    galat.append(
+                        "%s: gambar '%s' tanpa alt. Bagi siswa yang memakai pembaca "
+                        "layar, alt itu satu-satunya isi soalnya — sebutkan bangunnya, "
+                        "bukan bahwa ada gambar." % (nama, berkas or "?"))
+                elif alt.lower().rstrip(".") in ALT_MALAS:
+                    galat.append(
+                        "%s: alt '%s' tidak menggantikan gambarnya — sebutkan titik, "
+                        "sisi, dan hubungan yang terlihat di rajah itu" % (nama, alt))
+                if "$" in alt:
+                    galat.append(
+                        "%s: alt '%s' memuat rumus. KaTeX tidak merender di dalam "
+                        "atribut, jadi pembaca layar akan mengejanya sebagai 'dolar'. "
+                        "Tulis dengan kata: 'sudut ABC', bukan '$\\angle ABC$'."
+                        % (nama, alt))
+    return dipakai
 
 
 def muat_jurus(galat):
@@ -617,13 +751,32 @@ def urutan_tahap(tahap):
 
 # ---------------------------------------------------------------- utama
 
+def tulis_rajah(rajah):
+    """Tulis SVG yang berubah saja, dan buang yang sumbernya sudah tidak ada.
+
+    Menulis ulang berkas yang isinya sama membuat git menandainya berubah setiap
+    build — dan alur GitHub Actions mengomit balik hasil build, jadi itu berarti
+    komit kosong pada tiap dorongan.
+    """
+    RAJAH_KELUAR.mkdir(parents=True, exist_ok=True)
+    for nama, isi in sorted(rajah.items()):
+        berkas = RAJAH_KELUAR / nama
+        if not berkas.exists() or berkas.read_text(encoding="utf-8") != isi:
+            berkas.write_text(isi, encoding="utf-8")
+    for berkas in RAJAH_KELUAR.glob("*.svg"):
+        if berkas.name not in rajah:
+            berkas.unlink()
+
+
 def main():
     galat = []
     arsip = muat_arsip(galat)
+    rajah = bangun_rajah(galat)
     jurus = muat_jurus(galat)
     soal = muat_soal(galat)
     periksa(jurus, soal, galat)
     periksa_arsip(soal, arsip, galat)
+    dipakai_rajah = periksa_gambar(rajah, galat)
     hitung_tingkat(jurus, galat)
 
     if galat:
@@ -634,11 +787,17 @@ def main():
 
     ukuran = tata_letak(jurus)
     DATA.mkdir(exist_ok=True)
+    tulis_rajah(rajah)
 
     (DATA / "jurus.json").write_text(
         json.dumps(
             {
                 "ukuran": ukuran,
+                # Daftar rajah yang benar-benar dirujuk konten. Ikut di sini karena
+                # sw.js-lah yang membutuhkannya — ia menurunkan daftar berkas untuk
+                # diambil di latar dari jurus.json, pola yang sama dengan berkasSoal().
+                # Ditulis mesin supaya rajah baru tidak pernah terlupa dari cache.
+                "rajah": sorted(dipakai_rajah),
                 # Ikut di jurus.json, bukan berkas sendiri: daftarnya beberapa ratus
                 # bita dan selalu dibutuhkan bersama soal mana pun yang menyebutnya,
                 # jadi berkas terpisah cuma menambah satu permintaan jaringan.
@@ -682,9 +841,14 @@ def main():
         )
 
     tanpa_latihan = [j["id"] for j in jurus.values() if not j["latihan"]]
-    print("Selesai. %d jurus, %d soal." % (len(jurus), len(soal)))
+    print("Selesai. %d jurus, %d soal, %d rajah." % (len(jurus), len(soal), len(rajah)))
     if tanpa_latihan:
         print("Belum ada latihan di: %s" % ", ".join(sorted(tanpa_latihan)))
+    # Peringatan, bukan galat: saat menulis geometri, wajar rajahnya jadi lebih
+    # dulu daripada soal yang memakainya. Yang tidak wajar adalah lupa.
+    nganggur = sorted(set(rajah) - dipakai_rajah)
+    if nganggur:
+        print("Rajah belum dirujuk konten mana pun: %s" % ", ".join(nganggur))
     return 0
 
 

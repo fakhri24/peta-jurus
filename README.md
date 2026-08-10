@@ -60,8 +60,8 @@ Semua tulisan ada di `konten/`. Kamu tidak menyentuh `data/*.json` — berkas it
 build**, dan akan tertimpa.
 
 ```sh
-python3 scripts/build.py     # konten/ → data/
-python3 tests/test_build.py  # 38 tes, terutama menjaga rumus tidak dirusak Markdown
+python3 scripts/build.py     # konten/ → data/ + assets/rajah/
+python3 tests/test_build.py  # 89 tes, terutama menjaga rumus tidak dirusak Markdown
 ```
 
 Build sengaja **gagal keras**, bukan diam-diam melewatkan yang keliru. Ia berhenti kalau:
@@ -71,6 +71,7 @@ Build sengaja **gagal keras**, bukan diam-diam melewatkan yang keliru. Ia berhen
 - `id` tidak sama dengan nama berkasnya
 - soal isian tanpa `jawaban`, atau soal uraian tanpa `## Rubrik`
 - bagian `## Kapan dipakai` kosong
+- gambar menunjuk rajah yang tidak ada, atau alt-nya kosong, malas, atau berumus
 
 ### Satu berkas jurus
 
@@ -138,6 +139,49 @@ disebut, gerbangnya kehilangan gunanya.
 Pemeriksaan jawaban isian sengaja lugu: spasi dirapikan, huruf besar-kecil disamakan, dan
 angka dibandingkan sebagai angka (jadi `08` sama dengan `8`). Selain itu, varian yang sah
 **ditulis eksplisit** di `jawaban_alt` — bukan ditebak oleh kode.
+
+### Satu rajah geometri
+
+Rajah **tidak digambar tangan dan tidak diambil dari mana pun** — ia dihitung. Sumbernya
+berkas Python di `konten/rajah/`, keluarannya SVG di `assets/rajah/` yang dibangkitkan
+`build.py` bersama sisanya.
+
+`konten/rajah/segitiga-lingkaran-dalam.py`
+
+```python
+from rajah import *
+
+A, B, C = titik(0, 0), titik(6, 0), titik(1.6, 4.2)
+I = pusat_dalam(A, B, C)              # dihitung, bukan ditaksir
+X = kaki(I, garis(B, C))              # titik singgung, pasti tepat di lingkaran
+
+RAJAH = (rajah("Segitiga ABC dengan lingkaran dalam berpusat I, menyinggung BC di X")
+         .poligon(A, B, C)
+         .lingkaran(I, jari_dalam(A, B, C), gaya="bantu")
+         .ruas(I, X, gaya="bantu", putus=True)
+         .tanda_siku(B, X, I)
+         .titik(A, "A").titik(B, "B").titik(C, "C").titik(I, "I").titik(X, "X"))
+```
+
+Dipakai di soal dengan nama berkasnya saja:
+
+```markdown
+![Segitiga ABC dengan lingkaran dalam berpusat I, menyinggung BC di X](segitiga-lingkaran-dalam.svg)
+```
+
+Alasan dihitung: rajah dibaca dengan mata, dan siswa menyimpulkan dari apa yang
+dilihatnya. Lingkaran dalam yang meleset sedikit tidak menggagalkan apa pun — ia hanya
+mengajarkan hal yang salah, diam-diam. Sumbu $y$ di `konten/rajah/` **naik ke atas**
+seperti di buku; pembalikannya ke koordinat SVG dikerjakan sekali saat render.
+
+Dua aturan yang ditegakkan build:
+
+- **`alt` wajib dan harus menggantikan gambarnya.** Bagi siswa yang memakai pembaca
+  layar, alt itu satu-satunya isi soalnya — `![gambar](…)` ditolak, begitu juga alt
+  yang memuat `$…$`, karena KaTeX tidak merender di dalam atribut.
+- **Hanya nama berkas, bukan jalur atau alamat web.** Gambar dari luar mematahkan
+  latihan offline, dan menyalinnya ke sini urusan izin yang berbeda — lihat `PLAN.md`
+  Fase 5.
 
 ---
 

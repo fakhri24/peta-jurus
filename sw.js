@@ -5,7 +5,7 @@
    — cache dulu, perbarui diam-diam di latar — karena isinya jarang berubah dan
    latihan saat offline justru intinya. */
 
-var CACHE = 'peta-jurus-v10';
+var CACHE = 'peta-jurus-v11';
 
 /* Wajib ada. Kalau salah satu gagal, install ikut gagal — lebih baik ketahuan
    daripada situsnya setengah jalan saat offline. */
@@ -31,14 +31,17 @@ var KERANGKA = [
   'data/jurus.json'
 ];
 
-/* Soal per bidang. Sengaja **tidak** di KERANGKA: menunggunya membuat install
-   memanjang oleh ratusan KB yang belum tentu dipakai siswa hari itu — dan dengan
-   empat bidang, angkanya berlipat. Sebagai gantinya ia diambil di latar setelah
-   install selesai, jadi latihan offline tetap utuh tanpa menahan pemasangan.
+/* Soal per bidang dan rajah geometri. Sengaja **tidak** di KERANGKA: menunggunya
+   membuat install memanjang oleh ratusan KB yang belum tentu dipakai siswa hari
+   itu — dan dengan empat bidang, angkanya berlipat. Sebagai gantinya keduanya
+   diambil di latar setelah install selesai, jadi latihan offline tetap utuh tanpa
+   menahan pemasangan.
 
    Daftarnya diturunkan dari jurus.json, bukan ditulis tangan, supaya bidang baru
-   tidak pernah terlupa. */
-function berkasSoal(c) {
+   dan rajah baru tidak pernah terlupa. Untuk rajah itu bukan kemewahan: soal
+   geometri tanpa bangunnya bukan soal yang lebih sulit, melainkan soal yang tidak
+   bisa dikerjakan sama sekali. */
+function berkasLatar(c) {
   return c.match('data/jurus.json')
     .then(function (r) { return r ? r.json() : null; })
     .then(function (d) {
@@ -47,7 +50,14 @@ function berkasSoal(c) {
       d.simpul.forEach(function (j) {
         if (j.contoh.length || j.latihan.length) ada[j.pilar] = true;
       });
-      return Object.keys(ada).map(function (p) { return 'data/soal-' + p + '.json'; });
+      var daftar = Object.keys(ada).map(function (p) {
+        return 'data/soal-' + p + '.json';
+      });
+      /* Dibaca dengan penjaga: jurus.json dari cache versi lama belum punya
+         kunci ini. */
+      return daftar.concat((d.rajah || []).map(function (n) {
+        return 'assets/rajah/' + n;
+      }));
     });
 }
 
@@ -81,10 +91,10 @@ self.addEventListener('install', function (e) {
     caches.open(CACHE)
       .then(function (c) {
         return c.addAll(KERANGKA).then(function () {
-          /* Font boleh gagal satu-dua tanpa menggagalkan install, dan soal diambil
-             di latar — keduanya tidak ditunggu. */
+          /* Font boleh gagal satu-dua tanpa menggagalkan install, dan soal serta
+             rajah diambil di latar — keduanya tidak ditunggu. */
           Promise.all(FONT.map(function (u) { return c.add(u).catch(function () {}); }))
-            .then(function () { return berkasSoal(c); })
+            .then(function () { return berkasLatar(c); })
             .then(function (daftar) {
               return Promise.all(daftar.map(function (u) {
                 return c.add(u).catch(function () {});

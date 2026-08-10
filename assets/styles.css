@@ -75,6 +75,21 @@ p { margin: 0 0 .8em; }
 a { color: inherit; text-decoration-color: var(--tinta-3); text-underline-offset: 2px; }
 code { font-family: var(--f-mono); font-size: .9em; }
 
+/* Rajah geometri. SVG-nya membawa width/height sendiri, jadi ia tampil sebesar
+   ukuran aslinya dan baru menyusut kalau layarnya lebih sempit — itulah gunanya
+   pasangan max-width/height di bawah. Tanpa keduanya, rajah selebar 400 px
+   memaksa seluruh halaman menggulung mendatar di ponsel.
+
+   Warnanya tidak diatur di sini dan memang tidak bisa: SVG yang dimuat lewat
+   <img> adalah dokumen terpisah yang tidak melihat CSS halaman. Tiap rajah
+   membawa paletnya sendiri, dicap scripts/rajah.py. */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.1em auto;
+}
+
 .wadah { max-width: var(--lebar-teks); margin: 0 auto; padding: 0 1rem 5rem; }
 .wadah-lebar { max-width: 72rem; margin: 0 auto; padding: 0 1rem 5rem; }
 
