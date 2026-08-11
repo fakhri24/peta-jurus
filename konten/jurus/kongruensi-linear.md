@@ -10,8 +10,23 @@ latihan: [kl-01, kl-02, kl-03, kl-04, kl-05, kl-06]
 
 ## Kapan dipakai
 
-Soal meminta menyelesaikan $ax \equiv b \pmod m$, atau kamu tiba di bentuk itu di
+Soal meminta menyelesaikan **$ax \equiv b \pmod m$** — atau kamu tiba di bentuk itu di
 tengah jalan dan ingin "membagi" kedua ruas.
+
+Pemicu kedua, dan justru yang paling sering: **keinginan membagi dalam kongruensi.** Begitu
+muncul dorongan mencoret faktor yang sama di kedua ruas, berhentilah — di sinilah
+pertanyaan itu dijawab. Boleh mengalikan dengan invers, dan invers hanya ada kalau
+pembaginya relatif prima terhadap modulusnya.
+
+Pemicu ketiga: soal menanyakan **berapa banyak** penyelesaian, bukan penyelesaiannya.
+Jawabannya $\gcd(a,m)$ kalau ia membagi $b$, dan nol kalau tidak — tanpa satu pun
+penyelesaian perlu dicari.
+
+Pemicu keempat: soal mencari **invers** sebuah bilangan modulo $m$, sering tanpa menyebutnya
+begitu — "tentukan $x$ dengan $7x \equiv 1 \pmod{30}$".
+
+Bedakan dari Persamaan Diophantine Linear: satu peubah dengan modulo di sini, dua peubah
+tanpa modulo di sana. Isinya teorema yang sama, ditulis dua cara.
 
 ## Intinya
 

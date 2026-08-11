@@ -10,8 +10,22 @@ latihan: [ss-01, ss-02, ss-03, ss-04, ss-05, ss-06]
 
 ## Kapan dipakai
 
-Bentuknya tidak berubah ketika peubahnya ditukar, atau ada bentuk berulang yang layak
-diberi nama sendiri. Ciri lain: derajatnya tinggi, tetapi susunannya sangat teratur.
+Ada **bentuk yang berulang** di beberapa tempat — $x + \frac1x$, $x^2 + y^2$, $\sqrt{x+1}$.
+Begitu satu bentuk muncul lebih dari sekali, memberinya nama biasanya memangkas soalnya
+lebih banyak daripada menguraikannya.
+
+Pemicu kedua: **derajatnya tinggi tetapi susunannya teratur** — koefisiennya simetris
+membaca dari depan dan dari belakang, seperti $x^4 + x^3 - 4x^2 + x + 1$. Bentuk itu selalu
+runtuh menjadi kuadrat setelah dibagi $x^2$ dan diberi satu nama.
+
+Pemicu ketiga: bentuknya **tidak berubah ketika peubahnya ditukar**. Di situ jawabannya
+hampir selalu bisa ditulis lewat bentuk simetris dasar, dan mencari tiap peubah adalah
+jalan memutar.
+
+Pemicu keempat: ada **akar kuadrat yang mengganggu**. Menamai akarnya, lalu menulis peubah
+asalnya lewat nama itu, mengubah persamaan berakar menjadi persamaan biasa — dengan satu
+harga yang wajib dibayar di akhir: nama baru itu punya batas sendiri, dan penyelesaian yang
+melanggarnya harus dibuang.
 
 ## Intinya
 

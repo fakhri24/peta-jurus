@@ -10,8 +10,22 @@ latihan: [bk-01, bk-02, bk-03, bk-04, bk-05, bk-06]
 
 ## Kapan dipakai
 
-Persamaan berbentuk $z^n = 1$ atau $z^n = c$, jumlah yang polanya berulang tiap beberapa
-suku, atau soal yang menuntut memilih sebagian koefisien binomial menurut sisanya.
+Persamaan berbentuk **$z^n = 1$ atau $z^n = c$**, dan soal menanyakan akarnya, jumlahnya,
+atau hasil kalinya. Yang sering luput: jumlah seluruh akar satuan adalah nol, dan itu
+sendiri sudah menjawab banyak soal.
+
+Pemicu kedua, dan inilah alasan jurus ini ada di daftar OSN: soal meminta **memilih sebagian
+koefisien binomial menurut sisanya** — jumlah $\binom{n}{k}$ untuk $k$ kelipatan tiga, atau
+untuk $k$ genap. Bentuk itu tidak punya jalan lain yang rapi; saringan akar satuan
+menyelesaikannya dalam beberapa baris.
+
+Pemicu ketiga: ada **jumlah yang polanya berulang tiap beberapa suku** — $i^n$ berputar tiap
+empat, $\omega^n$ berputar tiap tiga. Begitu putarannya dikenali, jumlah sepanjang apa pun
+runtuh menjadi satu putaran.
+
+Pemicu keempat: soal **geometri bidang** yang titik-titiknya teratur — segi-$n$ beraturan,
+atau perputaran bersudut tetap. Menaruhnya di bidang kompleks mengubah perputaran menjadi
+perkalian, dan pembuktian panjang menjadi hitungan.
 
 ## Intinya
 

@@ -10,8 +10,20 @@ latihan: [fkt-01, fkt-02, fkt-03, fkt-04, fkt-05, fkt-06]
 
 ## Kapan dipakai
 
-Ruas kanan bernilai nol, atau kamu perlu mengubah jumlah menjadi hasil kali supaya bisa
-memakai "hasil kali nol" atau mencacah pasangan pembagi.
+**Ruas kanannya nol.** Begitu sebuah persamaan berbentuk $\ldots = 0$, mengubah ruas kirinya
+menjadi hasil kali langsung memberi seluruh penyelesaiannya.
+
+Pemicu kedua, dan ini yang membuat jurus ini terpakai jauh di luar aljabar: soal meminta
+**pasangan bilangan bulat** yang memenuhi suatu persamaan. Ubah bentuknya menjadi hasil kali
+sama dengan sebuah bilangan tetap, lalu cacah pasangan pembaginya — persamaan berubah dari
+tak hingga kemungkinan menjadi daftar yang bisa dihabiskan.
+
+Pemicu ketiga: ada **bentuk yang bisa dikenali** — selisih kuadrat, jumlah atau selisih
+pangkat tiga, atau kuadrat sempurna yang tersamar. $x^4 + 4$ terlihat buntu sampai
+diingat ia $(x^2+2x+2)(x^2-2x+2)$.
+
+Pemicu keempat, arah sebaliknya: soal meminta membuktikan sebuah bilangan **bukan prima**
+atau **habis dibagi** sesuatu. Menemukan satu faktorisasi menyelesaikannya seketika.
 
 ## Intinya
 

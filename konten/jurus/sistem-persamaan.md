@@ -10,8 +10,20 @@ latihan: [sp-01, sp-02, sp-03, sp-04, sp-05, sp-06]
 
 ## Kapan dipakai
 
-Ada beberapa persamaan dan beberapa peubah sekaligus. Di olimpiade, sistemnya jarang
-linear — biasanya simetris atau bisa dibuat simetris.
+Ada **beberapa persamaan dan beberapa peubah** sekaligus. Di olimpiade sistemnya jarang
+linear, jadi mencari tiap peubah satu per satu biasanya justru jalan terpanjang.
+
+Pemicu kedua, dan ini yang menentukan caranya: sistemnya **tidak berubah saat peubahnya
+ditukar**. Begitu $x$ dan $y$ bisa dibalik tanpa mengubah apa pun, berhenti mencari $x$ —
+cari $s = x+y$ dan $p = xy$ lebih dulu.
+
+Pemicu ketiga: soal memberi **satu bentuk simetris dan menanyakan bentuk simetris lain** —
+diketahui $x+y$ dan $xy$, ditanya $x^2+y^2$ atau $x^3+y^3$. Semuanya bisa ditulis lewat $s$
+dan $p$ tanpa pernah menyelesaikan sistemnya.
+
+Waspadai bentuk **siklik** yang bukan simetris penuh: $x \to y \to z \to x$ membiarkan
+sistemnya tetap, tetapi menukar dua peubah saja tidak. Di situ $s$ dan $p$ belum cukup, dan
+biasanya penyelesaiannya lewat penjumlahan atau pengurangan antarpersamaan.
 
 ## Intinya
 

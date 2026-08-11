@@ -10,8 +10,26 @@ latihan: [dtl-01, dtl-02, dtl-03, dtl-04, dtl-05, dtl-06]
 
 ## Kapan dipakai
 
-Persamaan dengan solusi bulat yang memuat hasil kali atau pangkat — $xy + ax + by = c$,
-$x^2 - y^2 = n$, atau pecahan seperti $\frac1x + \frac1y = \frac1n$.
+Persamaan dengan **solusi bulat** yang memuat **hasil kali atau pangkat** — $xy + ax + by = c$,
+$x^2 - y^2 = n$, atau pecahan seperti $\frac1x + \frac1y = \frac1n$. Kata "bulat" atau "asli"
+di soalnya itulah pemicu sebenarnya: tanpa syarat itu persamaannya punya tak hingga
+penyelesaian dan tidak menarik.
+
+Pemicu kedua: ruas kanannya **bilangan tetap**, dan ruas kirinya bisa dipaksa menjadi hasil
+kali. Begitu bentuknya menjadi (sesuatu)(sesuatu) $= n$, soal berubah dari mencari menjadi
+mencacah pasangan pembagi $n$ — daftar terbatas yang bisa dihabiskan.
+
+Pemicu ketiga: ada **selisih dua kuadrat**. Kedua faktornya selalu berparitas sama, dan
+kenyataan itu sendiri sering sudah menutup sebagian besar kemungkinan sebelum satu pun
+dicoba.
+
+Pemicu keempat: soal meminta membuktikan **tidak ada penyelesaian**. Di situ jawabannya
+hampir selalu modulo — cari satu modulus yang membuat kedua ruas tidak mungkin sama, dan
+sisa kuadrat modulo $4$ atau $8$ adalah tempat pertama yang layak dicoba.
+
+Bedakan dari Persamaan Diophantine Linear: begitu ada hasil kali peubah atau pangkat di
+atas satu, rumus solusi umum di sana tidak berlaku lagi, dan yang tersisa refleks-refleks di
+sini.
 
 ## Intinya
 

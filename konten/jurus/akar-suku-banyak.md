@@ -10,8 +10,21 @@ latihan: [asb-01, asb-02, asb-03, asb-04, asb-05, asb-06]
 
 ## Kapan dipakai
 
-Polinomial berderajat tiga ke atas, dan yang ditanya bentuk simetris akar-akarnya —
-jumlah, hasil kali, jumlah kuadrat — bukan akarnya satu per satu.
+Polinomial berderajat tiga ke atas, dan yang ditanya **bentuk simetris akar-akarnya** —
+jumlah, hasil kali, jumlah kuadrat — bukan akarnya satu per satu. Ciri paling terang:
+akarnya diberi nama $x_1, x_2, x_3$ tanpa pernah diminta dihitung.
+
+Pemicu kedua: bentuk yang ditanya **tidak langsung ada di daftar Vieta**, tetapi bisa
+ditulis lewatnya. $\sum x_i^2 = (\sum x_i)^2 - 2\sum_{i<j} x_i x_j$ adalah gerakan yang
+sama yang dipakai pada sistem simetris, hanya dengan nama lain.
+
+Pemicu ketiga: soal meminta **menyusun polinomial baru** yang akarnya diperoleh dari akar
+polinomial lama — dikali dua, ditambah satu, atau dibalik. Jumlah dan hasil kali akar
+barunya bisa dihitung dari yang lama tanpa satu akar pun diketahui.
+
+Pemicu keempat, dan ini yang paling sering luput: soal memberi **satu syarat tambahan pada
+akarnya** — dua di antaranya sama, atau salah satunya jumlah dua lainnya — lalu menanyakan
+koefisiennya. Syarat itu digabung dengan hubungan Vieta menjadi sistem persamaan biasa.
 
 ## Intinya
 

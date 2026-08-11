@@ -10,9 +10,25 @@ latihan: [ma-01, ma-02, ma-03, ma-04, ma-05, ma-06]
 
 ## Kapan dipakai
 
-Hampir selalu, sebagai langkah pertama. Kamu melihat bentuk yang berantakan dan menduga
-ada bentuk lain yang lebih jinak — jumlah kuadrat, hasil kali, atau pecahan yang bisa
-disederhanakan.
+Hampir selalu, sebagai langkah pertama — tetapi ada beberapa bentuk yang memicunya secara
+khusus.
+
+Pemicu pertama: soal memberi **bentuk simetris dan menanyakan bentuk simetris lain**.
+Diketahui $a+b+c$ dan $ab+bc+ca$, ditanya $a^2+b^2+c^2$. Identitas $(a+b+c)^2$ dibalik
+menjawabnya tanpa satu pun peubah diketahui, dan itu gerakan yang paling sering terpakai di
+seluruh aljabar olimpiade.
+
+Pemicu kedua: ada **bentuk yang bisa dikenali** — selisih kuadrat, jumlah atau selisih
+pangkat tiga, kuadrat sempurna yang tersamar. Mengenalinya seketika, bukan menurunkannya
+ulang, itulah isi jurus ini.
+
+Pemicu ketiga: ada **pecahan bertingkat atau akar di penyebut** yang membuat bentuknya
+terlihat lebih sulit daripada sebenarnya. Menyamakan penyebut atau mengalikan sekawan
+sering membuat sebagian besar sukunya saling meniadakan.
+
+Pemicu keempat, dan ini yang paling layak dicurigai: bentuknya **berantakan tetapi
+angkanya rapi**. Soal olimpiade jarang memberi bilangan bagus tanpa maksud; kerapian itu
+biasanya sisa dari bentuk lain yang belum kamu temukan.
 
 ## Intinya
 

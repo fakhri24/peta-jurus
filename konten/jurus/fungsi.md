@@ -10,8 +10,21 @@ latihan: [fn-01, fn-02, fn-03, fn-04, fn-05, fn-06]
 
 ## Kapan dipakai
 
-Soal memberi aturan $f$ dan menanyakan nilai di suatu titik, atau menanyakan komposisi,
-invers, dan sifat seperti ganjil–genap.
+Soal **memberi aturan $f$ secara utuh** lalu menanyakan nilainya di suatu titik, atau
+menanyakan **komposisi** dan **invers**. Ciri paling terang: ada $f(g(x))$, $f^{-1}$, atau
+$f \circ f$ yang harus diuraikan.
+
+Pemicu kedua: soal menyebut **ganjil–genap**, atau memberi kesamaan seperti $f(-x) = f(x)$
+dan menanyakan akibatnya. Yang ditanya biasanya bukan $f$-nya, melainkan simetri yang
+mengikutinya.
+
+Pemicu ketiga: soal menyusun $f$ berulang kali — $f(f(f(x)))$ atau $f^{2026}(x)$ — dan
+menanyakan hasilnya. Bentuk itu hampir selalu berputar; cari panjang putarannya, jangan
+menguraikan semuanya.
+
+Bedakan dari Persamaan Fungsional: kalau rumus $f$ **tidak** diberikan dan yang diketahui
+hanya sebuah kesamaan yang berlaku untuk semua $x$, itu jurus yang lain — dan jauh lebih
+berat.
 
 ## Intinya
 

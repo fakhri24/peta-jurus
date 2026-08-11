@@ -10,8 +10,24 @@ latihan: [bd-01, bd-02, bd-03, bd-04, bd-05, bd-06]
 
 ## Kapan dipakai
 
-Ada pola yang berulang dengan selisih tetap atau rasio tetap — bilangan tersusun, jumlah
-berurutan, bunga berlipat, atau soal cerita yang menyebut "bertambah sekian setiap".
+Ada pola berulang dengan **selisih tetap** atau **rasio tetap** — bilangan tersusun, bunga
+berlipat, atau soal cerita yang menyebut "bertambah sekian setiap". Bedanya diuji dengan
+satu gerakan: kurangkan dua suku berurutan, lalu bagi dua suku berurutan; yang menghasilkan
+bilangan tetap itulah jenisnya.
+
+Pemicu kedua: soal meminta **jumlah banyak suku sekaligus** — "jumlah seratus bilangan
+pertama", "jumlah semua kelipatan tujuh di bawah seribu". Menjumlahkannya satu per satu
+selalu mungkin dan selalu bukan yang dimaksud.
+
+Pemicu ketiga: soal memberi **dua keterangan tentang suku-suku tertentu** dan menanyakan
+suku lain — diketahui $U_3$ dan $U_7$, ditanya $U_{20}$. Dua keterangan cukup untuk
+menentukan $a$ dan $b$, dan sisanya hitungan biasa.
+
+Pemicu keempat: deretnya **tak hingga** dan soal menanyakan jumlahnya. Itu hanya bermakna
+untuk deret geometri dengan $|r| < 1$, dan memeriksa syarat itu bagian dari jawabannya.
+
+Bedakan dari Rekursi: kalau tiap suku diberikan lewat suku sebelumnya tanpa selisih atau
+rasio tetap, itu jurus yang lain.
 
 ## Intinya
 

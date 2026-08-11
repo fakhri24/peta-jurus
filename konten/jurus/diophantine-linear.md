@@ -10,8 +10,21 @@ latihan: [dl-01, dl-02, dl-03, dl-04, dl-05, dl-06]
 
 ## Kapan dipakai
 
-Soal berbentuk $ax + by = c$ dengan $x, y$ diminta bulat — sering berbaju cerita: uang
-pecahan, jumlah hewan, banyak kursi.
+Soal berbentuk **$ax + by = c$ dengan $x, y$ diminta bulat**. Jarang ditulis setelanjang
+itu — biasanya berbaju cerita: uang pecahan, jumlah hewan, banyak kursi, kombinasi perangko.
+
+Pemicu kedua, yang paling sering menjadi isi soalnya: pertanyaannya bukan "berapa $x$"
+melainkan **"ada berapa pasangan"** atau **"adakah"**. Keduanya dijawab tanpa mencari
+solusinya satu per satu — yang pertama dengan menghitung $t$ yang membuat kedua peubah
+tetap memenuhi syarat soal, yang kedua cukup dengan memeriksa $\gcd(a,b) \mid c$.
+
+Pemicu ketiga: soal menambahkan **syarat tanda atau batas** — $x, y$ tak negatif, atau
+kurang dari suatu bilangan. Syarat itu memotong deret solusi yang tak hingga menjadi
+hingga, dan biasanya di situlah jawabannya.
+
+Bedakan dari Kongruensi Linear: dua peubah dan satu persamaan itu jurus ini; satu peubah
+dengan modulo itu yang sana. Keduanya bersaudara — $ax \equiv b \pmod m$ hanyalah
+$ax + my = b$ yang ditulis lain.
 
 ## Intinya
 

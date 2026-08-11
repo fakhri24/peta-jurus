@@ -10,8 +10,20 @@ latihan: [pk-01, pk-02, pk-03, pk-04, pk-05, pk-06]
 
 ## Kapan dipakai
 
-Ada $x^2$ sebagai pangkat tertinggi — langsung, atau setelah substitusi yang mengubah
-soalnya jadi berbentuk kuadrat.
+Ada **$x^2$ sebagai pangkat tertinggi** — langsung, atau setelah substitusi yang mengubah
+soalnya jadi berbentuk kuadrat. Bentuk $x^4 + bx^2 + c$ dan $2^{2t} - 5 \cdot 2^t + 6$
+keduanya kuadrat yang menyamar.
+
+Pemicu kedua, dan inilah yang paling sering muncul di olimpiade: soal menanyakan **syarat
+agar akarnya** ada, berbeda, atau kembar — tanpa pernah menanyakan akarnya. Kalimat
+"tentukan semua $m$ agar persamaan itu punya dua akar berbeda" adalah soal tentang
+diskriminan, bukan tentang $x$.
+
+Pemicu ketiga: soal meminta **nilai terbesar atau terkecil** sebuah bentuk kuadrat.
+Melengkapkan kuadrat menjawabnya langsung, lengkap dengan titik tempat nilai itu tercapai.
+
+Bedakan dari Rumus Vieta: kalau yang ditanya jumlah atau hasil kali kedua akarnya, akarnya
+tidak perlu dihitung sama sekali.
 
 ## Intinya
 

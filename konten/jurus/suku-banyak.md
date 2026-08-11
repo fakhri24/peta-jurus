@@ -10,8 +10,19 @@ latihan: [sb-01, sb-02, sb-03, sb-04, sb-05, sb-06]
 
 ## Kapan dipakai
 
-Ada polinomial berderajat tiga ke atas, atau soal berbicara tentang derajat, koefisien,
-dan pembagian antar-polinomial.
+Soal menyebut **derajat**, **koefisien**, atau **pembagian antar-polinomial**. Bentuk yang
+paling terang: "tentukan sisa pembagian $P(x)$ oleh $\ldots$".
+
+Pemicu kedua, dan ini yang paling sering tidak dikenali: soal memberi **nilai $P$ di
+beberapa titik** lalu menanyakan nilainya di titik lain. Banyaknya nilai yang diberikan
+menentukan berapa derajat sisa yang bisa dipastikan — tiga nilai memberi sisa berderajat
+dua, dan itu cukup untuk menjawab tanpa pernah mengetahui $P$ seutuhnya.
+
+Pemicu ketiga: soal menyatakan sebuah bentuk **habis dibagi** bentuk lain, atau bahwa suatu
+bilangan adalah akarnya. Keduanya kalimat yang sama diucapkan dua cara.
+
+Bedakan dari Akar dan Koefisien Suku Banyak: kalau yang ditanya jumlah atau hasil kali
+akarnya, dan akarnya sendiri tidak perlu diketahui, itu Vieta — bukan pembagian.
 
 ## Intinya
 
