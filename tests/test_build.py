@@ -630,6 +630,42 @@ class TestRajah(unittest.TestCase):
             self.assertAlmostEqual((T - pusat).x * (P - T).x
                                    + (T - pusat).y * (P - T).y, 0, places=9)
 
+    def test_potong_lingkaran_berjarak_jari_jari_dari_kedua_pusat(self):
+        # Fungsi ini lama berada di keadaan yang sama persis dengan busur()
+        # sebelum kotak pembatasnya ketahuan salah: nol pemakai konten, nol
+        # tes. Yang dijaga di sini definisinya — titik potong dua lingkaran
+        # adalah titik yang berjarak r1 dari pusat pertama dan r2 dari kedua.
+        r = self.r
+        p1, r1 = r.titik(0, 0), 5.0
+        p2, r2 = r.titik(6, 2), 4.0
+        for T in r.potong_lingkaran(p1, r1, p2, r2):
+            self.assertAlmostEqual(r.jarak(p1, T), r1, places=9)
+            self.assertAlmostEqual(r.jarak(p2, T), r2, places=9)
+
+    def test_potong_lingkaran_urut_kiri_lalu_kanan(self):
+        # Docstring-nya menjanjikan urutan, dan rajah yang memakainya akan
+        # memilih salah satu titik berdasarkan janji itu — jadi janjinya ikut
+        # diuji, bukan cuma jaraknya. Sumbu y matematis: sisi kiri arah
+        # p1→p2 berarti y positif.
+        r = self.r
+        kiri, kanan = r.potong_lingkaran(r.titik(0, 0), 5.0, r.titik(6, 0), 5.0)
+        self.assertGreater(kiri.y, 0)
+        self.assertLess(kanan.y, 0)
+        self.assertAlmostEqual(kiri.x, kanan.x, places=9)
+        self.assertAlmostEqual(kiri.y, -kanan.y, places=9)
+
+    def test_lingkaran_yang_tak_berpotongan_dua_titik_dilempar(self):
+        r = self.r
+        kasus = (
+            (r.titik(0, 0), 1.0, r.titik(10, 0), 2.0),   # terpisah jauh
+            (r.titik(0, 0), 5.0, r.titik(1, 0), 1.0),    # satu di dalam lainnya
+            (r.titik(0, 0), 3.0, r.titik(0, 0), 3.0),    # berimpit
+            (r.titik(0, 0), 2.0, r.titik(5, 0), 3.0),    # bersinggungan, satu titik
+        )
+        for k in kasus:
+            with self.assertRaises(r.GagalRajah):
+                r.potong_lingkaran(*k)
+
     def test_bangun_mustahil_dilempar_bukan_digambar_diam_diam(self):
         r = self.r
         with self.assertRaises(r.GagalRajah):

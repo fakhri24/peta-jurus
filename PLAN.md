@@ -708,6 +708,12 @@ mengerjakannya:
   habis. Kalau isinya dipisah, jalur itu berubah dari "sudah ada di memori" menjadi
   "diambil saat diklik" — dan itu terjadi persis ketika siswa baru selesai ujian, jadi
   perilakunya saat luring harus diputuskan sadar, bukan kebetulan.
+  **Diputuskan 11 Agustus 2026: bagian beratnya tetap ikut disimpan** — masuk daftar
+  `berkasLatar()` di `sw.js`, sama seperti berkas soal sekarang. Yang dihemat pemecahan ini
+  jadi muatan saat halaman dibuka (simulasi 1829 KB → sekitar 330 KB), bukan ruang simpan
+  di perangkat. Pilihan sebaliknya menghemat ~1,3 MB tapi mematikan pembahasan saat luring
+  tepat sesudah simulasi selesai, dan itu bertentangan dengan premis `sw.js` sendiri:
+  latihan saat luring justru intinya.
 - Ukur ulang dengan `node scripts/periksa-muatan.js` sebelum dan sesudah. Angka di atas
   keluar dari sana plus hitungan per-bagian; jangan percaya perkiraan.
 
