@@ -61,10 +61,16 @@ var Inti = (function () {
          Inti.muatData()                           semua bidang
          Inti.muatData({ soal: ['aljabar'] })      bidang tertentu
          Inti.muatData({ soal: function (d) {…} }) bidang ditentukan setelah jurus termuat
+         Inti.muatData({ bahas: false })           tanpa pembahasan, petunjuk, rubrik
 
-     Soal dipecah per bidang di data/soal-<pilar>.json. Peta tidak menyentuh
-     data.soal sama sekali; halaman jurus hanya perlu satu bidang; latihan dan
-     jurnal perlu bidang yang benar-benar dirujuk kemajuan siswa.
+     Soal dipecah per bidang **dan** per berat: data/soal-<pilar>.json memuat yang
+     perlu untuk menyajikan soalnya, data/bahas-<pilar>.json memuat pembahasan,
+     petunjuk, dan rubrik. Yang kedua tiga perempat ukurannya, dan simulasi tidak
+     pernah membacanya. Keduanya digabung menjadi satu objek di data.soal, jadi
+     pemakainya tidak berubah.
+
+     Peta tidak menyentuh data.soal sama sekali; halaman jurus hanya perlu satu
+     bidang; latihan dan jurnal perlu bidang yang benar-benar dirujuk kemajuan siswa.
 
      Bawaannya memuat semuanya, jadi halaman yang lupa menyatakan kebutuhannya
      tetap bekerja — hanya tidak hemat.
@@ -74,6 +80,11 @@ var Inti = (function () {
      Karena itu pemuatannya berurutan, bukan sejajar. */
   function muatData(perlu) {
     var spek = (perlu && 'soal' in perlu) ? perlu.soal : 'semua';
+    /* Bawaannya ikut memuat pembahasan, alasan yang sama dengan bawaan di atas:
+       halaman yang lupa menyatakan tetap bekerja, hanya tidak hemat. Yang
+       menyatakan `false` cuma simulasi — ia tidak pernah merender pembahasan,
+       melainkan menautkan ke latihan.html?soal=… sesudah waktunya habis. */
+    var perluBahas = (perlu && 'bahas' in perlu) ? perlu.bahas : true;
 
     return fetch('data/jurus.json').then(function (r) { return r.json(); })
       .then(function (hasil) {
@@ -93,11 +104,31 @@ var Inti = (function () {
         var pilar = pilihPilar(spek);
         if (!pilar.length) return data;
 
-        return Promise.all(pilar.map(function (p) {
-          return fetch('data/soal-' + p + '.json').then(function (r) { return r.json(); });
+        var berkas = pilar.map(function (p) { return 'data/soal-' + p + '.json'; });
+        if (perluBahas) {
+          berkas = berkas.concat(pilar.map(function (p) {
+            return 'data/bahas-' + p + '.json';
+          }));
+        }
+
+        return Promise.all(berkas.map(function (u) {
+          return fetch(u).then(function (r) { return r.json(); });
         })).then(function (bagian) {
+          /* Dua sapuan, bukan satu, supaya urutan selesainya fetch tidak
+             menentukan apa pun. Pembahasan ditempelkan ke objek soal yang sama —
+             pemakainya (soal-ui.js, latihan.js) tidak perlu tahu bahwa datanya
+             datang dari dua berkas. */
           bagian.forEach(function (b) {
-            b.soal.forEach(function (s) { data.soal[s.id] = s; });
+            if (b.soal) b.soal.forEach(function (s) { data.soal[s.id] = s; });
+          });
+          bagian.forEach(function (b) {
+            if (!b.bahas) return;
+            Object.keys(b.bahas).forEach(function (id) {
+              var s = data.soal[id];
+              if (!s) return;
+              var tambahan = b.bahas[id];
+              Object.keys(tambahan).forEach(function (k) { s[k] = tambahan[k]; });
+            });
           });
           return data;
         });

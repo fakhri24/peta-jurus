@@ -50,6 +50,13 @@ URUT_PILAR = ("teori-bilangan", "aljabar", "kombinatorika", "geometri")
 # siswa yang menyiapkan OSN-P tetap perlu melihat jurus OSN-K.
 TAHAP_SAH = ("osn-k", "osn-p", "osn")
 
+# Medan yang hanya dibutuhkan halaman yang benar-benar menampilkan pembahasan,
+# dipisah ke data/bahas-<pilar>.json. Simulasi tidak pernah merendernya — untuk
+# itu ia menautkan ke latihan.html?soal=… — jadi menyatukannya membuat halaman
+# simulasi mengunduh 1829 KB untuk membaca 138 KB. Ketiganya bersama-sama 1298 KB
+# dari 1474 KB nilai medan di keempat berkas soal.
+MEDAN_BAHAS = ("petunjuk", "pembahasan", "rubrik")
+
 # Naskah asli yang boleh dijadikan atribusi. Isinya metadata dan tautan saja —
 # tidak ada PDF naskah di repo ini, karena "gratis diunduh" dan "bebas disebarkan
 # ulang" adalah dua izin yang berbeda. Lihat PLAN.md Fase 5.
@@ -931,16 +938,34 @@ def main():
     for s in soal.values():
         per_pilar.setdefault(s["pilar"], []).append(s)
 
+    # Tiap bidang keluar sebagai dua berkas. Yang ringan memuat segala yang perlu
+    # untuk **menyajikan** soal — simulasi dan jurnal berhenti di sini. Yang berat
+    # memuat MEDAN_BAHAS, dan hanya halaman yang benar-benar merender pembahasan
+    # (jurus, latihan) memintanya. Keduanya sama-sama masuk cache lewat
+    # berkasLatar() di sw.js: yang dihemat muatan saat halaman dibuka, bukan ruang
+    # simpan — pembahasan yang hilang saat luring justru menusuk tepat sesudah
+    # simulasi selesai.
     for pilar in URUT_PILAR:
         berkas = DATA / ("soal-%s.json" % pilar)
+        bahas = DATA / ("bahas-%s.json" % pilar)
         isi = sorted(per_pilar.get(pilar, []), key=lambda s: s["id"])
         if not isi:
             # Bidang tanpa soal tidak diberi berkas; peramban memang tidak akan memintanya.
-            if berkas.exists():
-                berkas.unlink()
+            for usang in (berkas, bahas):
+                if usang.exists():
+                    usang.unlink()
             continue
         berkas.write_text(
-            json.dumps({"soal": isi}, ensure_ascii=False, indent=1) + "\n",
+            json.dumps(
+                {"soal": [{k: v for k, v in s.items() if k not in MEDAN_BAHAS}
+                          for s in isi]},
+                ensure_ascii=False, indent=1) + "\n",
+            encoding="utf-8",
+        )
+        bahas.write_text(
+            json.dumps(
+                {"bahas": {s["id"]: {k: s[k] for k in MEDAN_BAHAS} for s in isi}},
+                ensure_ascii=False, indent=1) + "\n",
             encoding="utf-8",
         )
 

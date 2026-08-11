@@ -304,6 +304,30 @@ class TestPecahSoalPerBidang(unittest.TestCase):
                 self.assertIn(s["id"], terdaftar, "%s tidak terdaftar di jurus mana pun" % s["id"])
                 self.assertEqual(terdaftar[s["id"]], {pilar}, "%s terdaftar lintas bidang" % s["id"])
 
+    def test_berkas_soal_tidak_memuat_medan_bahas(self):
+        # Kalau salah satu bocor balik ke berkas ringan, penghematannya hilang
+        # tanpa ada yang menandai — halaman tetap bekerja, hanya berat lagi.
+        for berkas in build.DATA.glob("soal-*.json"):
+            for s in json.loads(berkas.read_text(encoding="utf-8"))["soal"]:
+                for medan in build.MEDAN_BAHAS:
+                    self.assertNotIn(medan, s, "%s membawa '%s' di berkas ringan"
+                                     % (s["id"], medan))
+
+    def test_tiap_soal_punya_pasangan_bahasnya(self):
+        # Yang dijaga di sini kebalikannya: soal tanpa pasangan di bahas-*.json
+        # kehilangan petunjuk dan pembahasannya diam-diam, dan halaman latihan
+        # tetap tampil — hanya tanpa isi yang justru paling dicari siswa.
+        for berkas in build.DATA.glob("soal-*.json"):
+            pilar = berkas.stem[len("soal-"):]
+            pasangan = build.DATA / ("bahas-%s.json" % pilar)
+            self.assertTrue(pasangan.exists(), "bahas-%s.json tidak dibangun" % pilar)
+            bahas = json.loads(pasangan.read_text(encoding="utf-8"))["bahas"]
+            ringan = json.loads(berkas.read_text(encoding="utf-8"))["soal"]
+            self.assertEqual({s["id"] for s in ringan}, set(bahas))
+            for id_soal, isi in bahas.items():
+                self.assertEqual(set(isi), set(build.MEDAN_BAHAS),
+                                 "%s: isi bahas tidak lengkap" % id_soal)
+
 
 class TestPeriksa(unittest.TestCase):
     def test_prasyarat_hantu_ketahuan(self):

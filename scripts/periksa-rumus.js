@@ -54,12 +54,21 @@ function pisah(teks) {
   return keluar;
 }
 
-/* Soal dipecah per bidang; kumpulkan seluruhnya supaya tidak ada yang lolos periksa. */
+/* Soal dipecah per bidang **dan** per berat, jadi keduanya disatukan kembali di sini —
+   sama seperti muatData() melakukannya di klien.
+
+   Penyatuan ini bukan kerapian. Rumus terbanyak justru ada di pembahasan: memeriksa
+   berkas ringannya saja memberi 3541 rumus, sedangkan seluruhnya 23496. Tanpa baris
+   di bawah, 85% rumus di situs ini berhenti diperiksa tanpa ada yang menandai — dan
+   yang berhenti diperiksa itu justru yang paling panjang dan paling padat. */
 const soal = [];
+const bahas = {};
 for (const f of fs.readdirSync(path.join(AKAR, 'data')).sort()) {
-  if (!/^soal-.*\.json$/.test(f)) continue;
-  soal.push(...JSON.parse(fs.readFileSync(path.join(AKAR, 'data', f), 'utf8')).soal);
+  const baca = () => JSON.parse(fs.readFileSync(path.join(AKAR, 'data', f), 'utf8'));
+  if (/^soal-.*\.json$/.test(f)) soal.push(...baca().soal);
+  else if (/^bahas-.*\.json$/.test(f)) Object.assign(bahas, baca().bahas);
 }
+for (const s of soal) Object.assign(s, bahas[s.id] || {});
 
 /* Halaman jurus ikut diperiksa. 'Intinya' justru bagian yang paling padat rumus di
    seluruh situs — di situ identitasnya ditulis — dan halaman jurus dibuka jauh lebih

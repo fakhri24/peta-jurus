@@ -20,6 +20,7 @@ python3 tests/test_build.py       # 93 tes
 python3 tests/test_build.py TestRumusSelamat.test_garis_bawah_bukan_huruf_miring   # satu tes
 node scripts/periksa-rumus.js     # tiap rumus di data/*.json benar-benar dirender KaTeX
 node scripts/periksa-muatan.js    # berkas data apa yang benar-benar diminta tiap halaman
+node scripts/periksa-gabung.js    # soal yang dipecah tersusun kembali utuh di klien
 ```
 
 Tidak ada linter, tidak ada package manager, tidak ada build step untuk situsnya —
@@ -32,15 +33,27 @@ KaTeX yang sudah ada di `assets/katex/`, tanpa mengunduh apa pun. Jalankan setel
 menurut KaTeX. Rumus salah ketik lolos build tanpa keluhan dan baru terlihat sebagai
 kotak merah di layar siswa. Alur GitHub Actions menjalankannya sebelum mengomit balik.
 
-Ia memeriksa **soal dan jurus** — `data/soal-*.json` beserta `kapan_dipakai`, `inti`, dan
-`jebakan` di `data/jurus.json`. Bagian "Intinya" justru yang paling padat rumus di seluruh
-situs, dan halaman jurus dibuka jauh lebih sering daripada satu soal tertentu.
+Ia memeriksa **soal dan jurus** — `data/soal-*.json` **disatukan dulu dengan
+`data/bahas-*.json`**, beserta `kapan_dipakai`, `inti`, dan `jebakan` di `data/jurus.json`.
+Bagian "Intinya" justru yang paling padat rumus di seluruh situs, dan halaman jurus dibuka
+jauh lebih sering daripada satu soal tertentu.
+
+Penyatuan itu wajib dan mudah terlupa: tanpa `bahas-*.json`, yang terperiksa tinggal 3541
+rumus dari 23496 — 85% berhenti diperiksa tanpa ada yang menandai, dan yang berhenti justru
+pembahasan, bagian terpanjang dan terpadat. Kalau keluaran `rumus dirender` tiba-tiba
+mengecil banyak, itu penyebab pertama yang layak dicurigai.
 
 ## Alur data
 
 `konten/jurus/*.md` + `konten/soal/*.md` + `konten/arsip.yml` → `scripts/build.py` →
-`data/jurus.json` + `data/soal-<pilar>.json` → halaman statis mengambilnya dengan
-`fetch()`.
+`data/jurus.json` + `data/soal-<pilar>.json` + `data/bahas-<pilar>.json` → halaman statis
+mengambilnya dengan `fetch()`.
+
+Tiap bidang keluar sebagai **dua** berkas. Yang ringan memuat segala yang perlu untuk
+menyajikan soal; yang berat memuat `MEDAN_BAHAS` — `petunjuk`, `pembahasan`, `rubrik` —
+yang bersama-sama tiga perempat ukurannya. Pemecahannya ada karena simulasi tidak pernah
+merender ketiganya (ia menautkan ke `latihan.html?soal=…`), dan tanpa itu halaman simulasi
+mengunduh 1829 KB untuk membaca 138 KB. Sesudah dipecah: 484 KB.
 
 Rajah geometri ikut alur yang sama: `konten/rajah/*.py` → `scripts/build.py` →
 `assets/rajah/*.svg`. Sumbernya berkas Python karena rajah **dihitung, bukan digambar
@@ -87,6 +100,12 @@ di `assets/katex/`, bukan CDN, supaya offline jalan).
   `Inti.muatData({ soal: … })` — `false`, daftar pilar, atau fungsi yang memutuskan
   setelah `jurus.json` termuat. Bawaannya semua bidang, jadi halaman yang lupa
   menyatakan tetap bekerja, hanya tidak hemat.
+- **Dan menyatakan apakah pembahasannya dipakai** lewat `{ bahas: false }`. Bawaannya
+  `true`, alasan yang sama. Yang menyatakan `false` cuma `simulasi.js`. Keduanya digabung
+  menjadi satu objek di `data.soal`, jadi pemakainya (`soal-ui.js`, `latihan.js`) tidak
+  tahu datanya datang dari dua berkas — dan `node scripts/periksa-gabung.js` menjaga
+  penggabungan itu, karena kegagalannya **tidak terlihat**: halaman tetap termuat, hanya
+  petunjuk dan pembahasannya lenyap.
 - **`jurus.json` selalu diambil lebih dulu dan sendirian**, bukan sejajar dengan soal:
   peta soal→bidang (`data.pilarSoal`) diturunkan darinya, dan bentuk fungsi di atas butuh
   data itu untuk memutuskan. Peta itu bisa diturunkan karena tiap soal terdaftar di tepat
@@ -133,14 +152,20 @@ sudah mencoba. Konsekuensinya di kode: **rekam `tangga.dibuka()` sebelum memangg
 justru intinya.
 
 - Berkas tingkat atas yang baru **wajib ditambahkan ke `KERANGKA`** — kalau tidak,
-  situsnya patah saat offline. **Kecuali `data/soal-<pilar>.json` dan `assets/rajah/*.svg`**,
-  yang sengaja di luar `KERANGKA`: menunggunya memanjangkan install oleh ratusan KB yang
-  belum tentu dipakai hari itu. Keduanya diambil di latar setelah install, lewat
-  `berkasLatar()` yang menurunkan daftarnya dari `jurus.json` — soal dari `pilar` tiap
-  simpul, rajah dari kunci `rajah` yang ditulis `build.py`. Jadi bidang baru dan rajah baru
-  tidak pernah terlupa. Untuk rajah itu bukan kemewahan: soal geometri tanpa bangunnya
-  bukan soal yang lebih sulit, melainkan soal yang tidak bisa dikerjakan sama sekali.
-- **Naikkan `CACHE`** (sekarang `peta-jurus-v13`) setiap kali aset berubah, kalau tidak
+  situsnya patah saat offline. **Kecuali `data/soal-<pilar>.json`, `data/bahas-<pilar>.json`,
+  dan `assets/rajah/*.svg`**, yang sengaja di luar `KERANGKA`: menunggunya memanjangkan
+  install oleh ratusan KB yang belum tentu dipakai hari itu. Ketiganya diambil di latar
+  setelah install, lewat `berkasLatar()` yang menurunkan daftarnya dari `jurus.json` — soal
+  dan pembahasan dari `pilar` tiap simpul, rajah dari kunci `rajah` yang ditulis
+  `build.py`. Jadi bidang baru dan rajah baru tidak pernah terlupa. Untuk rajah itu bukan
+  kemewahan: soal geometri tanpa bangunnya bukan soal yang lebih sulit, melainkan soal yang
+  tidak bisa dikerjakan sama sekali.
+- **`bahas-<pilar>.json` tetap ikut disimpan meski dipisah**, dan itu keputusan sadar: yang
+  dihemat pemecahan di 6.1 adalah muatan saat halaman dibuka, bukan ruang simpan. Kalau ia
+  hanya diambil saat diklik, yang mati adalah pembahasan tepat sesudah simulasi selesai
+  tanpa jaringan — persis saat siswa paling membutuhkannya, dan bertentangan dengan premis
+  `sw.js` sendiri.
+- **Naikkan `CACHE`** (sekarang `peta-jurus-v15`) setiap kali aset berubah, kalau tidak
   siswa memegang versi lama.
 - Kunci cache membuang query, karena `jurus.html?id=…` dan `latihan.html?soal=…` memakai
   kerangka HTML yang sama.

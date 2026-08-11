@@ -666,7 +666,33 @@ Urutannya **bukan** menurut mana yang lebih cepat terasa oleh siswa — itu argu
 sudah ditolak di bagian Risiko. Urutannya menurut mana yang paling mahal diperbaiki kalau
 ditunda.
 
-### 6.1 Muatan yang diunduh tapi tidak pernah dibaca
+### 6.1 Muatan yang diunduh tapi tidak pernah dibaca — selesai 11 Agustus 2026
+
+Tiap bidang kini dua berkas: `soal-<pilar>.json` yang ringan dan `bahas-<pilar>.json` yang
+memuat `petunjuk`, `pembahasan`, `rubrik`. **Simulasi turun dari 1829 KB ke 484 KB**,
+turun 73% — tepat sebesar pemborosan yang diukur di bawah. Halaman jurus dan latihan naik
+2 KB, ongkos `id` yang terulang di berkas kedua.
+
+Peta dan jurnal tidak berubah: keduanya memang tidak pernah meminta soal.
+
+Dua hal yang tidak diperkirakan saat menulis rencana ini:
+
+- **Kegagalan penggabungan tidak terlihat.** Kalau `muatData()` gagal menempelkan
+  pembahasan kembali, halaman tetap termuat dan soalnya tetap tampil — yang hilang cuma
+  petunjuk dan pembahasannya. Karena itu ada `scripts/periksa-gabung.js`, yang menjalankan
+  `inti.js` sungguhan di Node tanpa service worker. Diuji dengan mutasi: melewati
+  penempelan, tidak meminta berkas beratnya, dan mengabaikan `bahas:false` semuanya
+  tertangkap.
+- **Service worker lama memberi gejala yang sama persis.** Saat memeriksa di peramban,
+  pembahasan memang hilang — dan penyebabnya `inti.js` versi lama dari cache, bukan kodenya.
+  Tanpa perkakas di atas tidak ada cara cepat membedakan keduanya.
+- **`periksa-rumus.js` diam-diam kehilangan 85% cakupannya.** Ia membaca `data/soal-*.json`,
+  dan begitu pembahasan pindah berkas, jumlah rumus yang diperiksanya jatuh dari 23496 ke
+  3541 — tanpa satu pun kegagalan, jadi keluarannya tetap terlihat sehat. Perkakas yang
+  membaca hasil build harus ikut diperiksa setiap kali bentuk hasil build berubah; angka
+  yang mengecil banyak adalah tandanya, dan angka itu memang dicetak justru untuk itu.
+
+Di bawah ini pengukuran aslinya.
 
 Dua pengukuran, keduanya dengan pola yang sama dan keduanya baru terlihat setelah bidang
 keempat masuk.

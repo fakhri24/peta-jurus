@@ -5,7 +5,7 @@
    — cache dulu, perbarui diam-diam di latar — karena isinya jarang berubah dan
    latihan saat offline justru intinya. */
 
-var CACHE = 'peta-jurus-v14';
+var CACHE = 'peta-jurus-v15';
 
 /* Wajib ada. Kalau salah satu gagal, install ikut gagal — lebih baik ketahuan
    daripada situsnya setengah jalan saat offline. */
@@ -50,8 +50,15 @@ function berkasLatar(c) {
       d.simpul.forEach(function (j) {
         if (j.contoh.length || j.latihan.length) ada[j.pilar] = true;
       });
-      var daftar = Object.keys(ada).map(function (p) {
-        return 'data/soal-' + p + '.json';
+      /* Soal **dan** pembahasannya, dua berkas per bidang. Pembahasan sengaja
+         tetap ikut disimpan meski dipisah: yang dihemat pemecahan itu muatan saat
+         halaman dibuka, bukan ruang simpan. Kalau ia hanya diambil saat diklik,
+         yang mati adalah pembahasan tepat sesudah simulasi selesai tanpa
+         jaringan — persis saat siswa paling membutuhkannya. */
+      var daftar = [];
+      Object.keys(ada).forEach(function (p) {
+        daftar.push('data/soal-' + p + '.json');
+        daftar.push('data/bahas-' + p + '.json');
       });
       /* Dibaca dengan penjaga: jurus.json dari cache versi lama belum punya
          kunci ini. */

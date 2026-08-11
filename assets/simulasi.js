@@ -257,6 +257,11 @@
   });
 
   Inti.pasangKepala('simulasi.html');
-  /* Simulasi menyusun naskah dari seluruh kolam soal, jadi semua bidang dimuat. */
-  Inti.muatData().then(tampilkanPersiapan).catch(function (e) { Inti.galat(e.message); });
+  /* Simulasi menyusun naskah dari seluruh kolam soal, jadi semua bidang dimuat —
+     tapi **tanpa pembahasannya**. Halaman ini tidak pernah merender petunjuk,
+     pembahasan, atau rubrik: sesudah waktu habis ia menautkan tiap butir ke
+     latihan.html?soal=…, dan halaman itulah yang memuatnya. Tanpa `bahas: false`
+     naskah 20 soal menyeret 1,3 MB yang tidak pernah dibaca sekali pun. */
+  Inti.muatData({ bahas: false })
+    .then(tampilkanPersiapan).catch(function (e) { Inti.galat(e.message); });
 })();
