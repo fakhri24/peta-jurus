@@ -3,8 +3,15 @@
 Dokumen ini menjawab satu pertanyaan: **apa saja yang masih kurang sebelum situs ini
 benar-benar bisa dipakai siswa SMA menyiapkan OSN atau lomba matematika lain.**
 
-Ditulis 8 Agustus 2026. Perbarui angkanya kalau sudah tidak cocok — rencana yang
-angkanya basi lebih menyesatkan daripada tidak ada rencana.
+**Pertanyaan itu sudah terjawab pada 11 Agustus 2026** — definisi "siap" di bagian 1
+terpenuhi seluruhnya, keempat bidang penuh. Bagian 1 sampai Fase 5 karena itu dibiarkan
+apa adanya sebagai catatan bagaimana ke sana, termasuk taksiran yang meleset; yang
+menjawab "apa berikutnya" adalah **Fase 6**, dan pertanyaannya sudah berbeda.
+
+Ditulis 8 Agustus 2026, diperbarui 11 Agustus 2026. Perbarui angkanya kalau sudah tidak
+cocok — rencana yang angkanya basi lebih menyesatkan daripada tidak ada rencana. Angka di
+Fase 6 semuanya bisa dihitung ulang: `node scripts/periksa-muatan.js` untuk muatan
+halaman, `python3 scripts/build.py` untuk jumlah jurus, soal, dan rajah.
 
 ---
 
@@ -53,23 +60,44 @@ berprasyarat `keterbagian` (teori bilangan), `rekursi` (kombinatorika) berprasya
 sungguhan** — yang terakhir sejak `ketaksamaan-geometri` punya soal.
 
 Fase 0, 1, 2, 3, 4, dan 5.1 selesai. **Definisi "siap" di bagian 1 sudah terpenuhi
-seluruhnya**; yang tersisa di rencana ini tinggal Fase 5.2 dan 5.3, yang menunggu naskah
-resmi diunduh sendiri dan bukan pekerjaan yang bisa dijadwalkan sendirian.
+seluruhnya.**
 
-### Perkiraan cakupan penuh
+Itu mengubah sifat rencana ini. Sampai di sini urutannya ditentukan satu hal — bidang mana
+yang belum ada — dan pertanyaan "apa berikutnya" menjawab dirinya sendiri. Sekarang tidak
+lagi. **Fase 6 karena itu ditulis dari pengukuran, bukan dari daftar keinginan**, dan
+tiap butirnya menyebutkan angka yang membuatnya masuk daftar. Yang tidak punya angka tidak
+masuk.
 
-| Bidang | Perkiraan jurus | Latihan (×6) | Contoh |
-|---|---|---|---|
-| Teori bilangan | 22 | 132 | ~30 |
-| Aljabar | ~22 | 132 | ~30 |
-| Kombinatorika | ~20 | 120 | ~28 |
-| Geometri | ~22 | 132 | ~30 |
-| **Total** | **~86** | **~516** | **~118** |
+### Perkiraan cakupan penuh, diadu dengan hasilnya
 
-Sekitar **630 soal**. Dengan laju 5 soal per hari itu empat bulan kerja penuh; dengan
-laju yang lebih realistis untuk kerja sambilan, satu sampai dua tahun. Rencana ini
-karena itu disusun agar **aplikasinya bisa dipakai di ujung setiap fase**, bukan hanya
-di ujung fase terakhir.
+Tabel ini dulunya perkiraan. Sekarang ada angka sebenarnya untuk dibandingkan, dan
+perbandingan itu lebih berguna daripada perkiraannya.
+
+| Bidang | Perkiraan jurus | Nyata | Perkiraan latihan | Nyata |
+|---|---|---|---|---|
+| Teori bilangan | 22 | 22 | 132 | 132 |
+| Aljabar | ~22 | 22 | 132 | 132 |
+| Kombinatorika | ~20 | 20 | 120 | 120 |
+| Geometri | ~22 | 21 | 132 | 126 |
+| **Total** | **~86** | **85** | **~516** | **510** |
+
+Perkiraan jurus dan latihannya nyaris tepat — meleset 1 jurus dan 6 latihan, seluruhnya
+dari geometri yang keluar 21 jurus, bukan 22. Yang meleset jauh adalah contohnya:
+diperkirakan ~118, nyatanya **86** — satu contoh terpandu per jurus ternyata cukup, dan
+hanya satu jurus di teori bilangan yang memerlukan dua. Totalnya 596 soal, bukan ~630.
+
+Perkiraan waktunya yang paling salah, dan itu layak dicatat justru karena taksiran waktu
+selalu yang paling sering meleset: rencana ini menaksir "satu sampai dua tahun untuk kerja
+sambilan". Nyatanya **empat hari** — komit pertama 8 Agustus 2026, Fase 4 tuntas 11
+Agustus 2026, 27 komit. Penyebabnya bukan lajunya lebih rajin; asumsi cara kerjanya yang
+berubah, dan taksiran yang asumsinya berubah tidak bisa diselamatkan dengan menyetel
+angkanya.
+
+Yang tetap berlaku dari paragraf lamanya adalah keputusannya, dan itu terbukti benar:
+rencana ini disusun agar **aplikasinya bisa dipakai di ujung setiap fase**, bukan hanya di
+ujung fase terakhir. Tiap fase memang meninggalkan situs yang utuh — dan karena selesainya
+jauh lebih cepat dari taksiran, sifat itu tidak pernah diuji dalam keadaan darurat. Ia
+tetap keputusan yang benar untuk fase berikutnya.
 
 ---
 
@@ -621,6 +649,156 @@ di `arsip.yml` sesuai naskah yang ada di tanganmu.
 Fase ini kecil — skema arsip plus satu entri — dan bisa dikerjakan kapan saja setelah
 Fase 0. Membangunnya sekarang dengan satu naskah justru bagus: skemanya teruji pada
 kasus nyata selagi ongkos ubahnya masih nol.
+
+**Keadaan 11 Agustus 2026: `konten/arsip.yml` masih kosong isinya** — 53 baris, seluruhnya
+komentar. Penegakannya berdiri, daftarnya belum. Itu bukan kelalaian: belum ada naskah
+resmi yang diunduh sendiri, jadi belum ada yang boleh diberi atribusi. Fase ini tidak bisa
+dijadwalkan sendirian karena langkah pertamanya bukan pekerjaan kode.
+
+---
+
+## Fase 6 — Sesudah keempat bidang penuh
+
+Ditulis 11 Agustus 2026, setelah Fase 4 tuntas. Semua yang di bawah ini punya angka atau
+pemicu yang bisa dilihat orang lain; yang cuma terasa perlu tidak dimasukkan.
+
+Urutannya **bukan** menurut mana yang lebih cepat terasa oleh siswa — itu argumen yang
+sudah ditolak di bagian Risiko. Urutannya menurut mana yang paling mahal diperbaiki kalau
+ditunda.
+
+### 6.1 Muatan yang diunduh tapi tidak pernah dibaca
+
+Dua pengukuran, keduanya dengan pola yang sama dan keduanya baru terlihat setelah bidang
+keempat masuk.
+
+**Simulasi mengunduh 1829 KB — `jurus.json` 193 KB plus keempat berkas soal 1637 KB — dan
+dari berkas soalnya ia hanya membaca 138 KB.** `susunNaskah()` memang perlu keempat
+bidang; itu sudah diputuskan di 0.7 dan tidak berubah. Yang tidak perlu adalah isinya:
+`simulasi.js` hanya menyentuh `id`, `soal`, `jawaban`, `bentuk`, `kesulitan`, `pilar`, dan
+`tahap`. Ia tidak pernah merender pembahasan — untuk itu ia menautkan ke
+`latihan.html?soal=…`, jadi ini bukan tebakan melainkan bisa dibaca di
+`assets/simulasi.js`.
+
+| Bagian tiap soal | Ukuran | Dipakai simulasi? |
+|---|---|---|
+| `pembahasan` | 1050 KB | tidak |
+| `petunjuk` | 176 KB | tidak |
+| `rubrik` | 72 KB | tidak |
+| `soal` | 115 KB | ya |
+| sisanya (`id`, `pilar`, `tahap`, …) | 61 KB | sebagian |
+
+Dari 1474 KB nilai medan di keempat berkas soal, **1336 KB — 91% — tidak pernah dibaca**,
+dan pembahasan sendirian 71%. Diukur terhadap seluruh 1829 KB yang diunduh halaman itu,
+yang terbuang 73%.
+
+**Peta mengunduh 193 KB untuk menggambar 7 KB.** `data/jurus.json` ada di `KERANGKA`,
+jadi tiap install membayarnya — 193 KB dari 567 KB, sepertiga lebih. Dari 170 KB isi
+simpulnya, yang dipakai `peta.js` untuk menggambar cuma `id`, `nama`, `pilar`, `tahap`,
+`prasyarat`, dan koordinatnya. Sisanya prosa halaman jurus: `inti` 82 KB, `jebakan` 45 KB,
+`kapan_dipakai` 30 KB.
+
+Bentuk perbaikannya sudah ada presedennya di 0.5, termasuk pelajaran pahitnya: **memecah
+berkas saja tidak cukup kalau pecahannya tetap di `KERANGKA`.** Yang perlu dijaga saat
+mengerjakannya:
+
+- `jurus.json` diambil lebih dulu dan sendirian karena `data.pilarSoal` diturunkan
+  darinya, dan `berkasLatar()` di `sw.js` menurunkan daftar soal serta rajah dari situ
+  juga. Pemecahan apa pun harus menjaga keduanya tetap ada di berkas yang diambil pertama.
+- Naskah simulasi yang sudah berjalan tetap harus bisa membuka pembahasan sesudah waktu
+  habis. Kalau isinya dipisah, jalur itu berubah dari "sudah ada di memori" menjadi
+  "diambil saat diklik" — dan itu terjadi persis ketika siswa baru selesai ujian, jadi
+  perilakunya saat luring harus diputuskan sadar, bukan kebetulan.
+- Ukur ulang dengan `node scripts/periksa-muatan.js` sebelum dan sesudah. Angka di atas
+  keluar dari sana plus hitungan per-bagian; jangan percaya perkiraan.
+
+Dikerjakan lebih dulu di antara butir-butir Fase 6 bukan karena paling terasa, melainkan
+karena **jumlah bidang tidak akan bertambah lagi** — jadi angka-angka ini sudah pada
+bentuk akhirnya, dan pemecahan yang dirancang sekarang tidak akan perlu dirancang ulang.
+
+### 6.2 Primitif rajah yang tidak dipakai konten mana pun
+
+`scripts/rajah.py` punya satu fungsi yang **tidak dipanggil satu rajah pun dan tidak
+disentuh satu tes pun**: `potong_lingkaran`. `garis_bagi` juga tidak dipakai konten, tetapi
+setidaknya dijaga `test_garis_bagi_memenuhi_teorema_garis_bagi`.
+
+Ini bukan kerapian. `busur()` berada persis di keadaan itu sampai 11 Agustus 2026 — nol
+pemakai, nol tes — dan ternyata mencatat kotak pembatas **lingkaran penuh**, bukan
+busurnya. Rajah pertama yang memakainya keluar dengan viewBox sekitar 462×862 padahal
+isinya 277×118. Bug itu duduk diam sepanjang 43 rajah karena tidak ada yang memanggilnya.
+
+Pilihannya dua, dan dua-duanya sah:
+
+1. **beri tes** yang menguji geometrinya, seperti tes primitif lain — misalnya kedua titik
+   potong dua lingkaran benar-benar berjarak $r_1$ dan $r_2$ dari kedua pusatnya; atau
+2. **hapus**, dan kembalikan kalau nanti ada rajah yang membutuhkannya.
+
+Yang tidak sah adalah membiarkannya. Aturan yang layak dipegang seterusnya: **primitif di
+`rajah.py` harus punya pemakai konten atau tes — kalau tidak keduanya, ia kode yang belum
+pernah dijalankan siapa pun.**
+
+### 6.3 Pemeriksaan kasar "petunjuk 1 bocor"
+
+Bagian Risiko sudah menyebut ini dengan syarat "kalau sudah puluhan jurus". Sekarang 85,
+jadi syaratnya lewat.
+
+Aturannya — petunjuk 1 tidak boleh menyebut nama jurusnya — satu-satunya aturan isi
+penting yang masih dititipkan ke ingatan. Versi kasarnya sudah dicoba tangan saat menulis
+14 soal terakhir dan menemukan satu hal yang menentukan rancangannya: **yang dicocokkan
+harus nama jurus pemiliknya, bukan semua jurus di medan `jurus:`.** Soal boleh menandai
+beberapa jurus, dan menyebut jurus kedua di petunjuk 1 justru dorongan yang benar —
+`tkd-03` menyebut "sudut keliling" pada petunjuk pertamanya, dan itu memang yang
+dimaksudkan. Pencocokan terhadap seluruh medan `jurus:` menandainya sebagai pelanggaran
+padahal bukan.
+
+Karena itu: **peringatan, bukan galat**, mengikuti pola `periksa_gambar()` untuk rajah
+nganggur. Akan ada pengecualian yang sah, dan pemeriksaan yang menggagalkan build karena
+pengecualian sah adalah pemeriksaan yang akan dimatikan orang.
+
+### 6.4 Lantai enam, dan apa yang di atasnya
+
+Bagian 1 menulis "Enam soal adalah lantai, bukan target". Sekarang **ke-85 jurus punya
+tepat enam latihan** — bukan rata-rata enam, melainkan enam persis, semuanya. Tidak ada
+sebaran sama sekali: 596 soal terdiri atas 510 latihan (85 × 6) dan 86 contoh.
+
+Lantai yang dipenuhi serentak seperti itu adalah tanda bahwa angkanya yang mengemudi,
+bukan isinya — dan itu masuk akal selama tujuannya memang menutup keempat bidang. Sekarang
+tujuannya sudah tercapai, jadi asumsinya layak ditinjau.
+
+Itu berarti keputusan yang selama ini bisa ditunda kini harus diambil, dan ia keputusan
+isi, bukan keputusan kode:
+
+- **Menaikkan lantai secara merata** (misalnya ke 8) menambah sekitar 170 soal, dan
+  memperlakukan semua jurus sama padahal beban ujiannya tidak sama.
+- **Menambah kedalaman terpilih** pada jurus yang paling sering muncul di OSN memberi
+  lebih banyak latihan di tempat yang paling dipakai, dengan ongkos: jurus lain tetap di
+  enam, dan tangga ulang 60 hari pada jurus itu tetap mengulang soal yang sama.
+- **Berhenti menambah soal** dan menganggap lantai enam cukup, lalu mengalihkan tenaga ke
+  6.1–6.3 dan ke arsip.
+
+Rencana ini **tidak memilihkan**, dan itu disengaja — ketiganya sah dan pilihannya
+bergantung pada siapa yang memakai situs ini, hal yang tidak bisa dijawab dari dalam repo.
+Yang bisa ditulis di sini cuma rambunya, dan rambunya sudah ada di Risiko: **soal yang
+tidak memberi latihan mengenali pemicu tidak menambah apa pun meski menaikkan angka.**
+Enam soal yang melatih enam pemicu berbeda lebih berharga daripada dua belas soal yang
+melatih satu pemicu dua belas kali.
+
+### 6.5 Yang sengaja belum masuk Fase 6
+
+Supaya tidak dikira terlupa:
+
+- **Menempuh satu jalur utuh sebagai siswa sungguhan**, dari jurus pertama sampai simulasi,
+  belum pernah dilakukan. Ini menggoda ditulis sebagai butir rencana, tetapi ia bukan
+  pekerjaan yang bisa diselesaikan — ia pemeriksaan yang hasilnya melahirkan butir lain.
+  Kerjakan kalau ingin, jangan jadwalkan.
+- **Ukuran `data/soal-geometri.json` yang 602 KB**, terbesar di antara keempat bidang
+  karena pembahasan geometri memuat rajah dan percabangan kasus. Ia tidak di `KERANGKA`
+  dan diambil di latar, jadi belum ada angka yang menunjukkan ia masalah. Kalau 6.1
+  dikerjakan, angka ini ikut turun dengan sendirinya.
+
+**Selesai kalau:** tidak ada lagi berkas data yang diunduh sebuah halaman tanpa dibaca
+sebagian besarnya, `rajah.py` tidak punya fungsi tanpa pemakai sekaligus tanpa tes, dan
+aturan petunjuk 1 tidak lagi bergantung pada ingatan. Butir 6.4 selesai ketika
+**diputuskan**, bukan ketika dikerjakan.
 
 ---
 
