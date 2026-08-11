@@ -775,12 +775,57 @@ isi, bukan keputusan kode:
 - **Berhenti menambah soal** dan menganggap lantai enam cukup, lalu mengalihkan tenaga ke
   6.1–6.3 dan ke arsip.
 
-Rencana ini **tidak memilihkan**, dan itu disengaja — ketiganya sah dan pilihannya
-bergantung pada siapa yang memakai situs ini, hal yang tidak bisa dijawab dari dalam repo.
-Yang bisa ditulis di sini cuma rambunya, dan rambunya sudah ada di Risiko: **soal yang
-tidak memberi latihan mengenali pemicu tidak menambah apa pun meski menaikkan angka.**
-Enam soal yang melatih enam pemicu berbeda lebih berharga daripada dua belas soal yang
-melatih satu pemicu dua belas kali.
+**Diputuskan 11 Agustus 2026: kedalaman terpilih.** Perluas soal pada jurus yang
+memerlukannya, sisanya dibiarkan di enam. Rambunya yang menentukan, dan ia sudah ada di
+Risiko: **soal yang tidak memberi latihan mengenali pemicu tidak menambah apa pun meski
+menaikkan angka.** Enam soal yang melatih enam pemicu berbeda lebih berharga daripada dua
+belas soal yang melatih satu pemicu dua belas kali.
+
+Rambu itu sekaligus memberi kriteria "yang perlu", dan kriterianya bukan seberapa penting
+jurusnya: **jurus perlu diperluas kalau pemicunya lebih banyak daripada enam slotnya.**
+Jurus dengan tiga pemicu tidak menjadi lebih baik dengan delapan soal; jurus dengan
+sembilan pemicu sudah kekurangan pada enam.
+
+#### Prasyaratnya: `kapan_dipakai` yang sebanding antarbidang
+
+Kriteria itu **belum bisa dijalankan hari ini**, dan sebabnya terukur. `kapan_dipakai`
+menebal sepanjang Fase 1→4, jadi jurus yang ditulis lebih dulu mendaftarkan pemicunya jauh
+lebih sedikit — bukan karena pemicunya memang sedikit:
+
+| Bidang | Median kata `kapan_dipakai` | Jurus tanpa satu pun pemicu ditandai |
+|---|---|---|
+| Teori bilangan | 23 | 3/22 |
+| Aljabar | 23 | 10/22 |
+| Kombinatorika | 54 | 2/20 |
+| Geometri | 94 | 0/21 |
+
+Setiap peringkat yang disusun dari medan ini karena itu memeringkat **fase penulisannya**,
+bukan luas pemicunya — dicoba sekali dan seluruh sepuluh besarnya geometri. `build.py`
+menegakkan medan ini tidak kosong, tetapi tidak ada yang menegakkan ia lengkap, dan untuk
+medan yang disebut CLAUDE.md sebagai "bagian yang membuat situs ini ada" itu celah yang
+lebih besar daripada jumlah soalnya.
+
+Urutan kerjanya jadi tertentu:
+
+1. **Tulis ulang `kapan_dipakai` aljabar dan teori bilangan** setara geometri — 44 jurus,
+   13 di antaranya tanpa penanda sama sekali. Tidak ada soal baru di langkah ini.
+2. **Baru daftarkan pemicu tiap jurus dan adu dengan enam latihannya.** Pemicu yang tidak
+   punya soal itulah daftar perluasannya, dan tiap soal baru lahir dengan alasan yang
+   tertulis.
+3. **Perluas hanya jurus itu.**
+
+Membalik urutannya berarti memilih soal dengan perasaan, yaitu persis yang dilarang rambu
+di atas.
+
+Dua sinyal yang **tidak** ikut terseret gaya penulisan sudah bisa dipakai sebagai calon
+sementara, meski tak satu pun menggantikan langkah 2:
+
+- **Dipakai soal jurus lain paling sering** — luas permukaan pemicu yang terlihat dari
+  pemakaian: Keterbagian dan Ketaksamaan Dasar (5×), Barisan dan Deret, Teorema Pythagoras,
+  Garis Singgung Lingkaran (4×).
+- **Sebaran kesulitan tersempit** — enam latihan yang menumpuk di dua tingkat. Untuk jurus
+  tahap OSN ini wajar dan bukan cacat; yang layak dilihat adalah yang di OSN-K/OSN-P,
+  terutama **Induksi Matematika**, satu-satunya yang sekaligus dipakai 3× oleh jurus lain.
 
 ### 6.5 Yang sengaja belum masuk Fase 6
 
@@ -797,8 +842,9 @@ Supaya tidak dikira terlupa:
 
 **Selesai kalau:** tidak ada lagi berkas data yang diunduh sebuah halaman tanpa dibaca
 sebagian besarnya, `rajah.py` tidak punya fungsi tanpa pemakai sekaligus tanpa tes, dan
-aturan petunjuk 1 tidak lagi bergantung pada ingatan. Butir 6.4 selesai ketika
-**diputuskan**, bukan ketika dikerjakan.
+aturan petunjuk 1 tidak lagi bergantung pada ingatan. Arahnya 6.4 sudah **diputuskan**
+(kedalaman terpilih), jadi yang tersisa di sana pekerjaan: `kapan_dipakai` sebanding
+antarbidang lebih dulu, daftar pemicu sesudahnya, soal baru paling akhir.
 
 ---
 
