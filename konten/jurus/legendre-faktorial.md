@@ -10,8 +10,26 @@ latihan: [lf-01, lf-02, lf-03, lf-04, lf-05, lf-06]
 
 ## Kapan dipakai
 
-Soal menanyakan **berapa banyak nol di belakang** $n!$, atau pangkat tertinggi suatu prima
-yang membagi faktorial atau koefisien binomial.
+Soal menanyakan **berapa banyak nol di belakang** $n!$. Itu pemicu paling sering, dan
+jawabannya bukan tentang nol melainkan tentang berapa banyak faktor $5$ — sebab faktor $2$
+selalu berlebih.
+
+Pemicu kedua: soal menanyakan **pangkat tertinggi suatu prima yang membagi** faktorial atau
+koefisien binomial. Bentuk "$3^k \mid 100!$, tentukan $k$ terbesar" adalah rumus Legendre
+diucapkan apa adanya.
+
+Pemicu ketiga, dan ini yang menjadikannya alat bukti: soal meminta membuktikan sebuah
+**koefisien binomial habis dibagi** sesuatu, atau bahwa suatu perbandingan faktorial selalu
+**bulat**. Hitung pangkat tiap prima di pembilang dan penyebut; kalau yang atas selalu tak
+kurang, pembagiannya bulat.
+
+Pemicu keempat: soal menyebut **faktorial dengan angka besar** yang jelas tidak dimaksudkan
+untuk dihitung — $2026!$. Angka sebesar itu selalu tanda bahwa yang ditanya sifatnya, bukan
+nilainya.
+
+Prasyarat yang tak tertulis: soal harus dibaca dalam bahasa prima lebih dulu. Nol di
+belakang, habis dibagi, dan keterbagian faktorial semuanya pertanyaan yang sama tentang
+$v_p$.
 
 ## Intinya
 

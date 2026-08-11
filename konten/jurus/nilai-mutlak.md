@@ -10,8 +10,25 @@ latihan: [nm-01, nm-02, nm-03, nm-04, nm-05, nm-06]
 
 ## Kapan dipakai
 
-Ada tanda $|\cdot|$ dalam persamaan atau pertidaksamaan, atau soal berbicara tentang
-**jarak** — pada garis bilangan, jarak $x$ ke $a$ adalah $|x - a|$.
+Ada tanda **$|\cdot|$** dalam persamaan atau pertidaksamaan. Gerakan pertamanya selalu sama:
+cari titik nol tiap bentuk di dalam tanda mutlak, lalu pecah garis bilangan di titik-titik
+itu.
+
+Pemicu kedua, dan ini yang mengubah soal panjang menjadi soal pendek: soal berbicara tentang
+**jarak**. Pada garis bilangan $|x-a|$ adalah jarak $x$ ke $a$, jadi $|x-2| + |x+3|$
+menanyakan jumlah jarak ke dua titik — dan membacanya begitu sering menjawabnya tanpa satu
+kasus pun dipecah.
+
+Pemicu ketiga: soal meminta **nilai terkecil dari jumlah beberapa nilai mutlak**. Jawabannya
+selalu tercapai pada salah satu titik kritis, dan untuk jumlah jarak ke sederet titik ia
+tercapai di titik tengahnya.
+
+Pemicu keempat: soal memuat **nilai mutlak bersarang** atau nilai mutlak di kedua ruas.
+Mengkuadratkan kedua ruas sah di sini justru karena keduanya tak negatif — salah satu dari
+sedikit tempat pengkuadratan tidak memasukkan penyelesaian palsu.
+
+Yang paling sering menggugurkan jawaban: setiap kasus punya **syarat berlakunya sendiri**,
+dan penyelesaian yang jatuh di luar syarat kasusnya harus dibuang, bukan dikumpulkan.
 
 ## Intinya
 

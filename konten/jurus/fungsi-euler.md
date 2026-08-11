@@ -11,7 +11,23 @@ latihan: [fe-01, fe-02, fe-03, fe-04, fe-05, fe-06]
 ## Kapan dipakai
 
 Pangkat besar dengan **modulus komposit** — persis situasi ketika Fermat Kecil tidak bisa
-dipakai. Juga saat soal mencacah bilangan yang relatif prima terhadap sesuatu.
+dipakai. Memeriksa apakah modulusnya prima adalah gerakan pertama, dan jawabannya yang
+memilih di antara dua jurus.
+
+Pemicu kedua: soal **mencacah bilangan yang relatif prima** terhadap sesuatu — "ada berapa
+bilangan di bawah $100$ yang tidak berbagi faktor dengan $100$". Itu $\varphi$ diucapkan apa
+adanya.
+
+Pemicu ketiga: soal menanyakan **sisa pembagian $a^n$** dengan $n$ raksasa dan modulus
+komposit. Potong $n$ modulo $\varphi(m)$ lebih dulu; syarat $\gcd(a,m) = 1$ wajib diperiksa,
+dan soal yang melanggarnya biasanya sengaja.
+
+Pemicu keempat: soal memberi **modulus berbentuk hasil kali dua prima** — $\varphi(pq) =
+(p-1)(q-1)$ muncul begitu sering sehingga bentuk itu sendiri layak dikenali sebagai pemicu.
+
+Pemicu kelima, arah sebaliknya: soal memberi $\varphi(n)$ dan meminta $n$. Karena $\varphi$
+dihitung dari faktorisasi prima, soalnya berubah menjadi memecah bilangan yang diberikan
+menjadi bentuk $\prod p_i^{a_i-1}(p_i-1)$ — daftar terbatas yang bisa dihabiskan.
 
 ## Intinya
 

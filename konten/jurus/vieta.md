@@ -11,7 +11,24 @@ latihan: [vt-01, vt-02, vt-03, vt-04, vt-05, vt-06]
 ## Kapan dipakai
 
 Soal menanyakan sesuatu **tentang akar-akar** — jumlahnya, hasil kalinya, jumlah
-kuadratnya — tetapi tidak menanyakan akarnya sendiri. Itu tanda paling jelas.
+kuadratnya — tetapi tidak menanyakan akarnya sendiri. Itu tanda paling jelas, dan ia
+berlaku bahkan ketika akarnya tidak rasional atau tidak real sama sekali.
+
+Pemicu kedua: bentuk yang ditanya **belum berupa jumlah atau hasil kali**, tetapi bisa
+ditulis begitu. $x_1^2 + x_2^2$, $\frac1{x_1} + \frac1{x_2}$, dan $(x_1-x_2)^2$ semuanya
+tersusun dari $x_1+x_2$ dan $x_1x_2$ — menuliskannya ulang itulah hampir seluruh isi soal
+Vieta.
+
+Pemicu ketiga: soal memberi **satu keterangan tentang akarnya** dan menanyakan koefisien —
+"salah satu akarnya dua kali akar lainnya, tentukan $m$". Keterangan itu digabung dengan
+kedua hubungan Vieta menjadi sistem tiga persamaan.
+
+Pemicu keempat: soal meminta **menyusun persamaan kuadrat baru** yang akarnya diperoleh dari
+akar yang lama. Jumlah dan hasil kali akar barunya dihitung dari yang lama, lalu dirakit
+kembali — tanpa satu akar pun dicari.
+
+Bedakan dari Persamaan Kuadrat: kalau yang ditanya syarat agar akarnya real atau berbeda,
+itu diskriminan, bukan Vieta.
 
 ## Intinya
 

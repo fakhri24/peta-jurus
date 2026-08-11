@@ -10,8 +10,25 @@ latihan: [tsf-01, tsf-02, tsf-03, tsf-04, tsf-05, tsf-06]
 
 ## Kapan dipakai
 
-Soal menanyakan **sisa pembagian** polinomial, atau menanyakan apakah suatu bentuk linear
-merupakan faktornya, atau memberi keterangan berupa nilai $P$ di beberapa titik.
+Soal menanyakan **sisa pembagian** polinomial oleh bentuk linear, atau menanyakan apakah
+bentuk linear itu **faktornya**. Keduanya dijawab dengan satu substitusi, bukan dengan
+pembagian bersusun.
+
+Pemicu kedua, dan ini yang paling sering tidak dikenali sebagai jurus ini: soal memberi
+**nilai $P$ di beberapa titik** lalu menanyakan sisa pembagian oleh hasil kali bentuk
+linearnya. Sisa pembagian oleh $(x-a)(x-b)$ berbentuk $px+q$ — dua bilangan tak diketahui,
+dan dua nilai yang diberikan tepat cukup menentukannya.
+
+Pemicu ketiga: soal menyatakan sebuah polinomial **habis dibagi** sesuatu, lalu menanyakan
+koefisiennya. Ubah menjadi "nilainya nol di titik itu" dan koefisiennya jatuh dari persamaan
+biasa.
+
+Pemicu keempat: soal memberi $P(x) - c$ yang punya beberapa akar, atau menyebut $P(a) = P(b)
+= P(c)$. Selisihnya yang punya akar, bukan $P$-nya — dan menuliskan $P(x) - c = (x-a)(x-b)
+(x-c)Q(x)$ biasanya langkah yang membuka seluruh soal.
+
+Bedakan dari Suku Banyak: pembagian oleh bentuk berderajat dua ke atas yang tak terfaktorkan
+menuntut pembagian sungguhan, bukan substitusi.
 
 ## Intinya
 

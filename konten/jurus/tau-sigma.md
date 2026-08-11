@@ -10,8 +10,23 @@ latihan: [ts-01, ts-02, ts-03, ts-04, ts-05, ts-06]
 
 ## Kapan dipakai
 
-Soal menghitung **ada berapa** faktor sebuah bilangan, menjumlahkan seluruh faktornya,
+Soal menghitung **ada berapa** faktor sebuah bilangan, **menjumlahkan** seluruh faktornya,
 atau memberi syarat seperti "punya tepat 12 faktor".
+
+Pemicu kedua, dan ini arah yang paling sering dipakai olimpiade: syaratnya **dibalik** —
+diketahui $\tau(n) = 12$, dicari $n$ terkecil. Soal berubah dari menghitung menjadi memecah
+$12$ menjadi hasil kali $(a_i+1)$, lalu memasangkan pangkat terbesar dengan prima terkecil.
+
+Pemicu ketiga: soal menyebut **banyaknya faktor ganjil atau genap**. Banyaknya faktor ganjil
+tepat ketika bilangannya kuadrat sempurna — karena hanya di situ ada faktor yang berpasangan
+dengan dirinya sendiri. Pengamatan itu menyelesaikan sekelas soal "lampu yang ditekan
+berulang" tanpa satu pun faktor dihitung.
+
+Pemicu keempat: soal berbicara tentang **bilangan sempurna** atau membandingkan $\sigma(n)$
+dengan $2n$. Itu $\sigma$ yang menyamar.
+
+Prasyarat yang tak tertulis: keduanya rumus **atas faktorisasi prima**, jadi soal yang
+angkanya belum difaktorkan menuntut itu lebih dulu.
 
 ## Intinya
 

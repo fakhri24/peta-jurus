@@ -10,9 +10,25 @@ latihan: [ae-01, ae-02, ae-03, ae-04, ae-05, ae-06]
 
 ## Kapan dipakai
 
-Kamu perlu $\gcd$ dari bilangan yang terlalu besar untuk difaktorkan — atau, jauh lebih
-sering di olimpiade, kamu perlu $\gcd$ dari dua **bentuk aljabar** seperti
-$\gcd(n+1,\, n^2+3)$.
+Kamu perlu $\gcd$ dari bilangan yang **terlalu besar untuk difaktorkan**.
+
+Pemicu kedua, dan inilah bentuk yang jauh lebih sering muncul di olimpiade: soal menanyakan
+$\gcd$ dari dua **bentuk aljabar** yang memuat peubah — $\gcd(n+1,\, n^2+3)$. Memfaktorkan
+mustahil karena $n$ tak diketahui, tetapi versi selisihnya tetap berlaku dan memangkas
+derajatnya sampai tersisa bilangan tetap.
+
+Pemicu ketiga: soal meminta membuktikan dua bentuk **selalu relatif prima**, atau bahwa
+$\gcd$-nya hanya bisa bernilai beberapa bilangan tertentu. Keduanya dijawab dengan
+menurunkan $\gcd$-nya sampai membagi sebuah bilangan tetap, lalu memeriksa pembaginya satu
+per satu.
+
+Pemicu keempat: soal memuat **barisan yang tiap sukunya bergantung pada suku sebelumnya**
+dan menanyakan $\gcd$ dua sukunya. Bentuk itu ditangani dengan gerakan yang sama —
+selisihkan, lalu ulangi.
+
+Kalau yang dibutuhkan bukan nilainya melainkan $x$ dan $y$ pada $ax + by = \gcd(a,b)$,
+jalankan mundur: itu Euklid diperluas, dan hasilnya yang dipakai Identitas Bézout beserta
+pencarian invers modulo.
 
 ## Intinya
 

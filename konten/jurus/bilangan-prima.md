@@ -10,9 +10,25 @@ latihan: [bp-01, bp-02, bp-03, bp-04, bp-05, bp-06]
 
 ## Kapan dipakai
 
-Soal menyebut prima, atau meminta sesuatu tentang **struktur** sebuah bilangan:
-banyaknya faktor, kuadrat sempurna, pangkat tiga sempurna, atau kapan dua bilangan tidak
-berbagi faktor.
+Soal **menyebut prima** — mencarinya, membuktikan sebuah bilangan prima atau bukan, atau
+memberi syarat yang memuat prima.
+
+Pemicu kedua, dan ini yang paling luas: soal berbicara tentang **struktur** sebuah bilangan
+tanpa menyebut prima sama sekali. Kuadrat sempurna, pangkat tiga sempurna, dan "berapa
+banyak faktornya" semuanya pernyataan tentang pangkat pada faktorisasi primanya — yang
+pertama menuntut semua pangkatnya genap, yang kedua kelipatan tiga.
+
+Pemicu ketiga: soal menyatakan **hasil kali dua bilangan adalah kuadrat sempurna** atau
+pangkat lain, dengan kedua bilangan relatif prima. Ketunggalan faktorisasi memaksa
+masing-masing menjadi kuadrat sendiri, dan itu langkah yang membuka banyak soal Diophantine.
+
+Pemicu keempat: soal menuntut membuktikan ada **tak hingga banyak** bilangan dengan sifat
+tertentu. Bukti Euklid adalah pola yang ditiru, dan bentuknya selalu sama — andaikan
+hingga, susun bilangan baru dari yang ada.
+
+Prasyarat yang tak tertulis: hampir semua jurus teori bilangan lain berdiri di atas
+ketunggalan ini. Kalau sebuah soal terasa buntu, menuliskan bilangannya dalam bahasa prima
+adalah gerakan pertama yang layak dicoba.
 
 ## Intinya
 

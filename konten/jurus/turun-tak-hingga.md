@@ -11,7 +11,19 @@ latihan: [tth-01, tth-02, tth-03, tth-04, tth-05, tth-06]
 ## Kapan dipakai
 
 Soal meminta **membuktikan tidak ada solusi bulat positif**, dan kongruensi saja tidak
-cukup untuk menutupnya.
+cukup untuk menutupnya. Urutan mencobanya tetap: modulo dulu, karena jauh lebih murah;
+jurus ini untuk persamaan yang lolos setiap modulus yang kamu coba.
+
+Pemicu kedua, dan inilah sidik jarinya: persamaannya **homogen** — tiap sukunya berderajat
+sama, seperti $x^3 + 2y^3 = 4z^3$. Bentuk itu mengizinkan seluruh solusi dibagi faktor
+persekutuannya, dan pembagian itulah yang menghasilkan solusi lebih kecil.
+
+Pemicu ketiga: soal meminta membuktikan sebuah bilangan **irasional**, atau bahwa suatu
+perbandingan tidak pernah bulat. Keduanya pernyataan ketiadaan yang sama, berpakaian lain.
+
+Pemicu keempat: kamu sudah menemukan solusi yang jelas seperti $(0,0,0)$ dan soal meminta
+menunjukkan **tidak ada yang lain**. Yang dibuktikan bukan ketiadaan seluruhnya, melainkan
+ketiadaan yang tak sepele — dan itu bentuk baku jurus ini.
 
 ## Intinya
 

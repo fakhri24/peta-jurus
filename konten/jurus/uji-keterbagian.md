@@ -11,7 +11,24 @@ latihan: [uk-01, uk-02, uk-03, uk-04, uk-05, uk-06]
 ## Kapan dipakai
 
 Soal berbicara tentang **angka penyusun** bilangan: jumlah digit, digit terakhir, membalik
-urutan digit, atau mencari digit yang hilang.
+urutan digit, atau mencari digit yang hilang. Ciri paling terang: bilangannya ditulis
+sebagai $\overline{ab}$ atau $\overline{abc}$, bukan sebagai satu huruf.
+
+Pemicu kedua: soal menuntut **digit terakhir dari bilangan berpangkat besar** — angka satuan
+$7^{2026}$. Itu pertanyaan modulo $10$, dan jawabannya selalu berputar dengan periode
+pendek.
+
+Pemicu ketiga: soal **membalik atau memindahkan digit** dan membandingkan hasilnya dengan
+bilangan asalnya. Menulis keduanya lewat $\sum d_i 10^i$ mengubah kalimat tentang digit
+menjadi persamaan biasa, dan selisihnya hampir selalu memuat faktor $9$ atau $11$.
+
+Pemicu keempat: soal menyebut **palindrom**, atau bilangan yang seluruh digitnya sama —
+$\underbrace{11\ldots1}_{n}$. Bentuk berulang seperti itu punya penulisan tertutup yang jauh
+lebih mudah dikerjakan daripada digitnya satu per satu.
+
+Yang menyatukan keempatnya satu baris: $N = \sum_i d_i \cdot 10^i$. Setiap uji keterbagian
+lahir dari melihat $10^i$ modulo sesuatu, jadi menghafal ujinya kurang berguna daripada
+mengingat asalnya.
 
 ## Intinya
 

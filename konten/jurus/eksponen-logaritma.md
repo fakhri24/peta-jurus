@@ -10,8 +10,24 @@ latihan: [el-01, el-02, el-03, el-04, el-05, el-06]
 
 ## Kapan dipakai
 
-Peubah muncul di **pangkat**, atau soal memuat $\log$. Juga saat kamu perlu membandingkan
-bilangan berpangkat besar tanpa menghitungnya.
+Peubah muncul di **pangkat**, atau soal memuat **$\log$**. Keduanya satu jurus karena
+keduanya satu gagasan dibaca dua arah.
+
+Pemicu kedua: persamaannya memuat **basis yang sama muncul berkali-kali** — $4^x$, $2^x$,
+dan angka tetap dalam satu baris. Tulis semuanya dengan basis terkecil, beri nama $t = 2^x$,
+dan yang tersisa hampir selalu persamaan kuadrat.
+
+Pemicu ketiga: soal meminta **membandingkan dua bilangan berpangkat besar** tanpa
+menghitungnya — mana yang lebih besar, $2^{100}$ atau $3^{70}$. Melogaritmakan keduanya
+mengubah perbandingan yang mustahil dihitung menjadi perkalian dua bilangan kecil.
+
+Pemicu keempat: soal menanyakan **ada berapa digit** sebuah bilangan, atau digit pertamanya.
+Banyaknya digit $N$ adalah $\lfloor \log_{10} N \rfloor + 1$, dan itu satu-satunya cara
+rapi menjawabnya.
+
+Satu syarat yang sering terlupa dan menggugurkan jawaban: logaritma menuntut argumennya
+positif, jadi tiap penyelesaian wajib diperiksa balik terhadap syarat itu — bukan sebagai
+kehati-hatian, melainkan karena penyelesaian palsu memang muncul.
 
 ## Intinya
 

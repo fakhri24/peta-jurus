@@ -11,8 +11,24 @@ latihan: [pu-01, pu-02, pu-03, pu-04, pu-05, pu-06]
 ## Kapan dipakai
 
 Ada dua barisan bilangan dan soal membandingkan **jumlah hasil kali berpasangan** pada
-urutan yang berbeda-beda. Juga ampuh pada ketaksamaan simetris yang membandel terhadap
-AM-GM.
+urutan yang berbeda-beda. Kata "permutasi", "urutan", atau "dipasangkan" di soal ketaksamaan
+itu pemicu langsung.
+
+Pemicu kedua, dan inilah yang membuatnya sering menjadi kunci: ketaksamaannya **tidak
+simetris penuh melainkan siklik** — $\frac{a}{b} + \frac{b}{c} + \frac{c}{a}$. AM-GM
+memperlakukan semua suku sama dan karena itu sering memberi batas yang terlalu longgar; di
+sini urutannya justru yang dipakai.
+
+Pemicu ketiga: soal mengizinkan **menganggap $a \ge b \ge c$** tanpa kehilangan keumuman.
+Kalimat itu sendiri tanda bahwa jurus ini yang dimaksud, sebab urutan baru berarti sesudah
+ada yang diurutkan.
+
+Pemicu keempat: soal meminta **nilai terbesar atau terkecil sebuah penataan** — bagaimana
+memasangkan dua deret angka agar jumlah hasil kalinya paling besar. Jawabannya searah untuk
+terbesar, berlawanan arah untuk terkecil, dan tidak perlu satu pun penataan dicoba.
+
+Ketaksamaan Chebyshev adalah akibat langsungnya, jadi soal yang membandingkan rata-rata
+hasil kali dengan hasil kali rata-rata juga bermuara ke sini.
 
 ## Intinya
 

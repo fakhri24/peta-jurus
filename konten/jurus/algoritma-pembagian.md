@@ -10,8 +10,25 @@ latihan: [ap-01, ap-02, ap-03, ap-04, ap-05, ap-06]
 
 ## Kapan dipakai
 
-Soal berbicara tentang **sisa**, atau kamu ingin membagi semua bilangan bulat menjadi
-beberapa golongan untuk diperiksa satu per satu.
+Soal berbicara tentang **sisa** — sisa pembagian, bilangan yang "bersisa 3 kalau dibagi 5",
+atau bentuk $5k+3$.
+
+Pemicu kedua, dan inilah gerakan yang paling sering menyelamatkan: soal berbicara tentang
+**semua bilangan bulat** dan tampak mustahil diperiksa. Bagi menjadi $b$ golongan menurut
+sisanya, lalu periksa satu wakil dari tiap golongan — tak hingga kemungkinan menjadi $b$
+kasus.
+
+Pemicu ketiga: soal memberi **beberapa syarat sisa sekaligus** yang harus dipenuhi bersama.
+Menuliskannya sebagai $a = bq + r$ mengubah kalimat menjadi persamaan yang bisa
+disubstitusikan.
+
+Pemicu keempat: soal meminta membuktikan sebuah bentuk **selalu habis dibagi** sesuatu.
+Tulis peubahnya sebagai $bq + r$ untuk tiap $r$ yang mungkin, lalu tunjukkan hasilnya
+selalu sama — pembuktian yang panjangnya terbatas untuk pernyataan yang berlaku tak hingga
+kali.
+
+Pemilihan modulusnya itu seluruh seninya: $2$ untuk paritas, $3$ atau $9$ untuk digit,
+$4$ dan $8$ untuk kuadrat.
 
 ## Intinya
 
