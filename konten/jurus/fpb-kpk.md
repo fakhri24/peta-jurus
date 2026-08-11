@@ -10,8 +10,15 @@ latihan: [fk-01, fk-02, fk-03, fk-04, fk-05, fk-06]
 
 ## Kapan dipakai
 
-Soal menyebut faktor persekutuan, kelipatan persekutuan, pecahan paling sederhana, atau
-kata **relatif prima** / *saling asing*.
+Soal menyebut **faktor persekutuan terbesar (FPB)**, **kelipatan persekutuan terkecil (KPK)**, pecahan paling sederhana, atau kata **relatif prima** / *saling asing*.
+
+Pemicu kedua: soal memberikan nilai $\gcd(a, b)$ dan $\operatorname{lcm}(a, b)$ sekaligus, atau hubungan antara keduanya. Pemisalan $a = gx$ dan $b = gy$ dengan $\gcd(x, y) = 1$ langsung mengubah soal menjadi aljabar yang jauh lebih sederhana.
+
+Pemicu ketiga: soal menanyakan FPB dari dua bilangan yang bergantung pada $n$, seperti $\gcd(2n+1, 3n+2)$. Sifat $\gcd(a, b) = \gcd(a, b - ka)$ dipakai untuk mengeliminasi $n$.
+
+Pemicu keempat: soal meminta membuktikan pecahan $\frac{A(n)}{B(n)}$ **tak dapat disederhanakan** untuk semua $n$. Ini sama saja dengan membuktikan $\gcd(A(n), B(n)) = 1$.
+
+Pemicu kelima: hubungan dasar $\gcd(a, b) \cdot \operatorname{lcm}(a, b) = ab$ yang dipakai untuk menukar bentuk perkalian dengan bentuk persekutuan.
 
 ## Intinya
 

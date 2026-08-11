@@ -10,9 +10,26 @@ latihan: [kd-01, kd-02, kd-03, kd-04, kd-05, kd-06]
 
 ## Kapan dipakai
 
-Hampir selalu, begitu soal menyebut sisa pembagian — dan terutama saat kamu ingin
-**membuktikan sesuatu tidak mungkin**. Kongruensi adalah alat pembuktian
-ketidakmungkinan yang paling murah yang kamu punya.
+Soal menyebut **sisa pembagian**, atau memberi bilangan berpangkat besar dan menanyakan
+sisanya.
+
+Pemicu kedua, dan inilah pemakaian terpentingnya: soal meminta membuktikan sesuatu **tidak
+mungkin** — tidak ada penyelesaian bulat, sebuah bilangan tidak pernah kuadrat sempurna.
+Kongruensi adalah alat pembuktian ketidakmungkinan yang paling murah yang kamu punya, dan
+selalu layak dicoba lebih dulu daripada yang mahal.
+
+Pemicu ketiga: soal memuat **kuadrat atau pangkat tiga** dengan syarat bulat. Kuadrat hanya
+bisa bersisa $0$ atau $1$ modulo $4$, dan $0, 1, 4$ modulo $8$ — kenyataan sesempit itu
+menutup banyak persamaan dalam satu baris.
+
+Pemicu keempat: soal menyebut **digit terakhir**, **paritas**, atau "habis dibagi". Ketiganya
+kongruensi yang menyamar, berturut-turut modulo $10$, $2$, dan modulusnya sendiri.
+
+Pemicu kelima: ada **pangkat dengan eksponen raksasa**. Cari pangkat kecil yang bersisa $1$,
+lalu potong eksponennya — putaran itu selalu ada dan biasanya pendek.
+
+Memilih modulusnya seluruh seninya, dan ia bisa dilatih: coba modulus kecil dulu, dan
+perhatikan bilangan yang sudah muncul di soalnya.
 
 ## Intinya
 

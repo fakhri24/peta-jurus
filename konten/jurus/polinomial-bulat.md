@@ -10,9 +10,27 @@ latihan: [pb-01, pb-02, pb-03, pb-04, pb-05, pb-06]
 
 ## Kapan dipakai
 
-Polinomial dengan koefisien bulat, dan soal berbicara tentang **keterbagian** atau nilai
-bulat — misalnya "buktikan $P(n)$ tidak pernah prima" atau "tentukan semua $n$ bulat
-dengan $P(n)$ kuadrat sempurna".
+Polinomial dengan **koefisien bulat**, dan soal berbicara tentang keterbagian atau nilai
+bulat. Kata "berkoefisien bulat" hampir tidak pernah hiasan — kalau soal menyebutnya, ia
+yang akan dipakai.
+
+Pemicu kedua, dan inilah bentuk paling sering: soal meminta membuktikan $P(n)$ **tidak
+pernah prima**, atau tidak pernah kuadrat sempurna, untuk semua $n$ bulat. Pernyataan
+"tidak pernah" atas tak hingga banyak $n$ menuntut sifat, bukan pemeriksaan.
+
+Pemicu ketiga: soal memberi **beberapa nilai $P$ pada bilangan bulat** dan menanyakan
+apakah nilai tertentu mungkin. $(a-b) \mid (P(a)-P(b))$ mengubahnya menjadi soal
+keterbagian yang biasanya langsung menutup.
+
+Pemicu keempat: soal mencari **akar rasional** sebuah polinomial berkoefisien bulat. Akar
+rasional $\frac{p}{q}$ menuntut $p$ membagi suku tetapnya dan $q$ membagi koefisien
+utamanya — daftar terbatas yang bisa dicoba habis.
+
+Pemicu kelima: soal menyatakan $P$ **tak terfaktorkan atas bilangan bulat**, atau memintamu
+membuktikannya. Di situ modulo prima sering menjadi jalannya.
+
+Bedakan dari Suku Banyak: kalau bilangannya tidak dituntut bulat, seluruh sifat di sini
+hilang, dan yang tersisa aljabar polinomial biasa.
 
 ## Intinya
 

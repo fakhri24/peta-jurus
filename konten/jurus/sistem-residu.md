@@ -10,9 +10,13 @@ latihan: [sr-01, sr-02, sr-03, sr-04, sr-05, sr-06]
 
 ## Kapan dipakai
 
-Kamu perlu berpikir tentang **seluruh** bilangan bulat sekaligus, bukan satu per satu —
-misalnya saat mau membuktikan sesuatu berlaku untuk semua $n$, atau mau menghitung ada
-berapa nilai yang memenuhi suatu kongruensi.
+Soal meminta menganalisis sifat yang berlaku untuk **seluruh kemungkinan sisa pembagian** modulo $m$ secara serentak.
+
+Pemicu kedua: perkalian himpunan sisa dengan $a$ yang relatif prima terhadap $m$. Jika $\gcd(a, m) = 1$, perkalian $\{a \cdot 0, a \cdot 1, \dots, a \cdot (m-1)\}$ hanya meletakkan ulang (mengocok) sisa-sisa tersebut tanpa ada yang bertabrakan.
+
+Pemicu ketiga: pembuktian teorema-teorema struktur kongruensi, seperti Teorema Fermat Kecil atau Euler, yang mengalikan seluruh anggota sistem residu tereduksi lalu membagi dengan produknya.
+
+Pemicu keempat: soal menghitung **banyaknya solusi** persamaan kongruensi dalam satu rentang lengkap $0$ sampai $m-1$.
 
 ## Intinya
 

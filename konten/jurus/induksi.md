@@ -10,9 +10,13 @@ latihan: [ind-01, ind-02, ind-03, ind-04, ind-05, ind-06]
 
 ## Kapan dipakai
 
-Pernyataan berlaku **untuk setiap bilangan asli $n$**, dan bentuk untuk $n+1$ terasa bisa
-disusun dari bentuk untuk $n$. Ciri lain: ada rumus yang sudah kamu tebak dari pola, dan
-kamu perlu membuktikannya.
+Pernyataan dituntut berlaku **untuk setiap bilangan asli $n \ge n_0$**, dan bentuk kasus $n = k+1$ dapat diturunkan/disusun secara sistematis dari kasus $n = k$.
+
+Pemicu kedua: ada **rumus eksplisit yang sudah berhasil ditebak** dari percobaan kasus-kasus kecil, dan kamu perlu membuktikannya secara formal untuk seluruh $n$.
+
+Pemicu ketiga: pembuktian pertaksamaan atau sifat keterbagian yang memuat parameter bilangan asli $n$ di mana langkah $k \to k+1$ memanfaatkan struktur rekursif.
+
+Pemicu keempat: induksi kuat (strong induction), ketika kebenaran kasus $n = k+1$ membutuhkan asumsi bahwa seluruh kasus sebelumnya ($n = 1, 2, \dots, k$) telah bernilai benar secara bersamaan.
 
 ## Intinya
 

@@ -10,9 +10,13 @@ latihan: [vj-01, vj-02, vj-03, vj-04, vj-05, vj-06]
 
 ## Kapan dipakai
 
-Ciri khasnya sangat spesifik: persamaan **simetris berderajat dua** pada dua variabel,
-dengan syarat berupa bilangan bulat — misalnya $\dfrac{a^2+b^2}{ab+1}$ diminta bulat.
-Begitu kamu melihat pola itu, hampir pasti ini jurusnya.
+Soal memuat persamaan Diophantine **simetris kuadratik** dalam dua peubah bulat positif $(a, b)$, dengan bentuk khas pecahan $\frac{a^2 + b^2}{ab + k} = k$ bernilai bulat. Ini pola paling ikonik di olimpiade (termasuk IMO 1988 No 6).
+
+Pemicu kedua: soal meminta membuktikan bahwa nilai rasional pecahan kuadrat simetris $\frac{A(a,b)}{B(a,b)}$ yang bernilai bulat **harus berupa kuadrat sempurna**.
+
+Pemicu ketiga: konstruksi barisan solusi tak hingga melalui hubungan rekurensi Vieta. Jika $(a, b)$ solusi dengan $a \ge b$, kita membuat akar baru $a' = \frac{b^2 - k}{a} < a$ yang menghasilkan solusi minimal hingga menabrak kontradiksi batas.
+
+Pemicu keempat: teknik pembalikan (jumping up/down) untuk membuktikan tidak adanya pasangan solusi bulat positif di luar keluarga solusi sepele $(k, 0)$ atau $(k, k)$.
 
 ## Intinya
 

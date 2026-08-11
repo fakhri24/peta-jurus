@@ -10,9 +10,13 @@ latihan: [tsc-01, tsc-02, tsc-03, tsc-04, tsc-05, tsc-06]
 
 ## Kapan dipakai
 
-Ada **beberapa syarat sisa sekaligus**: "bersisa 2 kalau dibagi 3, bersisa 3 kalau dibagi
-5, bersisa 2 kalau dibagi 7". Atau — pemakaian yang lebih dalam — kamu ingin memecah satu
-soal modulo besar menjadi beberapa soal modulo pangkat prima yang lebih mudah.
+Soal memberikan **beberapa syarat sisa pembagian sekaligus** untuk satu bilangan $x$, terhadap beberapa modulus yang saling relatif prima berpasangan — seperti $x \equiv 2 \pmod 3$, $x \equiv 3 \pmod 5$, dan $x \equiv 2 \pmod 7$.
+
+Pemicu kedua, dan inilah fungsi teoretik terpentingnya: **memecah masalah modulo komposit besar** $M = p_1^{a_1} p_2^{a_2} \cdots p_k^{a_k}$ menjadi beberapa sub-masalah independen modulo $p_i^{a_i}$ yang jauh lebih mudah dikerjakan.
+
+Pemicu ketiga: membuktikan keberadaan **rentang bilangan komposit yang panjangnya sembarang** — misalnya membuktikan ada 1000 bilangan bulat berurutan yang masing-masing punya faktor prima unik.
+
+Pemicu keempat: soal menanyakan sisa pembagian modulo bilangan komposit seperti $100$ atau $1000$, di mana kita bisa menghitung modulo $4$ dan $25$ (atau modulo $8$ dan $125$) secara terpisah lalu menggabungkannya.
 
 ## Intinya
 

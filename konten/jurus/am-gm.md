@@ -10,9 +10,15 @@ latihan: [ag-01, ag-02, ag-03, ag-04, ag-05, ag-06]
 
 ## Kapan dipakai
 
-Semua peubahnya **positif**, dan soal meminta nilai terbesar atau terkecil dari jumlah
-atau hasil kali. Ciri paling terang: satu di antara jumlah dan hasil kali diketahui tetap,
-lalu yang lain ditanyakan.
+Semua peubah bernilai **real positif** ($a, b, c > 0$), dan soal meminta nilai **maksimum** atau **minimum** dari jumlah atau hasil kali peubah-peubah tersebut.
+
+Pemicu kedua: satu di antara jumlah $\sum a_i$ atau hasil kali $\prod a_i$ bernilai **tetap (konstan)**, lalu yang lain ditanyakan ekstremumnya. AM-GM adalah jembatan paling alami antara penjumlahan dan perkalian.
+
+Pemicu ketiga: bentuk perkalian pecahan atau suku-suku yang **saling mengeliminasi (resiprokal)**, seperti $x + \frac{1}{x} \ge 2$ untuk $x > 0$, atau $\frac{a}{b} + \frac{b}{c} + \frac{c}{a} \ge 3$.
+
+Pemicu keempat: pertaksamaan yang menuntut syarat kesamaan tercapai ketika semua peubah **sama besar** ($a = b = c$).
+
+Pemicu kelima: teknik pembobotan suku (weighted AM-GM) atau pemecahan suku untuk menyesuaikan koefisien agar syarat kesamaan dapat dipenuhi serentak.
 
 ## Intinya
 

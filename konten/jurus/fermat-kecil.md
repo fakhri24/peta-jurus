@@ -10,8 +10,13 @@ latihan: [fkl-01, fkl-02, fkl-03, fkl-04, fkl-05, fkl-06]
 
 ## Kapan dipakai
 
-Ada **pangkat besar** dan **modulus prima**. Begitu kamu melihat $2^{2019} \bmod 13$ atau
-sejenisnya, ini jurus pertama yang dicoba.
+Soal melibatkan **pangkat raksasa** dan **modulus berupa bilangan prima $p$**. Begitu melihat $2^{2026} \pmod{13}$ atau sejenisnya, ini alat pertama yang dipanggil untuk memangkas eksponen modulo $p-1$.
+
+Pemicu kedua: soal meminta membuktikan keterbagian $p \mid (a^p - a)$ untuk semua bilangan bulat $a$. Bentuk kedua $a^p \equiv a \pmod p$ berlaku tanpa syarat, termasuk saat $p \mid a$.
+
+Pemicu ketiga: penyederhanaan deret perpangkatan modulo $p$, seperti $\sum_{k=1}^{p-1} k^{p-1} \equiv p-1 \equiv -1 \pmod p$.
+
+Pemicu keempat: mencari **invers modulo prima** — karena $a^{p-2} \cdot a \equiv 1 \pmod p$, maka invers perkalian dari $a$ modulo $p$ dapat ditulis langsung sebagai $a^{p-2} \bmod p$.
 
 ## Intinya
 

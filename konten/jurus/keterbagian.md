@@ -10,8 +10,16 @@ latihan: [ket-01, ket-02, ket-03, ket-04, ket-05, ket-06]
 
 ## Kapan dipakai
 
-Soal menyebut kata *habis dibagi*, *kelipatan*, *faktor*, atau *sisa*. Juga saat kamu
-melihat bentuk seperti $n \mid a$ dan ingin menariknya jadi persamaan.
+Soal menyebut kata **habis dibagi**, **kelipatan**, **faktor**, atau **sisa pembagian**. Bentuk $a \mid b$ adalah bahasa dasar teori bilangan.
+
+Pemicu kedua: bentuk pecahan $\frac{an+b}{cn+d}$ yang dituntut bernilai **bilangan bulat**. Gagasan utamanya adalah mengeliminasi $n$ dari pembilang agar sisa keterbagiannya berupa bilangan konstan.
+
+Pemicu ketiga: soal menuntut pembuktian keterbagian untuk **semua bilangan bulat $n$**, seperti $n^3 - n$ habis dibagi $6$. Faktorisasi menjadi hasil kali bilangan berurutan selalu menjadi langkah pertama.
+
+Pemicu keempat: pertaksamaan keterbagian — jika $a \mid b$ dengan $b \neq 0$, maka $|a| \le |b|$. Ini batas yang sangat kuat untuk membatasi nilai peubah bulat hingga tersisa sedikit pilihan.
+
+Pemicu kelima: soal memuat dua pernyataan keterbagian saling membagi, $a \mid b$ dan $b \mid a$ (untuk $a,b > 0$), yang langsung menyimpulkan $a = b$.
+
 
 ## Intinya
 

@@ -10,8 +10,13 @@ latihan: [wl-01, wl-02, wl-03, wl-04, wl-05, wl-06]
 
 ## Kapan dipakai
 
-Ada **faktorial** dan **modulus prima** dalam satu soal. Kalau kamu melihat $(p-1)!$ atau
-sesuatu yang bisa didorong ke bentuk itu, ini jurusnya.
+Soal memuat **faktorial $(p-1)!$ atau $(p-2)!$** berdampingan dengan **modulus prima $p$**. Ini adalah satu-satunya teorema utama yang menghubungkan faktorial dengan keterbagian prima.
+
+Pemicu kedua: membuktikan bahwa $p$ adalah **bilangan prima** lewat kesetaraan penuh dua arah — $n$ prima jika dan hanya jika $(n-1)! \equiv -1 \pmod n$. Untuk $n > 4$ komposit, $(n-1)! \equiv 0 \pmod n$.
+
+Pemicu ketiga: penyederhanaan bentuk faktorial parsial modulo $p = 4k+1$ atau $p = 4k+3$, seperti menghitung nilai $\left(\frac{p-1}{2}\right)! \pmod p$.
+
+Pemicu keempat: soal menanyakan sisa pembagian faktorial berukuran besar seperti $96! \pmod{97}$ atau $95! \pmod{97}$, di mana sifat pasang-pasangan invers modulo $p$ menyisakan $-1$ atau $1$.
 
 ## Intinya
 
