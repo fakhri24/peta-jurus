@@ -6,7 +6,19 @@
 
    Pembahasan dikunci sampai semua petunjuk dibuka — tapi begitu siswa menekan
    "Jawab", kuncinya lepas. Gerbangnya ada untuk mencegah mengintip sebelum
-   mencoba, bukan untuk menahan penjelasan dari orang yang sudah mencoba. */
+   mencoba, bukan untuk menahan penjelasan dari orang yang sudah mencoba.
+
+   **Nama jurusnya ikut digerbang, dan itu bukan hiasan.** Yang dilatih situs ini
+   pertama-tama adalah mengenali pemicu — melihat soal lalu tahu jurus mana yang
+   dipakai. Mencetak "Jurus: Sarang Merpati" di atas soalnya menjawab pertanyaan
+   itu sebelum ditanya, dan membuat aturan "petunjuk 1 tidak boleh menyebut nama
+   jurusnya" kehilangan artinya: gerbangnya menjaga pintu di tembok yang sisi
+   lainnya terbuka.
+
+   Digerbang hanya kalau sesinya **mencampur jurus**. Pada latihan satu jurus
+   berurutan (?jurus=ID, dan sesi baru yang seluruh soalnya dari satu jurus yang
+   sama) siswa sudah tahu jurusnya dari cara ia masuk — menyembunyikannya di situ
+   cuma sandiwara, dan judul sesinya memang menyebut namanya. */
 
 (function () {
   'use strict';
@@ -16,6 +28,7 @@
   var antrean = [];
   var indeks = 0;
   var judulSesi = '';
+  var sembunyiJurus = false;
 
   var soalKini = null;
   var tangga = null;
@@ -45,6 +58,8 @@
     if (sid) {
       var s = Inti.data.soal[sid];
       judulSesi = 'Satu soal';
+      // Satu soal lepas: tidak ada apa pun di layar yang menyiratkan jurusnya.
+      sembunyiJurus = true;
       return s ? [s] : [];
     }
 
@@ -52,15 +67,18 @@
     if (jid) {
       var j = Inti.data.jurus[jid];
       judulSesi = j ? j.nama : jid;
+      sembunyiJurus = false;
       return dariJurus(jid, k);
     }
 
     /* Sesi hari ini. Yang jatuh tempo lebih dulu, satu soal per jurus —
        menumpuk lima soal dari satu jurus yang sama tidak menguji ingatan,
-       hanya menguji stamina. */
+       hanya menguji stamina. Sesi inilah yang paling sering dibuka, dan
+       satu-satunya tempat pengenalan pemicu terlatih di luar simulasi. */
     var ulang = Inti.jurusPerluDiulang(k);
     if (ulang.length) {
       judulSesi = 'Ulangan hari ini';
+      sembunyiJurus = true;
       return ulang.map(function (id) { return Inti.soalBerikutnya(id, k); })
                   .filter(Boolean)
                   .slice(0, MAKS_SESI);
@@ -70,7 +88,9 @@
     for (var i = 0; i < terbuka.length; i++) {
       var segar = belumDikerjakan(dariJurus(terbuka[i], k), k);
       if (segar.length) {
+        // Seluruh sesi dari satu jurus, dan judulnya menyebut namanya.
         judulSesi = Inti.data.jurus[terbuka[i]].nama;
+        sembunyiJurus = false;
         return segar.slice(0, MAKS_SESI);
       }
     }
@@ -115,6 +135,15 @@
     }).join(', ');
   }
 
+  /* Dipanggil begitu percobaannya selesai — sesudah "Jawab" pada soal isian,
+     sesudah "Saya sudah mengerjakan" pada uraian. Sejalan dengan gerbang
+     pembahasan: menahan intipan sebelum mencoba, bukan sesudah. */
+  function bukaTandaJurus() {
+    if (!sembunyiJurus) return;
+    var t = el('tanda-jurus');
+    if (t) t.innerHTML = namaJurusSoal(soalKini);
+  }
+
   function tampilkanSoal() {
     soalKini = antrean[indeks];
     dijawab = false;
@@ -126,8 +155,9 @@
       '<p class="label-pilar">' + Inti.lolos(judulSesi) +
         ' · soal ' + (indeks + 1) + ' dari ' + antrean.length + '</p>' +
       '<h1>' + Inti.lolos(soalKini.sumber) + '</h1>' +
-      '<p class="samar">Jurus: ' + namaJurusSoal(soalKini) +
-        ' · tingkat kesulitan <span class="kesulitan">' +
+      '<p class="samar">Jurus: <span id="tanda-jurus">' +
+        (sembunyiJurus ? 'tebak dulu — muncul setelah dijawab' : namaJurusSoal(soalKini)) +
+        '</span> · tingkat kesulitan <span class="kesulitan">' +
         Inti.bintangKesulitan(soalKini.kesulitan) + '</span></p>' +
 
       '<div class="kartu">' +
@@ -172,6 +202,7 @@
     // ikut melonjak ke jumlah petunjuk penuh.
     Inti.catatJawaban(soalKini.id, benar, tangga.dibuka(), detik());
     tangga.bukaPembahasan();
+    bukaTandaJurus();
 
     var kotak = el('hasil');
     kotak.innerHTML = '<div class="hasil ' + (benar ? 'benar' : 'salah') + '">' +
@@ -215,6 +246,7 @@
       '</div>';
     Inti.renderRumus(el('hasil'));
     tangga.bukaPembahasan();
+    bukaTandaJurus();
 
     var kotak = el('hitung-centang');
     function hitung() {

@@ -827,7 +827,63 @@ sementara, meski tak satu pun menggantikan langkah 2:
   tahap OSN ini wajar dan bukan cacat; yang layak dilihat adalah yang di OSN-K/OSN-P,
   terutama **Induksi Matematika**, satu-satunya yang sekaligus dipakai 3× oleh jurus lain.
 
-### 6.5 Yang sengaja belum masuk Fase 6
+### 6.5 Gerbang nama jurus di sesi campuran — selesai 11 Agustus 2026
+
+Ditemukan saat menilai situs ini sebagai kurikulum, bukan sebagai repo, dan ia lebih besar
+daripada seluruh 6.3: **`assets/latihan.js` mencetak `Jurus: <nama>` tepat di atas soal,
+sebelum siswa mencoba, di semua mode latihan.**
+
+Aturan "petunjuk 1 tidak boleh menyebut nama jurusnya" ada supaya siswa berlatih mengenali
+pemicu. Tapi kepala halamannya menyebutkan nama itu tanpa syarat — jadi gerbang petunjuk
+menjaga pintu di tembok yang sisi lainnya terbuka. Akibat sebenarnya: siswa yang membuka
+sesi harian tiap hari **tidak pernah sekali pun melatih keahlian yang jadi alasan situs ini
+ada**. Ia selalu sudah diberi tahu jawabannya sebelum bertanya.
+
+Ada dua kebocoran di halaman yang sama, bukan satu — baris `Jurus:` itu, dan `judulSesi`
+yang pada satu cabang memang diisi nama jurus.
+
+Perbaikannya **tidak seragam**, dan itu intinya:
+
+- **Digerbang** kalau sesinya mencampur jurus — "Ulangan hari ini" (mode paling sering
+  dibuka) dan `?soal=ID`. Namanya diganti "tebak dulu — muncul setelah dijawab", lalu
+  dibuka oleh `bukaTandaJurus()` di dua jalur selesainya percobaan: sesudah "Jawab" pada
+  isian, sesudah "Saya sudah mengerjakan" pada uraian. Sejalan dengan gerbang pembahasan —
+  menahan intipan sebelum mencoba, bukan sesudah.
+- **Tidak digerbang** pada latihan satu jurus berurutan (`?jurus=ID`, dan sesi baru yang
+  seluruh soalnya dari satu jurus). Di situ siswa sudah tahu jurusnya dari cara ia masuk,
+  dan judul sesinya memang menyebut namanya. Menyembunyikannya cuma sandiwara.
+
+Simulasi sudah bersih sejak awal — ia hanya menampilkan nomor, tahap, dan bintang
+kesulitan. Jadi kemampuan ini sebenarnya sudah ada di situs, hanya tidak dipakai di halaman
+yang paling sering dibuka.
+
+Diperiksa di peramban, bukan hanya di tes: tersembunyi sebelum dijawab, muncul sesudah.
+`CACHE` dinaikkan ke `peta-jurus-v14`. Pelajaran samping yang layak diingat — muat ulang
+pertama menampilkan versi lama, persis peringatan service worker di CLAUDE.md.
+
+### 6.6 Lubang silabus — calon jurus baru
+
+Berbeda dari 6.4. 6.4 tentang jurus yang **ada** tapi kurang dilatih; ini tentang teknik
+yang **tidak ada sama sekali**. Empat, semuanya masih di dalam jangkauan OSN, dan semuanya
+di bidang yang sudah ada — tidak ada pilar baru, jadi `URUT_PILAR` tidak tersentuh.
+
+| Calon | Bidang | Tahap | Kenapa masuk daftar |
+|---|---|---|---|
+| Residu kuadratik / simbol Legendre | teori bilangan | osn-p | "apakah $x^2 \equiv a \pmod p$ punya solusi" alat baku; ketiadaannya paling terasa |
+| Kecekungan dan Jensen (plus SOS) | aljabar | osn | tempat jatuhnya ketaksamaan OSN ketika AM-GM dan Cauchy mentok |
+| Sudut berarah | geometri | osn-p | bukan teorema melainkan teknik; mencegah salah konfigurasi, penyebab kehilangan angka yang khas |
+| Teorema Hall / pemadanan | kombinatorika | osn | satu-satunya cara baku menjawab soal "bisakah dipasangkan" |
+
+Sudut berarah adalah yang paling tidak lazim di antara keempatnya karena ia bukan jurus
+dalam arti "teorema yang dipakai", melainkan kebiasaan menulis. Kalau bentuk `kapan_dipakai`
+terasa dipaksakan untuknya, itu tanda ia lebih tepat menjadi bagian `jebakan` di jurus-jurus
+lingkaran daripada simpul sendiri — putuskan saat menulisnya, jangan sekarang.
+
+Sebelum satu pun ditulis, ingat urutan yang sudah ditetapkan 6.4: **`kapan_dipakai` yang
+sebanding lebih dulu.** Menambah jurus baru sementara 13 jurus lama belum mendaftarkan
+pemicunya berarti memperlebar peta yang setengahnya belum terbaca.
+
+### 6.7 Yang sengaja belum masuk Fase 6
 
 Supaya tidak dikira terlupa:
 
@@ -844,7 +900,14 @@ Supaya tidak dikira terlupa:
 sebagian besarnya, `rajah.py` tidak punya fungsi tanpa pemakai sekaligus tanpa tes, dan
 aturan petunjuk 1 tidak lagi bergantung pada ingatan. Arahnya 6.4 sudah **diputuskan**
 (kedalaman terpilih), jadi yang tersisa di sana pekerjaan: `kapan_dipakai` sebanding
-antarbidang lebih dulu, daftar pemicu sesudahnya, soal baru paling akhir.
+antarbidang lebih dulu, daftar pemicu sesudahnya, soal baru paling akhir. 6.5 sudah
+selesai; 6.6 menunggu langkah pertama 6.4.
+
+Satu hal yang **tidak** akan selesai di dalam repo ini, dan sebaiknya ditulis supaya tidak
+diam-diam dianggap tertutup: naskah OSN asli dan **seseorang yang membaca pembuktianmu**.
+Rubrik penilaian sendiri bisa memeriksa apakah langkahnya ada, tapi tidak bisa memberi tahu
+bahwa argumenmu berlubang di tempat yang kamu kira rapat. Berapa pun soal ditambahkan, itu
+tetap harus datang dari luar.
 
 ---
 
