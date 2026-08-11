@@ -21,8 +21,8 @@ Tentukan panjang $MN$.
 
 ## Petunjuk
 
-- Titik $P$ adalah pusat homoteti yang memetakan ruas $AB$ ke ruas $CD$. Berapa faktornya, dan apa tandanya?
-- Faktornya $-\tfrac{15}{30} = -\tfrac12$, jadi $AP : PC = 2 : 1$ dan $P$ membagi tiap diagonal $2:1$.
+- Kedua alasnya sejajar, jadi $\triangle PAB$ dan $\triangle PCD$ sebangun dengan $P$ sebagai titik tetapnya. Perbandingan $30 : 15$ itulah yang menentukan letak $P$ pada tiap diagonal.
+- Titik $P$ adalah pusat homoteti yang memetakan ruas $AB$ ke ruas $CD$, dengan faktor $-\tfrac{15}{30} = -\tfrac12$ — jadi $AP : PC = 2 : 1$ dan $P$ membagi tiap diagonal $2:1$.
 - Hitung $MP$ lewat $\triangle AMP \sim \triangle ADC$, lalu $PN$ dengan cara yang sama dari sisi lain.
 
 ## Pembahasan

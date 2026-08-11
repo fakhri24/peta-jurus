@@ -18,9 +18,9 @@ Ada berapa pertandingan seluruhnya?
 
 ## Petunjuk
 
-- Gambarkan sebagai graf: tim menjadi titik, pertandingan menjadi ruas antara dua tim.
-- Sebuah pertandingan ditentukan oleh pasangan tim, dan menukar urutan kedua tim tidak menghasilkan pertandingan yang berbeda.
-- Boleh juga lewat derajat: tiap tim bermain melawan berapa tim lain?
+- Yang dihitung hubungan berpasangan: tiap pertandingan mengikat tepat dua tim, dan menukar urutan kedua tim tidak menghasilkan pertandingan yang berbeda.
+- Gambarkan sebagai graf: tim menjadi titik, pertandingan menjadi ruas. Yang ditanya berubah menjadi banyaknya ruas.
+- Boleh juga lewat derajat: tiap tim bermain melawan berapa tim lain, dan tiap pertandingan terhitung berapa kali?
 
 ## Pembahasan
 

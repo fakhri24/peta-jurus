@@ -578,6 +578,75 @@ class TestPeriksaGambar(unittest.TestCase):
         self.assertEqual((dipakai, galat), (set(), []))
 
 
+class TestPeriksaPetunjuk(unittest.TestCase):
+    """Petunjuk 1 tidak boleh menyebut nama jurusnya — dulu satu-satunya aturan
+    isi penting yang cuma dititipkan ke ingatan. Yang diuji di sini justru
+    kelonggarannya: pemeriksaan yang menandai pengecualian sah akan dimatikan
+    orang, jadi kelonggaran itu bagian dari alatnya, bukan cacatnya."""
+
+    def _susun(self, *simpul):
+        """simpul: (id, nama, [(id_soal, petunjuk_1, teks_soal), …])"""
+        jurus, soal = {}, {}
+        for jid, nama, butir in simpul:
+            jurus[jid] = {"id": jid, "nama": nama, "latihan": [b[0] for b in butir]}
+            for sid, p1, teks in butir:
+                soal[sid] = {"petunjuk": [p1], "soal": teks}
+        return build.periksa_petunjuk(jurus, soal)
+
+    def test_petunjuk_yang_menyebut_nama_jurusnya_ditandai(self):
+        hasil = self._susun(("hmt", "Homoteti", [
+            ("h-01", "Pusat homoteti selalu pada garis kedua pusat.",
+             "Dua lingkaran berjari-jari 3 dan 7."),
+        ]))
+        self.assertTrue(any("h-01" in x for x in hasil), hasil)
+
+    def test_kosakata_yang_dipakai_banyak_jurus_dilewatkan(self):
+        # "luas" muncul di petunjuk milik tiga jurus — itu kosakata bidangnya,
+        # bukan nama teknik. Inilah yang membedakan alat ini dari pencocokan
+        # kata biasa, dan yang membuat keluarannya masih layak dibaca orang.
+        hasil = self._susun(
+            ("lp", "Luas", [("l-01", "Bandingkan luas kedua segitiga.", "Segitiga.")]),
+            ("kk", "Kekongruenan", [("k-01", "Hitung luas alasnya.", "Segitiga.")]),
+            ("ph", "Pythagoras", [("p-01", "Cari luas persegi itu.", "Persegi.")]),
+        )
+        self.assertEqual([x for x in hasil if "l-01" in x], [])
+
+    def test_soal_yang_menyebut_tekniknya_sendiri_tidak_bisa_bocor(self):
+        hasil = self._susun(("ptl", "Teorema Ptolemy", [
+            ("p-01", "Ptolemy hanya berlaku untuk segiempat talibusur.",
+             "Dengan memakai teorema Ptolemy, tentukan panjang diagonalnya."),
+        ]))
+        self.assertEqual(hasil, [])
+
+    def test_soal_contoh_tidak_diperiksa(self):
+        # Contoh hanya tampil di jurus.html, yang judul halamannya adalah nama
+        # jurus itu sendiri. Tidak ada yang bisa dibocorkan di sana.
+        jurus = {"hmt": {"id": "hmt", "nama": "Homoteti",
+                         "contoh": ["h-contoh-1"], "latihan": []}}
+        soal = {"h-contoh-1": {"petunjuk": ["Pakai homoteti berpusat $T$."],
+                               "soal": "Dua lingkaran bersinggungan di $T$."}}
+        self.assertEqual(build.periksa_petunjuk(jurus, soal), [])
+
+    def test_nama_yang_sisinya_satu_kata_tidak_dipecah(self):
+        # Dipecah, "Teorema Sisa dan Faktor" menjadi "sisa" dan "faktor" — dan
+        # tiap petunjuk yang menulis "sisa pembagian" ikut tertandai.
+        hasil = self._susun(("tsf", "Teorema Sisa dan Faktor", [
+            ("t-01", "Sisa pembagian oleh bentuk linear diperoleh dengan satu "
+                     "substitusi.", "Suku banyak $P(x)$ dibagi $x-2$."),
+        ]))
+        self.assertEqual(hasil, [])
+
+    def test_nama_dua_teknik_dipecah_supaya_salah_satunya_pun_tertangkap(self):
+        hasil = self._susun(("sdl", "Sudut Pusat dan Sudut Keliling", [
+            ("s-01", "Pakai sudut keliling yang menghadap busur itu.",
+             "Lingkaran dengan tali busur $AB$."),
+            ("s-02", "Yang satu bertitik sudut di keliling, yang satu di pusat.",
+             "Lingkaran dengan tali busur $AB$."),
+        ]))
+        self.assertTrue(any("s-01" in x for x in hasil), hasil)
+        self.assertEqual([x for x in hasil if "s-02" in x], [])
+
+
 class TestRajah(unittest.TestCase):
     """Rajah dibaca dengan mata, jadi yang diuji bukan keluarannya melainkan
     geometrinya. Lingkaran dalam yang meleset seperseribu tidak menggagalkan apa

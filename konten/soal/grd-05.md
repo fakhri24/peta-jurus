@@ -17,8 +17,8 @@ Buktikan bahwa dalam sebuah kelompok yang beranggotakan paling sedikit dua orang
 
 ## Petunjuk
 
-- Gambarkan sebagai graf, lalu nyatakan yang harus dibuktikan sebagai pernyataan tentang derajat.
-- Ada berapa nilai derajat yang mungkin untuk graf dengan $n$ titik? Bandingkan dengan banyaknya titik.
+- Bandingkan dua hitungan: ada berapa orang, dan ada berapa nilai berbeda yang mungkin bagi banyaknya kenalan seseorang.
+- Gambarkan sebagai graf dan nyatakan lewat derajat. Untuk $n$ titik, derajat hanya bisa bernilai $0$ sampai $n-1$ — sama banyak dengan titiknya.
 - Angkanya ternyata pas — dan pas berarti prinsipnya belum menggigit. Tunjukkan dua nilai ekstrem tidak bisa muncul bersamaan.
 
 ## Pembahasan

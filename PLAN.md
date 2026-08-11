@@ -742,7 +742,15 @@ Yang tidak sah adalah membiarkannya. Aturan yang layak dipegang seterusnya: **pr
 `rajah.py` harus punya pemakai konten atau tes — kalau tidak keduanya, ia kode yang belum
 pernah dijalankan siapa pun.**
 
-### 6.3 Pemeriksaan kasar "petunjuk 1 bocor"
+### 6.3 Pemeriksaan kasar "petunjuk 1 bocor" — selesai 11 Agustus 2026
+
+Dibangun sebagai `periksa_petunjuk()`, peringatan seperti rencananya. Yang tidak
+diperkirakan rencana ini: **pencocokan kata polos memberi 40-an peringatan**, dan peringatan
+sebanyak itu sama saja dengan tidak ada. Tiga saringan menurunkannya ke tiga, seluruhnya
+sengaja — nama yang sisi-sisinya satu kata tidak dipecah di "dan", frasa yang muncul di
+petunjuk milik dua jurus lain dianggap kosakata bidang, dan soal yang menyebut tekniknya
+sendiri dilewatkan. Delapan bocor sungguhan ditulis ulang dengan menggeser tangganya satu
+anak. Rinciannya di CLAUDE.md; di bawah ini rencana aslinya.
 
 Bagian Risiko sudah menyebut ini dengan syarat "kalau sudah puluhan jurus". Sekarang 85,
 jadi syaratnya lewat.

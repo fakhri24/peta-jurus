@@ -18,8 +18,8 @@ Tentukan panjang diagonal $BD$.
 
 ## Petunjuk
 
-- Keempat titiknya pada satu lingkaran dan yang ditanya diagonal — itu pemicu langsung untuk Ptolemy.
-- Pasangan sisi berhadapan pada $ABCD$ adalah $AB$ dengan $CD$, dan $BC$ dengan $AD$.
+- Yang diketahui keempat sisinya dan satu diagonal, yang ditanya diagonal satunya. Cari satu kesamaan yang mengikat keenam panjang itu sekaligus — kesamaan yang berlaku justru karena keempat titiknya setalibusur.
+- Itu pemicu langsung untuk teorema Ptolemy. Pasangan sisi berhadapan pada $ABCD$ adalah $AB$ dengan $CD$, dan $BC$ dengan $AD$.
 - $AC \cdot BD = AB \cdot CD + BC \cdot AD$.
 
 ## Pembahasan

@@ -15,9 +15,9 @@ Tentukan sisa pembagian $5^{2026}$ oleh $11$.
 
 ## Petunjuk
 
-- Fermat Kecil memberi $5^{10} \equiv 1 \pmod{11}$, jadi potong $2026$ modulo $10$.
-- $2026 = 10 \times 202 + 6$, jadi tinggal menghitung $5^6 \bmod 11$.
-- Hitung bertahap: $5^2 \equiv 3$, lalu $5^4 \equiv 9$, lalu $5^6 = 5^4 \cdot 5^2$.
+- Modulusnya prima dan basisnya tidak habis dibagi olehnya. Pangkat sebesar $2026$ tidak perlu dihitung — pangkat-pangkat $5$ modulo $11$ pasti berulang, dan yang perlu diketahui cuma panjang putarannya.
+- Fermat Kecil memberi $5^{10} \equiv 1 \pmod{11}$, jadi potong $2026$ modulo $10$: $2026 = 10 \times 202 + 6$.
+- Tinggal $5^6 \bmod 11$. Hitung bertahap: $5^2 \equiv 3$, lalu $5^4 \equiv 9$, lalu $5^6 = 5^4 \cdot 5^2$.
 
 ## Pembahasan
 

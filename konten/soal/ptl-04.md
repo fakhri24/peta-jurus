@@ -19,8 +19,8 @@ Tentukan nilai terbesar yang mungkin bagi $PA$.
 
 ## Petunjuk
 
-- Soal meminta nilai terbesar dari sebuah panjang, dengan empat titik yang tidak dijamin setalibusur. Bentuk itu pemicu ketaksamaan Ptolemy.
-- Untuk **empat titik sembarang**, $AP \cdot BC \le AB \cdot PC + BP \cdot CA$.
+- Yang diminta nilai **terbesar**, bukan nilai tertentu, dan $P$ boleh di mana saja. Itu tanda alatnya bukan kesamaan melainkan batas — batas yang berubah menjadi kesamaan tepat ketika keempat titiknya setalibusur.
+- Bentuk itu pemicu ketaksamaan Ptolemy: untuk **empat titik sembarang**, $AP \cdot BC \le AB \cdot PC + BP \cdot CA$.
 - Segitiganya sama sisi, jadi ketiga sisinya bisa dicoret. Kapan kesamaannya tercapai?
 
 ## Pembahasan

@@ -184,10 +184,25 @@ Konsekuensinya untuk penulisan soal:
   resminya saja. Mengunduh dan menyebarkan ulang adalah dua izin yang berbeda; rinciannya
   di `PLAN.md` Fase 5.
 
+**Petunjuk 1 tidak boleh menyebut nama jurusnya**, dan itu sekarang **peringatan mesin**
+lewat `periksa_petunjuk()` — bukan galat, karena sebagian penyebutan justru dorongan yang
+benar ("Ptolemy yang biasa belum cukup" pada soal yang menuntut bentuk lain). Urutan
+petunjuk berjenjang dari dorongan halus → sebut jurus → langkah pertama; kalau petunjuk 1
+sudah menyebut namanya, biasanya obatnya menggeser tangganya satu anak, bukan menghapus.
+
+Yang dicocokkan **nama jurus pemiliknya**, bukan seluruh medan `jurus:` — menyebut jurus
+kedua di petunjuk pertama sering justru yang dimaksudkan. Tiga hal membuat keluarannya
+tetap layak dibaca, dan ketiganya dijaga tes: nama yang sisi-sisinya satu kata tidak
+dipecah di "dan" (kalau tidak, "Teorema Sisa dan Faktor" menandai tiap "sisa pembagian");
+frasa yang muncul di petunjuk milik dua jurus lain atau lebih dianggap kosakata bidang,
+bukan nama teknik; dan soal yang menyebut tekniknya sendiri di badan soalnya dilewatkan,
+karena tidak ada yang bisa dibocorkan di situ. Soal contoh tidak diperiksa sama sekali — ia
+hanya tampil di `jurus.html`, yang judul halamannya nama jurus itu sendiri.
+
+Sisa peringatan yang memang disengaja saat ini: `grd-03`, `ptl-03`, `pwn-06`.
+
 Tidak bisa ditegakkan mesin, tapi sama mengikatnya:
 
-- **Petunjuk 1 tidak boleh menyebut nama jurusnya.** Kalau disebut, gerbangnya kehilangan
-  gunanya. Urutan petunjuk berjenjang dari dorongan halus → sebut jurus → langkah pertama.
 - **Varian jawaban ditulis eksplisit di `jawaban_alt`**, bukan ditebak kode.
   `periksaJawaban()` sengaja lugu: rapikan spasi, samakan huruf, bandingkan sebagai angka.
   Konsekuensinya untuk penulisan soal isian: perbandingan angkanya lewat `Number()`, dan

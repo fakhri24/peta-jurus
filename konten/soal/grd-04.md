@@ -19,8 +19,8 @@ Buktikan jawabanmu.
 
 ## Petunjuk
 
-- Gambarkan sebagai graf: orang menjadi titik, perkenalan menjadi ruas. Syarat soal menjadi syarat tentang derajat.
-- Jumlahkan derajat seluruh titik, lalu ingat hubungannya dengan banyaknya ruas.
+- Perkenalannya timbal balik, jadi satu perkenalan tercatat pada dua orang sekaligus. Jumlahkan hitungan kenalan seluruh orang dan lihat apa arti angkanya.
+- Gambarkan sebagai graf: orang menjadi titik, perkenalan menjadi ruas. Jumlah derajat seluruh titik sama dengan dua kali banyaknya ruas.
 - Banyaknya ruas wajib bilangan bulat. Periksa apakah syarat itu terpenuhi.
 
 ## Pembahasan

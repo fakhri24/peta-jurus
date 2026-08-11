@@ -21,8 +21,8 @@ dan $\omega_2$ di $Q_1, Q_2$, berlaku $P_1P_2 \parallel Q_1Q_2$.
 
 ## Petunjuk
 
-- Titik singgung dua lingkaran adalah pusat homoteti yang memetakan satu ke lainnya. Apa yang dipetakannya menjadi apa?
-- Homoteti memetakan $\omega_1$ ke $\omega_2$ dan memetakan tiap garis lewat $T$ ke dirinya sendiri, jadi ia memetakan $P$ ke $Q$.
+- Kedua lingkaran bersinggungan di $T$, jadi ada satu pemetaan berpusat $T$ yang membawa $\omega_1$ tepat menjadi $\omega_2$. Cari dulu apa yang dibawanya menjadi apa.
+- Pemetaan itu homoteti berpusat $T$. Ia memetakan tiap garis lewat $T$ ke dirinya sendiri, jadi ia memetakan $P$ ke $Q$.
 - Sifat pokok homoteti: setiap garis dipetakan ke garis yang **sejajar** dengannya. Cukup tunjukkan bahwa garis yang satu adalah peta garis yang lain.
 
 ## Pembahasan

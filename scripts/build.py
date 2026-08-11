@@ -491,6 +491,110 @@ def periksa_gambar(rajah, galat):
     return dipakai
 
 
+# Kata yang muncul di nama jurus sekaligus di prosa biasa. Tanpa daftar ini
+# "Graf Dasar" tidak akan pernah cocok — tidak ada petunjuk yang menulis frasa
+# itu utuh, yang bocor adalah kata "graf"-nya sendirian.
+KATA_LEWAT = frozenset((
+    "dan", "atau", "dengan", "pada", "dari", "yang", "di", "ke", "untuk",
+    "teorema", "prinsip", "aturan", "rumus", "sifat", "dasar", "teknik",
+    "bilangan", "matematika", "nya",
+))
+
+KATA = re.compile(r"[a-zà-ÿ]+")
+
+
+def _frasa_nama(nama):
+    """Nama jurus → daftar frasa yang masing-masing sudah cukup untuk bocor.
+
+    Dipecah di "dan" dan "&" karena satu simpul bisa memuat dua teknik:
+    "Sudut Pusat dan Sudut Keliling" bocor kalau petunjuknya menulis salah
+    satunya, bukan hanya kalau menulis keduanya.
+
+    Tapi **hanya kalau kedua sisinya masih dua kata atau lebih.** Tanpa syarat
+    itu "Teorema Sisa dan Faktor" pecah menjadi "sisa" dan "faktor", dan setiap
+    petunjuk yang menulis "sisa pembagian" tertandai — kata biasa, bukan nama
+    teknik. Nama yang sisi-sisinya sependek itu diperlakukan utuh.
+    """
+    def kata_inti(bagian):
+        return [k for k in KATA.findall(bagian) if k not in KATA_LEWAT and len(k) > 2]
+
+    bagian = re.split(r"\s+dan\s+|\s*[&/]\s*", nama.lower())
+    pecahan = [kata_inti(b) for b in bagian]
+    if len(pecahan) > 1 and all(len(p) >= 2 for p in pecahan):
+        return pecahan
+    utuh = kata_inti(nama.lower())
+    return [utuh] if utuh else []
+
+
+def _memuat_frasa(kata, frasa):
+    """Frasa harus muncul berurutan dan berdampingan, bukan sekadar tersebar.
+
+    Yang membedakan "gunakan sudut keliling" (bocor) dari "yang satu di
+    keliling, yang satu di pusat" (bukan — itu kosakata yang memang tak
+    terhindarkan saat menjelaskan bangunnya).
+    """
+    n = len(frasa)
+    return any(kata[i:i + n] == frasa for i in range(len(kata) - n + 1))
+
+
+def periksa_petunjuk(jurus, soal):
+    """Petunjuk 1 yang menyebut nama jurus pemiliknya; kembalikan peringatannya.
+
+    **Peringatan, bukan galat**, dan itu disengaja. Ada penyebutan yang justru
+    dorongan yang benar — "Ptolemy yang biasa memberi hasil kali, itu belum
+    cukup" pada soal yang menuntut bentuk lain. Pemeriksaan yang menggagalkan
+    build karena pengecualian sah adalah pemeriksaan yang akan dimatikan orang.
+
+    Yang dicocokkan nama jurus **pemiliknya**, bukan seluruh medan `jurus:`.
+    Soal boleh menandai beberapa jurus, dan menyebut jurus kedua di petunjuk
+    pertama sering justru yang dimaksudkan.
+
+    Soal contoh dikecualikan seluruhnya: ia hanya tampil di jurus.html, yang
+    judul halamannya adalah nama jurus itu sendiri. Tidak ada yang bisa
+    dibocorkan di tempat namanya sudah tercetak di kepala halaman.
+    """
+    def kata_dari(html):
+        # Rumus dibuang: $\varphi(60)$ bukan prosa, dan isinya bukan nama jurus.
+        return KATA.findall(
+            re.sub(r"\$[^$]*\$", " ", re.sub(r"<[^>]+>", " ", html)).lower())
+
+    kata_per_soal, kata_pertanyaan = {}, {}
+    for sid, s in soal.items():
+        if s["petunjuk"]:
+            kata_per_soal[sid] = kata_dari(s["petunjuk"][0])
+            kata_pertanyaan[sid] = kata_dari(s["soal"])
+
+    pemilik = {sid: j["id"] for j in jurus.values() for sid in j["latihan"]}
+
+    def penyebut(frasa):
+        """Jurus mana saja yang petunjuk pertamanya memuat frasa ini."""
+        return {pemilik[sid] for sid, kata in kata_per_soal.items()
+                if sid in pemilik and _memuat_frasa(kata, frasa)}
+
+    peringatan = []
+    for j in sorted(jurus.values(), key=lambda j: j["id"]):
+        for frasa in _frasa_nama(j["nama"]):
+            # Frasa yang juga muncul di petunjuk milik beberapa jurus lain adalah
+            # kosakata bidangnya, bukan nama teknik: "luas" pada geometri, "digit"
+            # pada teori bilangan. Menandainya cuma melatih orang mengabaikan
+            # peringatan. Satu jurus lain masih ditoleransi — itu rujukan silang
+            # biasa, bukan bukti bahwa katanya umum.
+            if len(penyebut(frasa) - {j["id"]}) >= 2:
+                continue
+            for sid in j["latihan"]:
+                if sid not in kata_per_soal:
+                    continue
+                # Soal yang menyebut nama tekniknya sendiri tidak bisa dibocorkan
+                # petunjuknya — "Dengan memakai teorema Ptolemy, tentukan …" sudah
+                # menjawab pertanyaan yang dijaga gerbang ini sebelum petunjuk
+                # pertama dibuka.
+                if _memuat_frasa(kata_pertanyaan[sid], frasa):
+                    continue
+                if _memuat_frasa(kata_per_soal[sid], frasa):
+                    peringatan.append("%s (jurus %s)" % (sid, j["nama"]))
+    return sorted(set(peringatan))
+
+
 def muat_jurus(galat):
     hasil = {}
     for jalur in sorted((KONTEN / "jurus").glob("*.md")):
@@ -849,6 +953,15 @@ def main():
     nganggur = sorted(set(rajah) - dipakai_rajah)
     if nganggur:
         print("Rajah belum dirujuk konten mana pun: %s" % ", ".join(nganggur))
+    # Peringatan juga, dengan alasan yang sama: sebagian penyebutan memang
+    # disengaja. Yang dijaga di sini aturan yang selama ini cuma dititipkan ke
+    # ingatan, dan dengan 85 jurus ingatan bukan tempat menyimpannya.
+    bocor = periksa_petunjuk(jurus, soal)
+    if bocor:
+        print("Petunjuk 1 menyebut nama jurusnya sendiri — periksa satu per satu, "
+              "sebagian mungkin memang disengaja:")
+        for b in bocor:
+            print("  %s" % b)
     return 0
 
 
